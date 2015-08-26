@@ -25,12 +25,7 @@
 			var diff  = date.getTime()/1000 - now.getTime()/1000;
 			var clock = $('.clock').FlipClock(diff, {
 		        clockFace: 'DailyCounter',
-		        autoStart: true,
-		        callbacks: {
-		        	stop: function() {
-		        		$('.message').html('The clock has stopped!')
-		        	}
-		        }
+			countdown: true
 		    });
 				    
 
