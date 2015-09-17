@@ -2,7 +2,7 @@
 Slate Theme for GitHub Pages
 by Jason Costello, @jsncostello
 *******************************************************************************/
-
+@import url(//fonts.googleapis.com/css?family=Open+Sans);
 @import url(github-light.css);
 
 /*******************************************************************************
@@ -52,8 +52,8 @@ body {
   box-sizing: border-box;
   color:#373737;
   background: #212121;
-  font-size: 16px;
-  font-family: 'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-family: 'Open Sans', Calibri, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
@@ -62,13 +62,14 @@ h1, h2, h3, h4, h5, h6 {
   margin: 10px 0;
   font-weight: 700;
   color:#222222;
-  font-family: 'Lucida Grande', 'Calibri', Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', Calibri, Helvetica, Arial, sans-serif;
   letter-spacing: -1px;
 }
 
 h1 {
-  font-size: 36px;
-  font-weight: 700;
+  font-size: 32px;
+  font-variant: all-small-caps; 
+  font-weight: 200;
 }
 
 h2 {
@@ -78,7 +79,9 @@ h2 {
 }
 
 h3 {
-  font-size: 24px;
+  font-weight: 200;
+  font-size: 23px;
+  font-variant: all-small-caps;
 }
 
 h4 {
@@ -103,7 +106,7 @@ footer p {
 
 a {
   text-decoration: none;
-  color: #007edf;
+  color: #ffad0f;
   text-shadow: none;
 
   transition: color 0.5s ease;
