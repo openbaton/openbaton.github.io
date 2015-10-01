@@ -1,0 +1,123 @@
+<html>
+<title></title>
+<head>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,300,600,700' rel='stylesheet' type='text/css'>
+<head>
+<body>
+<div class="navcontainer" style="margin:0px; background:#000;">
+	<div class="navholder">
+		<nav>
+			<a href="index.html" class="logo"></a>
+			<a href="#" id="menu-icon"></a>
+				<ul class="navigation">
+					  <li><a href="index.html#about">About</a></li>
+					  <li><a href="cases.html">Cases</a></li>
+					  <li><a href="features.html">Features</a></li>
+					  <li><a href="documentation">Documentation</a></li>
+					  <li><a href="index.html#contact">Contact</a></li>
+					  <li><a href="https://github.com/openbaton">GitHub</a></li>
+				</ul>
+		</nav>
+	</div>
+
+</div>
+<div class="container2" id="features">
+	<div class="holder">
+		<p><h4>openbaton features</h4></p>
+			<h5>OpenBaton includes a consistent set of features enabling the deployment of virtual network functions <br>on top of cloud infrastructures, following the ETSI MANO specification. </h5>
+	</div>
+	<div class="holder">
+		<div class="txtleft"><img src="images/feature1.png" width="468px" height="421"></div>
+			<div class="featuretxt" >
+			 <p><h4 style="text-align:left;">orchestrator (nfvo)</h4></p>
+
+			The orchestrator implements the key functionalities of the MANO architecture. Specifically, it:
+			<ul>
+<li>	Currently uses the OpenStack as first integrated NFV PoP VIM;</li>
+<li>Maintains an overview on the infrastructure, supporting dynamic registration of NFV PoPs;</li>
+<li>Receives virtual network function packages from the different users including VNF images and virtual network functions descriptors (VNFDs);</li>
+<li>Deploys on-demand the VNFs on top of an infrastructure consisting of multiple data center instances (NFV PoPs);</li>
+<li>Deploys in parallel multiple slices one for each tenant, consisting of one or multiple VNFs.</li>
+</ul>
+Through this functionality the orchestrator provides a multi-tenant environment distributed on top of multiple cloud instances.
+			
+			
+			
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+
+	<div class="holder">
+			<div class="txtright"><img src="images/feature2.png" width="449" height="399"></div>	
+			<div class="featuretxt2" id="interop">
+			 <p><h4 style="text-align:left;">generic vnfm</h4></p>
+			The Generic VNFM represents an implementation of the MANO function. It is tightly coupled with the OpenBaton EMS which runs as a software within the deployed Network Functions. The OpenBaton VNFM can execute the following operations: 
+			<ul>
+				<li>Is instantiated on demand by the NFVO</li>
+				<li>Request to the NFVO the allocation of specific resources for the virtual network instance</li>
+				<li>Can request from the NFVO the instantiation, modification, starting and stopping of the virtual services (or directly to the VIM)</li>
+				<li>Instructs the generic OpenBaton EMS to save and to execute specific configuration scripts within the virtual machine instances</li>
+				
+			</ul>
+			The generic VNFM can be easily extended to support the management of third party VNFs. 
+
+			<p><h4 style="text-align:left;">uses openstack as vim <br>for the nfv pops</h4></p>
+		
+			OpenBaton uses OpenStack as a first example of a VIM for the NFV PoPs. OpenBaton controls the following operations of OpenStack:
+
+			 <ul>
+				<li>Creation of virtual networks based on the requirements provided by VNFDs;</li>
+				<li>Virtual machines images management;</li>
+				<li>Creation and management of virtual machines used for hosting the VNFCs</li>	
+			</ul>
+			The NFVO uses the quota information provided by the VIM for reserving the resources required by each network service. 
+	</div>		
+			
+		</div>
+	</div>
+</div>
+<div class="container2">
+	<div class="holder">
+<div class="txtleft"><img src="images/feature3.png" width="490px" height="396"></div>
+<div class="featuretxt" id="interop">
+
+			 <h4 style="text-align:left;">supporting external vnfms</h4>
+		
+			Albeit, OpenBaton offers a generic VNFM which can be easily extended for the different services, it includes also a set of mechanisms which enable the support for external VNFMs. This can be done in the following ways:
+
+			 <ul>
+				<li>Publish/Subscribe mechanism using a message queue based on JMS;</li>
+				<li>A JSON RESTful API </li>	
+			</ul>
+			The two APIs support the communication for the functionality described as part of the Generic VNFMv
+			</div>
+	
+	</div>		
+		
+	</div>
+</div>
+<div class="container">
+	<div class="holder">
+			<div class="txtright"><img src="images/feature5.png" width="550" height="351"></div>	
+			<div class="featuretxt2" id="interop">
+			 <p><h4 style="text-align:left;">dashboard</h4></p>
+			OpenBaton includes a user-user friendly dashboard which enables the management of the complete environment including:
+			<ul>
+				<li>The control of the infrastructure – enabling the easy understanding and modification of the dynamic registered NFV PoPs;</li>
+				<li>The management of the deployed network services – their creation and the overview of the deployed services. </li>
+				
+				
+				
+			</ul>
+			The generic VNFM can be easily extended to support the management of third party VNFs. 
+			
+		</div>
+
+		
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Write your own VNFM - OpenBaton Documentation</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Write your own VNFM";
+    var mkdocs_page_input_path = "vnfm-how-to-write.md";
+    var mkdocs_page_url = "/vnfm-how-to-write/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body role="document">
+
+<div class="navcontainer" style="margin:0px; background:#000;">
+    <div class="navholder">
+      <nav>
+        <a href="../../index.html" class="logo"></a>
+        <a href="#" id="menu-icon"></a>
+        <ul class="navigation">
+          
+                  <li><a href="../../index.html#about">About</a></li>
+                <li><a href="../../cases.html">Use Cases</a></li>
+                <li><a href="../../features.html">Features</a></li>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="../../index.html#contact">Contact</a></li>
+                <li><a href="https://github.com/openbaton">GitHub</a></li>
+          </ul>
+      </nav>
+     </div>
+</div>
+<div  class="container">
+  <div class="holder"> 
+        <div class="wy-grid-for-nav">
+
+          
+          <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+            <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+              <ul class="current">
+                
+                  <li>
+    <ul class="subnav">
+    <li><span>Get Started</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="..">Get Started</a>
+        
+    </li>
+
+        
+    </ul>
+</li>
+                
+                  <li>
+    <ul class="subnav">
+    <li><span>Installation</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../install/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation/">Install NFVO</a>
+        
+    </li>
+
+        
+    </ul>
+</li>
+                
+                  <li>
+    <ul class="subnav">
+    <li><span>Use it</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../use/">Introduction</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfpackage/">Create your own VNF Package</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-how-to-use-gui/">Use via the Dashboard</a>
+        
+    </li>
+
+        
+    </ul>
+</li>
+                
+                  <li>
+    <ul class="subnav">
+    <li><span>Extend it</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../extend/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-architecture/">NFVO Architecture</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-generic/">Generic VNFM</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Write your own VNFM</a>
+        
+         
+        
+    </li>
+
+        
+    </ul>
+</li>
+                
+                  <li>
+    <ul class="subnav">
+    <li><span>FAQ</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../FAQ/">FAQ</a>
+        
+    </li>
+
+        
+    </ul>
+</li>
+                
+              </ul>
+            </div>
+            &nbsp;
+          </nav>
+        </div>
+    <div class="content_container">
+        <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+         
+
+          
+                <div class="wy-nav-content">
+                  <div class="rst-content">
+                   
+                    <div role="main">
+                      <div class="section">
+                        
+                          <h1 id="how-to-write-a-vnfmanager">How to write a VNFManager</h1>
+<p>How to write a Vnfm for OpenBaton:</p>
+<p>requirements:
+<em> JDK 7
+</em> vnfm-sdk lib</p>
+<p>It is suggested to use the vnfm-sdk-jms (in case of a jms Vnfm or vnfm-sdk-rest in case of a ReST VNFManager) because it is a sdk providing already the utilities classes in charge of the communication to the NFVO and other tools. This implementation make use of <a href="http://projects.spring.io/spring-boot/">SpringBoot</a>. If you don't want this dependency than use the simple vnfm-sdk artifact, but all the communication with the NFVO needs to be implemented.</p>
+<p>For gathering the vnfm-sdk-jms library you need that to your build.gradle:</p>
+<pre><code class="gradle">buildscript {
+    dependencies {
+        classpath(&quot;org.springframework.boot:spring-boot-gradle-plugin:1.2.6.RELEASE&quot;)
+    }
+}
+apply plugin: 'spring-boot'
+bootRepackage {
+    mainClass = 'path.to.the.vnfm.class.VNFManager'
+}
+apply plugin: 'java'
+apply plugin: 'maven'
+repositories {
+    mavenCentral()
+    maven {
+        url &quot;http://193.175.132.176:8081/nexus/content/groups/public&quot;
+    }
+}
+dependencies {
+    compile 'org.openbaton:vnfm-sdk-jms:0.5-SNAPSHOT' 
+}
+</code></pre>
+
+<p>In this way you will have access to all the model classes and the vnfm-sdk classes needed to implement a VNFManager. The main class of your Vnfm will be the only class needed to be implemented and this class needs to extend <em>AbstractVnfmSpringJMS</em>. This class will provide all the methods that will be called in all the instantiation process (instantiate, modify etc.).</p>
+<p>It needs to implement as well a main methods as follows:</p>
+<pre><code class="java">import org.springframework.beans.factory.annotation.Autowired;
+import org.openbaton.common.vnfm_sdk.jms.AbstractVnfmSpringJMS;
+public class VNFManager extends AbstractVnfmSpringJMS{
+    @Autowired
+    private VnfmHelper vnfmHelper;
+    /**
+    *   implement all the methods...
+    */
+    public static void main(String[] args){
+        SpringApplication.run(VNFManager.class);
+    }
+}
+</code></pre>
+
+<p>Then just compile &amp; run. </p>
+<pre><code class="bash">$ ./gradlew clean build
+$ java -jar build/libs/vnfm-manager.jar
+</code></pre>
+
+<p>There is the possibility to use the VnfmHelper. The vnfmHelper helps with some methods out of the box:</p>
+<pre><code class="java">package org.openbaton.common.vnfm_sdk;
+import org.openbaton.catalogue.nfvo.messages.Interfaces.NFVMessage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+public abstract class VnfmHelper {
+    protected Logger log = LoggerFactory.getLogger(this.getClass());
+    public abstract void sendToNfvo(NFVMessage nfvMessage);
+    public abstract NFVMessage sendAndReceive(NFVMessage nfvMessage) throws Exception;
+}
+</code></pre>
+
+<p>that send messages to the NFVO and wait for the answer.
+This class need to be implemented in case you want to use only the vnfm-sdk and must be provided to the AbstarctVnfm.</p>
+<p>In any case a configuration file is needed to be in the classpath called conf.properties</p>
+<pre><code class="properties">type=generic
+allocate = true
+concurrency = 15
+transacted = false
+</code></pre>
+
+<p>Where the parameters means:</p>
+<table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>The type of VNF you are going to handle</td>
+</tr>
+<tr>
+<td>allocate</td>
+<td>true if the NFVO will ALLOCATE_RESOURCES, false if the VNFManager will do</td>
+</tr>
+<tr>
+<td>concurrency</td>
+<td>The number of concurrent Receiver (only for vnfm-sdk-jms)</td>
+</tr>
+<tr>
+<td>transacted</td>
+<td>Whenever the JMS receiver method shoud be transacted, this allows the message to be resent in case of exception VNFManager side (only for vnfm-sdk-jms)</td>
+</tr>
+</tbody>
+</table>
+<p>Please do not forget: if you use vnfm-sdk-jms or vnfm-sdk-rest <strong><em>the VNFManager main class needs to be stateless</em></strong> since can (will) run each method potentially in parallel. For what concerns vnfm-sdk-jms, even setting concurrency to 1, will not assure to have always the same instance of the class.</p>
+<!---
+References
+-->
+                        
+                      </div>
+                    </div>
+                    <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../FAQ/" class="btn btn-neutral float-right" title="FAQ"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../vnfm-generic/" class="btn btn-neutral" title="Generic VNFM"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          	  
+                  </div>
+                </div>
+
+        </section>
+    </div>
+  </div>
+</div>
+
+
+
+</body>
+</html>
+

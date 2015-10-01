@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>NFVO Architecture - OpenBaton Documentation</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "NFVO Architecture";
+    var mkdocs_page_input_path = "nfvo-architecture.md";
+    var mkdocs_page_url = "/nfvo-architecture/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body role="document">
+
+<div class="navcontainer" style="margin:0px; background:#000;">
+    <div class="navholder">
+      <nav>
+        <a href="../../index.html" class="logo"></a>
+        <a href="#" id="menu-icon"></a>
+        <ul class="navigation">
+          
+                  <li><a href="../../index.html#about">About</a></li>
+                <li><a href="../../cases.html">Use Cases</a></li>
+                <li><a href="../../features.html">Features</a></li>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="../../index.html#contact">Contact</a></li>
+                <li><a href="https://github.com/openbaton">GitHub</a></li>
+          </ul>
+      </nav>
+     </div>
+</div>
+<div  class="container">
+  <div class="holder"> 
+        <div class="wy-grid-for-nav">
+
+          
+          <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+            <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+              <ul class="current">
+                
+                  <li>
+    <ul class="subnav">
+    <li><span>Get Started</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="..">Get Started</a>
+        
+    </li>
+
+        
+    </ul>
+</li>
+                
+                  <li>
+    <ul class="subnav">
+    <li><span>Installation</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../install/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation/">Install NFVO</a>
+        
+    </li>
+
+        
+    </ul>
+</li>
+                
+                  <li>
+    <ul class="subnav">
+    <li><span>Use it</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../use/">Introduction</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfpackage/">Create your own VNF Package</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-how-to-use-gui/">Use via the Dashboard</a>
+        
+    </li>
+
+        
+    </ul>
+</li>
+                
+                  <li>
+    <ul class="subnav">
+    <li><span>Extend it</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../extend/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">NFVO Architecture</a>
+        
+         
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-generic/">Generic VNFM</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-how-to-write/">Write your own VNFM</a>
+        
+    </li>
+
+        
+    </ul>
+</li>
+                
+                  <li>
+    <ul class="subnav">
+    <li><span>FAQ</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../FAQ/">FAQ</a>
+        
+    </li>
+
+        
+    </ul>
+</li>
+                
+              </ul>
+            </div>
+            &nbsp;
+          </nav>
+        </div>
+    <div class="content_container">
+        <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+         
+
+          
+                <div class="wy-nav-content">
+                  <div class="rst-content">
+                   
+                    <div role="main">
+                      <div class="section">
+                        
+                          <h1 id="nfvo-architecture">NFVO Architecture</h1>
+<p><em>NFVO</em> is a modular software composed by the modules illustrated in the following picture:</p>
+<p><img alt="NFVO module architecture" src="../images/architecture-full.png" /></p>
+<h5 id="api">API</h5>
+<p>This module contains the necessary classes exposing APIs as ReST server. The most importat ones are the classes managing VimInstances, NetworkServiceDescriptors and NetworkServiceRecords. For more details please see <a href="../linktoapi">the api documentation</a></p>
+<h5 id="main">MAIN</h5>
+<p>This module contains the classes charged of the startup of the whole system, gathering configuratons for instance.</p>
+<h5 id="common">COMMON</h5>
+<p>This module contains the classes that are common to the NFVO</p>
+<h5 id="cli">CLI</h5>
+<p>This module contains the NFVO console.</p>
+<h5 id="dashboard">DASHBOARD</h5>
+<p>This module contains the web dashboard available at localhost:8080</p>
+<h5 id="core-int">CORE-INT</h5>
+<p>This module contains the interfaces of the core functionalities regarding only the internal NFVO interfaces. Most of them are definend in <a href="http://www.etsi.org/deliver/etsi_gs/NFV-MAN/001_099/001/01.01.01_60/gs_NFV-MAN001v010101p.pdf">ETSI MANO specification</a> in NFV-MANO interfaces section.</p>
+<h5 id="core-impl">CORE-IMPL</h5>
+<p>This module contains the beans implementing the core-int interfaces.</p>
+<h5 id="vnfm-int">VNFM-INT</h5>
+<p>This module contains the interfaces of the core functionalities regarding only the NFVO interfaces to the VnfManagers. Most of them are definend in <a href="http://www.etsi.org/deliver/etsi_gs/NFV-MAN/001_099/001/01.01.01_60/gs_NFV-MAN001v010101p.pdf">ETSI MANO specification</a> in NFV-MANO interfaces section.</p>
+<h5 id="vnfm-impl">VNFM-IMPL</h5>
+<p>This module contains the beans implementing the vnfm-int interfaces.</p>
+<h5 id="repository">REPOSITORY</h5>
+<p>This module contains specific repositories interfacing the database, in a generic way.</p>
+<h5 id="catalogue">CATALOGUE</h5>
+<p>This module contains the complete model of NFVO that is sharde in the openbaton libraries.</p>
+<h5 id="vim-int">VIM-INT</h5>
+<p>This module contains the interfaces of the core functionalities regarding only the NFVO interfaces to the VIM. Most of them are definend in <a href="http://www.etsi.org/deliver/etsi_gs/NFV-MAN/001_099/001/01.01.01_60/gs_NFV-MAN001v010101p.pdf">ETSI MANO specification</a> in NFV-MANO interfaces section.</p>
+<h5 id="vim-impl">VIM-IMPL</h5>
+<p>This module contains the beans implementing the vim-int interfaces.</p>
+<h5 id="plugin">PLUGIN</h5>
+<p>This module contains the utility classes used to interface to the openbaton plugins.</p>
+<h5 id="vim-drivers">VIM-DRIVERS</h5>
+<p>This module contains the interface for the VIM openbaton plugins.</p>
+<h5 id="exception">EXCEPTION</h5>
+<p>This module contains all the exception classes common to every project containing openbaton libraries.</p>
+<h5 id="monitoring">MONITORING</h5>
+<p>This module contains the interface for the Monitoring openbaton plugins.</p>
+<h1 id="nfvo-vnfm-rest-interface">NFVO - VNFM ReST interface</h1>
+<p>Nfvo exposes a ReST interface for the communication with the VnfManagers. The sequence diagram regarding the instantiation of a NetworkServiceRecord is shown in the following picture.</p>
+<p><img alt="NFVO - VNFM ReST interface" src="../images/or-vnfm-seq-dg.png" /></p>
+<p>As shown in the picture, NFVO calls some ReST methods on the vnfm in a particular order. Than it expects some kind of back call. The list of these call exchange is described in the following sections. The ALLOCATE_RESOURCES call is not needed if the vnfm will take care of creating VMs. The communication with the EMS is particular to each VnfManagers. In order to be able to be found, the Vnfm needs to register to the NFVO. This can be done through a particular call.</p>
+<table>
+<thead>
+<tr>
+<th>Params</th>
+<th align="right">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em><em>OrEndpoint</em></em></td>
+<td align="right">the endpoint of the NFVO (i.e. http://127.0.0.1:8080)</td>
+</tr>
+<tr>
+<td><em><em>VnfmEnpoint</em></em></td>
+<td align="right">the endpoint of the Vnfm. this is given while registering</td>
+</tr>
+</tbody>
+</table>
+<h4 id="registration-vnfm-or">Registration (Vnfm-Or):</h4>
+<h6 id="path">path:</h6>
+<p><em><em>OrEndpoint</em></em> /admin/v1/vnfm-register</p>
+<h6 id="body">body:</h6>
+<pre><code>{
+    &quot;type&quot;:&quot;dummy&quot;,
+    &quot;endpointType&quot;:&quot;REST&quot;,
+    &quot;endpoint&quot;:&quot;VnfmEndpoint&quot;
+}
+</code></pre>
+
+<p>where:
+<em> <em>type</em> is the vnfm type you are going to handle (specified in VirtualNetowrkFunctionDescriptor -&gt; endpoint). </em> <em>endpointType</em> is the vnfm type you are going to implement (REST or JMS). 
+* <em>endpoint</em> is the vnfm endpoint you have chosen (basically http://<IP>:<PORT>). </p>
+<h3 id="instantiate-or-vnfm">Instantiate (Or-Vnfm)</h3>
+<h6 id="path_1">path</h6>
+<p><em><em>VnfmEnpoint</em></em> </p>
+<h6 id="body_1">body</h6>
+<pre><code>{  
+    &quot;scriptsLink&quot;:&quot;linktogit&quot;, // a link to the reposritory where the links are located
+    &quot;scripts&quot;:&quot;scriptsfiles&quot;, // the scripts files coming from the vnfPackage, in case no scriptsLink is provided
+    &quot;vnfd&quot;:{  ...  }, // the VirtualNetowrkFunctionDescriptor from which a VirtualNetowrkFunctionRecord is created
+    &quot;vnfdf&quot;:{  ...  }, // the deployment flavours to be used
+    &quot;vlrs&quot;:[  ...  ], // the list of VirtualLinkRecords of the NetworkServiceRecord.
+    &quot;extention&quot;:{  &quot;nsr-id&quot;:&quot;...&quot;  }, // some info like the NetworkServiceRecord id
+    &quot;action&quot;:&quot;INSTANTIATE&quot; // the action to be executed
+}
+</code></pre>
+
+<p>In this action either the <em>scriptsLink</em> or the <em>scripts</em> fields are set. The vnfm-sdk will take care of them.    </p>
+<h3 id="instantiate-vnfm-or">Instantiate (Vnfm-Or)</h3>
+<h6 id="path_2">path</h6>
+<p><em><em>OrEndpoint</em></em> /admin/v1/vnfm-core-actions</p>
+<h6 id="body_2">body</h6>
+<pre><code>{  
+    &quot;virtualNetworkFunctionRecord&quot;:{  ...  }, // the created VirtualNetowrkFunctionRecord
+    &quot;action&quot;:&quot;INSTANTIATE&quot;
+}
+</code></pre>
+
+<h3 id="modify-aka-addrelations-or-vnfm">Modify (aka AddRelations) (Or-Vnfm)</h3>
+<h6 id="path_3">path</h6>
+<p><em><em>VnfmEnpoint</em></em> </p>
+<h6 id="body_3">body</h6>
+<pre><code>{  
+    &quot;vnfr&quot;:{  }, // the VirtualNetowrkFunctionRecord target of the depedendecy
+    &quot;vnfrd&quot;:{  }, // the VNFDependency containing all the source parameters needed by the scripts
+    &quot;action&quot;:&quot;MODIFY&quot;
+}
+</code></pre>
+
+<h3 id="modify-aka-addrelations-vnfm-or">Modify (aka AddRelations) (Vnfm-Or)</h3>
+<h6 id="path_4">path</h6>
+<p><em><em>VnfmEnpoint</em></em> </p>
+<h6 id="body_4">body</h6>
+<pre><code>{  
+    &quot;virtualNetworkFunctionRecord&quot;:{  },
+    &quot;action&quot;:&quot;MODIFY&quot;
+}
+</code></pre>
+
+<h3 id="start-or-vnfm">Start (Or-Vnfm)</h3>
+<h6 id="path_5">path</h6>
+<p><em><em>VnfmEnpoint</em></em> </p>
+<h6 id="body_5">body</h6>
+<pre><code>{  
+    &quot;vnfr&quot;:{  ...  },
+    &quot;action&quot;:&quot;START&quot;
+}
+</code></pre>
+
+<h3 id="start-vnfm-or">Start (Vnfm-Or)</h3>
+<h6 id="path_6">path</h6>
+<p><em><em>OrEndpoint</em></em> /admin/v1/vnfm-core-actions</p>
+<h6 id="body_6">body</h6>
+<pre><code>{  
+    &quot;virtualNetworkFunctionRecord&quot;:{  ...  },
+    &quot;action&quot;:&quot;START&quot;
+}
+</code></pre>
+
+<!---
+References
+-->
+                        
+                      </div>
+                    </div>
+                    <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../vnfm-generic/" class="btn btn-neutral float-right" title="Generic VNFM"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../extend/" class="btn btn-neutral" title="Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          	  
+                  </div>
+                </div>
+
+        </section>
+    </div>
+  </div>
+</div>
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,123 @@
+<html>
+<title></title>
+<head>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,300,600,700' rel='stylesheet' type='text/css'>
+<head>
+<body>
+<div class="navcontainer" style="margin:0px; background:#000;">
+<div class="navholder">
+	<nav>
+		<a href="#" class="logo"></a>
+		<a href="#" id="menu-icon"></a>
+		<ul class="navigation">
+		  
+	  				  <li><a href="index.html#about">About</a></li>
+					  <li><a href="cases.html"> Use Cases</a></li>
+					  <li><a href="features.html">Features</a></li>
+					  <li><a href="documentation">Documentation</a></li>
+					  <li><a href="index.html#contact">Contact</a></li>
+					  <li><a href="https://github.com/openbaton">GitHub</a></li>
+		  </ul>
+	</nav>
+		 </div>
+</div>
+<div class="flex-container">
+		<div class="flex-item">
+			<h4>An open source Network Function Virtualisation Orchestrator (NFVO)<br> fully compliant with the ETSI NFV MANO specification
+	 		</h4>
+			<a class="btn" href="documentation" style="color:white;">get started now</a>
+		</div>
+</div>
+
+<div class="container2">
+		<div class="holder">
+	
+				<ul class="circle">
+					<li>
+				 	 <h4>openness</h4>
+				 	 OpenBaton is fully compliant with the ETSI MANO v1.1.1 data model
+
+					<p><a href="cases.html#feature1">read more</a></p>
+			
+		  			</li>
+
+					 <li>
+					  <h4>interoperability</h4>
+					  OpenBaton provides multiple mechanisms for interoperating with different VNFM vendor solutions
+
+						<p><a href="cases.html#feature2">read more</a></p>
+		 		 	</li>
+		 		 	<li>
+			
+					<h4>easily extensible</h4>
+					 
+					OpenBaton has a modular architecture easily extensible for being interoperable with multiple clouds
+
+					<p><a href="cases.html#feature3">read more</a></p>
+					</li>
+		
+				</ul>
+		</div>
+</div>
+<br style="clear:both;">
+<div class="container">
+	 <div class="holder" id="about">
+		 	
+				 <p><h4>about open baton</h4></p>
+				 <h5> OpenBaton is a ETSI NFV compliant Network Function<br>Virtualization Orchestrator (NFVO).</h5>
+				<div class="circle2">
+				OpenBaton is a ETSI NFV compliant Network Function Virtualization Orchestrator (NFVO). OpenBaton was part of the OpenSDNCore (www.opensdncore.org) project started almost three years ago by Fraunhofer FOKUS with the objective of providing a compliant implementation of the ETSI NFV specification. <br>
+				OpenBaton is easily extensible. It integrates with OpenStack, and provides a plugin mechanism for supporting additional VIM types. It supports Network Service management either using a generic VNFM or interoperating with VNF-specific VNFM. It uses different mechanisms (REST or PUB/SUB) for interoperating with the VNFMs. Its initial focus was to provide the main functionalities for provisioning and managing Network Services, however in its future releases new additional features will provide mechanisms for increasing the automation in NS management. Those new features will include autoscaling, fault management, TOSCA, etc.
+				
+				</div>
+			
+	 </div>
+</div>
+<br style="clear:both;">
+<div class="container">
+<div class="holder">
+<h4>news</h4>
+<a class="twitter-timeline" href="https://twitter.com/OpenBaton" data-widget-id="649488387813023744">@OpenBaton</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
+
+</div>
+
+<div class="container" id="contact">
+<?php $name = $_POST['name'];
+$email = $_POST['email'];
+$message = $_POST['message'];
+$formcontent="From: $name \n Message: $message";
+$recipient = "tatjana.tsernohh@fokus.fraunhofer.de";
+$subject = $_POST['subject'];
+$mailheader = "From: $email \r\n";
+mail($recipient, $subject, $formcontent, $mailheader) or die("Error!");
+echo "Thank You!";
+?>
+ 
+	 <div class="form-style-8">
+	 <p><h4>contact us</h4></p>
+	 <div class="holder">
+  <form>
+    <input type="text" name="name" placeholder="Full Name" />
+    <input type="email" name="email" placeholder="Email" />
+    <input type="subject" name="subject" placeholder="Subject" />
+    <textarea placeholder="message" ></textarea>
+    <input type="submit" class="button" value="Send Message" />
+  </form>
+  	</div>
+	</div>
+</div>
+<div class="container2">
+	<div class="holder">
+	<h4>powered by</h4>
+		
+			<div class="circle"><img src="images/tu.png" width="150" height="113"></div>
+			<div class="circle"><img src="images/fokus.png" width="300" height="98"></div>
+	
+	</div>
+</div>
+<body>
+
+</html>
