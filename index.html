@@ -88,36 +88,9 @@
  
 	 <div class="form-style-8">
 	 <p><h4>contact us</h4></p>
-	 <div class="holder">
+	 <div class="flex-item">
 	
-  <form method="POST" id="feedback-form">
-    <input type="text" name="name" placeholder="Full Name" />
-    <input type="email" name="contacts" placeholder="Email" />
-    <input type="subject" name="subject" placeholder="Subject" />
-    <textarea placeholder="message" name="message" ></textarea>
-    <input type="submit" class="button" value="Send Message" />
-  </form>
-
-<script>
-document.getElementById('feedback-form').addEventListener('submit', function(evt){
-  var http = new XMLHttpRequest(), f = this;
-  evt.preventDefault();
-  http.open("POST", "mail.php", true);
-  http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-  console.log(f); 
-  http.send("name=" + f.elements['name'].value + "&contacts=" + f.elements['contacts'].value + "&message=" + f.elements['message'].value);
-  http.onreadystatechange = function() {
-    if (http.readyState == 4 && http.status == 200) {
-      alert(http.responseText + ', thank you for yours email');    
-      f.messageFF.removeAttribute('value'); 
-      f.messageFF.value='';
-    }
-  }
-  http.onerror = function() {
-    alert('error');
-  }
-}, false);
-</script>
+  	<a class="btn" href="mailto:info@open-baton.org" style="color:white;">get started now</a>
   	</div>
 	</div>
 </div>
