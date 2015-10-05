@@ -1,47 +1,492 @@
+@import "compass/css3";
 body{
-	background: url("baton2.png") no-repeat center;
-	width:100%;
-	height:100%;
-}
-
-@media screen and (max-width: 600px) {
-	body{
-	background: url("baton2.png") no-repeat center;
-	width:100%;
-	height:100%;
-}
-	
-	.logo{
-	background: url("batonlogo.png") no-repeat center;
-	background-size: 400px 96px;
-    background-repeat: no-repeat;
-    height: 100px;
-	width: auto;
-	margin: 0 auto;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 15px;
+	padding: 0px;
+	margin: 0px;
+	color: #282828;
 
 }
-	}
+
+
+#menu-icon {
+
+  display: hidden;
+  width: 30px;
+  height:30px;
+  margin-right: 20px;
+  background: #ea8e0c url(images/menu-icon.png) center;
+
+}
+
+a:hover#menu-icon {
+
+  background-color: #444;
+
+
+}
+
+
+/*media query */
+@media only screen and (max-width : 1600px){
+.txtleft{
+  margin-left: 0px !important;
+}
+
+.featuretxt{
+  width: 80% !important;
+}
+
+.featuretxt2{
+  width: 80% !important;
+}
+.
+}
+@media only screen and (max-width : 1100px){
+#menu-icon {
+
+    display:inline-block;
+
+  }
+
+  nav ul, nav:active ul { 
+    list-style: none;
+    display: none;
+    position: absolute;
+    padding: 20px;
+    background: #000;
+    right: 0px;
+    top: 50px;
+    width: 50%;
+  }
+
+  nav{
+    width:100%;
+  }
+
+  nav li {
+
+    text-align: left !important;
+    width: 100%;
+    margin: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+  }
+
+  nav:hover ul {
+
+    display: block;
+
+  }
+  .holder{
+    width: 100% !important;
+
+  }
+
+.txtleft, .textright{
+  margin: 0px !important;
+}
+.featuretxt{
+    width: 90% !important;
+  }
+.txtleft img, .txtright img{
+  width: 70% !important;
+  height: auto !important;
+  text-align: left !important;
+  float: left;
+}
+.txtright img{
+  width: 60% !important;
+  height: auto !important;
+  text-align: left !important;
+  float: right;
+   margin-right:0px !important;
+}
+
+.featuretxt2{
+    width: 90% !important;
+  }
+  .navholder{
+    width: 100% !important;
+    text-align: right !important;
+  }
+
+.flex-item h4 {
+  font-size: 25px !important;
+ 
+  }
+
+.btn{
+  width: 150px !important;
+  font-size: 25px !important;
+  }
+.circle li{
+  float: none !important;
+  width: 80% !important;
+  
+  }
+.circle2{
+  width: 90% !important;
+  -webkit-column-count: 1 !important; /* Chrome, Safari, Opera */
+  -moz-column-count: 1 !important; /* Firefox */
+  column-count: 1 !important;
+  margin: 0 auto;
+  line-height: 1.5em;
+  font-size:1em;
+  -webkit-column-gap: 0px !important; /* Chrome, Safari, Opera */
+  -moz-column-gap: 0px !important; /* Firefox */
+  column-gap: 0px !important;
+
+  }
+.form-style-8 {
+    font-family: 'Open Sans Condensed', arial, sans;
+    width: 90% !important;
+    margin: 0 auto;
+    padding: 0px !important;
+}
+}
+
+/*media query */
 
 
 .logo{
-	background: url("batonlogo.png") no-repeat center;
-	background-size: 600px 144px;
-    background-repeat: no-repeat;
-    height: 200px;
-	width: auto;
-	margin: 0 auto;
+	float: left;
+  padding-top: 4px;
+  background: url(images/openbaton.png) center no-repeat;
+  width: 120px;
+  height:30px;
 
 }
 
-.flip-clock-wrapper{
-	width: 83%;
-	margin: 0 auto;
+.navcontainer {
+  width: 100%;
+  background:#000;
+  height: 55px;
 
 }
 
-#container{
-	width: 750px;
-	margin: 0 auto;
-  	position: relative;
-  	top: 25%;
+.flex-item h4{
+font-size: 0.8em;
+line-height: 1.4em;
+margin-top: 30px;
+font-weight: normal;
+font-variant: normal;
+
+}
+
+.navigation li{
+  border:none;
+  float: left;
+  display: inline-block;
+  font-size: 15px;
+
+}
+.navigation{
+    float: right;
+    border:none;
+    list-style: none;
+    float:right;
+    margin-top: 0px;
+
+}
+
+
+  
+  .navigation a { 
+    text-align: center; 
+    display:block;
+    padding: 0px 30px 0px 0px;
+    color: #fff;
+    text-decoration: none;
+
+  }
+
+  
+.navigation li:last-of-type a {
+    border-bottom: none;
+
+  }
+.navholder{
+width: 60%;
+margin: 0px auto;
+text-align: center;
+padding-top: 10px;
+
+
+}
+
+/*END NAVI*/
+/*START PIC SECTION*/
+
+.flex-container {
+  padding-top: 40px;
+  width: 100%;
+  height: 350px;
+  display: block;
+  font-variant: small-caps;
+   background-image: url("images/baton2.png");
+}
+
+
+
+.flex-item { 
+  width: 100%;
+  color: white;
+  font-weight: bold;
+  font-size: 3em;
+  margin-top: 20px;
+  text-align: center;
+  font-variant: small-caps;
+
+}
+
+
+
+
+h3{
+	font-size: 2em;
+	font-weight: 300;
+	padding: 0px;
+	line-height: 0.7em;
+	-webkit-margin-before: 0.3em;
+  -webkit-margin-after: 0.8em;
+
+}
+
+
+img{
+  max-height: 100%;
+  max-width: 100%;
+
+}
+
+.btn{
+	font-size: 1.1em;
+ 	 background-color:#000;
+  -moz-border-radius: 40px; 
+	-webkit-border-radius: 40px; 
+	border-radius: 40px;
+	padding: 0px 40px 10px 40px;
+	border:2px;
+	font-weight: 200;
+	text-decoration: none;
+
+}
+.btn a:link, a:visited{color:#fff;}
+
+/*END PIC SECTION*/
+.container4 {
+ width: 100%; 
+display: inline-block;
+padding: 0px 20px 0px 0px;
+
+}
+
+.holder2{
+width: 60%;
+margin: 0px auto;
+text-align: center;
+
+}
+
+.container {
+  display: block;
+  width: 100%;
+  margin: 0 auto;font-size;
+  padding:1em 4em 3em 0em;
+  overflow:auto;
+
+
+}
+.container2 {
+  padding:1em 4em 3em 0em;
+  width: 100%;
+  display: block;
+  background: #fafafa;
+  overflow:auto;
+}
+
+.circle {
+  width: 100%;
+  list-style: none;
+}
+
+.circle li{
+  width: 30%;
+  padding: 1%;
+  text-align: center;
+  float:left;
+}
+h4{
+	font-variant: small-caps;
+	font-size: 2.2em;
+	line-height: 0.9em;
+	text-align: center;
+
+
+}
+.circle a{
+	color:#ea8e0c;
+	font-size:1em;
+
+}
+h5{
+	font-size: 1.625em;
+	color:#ea8e0c;
+	font-style: italic;
+	font-weight: lighter;
+	padding: 10px;
+}
+h6{
+	font-size: 1.2em;
+	color:#ea8e0c;
+	font-style: italic;
+	font-weight: 100;
+	margin-bottom: 1.3em;
+}
+
+.holder{
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+
+}
+
+
+
+.circle2 {
+  text-align: left;
+  width: 60%;
+  -webkit-column-count: 2; /* Chrome, Safari, Opera */
+  -moz-column-count: 2; /* Firefox */
+  column-count: 2;
+  margin: 0 auto;
+  line-height: 1.5em;
+  font-size:1em;
+  -webkit-column-gap: 40px; /* Chrome, Safari, Opera */
+  -moz-column-gap: 40px; /* Firefox */
+  column-gap: 40px;
+}
+
+
+
+.featuretxt {
+  width: 30%;
+  float: left;
+  line-height: 1.5em;
+  padding-left: 2em;
+  text-align: left;
+  font-size:1em;
+}
+.featuretxt2 {
+
+  display: inline-block;
+  width: 30%;
+  float: right;
+  line-height: 1.5em;
+  text-align: left;
+  font-size:1em;
+}
+
+.featuretxt3 {
+
+  display: inline-block;
+  width:25%;
+  float: right;
+  margin-right: 10em;
+  line-height: 1.5em;
+  text-align: left;
+  font-size:1em;
+}
+
+a,.circle2 a, .featuretxt a{
+	color:#ea8e0c;
+	font-size:1em;
+  text-decoration: none;
+}
+.txtleft {
+  
+  width: 520px;
+  padding: 1%;
+  float: left;
+  margin-top: 3%;
+  margin-left: 10%;
+  text-align: right;
+  line-height: 1.5em;
+  font-weight:light;
+  font-size:1em;
+}
+.txtright {
+  margin-right: 10%;
+  width: 520px;
+  padding: 1%;
+  float: right;
+  margin-top: 3%;
+  text-align: right;
+  line-height: 1.5em;
+  font-weight:light;
+  font-size:1em;
+}
+
+.form-style-8{
+    font-family: 'Open Sans Condensed', arial, sans;
+    width: 60%;
+    margin: 0 auto;
+    padding: 50px;
+
+
+}
+
+.form-style-8 input[type="text"],
+.form-style-8 input[type="date"],
+.form-style-8 input[type="datetime"],
+.form-style-8 input[type="email"],
+.form-style-8 input[type="number"],
+.form-style-8 input[type="search"],
+.form-style-8 input[type="time"],
+.form-style-8 input[type="subject"],
+.form-style-8 input[type="password"],
+.form-style-8 textarea,
+.form-style-8 select 
+{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    display: block;
+    width: 100%;
+    padding: 1.2em;
+    min-height:60px; 
+    border: 1px solid #ddd;
+    background: transparent;
+    margin-bottom: 20px;
+    font: 16px Arial, Helvetica, sans-serif;
+    height: 45px;
+}
+.form-style-8 textarea{
+    resize:none;
+    min-height: 180px;
+    overflow: hidden;
+}
+.form-style-8 input[type="button"], 
+.form-style-8 input[type="submit"]{
+
+    background-color: #ea8e0c;
+    border:none;
+    display: inline-block;
+    font-weight: lighter;
+    cursor: pointer;
+    color: #FFFFFF;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 1.2em;
+    width: 100%;
+    height: 3em;	
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.form-style-8 input[type="button"]:hover, 
+.form-style-8 input[type="submit"]:hover {
+    background-color:#ea8e0c;
 }

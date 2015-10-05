@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Create your own VNF Package - OpenBaton Documentation</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Create your own VNF Package";
+    var mkdocs_page_input_path = "vnfpackage.md";
+    var mkdocs_page_url = "/vnfpackage/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body role="document">
+
+<div class="navcontainer" style="margin:0px; background:#000;">
+    <div class="navholder">
+      <nav>
+        <a href="../../index.html" class="logo"></a>
+        <a href="#" id="menu-icon"></a>
+        <ul class="navigation">
+          
+                  <li><a href="../../index.html#about">About</a></li>
+                <li><a href="../../cases.html">Use Cases</a></li>
+                <li><a href="../../features.html">Features</a></li>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="../../index.html#contact">Contact</a></li>
+                <li><a href="https://github.com/openbaton">GitHub</a></li>
+          </ul>
+      </nav>
+     </div>
+</div>
+<div  class="container">
+  <div class="holder"> 
+        <div class="wy-grid-for-nav">
+
+          
+          <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+            <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+              <ul class="current">
+                
+                  <li>
+    <ul class="subnav">
+    <li><span>Get Started</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="..">Get Started</a>
+        
+    </li>
+
+        
+    </ul>
+</li>
+                
+                  <li>
+    <ul class="subnav">
+    <li><span>Installation</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../install/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation/">Install NFVO</a>
+        
+    </li>
+
+        
+    </ul>
+</li>
+                
+                  <li>
+    <ul class="subnav">
+    <li><span>Use it</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../use/">Introduction</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Create your own VNF Package</a>
+        
+         
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-how-to-use-gui/">Use via the Dashboard</a>
+        
+    </li>
+
+        
+    </ul>
+</li>
+                
+                  <li>
+    <ul class="subnav">
+    <li><span>Extend it</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../extend/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-architecture/">NFVO Architecture</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-generic/">Generic VNFM</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-how-to-write/">Write your own VNFM</a>
+        
+    </li>
+
+        
+    </ul>
+</li>
+                
+                  <li>
+    <ul class="subnav">
+    <li><span>FAQ</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../FAQ/">FAQ</a>
+        
+    </li>
+
+        
+    </ul>
+</li>
+                
+              </ul>
+            </div>
+            &nbsp;
+          </nav>
+        </div>
+    <div class="content_container">
+        <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+         
+
+          
+                <div class="wy-nav-content">
+                  <div class="rst-content">
+                   
+                    <div role="main">
+                      <div class="section">
+                        
+                          <h1 id="vnfpackage">VNFPackage</h1>
+<p><strong>Note</strong>: This is the initial version of the VNFPackage and might change most probably in the next releases to improve and simplify the creation, usability and power.</p>
+<p>This doc describes essential components of a VNFPackage, how to create them and how to use them after onboarding.
+Therefore, you can find a practical tutorial at the end with all the steps starting from the creation over onboarding and finally referencing it by a NSD.</p>
+<p>A VNFPackage is a tar-archive that contains all the information required for creating a VNF for the openbaton NFVO.
+After onboarding the VNFPackage on the NFVO you can use the VNF directly in the NSD by referencing the VNFD by its id.
+A VNFPackage includes the VNFD, the image, scripts and a Metadata file structured as shown in the next part.</p>
+<h1 id="package-structure">Package structure</h1>
+<p>The VNFPackage consists of the following files/folder:</p>
+<ul>
+<li>Metadata.yaml</li>
+<li>vnfd.json</li>
+<li>scripts/<ul>
+<li>1_script.sh</li>
+<li>2_script.sh</li>
+</ul>
+</li>
+<li>image.img</li>
+</ul>
+<h2 id="metadatayaml">Metadata.yaml</h2>
+<p>The Metadata.yaml defines essential properties for the VNF. This file bases on the YAML syntax where information are stored in simple \&lt;key> : \&lt;value> associations.</p>
+<p>The example of a Metadata.yaml file below shows a basic definition of a VNFPackage.</p>
+<pre><code class="yaml">name: vnfPackage_name
+scripts-link: scripts_link
+image-link: image_link
+image:
+    name: image_name
+    diskFormat: disk_format
+    containerFormat: container_format
+    minCPU: min_cpu
+    minDisk: min_disk
+    minRam: min_ram
+    isPublic: is_public
+</code></pre>
+
+<p>Each property is explained more in detail now. Please consider also the notes since some properties are optional (or even not implemented) and if they are defined, they may have more priority than other and overrides them therefore.</p>
+<ul>
+<li><strong><em>name</em></strong>: The name defines the name of the VNFPackage itself used to store it on the database.</li>
+<li><strong><em>scripts-link</em></strong>: This link points to a public git repository where scripts are stored that are needed to be executed for managing the lifecycle of the exposed VNF.<ul>
+<li><strong>Note</strong> Either you can define the scripts-link or put the scripts into the folder scripts/.
+    The scripts-link has a higher priority than the scripts located in the folder scripts/.
+    So if you set the scripts-link, the scripts in folder scripts/ are ignored completely.</li>
+<li><strong>Note</strong> The scripts-link is processed by the Element Management System (EMS) in the meaning of fetching the files from that link.
+    So you need to take care about ensuring that the URL defined is available.</li>
+<li><strong>Note</strong> Scripts are executed when a specific Event is fired and this Event references to specific scripts.</li>
+</ul>
+</li>
+<li><strong><em>image-link</em></strong>: This link points to an image available over this URL used to upload the image to the cloud environment.<ul>
+<li><strong>Note</strong> Either you have to define the image-link or put the image directly into the VNFPackage.
+    Otherwise an NotFoundException will be thrown and the VNFPackage will not onboard.
+    The image-link has a higher priority than the image stored in the VNFPackage directly.</li>
+<li><strong>Note</strong> The image-link is a future feature and not implemented in the current version.
+    Therefore, you need to put the image into the VNFPackage directly and remove this line or let the value empty.</li>
+</ul>
+</li>
+<li><strong><em>image</em></strong>: All the properties explained below are required to upload the image to the cloud environment properly.
+    This image will be uploaded to each cloud environment automatically while onboarding the VNFPackage.<ul>
+<li><strong><em>name</em></strong>: This defines the name for the image to upload either located directly in the VNFPackage or available via the URL defined in image-link.</li>
+<li><strong><em>diskFormat</em></strong>: The diskFormat defines the format in which disk type the image is stored.</li>
+<li><strong><em>containerFormat</em></strong>: The containerFormat defines the format in which container type the image is stored .</li>
+<li><strong><em>minCPU</em></strong>: The minCPU defines the minimum amount of CPU cores for using this image properly.</li>
+<li><strong><em>minDisk</em></strong>: The minDisk defines the minimum amount of disk space for using this image properly.</li>
+<li><strong><em>minRam</em></strong>: The minRam defines the minimum amount of RAM for using this image properly.</li>
+<li><strong><em>isPublic</em></strong>: The isPublic defines whether the image is available public or not.</li>
+</ul>
+</li>
+</ul>
+<h2 id="vnfd62json">\&lt;VNFD>.json</h2>
+<p>The \&lt;vnfd>.json contains the VirtualNetworkFunctionDescriptor (VNFD) onboarded on the Orchestrator.
+This VNFD can later be referenced in a NSD by its id to make use of it.
+A more detailed explanation of the VNFD can be found here [].</p>
+<p><strong>Note</strong> The name of the file is not important but the suffix .json since the VNFPackageManagement is looking for this kind file format.</p>
+<h2 id="scripts">scripts</h2>
+<p>The scripts folder contains all the scripts required for starting, configuring or whatever you want to do on the running instance.
+[EXECUTION ORDER]</p>
+<p><strong>Note</strong> These scripts in the folder <strong><em>scripts</em></strong> are fetched only if the <strong><em>scripts-link</em></strong> is not defined in the <strong><em>Metadata.yaml</em></strong>.
+    This means that the scripts in that folder have less priority than the scripts located under <strong><em>scripts-link</em></strong>.</p>
+<p><strong>Note</strong> Scripts are executed when a specific Event is fired and this Event references to specific scripts.</p>
+<h2 id="image62img">\&lt;image>.img</h2>
+<p>This image is used to upload it to all the cloud environments which are addressed inside the VNFD with that image.
+It doesn't matter whether an image already exists on the considered cloud environment or not.</p>
+<p><strong>Note</strong> This image has lower priority than the <strong><em>image-links</em></strong> defined in <strong><em>Metadata.yaml</em></strong>.
+    This mean that the image will be ignored if the <strong><em>image-links</em></strong> is defined.</p>
+<p><strong>Note</strong> The name of the image doesn't matter but the suffix .img since the VNFPackageManagement is looking for a file with this suffix.
+    However, the name and all the properties for stroing it on the cloud environment are defined in <strong><em>Metadata.yaml</em></strong> under the key <strong><em>image</em></strong>.</p>
+<h1 id="tutorial">Tutorial</h1>
+<p>This section explains how to create, upload and make use of VNFPackages.
+The chosen scenario is a NetworkService for testing the network connectivity by using iperf.
+Therefore, we need a server and a client installing the iperf server/client and configuring them for communication between.</p>
+<h2 id="creation-of-vnfpackages">Creation of VNFPackages</h2>
+<p>For doing so, we need to create two VNFPackages and reference them in the NSD.
+So we need one VNFPackage for the iperf server (called iperf-server) and one for the iperf client (called iperf-client).
+First we will start with the creation of the iperf-server VNFPackage and then we will create the iperf-client VNFPackage.</p>
+<p>First of all we should create a directory for each VNFPackage where we put all the files related to the VNFPackage because in the end we need to pack them into an tar archive for onboarding it on the NFVO.</p>
+<h3 id="vnfpackage-iperf-server">VNFPackage [iperf-server]</h3>
+<p>This iperf-server VNFPackage have to install the iperf server and needs to provide its ip to the iperf client.</p>
+<h4 id="metadata-iperf-server">Metadata [iperf-server]</h4>
+<p>In the Metadata we define the name of the VNFPackage, the scripts location and also the properties for the image to upload.
+Since the image-link is not implemented in the current release we will put the image directly into the VNFPackage.
+Finally, it looks as shown below.</p>
+<pre><code class="yaml">name: iperf-server
+scripts-link: https://gitlab.fokus.fraunhofer.de/openbaton/scripts-test-public.git
+image-link:
+image:
+    name: iperf_server_image
+    diskFormat: QCOW2
+    containerFormat: bare
+    minCPU: 2
+    minDisk: 5
+    minRam: 2048
+    isPublic: false
+</code></pre>
+
+<h4 id="vnfd-iperf-server">VNFD [iperf-server]</h4>
+<p>This is how the VNFD looks like for the iperf-server VNFPackage.
+Important to notice here is the vm_image that points to the image we have defined in the Metadata.yaml</p>
+<pre><code class="json">{
+    &quot;vendor&quot;:&quot;fokus&quot;,
+    &quot;version&quot;:&quot;0.2&quot;,
+    &quot;name&quot;:&quot;iperf-server&quot;,
+    &quot;type&quot;:&quot;server&quot;,
+    &quot;endpoint&quot;:&quot;generic&quot;,
+    &quot;vdu&quot;:[
+        {
+            &quot;vm_image&quot;:[
+                &quot;iperf_server_image&quot;
+            ],
+            &quot;vimInstanceName&quot;:&quot;vim-instance&quot;,
+            &quot;scale_in_out&quot;:2,
+            &quot;vnfc&quot;:[
+                {
+                    &quot;exposed&quot;:true,
+                    &quot;connection_point&quot;:[
+                        {
+                            &quot;virtual_link_reference&quot;:&quot;private&quot;
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    &quot;virtual_link&quot;:[
+        {
+            &quot;name&quot;:&quot;private&quot;
+        }
+    ],
+    &quot;lifecycle_event&quot;:[
+        {
+            &quot;event&quot;:&quot;INSTANTIATE&quot;,
+            &quot;lifecycle_events&quot;:[
+                &quot;install.sh&quot;,
+                &quot;install-srv.sh&quot;
+            ]
+        }
+    ],
+    &quot;deployment_flavour&quot;:[
+        {
+            &quot;df_constraint&quot;:[
+                &quot;constraint1&quot;,
+                &quot;constraint2&quot;
+            ],
+            &quot;costituent_vdu&quot;:[
+            ],
+            &quot;flavour_key&quot;:&quot;m1.small&quot;
+        }
+    ]
+}
+</code></pre>
+
+<h4 id="image">Image</h4>
+<p>The image we have to choose must be a debian 64bit image (e.g. ubuntu amd64) for satisfying the EMS and scripts which are designed for that kind of image.
+We have chosen this one <a href="http://uec-images.ubuntu.com/releases/14.04/release/ubuntu-14.04-server-cloudimg-amd64.tar.gz">ubuntu-14.04.3-server-amd64.iso</a>.</p>
+<h3 id="vnfpackage-iperf-client">VNFPackage [iperf-client]</h3>
+<p>This iperf-server VNFPackage have to install the iperf client and needs to configure it to set the iperf servers' IP.</p>
+<h4 id="metadata-iperf-client">Metadata [iperf-client]</h4>
+<p>In the Metadata we define the name of the VNFPackage, the scripts location and also the properties for the image to upload.
+Since the image-link is not implemented in the current release we will put the image directly into the VNFPackage.
+Finally, it looks as shown below.</p>
+<pre><code class="yaml">name: iperf-client
+scripts-link: https://gitlab.fokus.fraunhofer.de/openbaton/scripts-test-public.git
+image-link:
+image:
+    name: iperf_client_image
+    diskFormat: QCOW2
+    containerFormat: bare
+    minCPU: 2
+    minDisk: 5
+    minRam: 2048
+    isPublic: false
+</code></pre>
+
+<h4 id="vnfd-iperf-client">VNFD [iperf-client]</h4>
+<p>This is how the VNFD looks like for the iperf-client VNFPackage.
+Important to notice here is the vm_image that points to the image we have defined in the Metadata.yaml</p>
+<pre><code class="json">{
+    &quot;vendor&quot;:&quot;fokus&quot;,
+    &quot;version&quot;:&quot;0.1&quot;,
+    &quot;name&quot;:&quot;iperf-client&quot;,
+    &quot;type&quot;:&quot;client&quot;,
+    &quot;endpoint&quot;:&quot;generic&quot;,
+    &quot;vdu&quot;:[
+        {
+            &quot;vm_image&quot;:[
+                &quot;iperf_client_image&quot;
+            ],
+            &quot;virtual_memory_resource_element&quot;:&quot;1024&quot;,
+            &quot;virtual_network_bandwidth_resource&quot;:&quot;1000000&quot;,
+            &quot;vimInstanceName&quot;:&quot;vim-instance&quot;,
+            &quot;vdu_constraint&quot;:&quot;&quot;,
+            &quot;high_availability&quot;:&quot;ACTIVE_PASSIVE&quot;,
+            &quot;scale_in_out&quot;:2,
+            &quot;vnfc&quot;:[
+                {
+                    &quot;connection_point&quot;:[
+                        {
+                            &quot;virtual_link_reference&quot;:&quot;private&quot;
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    &quot;virtual_link&quot;:[
+        {
+            &quot;name&quot;:&quot;private&quot;
+        }
+    ],
+    &quot;lifecycle_event&quot;:[
+        {
+            &quot;event&quot;:&quot;INSTANTIATE&quot;,
+            &quot;lifecycle_events&quot;:[
+                &quot;install.sh&quot;
+            ]
+        },
+        {
+            &quot;event&quot;:&quot;CONFIGURE&quot;,
+            &quot;lifecycle_events&quot;:[
+                &quot;server_configure.sh&quot;
+            ]
+        }
+    ],
+    &quot;deployment_flavour&quot;:[
+        {
+            &quot;df_constraint&quot;:[
+                &quot;constraint1&quot;,
+                &quot;constraint2&quot;
+            ],
+            &quot;costituent_vdu&quot;:[
+            ],
+            &quot;flavour_key&quot;:&quot;m1.small&quot;
+        }
+    ]
+}
+</code></pre>
+
+<h4 id="image_1">Image</h4>
+<p>The image we have to choose must be a debian 64bit image (e.g. ubuntu amd64) for satisfying the EMS and scripts which are designed for that kind of architecture.
+We have chosen this one <a href="http://uec-images.ubuntu.com/releases/14.04/release/ubuntu-14.04-server-cloudimg-amd64.tar.gz">ubuntu-14.04.3-server-amd64.iso</a>.</p>
+<h2 id="onboarding-vnfpackages">Onboarding VNFPackages</h2>
+<p>Once we have finalized the creation of VNFPackages and packed them into a tar we can onboard them on the NFVO as shown in the following:</p>
+<pre><code class="bash">$ curl -X POST -v -F file=@vnf-package.tar &quot;http://localhost:8080/api/v1/vnf-packages&quot;
+</code></pre>
+
+<p>This must be done for both VNFPackages expecting that the NFVO is running locally and the tar archive is called vnf-package.tar.
+Otherwise you need to adapt the path to the package and also the URL where the NFVO is located.
+Now where we onboarded the VNFPackages they are available on the NFVO and we can make use of it by referencing them in the NSD by their ids'.</p>
+<p>To get the ids of the newly created VNFDs you need to fetch the VNFDs by invoking the following command:</p>
+<pre><code class="bash">$ curl -X &quot;GET http://localhost:8080/api/v1/vnf-descriptors&quot;
+</code></pre>
+
+<p>This request will return a list of already existing VNFDs.
+Just looking for the VNFDs we created before and use the id to reference them in the NSD.
+The following list of VNFDs is an example of this request.
+To make it better readable it is shown only the interesting parts.</p>
+<pre><code class="json">[
+  {
+    &quot;id&quot;: &quot;29d918b9-6245-4dc4-abc6-b7dd6e84f2c1&quot;,
+    &quot;name&quot;: &quot;iperf-server&quot;,
+    .
+    .
+    .
+  },
+  {
+    &quot;id&quot;: &quot;87820607-4048-4fad-b02b-dbcab8bb5c1c&quot;,
+    &quot;name&quot;: &quot;iperf-client&quot;,
+    .
+    .
+    .
+  }
+]
+</code></pre>
+
+<h2 id="nsd-iperf">NSD [iperf]</h2>
+<p>In this section we will create s NSD and referencing the previously created VNFPackages by their ids'.
+For doing that we just need to define the <strong>id</strong> for each VNFPackges' VNFD in the list of VNFDs.
+To provide also the iperf-servers' IP to the iperf-client we need to define dependencies you can found under the key <strong>vnf_dependency</strong> setting the source to <strong>iperf-server</strong> and the target to <strong>iperf-client</strong> by providing the parameter <strong>ip1</strong>.</p>
+<p><strong>Note</strong> When creating the NSD the VNFD is fetched by the id defined. Other properties we would set in the VNFD in this NSD will be ignored.</p>
+<pre><code class="json">{
+    &quot;name&quot;:&quot;iperf&quot;,
+    &quot;vendor&quot;:&quot;fokus&quot;,
+    &quot;version&quot;:&quot;0.1-ALPHA&quot;,
+    &quot;vnfd&quot;:[
+        {
+            &quot;id&quot;:&quot;29d918b9-6245-4dc4-abc6-b7dd6e84f2c1&quot;
+        },
+        {
+            &quot;id&quot;:&quot;87820607-4048-4fad-b02b-dbcab8bb5c1c&quot;
+        }
+    ],
+    &quot;vld&quot;:[
+        {
+            &quot;name&quot;:&quot;private&quot;
+        }
+    ],
+    &quot;vnf_dependency&quot;:[
+        {
+            &quot;source&quot; : {
+                &quot;name&quot;: &quot;iperf-server&quot;
+            },
+            &quot;target&quot;:{
+                &quot;name&quot;: &quot;iperf-client&quot;
+            },
+            &quot;parameters&quot;:[
+                &quot;private1&quot;
+            ]
+        }
+    ]
+}
+</code></pre>
+
+<p>Finally you can onboard this NSD and create a NSR that bases on both VNFPackages created before.</p>
+<h3 id="onboard-nsd">Onboard NSD</h3>
+<p>The following command will onboard the NSD on the NFVO:</p>
+<pre><code class="bash">$ curl -X POST -v -F file=@vnf-package.tar &quot;http://localhost:8080/api/v1/ns-descriptors&quot;
+</code></pre>
+
+<p>This will return the NSD with the id we need to create NSR.
+Afterwards, we can deploy the NSD.</p>
+<h3 id="create-nsr-deployment">Create NSR (Deployment)</h3>
+<p>To deploy the NSD we create a NSR with the following command:</p>
+<pre><code class="bash">$ curl -X POST -v -F file=@vnf-package.tar &quot;http://localhost:8080/api/v1/ns-records/&lt;NSD_ID&gt;&quot;
+</code></pre>
+
+<p>Installation and configuration is done automatically and provides you with a configured iperf server/client infrastructure.</p>
+                        
+                      </div>
+                    </div>
+                    <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../nfvo-how-to-use-gui/" class="btn btn-neutral float-right" title="Use via the Dashboard"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../use/" class="btn btn-neutral" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          	  
+                  </div>
+                </div>
+
+        </section>
+    </div>
+  </div>
+</div>
+
+
+
+</body>
+</html>
+

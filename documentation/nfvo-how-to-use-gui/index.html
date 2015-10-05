@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Use via the Dashboard - OpenBaton Documentation</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Use via the Dashboard";
+    var mkdocs_page_input_path = "nfvo-how-to-use-gui.md";
+    var mkdocs_page_url = "/nfvo-how-to-use-gui/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body role="document">
+
+<div class="navcontainer" style="margin:0px; background:#000;">
+    <div class="navholder">
+      <nav>
+        <a href="../../index.html" class="logo"></a>
+        <a href="#" id="menu-icon"></a>
+        <ul class="navigation">
+          
+                  <li><a href="../../index.html#about">About</a></li>
+                <li><a href="../../cases.html">Use Cases</a></li>
+                <li><a href="../../features.html">Features</a></li>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="../../index.html#contact">Contact</a></li>
+                <li><a href="https://github.com/openbaton">GitHub</a></li>
+          </ul>
+      </nav>
+     </div>
+</div>
+<div  class="container">
+  <div class="holder"> 
+        <div class="wy-grid-for-nav">
+
+          
+          <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+            <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+              <ul class="current">
+                
+                  <li>
+    <ul class="subnav">
+    <li><span>Get Started</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="..">Get Started</a>
+        
+    </li>
+
+        
+    </ul>
+</li>
+                
+                  <li>
+    <ul class="subnav">
+    <li><span>Installation</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../install/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation/">Install NFVO</a>
+        
+    </li>
+
+        
+    </ul>
+</li>
+                
+                  <li>
+    <ul class="subnav">
+    <li><span>Use it</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../use/">Introduction</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfpackage/">Create your own VNF Package</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Use via the Dashboard</a>
+        
+         
+        
+    </li>
+
+        
+    </ul>
+</li>
+                
+                  <li>
+    <ul class="subnav">
+    <li><span>Extend it</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../extend/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-architecture/">NFVO Architecture</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-generic/">Generic VNFM</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-how-to-write/">Write your own VNFM</a>
+        
+    </li>
+
+        
+    </ul>
+</li>
+                
+                  <li>
+    <ul class="subnav">
+    <li><span>FAQ</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../FAQ/">FAQ</a>
+        
+    </li>
+
+        
+    </ul>
+</li>
+                
+              </ul>
+            </div>
+            &nbsp;
+          </nav>
+        </div>
+    <div class="content_container">
+        <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+         
+
+          
+                <div class="wy-nav-content">
+                  <div class="rst-content">
+                   
+                    <div role="main">
+                      <div class="section">
+                        
+                          <h1 id="openbaton-dashboard">OpenBaton Dashboard</h1>
+<p>The Dashboard of OpenBaton helps you for the the management of lifecycle of different objects like 
+VimInstaces, Network Service Descriptors/Records and Virtual Network Function Descriptos/Records in the OpenBaton environment.</p>
+<h2 id="overview">Overview</h2>
+<p>The index page is an overview of the state of NFVO </p>
+<ol>
+<li>Number of Network Service Records</li>
+<li>Number of Virtual Network Functions</li>
+<li>Number of Virtual Deployment Units</li>
+<li>Number of Network Service Descriptors</li>
+</ol>
+<p><img alt="Overview" src="../images/overview.png" /></p>
+<h2 id="manage-pops">Manage PoPs</h2>
+<p>In this page you can see the list of Vim Instances registered</p>
+<p><img alt="List of Vim Instances" src="../images/vimpage.png" /></p>
+<p>For registering a new Vim Instance you should click the button on the top-right side <strong>Register Vim</strong> of this page and choose your json to register a Vim Instance</p>
+<p><img alt="Register a new Vim Instances" src="../images/registeraNewVim.png" /></p>
+<p>If you want to delete one Vim Instance you can click the button <strong>Action</strong> and than <strong>Delete</strong> in the menu</p>
+<h2 id="network-service-descriptors">Network Service Descriptors</h2>
+<p>In the menu on the left side under the voice Catalogue you can find <strong>NS Decriptors</strong>
+In this page you can see the list of NS Descriptors stored into OpenBaton</p>
+<p><img alt="List of NS Descriptors" src="../images/NSDlist.png" /></p>
+<p>For storing a NS Descriptor you have 2 options:</p>
+<ol>
+<li>Create NSD Form</li>
+<li>Create NSD File</li>
+</ol>
+<p>Create a NSD using a File</p>
+<p><img alt="NSD create by File" src="../images/NSDcreateFile.png" /></p>
+<p>Create a NSD using Form</p>
+<p><img alt="NSD create by Form" src="../images/NSDcreateForm.png" /></p>
+<h3 id="network-service-descriptor-information">Network Service Descriptor Information</h3>
+<p>In the list of Network Service Descriptors if you click on the id in the table you can see the information
+ into Network Service Descriptor selected by id and will be shown this page</p>
+<p><img alt="Network Service Descriptor Information" src="../images/VNFDescriptorInformation.png" /></p>
+<p>In this page you can see the JSON file of the NSD just clicking on the link <strong>Show JSON</strong></p>
+<p><img alt="JSON of Network Service Descriptor" src="../images/JSONofNSR.png" /></p>
+<p>In the page <strong>Network Service Descriptor Information</strong> you can see the <strong>Graphical view</strong> of Network Service Descriptor 
+just clicking the link <em>Show Graph</em></p>
+<p><img alt="NSD Graph" src="../images/NSDgraph.png" /></p>
+<p>In the list of VNFD if you click the <em>Action</em> button you can delete the VNFD from NSD
+and the information about the <em>Dependencies</em> into Network Service Descriptor</p>
+<p><img alt="Network Service Descriptor Dependencies Information" src="../images/VNFDlistintoNSD1.png" /></p>
+<p>In the list of VNFDependencies if you click the <em>Action</em> button you can delete the VNFDependency from NSD</p>
+<h4 id="virtual-network-function-descriptor-information">Virtual Network Function Descriptor Information</h4>
+<p>In the list of Virtual Network Function Descriptor into NSD if you click on the id of Virtual Network Function Descriptor will be shown this page</p>
+<p><img alt="VNF Descriptor Information" src="../images/VNFDescriptorInformation.png" /></p>
+<p>In the bottom side of the page you can see the Virtual Deployment Unit (VDU) tab and if you click the <strong>id</strong> of the 
+VDU you can see the details of VDU like in this page</p>
+<p><img alt="VDU Information" src="../images/VDUInformation.png" /></p>
+<h2 id="network-service-records">Network Service Records</h2>
+<p>In the menu of the left side if you click on the <strong>Orchestrator NS</strong> and than <strong>NS Records</strong> you will see the list of <em>Network Service Records</em>
+  Like in this screenshot </p>
+<p><img alt="Network Service Records List " src="../images/NetworkServiceRecordsList.png" /></p>
+<p>In this page you can see the details of a Network Service Record just click the id and will be show this page</p>
+<p><img alt="Network Service Records Info " src="../images/NSRinfo.png" /></p>
+<p>In this page you can see the JSON file of the NSR just clicking on the link <strong>Show JSON</strong> and also the <strong>Graphical view</strong> 
+of Network Service Record just clicking the link <strong>Show Graph</strong>
+In the table of VNF Records you can delete one VNFR just clicking <strong>Delete</strong> in the menu <strong>Action</strong>
+For seeing the details of VNFR just click on the <strong>id</strong> of a VNFR and will be shown this page</p>
+<p><img alt="VNF Record Information" src="../images/VNFRecordInformation.png" /></p>
+                        
+                      </div>
+                    </div>
+                    <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../extend/" class="btn btn-neutral float-right" title="Overview"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../vnfpackage/" class="btn btn-neutral" title="Create your own VNF Package"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          	  
+                  </div>
+                </div>
+
+        </section>
+    </div>
+  </div>
+</div>
+
+
+
+</body>
+</html>
+
