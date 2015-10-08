@@ -360,6 +360,7 @@ ul, ol { padding:0; margin: 0 }
 .logo{
 	float: left;
   padding-top: 4px;
+  margin-left: 10px;
   background: url(images/openbaton.png) center no-repeat;
   width: 120px;
   height:30px;
