@@ -28,26 +28,33 @@ a:hover#menu-icon {
 
 
 /*media query */
-@media only screen and (max-width : 1600px){
+@media only screen and (max-width : 1900px){
 .txtleft{
   margin-left: 0px !important;
 }
 
-.featuretxt{
-  width: 80% !important;
+.navholder{
+  width: 100% !important;
 }
 
-.featuretxt2{
-  width: 80% !important;
+
+.holder{
+  width: 1024px !important;
 }
-.
 }
-@media only screen and (max-width : 1100px){
+
+
+@media only screen and (max-width : 480px){
+  
 #menu-icon {
-
+    float: right;
     display:inline-block;
 
   }
+  .navholder{
+  width: 100% !important;
+}
+
 
   nav ul, nav:active ul { 
     list-style: none;
@@ -57,7 +64,7 @@ a:hover#menu-icon {
     background: #000;
     right: 0px;
     top: 50px;
-    width: 50%;
+    width: 100%;
   }
 
   nav{
@@ -79,10 +86,7 @@ a:hover#menu-icon {
     display: block;
 
   }
-  .holder{
-    width: 100% !important;
-
-  }
+ 
 
 .txtleft, .textright{
   margin: 0px !important;
@@ -107,10 +111,7 @@ a:hover#menu-icon {
 .featuretxt2{
     width: 90% !important;
   }
-  .navholder{
-    width: 100% !important;
-    text-align: right !important;
-  }
+
 
 .flex-item h4 {
   font-size: 25px !important;
@@ -121,9 +122,16 @@ a:hover#menu-icon {
   width: 150px !important;
   font-size: 25px !important;
   }
+
+.circle{
+width:300px !important;
+margin: 0 auto !important;
+
+
+  }
 .circle li{
   float: none !important;
-  width: 80% !important;
+  padding-left: 0px !important;
   
   }
 .circle2{
@@ -147,8 +155,204 @@ a:hover#menu-icon {
 }
 }
 
-/*media query */
+@media only screen and (max-width : 800px){
+  
+#menu-icon {
+    float: right;
+    display:inline-block;
 
+  }
+  .navholder{
+  width: 100% !important;
+}
+.holder{
+  width:90% !important;
+}
+
+  nav ul, nav:active ul { 
+    list-style: none;
+    display: none;
+    position: absolute;
+    padding: 20px;
+    background: #000;
+    right: 0px;
+    top: 50px;
+    width: 100%;
+  }
+
+  nav{
+    width:100%;
+  }
+
+  nav li {
+
+    text-align: left !important;
+    width: 100%;
+    margin: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+  }
+
+  nav:hover ul {
+
+    display: block;
+
+  }
+ 
+
+.txtleft, .textright{
+  margin: 0px !important;
+}
+.featuretxt{
+    width: 90% !important;
+  }
+.txtleft img, .txtright img{
+  width: 70% !important;
+  height: auto !important;
+  text-align: left !important;
+  float: left;
+}
+.txtright img{
+  width: 60% !important;
+  height: auto !important;
+  text-align: left !important;
+  float: right;
+   margin-right:0px !important;
+}
+
+.featuretxt2{
+    width: 90% !important;
+  }
+
+
+.flex-item h4 {
+  font-size: 25px !important;
+ 
+  }
+
+.btn{
+  width: 150px !important;
+  font-size: 25px !important;
+  }
+
+.circle{
+width:300px !important;
+margin: 0 auto !important;
+
+
+  }
+.circle li{
+  float: none !important;
+  padding-left: 0px !important;
+  
+  }
+.circle2{
+  width: 90% !important;
+  -webkit-column-count: 1 !important; /* Chrome, Safari, Opera */
+  -moz-column-count: 1 !important; /* Firefox */
+  column-count: 1 !important;
+  margin: 0 auto;
+  line-height: 1.5em;
+  font-size:1em;
+  -webkit-column-gap: 0px !important; /* Chrome, Safari, Opera */
+  -moz-column-gap: 0px !important; /* Firefox */
+  column-gap: 0px !important;
+
+  }
+.form-style-8 {
+    font-family: 'Open Sans Condensed', arial, sans;
+    width: 90% !important;
+    margin: 0 auto;
+    padding: 0px !important;
+}
+.holder{
+  width:96% !important;
+}
+}
+
+@media only screen and (max-width : 1025px){
+ 
+.flex-item{
+  height: 450px !important;
+} 
+
+  .navholder{
+  width: 100% !important;
+}
+
+
+  .btn{
+  width: 200px !important;
+  font-size: 30px !important;
+  }
+
+.holder{
+  width:80% !important;
+}
+
+.txtleft, .textright{
+  margin: 0px auto !important;
+  float: none !important;
+  width:500px !important;
+}
+.featuretxt{
+    width: 90% !important;
+  }
+.txtleft img, .txtright img{
+  height: auto !important;
+  text-align: left !important;
+  margin: 0 auto;
+  
+}
+.txtright img{
+  height: auto !important;
+  text-align: left !important;
+  float: right;
+   margin-right:0px !important;
+}
+
+.featuretxt2{
+    width: 90% !important;
+  }
+
+.circle{
+width:300px !important;
+margin: 0 auto !important;
+
+
+  }
+.circle li{
+  float: none !important;
+  padding-left: 0px !important;
+  
+  }
+.circle2{
+  width: 90% !important;
+  -webkit-column-count: 1 !important; /* Chrome, Safari, Opera */
+  -moz-column-count: 1 !important; /* Firefox */
+  column-count: 1 !important;
+  margin: 0 auto;
+  line-height: 1.5em;
+  font-size:1em;
+  -webkit-column-gap: 0px !important; /* Chrome, Safari, Opera */
+  -moz-column-gap: 0px !important; /* Firefox */
+  column-gap: 0px !important;
+
+  }
+.form-style-8 {
+    font-family: 'Open Sans Condensed', arial, sans;
+    width: 90% !important;
+    margin: 0 auto;
+    padding: 0px !important;
+}
+}
+
+
+
+
+/*media query */
+ul, ol { padding:0; margin: 0 }
 
 .logo{
 	float: left;
@@ -167,7 +371,6 @@ a:hover#menu-icon {
 }
 
 .flex-item h4{
-font-size: 0.8em;
 line-height: 1.4em;
 margin-top: 30px;
 font-weight: normal;
@@ -231,10 +434,9 @@ padding-top: 10px;
 
 
 .flex-item { 
-  width: 100%;
+  width: 94%;
   color: white;
   font-weight: bold;
-  font-size: 3em;
   margin-top: 20px;
   text-align: center;
   font-variant: small-caps;
@@ -262,7 +464,7 @@ img{
 }
 
 .btn{
-	font-size: 1.1em;
+
  	 background-color:#000;
   -moz-border-radius: 40px; 
 	-webkit-border-radius: 40px; 
@@ -273,7 +475,27 @@ img{
 	text-decoration: none;
 
 }
-.btn a:link, a:visited{color:#fff;}
+
+.btn2{
+
+   background-color:#000;
+  -moz-border-radius: 40px; 
+  -webkit-border-radius: 40px; 
+  border-radius: 40px;
+  padding: 0px 40px 10px 40px;
+  border:2px;
+  font-weight: 200;
+  text-decoration: none;
+  font-size: 3em;
+  margin-top: 20px;
+  text-align: center;
+  font-variant: small-caps;
+
+}
+
+
+.btn a:link, a:visited{color:#fff;
+}
 
 /*END PIC SECTION*/
 .container4 {
@@ -294,13 +516,13 @@ text-align: center;
   display: block;
   width: 100%;
   margin: 0 auto;font-size;
-  padding:1em 4em 3em 0em;
+  padding:0em 0em 0em 0em;
   overflow:auto;
 
 
 }
 .container2 {
-  padding:1em 4em 3em 0em;
+  padding:0em 0em 0em 0em;
   width: 100%;
   display: block;
   background: #fafafa;
@@ -308,16 +530,25 @@ text-align: center;
 }
 
 .circle {
-  width: 100%;
+  width: 1020px;
+  margin: 0 auto;
   list-style: none;
 }
 
 .circle li{
-  width: 30%;
-  padding: 1%;
+  width: 300px;
+  padding-right: 60px;
   text-align: center;
   float:left;
 }
+
+.circle li:last-child{
+  width: 300px;
+  padding-right: 0px;
+  text-align: center;
+  float:left;
+}
+
 h4{
 	font-variant: small-caps;
 	font-size: 2.2em;

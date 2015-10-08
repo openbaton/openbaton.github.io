@@ -15,7 +15,7 @@ body {
 }
 
 
-@media only screen and (max-width : 1200px){
+@media only screen and (max-width : 800px){
 
 .content_container{
   width:70%;
@@ -23,9 +23,6 @@ body {
 .wy-grid-for-nav{
   position: relative !important;
 }
-}
-
-@media only screen and (max-width : 1200px){
 
 .wy-nav-side {
     height: 100%;
@@ -104,6 +101,20 @@ body {
     padding: 0px !important;
   }
 }
+
+@media only screen and (max-width : 1025px){
+
+  .navholder{
+  width: 100% !important;
+}
+}
+
+@media only screen and (max-width: 1900px){
+.navholder {
+    width: 100% !important;
+}
+}
+
 
 h3, h4, h5, h6 {
     color: #2980b9;
