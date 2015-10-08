@@ -118,10 +118,13 @@ a:hover#menu-icon {
  
   }
 
-.btn{
+.btn, .btn2{
   width: 150px !important;
   font-size: 25px !important;
+  padding: 3px 40px 10px 40px !important;
   }
+
+
 
 .circle{
 width:300px !important;
@@ -284,7 +287,7 @@ margin: 0 auto !important;
 
   .btn{
   width: 200px !important;
-  font-size: 30px !important;
+  font-size: 25px !important;
   }
 
 .holder{
@@ -435,9 +438,9 @@ padding-top: 10px;
 
 .flex-item { 
   width: 94%;
+  margin: 0 auto;
   color: white;
   font-weight: bold;
-  margin-top: 20px;
   text-align: center;
   font-variant: small-caps;
 
@@ -473,7 +476,7 @@ img{
 	border:2px;
 	font-weight: 200;
 	text-decoration: none;
-
+  font-size: 3em;
 }
 
 .btn2{
@@ -486,15 +489,17 @@ img{
   border:2px;
   font-weight: 200;
   text-decoration: none;
-  font-size: 3em;
   margin-top: 20px;
   text-align: center;
   font-variant: small-caps;
+  font-size: 3em;
 
 }
 
 
-.btn a:link, a:visited{color:#fff;
+.btn a:link, a:visited, {color:#fff;
+
+
 }
 
 /*END PIC SECTION*/
