@@ -22,9 +22,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Use via the Dashboard";
-    var mkdocs_page_input_path = "nfvo-how-to-use-gui.md";
-    var mkdocs_page_url = "/nfvo-how-to-use-gui/";
+    var mkdocs_page_name = "Use via the SDK";
+    var mkdocs_page_input_path = "nfvo-sdk.md";
+    var mkdocs_page_url = "/nfvo-sdk/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -229,10 +229,8 @@ $( document).ready(function(){
         
              
 
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Use via the Dashboard</a>
-        
-         
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-how-to-use-gui/">Use via the Dashboard</a>
         
     </li>
 
@@ -240,8 +238,10 @@ $( document).ready(function(){
         
              
 
-    <li class="toctree-l1 ">
-        <a class="" href="../nfvo-sdk/">Use via the SDK</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Use via the SDK</a>
+        
+         
         
     </li>
 
@@ -347,95 +347,125 @@ $( document).ready(function(){
                     <div role="main">
                       <div class="section">
                         
-                          <h1 id="openbaton-dashboard">OpenBaton Dashboard</h1>
-<p>The Dashboard of OpenBaton helps you for the the management of lifecycle of different objects like 
-VimInstaces, Network Service Descriptors/Records and Virtual Network Function Descriptos/Records in the OpenBaton environment.</p>
-<h2 id="overview">Overview</h2>
-<p>The index page is an overview of the state of NFVO </p>
-<ol>
-<li>Number of Network Service Records</li>
-<li>Number of Virtual Network Functions</li>
-<li>Number of Virtual Deployment Units</li>
-<li>Number of Network Service Descriptors</li>
-</ol>
-<p><img alt="Overview" src="../images/overview.png" /></p>
-<h2 id="manage-pops">Manage PoPs</h2>
-<p>In this page you can see the list of Vim Instances registered</p>
-<p><img alt="List of Vim Instances" src="../images/vimpage.png" /></p>
-<p>For registering a new Vim Instance you should click the button on the top-right side <strong>Register Vim</strong> of this page and choose your json to register a Vim Instance</p>
-<p><img alt="Register a new Vim Instances" src="../images/registeraNewVim.png" /></p>
-<p>If you want to delete one Vim Instance you can click the button <strong>Action</strong> and than <strong>Delete</strong> in the menu</p>
-<h2 id="catalogue">Catalogue</h2>
-<p>In the menu on the left side under the voice <em>Catalogue</em> you can manage </p>
-<ol>
-<li>NS Descriptors</li>
-<li>VNF Packages</li>
-</ol>
-<h3 id="network-service-descriptors">Network Service Descriptors</h3>
-<p>In the menu on the left side under the template Catalogue you can find <strong>NS Decriptors</strong> button.
-On this page you can see the list of NS Descriptors stored into OpenBaton</p>
-<p><img alt="List of NS Descriptors" src="../images/NSDlist.png" /></p>
-<p>For storing a NS Descriptor you have 2 options:</p>
-<ol>
-<li>Create NSD Form</li>
-<li>Create NSD File</li>
-</ol>
-<p>Create a NSD using a File</p>
-<p><img alt="NSD create by File" src="../images/NSDcreateFile.png" /></p>
-<p>Create a NSD using Form</p>
-<p><img alt="NSD create by Form" src="../images/NSDcreateForm.png" /></p>
-<h3 id="network-service-descriptor-information">Network Service Descriptor Information</h3>
-<p>In the list of Network Service Descriptors if you click on the id in the table you can see the information
-stored in the Network Service Descriptor which you selected.</p>
-<p><img alt="Network Service Descriptor Information" src="../images/VNFDescriptorInformation.png" /></p>
-<p>You can observe the the NSD as is (in json format) by clicking on the <strong>Show JSON</strong></p>
-<p><img alt="JSON of Network Service Descriptor" src="../images/JSONofNSR.png" /></p>
-<p>On the page <strong>Network Service Descriptor Information</strong> you can also look at the <strong>Graphical view</strong> of the Network Service Descriptor 
-by clicking on <em>Show Graph</em></p>
-<p><img alt="NSD Graph" src="../images/NSDgraph.png" /></p>
-<p>In the list of VNFDs if you click the <em>Action</em> button you can delete the VNFD from NSD
-and the information about the <em>Dependencies</em> stored in the Network Service Descriptor</p>
-<p><img alt="Network Service Descriptor Dependencies Information" src="../images/VNFDlistintoNSD1.png" /></p>
-<p>In the list of VNFDependencies if you click the <em>Action</em> button you can delete the VNFDependency from NSD</p>
-<h4 id="virtual-network-function-descriptor-information">Virtual Network Function Descriptor Information</h4>
-<p>In the list of Virtual Network Function Descriptor in NSD template if you click on the id of Virtual Network Function Descriptor will be shown this page</p>
-<p><img alt="VNF Descriptor Information" src="../images/VNFDescriptorInformation.png" /></p>
-<p>In the bottom side of the page you can see the Virtual Deployment Unit (VDU) tab and if you click the <strong>id</strong> of the 
-VDU you can see the details of VDU</p>
-<p><img alt="VDU Information" src="../images/VDUInformation.png" /></p>
-<h3 id="vnf-packages">VNF Packages</h3>
-<p>In this page you can upload the <strong>VNF Package</strong>. For more information about the VNF Package please read the <a href="../vnfpackage/">VNF Package documentation</a> 
-For uploading a <em>.tar</em> you can click on the button <strong>Upload VNFPackage</strong>
-Will be shown this window where you can Drag &amp; Drop the file or just click on white area and choose your file using your file manager</p>
-<p><img alt="Drag&amp;Drop modal" src="../images/drag_drop.png" /></p>
-<p>After you click the button <strong>Start</strong> will be sent to the <em>NFVO</em> once the process is finished you will see the package in the list</p>
-<p><img alt="Drag&amp;Drop modal start" src="../images/drag_drop1.png" /></p>
-<p><img alt="Drag&amp;Drop list" src="../images/drag_drop2.png" /></p>
-<h2 id="network-service-records">Network Service Records</h2>
-<p>In the menu of the left side if you click on the <strong>Orchestrator NS</strong> and than <strong>NS Records</strong> you will see the list of <em>Network Service Records</em>
-Like in this screenshot </p>
-<p><img alt="Network Service Records List " src="../images/NetworkServiceRecordsList.png" /></p>
-<p>On this page you can see the details of a Network Service Record by clicking on the id</p>
-<p><img alt="Network Service Records Info" src="../images/NSRinfo.png" /></p>
-<p>On this page you can look at the JSON file of the NSR by clicking on the link <strong>Show JSON</strong> and also the <strong>Graphical view</strong> 
-of Network Service Record by clicking the link <strong>Show Graph</strong>
-In the table of VNF Records you can delete one VNFR by clicking <strong>Delete</strong> in the menu <strong>Action</strong>
-To look at the details of VNFR just click on the <strong>id</strong> of a VNFR.</p>
-<p><img alt="VNF Record Information" src="../images/VNFRecordInformation.png" /></p>
-<p><!---
-Script for open external links in a new tab
+                          <h1 id="nfvo-sdk">NFVO SDK</h1>
+<h3 id="import-it">Import it</h3>
+<p>A SDK is available if you want to use the NFVO from a java application.</p>
+<p>The build.gradle file must contain:</p>
+<pre><code class="gradle">repositories {
+    mavenCentral()
+    maven {
+        url &quot;http://get.openbaton.org:8081/nexus/content/groups/public&quot;
+    }
+}
+
+dependencies {
+    compile 'org.openbaton:sdk:0.6'
+}
+</code></pre>
+
+<p>In this way you will have access to the NFVO SDK.</p>
+<h3 id="and-then">And then?</h3>
+<p>The UML diagram of the classes follows:</p>
+<p><img alt="SDK UML" src="../images/sdk-uml.png" /></p>
+<p>The NFVORequestor is the main and only class you need to use. From this class it is possible to retrieve all the Agents that are in charge of making calls to the NFVO. The NFVORequestor takes as constructor parameters:</p>
+<table>
+<thead>
+<tr>
+<th>Params</th>
+<th align="right">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>username</td>
+<td align="right">the username if the security is enabled in the NFVO</td>
+</tr>
+<tr>
+<td>password</td>
+<td align="right">the password if the security is enabled in the NFVO</td>
+</tr>
+<tr>
+<td>nfvo_ip</td>
+<td align="right">the ip of the NFVO</td>
+</tr>
+<tr>
+<td>nfvo_port</td>
+<td align="right">the port of the orchestrator</td>
+</tr>
+<tr>
+<td>version</td>
+<td align="right">the API version. Now only "1" is available</td>
+</tr>
+</tbody>
+</table>
+<p>Once you have the NFVORequestor object, you can get the Agents. Available agents are:</p>
+<ul>
+<li>ConfigurationRestRequest</li>
+<li>EventAgent</li>
+<li>ImageRestAgent</li>
+<li>NetworkServiceDescriptorRestAgent</li>
+<li>NetworkServiceRecordRestAgent</li>
+<li>VimInstanceRestAgent</li>
+<li>VirtualLinkRestAgent</li>
+<li>VNFFGRestAgent</li>
+</ul>
+<p>each of them exposes these methods:</p>
+<ul>
+<li>create</li>
+<li>findById</li>
+<li>findAll</li>
+<li>delete</li>
+<li>update</li>
+</ul>
+<p>plus some specific methods and they refer to the <em>catalogue</em> class contained in the name of the Agent. For instance, the NetworkServiceDescriptorRestAgent refers to NetworkServiceDescriptor class and, besides the above methods, exposes:</p>
+<ul>
+<li>getVirtualNetworkFunctionDescriptors</li>
+<li>getVirtualNetworkFunctionDescriptor</li>
+<li>deleteVirtualNetworkFunctionDescriptors</li>
+<li>createVNFD</li>
+<li>updateVNFD</li>
+<li>getVNFDependencies</li>
+<li>getVNFDependency</li>
+<li>deleteVNFDependency</li>
+<li>createVNFDependency</li>
+<li>updateVNFD</li>
+<li>getPhysicalNetworkFunctionDescriptors</li>
+<li>getPhysicalNetworkFunctionDescriptor</li>
+<li>deletePhysicalNetworkFunctionDescriptor</li>
+<li>createPhysicalNetworkFunctionDescriptor</li>
+<li>updatePNFD</li>
+<li>getSecurities</li>
+<li>deleteSecurity</li>
+<li>createSecurity</li>
+<li>updateSecurity</li>
+</ul>
+<p>The method names are explicit, they do what the name explains.</p>
+<h3 id="use-it">Use it</h3>
+<h6 id="create-viminstance">Create VimInstance</h6>
+<pre><code class="java">public class Main {
+
+    public static void main(String[] args) {
+        NFVORequestor nfvoRequestor = new NFVORequestor(&quot;username&quot;,&quot;password&quot;,&quot;nfvo_ip&quot;,&quot;nfvo_port&quot;,&quot;1&quot;);
+        VimInstanceRestAgent vimInstanceAgent = nfvoRequestor.getVimInstanceAgent();
+
+        VimInstance vimInstance = new VimInstance();
+
+        // fill the vimInstance object accordingly to your VIM chosen
+
+        try {
+            vimInstance = vimInstanceAgent.create(vimInstance);
+        } catch (SDKException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println(&quot;Created VimInstance with id: &quot; + vimInstance.getId());
+    }
+}
+</code></pre>
+
+<!---
+References
 -->
-<script type="text/javascript" charset="utf-8">
-      // Creating custom :external selector
-      $.expr[':'].external = function(obj){
-          return !obj.href.match(/^mailto\:/)
-                  &amp;&amp; (obj.hostname != location.hostname);
-      };
-      $(function(){
-        $('a:external').addClass('external');
-        $(".external").attr('target','_blank');
-      })
-</script></p>
                         
                       </div>
                     </div>
@@ -443,10 +473,10 @@ Script for open external links in a new tab
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../nfvo-sdk/" class="btn btn-neutral float-right" title="Use via the SDK"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../use-case-example/" class="btn btn-neutral float-right" title="A full example ;-)"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../ns-descriptor/" class="btn btn-neutral" title="Create the NSD"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../nfvo-how-to-use-gui/" class="btn btn-neutral" title="Use via the Dashboard"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

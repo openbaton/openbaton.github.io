@@ -22,9 +22,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Use via the Dashboard";
-    var mkdocs_page_input_path = "nfvo-how-to-use-gui.md";
-    var mkdocs_page_url = "/nfvo-how-to-use-gui/";
+    var mkdocs_page_name = "**HIDDEN**";
+    var mkdocs_page_input_path = "vnf-descriptor.md";
+    var mkdocs_page_url = "/vnf-descriptor/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -229,10 +229,8 @@ $( document).ready(function(){
         
              
 
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Use via the Dashboard</a>
-        
-         
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-how-to-use-gui/">Use via the Dashboard</a>
         
     </li>
 
@@ -347,95 +345,176 @@ $( document).ready(function(){
                     <div role="main">
                       <div class="section">
                         
-                          <h1 id="openbaton-dashboard">OpenBaton Dashboard</h1>
-<p>The Dashboard of OpenBaton helps you for the the management of lifecycle of different objects like 
-VimInstaces, Network Service Descriptors/Records and Virtual Network Function Descriptos/Records in the OpenBaton environment.</p>
-<h2 id="overview">Overview</h2>
-<p>The index page is an overview of the state of NFVO </p>
-<ol>
-<li>Number of Network Service Records</li>
-<li>Number of Virtual Network Functions</li>
-<li>Number of Virtual Deployment Units</li>
-<li>Number of Network Service Descriptors</li>
-</ol>
-<p><img alt="Overview" src="../images/overview.png" /></p>
-<h2 id="manage-pops">Manage PoPs</h2>
-<p>In this page you can see the list of Vim Instances registered</p>
-<p><img alt="List of Vim Instances" src="../images/vimpage.png" /></p>
-<p>For registering a new Vim Instance you should click the button on the top-right side <strong>Register Vim</strong> of this page and choose your json to register a Vim Instance</p>
-<p><img alt="Register a new Vim Instances" src="../images/registeraNewVim.png" /></p>
-<p>If you want to delete one Vim Instance you can click the button <strong>Action</strong> and than <strong>Delete</strong> in the menu</p>
-<h2 id="catalogue">Catalogue</h2>
-<p>In the menu on the left side under the voice <em>Catalogue</em> you can manage </p>
-<ol>
-<li>NS Descriptors</li>
-<li>VNF Packages</li>
-</ol>
-<h3 id="network-service-descriptors">Network Service Descriptors</h3>
-<p>In the menu on the left side under the template Catalogue you can find <strong>NS Decriptors</strong> button.
-On this page you can see the list of NS Descriptors stored into OpenBaton</p>
-<p><img alt="List of NS Descriptors" src="../images/NSDlist.png" /></p>
-<p>For storing a NS Descriptor you have 2 options:</p>
-<ol>
-<li>Create NSD Form</li>
-<li>Create NSD File</li>
-</ol>
-<p>Create a NSD using a File</p>
-<p><img alt="NSD create by File" src="../images/NSDcreateFile.png" /></p>
-<p>Create a NSD using Form</p>
-<p><img alt="NSD create by Form" src="../images/NSDcreateForm.png" /></p>
-<h3 id="network-service-descriptor-information">Network Service Descriptor Information</h3>
-<p>In the list of Network Service Descriptors if you click on the id in the table you can see the information
-stored in the Network Service Descriptor which you selected.</p>
-<p><img alt="Network Service Descriptor Information" src="../images/VNFDescriptorInformation.png" /></p>
-<p>You can observe the the NSD as is (in json format) by clicking on the <strong>Show JSON</strong></p>
-<p><img alt="JSON of Network Service Descriptor" src="../images/JSONofNSR.png" /></p>
-<p>On the page <strong>Network Service Descriptor Information</strong> you can also look at the <strong>Graphical view</strong> of the Network Service Descriptor 
-by clicking on <em>Show Graph</em></p>
-<p><img alt="NSD Graph" src="../images/NSDgraph.png" /></p>
-<p>In the list of VNFDs if you click the <em>Action</em> button you can delete the VNFD from NSD
-and the information about the <em>Dependencies</em> stored in the Network Service Descriptor</p>
-<p><img alt="Network Service Descriptor Dependencies Information" src="../images/VNFDlistintoNSD1.png" /></p>
-<p>In the list of VNFDependencies if you click the <em>Action</em> button you can delete the VNFDependency from NSD</p>
-<h4 id="virtual-network-function-descriptor-information">Virtual Network Function Descriptor Information</h4>
-<p>In the list of Virtual Network Function Descriptor in NSD template if you click on the id of Virtual Network Function Descriptor will be shown this page</p>
-<p><img alt="VNF Descriptor Information" src="../images/VNFDescriptorInformation.png" /></p>
-<p>In the bottom side of the page you can see the Virtual Deployment Unit (VDU) tab and if you click the <strong>id</strong> of the 
-VDU you can see the details of VDU</p>
-<p><img alt="VDU Information" src="../images/VDUInformation.png" /></p>
-<h3 id="vnf-packages">VNF Packages</h3>
-<p>In this page you can upload the <strong>VNF Package</strong>. For more information about the VNF Package please read the <a href="../vnfpackage/">VNF Package documentation</a> 
-For uploading a <em>.tar</em> you can click on the button <strong>Upload VNFPackage</strong>
-Will be shown this window where you can Drag &amp; Drop the file or just click on white area and choose your file using your file manager</p>
-<p><img alt="Drag&amp;Drop modal" src="../images/drag_drop.png" /></p>
-<p>After you click the button <strong>Start</strong> will be sent to the <em>NFVO</em> once the process is finished you will see the package in the list</p>
-<p><img alt="Drag&amp;Drop modal start" src="../images/drag_drop1.png" /></p>
-<p><img alt="Drag&amp;Drop list" src="../images/drag_drop2.png" /></p>
-<h2 id="network-service-records">Network Service Records</h2>
-<p>In the menu of the left side if you click on the <strong>Orchestrator NS</strong> and than <strong>NS Records</strong> you will see the list of <em>Network Service Records</em>
-Like in this screenshot </p>
-<p><img alt="Network Service Records List " src="../images/NetworkServiceRecordsList.png" /></p>
-<p>On this page you can see the details of a Network Service Record by clicking on the id</p>
-<p><img alt="Network Service Records Info" src="../images/NSRinfo.png" /></p>
-<p>On this page you can look at the JSON file of the NSR by clicking on the link <strong>Show JSON</strong> and also the <strong>Graphical view</strong> 
-of Network Service Record by clicking the link <strong>Show Graph</strong>
-In the table of VNF Records you can delete one VNFR by clicking <strong>Delete</strong> in the menu <strong>Action</strong>
-To look at the details of VNFR just click on the <strong>id</strong> of a VNFR.</p>
-<p><img alt="VNF Record Information" src="../images/VNFRecordInformation.png" /></p>
-<p><!---
+                          <h1 id="virtual-network-function-descriptor">Virtual Network Function Descriptor</h1>
+<p>The VirtualNetworkFunctionDescriptor is contained inside the Network Service Descriptor (NSD). It is a json file and is defined as follows:</p>
+<pre><code class="json">{  
+    &quot;vendor&quot;:&quot;fokus&quot;,
+    &quot;version&quot;:&quot;0.2&quot;,
+    &quot;name&quot;:&quot;iperf-server&quot;,
+    &quot;type&quot;:&quot;server&quot;,
+    &quot;endpoint&quot;:&quot;generic&quot;,
+    &quot;configurations&quot;:{
+        &quot;name&quot;:&quot;config_name&quot;,
+        &quot;configurationParameters&quot;:[
+        {
+            &quot;confKey&quot;:&quot;key&quot;,
+            &quot;value&quot;:&quot;value&quot;
+        }
+        ]
+    },
+    &quot;vdu&quot;:[  
+        {  
+            &quot;vm_image&quot;:[  
+                &quot;ubuntu-14.04-server-cloudimg-amd64-disk1&quot;
+            ],
+            &quot;vimInstanceName&quot;:&quot;vim-instance&quot;,
+            &quot;scale_in_out&quot;:2,
+            &quot;vnfc&quot;:[  
+                {  
+                    &quot;exposed&quot;:true,
+                    &quot;connection_point&quot;:[  
+                        {  
+                            &quot;virtual_link_reference&quot;:&quot;private&quot;
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    &quot;virtual_link&quot;:[  
+        {  
+            &quot;name&quot;:&quot;private&quot;
+        }
+    ],
+    &quot;lifecycle_event&quot;:[  
+        {  
+            &quot;event&quot;:&quot;INSTANTIATE&quot;,
+            &quot;lifecycle_events&quot;:[  
+                &quot;install.sh&quot;,
+                &quot;install-srv.sh&quot;
+            ]
+        }
+    ],
+    &quot;deployment_flavour&quot;:[  
+        {  
+            &quot;flavour_key&quot;:&quot;m1.small&quot;
+        }
+    ],
+    &quot;provides&quot;:[
+        &quot;ip&quot;,
+        &quot;source&quot;,
+        &quot;param1&quot;,
+        &quot;param2&quot;
+      ]
+}
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>The name to give to the VirtualNetworkFunctionDescriptor</td>
+</tr>
+<tr>
+<td>vendor</td>
+<td>The vendor creating this VirtualNetworkFunctionDescriptor</td>
+</tr>
+<tr>
+<td>version</td>
+<td>The version of the VirtualNetworkFunctionDescriptor (can be any string)</td>
+</tr>
+<tr>
+<td>type</td>
+<td>The type of the VirtualNetworkFunctionDescriptor (can be any string) and it is used in the dependency parameters in the scripts</td>
+</tr>
+<tr>
+<td>endpoint</td>
+<td>The endpoint of the VirtualNetworkFunctionDescriptor (can be any string) needs to point to a registered VnfManager</td>
+</tr>
+</tbody>
+</table>
+<p>The other most important parameters are described in the following sections.</p>
+<h3 id="virtual-deploymen-unit-vdu">Virtual Deploymen Unit (VDU)</h3>
+<table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vm_image</td>
+<td>The list of image names or ids existing in the VimInstance or in the VNF Package</td>
+</tr>
+<tr>
+<td>vimInstanceName</td>
+<td>The VimInstance name chosen</td>
+</tr>
+<tr>
+<td>scale_in_out</td>
+<td>The maximum number of instances (VMs) which can be created to support scale out/in.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="vnfc">VNFC</h5>
+<p>VNFComponents represent the minimum number of VMs that will be deployed for this VNFD. Each of them can contain:</p>
+<table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>exposed</td>
+<td>in case the machine needs to be reachable</td>
+</tr>
+<tr>
+<td>connection_point</td>
+<td>each connection point is a reference to an Internal Virtual Link (see Connection Point at <a href="http://www.etsi.org/deliver/etsi_gs/NFV-MAN/001_099/001/01.01.01_60/gs_NFV-MAN001v010101p.pdf">ETSI NFV</a>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="configurations">Configurations</h3>
+<p>The configuration object contains a list of parameters defined by key, value that can be used in the scripts.</p>
+<h3 id="virtual-link-aka-internal-virtual-link">Virtual Link (aka Internal Virtual Link)</h3>
+<p>The Internal Virtual Link points to a Virtual Link Descriptor defined in the Network Service Descriptor.</p>
+<p><strong>Note:</strong> at the moment there are no difference between internal and external VL. All the available networks should be specified in the NSD-&gt;VLD, than in the VNFD-&gt;VL you specify which networks you want to use.
+Finally in the VNFD-&gt;VDU-&gt;VNFC-&gt;connection_point you can specify which network to attach among those available in VNFD-&gt;VL. The virtual_link_reference parameter also must be filled with the exact same links.</p>
+<h3 id="lifecycle-events">Lifecycle Events</h3>
+<p>A lifecycle event is composed by an Event and a list of strings that correspond to the script names needed to be run in that particular Event.</p>
+<h3 id="deployment-flavour">Deployment Flavour</h3>
+<p>A delpoyment flavour corresponds to a flavour name existing in the VimInstance.
+For example if you are using Openstack as Vim, the flavour_key parameter shall correspond to a <a href="http://docs.openstack.org/openstack-ops/content/flavors.html">flavour name of Openstack</a> (e.q. m1.small).</p>
+<h3 id="provides">Provides</h3>
+<p>This list of parameter names defines the parameters that the VnfManager will fill at runtime. For that reason they have a meaning only if you <a href="../vnfm-how-to-write">write your own VnfManager</a>. This parameters are then available in any scripts. For the usage of the parameters, please, refer to <a href="../vnf-parameters">How to use the parameters</a> page.</p>
+<!---
+References
+-->
+
+<!---
 Script for open external links in a new tab
 -->
+
 <script type="text/javascript" charset="utf-8">
       // Creating custom :external selector
       $.expr[':'].external = function(obj){
           return !obj.href.match(/^mailto\:/)
-                  &amp;&amp; (obj.hostname != location.hostname);
+                  && (obj.hostname != location.hostname);
       };
       $(function(){
         $('a:external').addClass('external');
         $(".external").attr('target','_blank');
       })
-</script></p>
+</script>
                         
                       </div>
                     </div>
@@ -443,10 +522,10 @@ Script for open external links in a new tab
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../nfvo-sdk/" class="btn btn-neutral float-right" title="Use via the SDK"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../vnfr-states/" class="btn btn-neutral float-right" title="**HIDDEN**"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../ns-descriptor/" class="btn btn-neutral" title="Create the NSD"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../FAQ/" class="btn btn-neutral" title="FAQ"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

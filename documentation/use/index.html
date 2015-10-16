@@ -7,7 +7,7 @@
   
   
   
-  <title>Introduction - OpenBaton Documentation</title>
+  <title>OpenBaton Documentation</title>
   
 
   <link rel="shortcut icon" href="../img/favicon.ico">
@@ -33,9 +33,50 @@
   <script src="../js/theme.js"></script> 
 
   
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-68429895-1', 'openbaton.github.io');
+      ga('send', 'pageview');
+  </script>
+  
+<style>
+
+
+
+ul.subnav {
+display:none ;
+}
+
+ul.subnav:active {
+display:block;
+}
+
+.wy-menu-vertical li ul {
+display: block;
+
+  }
+
+</style>
 </head>
 
 <body role="document">
+<script type="text/javascript">
+$( document).ready(function(){
+      //console.log("test");
+      
+     $('li.subnav_drop').find('ul.subnav').hide();
+      //$(this).find('ul.subnav').toggle();
+   $('li.subnav_drop').click(function(i) {
+      $('li.subnav_drop').not(this).find('ul.subnav').hide();
+      $(this).find('ul.subnav').toggle();
+ });  
+})
+   
+
+  </script>
 
 <div class="navcontainer" style="margin:0px; background:#000;">
     <div class="navholder">
@@ -63,49 +104,77 @@
             <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
               <ul class="current">
                 
-                  <li>
-    <ul class="subnav">
-    <li><span>Get Started</span></li>
-
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Get Started</span>
+<ul class="subnav">
         
-            
+             
+
     <li class="toctree-l1 ">
         <a class="" href="..">Get Started</a>
         
     </li>
 
-        
-    </ul>
-</li>
-                
-                  <li>
-    <ul class="subnav">
-    <li><span>Installation</span></li>
 
         
-            
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Installation</span>
+<ul class="subnav">
+        
+             
+
     <li class="toctree-l1 ">
         <a class="" href="../install/">Overview</a>
         
     </li>
 
+
         
-            
+             
+
     <li class="toctree-l1 ">
         <a class="" href="../nfvo-installation/">Install NFVO</a>
         
     </li>
 
-        
-    </ul>
-</li>
-                
-                  <li>
-    <ul class="subnav">
-    <li><span>Use it</span></li>
 
         
-            
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vim-instance-documentation/">Register a VIM</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Use it</span>
+<ul class="subnav">
+        
+             
+
     <li class="toctree-l1 current">
         <a class="current" href="./">Introduction</a>
         
@@ -113,75 +182,154 @@
         
     </li>
 
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../vnfpackage/">Create your own VNF Package</a>
-        
-    </li>
 
         
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../nfvo-how-to-use-gui/">Use via the Dashboard</a>
-        
-    </li>
+             
 
-        
-    </ul>
-</li>
-                
-                  <li>
-    <ul class="subnav">
-    <li><span>Extend it</span></li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../extend/">Overview</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../nfvo-architecture/">NFVO Architecture</a>
-        
-    </li>
-
-        
-            
     <li class="toctree-l1 ">
         <a class="" href="../vnfm-generic/">Generic VNFM</a>
         
     </li>
 
+
         
-            
+             
+
     <li class="toctree-l1 ">
         <a class="" href="../vnfm-how-to-write/">Write your own VNFM</a>
         
     </li>
 
-        
-    </ul>
-</li>
-                
-                  <li>
-    <ul class="subnav">
-    <li><span>FAQ</span></li>
 
         
-            
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-vendor-specific/">Use my VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfpackage/">Create your own VNF Package</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ns-descriptor/">Create the NSD</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-how-to-use-gui/">Use via the Dashboard</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-sdk/">Use via the SDK</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../use-case-example/">A full example ;-)</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Extend it</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../extend/">Overview</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-architecture/">NFVO Architecture</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vim-plugin/">Write your own Plugin</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>FAQ</span>
+<ul class="subnav">
+        
+             
+
     <li class="toctree-l1 ">
         <a class="" href="../FAQ/">FAQ</a>
         
     </li>
 
+
         
-    </ul>
 </li>
-                
+</ul>
+    
+</ul></li>
+                 
+		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -200,8 +348,47 @@
                       <div class="section">
                         
                           <h1 id="how-to-use-openbaton">How to use OpenBaton</h1>
-<p>In order to use OpenBaton for launching your first Network Service, you will need to prepare your Network Service Descriptor (NSD). In order to orchestrate your Network Service, the NFVO expects a clear definition of the NSD. Please refer to the are defined as set of VNF descriptors, therefore it is important to have in place the descriptors of the VNF you would like to manage.</p>
-<h1 id="_1"></h1>
+<p>In order to use OpenBaton for launching your first Network Service, you will need to follow these steps:</p>
+<ol>
+<li>Decide which VNFM to use.</li>
+<li>Create the VNF Package\s.</li>
+<li>Prepare the Network Service Descriptor (NSD).</li>
+</ol>
+<p>Once these steps are completed you will be able to orchestrate your Network Service from the dashboard.</p>
+<h2 id="virtual-network-function-manager-approaches">Virtual Network Function Manager Approaches</h2>
+<p>In order to manage the Virtual Network Function\s, the NFV-MANO architectural framework expects a Virtual Network Function Manager (VNFM).
+To facilitate ease of use and extensibility, the Openbaton project provides three different approaches to using a VNFM:</p>
+<ol>
+<li>Use the Generic VNFM</li>
+<li>Build a VNFM using the SDK</li>
+<li>Use your own VNFM</li>
+</ol>
+<h2 id="main-purposes-of-the-approaches">Main purposes of the approaches</h2>
+<h3 id="1-use-the-generic-vnfm">1. Use the Generic VNFM</h3>
+<p>Using the generic VNFM you don't need to create a VNFM to use Openbaton.
+It is called "Generic" because it may be assigned the management of a single VNF instance, or the management of VNF multiple instances of the same type or of different types.
+It is already included in Openbaton as default.</p>
+<h3 id="2-build-a-vnfm-using-the-sdk">2. Build a VNFM using the SDK</h3>
+<p>Openbaton provides a sdk called vnfm-sdk which helps you to simply create a VNFM for your VNF.
+Regarding the type of the communication between the NFVO and the VNFM (Or-Vnfm), you can use the vnfm-sdk-jms or vnfm-sdk-rest, depending if you prefer to communicate with JMS or REST.</p>
+<h3 id="3-use-your-own-vnfm">3. Use your own VNFM</h3>
+<p>This approach allows you to integrate your VNFM and VNF within Openbaton. In this case, the Or-Vnfm communication will be via REST interfaces.</p>
+<p>The three pages following describe in details these three different approaches.</p>
+<!---
+Script for open external links in a new tab
+-->
+
+<script type="text/javascript" charset="utf-8">
+      // Creating custom :external selector
+      $.expr[':'].external = function(obj){
+          return !obj.href.match(/^mailto\:/)
+                  && (obj.hostname != location.hostname);
+      };
+      $(function(){
+        $('a:external').addClass('external');
+        $(".external").attr('target','_blank');
+      })
+</script>
                         
                       </div>
                     </div>
@@ -209,10 +396,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../vnfpackage/" class="btn btn-neutral float-right" title="Create your own VNF Package"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../vnfm-generic/" class="btn btn-neutral float-right" title="Generic VNFM"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../nfvo-installation/" class="btn btn-neutral" title="Install NFVO"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../vim-instance-documentation/" class="btn btn-neutral" title="Register a VIM"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

@@ -7,7 +7,7 @@
   
   
   
-  <title>Install NFVO - OpenBaton Documentation</title>
+  <title>OpenBaton Documentation</title>
   
 
   <link rel="shortcut icon" href="../img/favicon.ico">
@@ -33,9 +33,50 @@
   <script src="../js/theme.js"></script> 
 
   
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-68429895-1', 'openbaton.github.io');
+      ga('send', 'pageview');
+  </script>
+  
+<style>
+
+
+
+ul.subnav {
+display:none ;
+}
+
+ul.subnav:active {
+display:block;
+}
+
+.wy-menu-vertical li ul {
+display: block;
+
+  }
+
+</style>
 </head>
 
 <body role="document">
+<script type="text/javascript">
+$( document).ready(function(){
+      //console.log("test");
+      
+     $('li.subnav_drop').find('ul.subnav').hide();
+      //$(this).find('ul.subnav').toggle();
+   $('li.subnav_drop').click(function(i) {
+      $('li.subnav_drop').not(this).find('ul.subnav').hide();
+      $(this).find('ul.subnav').toggle();
+ });  
+})
+   
+
+  </script>
 
 <div class="navcontainer" style="margin:0px; background:#000;">
     <div class="navholder">
@@ -63,34 +104,46 @@
             <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
               <ul class="current">
                 
-                  <li>
-    <ul class="subnav">
-    <li><span>Get Started</span></li>
-
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Get Started</span>
+<ul class="subnav">
         
-            
+             
+
     <li class="toctree-l1 ">
         <a class="" href="..">Get Started</a>
         
     </li>
 
-        
-    </ul>
-</li>
-                
-                  <li>
-    <ul class="subnav">
-    <li><span>Installation</span></li>
 
         
-            
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Installation</span>
+<ul class="subnav">
+        
+             
+
     <li class="toctree-l1 ">
         <a class="" href="../install/">Overview</a>
         
     </li>
 
+
         
-            
+             
+
     <li class="toctree-l1 current">
         <a class="current" href="./">Install NFVO</a>
         
@@ -98,90 +151,185 @@
         
     </li>
 
-        
-    </ul>
-</li>
-                
-                  <li>
-    <ul class="subnav">
-    <li><span>Use it</span></li>
 
         
-            
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vim-instance-documentation/">Register a VIM</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Use it</span>
+<ul class="subnav">
+        
+             
+
     <li class="toctree-l1 ">
         <a class="" href="../use/">Introduction</a>
         
     </li>
 
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../vnfpackage/">Create your own VNF Package</a>
-        
-    </li>
 
         
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../nfvo-how-to-use-gui/">Use via the Dashboard</a>
-        
-    </li>
+             
 
-        
-    </ul>
-</li>
-                
-                  <li>
-    <ul class="subnav">
-    <li><span>Extend it</span></li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../extend/">Overview</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../nfvo-architecture/">NFVO Architecture</a>
-        
-    </li>
-
-        
-            
     <li class="toctree-l1 ">
         <a class="" href="../vnfm-generic/">Generic VNFM</a>
         
     </li>
 
+
         
-            
+             
+
     <li class="toctree-l1 ">
         <a class="" href="../vnfm-how-to-write/">Write your own VNFM</a>
         
     </li>
 
-        
-    </ul>
-</li>
-                
-                  <li>
-    <ul class="subnav">
-    <li><span>FAQ</span></li>
 
         
-            
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-vendor-specific/">Use my VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfpackage/">Create your own VNF Package</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ns-descriptor/">Create the NSD</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-how-to-use-gui/">Use via the Dashboard</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-sdk/">Use via the SDK</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../use-case-example/">A full example ;-)</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Extend it</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../extend/">Overview</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-architecture/">NFVO Architecture</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vim-plugin/">Write your own Plugin</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>FAQ</span>
+<ul class="subnav">
+        
+             
+
     <li class="toctree-l1 ">
         <a class="" href="../FAQ/">FAQ</a>
         
     </li>
 
+
         
-    </ul>
 </li>
-                
+</ul>
+    
+</ul></li>
+                 
+		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -199,31 +347,56 @@
                     <div role="main">
                       <div class="section">
                         
-                          <h1 id="install-nfvo">Install NFVO</h1>
-<p>The NFVO is implemented in java using the <a href="https://spring.io/">spring.io</a> framework. For more details about the NFVO architecture, you can refer to the extend it section.</p>
-<h2 id="install-the-latest-nfvo-version-from-the-source-code">install the latest NFVO version from the source code</h2>
+                          <h2 id="install-nfvo">Install NFVO</h2>
+<p>The NFVO is implemented in java using the <a href="https://spring.io">spring.io</a> framework. For more details about the NFVO architecture, you can refer to the extend it section.</p>
+<h3 id="install-the-latest-nfvo-version-from-the-source-code">Install the latest NFVO version from the source code</h3>
 <p>The NFVO can be installed using different mechanisms. In this how to we will show you how to instantiate it using directly from the git repo. </p>
-<p>The NFVO uses the Java Messaging System for communicating with the VNFMs. Therefore it is a prerequisites to have ActiveMQ up and running. To facilitate the installation procedures we provide an installation script which can be used for installing the NFVO and the prerequired libraries. Considering that this script needs to install some system libraries, it is required to execute it as super user. </p>
+<p>The NFVO uses the Java Messaging System for communicating with the VNFMs. Therefore it is a prerequisite to have ActiveMQ up and running. To facilitate the installation procedures we provide an installation script which can be used for installing the NFVO and the prerequired libraries. Considering that this script needs to install some system libraries, it is required to execute it as super user. To execute the following command you need to have curl installed (see http://curl.haxx.se/). </p>
 <pre><code class="bash">sudo su -
-curl -fsSkL https://raw.githubusercontent.com/openbaton/bootstrap/master/openbaton.sh |bash
+curl -fsSkL http://get.openbaton.org/bootstrap |bash
 </code></pre>
 
-<p>At the end of the installation procedure, if there are no errors, the dashboard should be reachable at: <a href="http://localhost:8080/">localhost:8080</a>. At the end of the installation, you should have the following structure: </p>
+<p>At the end of the installation procedure, if there are no errors, the dashboard is reachable at: <a href="http://localhost:8080/">localhost:8080</a> and you should have the following structure:</p>
 <pre><code class="bash">/opt/openbaton/
 ├── apache-activemq-5.11.1
 ├── generic-vnfm
 └── nfvo
 </code></pre>
 
-<p>where:
-<em> <code>apache-activemq-5.11.1</code> contains the activeMQ software (it is basically downloaded, extracted and executed)
-</em> <code>generic-vnfm</code>contains the source code and scripts required for dealing with the generic-vnfm
-* <code>nfvo</code> contains the source code and scripts of the NFVO </p>
-<p>The NFVO is configured with default configuration parameters at the beginning. The configuration file is located on </p>
+<p>Where:</p>
+<ul>
+<li><code>apache-activemq-5.11.1</code> contains the activeMQ software (it is basically downloaded, extracted and executed)  </li>
+<li><code>generic-vnfm</code>contains the source code and scripts required for dealing with the generic-vnfm  </li>
+<li><code>nfvo</code> contains the source code and scripts of the NFVO</li>
+</ul>
+<p>At this point the NFVO is ready to be used. Please refer to the <a href="../use/">Introduction</a> on how to start using it.</p>
+<p><strong>Note:</strong> now only the <strong>"root"</strong> user can use Openbaton! So you'd better give the right permissions at your user (here an example):</p>
+<pre><code class="bash">sudo chown -R username: /opt/openbaton
+sudo chown -R username: /etc/openbaton
+</code></pre>
+
+<h3 id="starting-and-stopping-nfvo">Starting and stopping NFVO</h3>
+<p>After the installation procedure the nfvo is running. If you want to stop it, enter this command:</p>
+<pre><code class="bash">cd /opt/openbaton/nfvo
+./openbaton.sh stop
+</code></pre>
+
+<p><strong>Note:</strong> remember to stop also the Generic VNFM with the following command:</p>
+<pre><code class="bash">cd /opt/openbaton/generic-vnfm
+./generic-vnfm.sh stop
+</code></pre>
+
+<p>To start the nfvo, enter the command:</p>
+<pre><code class="bash">cd /opt/openbaton/nfvo
+./openbaton.sh start
+</code></pre>
+
+<h3 id="nfvo-properties-overview">NFVO properties overview</h3>
+<p>The NFVO is configured with default configuration parameters at the beginning. The configuration file is located at: </p>
 <pre><code class="bash">/etc/openbaton/openbaton.properties
 </code></pre>
 
-<p>This file can be modified for specific parameters. For instance, you can decide to change logging levels and mechanisms:</p>
+<p>This file can be modified for specific parameters. For instance, you can decide to change logging levels (TRACE, DEBUG, INFO, WARN, and ERROR) and mechanisms:</p>
 <pre><code class="properties">logging.level.org.springframework=INFO
 logging.level.org.hibernate=INFO
 logging.level.org.jclouds=WARN
@@ -252,35 +425,32 @@ spring.jpa.show-sql=false
 spring.jpa.hibernate.ddl-auto=create-drop
 </code></pre>
 
-<p>By deafault ActiveMQ is installed on the same host of the NFVO. Be aware of the fact that if you want your VNFM to be executed on a different host, you will need that ActiveMQ is reachable also from the extern.
-When using the generic-VNFM (by default also instantiated on the same host of the NFVO) you will need to configure the activemq endpoint with an IP which can be reached also from the VMs where your VNF (EMS) will be installed.</p>
+<p>By deafault ActiveMQ is installed on the host of the NFVO. Be aware of the fact that if you want your VNFM to be executed on a different host, you will need ActiveMQ to be reachable also from the extern.<br />
+<strong>Note:</strong> when you want to deploy a VNF (EMS) in a VM which runs on a different host in respect to the NFVO, you will need to configure the activemq endpoint (spring.activemq.broker-url) with the real IP of the NFVO host (instead of localhost).</p>
 <pre><code class="properties"># activeMQ
 spring.activemq.broker-url=tcp://localhost:61616
 spring.activemq.user=admin
 spring.activemq.password=admin
 </code></pre>
 
-<p>This parameter is file size of the VNF Package which can be uploaded to the NFVO</p>
+<p>These parameters rapresent the maximum file size of the VNF Package which can be uploaded to the NFVO and the total maximum request size</p>
 <pre><code class="properties"># filesUpload
 multipart.maxFileSize=2046MB
 multipart.maxRequestSize=2046MB
 </code></pre>
 
-<p>The following properties are related with teh plugin mechanism used for loading VIM and Monitoring instances. Basically whenever a new VIM interface will be available, it will be enough to place it under the <code>vim-plugin-installation-dir</code> to be loaded runtime by the NFVO.</p>
+<p>The following properties are related to the plugin mechanism used for loading VIM and Monitoring instances. The <code>vim-plugin-installation-dir</code> is the directory where all the jar files are, which implement the VIM interface (see the <a href="../vim-plugin">vim plugin documentation</a>). The NFVO will load them at runtime.  </p>
 <pre><code class="properties"># plugin install
-# directory for the vim driver plugins
-vim-plugin-installation-dir = ./plugins/vim-drivers
-# classes contained in the jar files to be loaded
-vim-classes=org.project.openbaton.clients.interfaces.client.test.TestClient;org.project.openbaton.clients.interfaces.client.openstack.OpenstackClient
-# directory for the monitoring plugin
-monitoring-plugin-installation-dir = ./plugins/monitoring
-# classes contained in the jar files to be loaded
-monitoring-classes=org.project.openbaton.monitoring.agent.SmartDummyMonitoringAgent
-# nfvo behaviour
+# the plugins inside that directory will be executed at startup
+plugin-installation-dir = ./plugins
+</code></pre>
+
+<p>This properties allows the user to delete the Network Service Records no matter in which status are they. Pleas note that in any case it is possible to remove a Network Service Record in <em>NULL</em> state.</p>
+<pre><code class="properties"># nfvo behaviour
 delete-on-all-status = false
 </code></pre>
 
-<p>Those properties are needed in case you want to tune a bit the performances of the NFVO</p>
+<p>Those properties are needed in case you want to tune a bit the performances of the NFVO. When the VNFMs send a message to the NFVO, there is a pool of threads able to process these messages in parallel. These parameters allows you to change the pool configuration, for more details please check the <a href="http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/scheduling/concurrent/ThreadPoolTaskExecutor.html">spring documentation regarding thread pool executor</a> </p>
 <pre><code class="properties"># Thread pool executor configuration
 # for info see http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/scheduling/concurrent/ThreadPoolTaskExecutor.html
 vmanager-executor-core-pool-size = 20
@@ -289,14 +459,24 @@ vmanager-executor-queue-capacity = 500
 vmanager-keep-alive = 30
 </code></pre>
 
-<p>Whenever some of those parameters are changed, you will need to restart the orchestrator. This can be done with the following command: </p>
-<pre><code class="bash">cd /opt/openbaton/nfvo
-./openbaton.sh restart
-</code></pre>
-
-<p>At this point the NFVO is ready to be used. Please refer to the NFVO user guide for how to start using it. </p>
-<h2 id="lets-move-to-the-next-step">Let's move to the next step</h2>
+<p>Whenever some of those parameters are changed, you will need to restart the orchestrator.</p>
+<h3 id="lets-move-to-the-next-step">Let's move to the next step</h3>
 <p>Dependening on the approach used for deploying your VNF, you'll have either to install the generic-VNFM or install and register your own VNFM</p>
+<!---
+Script for open external links in a new tab
+-->
+
+<script type="text/javascript" charset="utf-8">
+      // Creating custom :external selector
+      $.expr[':'].external = function(obj){
+          return !obj.href.match(/^mailto\:/)
+                  && (obj.hostname != location.hostname);
+      };
+      $(function(){
+        $('a:external').addClass('external');
+        $(".external").attr('target','_blank');
+      })
+</script>
                         
                       </div>
                     </div>
@@ -304,7 +484,7 @@ vmanager-keep-alive = 30
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../use/" class="btn btn-neutral float-right" title="Introduction"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../vim-instance-documentation/" class="btn btn-neutral float-right" title="Register a VIM"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../install/" class="btn btn-neutral" title="Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>

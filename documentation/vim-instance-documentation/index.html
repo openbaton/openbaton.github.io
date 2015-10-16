@@ -22,9 +22,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Use via the Dashboard";
-    var mkdocs_page_input_path = "nfvo-how-to-use-gui.md";
-    var mkdocs_page_url = "/nfvo-how-to-use-gui/";
+    var mkdocs_page_name = "Register a VIM";
+    var mkdocs_page_input_path = "vim-instance-documentation.md";
+    var mkdocs_page_url = "/vim-instance-documentation/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -153,8 +153,10 @@ $( document).ready(function(){
         
              
 
-    <li class="toctree-l1 ">
-        <a class="" href="../vim-instance-documentation/">Register a VIM</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Register a VIM</a>
+        
+         
         
     </li>
 
@@ -229,10 +231,8 @@ $( document).ready(function(){
         
              
 
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Use via the Dashboard</a>
-        
-         
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-how-to-use-gui/">Use via the Dashboard</a>
         
     </li>
 
@@ -347,95 +347,110 @@ $( document).ready(function(){
                     <div role="main">
                       <div class="section">
                         
-                          <h1 id="openbaton-dashboard">OpenBaton Dashboard</h1>
-<p>The Dashboard of OpenBaton helps you for the the management of lifecycle of different objects like 
-VimInstaces, Network Service Descriptors/Records and Virtual Network Function Descriptos/Records in the OpenBaton environment.</p>
-<h2 id="overview">Overview</h2>
-<p>The index page is an overview of the state of NFVO </p>
-<ol>
-<li>Number of Network Service Records</li>
-<li>Number of Virtual Network Functions</li>
-<li>Number of Virtual Deployment Units</li>
-<li>Number of Network Service Descriptors</li>
-</ol>
-<p><img alt="Overview" src="../images/overview.png" /></p>
-<h2 id="manage-pops">Manage PoPs</h2>
-<p>In this page you can see the list of Vim Instances registered</p>
-<p><img alt="List of Vim Instances" src="../images/vimpage.png" /></p>
-<p>For registering a new Vim Instance you should click the button on the top-right side <strong>Register Vim</strong> of this page and choose your json to register a Vim Instance</p>
-<p><img alt="Register a new Vim Instances" src="../images/registeraNewVim.png" /></p>
-<p>If you want to delete one Vim Instance you can click the button <strong>Action</strong> and than <strong>Delete</strong> in the menu</p>
-<h2 id="catalogue">Catalogue</h2>
-<p>In the menu on the left side under the voice <em>Catalogue</em> you can manage </p>
-<ol>
-<li>NS Descriptors</li>
-<li>VNF Packages</li>
-</ol>
-<h3 id="network-service-descriptors">Network Service Descriptors</h3>
-<p>In the menu on the left side under the template Catalogue you can find <strong>NS Decriptors</strong> button.
-On this page you can see the list of NS Descriptors stored into OpenBaton</p>
-<p><img alt="List of NS Descriptors" src="../images/NSDlist.png" /></p>
-<p>For storing a NS Descriptor you have 2 options:</p>
-<ol>
-<li>Create NSD Form</li>
-<li>Create NSD File</li>
-</ol>
-<p>Create a NSD using a File</p>
-<p><img alt="NSD create by File" src="../images/NSDcreateFile.png" /></p>
-<p>Create a NSD using Form</p>
-<p><img alt="NSD create by Form" src="../images/NSDcreateForm.png" /></p>
-<h3 id="network-service-descriptor-information">Network Service Descriptor Information</h3>
-<p>In the list of Network Service Descriptors if you click on the id in the table you can see the information
-stored in the Network Service Descriptor which you selected.</p>
-<p><img alt="Network Service Descriptor Information" src="../images/VNFDescriptorInformation.png" /></p>
-<p>You can observe the the NSD as is (in json format) by clicking on the <strong>Show JSON</strong></p>
-<p><img alt="JSON of Network Service Descriptor" src="../images/JSONofNSR.png" /></p>
-<p>On the page <strong>Network Service Descriptor Information</strong> you can also look at the <strong>Graphical view</strong> of the Network Service Descriptor 
-by clicking on <em>Show Graph</em></p>
-<p><img alt="NSD Graph" src="../images/NSDgraph.png" /></p>
-<p>In the list of VNFDs if you click the <em>Action</em> button you can delete the VNFD from NSD
-and the information about the <em>Dependencies</em> stored in the Network Service Descriptor</p>
-<p><img alt="Network Service Descriptor Dependencies Information" src="../images/VNFDlistintoNSD1.png" /></p>
-<p>In the list of VNFDependencies if you click the <em>Action</em> button you can delete the VNFDependency from NSD</p>
-<h4 id="virtual-network-function-descriptor-information">Virtual Network Function Descriptor Information</h4>
-<p>In the list of Virtual Network Function Descriptor in NSD template if you click on the id of Virtual Network Function Descriptor will be shown this page</p>
-<p><img alt="VNF Descriptor Information" src="../images/VNFDescriptorInformation.png" /></p>
-<p>In the bottom side of the page you can see the Virtual Deployment Unit (VDU) tab and if you click the <strong>id</strong> of the 
-VDU you can see the details of VDU</p>
-<p><img alt="VDU Information" src="../images/VDUInformation.png" /></p>
-<h3 id="vnf-packages">VNF Packages</h3>
-<p>In this page you can upload the <strong>VNF Package</strong>. For more information about the VNF Package please read the <a href="../vnfpackage/">VNF Package documentation</a> 
-For uploading a <em>.tar</em> you can click on the button <strong>Upload VNFPackage</strong>
-Will be shown this window where you can Drag &amp; Drop the file or just click on white area and choose your file using your file manager</p>
-<p><img alt="Drag&amp;Drop modal" src="../images/drag_drop.png" /></p>
-<p>After you click the button <strong>Start</strong> will be sent to the <em>NFVO</em> once the process is finished you will see the package in the list</p>
-<p><img alt="Drag&amp;Drop modal start" src="../images/drag_drop1.png" /></p>
-<p><img alt="Drag&amp;Drop list" src="../images/drag_drop2.png" /></p>
-<h2 id="network-service-records">Network Service Records</h2>
-<p>In the menu of the left side if you click on the <strong>Orchestrator NS</strong> and than <strong>NS Records</strong> you will see the list of <em>Network Service Records</em>
-Like in this screenshot </p>
-<p><img alt="Network Service Records List " src="../images/NetworkServiceRecordsList.png" /></p>
-<p>On this page you can see the details of a Network Service Record by clicking on the id</p>
-<p><img alt="Network Service Records Info" src="../images/NSRinfo.png" /></p>
-<p>On this page you can look at the JSON file of the NSR by clicking on the link <strong>Show JSON</strong> and also the <strong>Graphical view</strong> 
-of Network Service Record by clicking the link <strong>Show Graph</strong>
-In the table of VNF Records you can delete one VNFR by clicking <strong>Delete</strong> in the menu <strong>Action</strong>
-To look at the details of VNFR just click on the <strong>id</strong> of a VNFR.</p>
-<p><img alt="VNF Record Information" src="../images/VNFRecordInformation.png" /></p>
-<p><!---
+                          <h1 id="vim-instance-documentation">Vim Instance documentation</h1>
+<p>The <em>Virtualised Infrastructure Manager</em> (Vim) is the functional block, responsible for controlling and managing the
+ NFVI compute, storage and network resources, usually within one operator's Infrastructure Domain.</p>
+<p>In order to interoperate with a NFVI it is required to register the VIM instance inside the NFVO. </p>
+<p>The JSON file of a Vim Instance allows OpenBaton to call OpenStack, to manage the lifecycle of VMs and tells where the VNF will be deployed and configured by OpenBaton</p>
+<p>The Json looks like</p>
+<pre><code class="javascript">{
+  &quot;name&quot;:&quot;vim-instance-name&quot;,
+  &quot;authUrl&quot;:&quot;http://192.168.0.5:5000/v2.0&quot;,
+  &quot;tenant&quot;:&quot;tenantName&quot;,
+  &quot;username&quot;:&quot;userName&quot;,
+  &quot;password&quot;:&quot;password&quot;,
+  &quot;keyPair&quot;:&quot;keyName&quot;,
+  &quot;securityGroups&quot;: [
+    &quot;securityName&quot;
+  ],
+  &quot;type&quot;:&quot;openstack&quot;,
+  &quot;location&quot;:{
+        &quot;name&quot;:&quot;Berlin&quot;,
+        &quot;latitude&quot;:&quot;52.525876&quot;,
+        &quot;longitude&quot;:&quot;13.314400&quot;
+  }
+}
+
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>The name of the VimInstance</td>
+</tr>
+<tr>
+<td>authUrl</td>
+<td>The endpoint to request the authentication</td>
+</tr>
+<tr>
+<td>tenant</td>
+<td>The tenant is a string to refer to a group of users</td>
+</tr>
+<tr>
+<td>username</td>
+<td>The name of the user recognized in OpenStack in the keystone service</td>
+</tr>
+<tr>
+<td>password</td>
+<td>The password of the user recognized in the OpenStack in the keystone service</td>
+</tr>
+<tr>
+<td>keyPair</td>
+<td>The keyPair name stored into OpenStack to get the access to the VMs</td>
+</tr>
+<tr>
+<td>securityGroups</td>
+<td>Recognise a Security group into OpenStack where gives a sets of IP filter rules that are applied to an instance's networking.</td>
+</tr>
+<tr>
+<td>type</td>
+<td>The type of the Vim Instance that will start the corresponding plugin. Possible values are: <em>openstack</em> or <em>test</em></td>
+</tr>
+<tr>
+<td>location</td>
+<td>The location of the data Center. Name: String of the place where is the Data Center located. Latitude/Longitude geolocation point</td>
+</tr>
+</tbody>
+</table>
+<h2 id="how-to-register-a-new-vim-instance">How to register a new Vim Instance?</h2>
+<p>In order to make use of your VIM described within your JSON descriptor, you need to request the NFVO to register it. 
+You can use the dashboard available at <a href="../localhost:8080">localhost:8080</a> for this purpose. 
+Under the menu <code>Manage PoPs</code> you can see the <code>PoP instances</code>. Click on the Register VIM button and upload your VIM descriptor. Following picture shows the dashboard: </p>
+<p><img alt="dialog" src="../images/registeraNewVim.png" /></p>
+<p>Once the VIM instance is registered, it will appear on the list of available PoPs. At this point the VIM/PoP can be included in your Network Service Descriptors. <em>Please note that the name chosen must be unique and will be used to refer the VimInstance</em>.</p>
+<p>For more information about the dashboard see: <a href="../nfvo-how-to-use-gui/">OpenBaton Dashboard</a></p>
+<h2 id="how-to-register-a-new-vim-instance_1">How to register a new Vim Instance?</h2>
+<p>By default the NFVO supports two different VIM types: </p>
+<ul>
+<li>openstack: for interoperating with an OpenStack instance</li>
+<li>test: for testing purposes implementing a VIM mockup</li>
+</ul>
+<p>In particular, this is due to the fact that for working with VIMs the NFVO uses a plugin mechanism. In the folders <code>plugins</code> under nfvo folder should be a jar file that implements the interface to the your VIM ( i.e. <a href="https://www.openstack.org/">Openstack</a> )
+(you can change the folder where OpenBaton searches for the plugins by changing the variable <code>plugin-installation-dir</code> in the <code>openbaton.properties</code> file under /etc/openbaton)
+This jar is the implementation of the interface that communicates with your Data Center Manager.<br />
+<strong>Note</strong>: You can implement your own interface just follow the documentation <a href="../vim-plugin/">Vim plugin</a>.</p>
+<!---
 Script for open external links in a new tab
 -->
+
 <script type="text/javascript" charset="utf-8">
       // Creating custom :external selector
       $.expr[':'].external = function(obj){
           return !obj.href.match(/^mailto\:/)
-                  &amp;&amp; (obj.hostname != location.hostname);
+                  && (obj.hostname != location.hostname);
       };
       $(function(){
         $('a:external').addClass('external');
         $(".external").attr('target','_blank');
       })
-</script></p>
+</script>
                         
                       </div>
                     </div>
@@ -443,10 +458,10 @@ Script for open external links in a new tab
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../nfvo-sdk/" class="btn btn-neutral float-right" title="Use via the SDK"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../use/" class="btn btn-neutral float-right" title="Introduction"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../ns-descriptor/" class="btn btn-neutral" title="Create the NSD"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../nfvo-installation/" class="btn btn-neutral" title="Install NFVO"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

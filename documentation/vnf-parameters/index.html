@@ -22,9 +22,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Use via the Dashboard";
-    var mkdocs_page_input_path = "nfvo-how-to-use-gui.md";
-    var mkdocs_page_url = "/nfvo-how-to-use-gui/";
+    var mkdocs_page_name = "**HIDDEN**";
+    var mkdocs_page_input_path = "vnf-parameters.md";
+    var mkdocs_page_url = "/vnf-parameters/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -229,10 +229,8 @@ $( document).ready(function(){
         
              
 
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Use via the Dashboard</a>
-        
-         
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-how-to-use-gui/">Use via the Dashboard</a>
         
     </li>
 
@@ -347,95 +345,86 @@ $( document).ready(function(){
                     <div role="main">
                       <div class="section">
                         
-                          <h1 id="openbaton-dashboard">OpenBaton Dashboard</h1>
-<p>The Dashboard of OpenBaton helps you for the the management of lifecycle of different objects like 
-VimInstaces, Network Service Descriptors/Records and Virtual Network Function Descriptos/Records in the OpenBaton environment.</p>
-<h2 id="overview">Overview</h2>
-<p>The index page is an overview of the state of NFVO </p>
-<ol>
-<li>Number of Network Service Records</li>
-<li>Number of Virtual Network Functions</li>
-<li>Number of Virtual Deployment Units</li>
-<li>Number of Network Service Descriptors</li>
-</ol>
-<p><img alt="Overview" src="../images/overview.png" /></p>
-<h2 id="manage-pops">Manage PoPs</h2>
-<p>In this page you can see the list of Vim Instances registered</p>
-<p><img alt="List of Vim Instances" src="../images/vimpage.png" /></p>
-<p>For registering a new Vim Instance you should click the button on the top-right side <strong>Register Vim</strong> of this page and choose your json to register a Vim Instance</p>
-<p><img alt="Register a new Vim Instances" src="../images/registeraNewVim.png" /></p>
-<p>If you want to delete one Vim Instance you can click the button <strong>Action</strong> and than <strong>Delete</strong> in the menu</p>
-<h2 id="catalogue">Catalogue</h2>
-<p>In the menu on the left side under the voice <em>Catalogue</em> you can manage </p>
-<ol>
-<li>NS Descriptors</li>
-<li>VNF Packages</li>
-</ol>
-<h3 id="network-service-descriptors">Network Service Descriptors</h3>
-<p>In the menu on the left side under the template Catalogue you can find <strong>NS Decriptors</strong> button.
-On this page you can see the list of NS Descriptors stored into OpenBaton</p>
-<p><img alt="List of NS Descriptors" src="../images/NSDlist.png" /></p>
-<p>For storing a NS Descriptor you have 2 options:</p>
-<ol>
-<li>Create NSD Form</li>
-<li>Create NSD File</li>
-</ol>
-<p>Create a NSD using a File</p>
-<p><img alt="NSD create by File" src="../images/NSDcreateFile.png" /></p>
-<p>Create a NSD using Form</p>
-<p><img alt="NSD create by Form" src="../images/NSDcreateForm.png" /></p>
-<h3 id="network-service-descriptor-information">Network Service Descriptor Information</h3>
-<p>In the list of Network Service Descriptors if you click on the id in the table you can see the information
-stored in the Network Service Descriptor which you selected.</p>
-<p><img alt="Network Service Descriptor Information" src="../images/VNFDescriptorInformation.png" /></p>
-<p>You can observe the the NSD as is (in json format) by clicking on the <strong>Show JSON</strong></p>
-<p><img alt="JSON of Network Service Descriptor" src="../images/JSONofNSR.png" /></p>
-<p>On the page <strong>Network Service Descriptor Information</strong> you can also look at the <strong>Graphical view</strong> of the Network Service Descriptor 
-by clicking on <em>Show Graph</em></p>
-<p><img alt="NSD Graph" src="../images/NSDgraph.png" /></p>
-<p>In the list of VNFDs if you click the <em>Action</em> button you can delete the VNFD from NSD
-and the information about the <em>Dependencies</em> stored in the Network Service Descriptor</p>
-<p><img alt="Network Service Descriptor Dependencies Information" src="../images/VNFDlistintoNSD1.png" /></p>
-<p>In the list of VNFDependencies if you click the <em>Action</em> button you can delete the VNFDependency from NSD</p>
-<h4 id="virtual-network-function-descriptor-information">Virtual Network Function Descriptor Information</h4>
-<p>In the list of Virtual Network Function Descriptor in NSD template if you click on the id of Virtual Network Function Descriptor will be shown this page</p>
-<p><img alt="VNF Descriptor Information" src="../images/VNFDescriptorInformation.png" /></p>
-<p>In the bottom side of the page you can see the Virtual Deployment Unit (VDU) tab and if you click the <strong>id</strong> of the 
-VDU you can see the details of VDU</p>
-<p><img alt="VDU Information" src="../images/VDUInformation.png" /></p>
-<h3 id="vnf-packages">VNF Packages</h3>
-<p>In this page you can upload the <strong>VNF Package</strong>. For more information about the VNF Package please read the <a href="../vnfpackage/">VNF Package documentation</a> 
-For uploading a <em>.tar</em> you can click on the button <strong>Upload VNFPackage</strong>
-Will be shown this window where you can Drag &amp; Drop the file or just click on white area and choose your file using your file manager</p>
-<p><img alt="Drag&amp;Drop modal" src="../images/drag_drop.png" /></p>
-<p>After you click the button <strong>Start</strong> will be sent to the <em>NFVO</em> once the process is finished you will see the package in the list</p>
-<p><img alt="Drag&amp;Drop modal start" src="../images/drag_drop1.png" /></p>
-<p><img alt="Drag&amp;Drop list" src="../images/drag_drop2.png" /></p>
-<h2 id="network-service-records">Network Service Records</h2>
-<p>In the menu of the left side if you click on the <strong>Orchestrator NS</strong> and than <strong>NS Records</strong> you will see the list of <em>Network Service Records</em>
-Like in this screenshot </p>
-<p><img alt="Network Service Records List " src="../images/NetworkServiceRecordsList.png" /></p>
-<p>On this page you can see the details of a Network Service Record by clicking on the id</p>
-<p><img alt="Network Service Records Info" src="../images/NSRinfo.png" /></p>
-<p>On this page you can look at the JSON file of the NSR by clicking on the link <strong>Show JSON</strong> and also the <strong>Graphical view</strong> 
-of Network Service Record by clicking the link <strong>Show Graph</strong>
-In the table of VNF Records you can delete one VNFR by clicking <strong>Delete</strong> in the menu <strong>Action</strong>
-To look at the details of VNFR just click on the <strong>id</strong> of a VNFR.</p>
-<p><img alt="VNF Record Information" src="../images/VNFRecordInformation.png" /></p>
-<p><!---
+                          <h1 id="vnf-parameters">VNF Parameters</h1>
+<hr />
+<p>The useful parameters that you can use in your scripts are defined in two different fields of a VNFD.</p>
+<pre><code class="json">...
+&quot;configurations&quot;:{
+                &quot;name&quot;:&quot;config_name&quot;,
+                &quot;configurationParameters&quot;:[
+                {
+                    &quot;confKey&quot;:&quot;key1&quot;,
+                    &quot;value&quot;:&quot;the_value&quot;
+                }
+                ]
+            },
+
+...
+
+&quot;provides&quot;:[
+        &quot;param1&quot;,
+        &quot;param2&quot;
+      ]
+...
+</code></pre>
+
+<h3 id="configurations">Configurations</h3>
+<p>This field describe an Entity that has a list of ConfigurationParameters inside. This is a list of Entity containing key:value. This parameters are always available in your scripts. See the section below, <a href="#How to use the parameters">how to use the parameters</a>, in order to see how to use them.</p>
+<h3 id="provides">Provides</h3>
+<p>This field is a list of parameter keys that will be available in all your scripts. The difference is that these parameters are parameters the actual value will be known only at runtime. For that reason these parameters can only be filled by a specific VNFM. So you need to implement a VNFM able to handle these specific parameters in the fillSpecificParameters method (see <a href="../vnfm-how-to-write">How to write a VNFM</a>).</p>
+<p><strong>NOTE</strong>: <em>there are some out-of-the-box parameters that will be added automatically to the VNFRecord. One of this parameters is key = &lt; network_name &gt;, value = &lt; actual-IP &gt;</em></p>
+<h3 id="how-to-use-the-parameters">How to use the parameters</h3>
+<p>All the above parameters are available in all the scripts of the VNF that defines them. You just need to use them as environment variables, a script of the INSTANTIATE lifecycle event for instance would be:</p>
+<pre><code class="bash">#!/bin/bash
+
+echo &quot;the value of the configuration parameter key1 is $key1&quot;
+</code></pre>
+
+<p>As described in the <a href="../vnfm-generic">Generic VNFM</a> page, you can set up dependency in order to use parameters from another VNF in the MODIFY lifecycle event. For doing that you need to specify in the Network Service Descriptor the VNF Dependency, for instance if a VNF vnf-1 is connected to network net1 and vnf-2 needs the ip of vnf-1 on that network the VNF Dependency will be:</p>
+<pre><code class="json">
+&quot;vnf_dependency&quot;:[
+        {
+            &quot;source&quot; : {
+                &quot;name&quot;: &quot;vnf-1&quot;
+            },
+            &quot;target&quot;:{
+                &quot;name&quot;: &quot;vnf-2&quot;
+            },
+            &quot;parameters&quot;:[
+                &quot;net1&quot;
+            ]
+        }
+    ]
+
+</code></pre>
+
+<p>Done that, in the MODIFY scripts it is possible to use that ip in this way:</p>
+<pre><code class="bash">#!/bin/bash
+
+echo &quot;the value of the ip on net1 of vnf-1 is $vnf1type_net1&quot;
+</code></pre>
+
+<h3 id="conclusion">Conclusion</h3>
+<p>You are always able to use the parameters of a VNF simply using the key as variable name, but when you want to use a parameter of a different VNF (like a relation) you need to specify the type followed by an underscore and then the name of the foreign parameter key (for instance <code>$typeExt_key</code>). In this last case, you can use them only in the MODIFY lifecycle event scripts.</p>
+<!---
+References
+-->
+
+<!---
 Script for open external links in a new tab
 -->
+
 <script type="text/javascript" charset="utf-8">
       // Creating custom :external selector
       $.expr[':'].external = function(obj){
           return !obj.href.match(/^mailto\:/)
-                  &amp;&amp; (obj.hostname != location.hostname);
+                  && (obj.hostname != location.hostname);
       };
       $(function(){
         $('a:external').addClass('external');
         $(".external").attr('target','_blank');
       })
-</script></p>
+</script>
                         
                       </div>
                     </div>
@@ -443,10 +432,8 @@ Script for open external links in a new tab
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../nfvo-sdk/" class="btn btn-neutral float-right" title="Use via the SDK"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="../ns-descriptor/" class="btn btn-neutral" title="Create the NSD"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../vnfr-states/" class="btn btn-neutral" title="**HIDDEN**"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
