@@ -7,7 +7,7 @@
   
   
   
-  <title>OpenBaton Documentation</title>
+  <title>Generic VNFM - OpenBaton Documentation</title>
   
 
   <link rel="shortcut icon" href="../img/favicon.ico">
@@ -33,50 +33,9 @@
   <script src="../js/theme.js"></script> 
 
   
-  <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-68429895-1', 'openbaton.github.io');
-      ga('send', 'pageview');
-  </script>
-  
-<style>
-
-
-
-ul.subnav {
-display:none ;
-}
-
-ul.subnav:active {
-display:block;
-}
-
-.wy-menu-vertical li ul {
-display: block;
-
-  }
-
-</style>
 </head>
 
 <body role="document">
-<script type="text/javascript">
-$( document).ready(function(){
-      //console.log("test");
-      
-     $('li.subnav_drop').find('ul.subnav').hide();
-      //$(this).find('ul.subnav').toggle();
-   $('li.subnav_drop').click(function(i) {
-      $('li.subnav_drop').not(this).find('ul.subnav').hide();
-      $(this).find('ul.subnav').toggle();
- });  
-})
-   
-
-  </script>
 
 <div class="navcontainer" style="margin:0px; background:#000;">
     <div class="navholder">
@@ -104,86 +63,92 @@ $( document).ready(function(){
             <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
               <ul class="current">
                 
-		
-                  <li><ul> 
-    
-   
-    <li class="subnav_drop"><span>Get Started</span>
-<ul class="subnav">
-        
-             
+                  <li>
+    <ul class="subnav">
+    <li><span>Get Started</span></li>
 
+        
+            
     <li class="toctree-l1 ">
         <a class="" href="..">Get Started</a>
         
     </li>
 
-
         
+    </ul>
 </li>
-</ul>
-    
-</ul></li>
-                 
-		
-		
-                  <li><ul> 
-    
-   
-    <li class="subnav_drop"><span>Installation</span>
-<ul class="subnav">
-        
-             
+                
+                  <li>
+    <ul class="subnav">
+    <li><span>Installation</span></li>
 
+        
+            
     <li class="toctree-l1 ">
         <a class="" href="../install/">Overview</a>
         
     </li>
 
-
         
-             
-
+            
     <li class="toctree-l1 ">
         <a class="" href="../nfvo-installation/">Install NFVO</a>
         
     </li>
 
-
         
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vim-instance-documentation/">Register a VIM</a>
-        
-    </li>
-
-
-        
+    </ul>
 </li>
-</ul>
-    
-</ul></li>
-                 
-		
-		
-                  <li><ul> 
-    
-   
-    <li class="subnav_drop"><span>Use it</span>
-<ul class="subnav">
-        
-             
+                
+                  <li>
+    <ul class="subnav">
+    <li><span>Use it</span></li>
 
+        
+            
     <li class="toctree-l1 ">
         <a class="" href="../use/">Introduction</a>
         
     </li>
 
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfpackage/">Create your own VNF Package</a>
+        
+    </li>
 
         
-             
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-how-to-use-gui/">Use via the Dashboard</a>
+        
+    </li>
 
+        
+    </ul>
+</li>
+                
+                  <li>
+    <ul class="subnav">
+    <li><span>Extend it</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../extend/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-architecture/">NFVO Architecture</a>
+        
+    </li>
+
+        
+            
     <li class="toctree-l1 current">
         <a class="current" href="./">Generic VNFM</a>
         
@@ -191,145 +156,32 @@ $( document).ready(function(){
         
     </li>
 
-
         
-             
-
+            
     <li class="toctree-l1 ">
         <a class="" href="../vnfm-how-to-write/">Write your own VNFM</a>
         
     </li>
 
-
         
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vnfm-vendor-specific/">Use my VNFM</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vnfpackage/">Create your own VNF Package</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../ns-descriptor/">Create the NSD</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../nfvo-how-to-use-gui/">Use via the Dashboard</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../nfvo-sdk/">Use via the SDK</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../use-case-example/">A full example ;-)</a>
-        
-    </li>
-
-
-        
+    </ul>
 </li>
-</ul>
-    
-</ul></li>
-                 
-		
-		
-                  <li><ul> 
-    
-   
-    <li class="subnav_drop"><span>Extend it</span>
-<ul class="subnav">
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../extend/">Overview</a>
-        
-    </li>
-
+                
+                  <li>
+    <ul class="subnav">
+    <li><span>FAQ</span></li>
 
         
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../nfvo-architecture/">NFVO Architecture</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vim-plugin/">Write your own Plugin</a>
-        
-    </li>
-
-
-        
-</li>
-</ul>
-    
-</ul></li>
-                 
-		
-		
-                  <li><ul> 
-    
-   
-    <li class="subnav_drop"><span>FAQ</span>
-<ul class="subnav">
-        
-             
-
+            
     <li class="toctree-l1 ">
         <a class="" href="../FAQ/">FAQ</a>
         
     </li>
 
-
         
+    </ul>
 </li>
-</ul>
-    
-</ul></li>
-                 
-		
-		
-		
-		
-		
-		
-		
+                
               </ul>
             </div>
             &nbsp;
@@ -348,257 +200,30 @@ $( document).ready(function(){
                       <div class="section">
                         
                           <h1 id="vnfmanager-generic">VNFManager Generic</h1>
-<p>The Generic VNFManager is an implementation following the <a href="http://www.etsi.org/deliver/etsi_gs/NFV-MAN/001_099/001/01.01.01_60/gs_NFV-MAN001v010101p.pdf">ETSI MANO</a> specifications. For that reason it is highly tied to the EMS.
-This VNFM may be assigned the management of a single VNF instance, or the management of multiple VNF instances of the same type or of different types.</p>
-<p>The Generic VNFManager handles communication with the NFVO and with EMS. The communication NFVO ↔ VNFM ↔ EMS is done using the <a href="https://stomp.github.io/">Stomp</a> protocol over ActiveMQ.  </p>
-<p>The communication between the NFVO and Generic VNFManager:</p>
-<p><img alt="NFVO - Generic VNFM communication" src="../images/vnfm-Or_communication.png" /></p>
-<p>The communication between the Generic VNFManager and EMS:</p>
-<p><img alt="Generic VNFM - EMS communication" src="../images/GVNFM-EMS.jpg" /></p>
-<p>As you can see, the Generic VNFM sends commands to the EMS, which is running in the VM. Then the EMS executes the commands (scripts) locally in the VNFC.
-The following sequence diagram explains the communication messages.</p>
-<p><img alt="Sequence Diagram NFVO - VNFM - EMS" src="../images/sequence-diagram-v2.png" /></p>
-<p>The Generic VNFManager is supposed to be used for any type of VNF that follows some conventions regarding:</p>
+<p>The Generic VNFManager is an implementation following the <a href="http://www.etsi.org/deliver/etsi_gs/NFV-MAN/001_099/001/01.01.01_60/gs_NFV-MAN001v010101p.pdf">ETSI MANO</a> specifications. For that reason is highly tied to the EMS.</p>
+<p>The Generic VNFManager handles communication with the NFVO and with EMS. The communication between NFVO and the EMS is done through Stomp protocol, in particural JMS. The sequece diagram following explains the communication messages.</p>
+<p>![Sequence Diagram NFVO - VNFM - EMS][or-vnfm-sequence]</p>
+<p>The Generic VNFManager is supposed to be used for any type of VNF that follows some convetions regarding:</p>
 <ul>
 <li>VMs deployment</li>
-<li>Script execution costraints</li>
+<li>script execution order</li>
 <li>VMs termination</li>
 </ul>
 <h3 id="vms-deployment">VMs deployment</h3>
-<p>Accordingly to the <a href="http://www.etsi.org/deliver/etsi_gs/NFV-MAN/001_099/001/01.01.01_60/gs_NFV-MAN001v010101p.pdf#page=108">ETSI MANO B.3</a> the VNF instantiation flows can be done in two ways:</p>
-<ol>
-<li>With resource allocation done by NFVO</li>
-<li>With resource allocation done by VNF Manager</li>
-</ol>
-<p>The Generic VNFM follows the first approach. In the first approach two messages will be sent to the NFVO:</p>
-<ul>
-<li>
-<p><strong>GRANT_OPERATION message</strong>: check if the resources are available on the selected PoP. If the GRANT_OPERATION message is returned, then there are enough resources, otherwise an ERROR message will be sent. After the GRANT_OPERATION message it is possible to send the ALLOCATE_RESOURCE message.  </p>
-</li>
-<li>
-<p><strong>ALLOCATE_RESOURCE message</strong>: This message ask the NFVO to create all the resources and then, if no errors occurred, the ALLOCATE_RESOURCE message will be returned to the VNFManager. Only the VNFMs which follow the first approach need to send this message.</p>
-</li>
-</ul>
-<p>After that point the VMs are created and <strong>the VNF record is filled with values</strong>, such as ips, that can be found directly in the VirtualNetworkFunctionRecord→VirtualDeploymentUnit→VNFCInstance object.</p>
+<p>As seen in the previous picture, the allocation of resources (VMs) are requested by the VNFManager to the NFVO. Before that all the VNFManagers need to request whenever the resources are available on the selected PoP. This is done by the GRANT_OPERATION message and it is executed by all the VNFManagers. The Generic VNFM sends the ALLOCATE_RESOURCES message as well. If the GRANT_OPERATION message is returned, than it means that there are enough resources, if not an ERROR message will be sent. After the GRANT_OPERATION message it is possible to send the ALLOCATE_RESOURCE message. This message will create all the resources and than, if no errors occured, return the ALLOCATE_RESOURCE message to the VNFManager. after that point the VMs are created and the VNFRecord is filled with values, such as ips, that can be found directly in the VirtalNetworkFunctionRecord-&gt;VirtualDeploymentUnit-&gt;VNFCInstance object. </p>
 <h3 id="script-execution-costraints">Script Execution Costraints</h3>
-<p>For each operation of the VNF Lifecycle Management interface, the VNFManager sends scripts to the EMS which executes them locally in the VMs.</p>
-<p><strong>Note</strong>: The scripts come from the VNFPackage which you need to create (see <a href="../vnfpackage">VNFPackage documentation</a>).</p>
-<p>The ordering of this scripts is defined in the NetworkServiceDescriptor from which the NetworkServiceRecord was created, in particular into the NetworkServiceDescriptor→VirtualNetworkFunctionDescriptor→LifecycleEvents.
-Here an example (to make it more readable it is shown only the <strong>VNF lifecycle event</strong> part):</p>
-<pre><code class="json">{// NSD
-  ...
-  {// VNFD
-    ...
-    &quot;lifecycle_event&quot;:[
-        {
-            &quot;event&quot;:&quot;INSTANTIATE&quot;,
-            &quot;lifecycle_events&quot;:[
-                &quot;install.sh&quot;
-            ]
-        },
-        {
-            &quot;event&quot;:&quot;CONFIGURE&quot;,
-            &quot;lifecycle_events&quot;:[
-                &quot;server_configure.sh&quot;
-            ]
-        },
-        {
-            &quot;event&quot;:&quot;START&quot;,
-            &quot;lifecycle_events&quot;:[
-                 &quot;server_start.sh&quot;
-            ]
-        },
-        {
-            &quot;event&quot;:&quot;TERMINATE&quot;,
-            &quot;lifecycle_events&quot;:[
-                 &quot;server_terminate.sh&quot;
-            ]
-        }
-    ],
-    ...
-  }
-  ...
-}
-</code></pre>
-
-<p>In the following table is described for each <strong>VNF lifecycle event</strong> when the scripts are executed.</p>
-<table>
-<thead>
-<tr>
-<th>VNF Lifecycle event</th>
-<th>When scripts are executed</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>INSTANTIATE</td>
-<td>During the instantiation of the corresponding VNF</td>
-</tr>
-<tr>
-<td>CONFIGURE</td>
-<td>After the instantiation. Useful if the VNF depends on other VNFs, because we can get parameters provided by them (e.g. IP). The parameters are available as environment variables (see later).</td>
-</tr>
-<tr>
-<td>START</td>
-<td>After the instantiation or configuration (It depends whether the event CONFIGURE specified).</td>
-</tr>
-<tr>
-<td>TERMINATE</td>
-<td>During the termination of the corresponding VNF</td>
-</tr>
-</tbody>
-</table>
-<p>The available parameters are defined in the VirtualNetworkFunctionDescriptor fields:</p>
+<p>During the INSTANTIATE and the MODIFY operations, scripts are executed in the VMs. The ordering of this scripts is defined in the NetworkServiceDescriptor from which the NetworkServiceRecord was created, in particural into the VirtalNetworkFunctionRecord-&gt;LifecycleEvents (see VNFD). The available parameters are defined into the VirtalNetworkFunctionDescriptor fields:</p>
 <ul>
-<li><strong>provides</strong>: it contains the VMs parameters which will be available after the instantiation (e.g. IP) for other VNFs.</li>
-<li><strong>configurations</strong>: it contains specific parameters which you want to use in the scripts.</li>
+<li>provides</li>
+<li>configurations</li>
 </ul>
-<p>In the INSTANTIATE scripts, the parameters defined in these two fields are then available as environment variables into the script exactly as defined (i.e. you can get by $parameter_name).</p>
-<p>In the MODIFY scripts, the INSTANTIATE parameters are still available but plus there are environment variables that come from other VNF sources, where they are specified in the provides field. 
-These kind of parameters are defined in the <em>requires</em> fields (of the VNF target) and the VNFDependency→parameters fields (of the NSD), and are then available as $<em>type_of_vnf_source</em>_<em>name_of_parameter</em> (in the VNF target).</p>
-<p><em><strong>NOTE</strong></em>: <em>the scripts in the CONFIGURE lifecycle event need to start with the type of the source VNF followed by _ and the name of the script (i.e. server_configure.sh)</em></p>
+<p>In the INSTANTIATE scripts, the parameters defined into these two fields are then available as environment variables into the script exactly as defined.</p>
+<p>In the MODIFY scripts, the INSTANTIATE parameters are still available but plus there are environment variables that come from a VNFDependency. These kind of parameters are defined into the <em>requires</em> and the VNFDependency-&gt;parameters fields, and are then available as $<em>type_of_vnf_source</em>.<em>name_of_parameter</em></p>
 <h3 id="vms-termination">VMs termination</h3>
-<p>As for VMs deployment, VMs termination is done by the NFVO. Specific scripts can be run before termination by putting them under the TERMINATE lifecycle event.</p>
-<h2 id="launch-the-generic-vnfm">Launch the Generic VNFM</h2>
-<p>To launch the Generic VNFM, execute the following command:</p>
-<pre><code class="bash">$ cd &lt;generic directory&gt;
-$ ./generic.sh start
-</code></pre>
-
-<p>The Generic VNFM can handle more than one VNF (in parallel) of the same or different type, so that you need to start only one Generic VNFM.</p>
-<h1 id="example-with-dependency-and-scripts">EXAMPLE WITH DEPENDENCY AND SCRIPTS</h1>
-<p>Let's see a simple example with two VNFs: vnf-server and vnf-database.
-The vnf-server needs the ip of the vnf-database to be able to connect properly. The following figure shows the source (vnf-database), the target (vnf-server)
-and the dependency (IP).</p>
-<p><img alt="ns with dependency" src="../images/ns_with_dependency.png" /></p>
-<p><strong>INSTANTIATE scripts</strong></p>
-<p>To start the VNFs we'll have two scripts <strong>instantiate-vnf-server.sh</strong> and <strong>instantiate-vnf-database.sh</strong> (more scripts are possible). Here an example of the instantiate-vnf-server.sh script:</p>
-<pre><code class="bash">#!/bin/bash
-
-echo &quot;INSTANTIATIATION of the VNF server&quot;
-echo &quot;The following parameters are available:&quot;
-echo &quot;The answer to everything is.. ${ANSWER_TO_EVERYTHING}&quot;
-
-# ... Add the code to start the vnf_server ...
-</code></pre>
-
-<p><strong>MODIFY script</strong></p>
-<p>After the instantiation of the vnf-server we would configure it with the following <strong>database_connectToDb.sh</strong> script:</p>
-<pre><code class="bash">#!/bin/bash
-
-echo &quot;This is the ip of the vnf-database: ${database_private1}&quot;
-# ... Add the code to connect to the vnf-database with the ip: ${database_private1} ...
-
-</code></pre>
-
-<p><strong>Note1</strong>: "database" is the type of the vnf-database, private1 is the name of the network plus the number of the network (in this case "1").</p>
-<p><strong>Note2</strong>: All the scripts need to be in a repository or in the vnf package (see the vnf package structure <a href="../vnfpackage">here</a>).</p>
-<p>In order to deploy the VNFs we have to create both the VNF descriptor: <strong>vnf-database-descriptor.json</strong> and <strong>vnf-server-descriptor.json</strong>. Below we'll be showed the most relevant part of them:</p>
-<p><strong>vnf-database-descriptor.json</strong></p>
-<pre><code class="json">{
-    &quot;name&quot;:&quot;vnf-database&quot;,
-    &quot;type&quot;:&quot;database&quot;,
-    &quot;endpoint&quot;:&quot;generic&quot;,
-    ...
-    &quot;lifecycle_event&quot;:[
-        {
-            &quot;event&quot;:&quot;INSTANTIATE&quot;,
-            &quot;lifecycle_events&quot;:[
-                &quot;instantiate-vnf-database.sh&quot;
-            ]
-        }
-    ],
-    ...
-}
-</code></pre>
-
-<p><strong>Note:</strong> to use the Generic VNFM for managing a VNF just set "generic" in the endpoint field.</p>
-<p><strong>vnf-server-descriptor.json</strong></p>
-<pre><code class="json">{
-    &quot;name&quot;:&quot;vnf-server&quot;,
-    &quot;type&quot;:&quot;server&quot;,
-    &quot;endpoint&quot;:&quot;generic&quot;,
-    ...
-    &quot;configurations&quot;:{
-            &quot;name&quot;:&quot;config_name&quot;,
-            &quot;configurationParameters&quot;:[
-            {
-                &quot;confKey&quot;:&quot;ANSWER_TO_EVERYTHING&quot;,
-                &quot;value&quot;:&quot;42&quot;
-            }
-            ]
-    },
-    ...
-    &quot;lifecycle_event&quot;:[
-        {
-            &quot;event&quot;:&quot;INSTANTIATE&quot;,
-            &quot;lifecycle_events&quot;:[
-                &quot;instantiate-vnf-server.sh&quot;
-            ]
-        },
-        {
-            &quot;event&quot;:&quot;CONFIGURE&quot;,
-            &quot;lifecycle_events&quot;:[
-                &quot;database_connectToDb.sh&quot;
-            ]
-        }
-    ],
-    ...
-}
-</code></pre>
-
-<p>The result network service descriptor shall include both the vnf descriptors above and the dependency:</p>
-<pre><code class="json">{
-    &quot;name&quot;:&quot;simple-nsd&quot;,
-    &quot;vnfd&quot;:[
-        {
-            &quot;id&quot;:&quot;29d918b9-6245-4dc4-abc6-b7dd6e84f2c1&quot;
-        },
-        {
-            &quot;id&quot;:&quot;87820607-4048-4fad-b02b-dbcab8bb5c1c&quot;
-        }
-    ],
-    &quot;vld&quot;:[
-        {
-            &quot;name&quot;:&quot;private&quot;
-        }
-    ],
-    &quot;vnf_dependency&quot;:[
-        {
-            &quot;source&quot; : {
-                &quot;name&quot;: &quot;vnf-database&quot;
-            },
-            &quot;target&quot;:{
-                &quot;name&quot;: &quot;vnf-server&quot;
-            },
-            &quot;parameters&quot;:[
-                &quot;private1&quot;
-            ]
-        }
-    ]
-}
-</code></pre>
-
-<p>See the complete tutorial → <a href="../vnfpackage#tutorial">VNFPackage tutorial</a>.</p>
+<p>As for VMs deployment, VMs termination is done by the NFVO. Specific scripts can be run before termination by putting them under the RELEASE_REOSURCES lifecycel event.</p>
 <!---
 References
 -->
-
-<!---
-Script for open external links in a new tab
--->
-
-<script type="text/javascript" charset="utf-8">
-      // Creating custom :external selector
-      $.expr[':'].external = function(obj){
-          return !obj.href.match(/^mailto\:/)
-                  && (obj.hostname != location.hostname);
-      };
-      $(function(){
-        $('a:external').addClass('external');
-        $(".external").attr('target','_blank');
-      })
-</script>
                         
                       </div>
                     </div>
@@ -609,7 +234,7 @@ Script for open external links in a new tab
         <a href="../vnfm-how-to-write/" class="btn btn-neutral float-right" title="Write your own VNFM"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../use/" class="btn btn-neutral" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../nfvo-architecture/" class="btn btn-neutral" title="NFVO Architecture"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
