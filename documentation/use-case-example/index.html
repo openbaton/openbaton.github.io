@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>OpenBaton Documentation</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,300,600,700" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "A full example ;-)";
+    var mkdocs_page_input_path = "use-case-example.md";
+    var mkdocs_page_url = "/use-case-example/";
+     var mkdocs_page_url = "/use-case-example/";
+  </script>
+  
+  <!-- site_name == OpenBaton Documentation -->
+  <!-- page_title == A full example ;-) -->
+  <!-- base_url == .. -->
+  <!-- current_page == A full example ;-) - /use-case-example/ [*]
+ -->
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-68429895-1', 'openbaton.github.io');
+      ga('send', 'pageview');
+  </script>
+  
+
+<style>
+
+.subnav_drop{
+  cursor: pointer;
+
+
+}
+
+ul.subnav {
+/*display:none ;*/
+cursor: pointer;
+border-bottom: 1px solid #e1e1e5;
+}
+
+.subnav:last-child{
+  border-bottom: none;
+
+}
+
+ul.subnav:active {
+display:block;
+}
+
+.wy-menu-vertical li ul {
+display: block;
+
+  }
+
+</style>
+</head>
+
+<body role="document">
+
+<script type="text/javascript">
+$( document).ready(function(){
+      //console.log("test");
+
+    //$('.subnav').not( ":has('A full example ;-)')" ).hide();
+    $('li.subnav_drop').find('ul.subnav').hide();
+    //$('li.subnav_drop').find('ul.subnav').each(function(i,e){console.log(i,e)});
+       $( ".subnav" ).find( "li:contains('A full example ;-)')" ).each(function(i,e){
+          var currentElement = $(e);
+          currentElement.parent().css({"display":"block","visibility":"visible"}); //css("background-color","blue");
+          currentElement.css({"display":"block","visibility":"visible"});
+       });//$( ".subnav" ).find( "li:contains('A full example ;-)')" ).css("display","block");
+       //$(".current").css({"background-color":"blue","display":"block","visibility":"visible"});
+       //show(1000,function(i,e){console.log(i,e)});
+       //$('li.subnav_drop').find('ul.subnav').css("background-color","blue");
+      //$(this).find('ul.subnav').toggle();
+    $('li.subnav_drop').click(function(i,e) {  
+      $('li.subnav_drop').not(this).find('ul.subnav').hide();
+      $(this).find('ul.subnav').toggle();
+    }); 
+
+});
+   
+$( ".wy-nav-content" ).find( "li:contains('A full example ;-)')" ).css('color','red');
+console.log('--------');
+console.log($( ".wy-nav-content" ).find( "div:contains('A full example ;-)')" ).css("color","red"));
+console.log('--------');
+console.log($( ".subnav" ).find( "li:contains('A full example ;-)')" ));
+console.log('--------');
+  </script>
+
+
+
+<div class="navcontainer" style="margin:0px; background:#000;">
+    <div class="navholder">
+      <nav>
+        <a href="../../index.html" class="logo"></a>
+        <a href="#" id="menu-icon"></a>
+        <ul class="navigation">
+          
+                <li><a href="../../index.html#about">About</a></li>
+                <li><a href="../../cases.html">Use Cases</a></li>
+                <li><a href="../../features.html">Features</a></li>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="../../index.html#contact">Contact</a></li>
+                <li><a href="https://github.com/openbaton">GitHub</a></li>
+          </ul>
+      </nav>
+     </div>
+</div>
+<div  class="container">
+  <div class="holder"> 
+        <div class="wy-grid-for-nav">
+
+          
+          <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+            <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+              <ul class="current">
+                
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Get Started</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="..">Get Started</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Installation</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../install/">Overview</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation/">Install NFVO</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vim-instance/">Register a PoP</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Use it</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../use/">Introduction</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-generic/">Generic VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-how-to-write/">Write your own VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-vendor-specific/">Integrate your own VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfpackage/">Create your own VNF Package</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ns-descriptor/">Create the NSD</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-how-to-use-gui/">Use via the Dashboard</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-sdk/">Use via the SDK</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 current">
+        <a class="current" href="./">A full example ;-)</a>
+        
+         
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Extend it</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../extend/">Extend it</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-architecture/">NFVO Architecture</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vim-plugin/">Write your own Plugin</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>FAQ</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../FAQ/">FAQ</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+              </ul>
+            </div>
+            &nbsp;
+          </nav>
+        </div>
+    <div class="content_container">
+        <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+         
+
+          
+                <div class="wy-nav-content">
+                  <div class="rst-content">
+                   
+                    <div role="main">
+                      <div class="section">
+                        
+                          <h1 id="use-case-example-iperf-client-server">Use case example: Iperf client - server</h1>
+<hr />
+<p>In this page there is a full use case example explaining how the deployment process works, step-by-step. We assume that the NFVO and the Generic VNFM are ready to receive invocations.</p>
+<p>The following pictures shows what is going to be deployed, an <a href="https://iperf.fr">Iperf</a> client and an Iperf server.</p>
+<p><img alt="iperf-deployment" src="../images/use-case-example-iperf-client-server.png" /></p>
+<p>As shown in the picture, the iperf server is the source of the dependency and the client is the target. In this case the client needs the IP of the server. The semantics of the vnf dependency is: the source provides some parameters to the target.</p>
+<p>Before starting we need to send the VimInstance to the NFVO and the Network Service Descriptor. For doing this please have a look into the <a href="../vim-instance-documentation">Vim instance documentation</a>, <a href="../vnfpackage">VNF Package documentation</a> and <a href="../ns-descriptor">Network Service Descriptor documentation</a>. In fact, for creating a Network Service Record, we need to have a Network Service Descriptor loaded into the catalogue with two Virtual Network Functions (iperf client and server) created from a VNF Package. A Virtual Network Function Descriptor Json-File for Iperf client looks like this:</p>
+<pre><code class="json">{
+    &quot;vendor&quot;:&quot;fokus&quot;,
+    &quot;version&quot;:&quot;0.1&quot;,
+    &quot;name&quot;:&quot;iperf-client&quot;,
+    &quot;type&quot;:&quot;client&quot;,
+    &quot;endpoint&quot;:&quot;generic&quot;,
+    &quot;vdu&quot;:[
+        {
+            &quot;vm_image&quot;:[
+                &quot;ubuntu-14.04-server-cloudimg-amd64-disk1&quot;
+            ],
+            &quot;computation_requirement&quot;:&quot;&quot;,
+            &quot;virtual_memory_resource_element&quot;:&quot;1024&quot;,
+            &quot;virtual_network_bandwidth_resource&quot;:&quot;1000000&quot;,
+            &quot;lifecycle_event&quot;:[
+
+            ],
+            &quot;vimInstanceName&quot;:&quot;vim-instance&quot;,
+            &quot;vdu_constraint&quot;:&quot;&quot;,
+            &quot;high_availability&quot;:&quot;ACTIVE_PASSIVE&quot;,
+            &quot;scale_in_out&quot;:2,
+            &quot;vnfc&quot;:[
+                {
+                    &quot;connection_point&quot;:[
+                        {
+                            &quot;virtual_link_reference&quot;:&quot;private&quot;
+                        }
+                    ]
+                }
+            ],
+            &quot;monitoring_parameter&quot;:[
+                &quot;cpu_utilization&quot;
+            ]
+        }
+    ],
+    &quot;virtual_link&quot;:[
+        {
+            &quot;name&quot;:&quot;private&quot;
+        }
+    ],
+    &quot;connection_point&quot;:[
+
+    ],
+    &quot;lifecycle_event&quot;:[
+        {
+            &quot;event&quot;:&quot;INSTANTIATE&quot;,
+            &quot;lifecycle_events&quot;:[
+                &quot;install.sh&quot;
+            ]
+        },
+        {
+            &quot;event&quot;:&quot;CONFIGURE&quot;,
+            &quot;lifecycle_events&quot;:[
+                &quot;server_configure.sh&quot;
+            ]
+        }
+    ],
+    &quot;vdu_dependency&quot;:[
+
+    ],
+    &quot;monitoring_parameter&quot;:[
+        &quot;cpu_utilization&quot;
+    ],
+    &quot;deployment_flavour&quot;:[
+        {
+            &quot;df_constraint&quot;:[
+                &quot;constraint1&quot;,
+                &quot;constraint2&quot;
+            ],
+            &quot;costituent_vdu&quot;:[
+
+            ],
+            &quot;flavour_key&quot;:&quot;m1.small&quot;
+        }
+    ],
+    &quot;manifest_file&quot;:&quot;&quot;
+}
+</code></pre>
+
+<p>This is a perfect example of a dependency. The VNFManager Generic, after creation of the client VNF described, will run the <code>install.sh</code> script during the instantiate method. The install.sh script is:</p>
+<pre><code class="bash">#!/bin/bash
+
+sudo apt-get update &amp;&amp; sudo apt-get install -y iperf screen
+</code></pre>
+
+<p>As said before in the documentation <a href="../vnfm-generic">VNFManager Generic</a>, <em>the scripts in the CONFIGURE lifecycle event need to start with the type of the source VNF followed by _ and the name of the script</em>, so the `server_configure.sh is:</p>
+<pre><code class="bash">#!/bin/bash
+
+screen -d -m -S client iperf -c $server_private1 -t 300
+</code></pre>
+
+<p>These scripts shown above, are contained in the VNF Package or in a git repository accessible from the VM. Be aware that all the scripts will be executed with root permissions. Once all these steps are done we are ready to create a Network Service Record from the id of the Network Service Descriptor. </p>
+<p>Let's again have a look at the sequence diagram of a create Network Service Record operation.</p>
+<p><img alt="CreateNSR Sequence Diagram" src="../images/use-case-example-sequence-diagram-os-vnfm-ems.png" /></p>
+<p>When the Network Service Record create is called with the Iperf Network Service Descriptor's id, the steps defined in the sequence diagram above happen.</p>
+<h5 id="instantiate-method">INSTANTIATE Method</h5>
+<p>The first message sent to the Generic VNFM is the INSTANTIATE message <strong>(1)</strong>. This message contains the VNF Descriptor and some other parameters needed to create the VNF Record, for instance the list of Virtual Link Records. The Generic VNFM  is called and then the create Virtual Network Function Record and the Virtual Network Function Record is created <strong>(2)</strong> and sent back to the NFVO into a GrantOperation message <strong>(3)</strong>. This message will trigger the NFVO to check if there are enough resources to create that VNF Record. If so, then a GrantOperation message with the updated VNF Record is sent back to the Generic VNFManager. Then the Generic VNFManager creates an AllocateResources message with the received VNF Record and sends it to the NFVO <strong>(4)</strong>. The NFVO after creating the Resources (VMs) sends back the AllocateResources message to the VNFManager. Here the instantiate method is called <strong>(5)</strong>. Inside this method, the scripts (or the link to the git repository containing the scripts) contained in the VNF Package is sent to the EMS, the scripts are saved locally to the VM and then the Generic VNFManager will call the execution of each script defined in the VNF Descriptor <strong>(6)</strong>. Once all of the scripts are executed and there wasn't any error, the VNFManager sends the Instantiate message back to the NFVO <strong>(7)</strong>. </p>
+<h5 id="modify-method">MODIFY Method</h5>
+<p>If the VNF is target for some dependencies, like the iperf client, the MODIFY message is sent to the VNFManager by the NFVO <strong>(8)</strong>. Then the VNFManager executes the scripts contained in the CONFIGURE lifecycle event defined in the VNF Descriptor <strong>(9)</strong>, and sends back the modify message to the NFVO <strong>(10)</strong>, if no errors occurred. In this case, the scripts environment will contain the variables defined in the related VNF dependency.</p>
+<h5 id="start-method">START Method</h5>
+<p>Here exactly as before, the NFVO sends the START message to the Generic VNFManager <strong>(11)</strong>, and the VNFManager calls the EMS for execution of the scripts defined in the START lifecycle (none for this example) <strong>(12)</strong>. And the start message is then sent back to the NFVO meaning that no errors occurred <strong>(13)</strong>.</p>
+<h2 id="conclusions">Conclusions</h2>
+<p>When all the VNF Records are done with all of the scripts defined in the lifecycle events, the NFVO will put the state of the VNF Record to ACTIVE and when all the VNF Records are in state ACTIVE, also the Network Service Record will be in state ACTIVE. This means that the service was correctly run. For knowing more about the states of a VNF Record please refer to <a href="../vnfr-states">VNF Record state documentation</a></p>
+<!---
+References
+-->
+
+<!---
+Script for open external links in a new tab
+-->
+
+<script type="text/javascript" charset="utf-8">
+      // Creating custom :external selector
+      $.expr[':'].external = function(obj){
+          return !obj.href.match(/^mailto\:/)
+                  && (obj.hostname != location.hostname);
+      };
+      $(function(){
+        $('a:external').addClass('external');
+        $(".external").attr('target','_blank');
+      })
+</script>
+                        
+                      </div>
+                    </div>
+                    <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../extend/" class="btn btn-neutral float-right" title="Extend it"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../nfvo-sdk/" class="btn btn-neutral" title="Use via the SDK"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          	  
+                  </div>
+                </div>
+
+        </section>
+    </div>
+  </div>
+</div>
+
+
+
+</body>
+</html>
+

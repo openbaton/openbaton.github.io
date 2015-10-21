@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>OpenBaton Documentation</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,300,600,700" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "**HIDDEN**";
+    var mkdocs_page_input_path = "nsd-json-example.md";
+    var mkdocs_page_url = "/nsd-json-example/";
+     var mkdocs_page_url = "/nsd-json-example/";
+  </script>
+  
+  <!-- site_name == OpenBaton Documentation -->
+  <!-- page_title == **HIDDEN** -->
+  <!-- base_url == .. -->
+  <!-- current_page == **HIDDEN** - /nsd-json-example/ [*]
+ -->
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-68429895-1', 'openbaton.github.io');
+      ga('send', 'pageview');
+  </script>
+  
+
+<style>
+
+.subnav_drop{
+  cursor: pointer;
+
+
+}
+
+ul.subnav {
+/*display:none ;*/
+cursor: pointer;
+border-bottom: 1px solid #e1e1e5;
+}
+
+.subnav:last-child{
+  border-bottom: none;
+
+}
+
+ul.subnav:active {
+display:block;
+}
+
+.wy-menu-vertical li ul {
+display: block;
+
+  }
+
+</style>
+</head>
+
+<body role="document">
+
+<script type="text/javascript">
+$( document).ready(function(){
+      //console.log("test");
+
+    //$('.subnav').not( ":has('**HIDDEN**')" ).hide();
+    $('li.subnav_drop').find('ul.subnav').hide();
+    //$('li.subnav_drop').find('ul.subnav').each(function(i,e){console.log(i,e)});
+       $( ".subnav" ).find( "li:contains('**HIDDEN**')" ).each(function(i,e){
+          var currentElement = $(e);
+          currentElement.parent().css({"display":"block","visibility":"visible"}); //css("background-color","blue");
+          currentElement.css({"display":"block","visibility":"visible"});
+       });//$( ".subnav" ).find( "li:contains('**HIDDEN**')" ).css("display","block");
+       //$(".current").css({"background-color":"blue","display":"block","visibility":"visible"});
+       //show(1000,function(i,e){console.log(i,e)});
+       //$('li.subnav_drop').find('ul.subnav').css("background-color","blue");
+      //$(this).find('ul.subnav').toggle();
+    $('li.subnav_drop').click(function(i,e) {  
+      $('li.subnav_drop').not(this).find('ul.subnav').hide();
+      $(this).find('ul.subnav').toggle();
+    }); 
+
+});
+   
+$( ".wy-nav-content" ).find( "li:contains('**HIDDEN**')" ).css('color','red');
+console.log('--------');
+console.log($( ".wy-nav-content" ).find( "div:contains('**HIDDEN**')" ).css("color","red"));
+console.log('--------');
+console.log($( ".subnav" ).find( "li:contains('**HIDDEN**')" ));
+console.log('--------');
+  </script>
+
+
+
+<div class="navcontainer" style="margin:0px; background:#000;">
+    <div class="navholder">
+      <nav>
+        <a href="../../index.html" class="logo"></a>
+        <a href="#" id="menu-icon"></a>
+        <ul class="navigation">
+          
+                <li><a href="../../index.html#about">About</a></li>
+                <li><a href="../../cases.html">Use Cases</a></li>
+                <li><a href="../../features.html">Features</a></li>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="../../index.html#contact">Contact</a></li>
+                <li><a href="https://github.com/openbaton">GitHub</a></li>
+          </ul>
+      </nav>
+     </div>
+</div>
+<div  class="container">
+  <div class="holder"> 
+        <div class="wy-grid-for-nav">
+
+          
+          <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+            <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+              <ul class="current">
+                
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Get Started</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="..">Get Started</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Installation</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../install/">Overview</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation/">Install NFVO</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vim-instance/">Register a PoP</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Use it</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../use/">Introduction</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-generic/">Generic VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-how-to-write/">Write your own VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-vendor-specific/">Integrate your own VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfpackage/">Create your own VNF Package</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ns-descriptor/">Create the NSD</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-how-to-use-gui/">Use via the Dashboard</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-sdk/">Use via the SDK</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../use-case-example/">A full example ;-)</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Extend it</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../extend/">Extend it</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-architecture/">NFVO Architecture</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vim-plugin/">Write your own Plugin</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>FAQ</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../FAQ/">FAQ</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+              </ul>
+            </div>
+            &nbsp;
+          </nav>
+        </div>
+    <div class="content_container">
+        <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+         
+
+          
+                <div class="wy-nav-content">
+                  <div class="rst-content">
+                   
+                    <div role="main">
+                      <div class="section">
+                        
+                          <p>This network service is composed by two VNF (iperf-server and iperf-client), which the iperf-client is composed by two VNFC.</p>
+<p><strong>Note:</strong> no vnf package is used in this example. Only a link to reach the scripts. Basically could be a link to a git repository in which there are all the scripts.</p>
+<pre><code class="json">{
+   &quot;name&quot;:&quot;iperf-NS&quot;,
+   &quot;vendor&quot;:&quot;tbr&quot;,
+   &quot;version&quot;:&quot;0.1&quot;,
+   &quot;vnfd&quot;:[
+      {
+         &quot;vendor&quot;:&quot;tbr&quot;,
+         &quot;version&quot;:&quot;0.1&quot;,
+         &quot;name&quot;:&quot;iperf-server&quot;,
+         &quot;type&quot;:&quot;server&quot;,
+         &quot;endpoint&quot;:&quot;generic&quot;,
+         &quot;configurations&quot;:{
+            &quot;name&quot;:&quot;config_name&quot;,
+            &quot;configurationParameters&quot;:[]
+         },
+         &quot;vdu&quot;:[
+            {
+               &quot;vm_image&quot;:[
+                  &quot;ubuntu-14.04-server-cloudimg-amd64-disk1&quot;
+               ],
+               &quot;vimInstanceName&quot;:&quot;vim-instance&quot;,
+               &quot;scale_in_out&quot;:1,
+               &quot;vnfc&quot;:[
+                  {
+                     &quot;exposed&quot;:true,
+                     &quot;connection_point&quot;:[
+                        {
+                           &quot;virtual_link_reference&quot;:&quot;private&quot;
+                        }
+                     ]
+                  }
+               ]
+            }
+         ],
+         &quot;virtual_link&quot;:[
+            {
+               &quot;name&quot;:&quot;private&quot;
+            }
+         ],
+         &quot;lifecycle_event&quot;:[
+            {
+               &quot;event&quot;:&quot;INSTANTIATE&quot;,
+               &quot;lifecycle_events&quot;:[
+                  &quot;install.sh&quot;,
+          &quot;start-srv.sh&quot;
+               ]
+            }
+         ],
+         &quot;deployment_flavour&quot;:[
+            {
+               &quot;flavour_key&quot;:&quot;m1.small&quot;
+            }
+         ],
+         &quot;vnfPackage&quot;:{
+            &quot;scriptsLink&quot;:&quot;https://ENTER A VALID LINK TO REACH THE SCRIPTS&quot;
+         }
+      },
+      {
+         &quot;vendor&quot;:&quot;tbr&quot;,
+         &quot;version&quot;:&quot;0.1&quot;,
+         &quot;name&quot;:&quot;iperf-client&quot;,
+         &quot;type&quot;:&quot;client&quot;,
+         &quot;endpoint&quot;:&quot;generic&quot;,
+         &quot;configurations&quot;:{
+            &quot;name&quot;:&quot;config_name&quot;,
+            &quot;configurationParameters&quot;:[
+
+            ]
+         },
+         &quot;vdu&quot;:[
+            {
+               &quot;vm_image&quot;:[
+                  &quot;ubuntu-14.04-server-cloudimg-amd64-disk1&quot;
+               ],
+               &quot;vimInstanceName&quot;:&quot;vim-instance&quot;,
+               &quot;scale_in_out&quot;:2,
+               &quot;vnfc&quot;:[
+                  {
+                     &quot;exposed&quot;:true,
+                     &quot;connection_point&quot;:[
+                        {
+                           &quot;virtual_link_reference&quot;:&quot;private&quot;
+                        }
+                     ]
+                  },
+                  {
+                     &quot;exposed&quot;:true,
+                     &quot;connection_point&quot;:[
+                        {
+                           &quot;virtual_link_reference&quot;:&quot;private&quot;
+                        }
+                     ]
+                  }
+               ]
+            }
+         ],
+         &quot;virtual_link&quot;:[
+            {
+               &quot;name&quot;:&quot;private&quot;
+            }
+         ],
+         &quot;lifecycle_event&quot;:[
+            {
+               &quot;event&quot;:&quot;INSTANTIATE&quot;,
+               &quot;lifecycle_events&quot;:[
+                  &quot;install.sh&quot;
+               ]
+            },
+            {
+               &quot;event&quot;:&quot;CONFIGURE&quot;,
+               &quot;lifecycle_events&quot;:[
+                  &quot;server_start-clt.sh&quot;
+               ]
+            }
+         ],
+         &quot;deployment_flavour&quot;:[
+            {
+               &quot;flavour_key&quot;:&quot;m1.small&quot;
+            }
+         ],
+         &quot;vnfPackage&quot;:{
+            &quot;scriptsLink&quot;:&quot;https://ENTER A VALID LINK TO REACH THE SCRIPTS&quot;
+         }
+      }
+   ],
+   &quot;vnffgd&quot;:[
+
+   ],
+   &quot;vld&quot;:[
+      {
+         &quot;name&quot;:&quot;private&quot;
+      }
+   ],
+   &quot;vnf_dependency&quot;:[
+      {
+         &quot;source&quot;:{
+            &quot;name&quot;:&quot;iperf-server&quot;
+         },
+         &quot;target&quot;:{
+            &quot;name&quot;:&quot;iperf-client&quot;
+         },
+         &quot;parameters&quot;:[
+            &quot;private&quot;
+         ]
+      }
+   ]
+}
+</code></pre>
+                        
+                      </div>
+                    </div>
+                    <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../vnf-parameters/" class="btn btn-neutral" title="**HIDDEN**"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          	  
+                  </div>
+                </div>
+
+        </section>
+    </div>
+  </div>
+</div>
+
+
+
+</body>
+</html>
+

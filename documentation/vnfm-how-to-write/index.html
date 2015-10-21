@@ -7,13 +7,13 @@
   
   
   
-  <title>Write your own VNFM - OpenBaton Documentation</title>
+  <title>OpenBaton Documentation</title>
   
 
   <link rel="shortcut icon" href="../img/favicon.ico">
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,300,600,700" rel="stylesheet" type="text/css">
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
@@ -25,17 +25,95 @@
     var mkdocs_page_name = "Write your own VNFM";
     var mkdocs_page_input_path = "vnfm-how-to-write.md";
     var mkdocs_page_url = "/vnfm-how-to-write/";
+     var mkdocs_page_url = "/vnfm-how-to-write/";
   </script>
   
+  <!-- site_name == OpenBaton Documentation -->
+  <!-- page_title == Write your own VNFM -->
+  <!-- base_url == .. -->
+  <!-- current_page == Write your own VNFM - /vnfm-how-to-write/ [*]
+ -->
   <script src="../js/jquery-2.1.1.min.js"></script>
   <script src="../js/modernizr-2.8.3.min.js"></script>
   <script type="text/javascript" src="../js/highlight.pack.js"></script>
   <script src="../js/theme.js"></script> 
 
   
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-68429895-1', 'openbaton.github.io');
+      ga('send', 'pageview');
+  </script>
+  
+
+<style>
+
+.subnav_drop{
+  cursor: pointer;
+
+
+}
+
+ul.subnav {
+/*display:none ;*/
+cursor: pointer;
+border-bottom: 1px solid #e1e1e5;
+}
+
+.subnav:last-child{
+  border-bottom: none;
+
+}
+
+ul.subnav:active {
+display:block;
+}
+
+.wy-menu-vertical li ul {
+display: block;
+
+  }
+
+</style>
 </head>
 
 <body role="document">
+
+<script type="text/javascript">
+$( document).ready(function(){
+      //console.log("test");
+
+    //$('.subnav').not( ":has('Write your own VNFM')" ).hide();
+    $('li.subnav_drop').find('ul.subnav').hide();
+    //$('li.subnav_drop').find('ul.subnav').each(function(i,e){console.log(i,e)});
+       $( ".subnav" ).find( "li:contains('Write your own VNFM')" ).each(function(i,e){
+          var currentElement = $(e);
+          currentElement.parent().css({"display":"block","visibility":"visible"}); //css("background-color","blue");
+          currentElement.css({"display":"block","visibility":"visible"});
+       });//$( ".subnav" ).find( "li:contains('Write your own VNFM')" ).css("display","block");
+       //$(".current").css({"background-color":"blue","display":"block","visibility":"visible"});
+       //show(1000,function(i,e){console.log(i,e)});
+       //$('li.subnav_drop').find('ul.subnav').css("background-color","blue");
+      //$(this).find('ul.subnav').toggle();
+    $('li.subnav_drop').click(function(i,e) {  
+      $('li.subnav_drop').not(this).find('ul.subnav').hide();
+      $(this).find('ul.subnav').toggle();
+    }); 
+
+});
+   
+$( ".wy-nav-content" ).find( "li:contains('Write your own VNFM')" ).css('color','red');
+console.log('--------');
+console.log($( ".wy-nav-content" ).find( "div:contains('Write your own VNFM')" ).css("color","red"));
+console.log('--------');
+console.log($( ".subnav" ).find( "li:contains('Write your own VNFM')" ));
+console.log('--------');
+  </script>
+
+
 
 <div class="navcontainer" style="margin:0px; background:#000;">
     <div class="navholder">
@@ -44,7 +122,7 @@
         <a href="#" id="menu-icon"></a>
         <ul class="navigation">
           
-                  <li><a href="../../index.html#about">About</a></li>
+                <li><a href="../../index.html#about">About</a></li>
                 <li><a href="../../cases.html">Use Cases</a></li>
                 <li><a href="../../features.html">Features</a></li>
                 <li><a href="#">Documentation</a></li>
@@ -63,99 +141,95 @@
             <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
               <ul class="current">
                 
-                  <li>
-    <ul class="subnav">
-    <li><span>Get Started</span></li>
-
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Get Started</span>
+<ul class="subnav">
         
-            
+             
+
     <li class="toctree-l1 ">
         <a class="" href="..">Get Started</a>
         
     </li>
 
-        
-    </ul>
-</li>
-                
-                  <li>
-    <ul class="subnav">
-    <li><span>Installation</span></li>
 
         
-            
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Installation</span>
+<ul class="subnav">
+        
+             
+
     <li class="toctree-l1 ">
         <a class="" href="../install/">Overview</a>
         
     </li>
 
+
         
-            
+             
+
     <li class="toctree-l1 ">
         <a class="" href="../nfvo-installation/">Install NFVO</a>
         
     </li>
 
-        
-    </ul>
-</li>
-                
-                  <li>
-    <ul class="subnav">
-    <li><span>Use it</span></li>
 
         
-            
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vim-instance/">Register a PoP</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Use it</span>
+<ul class="subnav">
+        
+             
+
     <li class="toctree-l1 ">
         <a class="" href="../use/">Introduction</a>
         
     </li>
 
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../vnfpackage/">Create your own VNF Package</a>
-        
-    </li>
 
         
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../nfvo-how-to-use-gui/">Use via the Dashboard</a>
-        
-    </li>
+             
 
-        
-    </ul>
-</li>
-                
-                  <li>
-    <ul class="subnav">
-    <li><span>Extend it</span></li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../extend/">Overview</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../nfvo-architecture/">NFVO Architecture</a>
-        
-    </li>
-
-        
-            
     <li class="toctree-l1 ">
         <a class="" href="../vnfm-generic/">Generic VNFM</a>
         
     </li>
 
+
         
-            
+             
+
     <li class="toctree-l1 current">
         <a class="current" href="./">Write your own VNFM</a>
         
@@ -163,25 +237,138 @@
         
     </li>
 
-        
-    </ul>
-</li>
-                
-                  <li>
-    <ul class="subnav">
-    <li><span>FAQ</span></li>
 
         
-            
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-vendor-specific/">Integrate your own VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfpackage/">Create your own VNF Package</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ns-descriptor/">Create the NSD</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-how-to-use-gui/">Use via the Dashboard</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-sdk/">Use via the SDK</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../use-case-example/">A full example ;-)</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Extend it</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../extend/">Extend it</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-architecture/">NFVO Architecture</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vim-plugin/">Write your own Plugin</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>FAQ</span>
+<ul class="subnav">
+        
+             
+
     <li class="toctree-l1 ">
         <a class="" href="../FAQ/">FAQ</a>
         
     </li>
 
+
         
-    </ul>
 </li>
-                
+</ul>
+    
+</ul></li>
+                 
+		
+		
+		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -200,77 +387,210 @@
                       <div class="section">
                         
                           <h1 id="how-to-write-a-vnfmanager">How to write a VNFManager</h1>
-<p>How to write a Vnfm for OpenBaton:</p>
-<p>requirements:
-<em> JDK 7
-</em> vnfm-sdk lib</p>
-<p>It is suggested to use the vnfm-sdk-jms (in case of a jms Vnfm or vnfm-sdk-rest in case of a ReST VNFManager) because it is a sdk providing already the utilities classes in charge of the communication to the NFVO and other tools. This implementation make use of <a href="http://projects.spring.io/spring-boot/">SpringBoot</a>. If you don't want this dependency than use the simple vnfm-sdk artifact, but all the communication with the NFVO needs to be implemented.</p>
-<p>For gathering the vnfm-sdk-jms library you need that to your build.gradle:</p>
+<p>This section is going to describe how to write your own VNFManager by using any vnfm-sdk.
+Moreover, the vnfm-sdk contains all the things you may need for the development of the VNFManager of your choice as well.</p>
+<p>The vnfm-sdk provides the following things:</p>
+<ul>
+<li>multiple <a href="#choose-a-vnfm-sdk">vnfm-sdks</a> where you can choose your preferred type of communication</li>
+<li>Catalogue, shared with the NFVO containing all entities</li>
+<li><a href="#using-the-vnfmhelper">VNFMHelper</a> for providing some methods out of the box</li>
+</ul>
+<h2 id="requirements">Requirements</h2>
+<p>Before you can start with developing your own VNFManager you need to prepare your programming environment by installing/configuring the following requirements:</p>
+<ul>
+<li>JDK 7 (<a href="http://openjdk.java.net/install/">installation</a>)</li>
+<li>Gradle (<a href="https://docs.gradle.org/current/userguide/installation.html">installation</a>)</li>
+</ul>
+<h2 id="develop-your-own-vnfmanager">Develop your own VNFManager</h2>
+<p>This part is going to describe the steps you need to do to develop your own VNFManager with the help of any vnfm-sdk.</p>
+<p>The practical parts of implementing a basic VNFManager will focus on the usage of a specific vnfm-sdk, namely the vnfm-sdk-jms.</p>
+<h3 id="preparations">Preparations</h3>
+<p>This section describes the initial steps for creating the project structure and configuring essential files for developing your own VNFManager.
+This can be done in two ways.
+Either you may use your favorite IDE or you may do everything manually via the command line.</p>
+<p>Once this is done, you can start implementing your VNFManager by using different communication models, the catalogue and several helpers.</p>
+<h4 id="using-your-favorite-ide">Using your favorite IDE</h4>
+<p>In the following we will create the project and setup the configuration files by using your favorite IDE.
+So first of all, start your IDE and go to the next step.
+All the details base on the usage of <a href="https://www.jetbrains.com/idea/?fromMenu">IntelliJIdea</a>.</p>
+<h5 id="create-a-new-project">Create a new project</h5>
+<p>Once you have started the IDE, click on File -&gt; New -&gt; Project...</p>
+<p>In this dialog click on Gradle on the left and select java in the main properties window in the middle.</p>
+<p><img alt="dialog" src="../images/vnfm-how-to-write-intellijidea-new_project-type.png" /></p>
+<p>Then click on next to go to the next window.</p>
+<p>In the next dialog you need to define the GroupId, ArtifactId and the Version.
+More information on the specific meaning can be found <a href="https://maven.apache.org/guides/mini/guide-naming-conventions.html">here</a>.</p>
+<p><img alt="dialog" src="../images/vnfm-how-to-write-intellijidea-new-project-group.png" /></p>
+<p>Continue with the next dialog.</p>
+<p>In this dialog you need to specify which gradle you want to use.
+It is recommend to use the default gradle wrapper.
+Additionally you can enable the auto-import.</p>
+<p><img alt="dialog" src="../images/vnfm-how-to-write-intellijidea-new-project-gradle.png" /></p>
+<p>Continue with the next dialog by clicking on Next.</p>
+<p>In the last dialog, you need to define the project name and the project location.</p>
+<p><img alt="dialog" src="../images/vnfm-how-to-write-intellijidea-new-project-name.png" /></p>
+<p>Once this is done you can click on Finish and continue with creating the Main Class.</p>
+<h5 id="create-the-main-class">Create the Main Class</h5>
+<p>Afterwards, you need to create the Main Class of the VNFManager which will be started in the end.
+For doing so, right click on the root folder my-vnfm, then click on New -&gt; Directory and insert what is show below.</p>
+<p><img alt="dialog" src="../images/vnfm-how-to-write-intellijidea-new-directory.png" /></p>
+<p>Click on OK to continue.</p>
+<p>Additionally you need to create a new package.
+This is done by a right-click on the previously created directory java.
+Click on New -&gt; Package.
+Here you can define the package name.</p>
+<p><img alt="dialog" src="../images/vnfm-how-to-write-intellijidea-new-package.png" /></p>
+<p>Finally you can create your Main Class by clicking (right click) on the previously created package and click on New -&gt; Java Class.</p>
+<p><img alt="dialog" src="../images/vnfm-how-to-write-intellijidea-new-class.png" /></p>
+<p>Once you did all these steps, the initial project structure is created.
+What we miss right now is the configuration of the gradle files to define and fetch dependencies we need for implementing the VNFManager.
+This is described in later sections.</p>
+<h5 id="create-the-properties-files">Create the properties files</h5>
+<p>The properties files are used to define several parameters you need at runtime.
+So just create the following file structure.</p>
+<p>Do a right-click on the main folder located in the src folder.
+Click on New -&gt; Directory and create a new folder with the name resources.</p>
+<p>Do again a right-click on the newly created folder resources and click on New -&gt; File.
+This you need to do two times.
+The first file is called application.properties and the second one is called conf.properties.</p>
+<p>What these files should contain is explained <a href="#property-files">here</a>.</p>
+<h4 id="using-the-command-line">Using the command line</h4>
+<p>This section refers to the developers which don't like to use any IDE.
+By not using any IDE we need to create all the folders and configuration files manually.
+So we start with creating the project structure, the Main Class, initializing the gradle wrapper and according configuration files.</p>
+<h5 id="create-project-folder">Create project folder</h5>
+<p>First of all you need to create a new directory for your VNFManager.
+Here we call the new VNFManager my-vnfm.
+So this can be replaced by whatever you want.</p>
+<pre><code class="bash">$ mkdir my-vnfm
+</code></pre>
+
+<h5 id="create-the-main-class_1">Create the Main Class</h5>
+<p>The Main class is the most important class you need to consider.
+Here you implement your main method and also methods you need to have for your VNFManager.
+Further explanations are done in the according sections.
+This is only for creating a proper file structure.
+So execute the following commands to create the Main class in a proper folder and package structure.</p>
+<p>First, you need to create the folders and package by executing the following command in your root folder of the project.</p>
+<pre><code class="bash">$ mkdir -p src/main/java/org/openbaton/vnfm
+</code></pre>
+
+<p>This creates the java folder src/main/java with the proposed package name org.openbaton.vnfm.</p>
+<p>In the next step you create the Main Class called MyVNFM in this case.</p>
+<pre><code class="bash">$ vim /src/main/java/org/openbaton/vnfm/MyVNFM.java
+</code></pre>
+
+<p>At this point you create only the basic Java Class used later as the Main Class for implementing your VNFManager.
+The newly created Java Class should contain the following lines for now.</p>
+<pre><code class="java">package org.openbaton.vnfm;
+
+public class MyVNFM {
+}
+</code></pre>
+
+<p>If you have chosen a different package name you need to replace it as well at this point.
+Once this is done, you need to initialize the gradle wrapper and configuring according files.</p>
+<h5 id="the-buildgradle-file">The Build.Gradle file</h5>
+<p>First you need to create the build.gradle file by executing the following command from your root project folder.</p>
+<pre><code class="bash">$ vim build.gradle
+</code></pre>
+
+<p>This gradle configuration file needs to contain initially the following lines.</p>
 <pre><code class="gradle">buildscript {
     dependencies {
         classpath(&quot;org.springframework.boot:spring-boot-gradle-plugin:1.2.6.RELEASE&quot;)
     }
 }
-apply plugin: 'spring-boot'
-bootRepackage {
-    mainClass = 'path.to.the.vnfm.class.VNFManager'
-}
+group 'your.group'
+version '1.0-SNAPSHOT'
+
 apply plugin: 'java'
+apply plugin: 'spring-boot'
 apply plugin: 'maven'
-repositories {
-    mavenCentral()
-    maven {
-        url &quot;http://193.175.132.176:8081/nexus/content/groups/public&quot;
-    }
-}
-dependencies {
-    compile 'org.openbaton:vnfm-sdk-jms:0.5-SNAPSHOT' 
-}
 </code></pre>
 
-<p>In this way you will have access to all the model classes and the vnfm-sdk classes needed to implement a VNFManager. The main class of your Vnfm will be the only class needed to be implemented and this class needs to extend <em>AbstractVnfmSpringJMS</em>. This class will provide all the methods that will be called in all the instantiation process (instantiate, modify etc.).</p>
-<p>It needs to implement as well a main methods as follows:</p>
-<pre><code class="java">import org.springframework.beans.factory.annotation.Autowired;
-import org.openbaton.common.vnfm_sdk.jms.AbstractVnfmSpringJMS;
-public class VNFManager extends AbstractVnfmSpringJMS{
-    @Autowired
-    private VnfmHelper vnfmHelper;
-    /**
-    *   implement all the methods...
-    */
-    public static void main(String[] args){
-        SpringApplication.run(VNFManager.class);
-    }
+<p>The second gradle configuration is called settings.gradle.
+This file contains only the project name.
+So create a new file called settings.gradle in your root folder.</p>
+<pre><code class="bash">$ vim settings.gradle
+</code></pre>
+
+<p>Afterwards you need to add the following line containing your project name.
+In our case my-vnfm.</p>
+<pre><code class="gradle">rootProject.name = 'my-vnfm'
+</code></pre>
+
+<p>Afterwards go back to the root folder and run the following command to create automatically the gradle wrapper which is used for code management and compilation.
+For more information on how to use the gradle wrapper have a look at the gradle wrapper documentation <a href="https://docs.gradle.org/current/userguide/gradle_wrapper.html">here</a>.</p>
+<pre><code class="bash">$ gradle wrapper --gradle-version 2.4
+</code></pre>
+
+<p>Once you did all these steps, the initial project structure is created.
+What we miss right now is the configuration of the gradle files to define and fetch dependencies we need for implementing the VNFManager.
+This is described in later sections.</p>
+<h5 id="create-the-properties-files_1">Create the properties files</h5>
+<p>The properties files are used to define several parameters you need at runtime.
+So just create the following file structure by executing the following commands.</p>
+<pre><code class="bash">$ mkdir src/main/resources
+</code></pre>
+
+<p>Now you need to create two new files by running both commands you can find in the following</p>
+<pre><code class="bash">$ touch src/main/resources/application.properties
+$ touch src/main/resources/conf.properties
+</code></pre>
+
+<p>What these files should contain is explained <a href="#property-files">here</a>.</p>
+<h4 id="configure-gradle">Configure Gradle</h4>
+<p>Finally you need to extend your build.gradle for announcing the Main Class, plugins to apply and repositories to use.
+So open the build.gradle an add missing line so that the file contains the following line.</p>
+<pre><code class="gradle">//...
+
+bootRepackage {
+    mainClass = 'org.openbaton.vnfm.MyVNFM'
 }
+
+//...
 </code></pre>
 
-<p>Then just compile &amp; run. </p>
-<pre><code class="bash">$ ./gradlew clean build
-$ java -jar build/libs/vnfm-manager.jar
+<p>Take care about the configuration of the mainClass.
+If the name or package of your mainClass is different, you need to replace it here as well.</p>
+<h4 id="property-files">Property files</h4>
+<p>The previously created properties files are used to define several things.
+They are located in src/main/resources and are called application.properties and conf.properties.</p>
+<p>The <strong>application.properties</strong> contains parameters for setting up all log levels and the configuration for ActiveMQ. This file is useful for configuring the springframework (see <a href="http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html">Spring Boot configuration file</a>). This file can contain the following lines.</p>
+<pre><code class="properties">logging.level.org.springframework=INFO
+logging.level.org.hibernate=INFO
+logging.level.org.jclouds=INFO
+
+logging.level.org.apache.activemq = WARN
+logging.level.org.openbaton = DEBUG
+
+#### activeMQ
+spring.activemq.broker-url=tcp://localhost:61616
+spring.activemq.user=admin
+spring.activemq.password=admin
 </code></pre>
 
-<p>There is the possibility to use the VnfmHelper. The vnfmHelper helps with some methods out of the box:</p>
-<pre><code class="java">package org.openbaton.common.vnfm_sdk;
-import org.openbaton.catalogue.nfvo.messages.Interfaces.NFVMessage;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-public abstract class VnfmHelper {
-    protected Logger log = LoggerFactory.getLogger(this.getClass());
-    public abstract void sendToNfvo(NFVMessage nfvMessage);
-    public abstract NFVMessage sendAndReceive(NFVMessage nfvMessage) throws Exception;
-}
-</code></pre>
+<p>If you want to change log levels or the ActiveMQ access information you need to adapt it here. Please note that if the VNFManager is running in the same machine of the activeMQ broker, this file is not needed.</p>
+<p><em><strong>NOTE</strong></em>: <em>If your VNFManager is running on a different machine than the activemq broker, you need to change the <code>spring.activemq.broker-url</code> accordingly with the ip:port of the activemq broker.</em></p>
+<p>The <strong>conf.properties</strong> is also a very important configuration file.
+Here you need to define the type and endpoint of your VNFManager that is later used for registering on the NFVO.
+Furthermore, you can define your own parameters which can be used at runtime for whatever you want.
+So this file has to contain at least the type and endpoint.
+Additionally, it is defined the folder where the vim-plugins are located.
+In this case the file should contain the following lines.</p>
+<pre><code class="gradle">type=my-vnfm
+endpoint=my-vnfm-endpoint
 
-<p>that send messages to the NFVO and wait for the answer.
-This class need to be implemented in case you want to use only the vnfm-sdk and must be provided to the AbstarctVnfm.</p>
-<p>In any case a configuration file is needed to be in the classpath called conf.properties</p>
-<pre><code class="properties">type=generic
 allocate = true
 concurrency = 15
 transacted = false
+
+#### Additionally
+vim-plugin-dir = ./plugins
 </code></pre>
 
-<p>Where the parameters means:</p>
+<p>Where the parameters mean:</p>
 <table>
 <thead>
 <tr>
@@ -282,6 +602,10 @@ transacted = false
 <tr>
 <td>type</td>
 <td>The type of VNF you are going to handle</td>
+</tr>
+<tr>
+<td>endpoint</td>
+<td>The endpoint used for requesting this VNFManager</td>
 </tr>
 <tr>
 <td>allocate</td>
@@ -297,10 +621,402 @@ transacted = false
 </tr>
 </tbody>
 </table>
-<p>Please do not forget: if you use vnfm-sdk-jms or vnfm-sdk-rest <strong><em>the VNFManager main class needs to be stateless</em></strong> since can (will) run each method potentially in parallel. For what concerns vnfm-sdk-jms, even setting concurrency to 1, will not assure to have always the same instance of the class.</p>
+<h2 id="choose-a-vnfm-sdk">Choose a vnfm-sdk</h2>
+<p>Before you can start with the implementation you need to select the type of communication you want to use for the communication between the Orchestrator (NFVO) and the VNFManager.
+Either you can use the vnfm-sdk-jms for using the <a href="http://docs.spring.io/spring/docs/current/spring-framework-reference/html/jms.html">Java Message Service (JMS)</a> or the vnfm-sdk-rest for using the <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">ReST</a> interface.
+However, your choice doesn't effect the upcoming implementation, because the communication itself is done automatically in the background.
+But have in mind that both libraries depend on <a href="http://projects.spring.io/spring-boot/">SpringBoot</a>.
+So, if you want to avoid this dependency, a third option might be: just use the simple vnfm-sdk artifact.
+By using the simple vnfm-sdk you need to take care about all the communication between NFVO and VNFManager by yourself.</p>
+<p>Once you have imported one of the vnfm-sdks you will have access to all the model classes and the vnfm-sdk classes needed to implement a VNFManager.</p>
+<p>The following section shows you how to import the vnfm-sdk-jms, representative for all the other opportunities.</p>
+<h3 id="import-a-vnfm-sdk">Import a vnfm-sdk</h3>
+<p>This section shows how to import and configure your VNFManager to make use of the vnfm-sdk-jms.</p>
+<p>For gathering the vnfm-sdk-jms library you need to import the libraries by adding the missing lines to your build.gradle:</p>
+<pre><code class="gradle">//...
+
+dependencies {
+    compile 'org.hibernate:hibernate-core:4.3.10.Final'
+    compile 'org.openbaton:vnfm-sdk-jms:0.7'
+}
+
+//...
+</code></pre>
+
+<p><strong>Note</strong> To make use of the vnfm-sdk-rest you need to change 'vnfm-sdk-jms' to 'vnfm-sdk-rest' only.</p>
+<p>So the final build.gradle file results like:</p>
+<pre><code class="gradle">buildscript {
+    dependencies {
+        classpath(&quot;org.springframework.boot:spring-boot-gradle-plugin:1.2.6.RELEASE&quot;)
+    }
+}
+
+apply plugin: 'spring-boot'
+apply plugin: 'java'
+apply plugin: 'maven'
+
+repositories {
+    mavenCentral()
+    maven {
+        url &quot;http://193.175.132.176:8081/nexus/content/groups/public&quot;
+    }
+}
+
+dependencies {
+    compile 'org.openbaton:vnfm-sdk-jms:0.7'
+    compile 'org.hibernate:hibernate-core:4.3.10.Final'
+}
+
+group = 'your.group'
+version = 1.0-SNAPSHOT
+</code></pre>
+
+<p>Once you did this, you need to trigger the gradle build process by running the following command via the command line in your project's root folder.</p>
+<pre><code class="bash">$ ./gradlew build
+</code></pre>
+
+<p>This will fetch all the dependencies defined in the build.gradle and gives you access to all the Classes you need.
+You can also do this by using the IDE by running the corresponding gradle task.</p>
+<h2 id="implementation-of-the-vnfmanager">Implementation of the VNFManager</h2>
+<p>This section is going to describe the implementation of a basic VNFManager by using the vnfm-sdk-jms.
+In the end, the VNFManager will be able to allocate and terminate resources by using its own openstack-plugin.</p>
+<p>So first of all you need to define the main method used for starting your VNFManager.
+So add the following to your Main Class that it looks as follows:</p>
+<pre><code class="java">package org.openbaton.vnfm;
+
+public class MyVNFM {
+
+    public static void main(String[] args){
+        SpringApplication.run(MyVNFM.class);
+    }
+}
+</code></pre>
+
+<p>Afterwards you need to extend your Main Class (in this case MyVNFM) with the <em>AbstractVnfmSpringJMS</em>.</p>
+<p>The <em>AbstractVnfmSpringJMS</em> takes care of all the configuration you need to register/unregister the VNFManager to the NFVO and handles incoming messages.
+Whereas the <em>AbstractVnfm</em>, extended by the <em>AbstractVnfmSpringJMS</em>, is independent of the type of communication.
+This means more in detail that the <em>AbstractVnfm</em> processes the incoming messages and executes the right method depending on the defined Action inside the message.
+Moreover, it is responsible for loading predefined configuration files, setting up the VNFManager itself, creating the VNFR (based on the VNFD received in the first step) and doing essential parts like requesting the NFVO for granting operations or deciding who is responsible for allocate resources.</p>
+<p>Once you extended your VNFMManger, you need to implement all the methods coming from the extension of <em>AbstractVnfmSpringJMS</em> as shown below:</p>
+<pre><code class="java">package org.openbaton.vnfm;
+
+import org.openbaton.catalogue.mano.record.VNFRecordDependency;
+import org.openbaton.catalogue.mano.record.VirtualNetworkFunctionRecord;
+import org.openbaton.common.vnfm_sdk.VnfmHelper;
+import org.openbaton.common.vnfm_sdk.jms.AbstractVnfmSpringJMS;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
+
+public class MyVNFM extends AbstractVnfmSpringJMS {
+
+    @Autowired
+    private VnfmHelper vnfmHelper;
+
+    /**
+     * This operation allows creating a VNF instance.
+     * @param virtualNetworkFunctionRecord
+     * @param scripts
+     */
+    @Override
+    public VirtualNetworkFunctionRecord instantiate(VirtualNetworkFunctionRecord virtualNetworkFunctionRecord, Object scripts) throws Exception {
+        return virtualNetworkFunctionRecord;
+    }
+
+    /**
+     * This operation allows retrieving
+     * VNF instance state and attributes.
+     */
+    @Override
+    public void query() {
+
+    }
+
+    /**
+     * This operation allows scaling
+     * (out/in, up/down) a VNF instance.
+     */
+    @Override
+    public void scale() {
+
+    }
+
+    /**
+     * This operation allows verifying if
+     * the VNF instantiation is possible.
+     */
+    @Override
+    public void checkInstantiationFeasibility() {
+
+    }
+
+    /**
+     * This operation allows verifying if
+     * the VNF instantiation is possible.
+     */
+    @Override
+    public void heal() {
+
+    }
+
+    /**
+     * This operation allows applying a minor/limited
+     * software update (e.g. patch) to a VNF instance.
+     */
+    @Override
+    public void updateSoftware() {
+
+    }
+
+    /**
+     * This operation allows making structural changes
+     * (e.g. configuration, topology, behavior,
+     * redundancy model) to a VNF instance.
+     * @param virtualNetworkFunctionRecord
+     * @param dependency
+     */
+    @Override
+    public VirtualNetworkFunctionRecord modify(VirtualNetworkFunctionRecord virtualNetworkFunctionRecord, VNFRecordDependency dependency) throws Exception {
+        return virtualNetworkFunctionRecord;
+    }
+
+    /**
+     * This operation allows deploying a new
+     * software release to a VNF instance.
+     */
+    @Override
+    public void upgradeSoftware() {
+
+    }
+
+    /**
+     * This operation allows terminating gracefully
+     * or forcefully a previously created VNF instance.
+     * @param virtualNetworkFunctionRecord
+     */
+    @Override
+    public VirtualNetworkFunctionRecord terminate(VirtualNetworkFunctionRecord virtualNetworkFunctionRecord) throws Exception{
+        return virtualNetworkFunctionRecord;
+    }
+
+    @Override
+    protected void checkEmsStarted(String hostname) throws RuntimeException {
+
+    }
+
+    @Override
+    public VirtualNetworkFunctionRecord start(VirtualNetworkFunctionRecord virtualNetworkFunctionRecord) throws Exception {
+        return virtualNetworkFunctionRecord;
+    }
+
+    @Override
+    public VirtualNetworkFunctionRecord configure(VirtualNetworkFunctionRecord virtualNetworkFunctionRecord) throws Exception {
+        return virtualNetworkFunctionRecord;
+    }
+
+    /**
+     * This operation allows providing notifications on state changes
+     * of a VNF instance, related to the VNF Lifecycle.
+     */
+    @Override
+    public void NotifyChange() {
+
+    }
+
+    public static void main(String[] args){
+        SpringApplication.run(MyVNFM.class);
+    }
+}
+</code></pre>
+
+<p>Now you can implement whatever you want. If the VirtualNetworkFunctionRecord is returned, it will go back directly to the NFVO.</p>
+<p>One of the methods that can be overwritten is the <em>fillSpecificParameters</em>. This method is important when you have specified some "provides" in your VNFD, in facts you can fill them in this method and make them available afterwards to the scripts (see <a href="../vnf-parameters">How to use the parameters</a>). </p>
+<p>An example of allocating and terminating resource by using a plugin can be found <a href="#allocate-resources">here</a> and <a href="#release-resources">here</a>.</p>
+<p><strong>Note</strong> If you use vnfm-sdk-jms or vnfm-sdk-rest <strong><em>the VNFManager main class needs to be stateless</em></strong> since it can (will) run each method potentially in parallel.
+For what concerns vnfm-sdk-jms, even setting concurrency to 1, will not ensure to have always the same instance of the class.</p>
+<h4 id="using-the-vnfmhelper">Using the VnfmHelper</h4>
+<p>Additionally you can autowire the VnfmHelper to make use of several helper methods that are very useful.
+In this case your VNFManager should look like this:</p>
+<pre><code class="java">package org.openbaton.vnfm;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class MyVNFM extends AbstractVnfmSpringJMS {
+
+    @Autowired
+    private VnfmHelper vnfmHelper;
+
+    [...]
+}
+</code></pre>
+
+<p>The vnfmHelper helps with some methods out of the box:</p>
+<pre><code class="java">package org.openbaton.common.vnfm_sdk;
+
+import org.openbaton.catalogue.nfvo.messages.Interfaces.NFVMessage;
+
+public abstract class VnfmHelper {
+
+    /**
+     * This operation sends a NFVMessage
+     * to the NFVO and doesn't wait for answer.
+     * @param nfvMessage
+     */
+    public abstract void sendToNfvo(NFVMessage nfvMessage);
+
+    /**
+     * This operation send a NFVMessage
+     * to the NFVO and waits for the answer.
+     * @param nfvMessage
+     */
+    public abstract NFVMessage sendAndReceive(NFVMessage nfvMessage) throws Exception;
+}
+</code></pre>
+
+<p>At the moment, the main purpose of the VnfmHelper is to send messages to the NFVO and wait for the answer if needed.</p>
+<p><strong>Note</strong> This class needs to be implemented in case you want to use only the vnfm-sdk and must be provided to the AbstarctVnfm.</p>
+<h4 id="using-plugins">Using plugins</h4>
+<p>This section describes the initialization and usage of plugins.
+Therefore, you need to do several things:</p>
+<ul>
+<li>Create a Registry</li>
+<li>Start the plugins</li>
+<li>Connect an according VIM to the plugin</li>
+</ul>
+<p><strong>Note</strong> If you want to use plugins, you need to fetch also the interfaces and VIM implementations by adding the following lines to your build.gradle dependencies</p>
+<pre><code class="gradle">compile 'org.openbaton:vim-int:0.7'
+compile 'org.openbaton:vim-impl:0.7'
+</code></pre>
+
+<p>After that you need to rebuild your project for fetching the dependencies automatically.</p>
+<p>Now you can use the ResourceManagement interface.
+In the end it should look like the following:</p>
+<pre><code class="java">package org.openbaton.vnfm;
+
+import org.openbaton.nfvo.vim_interfaces.resource_management.ResourceManagement;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import org.openbaton.plugin.utils.PluginStartup;
+import java.io.IOException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+
+public class MyVNFM extends AbstractVnfmSpringJMS {
+
+    @Autowired
+    private ConfigurableApplicationContext context;
+
+    private ResourceManagement resourceManagement;
+
+    [...]
+
+    @Override
+    protected void setup() {
+        super.setup();
+        try {
+            int registryport = 19345;
+            Registry registry = LocateRegistry.createRegistry(registryport);
+            PluginStartup.startPluginRecursive(&quot;./plugins&quot;, true, &quot;localhost&quot;, &quot;&quot; + registryport);
+        } catch (IOException e) {
+            log.error(e.getMessage(), e);
+        }
+        resourceManagement = (ResourceManagement) context.getBean(&quot;openstackVIM&quot;, &quot;openstack&quot;, 19345);
+    }
+}
+</code></pre>
+
+<p>This code expects that the plugins are located in ./plugins.
+So just copy the openstack plugin of your choice to this path.
+Now you are able to use a VIM inside your VNFManager to allocate and release resources whenever you want.</p>
+<h5 id="allocate-resources">Allocate Resources</h5>
+<p>The following code snippet shows how to instantiate (allocate) resources at VNFManager side with the help of the VIM.</p>
+<pre><code class="java">@Override
+public VirtualNetworkFunctionRecord instantiate(VirtualNetworkFunctionRecord virtualNetworkFunctionRecord, Object object) {
+    log.debug(&quot;Processing allocation of Resources for vnfr: &quot; + virtualNetworkFunctionRecord);
+    List&lt;Future&lt;VNFCInstance&gt;&gt; vnfcInstances = new ArrayList&lt;&gt;();
+    try {
+        for (VirtualDeploymentUnit vdu : virtualNetworkFunctionRecord.getVdu()) {
+            log.debug(&quot;Creating &quot; + vdu.getVnfc().size() + &quot; VMs&quot;);
+            for (VNFComponent vnfComponent : vdu.getVnfc()) {
+                Future&lt;VNFCInstance&gt; allocate = resourceManagement.allocate(vdu, virtualNetworkFunctionRecord, vnfComponent, &quot;#userdata&quot;, vnfComponent.isExposed());
+                vnfcInstances.add(allocate);
+            }
+        }
+    } catch (VimDriverException e) {
+        log.error(e.getMessage(), e);
+        throw new RuntimeException(e.getMessage(), e);
+    } catch (VimException e) {
+        log.error(e.getMessage(), e);
+        throw new RuntimeException(e.getMessage(), e);
+    }
+    //Print ids of deployed VDUs
+    for (Future&lt;VNFCInstance&gt; vnfcInstance : vnfcInstances) {
+        try {
+            log.debug(&quot;Created VNFCInstance with id: &quot; + vnfcInstance.get());
+        } catch (InterruptedException e) {
+            log.error(e.getMessage(), e);
+            throw new RuntimeException(e.getMessage(), e);
+        } catch (ExecutionException e) {
+            log.error(e.getMessage(), e);
+            throw new RuntimeException(e.getMessage(), e);
+        }
+    }
+    log.debug(&quot;Allocated all Resources for vnfr: &quot; + virtualNetworkFunctionRecord);
+    return virtualNetworkFunctionRecord;
+}
+</code></pre>
+
+<p><strong>Note</strong> Keep in mind that you need to set <em>allocate</em> to false in conf.properties, if you want to allocate resources on the VNFManager side.</p>
+<h5 id="release-resources">Release Resources</h5>
+<p>The next code snippet shows an implementation of the terminate method used for releasing resources at VNFManager side.</p>
+<pre><code class="java">@Override
+public VirtualNetworkFunctionRecord terminate(VirtualNetworkFunctionRecord virtualNetworkFunctionRecord) {
+    log.info(&quot;Terminating vnfr with id &quot; + virtualNetworkFunctionRecord.getId());
+    for (VirtualDeploymentUnit vdu : virtualNetworkFunctionRecord.getVdu()) {
+        Set&lt;VNFCInstance&gt; vnfciToRem = new HashSet&lt;&gt;();
+        for (VNFCInstance vnfcInstance : vdu.getVnfc_instance()) {
+            log.debug(&quot;Releasing resources for vdu with id &quot; + vdu.getId());
+            try {
+                resourceManagement.release(vnfcInstance, vdu.getVimInstance());
+            } catch (VimException e) {
+                log.error(e.getMessage(), e);
+                throw new RuntimeException(e.getMessage(), e);
+            }
+            vnfciToRem.add(vnfcInstance);
+            log.debug(&quot;Released resources for vdu with id &quot; + vdu.getId());
+        }
+        vdu.getVnfc_instance().removeAll(vnfciToRem);
+    }
+    log.info(&quot;Terminated vnfr with id &quot; + virtualNetworkFunctionRecord.getId());
+    return virtualNetworkFunctionRecord;
+}
+</code></pre>
+
+<h3 id="start-the-vnfmanager">Start the VNFManager</h3>
+<p>Once you finalized your VNFManager you can compile and start it with the following commands.</p>
+<pre><code class="bash">$ ./gradlew clean build
+$ java -jar build/libs/my-vnfm.jar
+</code></pre>
+
+<p>If everything is fine, your VNFManager will register to NFVO and is able now to receive requests and process them.</p>
 <!---
 References
 -->
+
+<p><!---
+Script for open external links in a new tab
+-->
+<script type="text/javascript" charset="utf-8">
+      // Creating custom :external selector
+      $.expr[':'].external = function(obj){
+          return !obj.href.match(/^mailto\:/)
+                  &amp;&amp; (obj.hostname != location.hostname);
+      };
+      $(function(){
+        $('a:external').addClass('external');
+        $(".external").attr('target','_blank');
+      })
+</script></p>
                         
                       </div>
                     </div>
@@ -308,7 +1024,7 @@ References
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../FAQ/" class="btn btn-neutral float-right" title="FAQ"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../vnfm-vendor-specific/" class="btn btn-neutral float-right" title="Integrate your own VNFM"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../vnfm-generic/" class="btn btn-neutral" title="Generic VNFM"><span class="icon icon-circle-arrow-left"></span> Previous</a>
