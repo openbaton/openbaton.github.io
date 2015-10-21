@@ -386,7 +386,7 @@ font-variant: normal;
   border:none;
   float: left;
   display: inline-block;
-  font-size: 15px;
+  font-size: 15px !important;
 
 }
 .navigation{
