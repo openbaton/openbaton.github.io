@@ -382,7 +382,7 @@ font-variant: normal;
 
 }
 
-.navigation li{
+.navigation li, .navigation li a{
   border:none;
   float: left;
   display: inline-block;
