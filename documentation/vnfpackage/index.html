@@ -443,6 +443,8 @@ If the image does not exist, the VNFPackage onboarding will throw an exception.
 In this case the image (if defined) will be ignored.</li>
 <li>check: this option means that the VNFPackageManagement checks first if the image is available (defined in ids or names).
 If the image does not exist, a new one with the image defined in the VNFPackage will be created.</li>
+<li><strong>Note</strong> Please use quotation marks for this option since the values are handled as strings internally.
+Otherwise true and false will be handled as a boolean that would lead to a faulty behavior when onboarding a new VNFPackage.</li>
 </ul>
 </li>
 <li><strong><em>ids</em></strong>: The list of image ids is used to fetch the image from the corresponding VimInstance.
@@ -522,7 +524,7 @@ Finally, it looks as shown below.</p>
 <pre><code class="yaml">name: iperf-server
 scripts-link: https://script-link-to-git.git
 image:
-    upload: check
+    upload: &quot;check&quot;
     names:
         - iperf_server_image
 image-config:
@@ -553,9 +555,9 @@ Important to notice here is the vm_image that points to the image we have define
             &quot;scale_in_out&quot;:2,
             &quot;vnfc&quot;:[
                 {
-                    &quot;exposed&quot;:true,
                     &quot;connection_point&quot;:[
                         {
+                            &quot;floatingIp&quot;:&quot;random&quot;,
                             &quot;virtual_link_reference&quot;:&quot;private&quot;
                         }
                     ]
@@ -603,7 +605,7 @@ Finally, it looks as shown below.</p>
 <pre><code class="yaml">name: iperf-client
 scripts-link: https://gitlab.fokus.fraunhofer.de/openbaton/scripts-test-public.git
 image:
-    upload: check
+    upload: &quot;check&quot;
     names:
         - iperf_client_image
 image-config:

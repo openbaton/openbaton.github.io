@@ -637,7 +637,7 @@ By using the simple vnfm-sdk you need to take care about all the communication b
 
 dependencies {
     compile 'org.hibernate:hibernate-core:4.3.10.Final'
-    compile 'org.openbaton:vnfm-sdk-jms:0.7'
+    compile 'org.openbaton:vnfm-sdk-jms:0.9'
 }
 
 //...
@@ -663,7 +663,7 @@ repositories {
 }
 
 dependencies {
-    compile 'org.openbaton:vnfm-sdk-jms:0.7'
+    compile 'org.openbaton:vnfm-sdk-jms:0.9'
     compile 'org.hibernate:hibernate-core:4.3.10.Final'
 }
 
@@ -883,8 +883,8 @@ Therefore, you need to do several things:</p>
 <li>Connect an according VIM to the plugin</li>
 </ul>
 <p><strong>Note</strong> If you want to use plugins, you need to fetch also the interfaces and VIM implementations by adding the following lines to your build.gradle dependencies</p>
-<pre><code class="gradle">compile 'org.openbaton:vim-int:0.7'
-compile 'org.openbaton:vim-impl:0.7'
+<pre><code class="gradle">compile 'org.openbaton:vim-int:0.9'
+compile 'org.openbaton:vim-impl:0.9'
 </code></pre>
 
 <p>After that you need to rebuild your project for fetching the dependencies automatically.</p>

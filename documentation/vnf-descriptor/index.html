@@ -410,9 +410,9 @@ console.log('--------');
             &quot;scale_in_out&quot;:2,
             &quot;vnfc&quot;:[  
                 {  
-                    &quot;exposed&quot;:true,
                     &quot;connection_point&quot;:[  
                         {  
+                            &quot;floatingIp&quot;:&quot;random&quot;,
                             &quot;virtual_link_reference&quot;:&quot;private&quot;
                         }
                     ]
@@ -518,12 +518,8 @@ VNFCs contain the following fields:</p>
 </thead>
 <tbody>
 <tr>
-<td>exposed</td>
-<td>in case the machine needs to be reachable</td>
-</tr>
-<tr>
 <td>connection_point</td>
-<td>each connection point is a reference to an Internal Virtual Link (see Connection Point at <a href="http://www.etsi.org/deliver/etsi_gs/NFV-MAN/001_099/001/01.01.01_60/gs_NFV-MAN001v010101p.pdf">ETSI NFV</a>)</td>
+<td>each connection point is a reference to an Internal Virtual Link (see Connection Point at <a href="http://www.etsi.org/deliver/etsi_gs/NFV-MAN/001_099/001/01.01.01_60/gs_NFV-MAN001v010101p.pdf">ETSI NFV</a>). Moreover you can specify a floatingIp to be assigned to this connection point. The possible values are the actual floatingip ip or "random" if no preference is specified. If omitted no floatingip will be assigned.</td>
 </tr>
 </tbody>
 </table>
