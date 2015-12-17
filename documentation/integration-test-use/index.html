@@ -22,16 +22,16 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "**HIDDEN**";
-    var mkdocs_page_input_path = "vnf-descriptor.md";
-    var mkdocs_page_url = "/vnf-descriptor/";
-     var mkdocs_page_url = "/vnf-descriptor/";
+    var mkdocs_page_name = "Integration Tests";
+    var mkdocs_page_input_path = "integration-test-use.md";
+    var mkdocs_page_url = "/integration-test-use/";
+     var mkdocs_page_url = "/integration-test-use/";
   </script>
   
   <!-- site_name == OpenBaton Documentation -->
-  <!-- page_title == **HIDDEN** -->
+  <!-- page_title == Integration Tests -->
   <!-- base_url == .. -->
-  <!-- current_page == **HIDDEN** - /vnf-descriptor/ [*]
+  <!-- current_page == Integration Tests - /integration-test-use/ [*]
  -->
   <script src="../js/jquery-2.1.1.min.js"></script>
   <script src="../js/modernizr-2.8.3.min.js"></script>
@@ -86,14 +86,14 @@ display: block;
 $( document).ready(function(){
       //console.log("test");
 
-    //$('.subnav').not( ":has('**HIDDEN**')" ).hide();
+    //$('.subnav').not( ":has('Integration Tests')" ).hide();
     $('li.subnav_drop').find('ul.subnav').hide();
     //$('li.subnav_drop').find('ul.subnav').each(function(i,e){console.log(i,e)});
-       $( ".subnav" ).find( "li:contains('**HIDDEN**')" ).each(function(i,e){
+       $( ".subnav" ).find( "li:contains('Integration Tests')" ).each(function(i,e){
           var currentElement = $(e);
           currentElement.parent().css({"display":"block","visibility":"visible"}); //css("background-color","blue");
           currentElement.css({"display":"block","visibility":"visible"});
-       });//$( ".subnav" ).find( "li:contains('**HIDDEN**')" ).css("display","block");
+       });//$( ".subnav" ).find( "li:contains('Integration Tests')" ).css("display","block");
        //$(".current").css({"background-color":"blue","display":"block","visibility":"visible"});
        //show(1000,function(i,e){console.log(i,e)});
        //$('li.subnav_drop').find('ul.subnav').css("background-color","blue");
@@ -105,11 +105,11 @@ $( document).ready(function(){
 
 });
    
-$( ".wy-nav-content" ).find( "li:contains('**HIDDEN**')" ).css('color','red');
+$( ".wy-nav-content" ).find( "li:contains('Integration Tests')" ).css('color','red');
 console.log('--------');
-console.log($( ".wy-nav-content" ).find( "div:contains('**HIDDEN**')" ).css("color","red"));
+console.log($( ".wy-nav-content" ).find( "div:contains('Integration Tests')" ).css("color","red"));
 console.log('--------');
-console.log($( ".subnav" ).find( "li:contains('**HIDDEN**')" ));
+console.log($( ".subnav" ).find( "li:contains('Integration Tests')" ));
 console.log('--------');
   </script>
 
@@ -293,8 +293,10 @@ console.log('--------');
         
              
 
-    <li class="toctree-l1 ">
-        <a class="" href="../integration-test-use/">Integration Tests</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Integration Tests</a>
+        
+         
         
     </li>
 
@@ -406,158 +408,104 @@ console.log('--------');
                     <div role="main">
                       <div class="section">
                         
-                          <h1 id="virtual-network-function-descriptor">Virtual Network Function Descriptor</h1>
-<p>The VirtualNetworkFunctionDescriptor is contained inside the Network Service Descriptor (NSD). It is a json file and is defined as follows:</p>
-<pre><code class="json">{  
-    &quot;vendor&quot;:&quot;fokus&quot;,
-    &quot;version&quot;:&quot;0.2&quot;,
-    &quot;name&quot;:&quot;iperf-server&quot;,
-    &quot;type&quot;:&quot;server&quot;,
-    &quot;endpoint&quot;:&quot;generic&quot;,
-    &quot;configurations&quot;:{
-        &quot;name&quot;:&quot;config_name&quot;,
-        &quot;configurationParameters&quot;:[
-        {
-            &quot;confKey&quot;:&quot;key&quot;,
-            &quot;value&quot;:&quot;value&quot;
-        }
-        ]
-    },
-    &quot;vdu&quot;:[  
-        {  
-            &quot;vm_image&quot;:[  
-                &quot;ubuntu-14.04-server-cloudimg-amd64-disk1&quot;
-            ],
-            &quot;vimInstanceName&quot;:&quot;vim-instance&quot;,
-            &quot;scale_in_out&quot;:2,
-            &quot;vnfc&quot;:[  
-                {  
-                    &quot;connection_point&quot;:[  
-                        {  
-                            &quot;floatingIp&quot;:&quot;random&quot;,
-                            &quot;virtual_link_reference&quot;:&quot;private&quot;
-                        }
-                    ]
-                }
-            ]
-        }
-    ],
-    &quot;virtual_link&quot;:[  
-        {  
-            &quot;name&quot;:&quot;private&quot;
-        }
-    ],
-    &quot;lifecycle_event&quot;:[  
-        {  
-            &quot;event&quot;:&quot;INSTANTIATE&quot;,
-            &quot;lifecycle_events&quot;:[  
-                &quot;install.sh&quot;,
-                &quot;install-srv.sh&quot;
-            ]
-        }
-    ],
-    &quot;deployment_flavour&quot;:[  
-        {  
-            &quot;flavour_key&quot;:&quot;m1.small&quot;
-        }
-    ],
-    &quot;provides&quot;:[
-        &quot;ip&quot;,
-        &quot;source&quot;,
-        &quot;param1&quot;,
-        &quot;param2&quot;
-      ]
+                          <h1 id="how-to-use-the-integration-tests">How to use the Integration Tests</h1>
+<h2 id="overview">Overview</h2>
+<p>This project provides integration tests. 
+Three tests are run.</p>
+<ol>
+<li>scenario-dummy-iperf</li>
+<li>scenario-many-dependencies</li>
+<li>scenario-real-iperf</li>
+</ol>
+<p>scenario-dummy-iperf uses the Dummy VNFM to simulate a VNFM and therefore tests the communication between NFVO and VNFM. 
+It does not actually deploy a network service. The fake network service is a simple iperf scenario with one server and one client. </p>
+<p>scenario-many-dependencies also uses the Dummy VNFM but its fake network service is a little bit more complex in the sense that it has many <a href="../vnf-descriptor">VNFD</a> with many dependencies between them. </p>
+<p>The last test scenario-real-iperf is the only one which actually deploys a network service on openstack. 
+It consists of two <a href="../vnf-descriptor">VNFD</a> and deploys one iperf server and two iperf clients. The clients contact the server. </p>
+<p>In every test a vim instance and a network service descriptor is stored on the orchestrator and the network service launched. 
+If that is successful, the network service is stoped and the network service record, network service descriptor and the vim instance are removed. 
+In the case of the scenario-real-iperf test also the service itself is tested, i.e. if iperf is running and the clients can connect to the server. </p>
+<h2 id="requirements">Requirements</h2>
+<ol>
+<li>A running <a href="../nfvo-installation">NFVO</a></li>
+<li>A running <a href="../vnfm-generic">Generic VNFM</a></li>
+<li>A running <a href="../vnfm-dummy">Dummy VNFM</a></li>
+</ol>
+<h2 id="installation-and-configuration">Installation and configuration</h2>
+<p>Clone the project to your machine. 
+In <em>integration-tests/src/main/resources</em> is a file named integration-test.properties. 
+Open it and set the property values according to your needs. </p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nfvo-ip</td>
+<td>The ip of the machine on which the NFVO you want to use is running</td>
+</tr>
+<tr>
+<td>nfvo-port</td>
+<td>The port on which the NFVO is running</td>
+</tr>
+<tr>
+<td>nfvo-usr</td>
+<td>The username if a login is required for the NFVO</td>
+</tr>
+<tr>
+<td>nfvo-pwd</td>
+<td>The password if a login is required for the NFVO</td>
+</tr>
+<tr>
+<td>local-ip</td>
+<td>The ip of the machine on which the integration test is running</td>
+</tr>
+</tbody>
+</table>
+<p>After that you will also need a keypair for openstack. Create one and download the private key as a .pem file. 
+Rename it to integration-test.pem and provide it with the needed permissions by executing <em>chmod 400 integration-test.pem</em>.
+Create the directory <em>/etc/openbaton/integration-test</em> on your machine and move the pem file into it. 
+The next step is to create a vim file. 
+Here is an example where you just have to change some fields. </p>
+<pre><code class="json">{
+  &quot;name&quot;:&quot;vim-instance&quot;,
+  &quot;authUrl&quot;:&quot;http://your-openstack-url&quot;,
+  &quot;tenant&quot;:&quot;the tenant you use&quot;,
+  &quot;username&quot;:&quot;openstack username&quot;,
+  &quot;password&quot;:&quot;openstack password&quot;,
+  &quot;keyPair&quot;:&quot;in here the one you created&quot;,
+  &quot;securityGroups&quot;: [
+    &quot;default&quot;
+  ],
+  &quot;type&quot;:&quot;openstack&quot;,
+  &quot;location&quot;:{
+    &quot;name&quot;:&quot;your location&quot;,
+    &quot;latitude&quot;:&quot;the latitude&quot;,
+    &quot;longitude&quot;:&quot;the longitude&quot;
+  }
 }
 </code></pre>
 
-<table>
-<thead>
-<tr>
-<th>Params</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>name</td>
-<td>The name to give to the VirtualNetworkFunctionDescriptor</td>
-</tr>
-<tr>
-<td>vendor</td>
-<td>The vendor creating this VirtualNetworkFunctionDescriptor</td>
-</tr>
-<tr>
-<td>version</td>
-<td>The version of the VirtualNetworkFunctionDescriptor (can be any string)</td>
-</tr>
-<tr>
-<td>type</td>
-<td>The type of the VirtualNetworkFunctionDescriptor (can be any string) and it is used in the dependency parameters in the scripts</td>
-</tr>
-<tr>
-<td>endpoint</td>
-<td>The endpoint of the VirtualNetworkFunctionDescriptor (can be any string) needs to point to a registered VnfManager</td>
-</tr>
-</tbody>
-</table>
-<p>The other most important parameters are described in the following sections.</p>
-<h3 id="virtual-deployment-unit-vdu">Virtual Deployment Unit (VDU)</h3>
-<table>
-<thead>
-<tr>
-<th>Params</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>vm_image</td>
-<td>The list of image names or ids existing in the VimInstance or in the VNF Package</td>
-</tr>
-<tr>
-<td>vimInstanceName</td>
-<td>The VimInstance name chosen</td>
-</tr>
-<tr>
-<td>scale_in_out</td>
-<td>The maximum number of instances (VMs) which can be created to support scale out/in.</td>
-</tr>
-<tr>
-<td>vnfc</td>
-<td>This field contains a list of VNFComponents which will be deployed for this VNFD.</td>
-</tr>
-</tbody>
-</table>
-<h5 id="vnfc">VNFC</h5>
-<p>After launching a network service, every VNFComponent will run on a separate virtual machine. If scaling is enabled by the scale_in_out field in the VDU, the number of instantiated VNFCs can increase.
-VNFCs contain the following fields:</p>
-<table>
-<thead>
-<tr>
-<th>Params</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>connection_point</td>
-<td>each connection point is a reference to an Internal Virtual Link (see Connection Point at <a href="http://www.etsi.org/deliver/etsi_gs/NFV-MAN/001_099/001/01.01.01_60/gs_NFV-MAN001v010101p.pdf">ETSI NFV</a>). Moreover you can specify a floatingIp to be assigned to this connection point. The possible values are the actual floatingip ip or "random" if no preference is specified. If omitted no floatingip will be assigned.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="configurations">Configurations</h3>
-<p>The configuration object contains a list of parameters defined by key, value that can be used in the scripts (see <a href="../vnf-parameters">VNF Parameters</a>).</p>
-<h3 id="virtual-link-aka-internal-virtual-link">Virtual Link (aka Internal Virtual Link)</h3>
-<p>The Internal Virtual Link points to a Virtual Link Descriptor defined in the Network Service Descriptor.</p>
-<p><strong>Note:</strong> at the moment there are no difference between internal and external VL. All the available networks should be specified in the NSD-&gt;VLD, then in the VNFD-&gt;VL you specify which networks you want to use.
-Finally in the VNFD-&gt;VDU-&gt;VNFC-&gt;connection_point you can specify which network to attach among those available in VNFD-&gt;VL. The virtual_link_reference parameter also must be filled with the exact same links.</p>
-<h3 id="lifecycle-events">Lifecycle Events</h3>
-<p>A lifecycle event is composed by an Event and a list of strings that correspond to the script names needed to be run in that particular Event.</p>
-<h3 id="deployment-flavour">Deployment Flavour</h3>
-<p>A delpoyment flavour corresponds to a flavour name existing in the VimInstance.
-For example if you are using Openstack as Vim, the flavour_key parameter shall correspond to a <a href="http://docs.openstack.org/openstack-ops/content/flavors.html">flavour name of Openstack</a> (e.q. m1.small).</p>
-<h3 id="provides-requires">Provides, Requires</h3>
-<p>This list of parameter names defines the parameters that the VnfManager will fill at runtime. For that reason they have a meaning only if you <a href="../vnfm-how-to-write">write your own VnfManager</a>. This parameters are then available in any scripts. For the usage of the parameters, please, refer to <a href="../vnf-parameters">How to use the parameters</a> page.</p>
+<p>Name the vim file <em>real-vim.json</em> and add it to the folder <em>integration-tests/src/main/resources/etc/json_file/vim_instances/</em> in the project.
+In the folder <em>integration-tests/src/main/resources/etc/json_file/network_service_descriptors</em> of the project you will find a file named NetworkServiceDescriptor-iperf-real.json. 
+Open it and replace the floating ip values at lines 42, 107 and 114 with floating ips which are provided to you by openstack. 
+If you want to you can also change the virtual link which is at the moment "private" to one you want to use. 
+Make sure that you have the image ubuntu-14.04-server-cloudimg-amd64-disk1 available on openstack. 
+Then use a shell to navigate into the project's root directory. 
+Execute the command <em>./gradlew clean build</em>.
+After that you will find the folder <em>build/libs/</em> in the project. Inside of this folder is the project's executable jar file. </p>
+<h2 id="start-the-integration-test">Start the integration test</h2>
+<p>Before starting the integration test be sure that the NFVO, Generic VNFM and Dummy VNFM you want to use are already running. 
+Then start the test by navigating into the folder <em>integration-tests/build/libs</em> and execute the command <em>java -jar integration-tests-0.15-SNAPSHOT.jar</em>.</p>
+<h2 id="test-results">Test results</h2>
+<p>While the tests are running they will produce output to the console. This output will be logged in the file integration-test.log which is in the project's root directory. 
+If a test finished it will either tell you that it passed successfully or not. 
+If it did not pass correctly you will find the reason in the log file. </p>
+<h2 id="write-your-own-integration-tests">Write your own integration tests</h2>
+<p>Please refer to <a href="../integration-test-write">this page</a>.</p>
 <!---
 References
 -->
@@ -584,10 +532,10 @@ Script for open external links in a new tab
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../zabbix-server-configuration/" class="btn btn-neutral float-right" title="**HIDDEN**"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../use-case-example/" class="btn btn-neutral float-right" title="A full example"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../FAQ/" class="btn btn-neutral" title="FAQ"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../zabbix-plugin/" class="btn btn-neutral" title="Use Zabbix plugin"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

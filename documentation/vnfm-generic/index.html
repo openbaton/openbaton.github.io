@@ -287,7 +287,25 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../use-case-example/">A full example ;-)</a>
+        <a class="" href="../zabbix-plugin/">Use Zabbix plugin</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../integration-test-use/">Integration Tests</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../use-case-example/">A full example</a>
         
     </li>
 
@@ -369,6 +387,10 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -389,7 +411,7 @@ console.log('--------');
                           <h1 id="vnfmanager-generic">VNFManager Generic</h1>
 <p>The Generic VNFManager is an implementation following the <a href="http://www.etsi.org/deliver/etsi_gs/NFV-MAN/001_099/001/01.01.01_60/gs_NFV-MAN001v010101p.pdf">ETSI MANO</a> specifications. For that reason it is highly tied to the EMS.
 This VNFM may be assigned the management of a single VNF instance, or the management of multiple VNF instances of the same type or of different types.</p>
-<p>The Generic VNFManager handles communication with the NFVO and with EMS. The communication NFVO ↔ VNFM ↔ EMS is done using the <a href="https://stomp.github.io/">Stomp</a> protocol over ActiveMQ.  </p>
+<p>The Generic VNFManager handles communication with the NFVO and with EMS. The communication NFVO ↔ VNFM ↔ EMS is done using the AMQP protocol over RabbitMQ.  </p>
 <p>The communication between the NFVO and Generic VNFManager:</p>
 <p><img alt="NFVO - Generic VNFM communication" src="../images/generic-vnfm-vnfm-or-communication.png" /></p>
 <p>The communication between the Generic VNFManager and EMS:</p>

@@ -287,7 +287,25 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../use-case-example/">A full example ;-)</a>
+        <a class="" href="../zabbix-plugin/">Use Zabbix plugin</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../integration-test-use/">Integration Tests</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../use-case-example/">A full example</a>
         
     </li>
 
@@ -369,6 +387,10 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -392,6 +414,7 @@ console.log('--------');
 <p>Nfvo exposes a ReST interface for the communication with the VnfManagers. The sequence diagram regarding the instantiation of a NetworkServiceRecord is shown in the following picture.</p>
 <p><img alt="NFVO - VNFM ReST interface" src="../images/generic-vnfm-or-vnfm-seq-dg.png" /></p>
 <p>As shown in the picture, NFVO calls some ReST methods on the vnfm in a particular order. Then it expects some kind of back call. The list of these call exchange is described in the following sections. The ALLOCATE_RESOURCES call is not needed if the vnfm will take care of creating VMs. The communication with the EMS is particular to each VnfManagers. In order to be able to be found, the Vnfm needs to register to the NFVO. This can be done through a particular call.</p>
+<p>In the following 'Vnfm-Or' means that the Vnfm sends to the Nfvo and 'Or-Vnfm' means that the Nfvo sends to the Vnfm.</p>
 <table>
 <thead>
 <tr>
@@ -406,14 +429,16 @@ console.log('--------');
 </tr>
 <tr>
 <td><em><em>VnfmEnpoint</em></em></td>
-<td align="right">the endpoint of the Vnfm. this is given while registering</td>
+<td align="right">the endpoint of the Vnfm. this is given to the nfvo while registering</td>
 </tr>
 </tbody>
 </table>
-<h4 id="registration-vnfm-or">Registration (Vnfm-Or):</h4>
-<h6 id="path">path:</h6>
-<p>POST <em><em>OrEndpoint</em></em> /admin/v1/vnfm-register</p>
-<h6 id="body">body:</h6>
+<h4 id="registering-a-vnfm-to-the-nfvo-vnfm-or">Registering a Vnfm to the Nfvo (Vnfm-Or)</h4>
+<p>This call registers a vnfm to a nfvo. </p>
+<h6 id="request-path">request path</h6>
+<p>POST request on</p>
+<p><em><em>OrEndpoint</em></em>/admin/v1/vnfm-register</p>
+<h6 id="request-body">request body</h6>
 <pre><code>{
     &quot;type&quot;:&quot;dummy&quot;,
     &quot;endpointType&quot;:&quot;REST&quot;,
@@ -421,76 +446,245 @@ console.log('--------');
 }
 </code></pre>
 
-<p>where:
-<em> <em>type</em> is the vnfm type you are going to handle (specified in VirtualNetowrkFunctionDescriptor → endpoint).</em> <em>endpointType</em> is the vnfm type you are going to implement (REST or JMS).
-* <em>endpoint</em> is the vnfm endpoint you have chosen (basically http://<IP>:<PORT>).</p>
-<h3 id="instantiate-or-vnfm">Instantiate (Or-Vnfm)</h3>
-<h6 id="path_1">path</h6>
-<p>POST <em><em>VnfmEnpoint</em></em></p>
-<h6 id="body_1">body</h6>
+<h6 id="request-structure">request structure</h6>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th align="right">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em><em>type</em></em></td>
+<td align="right">the vnfm type you are going to handle (specified in VirtualNetowrkFunctionDescriptor → endpoint)</td>
+</tr>
+<tr>
+<td><em><em>endpointType</em></em></td>
+<td align="right">the vnfm type you are going to implement (REST or JMS)</td>
+</tr>
+<tr>
+<td><em><em>endpoint</em></em></td>
+<td align="right">the vnfm endpoint you have chosen (basically http://&lt;IP>:&lt;PORT>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="instantiate-or-vnfm">INSTANTIATE (Or-Vnfm)</h3>
+<p>This call sends the Vnfm the Virtual Network Function Descriptor, which shall be used to create the Virtual Network Funtion Record and also sends to the Vnfm all the scripts which are executed in actions like INSTANTIATE, MODIFY or START. This call triggers the creation of a virtual machine for the sent vnfd and the execution of the scripts which are associated with the INSTANTIATE lifecycle event in the vnfd. </p>
+<h6 id="request-path_1">request path</h6>
+<p>POST request on</p>
+<p><em><em>VnfmEnpoint</em></em></p>
+<h6 id="request-body_1">request body</h6>
 <pre><code>{
-    &quot;scriptsLink&quot;:&quot;linktogit&quot;, // a link to the reposritory where the links are located
-    &quot;scripts&quot;:&quot;scriptsfiles&quot;, // the scripts files coming from the vnfPackage, in case no scriptsLink is provided
-    &quot;vnfd&quot;:{  ...  }, // the VirtualNetowrkFunctionDescriptor from which a VirtualNetowrkFunctionRecord is created
-    &quot;vnfdf&quot;:{  ...  }, // the deployment flavours to be used
-    &quot;vlrs&quot;:[  ...  ], // the list of VirtualLinkRecords of the NetworkServiceRecord.
-    &quot;extention&quot;:{  &quot;nsr-id&quot;:&quot;...&quot;  }, // some info like the NetworkServiceRecord id
-    &quot;action&quot;:&quot;INSTANTIATE&quot; // the action to be executed
+    &quot;scriptsLink&quot;:&quot;linktogit&quot;, 
+    &quot;scripts&quot;:&quot;scriptsfiles&quot;, 
+    &quot;vnfd&quot;:{  ...  }, 
+    &quot;vnfdf&quot;:{  ...  }, 
+    &quot;vlrs&quot;:[  ...  ], 
+    &quot;extention&quot;:{  &quot;nsr-id&quot;:&quot;...&quot;  }, 
+    &quot;action&quot;:&quot;INSTANTIATE&quot; 
 }
 </code></pre>
 
 <p>In this action either the <em>scriptsLink</em> or the <em>scripts</em> fields are set. The vnfm-sdk will take care of them.</p>
+<h6 id="request-structure_1">request structure</h6>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th align="right">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em><em>scriptsLink</em></em></td>
+<td align="right">a link to the repository where the links are located</td>
+</tr>
+<tr>
+<td><em><em>scripts</em></em></td>
+<td align="right">the script files coming from the vnfPackage, in case no scriptsLink is provided</td>
+</tr>
+<tr>
+<td><em><em>vnfd</em></em></td>
+<td align="right">the VirtualNetworkFunctionDescriptor from which a VirtualNetworkFunctionRecord is created</td>
+</tr>
+<tr>
+<td><em><em>vnfdf</em></em></td>
+<td align="right">the deployment flavours to be used</td>
+</tr>
+<tr>
+<td><em><em>vlrs</em></em></td>
+<td align="right">the list of VirtualLinkRecords of the NetworkServiceRecord</td>
+</tr>
+<tr>
+<td><em><em>extention</em></em></td>
+<td align="right">some info like the NetworkServiceRecord id</td>
+</tr>
+<tr>
+<td><em><em>action</em></em></td>
+<td align="right">the action to be executed</td>
+</tr>
+</tbody>
+</table>
 <h3 id="instantiate-vnfm-or">Instantiate (Vnfm-Or)</h3>
-<h6 id="path_2">path</h6>
-<p>POST <em><em>OrEndpoint</em></em> /admin/v1/vnfm-core-actions</p>
-<h6 id="body_2">body</h6>
+<p>This call sends back the created Virtual Network Function Record to the Nfvo. </p>
+<h6 id="request-path_2">request path</h6>
+<p>POST request on</p>
+<p><em><em>OrEndpoint</em></em>/admin/v1/vnfm-core-actions</p>
+<h6 id="request-body_2">request body</h6>
 <pre><code>{
-    &quot;virtualNetworkFunctionRecord&quot;:{  ...  }, // the created VirtualNetowrkFunctionRecord
+    &quot;virtualNetworkFunctionRecord&quot;:{  ...  }, 
     &quot;action&quot;:&quot;INSTANTIATE&quot;
 }
 </code></pre>
 
+<h6 id="request-structure_2">request structure</h6>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th align="right">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em><em>virtualNetworkFunctionRecord</em></em></td>
+<td align="right">the created VirtualNetworkFunctionRecord</td>
+</tr>
+<tr>
+<td><em><em>action</em></em></td>
+<td align="right">the action that was executed</td>
+</tr>
+</tbody>
+</table>
 <h3 id="modify-aka-addrelations-or-vnfm">Modify (aka AddRelations) (Or-Vnfm)</h3>
-<h6 id="path_3">path</h6>
-<p>POST <em><em>VnfmEnpoint</em></em></p>
-<h6 id="body_3">body</h6>
+<p>The Nfvo uses this request to provide dependencies of Virtual Network Functions to the Vnfm. The scripts associated with the CONFIGURATION lifecycle event in the vnfr will be executed.</p>
+<h6 id="request-path_3">request path</h6>
+<p>POST request on</p>
+<p><em><em>VnfmEnpoint</em></em></p>
+<h6 id="request-body_3">request body</h6>
 <pre><code>{
-    &quot;vnfr&quot;:{  }, // the VirtualNetowrkFunctionRecord target of the depedendecy
-    &quot;vnfrd&quot;:{  }, // the VNFDependency containing all the source parameters needed by the scripts
+    &quot;vnfr&quot;:{ ... }, 
+    &quot;vnfrd&quot;:{ ... }, 
     &quot;action&quot;:&quot;MODIFY&quot;
 }
 </code></pre>
 
+<h6 id="request-structure_3">request structure</h6>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th align="right">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em><em>vnfr</em></em></td>
+<td align="right">the VirtualNetowrkFunctionRecord target of the depedendecy</td>
+</tr>
+<tr>
+<td><em><em>vnfrd</em></em></td>
+<td align="right">the VNFDependency containing all the source parameters needed by the scripts</td>
+</tr>
+<tr>
+<td><em><em>action</em></em></td>
+<td align="right">the action to be executed</td>
+</tr>
+</tbody>
+</table>
 <h3 id="modify-aka-addrelations-vnfm-or">Modify (aka AddRelations) (Vnfm-Or)</h3>
-<h6 id="path_4">path</h6>
-<p>POST <em><em>OrEndpoint</em></em> /admin/v1/vnfm-core-actions</p>
-<h6 id="body_4">body</h6>
+<p>This call sends back the modified Virtual Network Function Record to the Nfvo. </p>
+<h6 id="request-path_4">request path</h6>
+<p>POST request on</p>
+<p><em><em>OrEndpoint</em></em>/admin/v1/vnfm-core-actions</p>
+<h6 id="request-body_4">request body</h6>
 <pre><code>{
-    &quot;virtualNetworkFunctionRecord&quot;:{  },
+    &quot;virtualNetworkFunctionRecord&quot;:{ ... },
     &quot;action&quot;:&quot;MODIFY&quot;
 }
 </code></pre>
 
+<h6 id="request-structure_4">request structure</h6>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th align="right">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em><em>virtualNetworkFunctionRecord</em></em></td>
+<td align="right">the VirtualNetworkFunctionRecord</td>
+</tr>
+<tr>
+<td><em><em>action</em></em></td>
+<td align="right">the action that was executed</td>
+</tr>
+</tbody>
+</table>
 <h3 id="start-or-vnfm">Start (Or-Vnfm)</h3>
-<h6 id="path_5">path</h6>
-<p>POST <em><em>VnfmEnpoint</em></em></p>
-<h6 id="body_5">body</h6>
+<p>This call will trigger the execution of the scripts associated with the START lifecycle event in the vnfr. </p>
+<h6 id="request-path_5">request path</h6>
+<p>POST request on</p>
+<p><em><em>VnfmEnpoint</em></em></p>
+<h6 id="request-body_5">request body</h6>
 <pre><code>{
     &quot;vnfr&quot;:{  ...  },
     &quot;action&quot;:&quot;START&quot;
 }
 </code></pre>
 
+<h6 id="request-structure_5">request structure</h6>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th align="right">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em><em>vnfr</em></em></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td><em><em>action</em></em></td>
+<td align="right">the action to be executed</td>
+</tr>
+</tbody>
+</table>
 <h3 id="start-vnfm-or">Start (Vnfm-Or)</h3>
-<h6 id="path_6">path</h6>
-<p>POST <em><em>OrEndpoint</em></em> /admin/v1/vnfm-core-actions</p>
-<h6 id="body_6">body</h6>
+<h6 id="request-path_6">request path</h6>
+<p>POST request on</p>
+<p><em><em>OrEndpoint</em></em>/admin/v1/vnfm-core-actions</p>
+<h6 id="request-body_6">request body</h6>
 <pre><code>{
     &quot;virtualNetworkFunctionRecord&quot;:{  ...  },
     &quot;action&quot;:&quot;START&quot;
 }
 </code></pre>
 
+<h6 id="request-structure_6">request structure</h6>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th align="right">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em><em>virtualNetworkFunctionRecord</em></em></td>
+<td align="right">the Virtual Network Function Record</td>
+</tr>
+<tr>
+<td><em><em>action</em></em></td>
+<td align="right">the action that was executed</td>
+</tr>
+</tbody>
+</table>
 <!---
 References
 -->

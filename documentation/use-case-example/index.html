@@ -22,16 +22,16 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "A full example ;-)";
+    var mkdocs_page_name = "A full example";
     var mkdocs_page_input_path = "use-case-example.md";
     var mkdocs_page_url = "/use-case-example/";
      var mkdocs_page_url = "/use-case-example/";
   </script>
   
   <!-- site_name == OpenBaton Documentation -->
-  <!-- page_title == A full example ;-) -->
+  <!-- page_title == A full example -->
   <!-- base_url == .. -->
-  <!-- current_page == A full example ;-) - /use-case-example/ [*]
+  <!-- current_page == A full example - /use-case-example/ [*]
  -->
   <script src="../js/jquery-2.1.1.min.js"></script>
   <script src="../js/modernizr-2.8.3.min.js"></script>
@@ -86,14 +86,14 @@ display: block;
 $( document).ready(function(){
       //console.log("test");
 
-    //$('.subnav').not( ":has('A full example ;-)')" ).hide();
+    //$('.subnav').not( ":has('A full example')" ).hide();
     $('li.subnav_drop').find('ul.subnav').hide();
     //$('li.subnav_drop').find('ul.subnav').each(function(i,e){console.log(i,e)});
-       $( ".subnav" ).find( "li:contains('A full example ;-)')" ).each(function(i,e){
+       $( ".subnav" ).find( "li:contains('A full example')" ).each(function(i,e){
           var currentElement = $(e);
           currentElement.parent().css({"display":"block","visibility":"visible"}); //css("background-color","blue");
           currentElement.css({"display":"block","visibility":"visible"});
-       });//$( ".subnav" ).find( "li:contains('A full example ;-)')" ).css("display","block");
+       });//$( ".subnav" ).find( "li:contains('A full example')" ).css("display","block");
        //$(".current").css({"background-color":"blue","display":"block","visibility":"visible"});
        //show(1000,function(i,e){console.log(i,e)});
        //$('li.subnav_drop').find('ul.subnav').css("background-color","blue");
@@ -105,11 +105,11 @@ $( document).ready(function(){
 
 });
    
-$( ".wy-nav-content" ).find( "li:contains('A full example ;-)')" ).css('color','red');
+$( ".wy-nav-content" ).find( "li:contains('A full example')" ).css('color','red');
 console.log('--------');
-console.log($( ".wy-nav-content" ).find( "div:contains('A full example ;-)')" ).css("color","red"));
+console.log($( ".wy-nav-content" ).find( "div:contains('A full example')" ).css("color","red"));
 console.log('--------');
-console.log($( ".subnav" ).find( "li:contains('A full example ;-)')" ));
+console.log($( ".subnav" ).find( "li:contains('A full example')" ));
 console.log('--------');
   </script>
 
@@ -284,8 +284,26 @@ console.log('--------');
         
              
 
+    <li class="toctree-l1 ">
+        <a class="" href="../zabbix-plugin/">Use Zabbix plugin</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../integration-test-use/">Integration Tests</a>
+        
+    </li>
+
+
+        
+             
+
     <li class="toctree-l1 current">
-        <a class="current" href="./">A full example ;-)</a>
+        <a class="current" href="./">A full example</a>
         
          
         
@@ -360,6 +378,10 @@ console.log('--------');
     
 </ul></li>
                  
+		
+		
+		
+		
 		
 		
 		
@@ -525,7 +547,7 @@ Script for open external links in a new tab
         <a href="../extend/" class="btn btn-neutral float-right" title="Extend it"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../nfvo-sdk/" class="btn btn-neutral" title="Use via the SDK"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../integration-test-use/" class="btn btn-neutral" title="Integration Tests"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

@@ -285,7 +285,25 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../use-case-example/">A full example ;-)</a>
+        <a class="" href="../zabbix-plugin/">Use Zabbix plugin</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../integration-test-use/">Integration Tests</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../use-case-example/">A full example</a>
         
     </li>
 
@@ -367,6 +385,10 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -411,7 +433,11 @@ console.log('--------');
 <p>This field describes an Entity that has a list of ConfigurationParameters inside. This is a list of Entities containing key:value. These parameters are always available in your scripts. See the section below, <a href="#How to use the parameters">how to use the parameters</a>, in order to see how to use them.</p>
 <h3 id="provides">Provides</h3>
 <p>This field is a list of parameter keys that will be available in all your scripts. The difference is that these parameters are parameters whose actual value will be known only at runtime. For that reason these parameters can only be filled by a specific VNFM. So you need to implement a VNFM able to handle these specific parameters in the fillSpecificParameters method (see <a href="../vnfm-how-to-write">How to write a VNFM</a>).</p>
-<p><strong>NOTE</strong>: <em>there are some out-of-the-box parameters that will be added automatically to the VNFRecord. One of these parameters is key = &lt; network_name &gt;, value = &lt; actual-IP &gt;</em></p>
+<p><strong>NOTE</strong>: 
+  there are some out-of-the-box parameters that will be added automatically to the VNFRecord. These parameters are:
+<em> the networkName=IP,  key = &lt; network_name &gt;, value = &lt; actual-IP &gt;
+</em> the hostname, key = &lt; hostname &gt;, value = the actual hostname
+* the floatingIp, key = &lt; network_name &gt;_floatingIp , value = the actual floatingIp</p>
 <h3 id="how-to-use-the-parameters">How to use the parameters</h3>
 <p>All the above parameters are available in all the scripts of the VNF that defines them. You just need to use them as environment variables, a script of the INSTANTIATE lifecycle event for instance would be:</p>
 <pre><code class="bash">#!/bin/bash

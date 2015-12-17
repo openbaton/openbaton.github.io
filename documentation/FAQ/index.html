@@ -285,7 +285,25 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../use-case-example/">A full example ;-)</a>
+        <a class="" href="../zabbix-plugin/">Use Zabbix plugin</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../integration-test-use/">Integration Tests</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../use-case-example/">A full example</a>
         
     </li>
 
@@ -369,6 +387,10 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -387,17 +409,7 @@ console.log('--------');
                       <div class="section">
                         
                           <h1 id="frequently-asked-questions-faq">Frequently Asked Questions (FAQ)</h1>
-<h3 id="q1-activemqconnection-refused">Q1 ActiveMQ:connection refused</h3>
-<p>I'm getting this error message: </p>
-<pre><code>2015-10-01 11:40:49.475 ERROR 26648 --- [enerContainer-1] o.s.j.l.DefaultMessageListenerContainer  : Could not refresh JMS Connection for destination 'event-register' - retrying using FixedBackOff{interval=5000, currentAttempts=1, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
-</code></pre>
-
-<p>Answer: double check that ActiveMQ is up and running: </p>
-<pre><code>apache-activemq-5.11.1/bin/activemq status
-</code></pre>
-
-<p>if not running, you need to start it. </p>
-<h3 id="q2-what-type-of-database-is-the-nfvo-using">Q2 What type of database is the NFVO using?</h3>
+<h3 id="q1-what-type-of-database-is-the-nfvo-using">Q1 What type of database is the NFVO using?</h3>
 <p>The NFVO uses Hibernate for managing transactions with a relational database. By default the NFVO is configured with an in memory database (HSQL). 
 Other types of databases are supported, for instance MySQL. This can be changed directly from the configuration file, outcommenting the : </p>
 <pre><code># mysql jdbc

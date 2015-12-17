@@ -23,15 +23,15 @@
   <script>
     // Current page data
     var mkdocs_page_name = "**HIDDEN**";
-    var mkdocs_page_input_path = "vnf-descriptor.md";
-    var mkdocs_page_url = "/vnf-descriptor/";
-     var mkdocs_page_url = "/vnf-descriptor/";
+    var mkdocs_page_input_path = "zabbix-server-configuration.md";
+    var mkdocs_page_url = "/zabbix-server-configuration/";
+     var mkdocs_page_url = "/zabbix-server-configuration/";
   </script>
   
   <!-- site_name == OpenBaton Documentation -->
   <!-- page_title == **HIDDEN** -->
   <!-- base_url == .. -->
-  <!-- current_page == **HIDDEN** - /vnf-descriptor/ [*]
+  <!-- current_page == **HIDDEN** - /zabbix-server-configuration/ [*]
  -->
   <script src="../js/jquery-2.1.1.min.js"></script>
   <script src="../js/modernizr-2.8.3.min.js"></script>
@@ -406,177 +406,55 @@ console.log('--------');
                     <div role="main">
                       <div class="section">
                         
-                          <h1 id="virtual-network-function-descriptor">Virtual Network Function Descriptor</h1>
-<p>The VirtualNetworkFunctionDescriptor is contained inside the Network Service Descriptor (NSD). It is a json file and is defined as follows:</p>
-<pre><code class="json">{  
-    &quot;vendor&quot;:&quot;fokus&quot;,
-    &quot;version&quot;:&quot;0.2&quot;,
-    &quot;name&quot;:&quot;iperf-server&quot;,
-    &quot;type&quot;:&quot;server&quot;,
-    &quot;endpoint&quot;:&quot;generic&quot;,
-    &quot;configurations&quot;:{
-        &quot;name&quot;:&quot;config_name&quot;,
-        &quot;configurationParameters&quot;:[
-        {
-            &quot;confKey&quot;:&quot;key&quot;,
-            &quot;value&quot;:&quot;value&quot;
-        }
-        ]
-    },
-    &quot;vdu&quot;:[  
-        {  
-            &quot;vm_image&quot;:[  
-                &quot;ubuntu-14.04-server-cloudimg-amd64-disk1&quot;
-            ],
-            &quot;vimInstanceName&quot;:&quot;vim-instance&quot;,
-            &quot;scale_in_out&quot;:2,
-            &quot;vnfc&quot;:[  
-                {  
-                    &quot;connection_point&quot;:[  
-                        {  
-                            &quot;floatingIp&quot;:&quot;random&quot;,
-                            &quot;virtual_link_reference&quot;:&quot;private&quot;
-                        }
-                    ]
-                }
-            ]
-        }
-    ],
-    &quot;virtual_link&quot;:[  
-        {  
-            &quot;name&quot;:&quot;private&quot;
-        }
-    ],
-    &quot;lifecycle_event&quot;:[  
-        {  
-            &quot;event&quot;:&quot;INSTANTIATE&quot;,
-            &quot;lifecycle_events&quot;:[  
-                &quot;install.sh&quot;,
-                &quot;install-srv.sh&quot;
-            ]
-        }
-    ],
-    &quot;deployment_flavour&quot;:[  
-        {  
-            &quot;flavour_key&quot;:&quot;m1.small&quot;
-        }
-    ],
-    &quot;provides&quot;:[
-        &quot;ip&quot;,
-        &quot;source&quot;,
-        &quot;param1&quot;,
-        &quot;param2&quot;
-      ]
-}
+                          <h1 id="zabbix-server-installation-and-configuration">Zabbix server installation and configuration</h1>
+<h2 id="on-ubuntu-1404">On Ubuntu 14.04</h2>
+<p>While performing the installation on the same host where the NFVO was installed, remember that both systems are heavily consuming CPU and Memory resources, therefore you'll need a powerful machine in order to satisfy both requirements</p>
+<p>During the installation the installer will request to put a password for the user root of the mysql server. You can choose the password you like, however make sure you use the same password while configuring zabbix components</p>
+<pre><code class="sh">sudo su
+wget http://repo.zabbix.com/zabbix/2.2/ubuntu/pool/main/z/zabbix-release/zabbix-release_2.2-1+trusty_all.deb
+dpkg -i zabbix-release_2.2-1+trusty_all.deb
+apt-get update &amp;&amp; apt-get -y install mysql-server zabbix-server-mysql zabbix-frontend-php
 </code></pre>
 
-<table>
-<thead>
-<tr>
-<th>Params</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>name</td>
-<td>The name to give to the VirtualNetworkFunctionDescriptor</td>
-</tr>
-<tr>
-<td>vendor</td>
-<td>The vendor creating this VirtualNetworkFunctionDescriptor</td>
-</tr>
-<tr>
-<td>version</td>
-<td>The version of the VirtualNetworkFunctionDescriptor (can be any string)</td>
-</tr>
-<tr>
-<td>type</td>
-<td>The type of the VirtualNetworkFunctionDescriptor (can be any string) and it is used in the dependency parameters in the scripts</td>
-</tr>
-<tr>
-<td>endpoint</td>
-<td>The endpoint of the VirtualNetworkFunctionDescriptor (can be any string) needs to point to a registered VnfManager</td>
-</tr>
-</tbody>
-</table>
-<p>The other most important parameters are described in the following sections.</p>
-<h3 id="virtual-deployment-unit-vdu">Virtual Deployment Unit (VDU)</h3>
-<table>
-<thead>
-<tr>
-<th>Params</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>vm_image</td>
-<td>The list of image names or ids existing in the VimInstance or in the VNF Package</td>
-</tr>
-<tr>
-<td>vimInstanceName</td>
-<td>The VimInstance name chosen</td>
-</tr>
-<tr>
-<td>scale_in_out</td>
-<td>The maximum number of instances (VMs) which can be created to support scale out/in.</td>
-</tr>
-<tr>
-<td>vnfc</td>
-<td>This field contains a list of VNFComponents which will be deployed for this VNFD.</td>
-</tr>
-</tbody>
-</table>
-<h5 id="vnfc">VNFC</h5>
-<p>After launching a network service, every VNFComponent will run on a separate virtual machine. If scaling is enabled by the scale_in_out field in the VDU, the number of instantiated VNFCs can increase.
-VNFCs contain the following fields:</p>
-<table>
-<thead>
-<tr>
-<th>Params</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>connection_point</td>
-<td>each connection point is a reference to an Internal Virtual Link (see Connection Point at <a href="http://www.etsi.org/deliver/etsi_gs/NFV-MAN/001_099/001/01.01.01_60/gs_NFV-MAN001v010101p.pdf">ETSI NFV</a>). Moreover you can specify a floatingIp to be assigned to this connection point. The possible values are the actual floatingip ip or "random" if no preference is specified. If omitted no floatingip will be assigned.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="configurations">Configurations</h3>
-<p>The configuration object contains a list of parameters defined by key, value that can be used in the scripts (see <a href="../vnf-parameters">VNF Parameters</a>).</p>
-<h3 id="virtual-link-aka-internal-virtual-link">Virtual Link (aka Internal Virtual Link)</h3>
-<p>The Internal Virtual Link points to a Virtual Link Descriptor defined in the Network Service Descriptor.</p>
-<p><strong>Note:</strong> at the moment there are no difference between internal and external VL. All the available networks should be specified in the NSD-&gt;VLD, then in the VNFD-&gt;VL you specify which networks you want to use.
-Finally in the VNFD-&gt;VDU-&gt;VNFC-&gt;connection_point you can specify which network to attach among those available in VNFD-&gt;VL. The virtual_link_reference parameter also must be filled with the exact same links.</p>
-<h3 id="lifecycle-events">Lifecycle Events</h3>
-<p>A lifecycle event is composed by an Event and a list of strings that correspond to the script names needed to be run in that particular Event.</p>
-<h3 id="deployment-flavour">Deployment Flavour</h3>
-<p>A delpoyment flavour corresponds to a flavour name existing in the VimInstance.
-For example if you are using Openstack as Vim, the flavour_key parameter shall correspond to a <a href="http://docs.openstack.org/openstack-ops/content/flavors.html">flavour name of Openstack</a> (e.q. m1.small).</p>
-<h3 id="provides-requires">Provides, Requires</h3>
-<p>This list of parameter names defines the parameters that the VnfManager will fill at runtime. For that reason they have a meaning only if you <a href="../vnfm-how-to-write">write your own VnfManager</a>. This parameters are then available in any scripts. For the usage of the parameters, please, refer to <a href="../vnf-parameters">How to use the parameters</a> page.</p>
-<!---
-References
--->
+<p>Once done, you should configure the file /etc/php5/apache2/php.ini file with the following parameters: </p>
+<pre><code>[PHP]
+.....
+max_execution_time = 300
+memory_limit = 128M
+post_max_size = 16M
+upload_max_filesize = 2M
+max_input_time =  300
+......
+[Date]
+date.timezone = Europe/Berlin
+</code></pre>
 
-<!---
-Script for open external links in a new tab
--->
+<p>Restart the apache service and you are almost done:</p>
+<pre><code class="sh">/etc/init.d/apache2 restart
+</code></pre>
 
-<script type="text/javascript" charset="utf-8">
-      // Creating custom :external selector
-      $.expr[':'].external = function(obj){
-          return !obj.href.match(/^mailto\:/)
-                  && (obj.hostname != location.hostname);
-      };
-      $(function(){
-        $('a:external').addClass('external');
-        $(".external").attr('target','_blank');
-      })
-</script>
+<p>At this point the Zabbix frontend should be available at http://your-ip/zabbix in the browser. Default username/password is Admin/zabbix. It will pop up a wizard window which will guide you through the final configuration of the server. </p>
+<p>Additionally, you need to configure the auto registration action so that VNFs hosts are added automatically into zabbix db when they are started. For doing it you can either do it via the zabbix dashboard reachable at  http://your-ip/zabbix/actionconf.php or using the provided sql file. Both options are explained below</p>
+<h2 id="configure-the-auto-registration-using-the-dashboard">Configure the auto registration using the dashboard</h2>
+<p>First of all you need to open the actions tab</p>
+<p><img alt="zabbix-create-action-1" src="../images/zabbix-add-action-1.png" /></p>
+<p>Then you need to create an action:</p>
+<p><img alt="zabbix-create-action-2" src="../images/zabbix-add-action-2.png" /></p>
+<p>Finally you need to add two operations:</p>
+<ul>
+<li>add host</li>
+<li>link to template: you can select the template you prefer</li>
+</ul>
+<p><img alt="zabbix-create-action-3" src="../images/zabbix-add-action-3.png" /></p>
+<p>Remember to save all the changes in all tabs.</p>
+<h2 id="configure-the-auto-registration-importing-the-sql-file">Configure the auto registration importing the sql file</h2>
+<p>In order to facilitate the configuration of the Zabbix Server, we also provide a zabbix.sql file with all the configuration already done. The file can be found in the folder zabbix-configuration of the zabbix-plugin project.
+You should run the following command into the host: </p>
+<pre><code class="sh"># Please note that this will overwrite whatever configuration or data is stored into the existing zabbix db.
+mysql -u root -p zabbix &lt; zabbix.sql
+</code></pre>
+
+<p>After that, the zabbix server is ready to monitor your VNFs!</p>
                         
                       </div>
                     </div>
@@ -584,10 +462,10 @@ Script for open external links in a new tab
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../zabbix-server-configuration/" class="btn btn-neutral float-right" title="**HIDDEN**"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../vnfr-states/" class="btn btn-neutral float-right" title="**HIDDEN**"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../FAQ/" class="btn btn-neutral" title="FAQ"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../vnf-descriptor/" class="btn btn-neutral" title="**HIDDEN**"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
