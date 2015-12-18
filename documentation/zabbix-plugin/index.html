@@ -452,10 +452,9 @@ After you copied the script in the right directoy, the Zabbix server needs to be
 This configuration will be automatized in later releases. </p>
 <h3 id="installation">Installation</h3>
 <p>Once the prerequisites are met, you can clone the following project from git, compile it using gradle and launch it:  </p>
-<pre><code class="bash">git clone link_of_zabbix-plugin
+<pre><code class="bash">git clone https://github.com/openbaton/zabbix-plugin.git
 cd zabbix-plugin
-git checkout develop
-./gradlew build -x test
+./gradlew build
 java -jar build/lib/zabbix-agent-&lt;version&gt;.jar
 </code></pre>
 
@@ -473,12 +472,12 @@ java -jar build/lib/zabbix-agent-&lt;version&gt;.jar
 <tr>
 <td>zabbix-ip</td>
 <td>IP of the Zabbix Server</td>
-<td></td>
+<td>not null</td>
 </tr>
 <tr>
 <td>zabbix-port</td>
 <td>Port of the Zabbix Server</td>
-<td></td>
+<td>can be empty</td>
 </tr>
 <tr>
 <td>type</td>
@@ -524,7 +523,7 @@ java -jar build/lib/zabbix-agent-&lt;version&gt;.jar
 </table>
 <p>The configuration file should look like the one below:</p>
 <pre><code class="bash">zabbix-ip = xxx.xxx.xxx.xxx
-zabbix-ip = xxxxx
+zabbix-port = xxxxx
 type = zabbix-plugin
 user-zbx = zabbixUSer
 password-zbx = zabbixPassword
