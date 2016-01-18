@@ -717,7 +717,7 @@ Otherwise you need to adapt the path to the package and also the URL where the N
 Now where we onboarded the VNFPackages they are available on the NFVO and we can make use of it by referencing them in the NSD by their ids'.</p>
 <p><strong>Note</strong> You could use the <a href="../nfvo-how-to-use-gui">Dashboard</a> as well for onboarding the VNFPackages.</p>
 <p>To get the ids of the newly created VNFDs you need to fetch the VNFDs by invoking the following command:</p>
-<pre><code class="bash">$ curl -X &quot;GET http://localhost:8080/api/v1/vnf-descriptors&quot;
+<pre><code class="bash">$ curl -X GET &quot;http://localhost:8080/api/v1/vnf-descriptors&quot;
 </code></pre>
 
 <p>This request will return a list of already existing VNFDs.
