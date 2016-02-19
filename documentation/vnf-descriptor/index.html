@@ -309,6 +309,15 @@ console.log('--------');
 
 
         
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../use-case-ims-example/">OpenIMSCore example</a>
+        
+    </li>
+
+
+        
 </li>
 </ul>
     
@@ -552,7 +561,39 @@ VNFCs contain the following fields:</p>
 <p><strong>Note:</strong> at the moment there are no difference between internal and external VL. All the available networks should be specified in the NSD-&gt;VLD, then in the VNFD-&gt;VL you specify which networks you want to use.
 Finally in the VNFD-&gt;VDU-&gt;VNFC-&gt;connection_point you can specify which network to attach among those available in VNFD-&gt;VL. The virtual_link_reference parameter also must be filled with the exact same links.</p>
 <h3 id="lifecycle-events">Lifecycle Events</h3>
-<p>A lifecycle event is composed by an Event and a list of strings that correspond to the script names needed to be run in that particular Event.</p>
+<p>A lifecycle event is composed by an Event and a list of strings that correspond to the script names needed to be run in that particular Event.
+Currently supported events are:</p>
+<table>
+<thead>
+<tr>
+<th>Event name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>INSTANTIATE</td>
+<td>...</td>
+</tr>
+<tr>
+<td>CONFIGURE</td>
+<td>...</td>
+</tr>
+<tr>
+<td>START</td>
+<td>...</td>
+</tr>
+<tr>
+<td>TERMINATE</td>
+<td>...</td>
+</tr>
+<tr>
+<td>SCALE_IN</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+<p>The VNF events state machine follows the  state diagram for the VNFR (and NSR) displayed in <a href="http://image.slidesharecdn.com/nfvvnfarchitecturepresentation-141006041349-conversion-gate01/95/nfv-virtual-network-function-architecture-22-638.jpg?cb=1436628676">this slide</a> </p>
 <h3 id="deployment-flavour">Deployment Flavour</h3>
 <p>A delpoyment flavour corresponds to a flavour name existing in the VimInstance.
 For example if you are using Openstack as Vim, the flavour_key parameter shall correspond to a <a href="http://docs.openstack.org/openstack-ops/content/flavors.html">flavour name of Openstack</a> (e.q. m1.small).</p>

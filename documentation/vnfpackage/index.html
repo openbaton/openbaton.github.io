@@ -311,6 +311,15 @@ console.log('--------');
 
 
         
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../use-case-ims-example/">OpenIMSCore example</a>
+        
+    </li>
+
+
+        
 </li>
 </ul>
     
@@ -489,9 +498,10 @@ Then it will create a new image defined in the VNFPackage.</li>
 </ul>
 </li>
 <li><strong><em>link</em></strong>: This link points to an image available at this URL used to upload the image to the cloud environment.<ul>
-<li><strong>Note</strong> Either you have to define the image-link or put the image directly into the VNFPackage.
+<li><strong>Note</strong> Either you have to define the image-link or put the image directly into the VNFPackage if you want to upload a new Image to the VIM by using image upload option <code>true</code> or <code>check</code>.
     Otherwise a NotFoundException will be thrown and the VNFPackage will not onboard.
     The image-link has a higher priority than the image stored in the VNFPackage directly.</li>
+<li><strong><em>*Note</em></strong>* At the moment it is only supported to upload an image by using the <code>link</code>. Image uploading from an image inside the package is disabled.</li>
 </ul>
 </li>
 </ul>
@@ -521,6 +531,7 @@ This lifecycle_events are triggered by the NFVO in the meaning of: if the event 
     This means that the scripts in that folder have less priority than the scripts located under <strong><em>scripts-link</em></strong>.</p>
 <p><strong>Note</strong> Scripts are executed when a specific Event is fired and this Event references to specific scripts.</p>
 <h2 id="image62img">&lt;image>.img</h2>
+<p><strong>Note</strong> At the moment it is only supported to upload an image by using the <code>link</code> defined in <strong>Metadata.yaml</strong>. Image uploading from an image inside the package is disabled.</p>
 <p>This image is used to upload it to all the cloud environments which are addressed inside the VNFD with that image.
 It doesn't matter whether an image already exists on the considered cloud environment or not.</p>
 <p><strong>Note</strong> This image has lower priority than the <strong><em>image-links</em></strong> defined in <strong><em>Metadata.yaml</em></strong>.
@@ -549,6 +560,7 @@ image:
     upload: &quot;check&quot;
     names:
         - iperf_server_image
+    link: &quot;http://releases.ubuntu.com/14.04/ubuntu-14.04.3-server-amd64.iso&quot;
 image-config:
     name: iperf_server_image
     diskFormat: QCOW2
@@ -630,6 +642,7 @@ image:
     upload: &quot;check&quot;
     names:
         - iperf_client_image
+    link: &quot;http://releases.ubuntu.com/14.04/ubuntu-14.04.3-server-amd64.iso&quot;
 image-config:
     name: iperf_client_image
     diskFormat: QCOW2
@@ -658,7 +671,6 @@ Important to notice here is the vm_image that points to the image we have define
             &quot;virtual_network_bandwidth_resource&quot;:&quot;1000000&quot;,
             &quot;vimInstanceName&quot;:&quot;vim-instance&quot;,
             &quot;vdu_constraint&quot;:&quot;&quot;,
-            &quot;high_availability&quot;:&quot;ACTIVE_PASSIVE&quot;,
             &quot;scale_in_out&quot;:2,
             &quot;vnfc&quot;:[
                 {

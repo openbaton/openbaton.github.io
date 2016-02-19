@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>OpenBaton Documentation</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,300,600,700" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "OpenIMSCore example";
+    var mkdocs_page_input_path = "use-case-ims-example.md";
+    var mkdocs_page_url = "/use-case-ims-example/";
+     var mkdocs_page_url = "/use-case-ims-example/";
+  </script>
+  
+  <!-- site_name == OpenBaton Documentation -->
+  <!-- page_title == OpenIMSCore example -->
+  <!-- base_url == .. -->
+  <!-- current_page == OpenIMSCore example - /use-case-ims-example/ [*]
+ -->
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-68429895-1', 'openbaton.github.io');
+      ga('send', 'pageview');
+  </script>
+  
+
+<style>
+
+.subnav_drop{
+  cursor: pointer;
+
+
+}
+
+ul.subnav {
+/*display:none ;*/
+cursor: pointer;
+border-bottom: 1px solid #e1e1e5;
+}
+
+.subnav:last-child{
+  border-bottom: none;
+
+}
+
+ul.subnav:active {
+display:block;
+}
+
+.wy-menu-vertical li ul {
+display: block;
+
+  }
+
+</style>
+</head>
+
+<body role="document">
+
+<script type="text/javascript">
+$( document).ready(function(){
+      //console.log("test");
+
+    //$('.subnav').not( ":has('OpenIMSCore example')" ).hide();
+    $('li.subnav_drop').find('ul.subnav').hide();
+    //$('li.subnav_drop').find('ul.subnav').each(function(i,e){console.log(i,e)});
+       $( ".subnav" ).find( "li:contains('OpenIMSCore example')" ).each(function(i,e){
+          var currentElement = $(e);
+          currentElement.parent().css({"display":"block","visibility":"visible"}); //css("background-color","blue");
+          currentElement.css({"display":"block","visibility":"visible"});
+       });//$( ".subnav" ).find( "li:contains('OpenIMSCore example')" ).css("display","block");
+       //$(".current").css({"background-color":"blue","display":"block","visibility":"visible"});
+       //show(1000,function(i,e){console.log(i,e)});
+       //$('li.subnav_drop').find('ul.subnav').css("background-color","blue");
+      //$(this).find('ul.subnav').toggle();
+    $('li.subnav_drop').click(function(i,e) {  
+      $('li.subnav_drop').not(this).find('ul.subnav').hide();
+      $(this).find('ul.subnav').toggle();
+    }); 
+
+});
+   
+$( ".wy-nav-content" ).find( "li:contains('OpenIMSCore example')" ).css('color','red');
+console.log('--------');
+console.log($( ".wy-nav-content" ).find( "div:contains('OpenIMSCore example')" ).css("color","red"));
+console.log('--------');
+console.log($( ".subnav" ).find( "li:contains('OpenIMSCore example')" ));
+console.log('--------');
+  </script>
+
+
+
+<div class="navcontainer" style="margin:0px; background:#000;">
+    <div class="navholder">
+      <nav>
+        <a href="../../index.html" class="logo"></a>
+        <a href="#" id="menu-icon"></a>
+        <ul class="navigation">
+          
+                <li><a href="../../index.html#about">About</a></li>
+                <li><a href="../../cases.html">Use Cases</a></li>
+                <li><a href="../../features.html">Features</a></li>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="../../index.html#contact">Contact</a></li>
+                <li><a href="https://github.com/openbaton">GitHub</a></li>
+          </ul>
+      </nav>
+     </div>
+</div>
+<div  class="container">
+  <div class="holder"> 
+        <div class="wy-grid-for-nav">
+
+          
+          <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+            <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+              <ul class="current">
+                
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Get Started</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="..">Get Started</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Installation</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../install/">Overview</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation/">Install NFVO</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vim-instance/">Register a PoP</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Use it</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../use/">Introduction</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-generic/">Generic VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-how-to-write/">Write your own VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-vendor-specific/">Integrate your own VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfpackage/">Create your own VNF Package</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ns-descriptor/">Create the NSD</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-how-to-use-gui/">Use via the Dashboard</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-sdk/">Use via the SDK</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../zabbix-plugin/">Use Zabbix plugin</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../integration-test-use/">Integration Tests</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../use-case-example/">A full example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 current">
+        <a class="current" href="./">OpenIMSCore example</a>
+        
+         
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Extend it</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../extend/">Extend it</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-architecture/">NFVO Architecture</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vim-plugin/">Write your own Plugin</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>FAQ</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../FAQ/">FAQ</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+              </ul>
+            </div>
+            &nbsp;
+          </nav>
+        </div>
+    <div class="content_container">
+        <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+         
+
+          
+                <div class="wy-nav-content">
+                  <div class="rst-content">
+                   
+                    <div role="main">
+                      <div class="section">
+                        
+                          <h1 id="use-case-example-openimscore-bind9-fhoss">Use case example: OpenIMSCore - Bind9 - FHoSS</h1>
+<hr />
+<p>Compared to the <a href="../use-case-example/">Iperf-Server - Iperf-Client</a> the example provided here is far more complex. We assume that the <a href="http://openbaton.github.io/documentation/nfvo-installation/">NFVO</a> and the <a href="http://openbaton.github.io/documentation/vnfm-generic/">Generic VNFM</a> are ready to receive invocations.</p>
+<p>The following pictures shows what is going to be deployed, a basic <a href="http://www.openimscore.org/">OpenIMSCore</a> with a <a href="http://www.openimscore.org/">Home subscriber server</a> and a <a href="https://wiki.ubuntuusers.de/DNS-Server_Bind">Bind9 nameserver</a>.</p>
+<p><img alt="ims-deployment" src="../images/ims-architecture.png" /></p>
+<p>Before starting we need to send the <a href="http://openbaton.github.io/documentation/vim-instance/">VimInstance</a> to the <a href="http://openbaton.github.io/documentation/nfvo-installation/">NFVO</a> and the necessary <a href="http://openbaton.github.io/documentation/ns-descriptor/">Network Service Descriptors</a>. For doing this please have a look into the <a href="http://openbaton.github.io/documentation/vim-instance/">Vim instance documentation</a>, <a href="http://openbaton.github.io/documentation/vnfpackage/">VNF Package documentation</a> and <a href="http://openbaton.github.io/documentation/ns-descriptor/">Network Service Descriptor documentation</a>. In fact, for creating the Network Service Record, we need to have a Network Service Descriptor loaded into the catalogue with five [Virtual Network Functions][vnf-descriptor] ( scscf, icscf, pcscf, bind9, fhoss ) created from the <a href="http://openbaton.github.io/documentation/vnfpackage/">VNF Packages</a>. To create the <a href="http://openbaton.github.io/documentation/vnfpackage/">VNF Packages</a> please clone the <a href="https://github.com/openbaton/openimscore-packages">github repository for this example</a>.</p>
+<p>For this example we assume the network used to interconnect the components is called "mgmt", if you want to modify this example ensure you are naming the network accordingly, the scripts from the github do not handle different network names yet. Also the vimInstanceName may be different to you, depending on your setup. The deployment_flavor is optional but should containg enough RAM for the default configuration of the components to be able to run, else some components may crash on start. This example setup has been successfuly tested on clean <a href="https://cloud-images.ubuntu.com/">Ubuntu14.04 images</a> with 2048 Mb RAM deployed on an <a href="https://www.openstack.org/">Openstack Kilo (2015.1.3)</a>.</p>
+<p>The following section will introduce the different [Virtual Network Function Descriptors][vnf-descriptor] used for this example ( which you may already have cloned from the corresponding <a href="https://github.com/openbaton/openimscore-packages">github repository</a> ). The first descriptor will be explained the rest will be addressed briefly.</p>
+<h2 id="virtual-network-function-descriptors">Virtual Network Function Descriptors</h2>
+<p>Take a look at the Scscf Virtual Network Function Descriptor for this example.</p>
+<pre><code class="json">{  
+   &quot;name&quot;:&quot;scscf&quot;,
+   &quot;vendor&quot;:&quot;fokus&quot;,
+   &quot;version&quot;:&quot;0.1&quot;,
+   &quot;lifecycle_event&quot;:[  
+      {  
+         &quot;event&quot;:&quot;CONFIGURE&quot;,
+         &quot;lifecycle_events&quot;:[  
+            &quot;bind9_relation_joined.sh&quot;,
+            &quot;fhoss_relation_joined.sh&quot;,
+            &quot;icscf_relation_joined.sh&quot;
+         ]
+      },
+      {  
+         &quot;event&quot;:&quot;INSTANTIATE&quot;,
+         &quot;lifecycle_events&quot;:[  
+            &quot;scscf_install.sh&quot;
+         ]
+      },
+      {  
+         &quot;event&quot;:&quot;START&quot;,
+         &quot;lifecycle_events&quot;:[  
+            &quot;scscf_generate_config.sh&quot;,
+            &quot;scscf_start.sh&quot;
+         ]
+      }
+   ],
+   &quot;configurations&quot;:{  
+      &quot;name&quot;:&quot;client-configuration&quot;,
+      &quot;configurationParameters&quot;:[  
+         {  
+            &quot;confKey&quot;:&quot;port&quot;,
+            &quot;value&quot;:&quot;6060&quot;
+         },
+         {  
+            &quot;confKey&quot;:&quot;name&quot;,
+            &quot;value&quot;:&quot;scscf&quot;
+         },
+         {  
+            &quot;confKey&quot;:&quot;diameter_p&quot;,
+            &quot;value&quot;:&quot;3870&quot;
+         }
+      ]
+   },
+   &quot;vdu&quot;:[  
+      {  
+         &quot;vm_image&quot;:[],
+         &quot;scale_in_out&quot;:1,
+         &quot;vnfc&quot;:[  
+            {  
+               &quot;connection_point&quot;:[  
+                  {  
+                     &quot;virtual_link_reference&quot;:&quot;mgmt&quot;
+                  }
+               ]
+            }
+         ],
+         &quot;vimInstanceName&quot;:&quot;your_vim&quot;
+      }
+   ],
+   &quot;virtual_link&quot;:[  
+      {  
+         &quot;name&quot;:&quot;mgmt&quot;
+      }
+   ],
+   &quot;deployment_flavour&quot;:[  
+      {  
+         &quot;flavour_key&quot;:&quot;m1.small&quot;
+      }
+   ],
+   &quot;type&quot;:&quot;scscf&quot;,
+   &quot;endpoint&quot;:&quot;generic&quot;
+}
+</code></pre>
+
+<h4 id="lifecycle-event">Lifecycle Event</h4>
+<p>This is how one of the 5 [Virtual Network Functions Descriptors][vnf-descriptor] for this example may look like. In the lifecycle events we listed up all scripts which need to be executed in their related phase. What will actually happen in the scripts is that each descriptor ( scscf, icscf, pcscf, bind9, fhoss ) will install itself and gather information of their dependencies defined in the <a href="http://openbaton.github.io/documentation/ns-descriptor/">Network Service Descriptor</a> to fill a configuration template to build up a correctly configured component of this <a href="http://www.openimscore.org/">OpenIMSCore</a> setup. Since the template is rather static and probably does not suit your needs you may feel free to modify this example for your needs.</p>
+<p>All the scripts provided by openbaton for OpenIMSCore are under Apachee License v2.0</p>
+<h4 id="configuration">Configuration</h4>
+<p>Each <a href="http://openbaton.github.io/documentation/vnf-descriptor/">Virtual Network Function Descriptor</a> defines specific configuration parameters. In this example we may change the diameter port or the name of some descriptor, or you can alter the <a href="https://wiki.ubuntuusers.de/DNS-Server_Bind">Bind9</a> realm. This will have impact on the setup of your <a href="http://www.openimscore.org/">OpenIMSCore</a>.</p>
+<pre><code class="json">{  
+   &quot;confKey&quot;:&quot;realm&quot;,
+   &quot;value&quot;:&quot;open-ims.test&quot;
+}
+</code></pre>
+
+<h4 id="image-and-network">Image and Network</h4>
+<p>In contrast to the <a href="../use-case-example/">Iperf example</a> we do not define the image and leave out the vm image part since we assume the image is already uploaded in the related <a href="https://www.openstack.org/">Openstack</a> defined in your vim. As mentioned before we will use a network statically named "mgmt". You may change the default name of the image used in this example ( which is "ubuntu-14.04-server-cloudimg-amd64-disk1" ) by modifying the "Metadata.yaml" files of each <a href="http://openbaton.github.io/documentation/vnfpackage/">Virtual Network Function Package</a>. You can obtain such a cloud image from the <a href="https://cloud-images.ubuntu.com/">Ubuntu Cloud Images</a></p>
+<h2 id="create-vnf-packages">Create VNF packages</h2>
+<p>This section covers up the steps needed to be done to create a vnf package out of the cloned <a href="https://github.com/openbaton/openimscore-packages">github repository</a> of the <a href="http://www.openimscore.org/">OpenIMSCore</a> <a href="http://openbaton.github.io/documentation/vnf-descriptor/">Virtual Network Function Descriptors</a>.</p>
+<h4 id="example-for-creating-the-icscf-virtual-network-function-package">Example for creating the Icscf Virtual Network Function Package</h4>
+<pre><code class="bash"># Where to save the scripts
+GIT_REPO_LOC=/opt/vnf_packages_example_openimscore_openbaton
+# Clone the repository
+git clone https://github.com/openbaton/opemimscore_example $GIT_REPO_LOC
+# Create the .tar file which needs to be uploaded
+cd $GIT_REPO_LOC/icscf
+tar -cf icscf.tar *
+</code></pre>
+
+<p>All we need to do after creating the .tar files is to upload these using your Dashboard. After uploading all the Virtual Network Function Packages we will be ready to create the Network Service Descriptor.</p>
+<h2 id="network-service-descriptor-for-openimscore-bind9-fhoss">Network Service Descriptor for OpenIMSCore - Bind9 - FHoSS</h2>
+<h4 id="relations-dependencies">Relations / Dependencies</h4>
+<p>In the Network Service Descriptor we will define the relations among our Virtual Network Function Descriptors. Since 4 of the 5 Virtual Network Function Descriptors ( Scscf, Icscf, FHoSS, Bind9 ) are all dependend on each other, the listing of the dependencies can get confusing. </p>
+<p>For this example the Network Service Descriptor may look like the following.</p>
+<pre><code class="json">{
+   &quot;name&quot;:&quot;OpenIMSCore Bind9 FHoSS&quot;,
+   &quot;vendor&quot;:&quot;fokus&quot;,
+   &quot;version&quot;:&quot;0.1-ALPHA&quot;,
+   &quot;vnfd&quot;:[  
+      {  
+         &quot;id&quot;:&quot;26b588d5-ecb9-4bf2-a044-720ad1100e58&quot;
+      },
+      {  
+         &quot;id&quot;:&quot;bd422c42-2343-4769-830d-0e92bbe54dc8&quot;
+      },
+      {  
+         &quot;id&quot;:&quot;c1933ff3-4b55-4eb1-97b7-8ca9675b2067&quot;
+      },
+      {  
+         &quot;id&quot;:&quot;f57bb94d-e307-4048-8bc6-7547f9b40f6a&quot;
+      },
+      {  
+         &quot;id&quot;:&quot;f8d821ed-f7ee-4ae8-a660-b885780c28df&quot;
+      }
+   ],
+   &quot;vld&quot;:[  
+      {  
+         &quot;name&quot;:&quot;mgmt&quot;
+      }
+   ],
+   &quot;vnf_dependency&quot;:[  
+      {  
+         &quot;source&quot;:{  
+            &quot;name&quot;:&quot;bind9&quot;
+         },
+         &quot;target&quot;:{  
+            &quot;name&quot;:&quot;fhoss&quot;
+         },
+         &quot;parameters&quot;:[  
+            &quot;realm&quot;
+         ]
+      },
+      {  
+         &quot;source&quot;:{  
+            &quot;name&quot;:&quot;bind9&quot;
+         },
+         &quot;target&quot;:{  
+            &quot;name&quot;:&quot;icscf&quot;
+         },
+         &quot;parameters&quot;:[  
+            &quot;realm&quot;
+         ]
+      },
+      {  
+         &quot;source&quot;:{  
+            &quot;name&quot;:&quot;bind9&quot;
+         },
+         &quot;target&quot;:{  
+            &quot;name&quot;:&quot;scscf&quot;
+         },
+         &quot;parameters&quot;:[  
+            &quot;realm&quot;
+         ]
+      },
+      {  
+         &quot;source&quot;:{  
+            &quot;name&quot;:&quot;bind9&quot;
+         },
+         &quot;target&quot;:{  
+            &quot;name&quot;:&quot;pcscf&quot;
+         },
+         &quot;parameters&quot;:[  
+            &quot;realm&quot;
+         ]
+      },
+      {  
+         &quot;source&quot;:{  
+            &quot;name&quot;:&quot;fhoss&quot;
+         },
+         &quot;target&quot;:{  
+            &quot;name&quot;:&quot;bind9&quot;
+         },
+         &quot;parameters&quot;:[  
+            &quot;name&quot;
+         ]
+      },
+      {  
+         &quot;source&quot;:{  
+            &quot;name&quot;:&quot;icscf&quot;
+         },
+         &quot;target&quot;:{  
+            &quot;name&quot;:&quot;bind9&quot;
+         },
+         &quot;parameters&quot;:[  
+            &quot;name&quot;,
+            &quot;port&quot;
+         ]
+      },
+      {  
+         &quot;source&quot;:{  
+            &quot;name&quot;:&quot;scscf&quot;
+         },
+         &quot;target&quot;:{  
+            &quot;name&quot;:&quot;bind9&quot;
+         },
+         &quot;parameters&quot;:[  
+            &quot;name&quot;,
+            &quot;port&quot;
+         ]
+      },
+      {  
+         &quot;source&quot;:{  
+            &quot;name&quot;:&quot;pcscf&quot;
+         },
+         &quot;target&quot;:{  
+            &quot;name&quot;:&quot;bind9&quot;
+         },
+         &quot;parameters&quot;:[  
+            &quot;name&quot;,
+            &quot;port&quot;
+         ]
+      },
+      {  
+         &quot;source&quot;:{  
+            &quot;name&quot;:&quot;fhoss&quot;
+         },
+         &quot;target&quot;:{  
+            &quot;name&quot;:&quot;icscf&quot;
+         },
+         &quot;parameters&quot;:[  
+            &quot;name&quot;,
+            &quot;port&quot;
+         ]
+      },
+      {  
+         &quot;source&quot;:{  
+            &quot;name&quot;:&quot;fhoss&quot;
+         },
+         &quot;target&quot;:{  
+            &quot;name&quot;:&quot;scscf&quot;
+         },
+         &quot;parameters&quot;:[  
+            &quot;name&quot;,
+            &quot;port&quot;
+         ]
+      },
+      {  
+         &quot;source&quot;:{  
+            &quot;name&quot;:&quot;scscf&quot;
+         },
+         &quot;target&quot;:{  
+            &quot;name&quot;:&quot;fhoss&quot;
+         },
+         &quot;parameters&quot;:[  
+            &quot;name&quot;,
+            &quot;port&quot;,
+            &quot;diameter_p&quot;
+         ]
+      },
+      {  
+         &quot;source&quot;:{  
+            &quot;name&quot;:&quot;icscf&quot;
+         },
+         &quot;target&quot;:{  
+            &quot;name&quot;:&quot;fhoss&quot;
+         },
+         &quot;parameters&quot;:[  
+            &quot;name&quot;,
+            &quot;diameter_p&quot;
+         ]
+      },
+      {  
+         &quot;source&quot;:{  
+            &quot;name&quot;:&quot;scscf&quot;
+         },
+         &quot;target&quot;:{  
+            &quot;name&quot;:&quot;icscf&quot;
+         },
+         &quot;parameters&quot;:[  
+            &quot;name&quot;,
+            &quot;port&quot;
+         ]
+      },
+      {  
+         &quot;source&quot;:{  
+            &quot;name&quot;:&quot;icscf&quot;
+         },
+         &quot;target&quot;:{  
+            &quot;name&quot;:&quot;scscf&quot;
+         },
+         &quot;parameters&quot;:[  
+            &quot;name&quot;
+         ]
+      }
+   ]
+}
+</code></pre>
+
+<p>Assuming we have uploaded all Virtual Network Function Packages, the ids for the Virtual Network Function Descriptors are to be found in your dashboard or directly accessed via your API at http://nfvo-ip:8080/api/v1/vnf-descriptors. </p>
+<p>For continuous testing of your network services you may find it helpful to use this python script printing the Virtual Network Function Descriptor ids. Be aware, this script only works if you disabled the security in the NFVO. So you can easily copy paste the script output into your Network Service Descriptor.</p>
+<pre><code class="python">#!/usr/bin/env python
+
+import json
+import sys
+import getopt
+import urllib2
+
+program_name=&quot;./getVnfDescriptors&quot;
+
+def main(argv):
+        ip=&quot;127.0.0.1&quot;
+        try:
+                opts, args = getopt.getopt(argv,&quot;hi:&quot;,[&quot;ip=&quot;])
+        except getopt.GetoptError:
+                print usage
+                sys.exit(2)
+        for opt, arg in opts:
+                if opt == '-h':
+                        print program_name + &quot; -i &lt;ip&gt;&quot;
+                        sys.exit()
+                elif opt in (&quot;-i&quot;, &quot;--ip&quot;):
+                        ip = arg
+        data = json.load(urllib2.urlopen('http://'+ip+':8080/api/v1/vnf-descriptors'))
+        for i in data:
+                print &quot;         {&quot;
+                print &quot;                 \&quot;id\&quot;:\&quot;&quot; +i[&quot;id&quot;] + &quot;\&quot;&quot;
+                # check that we do not have the last entry
+                if i[&quot;id&quot;] == data[-1][&quot;id&quot;]:
+                        print &quot;         }&quot;
+                else:
+                        print &quot;         },&quot;
+
+if __name__ == &quot;__main__&quot;:
+        main(sys.argv[1:])
+</code></pre>
+
+<p>The next step is to upload your Network Service Descriptor via the dashboard.</p>
+<h2 id="launching-the-nsd">Launching the NSD</h2>
+<p>Now that we have uploaded the Network Service Descriptor we can launch it. You can watch the progress checking the Network Service Records on your dashboard. Once the Network Service Record went to "ACTIVE" your <a href="http://www.openimscore.org/">OpenIMSCore</a> - <a href="https://wiki.ubuntuusers.de/DNS-Server_Bind">Bind9</a> - <a href="http://www.openimscore.org/">FHoSS</a> deployment is finished.</p>
+<h2 id="testing-your-deployment">Testing your Deployment</h2>
+<p>To test your <a href="http://www.openimscore.org/">OpenIMSCore</a> you may use a Sip client of your choice. Be sure to use the realm defined in your <a href="https://github.com/openbaton/opemimscore_example/bind9">Bind9 Virtual Network Function Descriptor</a> while testing registration and call. By default the <a href="http://www.openimscore.org/">FHoSS</a> conaints 2 users : alice and bob. The user is the same as the password, but you may also alter it to your needs modifying the <a href="https://github.com/openbaton/openimscore-packages">FHoSS Virtual Network Function Descriptor</a> ( You will find the users in "var_user_data.sql" file under the fhoss folder)</p>
+<p>For Benchmarking we can use <a href="http://sipp.sourceforge.net/ims_bench/">IMS Bench SIPp</a> but therefor you should add more users to the <a href="http://www.openimscore.org/">FHoSS</a> database since by default it only contains 2 users.</p>
+<p><!---
+Script for open external links in a new tab
+-->
+<script type="text/javascript" charset="utf-8">
+      // Creating custom :external selector
+      $.expr[':'].external = function(obj){
+          return !obj.href.match(/^mailto\:/)
+                  &amp;&amp; (obj.hostname != location.hostname);
+      };
+      $(function(){
+        $('a:external').addClass('external');
+        $(".external").attr('target','_blank');
+      })
+</script></p>
+                        
+                      </div>
+                    </div>
+                    <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../extend/" class="btn btn-neutral float-right" title="Extend it"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../use-case-example/" class="btn btn-neutral" title="A full example"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          	  
+                  </div>
+                </div>
+
+        </section>
+    </div>
+  </div>
+</div>
+
+
+
+</body>
+</html>
+
