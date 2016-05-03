@@ -320,6 +320,24 @@ console.log('--------');
 
 
         
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../tosca-iperf-scenario/">TOSCA iperf scenario</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../tosca-CSAR-onboarding/">TOSCA CSAR on-boarding</a>
+        
+    </li>
+
+
+        
 </li>
 </ul>
     
@@ -671,7 +689,7 @@ By using the simple vnfm-sdk you need to take care about all the communication b
 
 dependencies {
     compile 'org.hibernate:hibernate-core:4.3.10.Final'
-    compile 'org.openbaton:vnfm-sdk-amqp:1.0'
+    compile 'org.openbaton:vnfm-sdk-amqp:1.0.2'
 }
 
 //...
@@ -700,7 +718,7 @@ repositories {
 }
 
 dependencies {
-    compile 'org.openbaton:vnfm-sdk-amqp:1.0'
+    compile 'org.openbaton:vnfm-sdk-amqp:1.0.2'
     compile 'org.hibernate:hibernate-core:4.3.10.Final'
 }
 
@@ -741,38 +759,46 @@ Moreover, it is responsible for loading predefined configuration files, setting 
 <p>Once you extended your VNFMManger, you need to implement all the methods coming from the extension of <em>AbstractVnfmSpringAmqp</em> as shown below:</p>
 <pre><code class="java">package org.openbaton.vnfm;
 
-import org.openbaton.autoscaling.catalogue.Action;
+import org.openbaton.catalogue.nfvo.Action;
+import org.springframework.boot.SpringApplication;
 import org.openbaton.catalogue.mano.record.VNFCInstance;
 import org.openbaton.catalogue.mano.record.VNFRecordDependency;
 import org.openbaton.catalogue.mano.record.VirtualNetworkFunctionRecord;
 import org.openbaton.catalogue.nfvo.VimInstance;
 import org.openbaton.common.vnfm_sdk.amqp.AbstractVnfmSpringAmqp;
-import org.springframework.boot.SpringApplication;
-
 import java.util.List;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+
 
 @SpringBootApplication
 class MyVNFM extends AbstractVnfmSpringAmqp {
 
+
+    /**
+     * This operation allows providing notifications on state changes
+     * of a VNF instance, related to the VNF Lifecycle.
+     */
+    public void NotifyChange() {
+
+    }
+
     /**
      * This operation allows creating a VNF instance.
      *
-     * @param scripts
      * @param virtualNetworkFunctionRecord
      * @param scripts
      * @param vimInstances
      */
-    @Override
-    public VirtualNetworkFunctionRecord instantiate(VirtualNetworkFunctionRecord virtualNetworkFunctionRecord, 
-                                                    Object scripts) throws Exception 
-    {
-        return virtualNetworkFunctionRecord;
+    public VirtualNetworkFunctionRecord instantiate(VirtualNetworkFunctionRecord virtualNetworkFunctionRecord, Object scripts, Map&lt;String, Collection&lt;VimInstance&gt;&gt; vimInstances) throws Exception {
+        return null;
     }
 
     /**
      * This operation allows retrieving
      * VNF instance state and attributes.
      */
+
     public void query() {
 
     }
@@ -781,41 +807,33 @@ class MyVNFM extends AbstractVnfmSpringAmqp {
      * This operation allows scaling
      * (out/in, up/down) a VNF instance.
      */
-    @Override
-    public VirtualNetworkFunctionRecord scale(Action scaleInOrOut, 
-                                              VirtualNetworkFunctionRecord virtualNetworkFunctionRecord, 
-                                              VNFCInstance component, 
-                                              Object scripts, 
-                                              VNFRecordDependency dependency) throws Exception 
-    {
-        return virtualNetworkFunctionRecord;
+
+    public VirtualNetworkFunctionRecord scale(Action scaleInOrOut, VirtualNetworkFunctionRecord virtualNetworkFunctionRecord, VNFCInstance component, Object scripts, VNFRecordDependency dependency) throws Exception {
+        return null;
     }
 
     /**
      * This operation allows verifying if
      * the VNF instantiation is possible.
      */
-    @Override
+
     public void checkInstantiationFeasibility() {
 
     }
 
     /**
-     * This operation allows verifying if
-     * the VNF instantiation is possible.
+     * This operation is called when one the VNFs fails
      */
-    @Override
-    public VirtualNetworkFunctionRecord heal(VirtualNetworkFunctionRecord virtualNetworkFunctionRecord,
-                                             VNFCInstance component,
-                                             String cause) throws Exception
-    {
-        return virtualNetworkFunctionRecord;
+
+    public VirtualNetworkFunctionRecord heal(VirtualNetworkFunctionRecord virtualNetworkFunctionRecord, VNFCInstance component, String cause) throws Exception {
+        return null;
     }
 
     /**
      * This operation allows applying a minor/limited
      * software update (e.g. patch) to a VNF instance.
      */
+
     public void updateSoftware() {
 
     }
@@ -828,18 +846,16 @@ class MyVNFM extends AbstractVnfmSpringAmqp {
      * @param virtualNetworkFunctionRecord
      * @param dependency
      */
-    @Override
-    public VirtualNetworkFunctionRecord modify(VirtualNetworkFunctionRecord virtualNetworkFunctionRecord, 
-                                               VNFRecordDependency dependency) throws Exception 
-    {
-        return virtualNetworkFunctionRecord;
+
+    public VirtualNetworkFunctionRecord modify(VirtualNetworkFunctionRecord virtualNetworkFunctionRecord, VNFRecordDependency dependency) throws Exception {
+        return null;
     }
 
     /**
      * This operation allows deploying a new
      * software release to a VNF instance.
      */
-    @Override
+
     public void upgradeSoftware() {
 
     }
@@ -849,43 +865,28 @@ class MyVNFM extends AbstractVnfmSpringAmqp {
      * or forcefully a previously created VNF instance.
      * @param virtualNetworkFunctionRecord
      */
-    @Override
-    public VirtualNetworkFunctionRecord terminate(VirtualNetworkFunctionRecord virtualNetworkFunctionRecord) throws Exception 
-    {
-        return virtualNetworkFunctionRecord;
+
+    public VirtualNetworkFunctionRecord terminate(VirtualNetworkFunctionRecord virtualNetworkFunctionRecord) throws Exception {
+        return null;
     }
 
-    @Override
-    protected void checkEmsStarted(String hostname) throws RuntimeException {
 
-    }
 
-    @Override
-    public VirtualNetworkFunctionRecord start(VirtualNetworkFunctionRecord virtualNetworkFunctionRecord) throws Exception 
-    {
-        return virtualNetworkFunctionRecord;
-    }
-
-    @Override
-    public VirtualNetworkFunctionRecord configure(VirtualNetworkFunctionRecord virtualNetworkFunctionRecord) throws Exception {
-        return virtualNetworkFunctionRecord;
-    }
-
-    /**
-     * This operation allows providing notifications on state changes
-     * of a VNF instance, related to the VNF Lifecycle.
-     */
-    @Override
-    public void NotifyChange() {
-
-    }
-
-    @Override
     public void handleError(VirtualNetworkFunctionRecord virtualNetworkFunctionRecord) {
 
     }
 
+    protected void checkEmsStarted(String hostname) {
 
+    }
+
+    public VirtualNetworkFunctionRecord start(VirtualNetworkFunctionRecord virtualNetworkFunctionRecord) throws Exception {
+        return null;
+    }
+
+    public VirtualNetworkFunctionRecord configure(VirtualNetworkFunctionRecord virtualNetworkFunctionRecord) throws Exception {
+        return null;
+    }
     public static void main(String[] args){
         SpringApplication.run(MyVNFM.class);
     }
@@ -946,8 +947,9 @@ Therefore, you need to do several things:</p>
 <li>Connect an according VIM to the plugin or use the plugin directly</li>
 </ul>
 <p><strong>Note</strong> If you want to use the Vim with plugins, you need to fetch also the interfaces and VIM implementations by adding the following lines to your build.gradle dependencies</p>
-<pre><code class="gradle">compile 'org.openbaton:vim-int:1.0'
-compile 'org.openbaton:vim-impl:1.0'
+<pre><code class="gradle">compile 'org.openbaton:vim-int:1.1.0-SNAPSHOT'
+compile 'org.openbaton:vim-impl:1.1.0-SNAPSHOT'
+compile 'org.openbaton:sdk:1.0.2'
 </code></pre>
 
 <p>After that you need to rebuild your project for fetching the dependencies automatically.</p>

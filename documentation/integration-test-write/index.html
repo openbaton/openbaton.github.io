@@ -318,6 +318,24 @@ console.log('--------');
 
 
         
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../tosca-iperf-scenario/">TOSCA iperf scenario</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../tosca-CSAR-onboarding/">TOSCA CSAR on-boarding</a>
+        
+    </li>
+
+
+        
 </li>
 </ul>
     
@@ -417,7 +435,7 @@ console.log('--------');
                         
                           <h1 id="write-your-own-integration-tests">Write your own integration tests</h1>
 <h2 id="description">Description</h2>
-<p>The integration tests are defined in .ini files which are in the directory <em>integration-tests/src/main/resources/integration-test-scenarios</em>. If you want to add a integration test, just add its ini file to this folder. </p>
+<p>The integration tests are defined in .ini files which are in the directory <em>integration-tests/src/main/resources/integration-test-scenarios</em>. If you want to add an integration test, just add its ini file to this folder. </p>
 <h3 id="ini-file-structure">Ini file structure</h3>
 <p>In the ini file you can describe a graph or tree like execution plan of different tasks. 
 We will implement here as an example the test which is found in the <em>scenario-real-iperf.ini</em> file step by step. 
@@ -828,72 +846,214 @@ Do NOT use '-' in types of VNFDs or configuration names as you cannot use them i
 <tr>
 <th>class-name</th>
 <th>purpose</th>
+<th>fields</th>
+<th>field purpose</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>GenericServiceTester</td>
 <td>Test the network service itself</td>
+<td>script-1</td>
+<td>The first script to be executed on the VM</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>...</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>script-n</td>
+<td>The n-th script to be executed on the VM</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>vnf-type</td>
+<td>The type of the VNFs that shall be tested</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>user-name</td>
+<td>The user account on the VM on which the scripts will be executed</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>vm-scripts-path</td>
+<td>The path to the directory of the VM where the scripts will be stored before execution</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>net-name</td>
+<td>Specifies the network/virtual-link to which the VMs that shall be tested are connected</td>
 </tr>
 <tr>
 <td>NetworkServiceDescriptorCreate</td>
 <td>Store a NSD on the NFVO</td>
+<td>expected-to-fail</td>
+<td>If set to true the task will fail if the onboarding of the NSD is successful</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>name-file</td>
+<td>The name of the json file which contains the NSD</td>
 </tr>
 <tr>
 <td>NetworkServiceDescriptorCreateFromPackage</td>
 <td>Create a NSD by using a VNFPackage that was uploaded beforehand</td>
+<td>expected-to-fail</td>
+<td>If set to true the task will fail if the onboarding of the NSD is successful</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>name-file</td>
+<td>The name of the json file which contains the NSD</td>
 </tr>
 <tr>
 <td>NetworkServiceDescriptorDelete</td>
 <td>Delete a NSD from the NFVO</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>NetworkServiceDescriptorWait</td>
 <td>Used for waiting for the deletion of a NSD from the NFVO</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>NetworkServiceRecordCreate</td>
 <td>Deploy a network service from a NSD and create the NSR</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>NetworkServiceRecordDelete</td>
 <td>Delete the NSR</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>NetworkServiceRecordGetLatest</td>
+<td>Expects to get passed a NSR from its preceding task, retrieves the latest version of this NSR from the NFVO and passes it to the following task</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>NetworkServiceRecordWait</td>
-<td>Wait for an specific action of the NFVO to happen that is related to NSRs</td>
+<td>Wait for a specific action of the NFVO to happen that is related to NSRs</td>
+<td>action</td>
+<td>The action which will be waited for to happen</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>timeout</td>
+<td>After this time (in seconds) the task will fail if the action did not occur yet</td>
 </tr>
 <tr>
 <td>PackageDelete</td>
 <td>Delete a VNFPackage</td>
+<td>package-name</td>
+<td>The name of the package that will be deleted</td>
 </tr>
 <tr>
 <td>PackageUpload</td>
 <td>Upload a VNFPackage</td>
+<td>package-upload</td>
+<td>The name of the package that will be uploaded</td>
+</tr>
+<tr>
+<td>Pause</td>
+<td>Used to elapse time until the next task will start</td>
+<td>duration</td>
+<td>The time (in seconds) that this task shall do nothing and after which it will finish</td>
 </tr>
 <tr>
 <td>ScaleIn</td>
 <td>Triggers one scale in operation on a VNFR specified in the ini file</td>
+<td>vnf-type</td>
+<td>The type of VNFR that shall be scaled in</td>
 </tr>
 <tr>
 <td>ScaleOut</td>
 <td>Triggers one scale out operation on a VNFR specified in the ini file</td>
+<td>floating-ip</td>
+<td>The floating IP which shall be assigned to the new instance</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>virtual-link</td>
+<td>The network/virtual-link to which the new instance shall be connected</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>vnf-type</td>
+<td>The type of the VNFR on which the scale out shall be performed</td>
 </tr>
 <tr>
 <td>ScalingTester</td>
 <td>Verifies if the number of VNFCInstances is equal to a given number and passes an updated NSR to the next task, which can be important after a scaling operation</td>
+<td>vnfc-count</td>
+<td>The expected number of instances of this VNF</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>vnf-type</td>
+<td>The type of the VNFR whose number of VNFCs should be checked</td>
 </tr>
 <tr>
 <td>VimInstanceCreate</td>
 <td>Store a vim instance on the NFVO from a json file</td>
+<td>name-file</td>
+<td>The name of the json file that contains the VimInstance</td>
 </tr>
 <tr>
 <td>VimInstanceDelete</td>
 <td>Delete a vim instance</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>VirtualNetworkFunctionRecordWait</td>
 <td>Wait for an action sent by the NFVO which is related to a VNFR</td>
+<td>action</td>
+<td>The action which will be waited for to happen</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>timeout</td>
+<td>After this time (in seconds) the task will fail if the action did not occur yet</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>vnf-type</td>
+<td>The type of the VNFR that should produce the awaited action</td>
+</tr>
+<tr>
+<td>VNFRStatusTester</td>
+<td>Checks if the status of a specified VNFR is as expected</td>
+<td>status</td>
+<td>The expected status in which the VNFR should be</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>vnf-type</td>
+<td>The type of the VNFR whose status shall be checked</td>
 </tr>
 </tbody>
 </table>
@@ -980,8 +1140,8 @@ vnf-type = client
 vnfc-count = 2
 </code></pre>
 
-<p>Furthermore note that the ScalingTester passes the updated NSR to the next tester. If you trigger a scaling function the NSR will change, but if you do not use ScalingTester the NSR used by the integration test will remain the old one before the scaling operation. 
-So the recommended use of the Scaling testers is to trigger a scaling operation using <em>ScaleIn</em> or <em>ScaleOut</em>. If you use <em>ScaleOut</em> you should wait for the SCALED message using the <em>VirtualNetworkFunctionRecordWait</em> class. After that use the <em>ScalingTester</em>. </p>
+<p>Furthermore note that the ScalingTester passes the updated NSR to the next tester. If you trigger a scaling function the NSR will change, but if you do not use ScalingTester (or NetworkServiceRecordGetLatest) the NSR used by the integration test will remain the old one before the scaling operation. 
+So the recommended proceeding after a scale out or scale in is to wait until the operation finishes and then use the <em>ScalingTester</em> or at least the <em>NetworkServiceRecordGetLatest</em> to have the updated NSR. </p>
 <h2 id="parser">Parser</h2>
 <p>The class Parser looks for a configuration file with this syntax:</p>
 <p>old_value = new_value</p>

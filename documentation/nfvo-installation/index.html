@@ -320,6 +320,24 @@ console.log('--------');
 
 
         
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../tosca-iperf-scenario/">TOSCA iperf scenario</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../tosca-CSAR-onboarding/">TOSCA CSAR on-boarding</a>
+        
+    </li>
+
+
+        
 </li>
 </ul>
     
@@ -510,7 +528,7 @@ What we suggest is to copy entirely <em>/opt/openbaton/NFVO/etc/openbaton.proper
 <pre><code class="properties">nfvo.rabbit.brokerIp = the rabbitmq broker ip (if you run the openbaton.sh update then will be the ip where the NFVO is running) 
 </code></pre>
 
-<p>2)In order to start using persistency through mysql database and not just in memory database, you need to change the properties shown above into:</p>
+<p>2)In order to start using persistency through mysql database to save the parameters for next start ups, you need to change the properties shown above into:</p>
 <pre><code class="properties"># DB properties
 spring.datasource.username=admin
 spring.datasource.password=changeme
@@ -592,13 +610,48 @@ multipart.maxRequestSize=2046MB
 plugin-installation-dir = ./plugins
 </code></pre>
 
-<p>This property allows the user to delete the Network Service Records no matter in which status are they. Pleas note that in any case it is possible to remove a Network Service Record in <em>NULL</em> state.</p>
+<p>This property allows the user to delete the Network Service Records no matter in which status they are. Please note that in any case it is possible to remove a Network Service Record in <em>NULL</em> state.</p>
 <pre><code class="properties"># nfvo behaviour
-nfvo.delete.all-status = true 
+nfvo.delete.all-status = true
+# Decides weither the VNFR would be force-deleted after a time in case NSR was deleted
+nfvo.delete.vnfr.wait = false
+nfvo.delete.vnfr.wait.timeout = 60
+
+# Thread pool executor configuration
+# for info see http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/scheduling/concurrent/ThreadPoolTaskExecutor.html
+nfvo.vmanager.executor.corepoolsize = 20
+nfvo.vmanager.executor.maxpoolsize = 30
+nfvo.vmanager.executor.queuecapacity = 500
+nfvo.vmanager.executor.keepalive = 30
+
+# These are ssl properties are not used yet and are to use in the next realeses
+# server.port: 8443
+# server.ssl.key-store = /etc/openbaton/keystore.p12
+# server.ssl.key-store-password = password
+# server.ssl.keyStoreType = PKCS12
+# server.ssl.keyAlias = tomcat
+# server.https = false
+
+
 </code></pre>
 
+<pre><code class="properties"># GSON properties
+spring.http.converters.preferred-json-mapper=gson
+spring.jackson.deserialization.fail-on-unknown-properties = true
+spring.jackson.deserialization.wrap-exceptions = false
+
+</code></pre>
+
+<pre><code class="properties">nfvo.vnfd.cascade.delete = false
+</code></pre>
+
+<p>This property enables the deletion of all dependent VNFDs in case the main NSD was deleted</p>
+<pre><code class="properties">vnfd.vnfp.cascade.delete = false
+</code></pre>
+
+<p>This property enables the deletion of all dependent VNFPs in case VNFD was deleted</p>
 <p><strong>MONITORING:</strong> Openbaton allows the monitoring of the VNFs via Zabbix. If you want to use this feature, install and configure Zabbix server following the guide at this page <a href="../zabbix-server-configuration/">Zabbix server configuration</a>.
-Once the Zabbix server is correctly configured and running, you need only to add following property. 
+Once the Zabbix server is correctly configured and running, you only need to add following property. 
 Every time a new Network Service is instantiated, each VNFC (VM) is automatically registered to Zabbix server.</p>
 <pre><code class="properties">nfvo.monitoring.ip = the Zabbix server ip
 </code></pre>
@@ -634,7 +687,7 @@ nfvo.start.ordered = false
 nfvo.quota.check = true
 </code></pre>
 
-<p>Those properties are needed in case you want to tune a bit the performances of the NFVO. When the VNFMs send a message to the NFVO, there is a pool of threads able to process these messages in parallel. These parameters allows you to change the pool configuration, for more details please check the <a href="http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/scheduling/concurrent/ThreadPoolTaskExecutor.html">spring documentation regarding thread pool executor</a> </p>
+<p>Those properties are needed in case you want to tune the performances of the NFVO a bit. When the VNFMs send a message to the NFVO, there is a pool of threads able to process these messages in parallel. These parameters allows you to change the pool configuration, for more details please check the <a href="http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/scheduling/concurrent/ThreadPoolTaskExecutor.html">spring documentation regarding thread pool executor</a> </p>
 <pre><code class="properties"># Thread pool executor configuration
 # for info see http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/scheduling/concurrent/ThreadPoolTaskExecutor.html
 vmanager-executor-core-pool-size = 20

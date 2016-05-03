@@ -320,6 +320,24 @@ console.log('--------');
 
 
         
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../tosca-iperf-scenario/">TOSCA iperf scenario</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../tosca-CSAR-onboarding/">TOSCA CSAR on-boarding</a>
+        
+    </li>
+
+
+        
 </li>
 </ul>
     
@@ -484,7 +502,7 @@ console.log('--------');
                ]
             }
          ],
-         &quot;vimInstanceName&quot;:&quot;your_vim&quot;
+         &quot;vimInstanceName&quot;:[&quot;your_vim&quot;]
       }
    ],
    &quot;virtual_link&quot;:[  
@@ -532,197 +550,229 @@ tar -cf icscf.tar *
 <h4 id="relations-dependencies">Relations / Dependencies</h4>
 <p>In the Network Service Descriptor we will define the relations among our Virtual Network Function Descriptors. Since 4 of the 5 Virtual Network Function Descriptors ( Scscf, Icscf, FHoSS, Bind9 ) are all dependend on each other, the listing of the dependencies can get confusing. </p>
 <p>For this example the Network Service Descriptor may look like the following.</p>
-<pre><code class="json">{
-   &quot;name&quot;:&quot;OpenIMSCore Bind9 FHoSS&quot;,
-   &quot;vendor&quot;:&quot;fokus&quot;,
-   &quot;version&quot;:&quot;0.1-ALPHA&quot;,
-   &quot;vnfd&quot;:[  
-      {  
-         &quot;id&quot;:&quot;26b588d5-ecb9-4bf2-a044-720ad1100e58&quot;
-      },
-      {  
-         &quot;id&quot;:&quot;bd422c42-2343-4769-830d-0e92bbe54dc8&quot;
-      },
-      {  
-         &quot;id&quot;:&quot;c1933ff3-4b55-4eb1-97b7-8ca9675b2067&quot;
-      },
-      {  
-         &quot;id&quot;:&quot;f57bb94d-e307-4048-8bc6-7547f9b40f6a&quot;
-      },
-      {  
-         &quot;id&quot;:&quot;f8d821ed-f7ee-4ae8-a660-b885780c28df&quot;
-      }
-   ],
-   &quot;vld&quot;:[  
-      {  
-         &quot;name&quot;:&quot;mgmt&quot;
-      }
-   ],
-   &quot;vnf_dependency&quot;:[  
-      {  
-         &quot;source&quot;:{  
-            &quot;name&quot;:&quot;bind9&quot;
-         },
-         &quot;target&quot;:{  
-            &quot;name&quot;:&quot;fhoss&quot;
-         },
-         &quot;parameters&quot;:[  
-            &quot;realm&quot;
-         ]
-      },
-      {  
-         &quot;source&quot;:{  
-            &quot;name&quot;:&quot;bind9&quot;
-         },
-         &quot;target&quot;:{  
-            &quot;name&quot;:&quot;icscf&quot;
-         },
-         &quot;parameters&quot;:[  
-            &quot;realm&quot;
-         ]
-      },
-      {  
-         &quot;source&quot;:{  
-            &quot;name&quot;:&quot;bind9&quot;
-         },
-         &quot;target&quot;:{  
-            &quot;name&quot;:&quot;scscf&quot;
-         },
-         &quot;parameters&quot;:[  
-            &quot;realm&quot;
-         ]
-      },
-      {  
-         &quot;source&quot;:{  
-            &quot;name&quot;:&quot;bind9&quot;
-         },
-         &quot;target&quot;:{  
-            &quot;name&quot;:&quot;pcscf&quot;
-         },
-         &quot;parameters&quot;:[  
-            &quot;realm&quot;
-         ]
-      },
-      {  
-         &quot;source&quot;:{  
-            &quot;name&quot;:&quot;fhoss&quot;
-         },
-         &quot;target&quot;:{  
-            &quot;name&quot;:&quot;bind9&quot;
-         },
-         &quot;parameters&quot;:[  
-            &quot;name&quot;
-         ]
-      },
-      {  
-         &quot;source&quot;:{  
-            &quot;name&quot;:&quot;icscf&quot;
-         },
-         &quot;target&quot;:{  
-            &quot;name&quot;:&quot;bind9&quot;
-         },
-         &quot;parameters&quot;:[  
-            &quot;name&quot;,
-            &quot;port&quot;
-         ]
-      },
-      {  
-         &quot;source&quot;:{  
-            &quot;name&quot;:&quot;scscf&quot;
-         },
-         &quot;target&quot;:{  
-            &quot;name&quot;:&quot;bind9&quot;
-         },
-         &quot;parameters&quot;:[  
-            &quot;name&quot;,
-            &quot;port&quot;
-         ]
-      },
-      {  
-         &quot;source&quot;:{  
-            &quot;name&quot;:&quot;pcscf&quot;
-         },
-         &quot;target&quot;:{  
-            &quot;name&quot;:&quot;bind9&quot;
-         },
-         &quot;parameters&quot;:[  
-            &quot;name&quot;,
-            &quot;port&quot;
-         ]
-      },
-      {  
-         &quot;source&quot;:{  
-            &quot;name&quot;:&quot;fhoss&quot;
-         },
-         &quot;target&quot;:{  
-            &quot;name&quot;:&quot;icscf&quot;
-         },
-         &quot;parameters&quot;:[  
-            &quot;name&quot;,
-            &quot;port&quot;
-         ]
-      },
-      {  
-         &quot;source&quot;:{  
-            &quot;name&quot;:&quot;fhoss&quot;
-         },
-         &quot;target&quot;:{  
-            &quot;name&quot;:&quot;scscf&quot;
-         },
-         &quot;parameters&quot;:[  
-            &quot;name&quot;,
-            &quot;port&quot;
-         ]
-      },
-      {  
-         &quot;source&quot;:{  
-            &quot;name&quot;:&quot;scscf&quot;
-         },
-         &quot;target&quot;:{  
-            &quot;name&quot;:&quot;fhoss&quot;
-         },
-         &quot;parameters&quot;:[  
-            &quot;name&quot;,
-            &quot;port&quot;,
-            &quot;diameter_p&quot;
-         ]
-      },
-      {  
-         &quot;source&quot;:{  
-            &quot;name&quot;:&quot;icscf&quot;
-         },
-         &quot;target&quot;:{  
-            &quot;name&quot;:&quot;fhoss&quot;
-         },
-         &quot;parameters&quot;:[  
-            &quot;name&quot;,
-            &quot;diameter_p&quot;
-         ]
-      },
-      {  
-         &quot;source&quot;:{  
-            &quot;name&quot;:&quot;scscf&quot;
-         },
-         &quot;target&quot;:{  
-            &quot;name&quot;:&quot;icscf&quot;
-         },
-         &quot;parameters&quot;:[  
-            &quot;name&quot;,
-            &quot;port&quot;
-         ]
-      },
-      {  
-         &quot;source&quot;:{  
-            &quot;name&quot;:&quot;icscf&quot;
-         },
-         &quot;target&quot;:{  
-            &quot;name&quot;:&quot;scscf&quot;
-         },
-         &quot;parameters&quot;:[  
-            &quot;name&quot;
-         ]
-      }
-   ]
+<pre><code class="json">{  
+    &quot;name&quot;:&quot;OpenIMSCore Bind9 FHoSS&quot;,
+    &quot;vendor&quot;:&quot;fokus&quot;,
+    &quot;version&quot;:&quot;2.0&quot;,
+    &quot;vnfd&quot;:[  
+        {  
+            &quot;id&quot;:&quot;029ca1c4-3d05-4327-baa8-74345e0ad6aa&quot;
+        },
+        {  
+            &quot;id&quot;:&quot;140b446e-af2c-4517-9bdf-1b20209ef465&quot;
+        },
+        {  
+            &quot;id&quot;:&quot;a34849f8-3e27-4d1a-8be0-0ce25d29ea6f&quot;
+        },
+        {  
+            &quot;id&quot;:&quot;b624a70f-d81b-4170-b90c-639ac47f5784&quot;
+        },
+        {  
+            &quot;id&quot;:&quot;dc9842d3-bb57-4145-aae6-6d29cfc001f4&quot;
+        }
+    ],
+    &quot;vld&quot;:[  
+        {  
+            &quot;name&quot;:&quot;mgmt&quot;
+        }
+    ],
+    &quot;vnf_dependency&quot;:[  
+        {  
+            &quot;source&quot;:{  
+                &quot;name&quot;:&quot;bind9&quot;
+            },
+            &quot;target&quot;:{  
+                &quot;name&quot;:&quot;fhoss&quot;
+            },
+            &quot;parameters&quot;:[  
+                &quot;useFloatingIpsForEntries&quot;,
+                &quot;realm&quot;,
+                &quot;mgmt&quot;,
+                &quot;mgmt_floatingIp&quot;
+            ]
+        },
+        {  
+            &quot;source&quot;:{  
+                &quot;name&quot;:&quot;bind9&quot;
+            },
+            &quot;target&quot;:{  
+                &quot;name&quot;:&quot;icscf&quot;
+            },
+            &quot;parameters&quot;:[  
+                &quot;useFloatingIpsForEntries&quot;,
+                &quot;realm&quot;,
+                &quot;mgmt&quot;,
+                &quot;mgmt_floatingIp&quot;
+            ]
+        },
+        {  
+            &quot;source&quot;:{  
+                &quot;name&quot;:&quot;bind9&quot;
+            },
+            &quot;target&quot;:{  
+                &quot;name&quot;:&quot;scscf&quot;
+            },
+            &quot;parameters&quot;:[  
+                &quot;useFloatingIpsForEntries&quot;,
+                &quot;realm&quot;,
+                &quot;mgmt&quot;,
+                &quot;mgmt_floatingIp&quot;
+            ]
+        },
+        {  
+            &quot;source&quot;:{  
+                &quot;name&quot;:&quot;bind9&quot;
+            },
+            &quot;target&quot;:{  
+                &quot;name&quot;:&quot;pcscf&quot;
+            },
+            &quot;parameters&quot;:[  
+                &quot;useFloatingIpsForEntries&quot;,
+                &quot;realm&quot;,
+                &quot;mgmt&quot;,
+                &quot;mgmt_floatingIp&quot;
+            ]
+        },
+        {  
+            &quot;source&quot;:{  
+                &quot;name&quot;:&quot;fhoss&quot;
+            },
+            &quot;target&quot;:{  
+                &quot;name&quot;:&quot;bind9&quot;
+            },
+            &quot;parameters&quot;:[  
+                &quot;name&quot;,
+                &quot;mgmt&quot;,
+                &quot;mgmt_floatingIp&quot;
+            ]
+        },
+        {  
+            &quot;source&quot;:{  
+                &quot;name&quot;:&quot;icscf&quot;
+            },
+            &quot;target&quot;:{  
+                &quot;name&quot;:&quot;bind9&quot;
+            },
+            &quot;parameters&quot;:[  
+                &quot;name&quot;,
+                &quot;port&quot;,
+                &quot;mgmt&quot;,
+                &quot;mgmt_floatingIp&quot;
+            ]
+        },
+        {  
+            &quot;source&quot;:{  
+                &quot;name&quot;:&quot;scscf&quot;
+            },
+            &quot;target&quot;:{  
+                &quot;name&quot;:&quot;bind9&quot;
+            },
+            &quot;parameters&quot;:[  
+                &quot;name&quot;,
+                &quot;port&quot;,
+                &quot;mgmt&quot;,
+                &quot;mgmt_floatingIp&quot;
+            ]
+        },
+        {  
+            &quot;source&quot;:{  
+                &quot;name&quot;:&quot;pcscf&quot;
+            },
+            &quot;target&quot;:{  
+                &quot;name&quot;:&quot;bind9&quot;
+            },
+            &quot;parameters&quot;:[  
+                &quot;name&quot;,
+                &quot;port&quot;,
+                &quot;mgmt&quot;,
+                &quot;mgmt_floatingIp&quot;
+            ]
+        },
+        {  
+            &quot;source&quot;:{  
+                &quot;name&quot;:&quot;fhoss&quot;
+            },
+            &quot;target&quot;:{  
+                &quot;name&quot;:&quot;icscf&quot;
+            },
+            &quot;parameters&quot;:[  
+                &quot;name&quot;,
+                &quot;port&quot;,
+                &quot;mgmt&quot;,
+                &quot;mgmt_floatingIp&quot;
+            ]
+        },
+        {  
+            &quot;source&quot;:{  
+                &quot;name&quot;:&quot;fhoss&quot;
+            },
+            &quot;target&quot;:{  
+                &quot;name&quot;:&quot;scscf&quot;
+            },
+            &quot;parameters&quot;:[  
+                &quot;name&quot;,
+                &quot;port&quot;,
+                &quot;mgmt&quot;,
+                &quot;mgmt_floatingIp&quot;
+            ]
+        },
+        {  
+            &quot;source&quot;:{  
+                &quot;name&quot;:&quot;scscf&quot;
+            },
+            &quot;target&quot;:{  
+                &quot;name&quot;:&quot;fhoss&quot;
+            },
+            &quot;parameters&quot;:[  
+                &quot;name&quot;,
+                &quot;port&quot;,
+                &quot;diameter_p&quot;,
+                &quot;mgmt&quot;,
+                &quot;mgmt_floatingIp&quot;
+            ]
+        },
+        {  
+            &quot;source&quot;:{  
+                &quot;name&quot;:&quot;icscf&quot;
+            },
+            &quot;target&quot;:{  
+                &quot;name&quot;:&quot;fhoss&quot;
+            },
+            &quot;parameters&quot;:[  
+                &quot;name&quot;,
+                &quot;diameter_p&quot;,
+                &quot;mgmt&quot;,
+                &quot;mgmt_floatingIp&quot;
+            ]
+        },
+        {  
+            &quot;source&quot;:{  
+                &quot;name&quot;:&quot;scscf&quot;
+            },
+            &quot;target&quot;:{  
+                &quot;name&quot;:&quot;icscf&quot;
+            },
+            &quot;parameters&quot;:[  
+                &quot;name&quot;,
+                &quot;port&quot;,
+                &quot;mgmt&quot;,
+                &quot;mgmt_floatingIp&quot;
+            ]
+        },
+        {  
+            &quot;source&quot;:{  
+                &quot;name&quot;:&quot;icscf&quot;
+            },
+            &quot;target&quot;:{  
+                &quot;name&quot;:&quot;scscf&quot;
+            },
+            &quot;parameters&quot;:[  
+                &quot;name&quot;,
+                &quot;mgmt&quot;,
+                &quot;mgmt_floatingIp&quot;
+            ]
+        }
+    ]
 }
 </code></pre>
 
@@ -769,7 +819,7 @@ if __name__ == &quot;__main__&quot;:
 <p>Now that we have uploaded the Network Service Descriptor we can launch it. You can watch the progress checking the Network Service Records on your dashboard. Once the Network Service Record went to "ACTIVE" your <a href="http://www.openimscore.org/">OpenIMSCore</a> - <a href="https://wiki.ubuntuusers.de/DNS-Server_Bind">Bind9</a> - <a href="http://www.openimscore.org/">FHoSS</a> deployment is finished.</p>
 <h2 id="testing-your-deployment">Testing your Deployment</h2>
 <p>To test your <a href="http://www.openimscore.org/">OpenIMSCore</a> you may use a Sip client of your choice. Be sure to use the realm defined in your <a href="https://github.com/openbaton/opemimscore_example/bind9">Bind9 Virtual Network Function Descriptor</a> while testing registration and call. By default the <a href="http://www.openimscore.org/">FHoSS</a> conaints 2 users : alice and bob. The user is the same as the password, but you may also alter it to your needs modifying the <a href="https://github.com/openbaton/openimscore-packages">FHoSS Virtual Network Function Descriptor</a> ( You will find the users in "var_user_data.sql" file under the fhoss folder)</p>
-<p>For Benchmarking we can use <a href="http://sipp.sourceforge.net/ims_bench/">IMS Bench SIPp</a> but therefor you should add more users to the <a href="http://www.openimscore.org/">FHoSS</a> database since by default it only contains 2 users.</p>
+<p>For Benchmarking we can use <a href="http://sipp.sourceforge.net/ims_bench/">IMS Bench SIPp</a> but then you should add more users to the <a href="http://www.openimscore.org/">FHoSS</a> database since by default it only contains 2 users.</p>
 <p><!---
 Script for open external links in a new tab
 -->
@@ -791,7 +841,7 @@ Script for open external links in a new tab
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../extend/" class="btn btn-neutral float-right" title="Extend it"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../tosca-iperf-scenario/" class="btn btn-neutral float-right" title="TOSCA iperf scenario"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../use-case-example/" class="btn btn-neutral" title="A full example"><span class="icon icon-circle-arrow-left"></span> Previous</a>

@@ -22,16 +22,16 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Use via the Dashboard";
-    var mkdocs_page_input_path = "nfvo-how-to-use-gui.md";
-    var mkdocs_page_url = "/nfvo-how-to-use-gui/";
-     var mkdocs_page_url = "/nfvo-how-to-use-gui/";
+    var mkdocs_page_name = "TOSCA CSAR on-boarding";
+    var mkdocs_page_input_path = "tosca-CSAR-onboarding.md";
+    var mkdocs_page_url = "/tosca-CSAR-onboarding/";
+     var mkdocs_page_url = "/tosca-CSAR-onboarding/";
   </script>
   
   <!-- site_name == OpenBaton Documentation -->
-  <!-- page_title == Use via the Dashboard -->
+  <!-- page_title == TOSCA CSAR on-boarding -->
   <!-- base_url == .. -->
-  <!-- current_page == Use via the Dashboard - /nfvo-how-to-use-gui/ [*]
+  <!-- current_page == TOSCA CSAR on-boarding - /tosca-CSAR-onboarding/ [*]
  -->
   <script src="../js/jquery-2.1.1.min.js"></script>
   <script src="../js/modernizr-2.8.3.min.js"></script>
@@ -86,14 +86,14 @@ display: block;
 $( document).ready(function(){
       //console.log("test");
 
-    //$('.subnav').not( ":has('Use via the Dashboard')" ).hide();
+    //$('.subnav').not( ":has('TOSCA CSAR on-boarding')" ).hide();
     $('li.subnav_drop').find('ul.subnav').hide();
     //$('li.subnav_drop').find('ul.subnav').each(function(i,e){console.log(i,e)});
-       $( ".subnav" ).find( "li:contains('Use via the Dashboard')" ).each(function(i,e){
+       $( ".subnav" ).find( "li:contains('TOSCA CSAR on-boarding')" ).each(function(i,e){
           var currentElement = $(e);
           currentElement.parent().css({"display":"block","visibility":"visible"}); //css("background-color","blue");
           currentElement.css({"display":"block","visibility":"visible"});
-       });//$( ".subnav" ).find( "li:contains('Use via the Dashboard')" ).css("display","block");
+       });//$( ".subnav" ).find( "li:contains('TOSCA CSAR on-boarding')" ).css("display","block");
        //$(".current").css({"background-color":"blue","display":"block","visibility":"visible"});
        //show(1000,function(i,e){console.log(i,e)});
        //$('li.subnav_drop').find('ul.subnav').css("background-color","blue");
@@ -105,11 +105,11 @@ $( document).ready(function(){
 
 });
    
-$( ".wy-nav-content" ).find( "li:contains('Use via the Dashboard')" ).css('color','red');
+$( ".wy-nav-content" ).find( "li:contains('TOSCA CSAR on-boarding')" ).css('color','red');
 console.log('--------');
-console.log($( ".wy-nav-content" ).find( "div:contains('Use via the Dashboard')" ).css("color","red"));
+console.log($( ".wy-nav-content" ).find( "div:contains('TOSCA CSAR on-boarding')" ).css("color","red"));
 console.log('--------');
-console.log($( ".subnav" ).find( "li:contains('Use via the Dashboard')" ));
+console.log($( ".subnav" ).find( "li:contains('TOSCA CSAR on-boarding')" ));
 console.log('--------');
   </script>
 
@@ -266,10 +266,8 @@ console.log('--------');
         
              
 
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Use via the Dashboard</a>
-        
-         
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-how-to-use-gui/">Use via the Dashboard</a>
         
     </li>
 
@@ -331,8 +329,10 @@ console.log('--------');
         
              
 
-    <li class="toctree-l1 ">
-        <a class="" href="../tosca-CSAR-onboarding/">TOSCA CSAR on-boarding</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">TOSCA CSAR on-boarding</a>
+        
+         
         
     </li>
 
@@ -435,94 +435,201 @@ console.log('--------');
                     <div role="main">
                       <div class="section">
                         
-                          <h1 id="openbaton-dashboard">OpenBaton Dashboard</h1>
-<p>The Dashboard of OpenBaton helps you managing the lifecycle of different objects like 
-VimInstaces, Network Service Descriptors/Records and Virtual Network Function Descriptors/Records in the OpenBaton environment.</p>
-<h2 id="overview">Overview</h2>
-<p>The index page shows an overview of the state of the NFVO </p>
-<ol>
-<li>Number of Network Service Records</li>
-<li>Number of Virtual Network Functions</li>
-<li>Number of Virtual Deployment Units</li>
-<li>Number of Network Service Descriptors</li>
-</ol>
-<p><img alt="Overview" src="../images/nfvo-how-to-use-gui-overview.png" /></p>
-<h2 id="manage-pops">Manage PoPs</h2>
-<p>On this page you can see the list of Vim Instances registered</p>
-<p><img alt="List of Vim Instances" src="../images/nfvo-how-to-use-gui-vim-page.png" /></p>
-<p>For registering a new Vim Instance you should click on the button in the top-right corner <strong>Register Vim</strong> of this page and select your json to register a Vim Instance</p>
-<p><img alt="Register a new Vim Instances" src="../images/vim-instance-register-new-pop.png" /></p>
-<p>If you want to delete a Vim Instance you can click on the button <strong>Action</strong> and then <strong>Delete</strong> in the menu</p>
-<h2 id="catalogue">Catalogue</h2>
-<p>In the menu on the left side under the template <em>Catalogue</em> you can manage </p>
-<ol>
-<li>NS Descriptors</li>
-<li>VNF Packages</li>
-</ol>
-<h3 id="network-service-descriptors">Network Service Descriptors</h3>
-<p>In the menu on the left side under the template Catalogue you can find the <strong>NS Decriptors</strong> button.
-On this page you can see the list of NS Descriptors stored in OpenBaton</p>
-<p><img alt="List of NS Descriptors" src="../images/nfvo-how-to-use-gui-NSDlist.png" /></p>
-<p>You have two options for storing a NS Descriptor:</p>
-<ol>
-<li>Create a NSD by filling in a form</li>
-<li>Create a NSD by using a json file</li>
-</ol>
-<p>Create a NSD by using a json file</p>
-<p><img alt="NSD create by File" src="../images/nfvo-how-to-use-gui-NSD-create-file.png" /></p>
-<p>Create a NSD by filling in a form</p>
-<p><img alt="NSD create by Form" src="../images/nfvo-how-to-use-gui-NSD-create-form.png" /></p>
-<h3 id="network-service-descriptor-information">Network Service Descriptor Information</h3>
-<p>If you click on the id of a NSD shown in the list of NSDs you can see the information
-stored in this Network Service Descriptor.</p>
-<p><img alt="Network Service Descriptor Information" src="../images/nfvo-how-to-use-gui-VNFD-information.png" /></p>
-<p>You can observe the NSD in json format by clicking on the <strong>Show JSON</strong> button</p>
-<p><img alt="JSON of Network Service Descriptor" src="../images/nfvo-how-to-use-gui-JSON-of-NSR.png" /></p>
-<p>On the page <strong>Network Service Descriptor Information</strong> you can also look at the <strong>Graphical view</strong> of the Network Service Descriptor 
-by clicking on <em>Show Graph</em></p>
-<p><img alt="NSD Graph" src="../images/nfvo-how-to-use-gui-NSD-graph.png" /></p>
-<p>If you click on the <em>Action</em> button in the list of VNFDs you can delete the VNFD from the NSD
-and the information about the <em>Dependencies</em> stored in the Network Service Descriptor</p>
-<p><img alt="Network Service Descriptor Dependencies Information" src="../images/nfvo-how-to-use-gui-VNFD-list-into-NSD1.png" /></p>
-<p>If you click on the <em>Action</em> button in the list of VNFDependencies you can delete the VNFDependency from the NSD</p>
-<h4 id="virtual-network-function-descriptor-information">Virtual Network Function Descriptor Information</h4>
-<p>In the list of Virtual Network Function Descriptors in NSD template you can click on the id of a Virtual Network Function Descriptor to get to this page</p>
-<p><img alt="VNF Descriptor Information" src="../images/nfvo-how-to-use-gui-VNFD-information.png" /></p>
-<p>At the bottom of the page you can see the Virtual Deployment Unit (VDU) tab and if you click on the <strong>id</strong> of the 
-VDU you can see the details of it</p>
-<p><img alt="VDU Information" src="../images/nfvo-how-to-use-gui-VDU-information.png" /></p>
-<h3 id="vnf-packages">VNF Packages</h3>
-<p>On this page you can upload the <strong>VNF Package</strong>. For more information about the VNF Package please read the <a href="../vnfpackage/">VNF Package documentation</a> 
-For uploading a <em>.tar</em> you can click on the button <strong>Upload VNFPackage</strong> and this window will be shown where you can drag &amp; drop the file or just click on the white area and choose your file using your file manager</p>
-<p><img alt="Drag&amp;Drop modal" src="../images/nfvo-how-to-use-gui-drag-drop.png" /></p>
-<p>After you click on the button <strong>Start</strong> the package will be sent to the <em>NFVO</em> and once the process is finished you will see the package appearing in the list</p>
-<p><img alt="Drag&amp;Drop modal start" src="../images/nfvo-how-to-use-gui-drag-drop1.png" /></p>
-<p><img alt="Drag&amp;Drop list" src="../images/nfvo-how-to-use-gui-drag-drop2.png" /></p>
-<h2 id="network-service-records">Network Service Records</h2>
-<p>In the menu on the left side if you click on the <strong>Orchestrator NS</strong> and then <strong>NS Records</strong> you will see the list of <em>Network Service Records</em>
-Like in this screenshot </p>
-<p><img alt="Network Service Records List " src="../images/nfvo-how-to-use-gui-NSR-list.png" /></p>
-<p>On this page you can see the details of a Network Service Record by clicking on the id</p>
-<p><img alt="Network Service Records Info" src="../images/nfvo-how-to-use-gui-NSR-info.png" /></p>
-<p>On this page you can look at the JSON file of the NSR by clicking on the link <strong>Show JSON</strong> and also the <strong>Graphical view</strong>. 
-of Network Service Record by clicking on the link <strong>Show Graph</strong>. 
-In the table of VNF Records you can delete a VNFR by clicking on <strong>Action</strong> and then <strong>Delete</strong>. 
-To look at the details of a VNFR just click on the <strong>id</strong> of it.</p>
-<p><img alt="VNF Record Information" src="../images/nfvo-how-to-use-gui-VNFR-information.png" /></p>
-<p><!---
+                          <h1 id="tosca-csar-on-boarding">TOSCA CSAR on-boarding</h1>
+<p>The Cloud Service Archive <a href="https://www.google.de/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;cad=rja&amp;uact=8&amp;ved=0ahUKEwjVyb-Ll5PLAhXCDCwKHTh3AEAQFggdMAA&amp;url=https%3A%2F%2Fwww.oasis-open.org%2Fcommittees%2Fdownload.php%2F46057%2FCSAR%2520V0-1.docx&amp;usg=AFQjCNG-Xqjz_D4ZY8TbJGls58Hp7LdNBg&amp;sig2=w7waCIxRy_-ODL7GyZNFUg">CSAR</a> is a package defined by OASIS TOSCA.
+It is a compressed file that includes a TOSCA definition template of a Network Service, and all the scripts or files that a VNF needs for the lifecycle time from creation to termination.
+The CSAR is a zip file with this structure:</p>
+<pre><code class="bash">├── Definitions
+|   └── toscav1.yaml
+├── Scripts
+|   ├── install.sh
+|   └── ...
+└── TOSCA-Metadata
+    └── TOSCA.meta
+</code></pre>
+
+<p>The TOSCA.meta file must contain the reference to the definition that will be translated in VNFs in this case <strong>Entry-Definitions: Definitions/toscav1.yaml</strong></p>
+<pre><code class="bash">TOSCA-Meta-File-Version: 1.0
+CSAR-Version: 1.1
+Created-By: OASIS TOSCA TC
+Entry-Definitions: Definitions/toscav1.yaml
+</code></pre>
+
+<p>The Scripts folder contains all the files required from the lifecycle interfaces of the VNFs.</p>
+<p>The <strong>toscav1.yaml</strong> is a Definition of Network Service. It contains this descriptor.</p>
+<pre><code class="yaml">
+tosca_definitions_version: tosca_iperf_nsd
+tosca_default_namespace:    # Optional. default namespace (schema, types version)
+description: NSD for deploing an iperf scenario
+metadata:
+  ID:                 # ID of this Network Service Descriptor
+  vendor: Fokus       # Provider or vendor of the Network Service
+  version: 0.1 Alpha  # Version of the Network Service Descriptor imports:
+
+
+topology_template:
+  node_templates:
+    iperf-server: #VNF1
+      type: openbaton.type.VNF.GENERIC
+      properties:
+        id:
+        vendor: Fokus
+        version:
+        configurations:
+          name: server-configurations
+          configurationParameters:
+            - key: value
+            - key2: value2
+        vnfPackageLocation: 
+        deployment_flavour:
+          - flavour_key: m1.small
+      requirements:
+        - virtualLink: private
+        - host:
+            node: VDU2
+            type: openbaton.relationships.HostedOn
+      interfaces:
+        Standard: # lifecycle
+          create: install.sh
+          start: install-srv.sh
+    iperf-client:
+      type: openbaton.type.VNF.GENERIC
+      properties:
+        id:
+        vendor: Fokus
+        version: 0.1
+        configurations:
+          name: server-configurations
+          configurationParameters:
+            - key: value
+            - key2: value2
+        vnfPackageLocation: 
+        deployment_flavour:
+          - flavour_key: m1.small
+      requirements:
+        - virtualLink: private
+        - host:
+            node: VDU1
+            type: openbaton.relationships.HostedOn
+      interfaces:
+        openbaton.interfaces.lifecycle: # lifecycle
+          INSTANCIATE:
+            - install.sh
+          CONFIGURE:
+            - server_configure_only.sh
+          START:
+            - iperf_client_start.sh
+    VDU1:
+      type: openbaton.type.VDU
+      properties:
+        vm_image:
+          - ubuntu-14.04-server-cloudimg-amd64-disk1
+        scale_in_out: 2
+        vimInstanceName: vim-instance
+      requirements:
+         - virtual_link: [CP1]
+      capabilities:
+        host:
+          valid_source_types: openbaton.type.VDU
+    VDU2:
+      type: openbaton.type.VDU
+      properties:
+        vm_image:
+          - ubuntu-14.04-server-cloudimg-amd64-disk1
+        scale_in_out: 2
+        vimInstanceName: vim-instance
+      requirements:
+        - virtual_link: [CP2]
+      capabilities:
+        host:
+          valid_source_types: openbaton.type.VDU
+
+    private:
+      type: tosca.nodes.nfv.VL
+      properties:
+        vendor: Fokus
+      capabilities:
+        virtual_linkable:
+          valid_source_types: tosca.nodes.nfv.CP
+
+    CP1: #endpoint of VNF1
+      type: tosca.nodes.nfv.CP
+      properties:
+        floatingIp: random
+      requirements:
+        virtualbinding: VDU1
+      virtualLink: private
+
+    CP2: #endpoint of VNF2
+      type: tosca.nodes.nfv.CP
+      properties:
+        floatingIp: random
+      requirements:
+        virtualbinding: VDU2
+      virtualLink: private
+
+
+</code></pre>
+
+<h2 id="tosca-lifecycle-interface-to-openbaton-lifecycle-event">TOSCA lifecycle interface to OpenBaton lifecycle event</h2>
+<p>In <a href="http://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.0/csprd01/TOSCA-Simple-Profile-YAML-v1.0-csprd01.html#_Toc430015766">TOSCA simple profile YAML</a> is defined the interface <em>tosca.interfaces.node.lifecycle.Standard</em> . This interface defines the lifecycle of a service since 
+OpenBaton is using different lifecycle events the mapping between these two definitions follows the rules described in the table below:</p>
+<table>
+<thead>
+<tr>
+<th>tosca.interfaces.node.lifecycle.Standard</th>
+<th>openbaton.interfaces.lifecycle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>create</td>
+<td>INSTANTIATE</td>
+</tr>
+<tr>
+<td>configure</td>
+<td>CONFIGURE</td>
+</tr>
+<tr>
+<td>start</td>
+<td>START</td>
+</tr>
+<tr>
+<td>stop</td>
+<td>STOP</td>
+</tr>
+<tr>
+<td>delete</td>
+<td>TERMINATE</td>
+</tr>
+</tbody>
+</table>
+<h2 id="csar-on-bording">CSAR on-bording</h2>
+<p>After create the CSAR with all scripts in the folder and the link to the definition, you can store this package and OpenBaton will persist all the Scripts and the VNFs inside of the definition. 
+To retrieve the files you can use the dashboard in the page of VNFPackages under Catalogue menu, also you can use the page of VNF Descriptors to see the VNFs defined in <strong>toscav1.yaml</strong></p>
+<p>For on-boarding the CSAR use this command:</p>
+<pre><code class="bash">$ curl -X POST -v -F file=@iperf.csar &quot;http://localhost:8080/api/v1/csar&quot;
+</code></pre>
+
+<!------------
+References
+-------------->
+
+<!---
 Script for open external links in a new tab
 -->
+
 <script type="text/javascript" charset="utf-8">
       // Creating custom :external selector
       $.expr[':'].external = function(obj){
           return !obj.href.match(/^mailto\:/)
-                  &amp;&amp; (obj.hostname != location.hostname);
+                  && (obj.hostname != location.hostname);
       };
       $(function(){
         $('a:external').addClass('external');
         $(".external").attr('target','_blank');
       })
-</script></p>
+</script>
                         
                       </div>
                     </div>
@@ -530,10 +637,10 @@ Script for open external links in a new tab
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../nfvo-sdk/" class="btn btn-neutral float-right" title="Use via the SDK"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../extend/" class="btn btn-neutral float-right" title="Extend it"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../ns-descriptor/" class="btn btn-neutral" title="Create the NSD"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../tosca-iperf-scenario/" class="btn btn-neutral" title="TOSCA iperf scenario"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
