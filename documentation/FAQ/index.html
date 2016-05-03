@@ -173,25 +173,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../install/">Overview</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../nfvo-installation/">Install NFVO</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vim-instance/">Register a PoP</a>
+        <a class="" href="../nfvo-installation/">Install Open Baton</a>
         
     </li>
 
@@ -222,25 +204,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vnfm-generic/">Generic VNFM</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vnfm-how-to-write/">Write your own VNFM</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vnfm-vendor-specific/">Integrate your own VNFM</a>
+        <a class="" href="../vim-instance/">Register a PoP</a>
         
     </li>
 
@@ -250,6 +214,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../vnfpackage/">Create your own VNF Package</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-generic/">Generic VNFM</a>
         
     </li>
 
@@ -276,6 +249,15 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../nfvo-how-to-use-cli/">Use via the CLI</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../nfvo-sdk/">Use via the SDK</a>
         
     </li>
@@ -294,33 +276,6 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../integration-test-use/">Integration Tests</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../use-case-example/">A full example</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../use-case-ims-example/">OpenIMSCore example</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
         <a class="" href="../tosca-iperf-scenario/">TOSCA iperf scenario</a>
         
     </li>
@@ -331,6 +286,55 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../tosca-CSAR-onboarding/">TOSCA CSAR on-boarding</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Tutorials</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../dummy-NSR/">Dummy NSR</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../iperf-NSR/">Iperf Scenario</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../integration-test-use/">Integration Tests</a>
         
     </li>
 
@@ -371,6 +375,24 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../vim-plugin/">Write your own Plugin</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-how-to-write/">Write your own VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-vendor-specific/">Integrate your own VNFM</a>
         
     </li>
 
@@ -436,13 +458,19 @@ console.log('--------');
                       <div class="section">
                         
                           <h1 id="frequently-asked-questions-faq">Frequently Asked Questions (FAQ)</h1>
-<h3 id="q1-what-type-of-database-is-the-nfvo-using">Q1 What type of database is the NFVO using?</h3>
+<h3 id="q1-what-type-of-database-is-the-nfvo-using">Q1: What type of database is the NFVO using?</h3>
 <p>The NFVO uses Hibernate for managing transactions with a relational database. By default the NFVO is configured with an in memory database (HSQL). 
 Other types of databases are supported, for instance MySQL. This can be changed directly from the configuration file, outcommenting the : </p>
 <pre><code># mysql jdbc
 spring.datasource.url=jdbc:mysql://localhost:3306/openbaton
 spring.datasource.driver-class-name=com.mysql.jdbc.Driver
 spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
+</code></pre>
+
+<h3 id="q2-the-ems-does-not-register-to-the-vnfm-and-the-connection-timeouts">Q2: The EMS does not register to the VNFM and the connection timeouts</h3>
+<p>Double check that you configured correctly the <code>openbaton.properties</code> with the correct IP of the host where the NFVO is running</p>
+<pre><code># The broker ip that needs to be reachable from all the components
+nfvo.rabbit.brokerIp = the broker ip here 
 </code></pre>
 
 <!---
@@ -470,7 +498,7 @@ spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
         <a href="../vnf-descriptor/" class="btn btn-neutral float-right" title="**HIDDEN**"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../vim-plugin/" class="btn btn-neutral" title="Write your own Plugin"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../vnfm-vendor-specific/" class="btn btn-neutral" title="Integrate your own VNFM"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

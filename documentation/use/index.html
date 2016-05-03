@@ -173,25 +173,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../install/">Overview</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../nfvo-installation/">Install NFVO</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vim-instance/">Register a PoP</a>
+        <a class="" href="../nfvo-installation/">Install Open Baton</a>
         
     </li>
 
@@ -224,25 +206,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vnfm-generic/">Generic VNFM</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vnfm-how-to-write/">Write your own VNFM</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vnfm-vendor-specific/">Integrate your own VNFM</a>
+        <a class="" href="../vim-instance/">Register a PoP</a>
         
     </li>
 
@@ -252,6 +216,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../vnfpackage/">Create your own VNF Package</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-generic/">Generic VNFM</a>
         
     </li>
 
@@ -278,6 +251,15 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../nfvo-how-to-use-cli/">Use via the CLI</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../nfvo-sdk/">Use via the SDK</a>
         
     </li>
@@ -296,33 +278,6 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../integration-test-use/">Integration Tests</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../use-case-example/">A full example</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../use-case-ims-example/">OpenIMSCore example</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
         <a class="" href="../tosca-iperf-scenario/">TOSCA iperf scenario</a>
         
     </li>
@@ -333,6 +288,55 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../tosca-CSAR-onboarding/">TOSCA CSAR on-boarding</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Tutorials</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../dummy-NSR/">Dummy NSR</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../iperf-NSR/">Iperf Scenario</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../integration-test-use/">Integration Tests</a>
         
     </li>
 
@@ -373,6 +377,24 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../vim-plugin/">Write your own Plugin</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-how-to-write/">Write your own VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-vendor-specific/">Integrate your own VNFM</a>
         
     </li>
 
@@ -438,11 +460,15 @@ console.log('--------');
                           <h1 id="how-to-use-openbaton">How to use OpenBaton</h1>
 <p>In order to use OpenBaton for launching your first Network Service, you will need to follow these steps:</p>
 <ol>
+<li>Register one or more Point of Presences (PoPs). <a href="../vim-instance">Learn more here</a></li>
+<li>Build your VNF Package<ul>
 <li>Decide which VNFM to use.</li>
 <li>Create the VNF Package(s).</li>
 <li>Prepare the Network Service Descriptor (NSD).</li>
+</ul>
+</li>
 </ol>
-<p>Once these steps are completed you will be able to orchestrate your Network Service from the dashboard.</p>
+<p>Once these steps are completed you will be able to orchestrate your Network Service from the dashboard or via the <a href="http://get.openbaton.org/api/ApiDoc.pdf">REST APIs</a>. </p>
 <h2 id="virtual-network-function-manager-approaches">Virtual Network Function Manager Approaches</h2>
 <p>In order to manage the Virtual Network Function(s), the NFV-MANO architectural framework expects a Virtual Network Function Manager (VNFM).
 To facilitate ease of use and extensibility, the Openbaton project provides three different approaches to using a VNFM:</p>
@@ -459,7 +485,7 @@ It is already included in Openbaton as default.</p>
 <p>Please refer to the following doc for more details: <a href="../vnfm-generic">Use the generic VNFM</a></p>
 <h3 id="2-build-a-vnfm-using-the-sdk">2. Build a VNFM using the SDK</h3>
 <p>Openbaton provides a Java SDK called vnfm-sdk which helps you to simply create a VNFM for your VNF.
-Regarding the type of the communication between the NFVO and the VNFM (Or-Vnfm), you can use the vnfm-sdk-jms or vnfm-sdk-rest, depending if you prefer to communicate with JMS or REST.</p>
+Regarding the type of the communication between the NFVO and the VNFM (Or-Vnfm), you can use the vnfm-sdk-amqp or vnfm-sdk-rest, depending if you prefer to communicate with AMQP or REST.</p>
 <p>Please refer to the following doc for more details: <a href="../vnfm-how-to-write">Build your own VNFM</a></p>
 <h3 id="3-use-your-own-vnfm">3. Use your own VNFM</h3>
 <p>This approach allows you to integrate your VNFM and VNF within Openbaton. In this case, the Or-Vnfm communication will be via REST interfaces.</p>
@@ -487,10 +513,10 @@ Script for open external links in a new tab
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../vnfm-generic/" class="btn btn-neutral float-right" title="Generic VNFM"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../vim-instance/" class="btn btn-neutral float-right" title="Register a PoP"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../vim-instance/" class="btn btn-neutral" title="Register a PoP"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../nfvo-installation/" class="btn btn-neutral" title="Install Open Baton"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

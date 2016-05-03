@@ -173,27 +173,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../install/">Overview</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../nfvo-installation/">Install NFVO</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Register a PoP</a>
-        
-         
+        <a class="" href="../nfvo-installation/">Install Open Baton</a>
         
     </li>
 
@@ -223,26 +203,10 @@ console.log('--------');
         
              
 
-    <li class="toctree-l1 ">
-        <a class="" href="../vnfm-generic/">Generic VNFM</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Register a PoP</a>
         
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vnfm-how-to-write/">Write your own VNFM</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vnfm-vendor-specific/">Integrate your own VNFM</a>
+         
         
     </li>
 
@@ -252,6 +216,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../vnfpackage/">Create your own VNF Package</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-generic/">Generic VNFM</a>
         
     </li>
 
@@ -278,6 +251,15 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../nfvo-how-to-use-cli/">Use via the CLI</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../nfvo-sdk/">Use via the SDK</a>
         
     </li>
@@ -296,33 +278,6 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../integration-test-use/">Integration Tests</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../use-case-example/">A full example</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../use-case-ims-example/">OpenIMSCore example</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
         <a class="" href="../tosca-iperf-scenario/">TOSCA iperf scenario</a>
         
     </li>
@@ -333,6 +288,55 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../tosca-CSAR-onboarding/">TOSCA CSAR on-boarding</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Tutorials</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../dummy-NSR/">Dummy NSR</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../iperf-NSR/">Iperf Scenario</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../integration-test-use/">Integration Tests</a>
         
     </li>
 
@@ -373,6 +377,24 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../vim-plugin/">Write your own Plugin</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-how-to-write/">Write your own VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-vendor-specific/">Integrate your own VNFM</a>
         
     </li>
 
@@ -439,22 +461,22 @@ console.log('--------');
 <p>The <em>Virtualised Infrastructure Manager</em> (Vim) is the functional block, responsible for controlling and managing the
  NFVI compute, storage and network resources within a Point of Presence (PoP).</p>
 <p>In order to interoperate with a PoP it is required to register the VIM instance responsible for it on the NFVO. For doing that you can write a JSon file containing the details of a Vim Instance like the one described below: </p>
-<pre><code class="javascript">{
-  &quot;name&quot;:&quot;vim-instance-name&quot;,
-  &quot;authUrl&quot;:&quot;http://192.168.0.5:5000/v2.0&quot;,
-  &quot;tenant&quot;:&quot;tenantName&quot;,
-  &quot;username&quot;:&quot;userName&quot;,
-  &quot;password&quot;:&quot;password&quot;,
-  &quot;keyPair&quot;:&quot;keyName&quot;,
-  &quot;securityGroups&quot;: [
-    &quot;securityName&quot;
-  ],
-  &quot;type&quot;:&quot;openstack&quot;,
-  &quot;location&quot;:{
-        &quot;name&quot;:&quot;Berlin&quot;,
-        &quot;latitude&quot;:&quot;52.525876&quot;,
-        &quot;longitude&quot;:&quot;13.314400&quot;
-  }
+<pre><code class="javascript">{  
+   &quot;name&quot;:&quot;vim-instance-name&quot;,
+   &quot;authUrl&quot;:&quot;http://192.168.0.5:5000/v2.0&quot;,
+   &quot;tenant&quot;:&quot;tenantName&quot;,
+   &quot;username&quot;:&quot;userName&quot;,
+   &quot;password&quot;:&quot;password&quot;,
+   &quot;keyPair&quot;:&quot;keyName&quot;,
+   &quot;securityGroups&quot;:[  
+      &quot;securityName&quot;
+   ],
+   &quot;type&quot;:&quot;openstack&quot;,
+   &quot;location&quot;:{  
+      &quot;name&quot;:&quot;Berlin&quot;,
+      &quot;latitude&quot;:&quot;52.525876&quot;,
+      &quot;longitude&quot;:&quot;13.314400&quot;
+   }
 }
 
 </code></pre>
@@ -522,8 +544,10 @@ Under the menu <code>Manage PoPs</code> you can see the <code>PoP instances</cod
 </ul>
 <p>For each of those types there is a different implementation of the VIM API. The NFVO uses a plugin mechanism for interacting with VIMs. In the folders <code>plugins</code> under nfvo folder should be a jar file that implements the interface to the your VIM ( i.e. <a href="https://www.openstack.org/">Openstack</a> )
 (you can change the folder where OpenBaton searches for the plugins by changing the variable <code>plugin-installation-dir</code> in the <code>openbaton.properties</code> file under /etc/openbaton)
-This jar is the implementation of the interface that communicates with your VIM.<br />
-<strong>Note</strong>: You can implement your own interface just follow the documentation <a href="../vim-plugin/">Vim plugin</a>.</p>
+This jar is the implementation of the interface that communicates with your VIM.</p>
+<p><strong>Note</strong>: You can implement your own interface just follow the documentation <a href="../vim-plugin/">Vim plugin</a>.</p>
+<h2 id="where-do-i-find-the-open-source-plugins">Where do I find the open source plugins?</h2>
+<p>OpenBaton platform provides an openstack and a test plugin. They are automatically download by the bootstrap. Anyway you can find them <a href="http://get.openbaton.org/plugins">here</a></p>
 <!---
 Script for open external links in a new tab
 -->
@@ -546,10 +570,10 @@ Script for open external links in a new tab
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../use/" class="btn btn-neutral float-right" title="Introduction"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../vnfpackage/" class="btn btn-neutral float-right" title="Create your own VNF Package"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../nfvo-installation/" class="btn btn-neutral" title="Install NFVO"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../use/" class="btn btn-neutral" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

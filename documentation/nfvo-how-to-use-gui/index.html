@@ -173,25 +173,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../install/">Overview</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../nfvo-installation/">Install NFVO</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vim-instance/">Register a PoP</a>
+        <a class="" href="../nfvo-installation/">Install Open Baton</a>
         
     </li>
 
@@ -222,25 +204,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vnfm-generic/">Generic VNFM</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vnfm-how-to-write/">Write your own VNFM</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vnfm-vendor-specific/">Integrate your own VNFM</a>
+        <a class="" href="../vim-instance/">Register a PoP</a>
         
     </li>
 
@@ -250,6 +214,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../vnfpackage/">Create your own VNF Package</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-generic/">Generic VNFM</a>
         
     </li>
 
@@ -278,6 +251,15 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../nfvo-how-to-use-cli/">Use via the CLI</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../nfvo-sdk/">Use via the SDK</a>
         
     </li>
@@ -296,33 +278,6 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../integration-test-use/">Integration Tests</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../use-case-example/">A full example</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../use-case-ims-example/">OpenIMSCore example</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
         <a class="" href="../tosca-iperf-scenario/">TOSCA iperf scenario</a>
         
     </li>
@@ -333,6 +288,55 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../tosca-CSAR-onboarding/">TOSCA CSAR on-boarding</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Tutorials</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../dummy-NSR/">Dummy NSR</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../iperf-NSR/">Iperf Scenario</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../integration-test-use/">Integration Tests</a>
         
     </li>
 
@@ -373,6 +377,24 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../vim-plugin/">Write your own Plugin</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-how-to-write/">Write your own VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-vendor-specific/">Integrate your own VNFM</a>
         
     </li>
 
@@ -465,13 +487,19 @@ On this page you can see the list of NS Descriptors stored in OpenBaton</p>
 <p><img alt="List of NS Descriptors" src="../images/nfvo-how-to-use-gui-NSDlist.png" /></p>
 <p>You have two options for storing a NS Descriptor:</p>
 <ol>
-<li>Create a NSD by filling in a form</li>
+<li>Create a NSD by using the VNFDs from the Packages</li>
 <li>Create a NSD by using a json file</li>
 </ol>
-<p>Create a NSD by using a json file</p>
+<p>Upload a json-file that contains the NSD</p>
 <p><img alt="NSD create by File" src="../images/nfvo-how-to-use-gui-NSD-create-file.png" /></p>
-<p>Create a NSD by filling in a form</p>
-<p><img alt="NSD create by Form" src="../images/nfvo-how-to-use-gui-NSD-create-form.png" /></p>
+<p>Create a NSD by using the VNFD from the Packages, just click on the button "Create NSD"</p>
+<p><img alt="NSD create by VNFDs" src="../images/nds-create-NSD.png" /></p>
+<p>This is the form which allows you to choose the VNFDs to be used in the NSD come from the Catalogue (and contained inside the VNFPackages)</p>
+<p><img alt="NSD create by VNFDs" src="../images/form-create-NSD.png" /></p>
+<p>Once you have added the VNFDs to the NSD you can add one o more VLD and VNF Dependency like in the picture below</p>
+<p><img alt="Form with VNFDs" src="../images/form-with-VNFDs.png" /></p>
+<p>In the picture below you can see how to add a VNF Dependency to the NSD and possible parameters</p>
+<p><img alt="Add VNF Dependency NSD" src="../images/form-add-dependecy-pkg.png" /></p>
 <h3 id="network-service-descriptor-information">Network Service Descriptor Information</h3>
 <p>If you click on the id of a NSD shown in the list of NSDs you can see the information
 stored in this Network Service Descriptor.</p>
@@ -484,7 +512,16 @@ by clicking on <em>Show Graph</em></p>
 <p>If you click on the <em>Action</em> button in the list of VNFDs you can delete the VNFD from the NSD
 and the information about the <em>Dependencies</em> stored in the Network Service Descriptor</p>
 <p><img alt="Network Service Descriptor Dependencies Information" src="../images/nfvo-how-to-use-gui-VNFD-list-into-NSD1.png" /></p>
-<p>If you click on the <em>Action</em> button in the list of VNFDependencies you can delete the VNFDependency from the NSD</p>
+<p>If you click on the <strong>Action</strong> button in the list of VNFDependencies you can delete the VNFDependency from the NSD</p>
+<h4 id="edit-a-network-service-descriptor">Edit a Network Service Descriptor</h4>
+<p>If you want to Edit the NSD just click on the <strong>Edit</strong> button under the button <strong>Action</strong> in the list of NSD</p>
+<p><img alt="NSD Edit" src="../images/edit-NSD1.png" /></p>
+<p>The same for the VNF inside the NSD</p>
+<p><img alt="NSD Graph" src="../images/edit-NSD2.png" /></p>
+<p><img alt="NSD Graph" src="../images/edit-NSD3.png" /></p>
+<p>And the same for the VDU inside the VNF</p>
+<p><img alt="NSD Graph" src="../images/edit-NSD4.png" /></p>
+<p><img alt="NSD Graph" src="../images/edit-NSD5.png" /></p>
 <h4 id="virtual-network-function-descriptor-information">Virtual Network Function Descriptor Information</h4>
 <p>In the list of Virtual Network Function Descriptors in NSD template you can click on the id of a Virtual Network Function Descriptor to get to this page</p>
 <p><img alt="VNF Descriptor Information" src="../images/nfvo-how-to-use-gui-VNFD-information.png" /></p>
@@ -495,7 +532,7 @@ VDU you can see the details of it</p>
 <p>On this page you can upload the <strong>VNF Package</strong>. For more information about the VNF Package please read the <a href="../vnfpackage/">VNF Package documentation</a> 
 For uploading a <em>.tar</em> you can click on the button <strong>Upload VNFPackage</strong> and this window will be shown where you can drag &amp; drop the file or just click on the white area and choose your file using your file manager</p>
 <p><img alt="Drag&amp;Drop modal" src="../images/nfvo-how-to-use-gui-drag-drop.png" /></p>
-<p>After you click on the button <strong>Start</strong> the package will be sent to the <em>NFVO</em> and once the process is finished you will see the package appearing in the list</p>
+<p>After you click on the button <strong>Send All</strong> the packages will be sent to the <em>NFVO</em> and once the process is finished you will see the package appearing in the list</p>
 <p><img alt="Drag&amp;Drop modal start" src="../images/nfvo-how-to-use-gui-drag-drop1.png" /></p>
 <p><img alt="Drag&amp;Drop list" src="../images/nfvo-how-to-use-gui-drag-drop2.png" /></p>
 <h2 id="network-service-records">Network Service Records</h2>
@@ -509,6 +546,15 @@ of Network Service Record by clicking on the link <strong>Show Graph</strong>.
 In the table of VNF Records you can delete a VNFR by clicking on <strong>Action</strong> and then <strong>Delete</strong>. 
 To look at the details of a VNFR just click on the <strong>id</strong> of it.</p>
 <p><img alt="VNF Record Information" src="../images/nfvo-how-to-use-gui-VNFR-information.png" /></p>
+<h2 id="event">Event</h2>
+<p>The Events are sent by the Orchestrator to the specific <strong>EndPoint</strong> where an external component is listening to be aware when the Orchestrator 
+changes the STATE of a particular <strong>virtualNetworkFunctionId</strong> or <strong>networkServiceId</strong></p>
+<p>To add a new Event just click the button "Create event" and will be shown the form as follow:</p>
+<p><img alt="Event Form" src="../images/event-form.png" /></p>
+<p>For getting the information click on the id link of the Event</p>
+<p><img alt="Event List" src="../images/event-list.png" /></p>
+<p>This are the information of the Event selected</p>
+<p><img alt="Event Info" src="../images/even-info.png" /></p>
 <p><!---
 Script for open external links in a new tab
 -->
@@ -530,7 +576,7 @@ Script for open external links in a new tab
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../nfvo-sdk/" class="btn btn-neutral float-right" title="Use via the SDK"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../nfvo-how-to-use-cli/" class="btn btn-neutral float-right" title="Use via the CLI"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../ns-descriptor/" class="btn btn-neutral" title="Create the NSD"><span class="icon icon-circle-arrow-left"></span> Previous</a>

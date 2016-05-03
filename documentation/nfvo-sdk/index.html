@@ -173,25 +173,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../install/">Overview</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../nfvo-installation/">Install NFVO</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vim-instance/">Register a PoP</a>
+        <a class="" href="../nfvo-installation/">Install Open Baton</a>
         
     </li>
 
@@ -222,25 +204,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vnfm-generic/">Generic VNFM</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vnfm-how-to-write/">Write your own VNFM</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vnfm-vendor-specific/">Integrate your own VNFM</a>
+        <a class="" href="../vim-instance/">Register a PoP</a>
         
     </li>
 
@@ -250,6 +214,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../vnfpackage/">Create your own VNF Package</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-generic/">Generic VNFM</a>
         
     </li>
 
@@ -268,6 +241,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../nfvo-how-to-use-gui/">Use via the Dashboard</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-how-to-use-cli/">Use via the CLI</a>
         
     </li>
 
@@ -296,33 +278,6 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../integration-test-use/">Integration Tests</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../use-case-example/">A full example</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../use-case-ims-example/">OpenIMSCore example</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
         <a class="" href="../tosca-iperf-scenario/">TOSCA iperf scenario</a>
         
     </li>
@@ -333,6 +288,55 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../tosca-CSAR-onboarding/">TOSCA CSAR on-boarding</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Tutorials</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../dummy-NSR/">Dummy NSR</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../iperf-NSR/">Iperf Scenario</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../integration-test-use/">Integration Tests</a>
         
     </li>
 
@@ -373,6 +377,24 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../vim-plugin/">Write your own Plugin</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-how-to-write/">Write your own VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-vendor-specific/">Integrate your own VNFM</a>
         
     </li>
 
@@ -447,7 +469,7 @@ console.log('--------');
 }
 
 dependencies {
-    compile 'org.openbaton:sdk:1.0.2'
+    compile 'org.openbaton:sdk:2.0.1'
 }
 </code></pre>
 
@@ -460,7 +482,7 @@ dependencies {
 <thead>
 <tr>
 <th>Params</th>
-<th align="right">Meaning</th>
+<th align="right">Description</th>
 </tr>
 </thead>
 <tbody>
@@ -492,10 +514,12 @@ dependencies {
 <li>EventAgent</li>
 <li>ImageRestAgent</li>
 <li>NetworkServiceDescriptorRestAgent</li>
+<li>VirtualNetworkFunctionDescriptorRestAgent</li>
 <li>NetworkServiceRecordRestAgent</li>
 <li>VimInstanceRestAgent</li>
 <li>VirtualLinkRestAgent</li>
 <li>VNFFGRestAgent</li>
+<li>VNFPackageAgent</li>
 </ul>
 <p>each of them exposes these methods:</p>
 <ul>
@@ -564,7 +588,7 @@ References
         <a href="../zabbix-plugin/" class="btn btn-neutral float-right" title="Use Zabbix plugin"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../nfvo-how-to-use-gui/" class="btn btn-neutral" title="Use via the Dashboard"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../nfvo-how-to-use-cli/" class="btn btn-neutral" title="Use via the CLI"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

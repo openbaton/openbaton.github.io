@@ -173,25 +173,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../install/">Overview</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../nfvo-installation/">Install NFVO</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vim-instance/">Register a PoP</a>
+        <a class="" href="../nfvo-installation/">Install Open Baton</a>
         
     </li>
 
@@ -222,25 +204,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vnfm-generic/">Generic VNFM</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vnfm-how-to-write/">Write your own VNFM</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vnfm-vendor-specific/">Integrate your own VNFM</a>
+        <a class="" href="../vim-instance/">Register a PoP</a>
         
     </li>
 
@@ -250,6 +214,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../vnfpackage/">Create your own VNF Package</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-generic/">Generic VNFM</a>
         
     </li>
 
@@ -268,6 +241,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../nfvo-how-to-use-gui/">Use via the Dashboard</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-how-to-use-cli/">Use via the CLI</a>
         
     </li>
 
@@ -296,33 +278,6 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../integration-test-use/">Integration Tests</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../use-case-example/">A full example</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../use-case-ims-example/">OpenIMSCore example</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
         <a class="" href="../tosca-iperf-scenario/">TOSCA iperf scenario</a>
         
     </li>
@@ -333,6 +288,55 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../tosca-CSAR-onboarding/">TOSCA CSAR on-boarding</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Tutorials</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../dummy-NSR/">Dummy NSR</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../iperf-NSR/">Iperf Scenario</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../integration-test-use/">Integration Tests</a>
         
     </li>
 
@@ -373,6 +377,24 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../vim-plugin/">Write your own Plugin</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-how-to-write/">Write your own VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-vendor-specific/">Integrate your own VNFM</a>
         
     </li>
 
@@ -436,7 +458,7 @@ console.log('--------');
                       <div class="section">
                         
                           <h1 id="zabbix-plugin">Zabbix plugin</h1>
-<p>Zabbix plugin is an open source project providing a reference implementation of two interfaces of the VIM, based on the ETSI <a href="http://www.etsi.org/deliver/etsi_gs/NFV-MAN/001_099/001/01.01.01_60/gs_nfv-man001v010101p.pdf">NFV MANO</a> specification.</p>
+<p>Zabbix plugin (see it on <a href="https://github.com/openbaton/zabbix-plugin">GitHub</a>) is an open source project providing a reference implementation of two interfaces of the VIM, based on the ETSI <a href="http://www.etsi.org/deliver/etsi_gs/NFV-MAN/001_099/001/01.01.01_60/gs_nfv-man001v010101p.pdf">NFV MANO</a> specification.</p>
 <p>The two interfaces are:
 -   VirtualisedResourceFaultManagement
 -   VirtualisedResourcePerformanceManagement</p>
@@ -571,7 +593,7 @@ To import the plugin-sdk, please add in your gradle file the following dependenc
 }
 
 dependencies {
-    compile 'org.openbaton:plugin-sdk:0.15-SNAPSHOT'
+    compile 'org.openbaton:plugin-sdk:2.0.0'
 }
 </code></pre>
 
@@ -836,7 +858,7 @@ it creates an alarm (mapping zabbix notification into standard Alarm) and notify
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../integration-test-use/" class="btn btn-neutral float-right" title="Integration Tests"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../tosca-iperf-scenario/" class="btn btn-neutral float-right" title="TOSCA iperf scenario"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../nfvo-sdk/" class="btn btn-neutral" title="Use via the SDK"><span class="icon icon-circle-arrow-left"></span> Previous</a>

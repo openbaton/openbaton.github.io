@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>OpenBaton Documentation</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,300,600,700" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Use via the CLI";
+    var mkdocs_page_input_path = "nfvo-how-to-use-cli.md";
+    var mkdocs_page_url = "/nfvo-how-to-use-cli/";
+     var mkdocs_page_url = "/nfvo-how-to-use-cli/";
+  </script>
+  
+  <!-- site_name == OpenBaton Documentation -->
+  <!-- page_title == Use via the CLI -->
+  <!-- base_url == .. -->
+  <!-- current_page == Use via the CLI - /nfvo-how-to-use-cli/ [*]
+ -->
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-68429895-1', 'openbaton.github.io');
+      ga('send', 'pageview');
+  </script>
+  
+
+<style>
+
+.subnav_drop{
+  cursor: pointer;
+
+
+}
+
+ul.subnav {
+/*display:none ;*/
+cursor: pointer;
+border-bottom: 1px solid #e1e1e5;
+}
+
+.subnav:last-child{
+  border-bottom: none;
+
+}
+
+ul.subnav:active {
+display:block;
+}
+
+.wy-menu-vertical li ul {
+display: block;
+
+  }
+
+</style>
+</head>
+
+<body role="document">
+
+<script type="text/javascript">
+$( document).ready(function(){
+      //console.log("test");
+
+    //$('.subnav').not( ":has('Use via the CLI')" ).hide();
+    $('li.subnav_drop').find('ul.subnav').hide();
+    //$('li.subnav_drop').find('ul.subnav').each(function(i,e){console.log(i,e)});
+       $( ".subnav" ).find( "li:contains('Use via the CLI')" ).each(function(i,e){
+          var currentElement = $(e);
+          currentElement.parent().css({"display":"block","visibility":"visible"}); //css("background-color","blue");
+          currentElement.css({"display":"block","visibility":"visible"});
+       });//$( ".subnav" ).find( "li:contains('Use via the CLI')" ).css("display","block");
+       //$(".current").css({"background-color":"blue","display":"block","visibility":"visible"});
+       //show(1000,function(i,e){console.log(i,e)});
+       //$('li.subnav_drop').find('ul.subnav').css("background-color","blue");
+      //$(this).find('ul.subnav').toggle();
+    $('li.subnav_drop').click(function(i,e) {  
+      $('li.subnav_drop').not(this).find('ul.subnav').hide();
+      $(this).find('ul.subnav').toggle();
+    }); 
+
+});
+   
+$( ".wy-nav-content" ).find( "li:contains('Use via the CLI')" ).css('color','red');
+console.log('--------');
+console.log($( ".wy-nav-content" ).find( "div:contains('Use via the CLI')" ).css("color","red"));
+console.log('--------');
+console.log($( ".subnav" ).find( "li:contains('Use via the CLI')" ));
+console.log('--------');
+  </script>
+
+
+
+<div class="navcontainer" style="margin:0px; background:#000;">
+    <div class="navholder">
+      <nav>
+        <a href="../../index.html" class="logo"></a>
+        <a href="#" id="menu-icon"></a>
+        <ul class="navigation">
+          
+                <li><a href="../../index.html#about">About</a></li>
+                <li><a href="../../cases.html">Use Cases</a></li>
+                <li><a href="../../features.html">Features</a></li>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="../../index.html#contact">Contact</a></li>
+                <li><a href="https://github.com/openbaton">GitHub</a></li>
+          </ul>
+      </nav>
+     </div>
+</div>
+<div  class="container">
+  <div class="holder"> 
+        <div class="wy-grid-for-nav">
+
+          
+          <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+            <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+              <ul class="current">
+                
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Get Started</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="..">Get Started</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Installation</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation/">Install Open Baton</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Use it</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../use/">Introduction</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vim-instance/">Register a PoP</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfpackage/">Create your own VNF Package</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-generic/">Generic VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ns-descriptor/">Create the NSD</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-how-to-use-gui/">Use via the Dashboard</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Use via the CLI</a>
+        
+         
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-sdk/">Use via the SDK</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../zabbix-plugin/">Use Zabbix plugin</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../tosca-iperf-scenario/">TOSCA iperf scenario</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../tosca-CSAR-onboarding/">TOSCA CSAR on-boarding</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Tutorials</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../dummy-NSR/">Dummy NSR</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../iperf-NSR/">Iperf Scenario</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../integration-test-use/">Integration Tests</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Extend it</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../extend/">Extend it</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-architecture/">NFVO Architecture</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vim-plugin/">Write your own Plugin</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-how-to-write/">Write your own VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-vendor-specific/">Integrate your own VNFM</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>FAQ</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../FAQ/">FAQ</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+              </ul>
+            </div>
+            &nbsp;
+          </nav>
+        </div>
+    <div class="content_container">
+        <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+         
+
+          
+                <div class="wy-nav-content">
+                  <div class="rst-content">
+                   
+                    <div role="main">
+                      <div class="section">
+                        
+                          <h1 id="open-baton-command-line-interface-cli">Open Baton Command Line Interface (CLI)</h1>
+<p>Openbaton Client provides a command-line client, which enables you to access the project API through easy-to-use commands. 
+It uses the SDK for calling the NFVO RESTful APIs. </p>
+<h2 id="install-the-openbaton-client">Install the Openbaton Client</h2>
+<p>Git clone the project. Navigate into the root directory of the project and execute <em>./gradlew build</em>.</p>
+<pre><code class="sh">git clone https://github.com/openbaton/openbaton-client.git
+cd openbaton-client
+./gradlew build
+</code></pre>
+
+<h3 id="set-the-required-environment-variables">Set the required environment variables</h3>
+<p>Navigate into the project's root directory and execute <em>source nfvo.properties</em>. A dialog appears and will ask you for some properties. </p>
+<pre><code class="sh">cd openbaton-client
+source nfvo.properties
+</code></pre>
+
+<h2 id="openbaton-client-usage">Openbaton Client usage</h2>
+<p>run a command: </p>
+<pre><code class="sh">openbaton.sh command-name [arg-1] [arg-2] [arg-3]
+</code></pre>
+
+<p>show the configuration: </p>
+<pre><code class="sh">openbaton.sh -c
+</code></pre>
+
+<p>activate debug mode: </p>
+<pre><code class="sh">openbaton.sh -d command-name [arg-1] [arg-2] [arg-3]
+</code></pre>
+
+<p>print help: </p>
+<pre><code class="sh">openbaton.sh -h
+</code></pre>
+
+<p>print help for a command: </p>
+<pre><code class="sh">openbaton.sh command-name help
+</code></pre>
+
+<p>List the available commands: </p>
+<pre><code class="sh">openbaton.sh -l
+</code></pre>
+
+<h3 id="for-help-on-a-specific-openbaton-command-enter">For help on a specific openbaton command, enter:</h3>
+<pre><code class="sh"> $ openbaton.sh COMMAND help
+</code></pre>
+
+<h3 id="vim-instance-subcommands"><strong>Vim Instance Subcommands</strong></h3>
+<p><strong>create</strong></p>
+<ul>
+<li>Create the object of type Vim Instance</li>
+</ul>
+<pre><code class="sh"> $ openbaton.sh VimInstance-create file.json
+</code></pre>
+
+<p><strong>delete</strong></p>
+<ul>
+<li>Delete the object of type Vim Instance passing the id</li>
+</ul>
+<pre><code class="sh"> $ openbaton.sh VimInstance-delete id-vim-instance
+</code></pre>
+
+<p><strong>update</strong></p>
+<ul>
+<li>Update the object of type Vim nstance passing the new object and the id of the old object</li>
+</ul>
+<pre><code class="sh"> $ openbaton.sh VimInstance-update file.json id-vim-instance
+</code></pre>
+
+<p><strong>findAll</strong></p>
+<ul>
+<li>Find all the objects of type Vim Instance</li>
+</ul>
+<pre><code class="sh"> $ openbaton.sh VimInstance-findAll
+</code></pre>
+
+<p><strong>findById</strong></p>
+<ul>
+<li>Find the object of type Vim Instance through the id</li>
+</ul>
+<pre><code class="sh"> $ openbaton.sh VimInstance-findById id-vim-instance
+</code></pre>
+
+<h3 id="network-service-descriptor-subcommands"><strong>Network Service Descriptor Subcommands</strong></h3>
+<p><strong>create</strong></p>
+<ul>
+<li>Create the object of type Network Service Descriptor</li>
+</ul>
+<pre><code class="sh"> $ openbaton.sh NetworkServiceDescriptor-create file.json
+</code></pre>
+
+<p><strong>delete</strong></p>
+<ul>
+<li>Delete the object of type Network Service Descriptor passing the id</li>
+</ul>
+<pre><code class="sh"> $ openbaton.sh NetworkServiceDescriptor-delete id-network-service-descriptor
+</code></pre>
+
+<p><strong>findAll</strong></p>
+<ul>
+<li>Find all the objects of type Network Service Descriptor</li>
+</ul>
+<pre><code class="sh"> $ openbaton.sh NetworkServiceDescriptor-findAll
+</code></pre>
+
+<p><strong>findById</strong></p>
+<ul>
+<li>Find the object of type Network Service Descriptor through the id</li>
+</ul>
+<pre><code class="sh"> $ openbaton.sh NetworkServiceDescriptor-findById id-network-service-descriptor
+</code></pre>
+
+<p><strong>getVNFDependencies</strong>                                  </p>
+<ul>
+<li>Get all the Virtual Network Function Descriptor Dependency of a Network Service Descriptor with specific id</li>
+</ul>
+<pre><code class="sh"> $ openbaton.sh NetworkServiceDescriptor-getVNFDependencies id-network-service-descriptor
+</code></pre>
+
+<p><strong>getVNFDependency</strong>                                      </p>
+<ul>
+<li>Get the VirtualNetwork Function Descriptor dependency with specific id of a Network Service Descriptor with specific id</li>
+</ul>
+<pre><code class="sh"> $ openbaton.sh NetworkServiceDescriptor-getVNFDependency id-network-service-descriptor id-vnfdependency
+</code></pre>
+
+<p><strong>deleteVNFDependency</strong>                                   </p>
+<ul>
+<li>Delete the Virtual Network Function Descriptor dependency of a Network Service Descriptor with specific id</li>
+</ul>
+<pre><code class="sh">$ openbaton.sh NetworkServiceDescriptor-deleteVNFDependency id-network-service-descriptor id-vnfdependency
+</code></pre>
+
+<p><strong>getVirtualNetworkFunctionDescriptors</strong></p>
+<ul>
+<li>Find all the objects of type VirtualNetworkFunctionDescriptor</li>
+</ul>
+<pre><code class="sh"> $ openbaton.sh NetworkServiceDescriptor-getVirtualNetworkFunctionDescriptors id-network-service-descriptor
+</code></pre>
+
+<p><strong>getVirtualNetworkFunctionDescriptor</strong></p>
+<ul>
+<li>Find the object of type VirtualNetworkFunctionDescriptor through the id</li>
+</ul>
+<pre><code class="sh">$ openbaton.sh NetworkServiceDescriptor-getVirtualNetworkFunctionDescriptor id-network-service-descriptor id-vnfd
+</code></pre>
+
+<h3 id="network-service-record-subcommands"><strong>Network Service Record Subcommands</strong></h3>
+<p><strong>create</strong></p>
+<ul>
+<li>Create the object of type Network Service Record from a file</li>
+</ul>
+<pre><code class="sh"> $ openbaton.sh NetworkServiceRecord-create file.json
+</code></pre>
+
+<p><strong>create</strong></p>
+<ul>
+<li>Create the object of type Network Service Record from a Network Service Descriptor stored in the orchestrator</li>
+</ul>
+<pre><code class="sh"> $ openbaton.sh NetworkServiceRecord-create id-network-service-descriptor
+</code></pre>
+
+<p><strong>delete</strong></p>
+<ul>
+<li>Delete the object of type Network Service Record passing the id</li>
+</ul>
+<pre><code class="sh"> $ openbaton.sh NetworkServiceRecord-delete id-network-service-record
+</code></pre>
+
+<p><strong>update</strong></p>
+<ul>
+<li>Update the Network Service Record</li>
+</ul>
+<pre><code class="sh">$ openbaton.sh NetworkServiceRecord-update file.json id-network-service-record 
+</code></pre>
+
+<p><strong>findAll</strong></p>
+<ul>
+<li>Find all the objects of type Network Service Record</li>
+</ul>
+<pre><code class="sh"> $ openbaton.sh NetworkServiceRecord-findAll 
+</code></pre>
+
+<p><strong>findById</strong></p>
+<ul>
+<li>Find the object of type Network Service Record through the id</li>
+</ul>
+<pre><code class="sh"> $ openbaton.sh NetworkServiceRecord-findById id-network-service-record
+</code></pre>
+
+<p><strong>getVirtualNetworkFunctionRecords</strong>                         </p>
+<ul>
+<li>Get all the Virtual Network Function Records of Network Service Record with specific id</li>
+</ul>
+<pre><code class="sh">$ openbaton.sh NetworkServiceRecord-getVirtualNetworkFunctionRecords id-network-service-record
+</code></pre>
+
+<p><strong>getVirtualNetworkFunctionRecord</strong>                           </p>
+<ul>
+<li>Get the Virtual Network Function Record with specific id of Network Service Record with specific id</li>
+</ul>
+<pre><code class="sh"> $ openbaton.sh NetworkServiceRecord-getVirtualNetworkFunctionRecord id-network-service-record id-vnfr
+</code></pre>
+
+<p><strong>deleteVirtualNetworkFunctionRecord</strong>                        </p>
+<ul>
+<li>Delete the Virtual Network Function Record of NetworkS ervice Record with specific id</li>
+</ul>
+<pre><code class="sh">$ openbaton.sh NetworkServiceRecord-deleteVirtualNetworkFunctionRecord id-network-service-record id-vnfr
+</code></pre>
+
+<p><strong>deleteVNFDependency</strong>                                      </p>
+<ul>
+<li>Delete the Virtual Network Function Record Dependency of a Network Service Record with specific id</li>
+</ul>
+<pre><code class="sh">$ openbaton.sh NetworkServiceRecord-deleteVNFDependency id-network-service-record id-vnfdependency
+</code></pre>
+
+<h3 id="event-subcommands"><strong>Event Subcommands</strong></h3>
+<p><strong>create</strong></p>
+<ul>
+<li>Create the object of type Event</li>
+</ul>
+<pre><code class="sh"> $ openbaton.sh Event-create file.json
+</code></pre>
+
+<p><strong>delete</strong></p>
+<ul>
+<li>Delete the object of type Event passing the id</li>
+</ul>
+<pre><code class="sh">$ openbaton.sh Event-delete id-event
+</code></pre>
+
+<p><strong>findAll</strong></p>
+<ul>
+<li>Find all the objects of type Event</li>
+</ul>
+<pre><code class="sh">$ openbaton.sh Event-findAll
+</code></pre>
+
+<p><strong>findById</strong></p>
+<ul>
+<li>Find the object of type Event through the id</li>
+</ul>
+<pre><code class="sh">$ openbaton.sh Event-findById id-event
+</code></pre>
+
+<h3 id="configuration-subcommands"><strong>Configuration Subcommands</strong></h3>
+<p><strong>create</strong></p>
+<ul>
+<li>Create the object of type Configuration</li>
+</ul>
+<pre><code class="sh">$ openbaton.sh Configuration-create file.json
+</code></pre>
+
+<p><strong>delete</strong></p>
+<ul>
+<li>Delete the object of type Configuration passing the id</li>
+</ul>
+<pre><code class="sh"> $ openbaton.sh Configuration-delete id-configuration
+</code></pre>
+
+<p><strong>findAll</strong></p>
+<ul>
+<li>Find all the objects of type Configuration</li>
+</ul>
+<pre><code class="sh"> $ openbaton.sh Configuration-findAll
+</code></pre>
+
+<p><strong>findById</strong></p>
+<ul>
+<li>Find the object of type Configuration through the id</li>
+</ul>
+<pre><code class="sh"> $ openbaton.sh Configuration-findById id-configuration
+</code></pre>
+
+<h3 id="image-subcommands"><strong>Image Subcommands</strong></h3>
+<p><strong>create</strong></p>
+<ul>
+<li>Create the object of type Image</li>
+</ul>
+<pre><code class="sh"> $ openbaton.sh Image-create file.json
+</code></pre>
+
+<p><strong>delete</strong></p>
+<ul>
+<li>Delete the object of type Image passing the id</li>
+</ul>
+<pre><code class="sh">$ openbaton.sh Image-delete id-image
+</code></pre>
+
+<p><strong>findAll</strong></p>
+<ul>
+<li>Find all the objects of type Image</li>
+</ul>
+<pre><code class="sh"> $ openbaton.sh Image-findAll
+</code></pre>
+
+<p><strong>findById</strong></p>
+<ul>
+<li>Find the object of type Image through the id</li>
+</ul>
+<pre><code class="sh"> $ openbaton.sh Image-findById id-image 
+</code></pre>
+
+<h3 id="virtuallink-subcommands"><strong>VirtualLink Subcommands</strong></h3>
+<p><strong>create</strong></p>
+<ul>
+<li>Create the object of type VirtualLink
+  <code>sh
+   $ openbaton.sh VirtualLink-create file.json</code></li>
+</ul>
+<p><strong>delete</strong></p>
+<ul>
+<li>Delete the object of type VirtualLink passing the id</li>
+</ul>
+<pre><code class="sh"> $ openbaton.sh VirtualLink-delete id-virtual-link 
+</code></pre>
+
+<p><strong>update</strong></p>
+<ul>
+<li>Update the object of type VirtualLink passing the new object and the id of the old object</li>
+</ul>
+<pre><code class="sh"> $ openbaton.sh VirtualLink-update file.json id-virtual-link
+</code></pre>
+
+<p><strong>findAll</strong></p>
+<ul>
+<li>Find all the objects of type VirtualLink</li>
+</ul>
+<pre><code class="sh"> $ openbaton.sh VirtualLink-findAll
+</code></pre>
+
+<p><strong>findById</strong></p>
+<ul>
+<li>Find the object of type VirtualLink through the id</li>
+</ul>
+<pre><code class="sh"> $ openbaton.sh VirtualLink-findById id-virtual-link
+</code></pre>
+
+<!---
+Script for open external links in a new tab
+-->
+
+<script type="text/javascript" charset="utf-8">
+      // Creating custom :external selector
+      $.expr[':'].external = function(obj){
+          return !obj.href.match(/^mailto\:/)
+                  && (obj.hostname != location.hostname);
+      };
+      $(function(){
+        $('a:external').addClass('external');
+        $(".external").attr('target','_blank');
+      })
+</script>
+                        
+                      </div>
+                    </div>
+                    <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../nfvo-sdk/" class="btn btn-neutral float-right" title="Use via the SDK"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../nfvo-how-to-use-gui/" class="btn btn-neutral" title="Use via the Dashboard"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          	  
+                  </div>
+                </div>
+
+        </section>
+    </div>
+  </div>
+</div>
+
+
+
+</body>
+</html>
+

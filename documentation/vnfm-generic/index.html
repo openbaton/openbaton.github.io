@@ -173,25 +173,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../install/">Overview</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../nfvo-installation/">Install NFVO</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vim-instance/">Register a PoP</a>
+        <a class="" href="../nfvo-installation/">Install Open Baton</a>
         
     </li>
 
@@ -221,28 +203,8 @@ console.log('--------');
         
              
 
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Generic VNFM</a>
-        
-         
-        
-    </li>
-
-
-        
-             
-
     <li class="toctree-l1 ">
-        <a class="" href="../vnfm-how-to-write/">Write your own VNFM</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vnfm-vendor-specific/">Integrate your own VNFM</a>
+        <a class="" href="../vim-instance/">Register a PoP</a>
         
     </li>
 
@@ -252,6 +214,17 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../vnfpackage/">Create your own VNF Package</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Generic VNFM</a>
+        
+         
         
     </li>
 
@@ -278,6 +251,15 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../nfvo-how-to-use-cli/">Use via the CLI</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../nfvo-sdk/">Use via the SDK</a>
         
     </li>
@@ -296,33 +278,6 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../integration-test-use/">Integration Tests</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../use-case-example/">A full example</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../use-case-ims-example/">OpenIMSCore example</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
         <a class="" href="../tosca-iperf-scenario/">TOSCA iperf scenario</a>
         
     </li>
@@ -333,6 +288,55 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../tosca-CSAR-onboarding/">TOSCA CSAR on-boarding</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Tutorials</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../dummy-NSR/">Dummy NSR</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../iperf-NSR/">Iperf Scenario</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../integration-test-use/">Integration Tests</a>
         
     </li>
 
@@ -373,6 +377,24 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../vim-plugin/">Write your own Plugin</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-how-to-write/">Write your own VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-vendor-specific/">Integrate your own VNFM</a>
         
     </li>
 
@@ -435,8 +457,8 @@ console.log('--------');
                     <div role="main">
                       <div class="section">
                         
-                          <h1 id="vnfmanager-generic">VNFManager Generic</h1>
-<p>The Generic VNFManager is an implementation following the <a href="http://www.etsi.org/deliver/etsi_gs/NFV-MAN/001_099/001/01.01.01_60/gs_NFV-MAN001v010101p.pdf">ETSI MANO</a> specifications. For that reason it is highly tied to the EMS.
+                          <h1 id="generic-vnf-manager">Generic VNF Manager</h1>
+<p>The Generic VNF Manager is an implementation following the <a href="http://www.etsi.org/deliver/etsi_gs/NFV-MAN/001_099/001/01.01.01_60/gs_NFV-MAN001v010101p.pdf">ETSI MANO</a> specifications. It works as intermediate component between the NFVO and the VNFs, particularly the Virtual Machines on top of which the VNF software is installed. In order to complete the lifecycle of a VNF, it interoperates with the Element Management System (EMS) acting as an agent inside the VMs and executing scripts containeed in the vnf package.
 This VNFM may be assigned the management of a single VNF instance, or the management of multiple VNF instances of the same type or of different types.</p>
 <p>The Generic VNFManager handles communication with the NFVO and with EMS. The communication NFVO ↔ VNFM ↔ EMS is done using the AMQP protocol over RabbitMQ.  </p>
 <p>The communication between the NFVO and Generic VNFManager:</p>
@@ -481,6 +503,7 @@ Here an example (to make it more readable it is shown only the <strong>VNF lifec
         {
             &quot;event&quot;:&quot;INSTANTIATE&quot;,
             &quot;lifecycle_events&quot;:[
+                &quot;pre-install.sh&quot;,
                 &quot;install.sh&quot;
             ]
         },
@@ -534,12 +557,18 @@ Here an example (to make it more readable it is shown only the <strong>VNF lifec
 <td>TERMINATE</td>
 <td>During the termination of the corresponding VNF</td>
 </tr>
+<tr>
+<td>SCALE_IN</td>
+<td>When the VNF is target of a scaled in vnfcInstance</td>
+</tr>
 </tbody>
 </table>
 <p>The available parameters are defined in the VirtualNetworkFunctionDescriptor fields:</p>
+<!-- * **provides**: it contains the VMs parameters which will be available after the instantiation (e.g. IP) for other VNFs. -->
+
 <ul>
-<li><strong>provides</strong>: it contains the VMs parameters which will be available after the instantiation (e.g. IP) for other VNFs.</li>
 <li><strong>configurations</strong>: it contains specific parameters which you want to use in the scripts.</li>
+<li><strong>out-of-the-box</strong>: some parameters are automatically available into the scripts. These parameters are the IPs. They can be used in the script just using a variable called with the network name.</li>
 </ul>
 <p>In the INSTANTIATE scripts, the parameters defined in these two fields are then available as environment variables into the script exactly as defined (i.e. you can get by $parameter_name).</p>
 <p>In the MODIFY scripts, the INSTANTIATE parameters are still available but plus there are environment variables that come from other VNF sources, where they are specified in the provides field. 
@@ -579,7 +608,7 @@ echo &quot;This is the ip of the vnf-database: ${database_private}&quot;
 
 </code></pre>
 
-<p><strong>Note1</strong>: "database" is the type of the vnf-database, private is the name of the network.</p>
+<p><strong>Note1</strong>: <em>database</em> is the type of the vnf-database, <em>private</em> is the name of the network.</p>
 <p><strong>Note2</strong>: All the scripts need to be in a repository or in the vnf package (see the vnf package structure <a href="../vnfpackage">here</a>).</p>
 <p>In order to deploy the VNFs we have to create both the VNF descriptor: <strong>vnf-database-descriptor.json</strong> and <strong>vnf-server-descriptor.json</strong>. Below we'll be showed the most relevant part of them:</p>
 <p><strong>vnf-database-descriptor.json</strong></p>
@@ -694,10 +723,10 @@ Script for open external links in a new tab
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../vnfm-how-to-write/" class="btn btn-neutral float-right" title="Write your own VNFM"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../ns-descriptor/" class="btn btn-neutral float-right" title="Create the NSD"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../use/" class="btn btn-neutral" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../vnfpackage/" class="btn btn-neutral" title="Create your own VNF Package"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

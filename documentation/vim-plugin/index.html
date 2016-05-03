@@ -173,25 +173,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../install/">Overview</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../nfvo-installation/">Install NFVO</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vim-instance/">Register a PoP</a>
+        <a class="" href="../nfvo-installation/">Install Open Baton</a>
         
     </li>
 
@@ -222,25 +204,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vnfm-generic/">Generic VNFM</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vnfm-how-to-write/">Write your own VNFM</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vnfm-vendor-specific/">Integrate your own VNFM</a>
+        <a class="" href="../vim-instance/">Register a PoP</a>
         
     </li>
 
@@ -250,6 +214,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../vnfpackage/">Create your own VNF Package</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-generic/">Generic VNFM</a>
         
     </li>
 
@@ -276,6 +249,15 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../nfvo-how-to-use-cli/">Use via the CLI</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../nfvo-sdk/">Use via the SDK</a>
         
     </li>
@@ -294,33 +276,6 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../integration-test-use/">Integration Tests</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../use-case-example/">A full example</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../use-case-ims-example/">OpenIMSCore example</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
         <a class="" href="../tosca-iperf-scenario/">TOSCA iperf scenario</a>
         
     </li>
@@ -331,6 +286,55 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../tosca-CSAR-onboarding/">TOSCA CSAR on-boarding</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Tutorials</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../dummy-NSR/">Dummy NSR</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../iperf-NSR/">Iperf Scenario</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../integration-test-use/">Integration Tests</a>
         
     </li>
 
@@ -373,6 +377,24 @@ console.log('--------');
         <a class="current" href="./">Write your own Plugin</a>
         
          
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-how-to-write/">Write your own VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-vendor-specific/">Integrate your own VNFM</a>
         
     </li>
 
@@ -437,15 +459,15 @@ console.log('--------');
                         
                           <h1 id="create-vim-plugin">Create Vim Plugin</h1>
 <p>OpenBaton is an open source project providing a reference implementation of the NFVO and VNFM based on the ETSI specification, it is implemented in java using the spring.io framework. It consists of two main components: a NFVO and a generic VNFM. This project plugin-sdk contains modules that are needed to implement a plugin for OpenBaton system.</p>
-<h2 id="how-does-this-works">How does this works?</h2>
-<p>An OpenBaton Plugin is a <a href="https://docs.oracle.com/javase/tutorial/rmi/overview.html">RMI</a> Server that connects to the NFVO or any other rmiregistry with access to the OpenBaton catalogue as codebase. It offers an implementation of an interface that is used by the NFVO. By default the NFVO starts a rmiregistry at localhost:1099.</p>
+<h2 id="how-does-this-work">How does this work?</h2>
+<p>OpenBaton use the Remote Procedure Call (RPC) mechanism for implementing the Plugins. It offers an implementation of an interface that is used by the NFVO. </p>
 <h2 id="requirements">Requirements</h2>
 <p>Before you can start with developing your own Vim Plugin you need to prepare your programming environment by installing/configuring the following requirements:</p>
 <ul>
 <li>JDK 7 (<a href="http://openjdk.java.net/install/">installation</a>)</li>
 <li>Gradle (<a href="https://docs.gradle.org/current/userguide/installation.html">installation</a>)</li>
 </ul>
-<h5 id="create-a-new-project">Create a new project</h5>
+<h3 id="create-a-new-project">Create a new project</h3>
 <p>Once you have started the IDE, click on File -&gt; New -&gt; Project...</p>
 <p>In this dialog click on Gradle on the left and select java in the main properties window in the middle.</p>
 <p><img alt="dialog" src="../images/new_project_vim.png" /></p>
@@ -462,7 +484,7 @@ Additionally you can enable the auto-import.</p>
 <p>In the last dialog, you need to define the project name and the project location.</p>
 <p><img alt="dialog" src="../images/new_project_vim_groupId2.png" /></p>
 <p>Once this is done you can click on Finish and continue with creating the Main Class.</p>
-<h5 id="create-the-main-class">Create the Main Class</h5>
+<h3 id="create-the-main-class">Create the Main Class</h3>
 <p>Afterwards, you need to create the Main Class of the VIM plugin which will be started in the end.
 For doing so, right click on the root folder my-vim, then click on New -&gt; Directory and insert what is show below.</p>
 <p><img alt="dialog" src="../images/new_project_vim_new_directory.png" /></p>
@@ -505,7 +527,7 @@ mainClassName = 'org.myplugin.example.Starter'
 
 
 dependencies {
-    compile 'org.openbaton:plugin-sdk:1.0.2'
+    compile 'org.openbaton:plugin-sdk:2.0.1'
     compile'org.springframework:spring-context:4.2.1.RELEASE'
 }
 
@@ -643,7 +665,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
-import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -691,11 +712,8 @@ public class Starter {
     public static void main(String[] args) {
         log.info(&quot;params are: pluginName registryIp registryPort\ndefault is test localhost 1099&quot;);
 
-        if (args.length &gt; 1)
-            PluginStarter.run(MyVim.class, args[0], args[1], Integer.parseInt(args[2]));
-        else
-            PluginStarter.run(MyVim.class, &quot;test&quot;, &quot;localhost&quot;, 1099);
-    }
+    PluginStartup.startPluginRecursive(&quot;./path-to-folder&quot;, true, &quot;broker-ip&quot;, &quot;5672&quot;, 15, &quot;admin&quot;, &quot;openbaton&quot;, &quot;15672&quot;);
+
 }
 </code></pre>
 
@@ -704,12 +722,13 @@ public class Starter {
 The structure of your project should be like:</p>
 <p><img alt="Vim plugin structure" src="../images/vim_plugin_structure.png" /></p>
 <p>Now you can run <strong>./gradlew build</strong> and Gradle will create the jar that you can find in the folder <em>build/libs/myPlugin-1.0-SNAPSHOT.jar</em>.</p>
-<p>Once all these steps are done, you can copy and paste the <em>myPlugin-1.0-SNAPSHOT.jar</em> under the folder specified in the <em>openbaton.properties</em> (under <em>/etc/openbaton</em> folder) <strong>plugin-installation-dir</strong> property, as default NFVO/plugins.</p>
-<p>Congratulations you have your version of the interface for your Vim Instance that will be used by NFVO</p>
+<p>Once all these steps are done, you can copy and paste the <em>myPlugin-1.0-SNAPSHOT.jar</em> under the folder specified in the <em>openbaton.properties</em> (under <em>/etc/openbaton</em> folder) <strong>plugin-installation-dir</strong> property, as default path_to_NFVO/plugins.
+The plugin sends the log messages to NFVO, the NFVO writes them into a log file. The path to this file can be set with nfvo.plugin.log.path properties in the /etc/openbaton/openbaton.properties. 
+Congratulations you have your version of the interface for your Vim Instance that will be used by NFVO</p>
 <h2 id="use-my-plugin">Use my plugin</h2>
 <p>Once you copied the jar file into the right folder, you need to (re)start the NFVO. The plugin will automatically register and you can see that there will be a log file in the NFVO folder called <em>plugin-myPlugin.log</em> containing the logs of the plugin. The myPlugin now acts as a normal plugin so for using it check out the <a href="../vim-instance/">Vim instance documentation</a> in order to point out to the new plugin.</p>
-<p><strong>NOTE</strong>: Since you are using an implementation of <a href="https://docs.oracle.com/javase/tutorial/rmi/overview.html">RMI</a> you can also launch your plugin from your command line just typing</p>
-<pre><code class="bash">$ java -jar myPlugin-1.0-SNAPSHOT.jar [the-vim-type] [ip_NFVO] 1099
+<p><strong>NOTE</strong>: you can also launch your plugin from your command line just typing</p>
+<pre><code class="bash">$ java -jar myPlugin-1.0-SNAPSHOT.jar [the-vim-type] [rabbitmq-ip] [rabbitmq-port] [n-of-consumers] [user] [password]
 </code></pre>
 
 <!---
@@ -734,7 +753,7 @@ Script for open external links in a new tab
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../FAQ/" class="btn btn-neutral float-right" title="FAQ"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../vnfm-how-to-write/" class="btn btn-neutral float-right" title="Write your own VNFM"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../nfvo-architecture/" class="btn btn-neutral" title="NFVO Architecture"><span class="icon icon-circle-arrow-left"></span> Previous</a>

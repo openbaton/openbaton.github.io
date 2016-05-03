@@ -173,25 +173,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../install/">Overview</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../nfvo-installation/">Install NFVO</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vim-instance/">Register a PoP</a>
+        <a class="" href="../nfvo-installation/">Install Open Baton</a>
         
     </li>
 
@@ -222,27 +204,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vnfm-generic/">Generic VNFM</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vnfm-how-to-write/">Write your own VNFM</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Integrate your own VNFM</a>
-        
-         
+        <a class="" href="../vim-instance/">Register a PoP</a>
         
     </li>
 
@@ -252,6 +214,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../vnfpackage/">Create your own VNF Package</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-generic/">Generic VNFM</a>
         
     </li>
 
@@ -278,6 +249,15 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../nfvo-how-to-use-cli/">Use via the CLI</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../nfvo-sdk/">Use via the SDK</a>
         
     </li>
@@ -296,33 +276,6 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../integration-test-use/">Integration Tests</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../use-case-example/">A full example</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../use-case-ims-example/">OpenIMSCore example</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
         <a class="" href="../tosca-iperf-scenario/">TOSCA iperf scenario</a>
         
     </li>
@@ -333,6 +286,55 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../tosca-CSAR-onboarding/">TOSCA CSAR on-boarding</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Tutorials</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../dummy-NSR/">Dummy NSR</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../iperf-NSR/">Iperf Scenario</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../integration-test-use/">Integration Tests</a>
         
     </li>
 
@@ -373,6 +375,26 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../vim-plugin/">Write your own Plugin</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-how-to-write/">Write your own VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Integrate your own VNFM</a>
+        
+         
         
     </li>
 
@@ -466,10 +488,12 @@ console.log('--------');
 <p>POST request on</p>
 <p><em><em>OrEndpoint</em></em>/admin/v1/vnfm-register</p>
 <h6 id="request-body">request body</h6>
-<pre><code>{
+<pre><code class="json">{
     &quot;type&quot;:&quot;dummy&quot;,
     &quot;endpointType&quot;:&quot;REST&quot;,
-    &quot;endpoint&quot;:&quot;VnfmEndpoint&quot;
+    &quot;endpoint&quot;:&quot;VnfmEndpoint&quot;,
+    &quot;description&quot;:&quot;MyVnfm&quot;,
+    &quot;enabled&quot;:&quot;true&quot;
 }
 </code></pre>
 
@@ -488,7 +512,7 @@ console.log('--------');
 </tr>
 <tr>
 <td><em><em>endpointType</em></em></td>
-<td align="right">the vnfm type you are going to implement (REST or JMS)</td>
+<td align="right">the vnfm type you are going to implement (REST or AMQP)</td>
 </tr>
 <tr>
 <td><em><em>endpoint</em></em></td>
@@ -499,21 +523,28 @@ console.log('--------');
 <h3 id="instantiate-or-vnfm">INSTANTIATE (Or-Vnfm)</h3>
 <p>This call sends the Vnfm the Virtual Network Function Descriptor, which shall be used to create the Virtual Network Funtion Record and also sends to the Vnfm all the scripts which are executed in actions like INSTANTIATE, MODIFY or START. This call triggers the creation of a virtual machine for the sent vnfd and the execution of the scripts which are associated with the INSTANTIATE lifecycle event in the vnfd. </p>
 <h6 id="request-path_1">request path</h6>
-<p>POST request on</p>
-<p><em><em>VnfmEnpoint</em></em></p>
+<p>POST request on <em><em>VnfmEnpoint</em></em></p>
 <h6 id="request-body_1">request body</h6>
-<pre><code>{
-    &quot;scriptsLink&quot;:&quot;linktogit&quot;, 
-    &quot;scripts&quot;:&quot;scriptsfiles&quot;, 
+<pre><code class="json">{
     &quot;vnfd&quot;:{  ...  }, 
-    &quot;vnfdf&quot;:{  ...  }, 
-    &quot;vlrs&quot;:[  ...  ], 
-    &quot;extention&quot;:{  &quot;nsr-id&quot;:&quot;...&quot;  }, 
-    &quot;action&quot;:&quot;INSTANTIATE&quot; 
+    &quot;vnfdf&quot;:{  ...  },
+    &quot;vlrs&quot;:[  ...  ],
+    &quot;extention&quot;:{  
+      &quot;nsr-id&quot;:&quot;...&quot;,
+      &quot;brokerIp&quot;:&quot;...&quot;,
+      ...
+    },
+    &quot;action&quot;:&quot;INSTANTIATE&quot;,
+    &quot;vimInstances&quot;: {
+      &quot;vdu_id&quot;:[
+        { ... },
+        { ... }
+      ]
+    },
+    &quot;vnfPackage&quot;: { ... };     
 }
 </code></pre>
 
-<p>In this action either the <em>scriptsLink</em> or the <em>scripts</em> fields are set. The vnfm-sdk will take care of them.</p>
 <h6 id="request-structure_1">request structure</h6>
 <table>
 <thead>
@@ -523,14 +554,6 @@ console.log('--------');
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><em><em>scriptsLink</em></em></td>
-<td align="right">a link to the repository where the links are located</td>
-</tr>
-<tr>
-<td><em><em>scripts</em></em></td>
-<td align="right">the script files coming from the vnfPackage, in case no scriptsLink is provided</td>
-</tr>
 <tr>
 <td><em><em>vnfd</em></em></td>
 <td align="right">the VirtualNetworkFunctionDescriptor from which a VirtualNetworkFunctionRecord is created</td>
@@ -551,21 +574,170 @@ console.log('--------');
 <td><em><em>action</em></em></td>
 <td align="right">the action to be executed</td>
 </tr>
+<tr>
+<td><em><em>vimInstances</em></em></td>
+<td align="right">a map containing per each vdu id the list of VimInstance objects</td>
+</tr>
+<tr>
+<td><em><em>vnfPackage</em></em></td>
+<td align="right">the VNFPackage of the VirtualNetowrkFunctionRecord</td>
+</tr>
+</tbody>
+</table>
+<h3 id="grantoperation-vnfm-or">GrantOperation (Vnfm-Or)</h3>
+<p>This call sends the Virtual Network Function Record to the Nfvo in order to ask if there are enough resources</p>
+<h6 id="request-path_2">request path</h6>
+<p>POST request on <em><em>OrEndpoint</em></em>/admin/v1/vnfm-core-grant</p>
+<h6 id="request-body_2">request body</h6>
+<pre><code class="json">{
+    &quot;virtualNetworkFunctionDescriptor&quot;:{..},
+    &quot;vduSet&quot;:[
+      { ... }
+    ],
+    &quot;deploymentFlavourKey&quot;:&quot;whatever&quot;,
+    &quot;action&quot;:&quot;GRANT_OPERATION&quot;,
+    &quot;virtualNetworkFunctionRecord&quot;:{..}
+}
+</code></pre>
+
+<h6 id="request-structure_2">request structure</h6>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th align="right">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em><em>action</em></em></td>
+<td align="right">the action has to be executed</td>
+</tr>
+<tr>
+<td><em><em>virtualNetworkFunctionRecord</em></em></td>
+<td align="right">the VirtualNetowrkFunctionRecord</td>
+</tr>
+<tr>
+<td><em><em>virtualNetworkFunctionDescriptor</em></em></td>
+<td align="right">the virtualNetworkFunctionDescriptor</td>
+</tr>
+<tr>
+<td><em><em>vduSet</em></em></td>
+<td align="right">the Set of all the VDU of this virtualNetworkFunctionRecord</td>
+</tr>
+</tbody>
+</table>
+<h3 id="grantoperation-or-vnfm">GrantOperation (Or-Vnfm)</h3>
+<p>This call returns the answer from the Nfvo of the grant operation</p>
+<h6 id="request-path_3">request path</h6>
+<p>POST request on <em><em>VnfmEnpoint</em></em></p>
+<h6 id="request-body_3">request body</h6>
+<pre><code class="json">{
+    &quot;grantAllowed&quot;: true,
+    &quot;vduVim&quot;: {
+      &quot;vdu_id&quot;: {  }
+    },
+    &quot;virtualNetworkFunctionRecord&quot;:{}
+}
+</code></pre>
+
+<h6 id="request-structure_3">request structure</h6>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th align="right">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em><em>grantAllowed</em></em></td>
+<td align="right">if the nfvo has granted the allocate resources</td>
+</tr>
+<tr>
+<td><em><em>vduVim</em></em></td>
+<td align="right">which vim was chosen per vdu</td>
+</tr>
+<tr>
+<td><em><em>virtualNetworkFunctionRecord</em></em></td>
+<td align="right">the virtualNetworkFunctionRecord</td>
+</tr>
+</tbody>
+</table>
+<h3 id="allocateresources-vnfm-or">AllocateResources (Vnfm-Or)</h3>
+<p>This call sends the Virtual Network Function Record to the Nfvo in order to allocate resources</p>
+<h6 id="request-path_4">request path</h6>
+<p>POST request on <em><em>OrEndpoint</em></em>/admin/v1/vnfm-core-allocate</p>
+<h6 id="request-body_4">request body</h6>
+<pre><code class="json">{
+    &quot;virtualNetworkFunctionRecord&quot;:{..},
+    &quot;vimInstances&quot;:{
+      &quot;vdu_id&quot;:{ ... }
+    },
+    &quot;userdata&quot;:&quot;&quot;
+}
+</code></pre>
+
+<h6 id="request-structure_4">request structure</h6>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th align="right">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em><em>virtualNetworkFunctionRecord</em></em></td>
+<td align="right">the VirtualNetowrkFunctionRecord</td>
+</tr>
+<tr>
+<td><em><em>vimInstances</em></em></td>
+<td align="right">the chosen vim per vdu</td>
+</tr>
+<tr>
+<td><em><em>userdata</em></em></td>
+<td align="right">the userdata</td>
+</tr>
+</tbody>
+</table>
+<h3 id="allocateresources-or-vnfm">AllocateResources (Or-Vnfm)</h3>
+<p>This call returns the new VirtualNetowrkFunctionRecord to the Vnfm</p>
+<h6 id="request-path_5">request path</h6>
+<p>POST request on <em><em>VnfmEnpoint</em></em></p>
+<h6 id="request-body_5">request body</h6>
+<pre><code class="json">{
+    &quot;vnfr&quot;: { ... }
+}
+</code></pre>
+
+<h6 id="request-structure_5">request structure</h6>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th align="right">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em><em>virtualNetworkFunctionRecord</em></em></td>
+<td align="right">the virtualNetworkFunctionRecord updated</td>
+</tr>
 </tbody>
 </table>
 <h3 id="instantiate-vnfm-or">Instantiate (Vnfm-Or)</h3>
 <p>This call sends back the created Virtual Network Function Record to the Nfvo. </p>
-<h6 id="request-path_2">request path</h6>
-<p>POST request on</p>
-<p><em><em>OrEndpoint</em></em>/admin/v1/vnfm-core-actions</p>
-<h6 id="request-body_2">request body</h6>
-<pre><code>{
+<h6 id="request-path_6">request path</h6>
+<p>POST request on <em><em>OrEndpoint</em></em>/admin/v1/vnfm-core-actions</p>
+<h6 id="request-body_6">request body</h6>
+<pre><code class="json">{
     &quot;virtualNetworkFunctionRecord&quot;:{  ...  }, 
     &quot;action&quot;:&quot;INSTANTIATE&quot;
 }
 </code></pre>
 
-<h6 id="request-structure_2">request structure</h6>
+<h6 id="request-structure_6">request structure</h6>
 <table>
 <thead>
 <tr>
@@ -586,18 +758,18 @@ console.log('--------');
 </table>
 <h3 id="modify-aka-addrelations-or-vnfm">Modify (aka AddRelations) (Or-Vnfm)</h3>
 <p>The Nfvo uses this request to provide dependencies of Virtual Network Functions to the Vnfm. The scripts associated with the CONFIGURATION lifecycle event in the vnfr will be executed.</p>
-<h6 id="request-path_3">request path</h6>
+<h6 id="request-path_7">request path</h6>
 <p>POST request on</p>
 <p><em><em>VnfmEnpoint</em></em></p>
-<h6 id="request-body_3">request body</h6>
-<pre><code>{
+<h6 id="request-body_7">request body</h6>
+<pre><code class="json">{
     &quot;vnfr&quot;:{ ... }, 
     &quot;vnfrd&quot;:{ ... }, 
     &quot;action&quot;:&quot;MODIFY&quot;
 }
 </code></pre>
 
-<h6 id="request-structure_3">request structure</h6>
+<h6 id="request-structure_7">request structure</h6>
 <table>
 <thead>
 <tr>
@@ -622,17 +794,17 @@ console.log('--------');
 </table>
 <h3 id="modify-aka-addrelations-vnfm-or">Modify (aka AddRelations) (Vnfm-Or)</h3>
 <p>This call sends back the modified Virtual Network Function Record to the Nfvo. </p>
-<h6 id="request-path_4">request path</h6>
+<h6 id="request-path_8">request path</h6>
 <p>POST request on</p>
 <p><em><em>OrEndpoint</em></em>/admin/v1/vnfm-core-actions</p>
-<h6 id="request-body_4">request body</h6>
-<pre><code>{
+<h6 id="request-body_8">request body</h6>
+<pre><code class="json">{
     &quot;virtualNetworkFunctionRecord&quot;:{ ... },
     &quot;action&quot;:&quot;MODIFY&quot;
 }
 </code></pre>
 
-<h6 id="request-structure_4">request structure</h6>
+<h6 id="request-structure_8">request structure</h6>
 <table>
 <thead>
 <tr>
@@ -653,17 +825,17 @@ console.log('--------');
 </table>
 <h3 id="start-or-vnfm">Start (Or-Vnfm)</h3>
 <p>This call will trigger the execution of the scripts associated with the START lifecycle event in the vnfr. </p>
-<h6 id="request-path_5">request path</h6>
+<h6 id="request-path_9">request path</h6>
 <p>POST request on</p>
 <p><em><em>VnfmEnpoint</em></em></p>
-<h6 id="request-body_5">request body</h6>
-<pre><code>{
+<h6 id="request-body_9">request body</h6>
+<pre><code class="json">{
     &quot;vnfr&quot;:{  ...  },
     &quot;action&quot;:&quot;START&quot;
 }
 </code></pre>
 
-<h6 id="request-structure_5">request structure</h6>
+<h6 id="request-structure_9">request structure</h6>
 <table>
 <thead>
 <tr>
@@ -683,17 +855,17 @@ console.log('--------');
 </tbody>
 </table>
 <h3 id="start-vnfm-or">Start (Vnfm-Or)</h3>
-<h6 id="request-path_6">request path</h6>
+<h6 id="request-path_10">request path</h6>
 <p>POST request on</p>
 <p><em><em>OrEndpoint</em></em>/admin/v1/vnfm-core-actions</p>
-<h6 id="request-body_6">request body</h6>
-<pre><code>{
+<h6 id="request-body_10">request body</h6>
+<pre><code class="json">{
     &quot;virtualNetworkFunctionRecord&quot;:{  ...  },
     &quot;action&quot;:&quot;START&quot;
 }
 </code></pre>
 
-<h6 id="request-structure_6">request structure</h6>
+<h6 id="request-structure_10">request structure</h6>
 <table>
 <thead>
 <tr>
@@ -738,7 +910,7 @@ Script for open external links in a new tab
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../vnfpackage/" class="btn btn-neutral float-right" title="Create your own VNF Package"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../FAQ/" class="btn btn-neutral float-right" title="FAQ"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../vnfm-how-to-write/" class="btn btn-neutral" title="Write your own VNFM"><span class="icon icon-circle-arrow-left"></span> Previous</a>

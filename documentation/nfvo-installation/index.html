@@ -22,16 +22,16 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Install NFVO";
+    var mkdocs_page_name = "Install Open Baton";
     var mkdocs_page_input_path = "nfvo-installation.md";
     var mkdocs_page_url = "/nfvo-installation/";
      var mkdocs_page_url = "/nfvo-installation/";
   </script>
   
   <!-- site_name == OpenBaton Documentation -->
-  <!-- page_title == Install NFVO -->
+  <!-- page_title == Install Open Baton -->
   <!-- base_url == .. -->
-  <!-- current_page == Install NFVO - /nfvo-installation/ [*]
+  <!-- current_page == Install Open Baton - /nfvo-installation/ [*]
  -->
   <script src="../js/jquery-2.1.1.min.js"></script>
   <script src="../js/modernizr-2.8.3.min.js"></script>
@@ -86,14 +86,14 @@ display: block;
 $( document).ready(function(){
       //console.log("test");
 
-    //$('.subnav').not( ":has('Install NFVO')" ).hide();
+    //$('.subnav').not( ":has('Install Open Baton')" ).hide();
     $('li.subnav_drop').find('ul.subnav').hide();
     //$('li.subnav_drop').find('ul.subnav').each(function(i,e){console.log(i,e)});
-       $( ".subnav" ).find( "li:contains('Install NFVO')" ).each(function(i,e){
+       $( ".subnav" ).find( "li:contains('Install Open Baton')" ).each(function(i,e){
           var currentElement = $(e);
           currentElement.parent().css({"display":"block","visibility":"visible"}); //css("background-color","blue");
           currentElement.css({"display":"block","visibility":"visible"});
-       });//$( ".subnav" ).find( "li:contains('Install NFVO')" ).css("display","block");
+       });//$( ".subnav" ).find( "li:contains('Install Open Baton')" ).css("display","block");
        //$(".current").css({"background-color":"blue","display":"block","visibility":"visible"});
        //show(1000,function(i,e){console.log(i,e)});
        //$('li.subnav_drop').find('ul.subnav').css("background-color","blue");
@@ -105,11 +105,11 @@ $( document).ready(function(){
 
 });
    
-$( ".wy-nav-content" ).find( "li:contains('Install NFVO')" ).css('color','red');
+$( ".wy-nav-content" ).find( "li:contains('Install Open Baton')" ).css('color','red');
 console.log('--------');
-console.log($( ".wy-nav-content" ).find( "div:contains('Install NFVO')" ).css("color","red"));
+console.log($( ".wy-nav-content" ).find( "div:contains('Install Open Baton')" ).css("color","red"));
 console.log('--------');
-console.log($( ".subnav" ).find( "li:contains('Install NFVO')" ));
+console.log($( ".subnav" ).find( "li:contains('Install Open Baton')" ));
 console.log('--------');
   </script>
 
@@ -172,28 +172,10 @@ console.log('--------');
         
              
 
-    <li class="toctree-l1 ">
-        <a class="" href="../install/">Overview</a>
-        
-    </li>
-
-
-        
-             
-
     <li class="toctree-l1 current">
-        <a class="current" href="./">Install NFVO</a>
+        <a class="current" href="./">Install Open Baton</a>
         
          
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vim-instance/">Register a PoP</a>
         
     </li>
 
@@ -224,25 +206,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vnfm-generic/">Generic VNFM</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vnfm-how-to-write/">Write your own VNFM</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vnfm-vendor-specific/">Integrate your own VNFM</a>
+        <a class="" href="../vim-instance/">Register a PoP</a>
         
     </li>
 
@@ -252,6 +216,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../vnfpackage/">Create your own VNF Package</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-generic/">Generic VNFM</a>
         
     </li>
 
@@ -278,6 +251,15 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../nfvo-how-to-use-cli/">Use via the CLI</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../nfvo-sdk/">Use via the SDK</a>
         
     </li>
@@ -296,33 +278,6 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../integration-test-use/">Integration Tests</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../use-case-example/">A full example</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../use-case-ims-example/">OpenIMSCore example</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
         <a class="" href="../tosca-iperf-scenario/">TOSCA iperf scenario</a>
         
     </li>
@@ -333,6 +288,55 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../tosca-CSAR-onboarding/">TOSCA CSAR on-boarding</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Tutorials</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../dummy-NSR/">Dummy NSR</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../iperf-NSR/">Iperf Scenario</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../integration-test-use/">Integration Tests</a>
         
     </li>
 
@@ -373,6 +377,24 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../vim-plugin/">Write your own Plugin</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-how-to-write/">Write your own VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-vendor-specific/">Integrate your own VNFM</a>
         
     </li>
 
@@ -437,12 +459,12 @@ console.log('--------');
                         
                           <h2 id="install-nfvo">Install NFVO</h2>
 <p>The NFVO is implemented in java using the <a href="https://spring.io">spring.io</a> framework. For more details about the NFVO architecture, you can refer to the extend it section.</p>
-<h3 id="install-the-latest-nfvo-version-from-the-source-code">Install the latest NFVO version from the source code</h3>
-<p>The NFVO can be installed using different mechanisms. In this how to we will show you how to instantiate it using directly from the git repo. </p>
+<h3 id="install-the-latest-nfvo-version-from-the-debian-package">Install the latest NFVO version from the debian package</h3>
+<p>The NFVO can be installed using different mechanisms. In this HowTo we will show you how to install it directly from its debian package.</p>
 <p>The NFVO uses the AMQP protocol for communicating with the VNFMs. Therefore an implementation of it is necessary, we chose <a href="https://www.rabbitmq.com/">RabbitMQ</a>.
-To facilitate the installation procedures we provide an installation script which can be used for installing the NFVO and the prerequired libraries.
-Considering that this script needs to install some system libraries, it is required to execute it as super user.
-To execute the following command you need to have curl installed (see http://curl.haxx.se/). </p>
+To facilitate the installation procedures we provide an installation procedure which will install the NFVO and the prerequired libraries.
+To execute the following command you need to have curl installed (see http://curl.haxx.se/).</p>
+<p>To install the OpenBaton NFVO through its debian package you can type the following command:</p>
 <pre><code class="bash">bash &lt;(curl -fsSkL http://get.openbaton.org/bootstrap)
 </code></pre>
 
@@ -517,18 +539,19 @@ spring.jpa.show-sql=false
 spring.jpa.hibernate.ddl-auto=create-drop
 </code></pre>
 
-<p><strong>IMPORTANT NOTE:</strong></p>
+<p><strong>IMPORTANT NOTES:</strong></p>
+<p>(Keep in mind that whenever some of the parameters below referred are changed, you will need to restart the NFVO)</p>
 <p>1) By default RabbitMQ is installed on the host of the NFVO. Be aware of the fact that if you want your VNFM to be executed on a different host, you will need RabbitMQ to be reachable also from the outside.<br />
-So when you want to deploy a VNF (EMS) in a VM which runs on a different host in respect to the NFVO, you will need to configure the rabbitmq endpoint (<strong>nfvo.rabbit.brokerIp</strong>) with the real IP of the NFVO host (instead of localhost).
-What we suggest is to copy entirely <em>/opt/openbaton/NFVO/etc/openbaton.properties</em> to <em>/etc/openbaton/openbaton.properties</em> and then change: </p>
+So when you want to deploy a VNF (EMS) in a VM which runs on a different host in respect to the NFVO, you will need to configure the rabbitmq endpoint (<strong>nfvo.rabbit.brokerIp</strong>) with the real IP of the NFVO host (instead of localhost).</p>
+<p>This can be done changing the following properties of the <em>/etc/openbaton/openbaton.properties</em> file:</p>
 <pre><code class="properties">nfvo.rabbit.brokerIp = localhost 
 </code></pre>
 
-<p>to</p>
-<pre><code class="properties">nfvo.rabbit.brokerIp = the rabbitmq broker ip (if you run the openbaton.sh update then will be the ip where the NFVO is running) 
+<p>to:</p>
+<pre><code class="properties">nfvo.rabbit.brokerIp = the rabbitmq broker ip
 </code></pre>
 
-<p>2)In order to start using persistency through mysql database to save the parameters for next start ups, you need to change the properties shown above into:</p>
+<p>2) At the end of the installation the NFVO is working with a in-memory database. In order to start using persistency through mysql database, you need to make the properties changes shown below:</p>
 <pre><code class="properties"># DB properties
 spring.datasource.username=admin
 spring.datasource.password=changeme
@@ -548,8 +571,8 @@ spring.jpa.show-sql=false
 spring.jpa.hibernate.ddl-auto=update
 </code></pre>
 
-<p><em>spring.datasource.username</em> and <em>spring.datasource.password</em> need to be adapted to the mysql username and password. 
-<em>spring.jpa.hibernate.ddl-auto</em> has to be set to <strong>update</strong> if you want the NFVO not to drop all the tables after being shut down and to make it reuse the same tables after restarting.</p>
+<p>Where:
+<em> <em>spring.datasource.username</em> and <em>spring.datasource.password</em> need to be adapted to the mysql username and password.</em> <em>spring.jpa.hibernate.ddl-auto</em> has to be set to <strong>update</strong> if you want the NFVO not to drop all the tables after being shut down and to make it reuse the same tables after restarting.</p>
 <p>For more details please see the <a href="http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html">Spring Documentation</a> regarding the configuration parameters.</p>
 <p>These are other parameters about the configuration of Rabbit MQ:</p>
 <pre><code class="properties">#########################################
@@ -607,57 +630,26 @@ multipart.maxRequestSize=2046MB
 <p>The following properties are related to the plugin mechanism used for loading VIM and Monitoring instances. The <code>vim-plugin-installation-dir</code> is the directory where all the jar files are, which implement the VIM interface (see the <a href="../vim-plugin">vim plugin documentation</a>). The NFVO will load them at runtime.  </p>
 <pre><code class="properties">########## plugin install ###############
 # directory for the vim driver plugins
-plugin-installation-dir = ./plugins
+plugin-installation-dir = /usr/local/lib/openbaton/plugins
+# this is path to which the plugins(for example openstack-plugin) will write the output log through NFVO
+nfvo.plugin.log.path = 
 </code></pre>
 
-<p>This property allows the user to delete the Network Service Records no matter in which status they are. Please note that in any case it is possible to remove a Network Service Record in <em>NULL</em> state.</p>
+<p>This property allows the user to delete the Network Service Records no matter in which status are they. Pleas note that in any case it is possible to remove a Network Service Record in <em>NULL</em> state.</p>
 <pre><code class="properties"># nfvo behaviour
-nfvo.delete.all-status = true
-# Decides weither the VNFR would be force-deleted after a time in case NSR was deleted
-nfvo.delete.vnfr.wait = false
-nfvo.delete.vnfr.wait.timeout = 60
-
-# Thread pool executor configuration
-# for info see http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/scheduling/concurrent/ThreadPoolTaskExecutor.html
-nfvo.vmanager.executor.corepoolsize = 20
-nfvo.vmanager.executor.maxpoolsize = 30
-nfvo.vmanager.executor.queuecapacity = 500
-nfvo.vmanager.executor.keepalive = 30
-
-# These are ssl properties are not used yet and are to use in the next realeses
-# server.port: 8443
-# server.ssl.key-store = /etc/openbaton/keystore.p12
-# server.ssl.key-store-password = password
-# server.ssl.keyStoreType = PKCS12
-# server.ssl.keyAlias = tomcat
-# server.https = false
-
-
+nfvo.delete.all-status= true
 </code></pre>
 
-<pre><code class="properties"># GSON properties
-spring.http.converters.preferred-json-mapper=gson
-spring.jackson.deserialization.fail-on-unknown-properties = true
-spring.jackson.deserialization.wrap-exceptions = false
-
-</code></pre>
-
-<pre><code class="properties">nfvo.vnfd.cascade.delete = false
-</code></pre>
-
-<p>This property enables the deletion of all dependent VNFDs in case the main NSD was deleted</p>
-<pre><code class="properties">vnfd.vnfp.cascade.delete = false
-</code></pre>
-
-<p>This property enables the deletion of all dependent VNFPs in case VNFD was deleted</p>
 <p><strong>MONITORING:</strong> Openbaton allows the monitoring of the VNFs via Zabbix. If you want to use this feature, install and configure Zabbix server following the guide at this page <a href="../zabbix-server-configuration/">Zabbix server configuration</a>.
-Once the Zabbix server is correctly configured and running, you only need to add following property. 
+Once the Zabbix server is correctly configured and running, you need only to add following property. 
 Every time a new Network Service is instantiated, each VNFC (VM) is automatically registered to Zabbix server.</p>
 <pre><code class="properties">nfvo.monitoring.ip = the Zabbix server ip
 </code></pre>
 
 <p>These are other parameters about the configuration of the nfvo behaviour:</p>
-<pre><code class="properties"># Wait for the NSR to be deleted
+<pre><code class="properties"># True to enable security (username and password to access), default to false
+nfvo.security.enabled = true
+# Wait for the NSR to be deleted
 nfvo.delete.wait = false 
 # The broker ip that needs to be reachable from all the components
 nfvo.rabbit.brokerIp = the broker ip here 
@@ -685,18 +677,25 @@ nfvo.vim.drivers.allowInfiniteQuota = false
 nfvo.start.ordered = false
 # Avoid doing the GRANT_OPERATION
 nfvo.quota.check = true
+# if true, deleting the nsd will remove also its vnfd
+nfvo.vnfd.cascade.delete = false
+# if true, deleting the vnfd will remove also its vnfpackage
+vnfd.vnfp.cascade.delete = false
+# if true, after deleting a NSR, the nfvo will wait for &quot;nfvo.delete.vnfr.wait.timeout&quot; after that timeout the VMs and VNFR will be deleted anyway from the NFVO
+nfvo.delete.vnfr.wait = false
+# this timeout is useful only if &quot;nfvo.delete.vnfr.wait&quot; is set to true
+nfvo.delete.vnfr.wait.timeout = 60
 </code></pre>
 
-<p>Those properties are needed in case you want to tune the performances of the NFVO a bit. When the VNFMs send a message to the NFVO, there is a pool of threads able to process these messages in parallel. These parameters allows you to change the pool configuration, for more details please check the <a href="http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/scheduling/concurrent/ThreadPoolTaskExecutor.html">spring documentation regarding thread pool executor</a> </p>
+<p>Those properties are needed in case you want to tune a bit the performances of the NFVO. When the VNFMs send a message to the NFVO, there is a pool of threads able to process these messages in parallel. These parameters allows you to change the pool configuration, for more details please check the <a href="http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/scheduling/concurrent/ThreadPoolTaskExecutor.html">spring documentation regarding thread pool executor</a> </p>
 <pre><code class="properties"># Thread pool executor configuration
 # for info see http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/scheduling/concurrent/ThreadPoolTaskExecutor.html
-vmanager-executor-core-pool-size = 20
-vmanager-executor-max-pool-size = 25
-vmanager-executor-queue-capacity = 500
-vmanager-keep-alive = 30
+nfvo.vmanager.executor.corepoolsize = 20
+nfvo.vmanager.executor.maxpoolsize = 30
+nfvo.vmanager.executor.queuecapacity = 500
+nfvo.vmanager.executor.keepalive = 30
 </code></pre>
 
-<p>Whenever some of those parameters are changed, you will need to restart the orchestrator.</p>
 <h3 id="lets-move-to-the-next-step">Let's move to the next step</h3>
 <p>Dependening on the approach used for deploying your VNF, you'll have either to install the generic-VNFM or install and register your own VNFM</p>
 <!---
@@ -721,10 +720,10 @@ Script for open external links in a new tab
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../vim-instance/" class="btn btn-neutral float-right" title="Register a PoP"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../use/" class="btn btn-neutral float-right" title="Introduction"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../install/" class="btn btn-neutral" title="Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href=".." class="btn btn-neutral" title="Get Started"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

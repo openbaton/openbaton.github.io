@@ -175,25 +175,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="install/">Overview</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="nfvo-installation/">Install NFVO</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="vim-instance/">Register a PoP</a>
+        <a class="" href="nfvo-installation/">Install Open Baton</a>
         
     </li>
 
@@ -224,25 +206,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="vnfm-generic/">Generic VNFM</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="vnfm-how-to-write/">Write your own VNFM</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="vnfm-vendor-specific/">Integrate your own VNFM</a>
+        <a class="" href="vim-instance/">Register a PoP</a>
         
     </li>
 
@@ -252,6 +216,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="vnfpackage/">Create your own VNF Package</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="vnfm-generic/">Generic VNFM</a>
         
     </li>
 
@@ -278,6 +251,15 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="nfvo-how-to-use-cli/">Use via the CLI</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="nfvo-sdk/">Use via the SDK</a>
         
     </li>
@@ -296,33 +278,6 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="integration-test-use/">Integration Tests</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="use-case-example/">A full example</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="use-case-ims-example/">OpenIMSCore example</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
         <a class="" href="tosca-iperf-scenario/">TOSCA iperf scenario</a>
         
     </li>
@@ -333,6 +288,55 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="tosca-CSAR-onboarding/">TOSCA CSAR on-boarding</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Tutorials</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="dummy-NSR/">Dummy NSR</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="iperf-NSR/">Iperf Scenario</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="ims-NSR/">OpenIMSCore example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="integration-test-use/">Integration Tests</a>
         
     </li>
 
@@ -373,6 +377,24 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="vim-plugin/">Write your own Plugin</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="vnfm-how-to-write/">Write your own VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="vnfm-vendor-specific/">Integrate your own VNFM</a>
         
     </li>
 
@@ -444,22 +466,28 @@ That enables providing elastic deployments of cost efficient network infrastruct
 One of the main concerns of ETSI NFV is to prove the feasibility of the cloud deployments of the typical network functions through proof of concept trials and prototypes as well as providing indications for further standardization in the areas of underlying infrastructures, software architectures, networking and management, and orchestration to improve performance and grant security of the overall infrastructure.
 ETSI NFV limits itself to this level of indications, considering that other standardization bodies and de-facto open source standards such as 3GPP and OpenStack should finalize the specific implementation work. </p>
 <h2 id="its-main-components">Its main components</h2>
-<p>OpenBaton provides the following components: </p>
+<p>OpenBaton rel.2 provides the many different features and components. </p>
 <ul>
-<li>A Network Function Virtualisation Orchestrator (NFVO) completely designed and implemented following the ETSI MANO specification</li>
-<li>A generic Virtual Network Function Manager (VNFM) able to manage the lifecycle of VNFs based on their descriptors</li>
-<li>A set of libraries which could be used for building your own VNFM</li>
+<li>A Network Function Virtualisation Orchestrator (NFVO) completely designed and implemented following the ETSI MANO specification. Read more <a href="./nfvo-installation">here</a></li>
+<li>A generic Virtual Network Function Manager (VNFM) able to manage the lifecycle of VNFs based on their descriptors. Read more <a href="./vnfm-generic">here</a></li>
+<li>A plugin mechanism for adding and removing different type of VIMs without having to re-write anything in your orchestration logic. Read more <a href="./vim-plugin">here</a></li>
+<li>A powerful event engine useful based on a pub/sub mechanism for the dispatching of lifecycle events execution</li>
+<li>An autoscaling engine which can be used for automatic runtime management of the scaling operation operations of your VNFs. Read more <a href="https://github.com/openbaton/autoscaling">here</a></li>
+<li>A fault management system which can be used for automatic runtime management of faults which may occur at any level. Read more <a href="https://github.com/openbaton/fm-system">here</a></li>
+<li>It integrates with the Zabbix monitoring system. Read more <a href="./zabbix-plugin">here</a></li>
+<li>A set of libraries (the openbaton-libs) which could be used for building your own VNFM. Read more <a href="https://github.com/openbaton/openbaton-libs">here</a></li>
 </ul>
+<p><img alt="Setup architecture" src="./images/install-architecture-rel.2.png" /></p>
 <h2 id="can-i-plug-in-my-network-functions">Can I plug in my Network Functions?</h2>
 <p>Yes, this is possible using two different approaches:</p>
 <ul>
-<li>integrating your own VNFM. In this case you can use either the REST interface, or the JMS one for interoperating with the NFVO</li>
+<li>integrating your own VNFM. In this case you can use either the REST interface, or the AMQP one for interoperating with the NFVO</li>
 <li>implementing a set of scripts which can be executed as part of the lifecycle event of your Virtual Network Function Descriptor. We provide a generic VNFM and EMS which can be used for executing them</li>
 </ul>
 <h2 id="can-i-use-openbaton-to-build-my-own-network-service">Can I use OpenBaton to build my own Network Service?</h2>
 <p>Yes! OpenBaton provides a NFVO which can interoperate with VNFMs implemented by third parties. In this project we provide also a set of tools (like the vnfm-sdk) which supports developers in building their own VNFM. </p>
 <h2 id="get-started">Get started</h2>
-<p>In order to get started you can follow the <a href="./install">installation guide</a></p>
+<p>In order to get started you can follow the <a href="./nfvo-installation">installation guide</a></p>
 <h2 id="get-in-contact">Get in contact</h2>
 <ul>
 <li>Via twitter: <a href="https://twitter.com/openbaton">twitter</a></li>
@@ -490,7 +518,7 @@ ETSI NFV limits itself to this level of indications, considering that other stan
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="install/" class="btn btn-neutral float-right" title="Overview"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="nfvo-installation/" class="btn btn-neutral float-right" title="Install Open Baton"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
     </div>
@@ -521,6 +549,6 @@ ETSI NFV limits itself to this level of indications, considering that other stan
 
 <!--
 MkDocs version : 0.14.0
-Build Date UTC : 2016-04-28 18:08:43.227232
+Build Date UTC : 2016-05-03 20:37:04.660651
 -->
 
