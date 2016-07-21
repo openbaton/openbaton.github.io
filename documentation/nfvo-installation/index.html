@@ -481,7 +481,7 @@ console.log('--------');
 <h3 id="install-the-latest-stable-open-baton-environment-from-source-code">Install the latest stable Open Baton environment from source code</h3>
 <p>This installation guide will provide you details on how to install the minimal set of Open Baton components using the boostrap scripts.</p>
 <p>To facilitate the installation procedures we provide a bootstrap script which will install the desired components and configure them for running a hello world VNF out of the box. To execute the bootstrap procedure you need to have curl installed (see http://curl.haxx.se/). This command should work on any linux system: </p>
-<pre><code class="bash">sh &lt;(curl -s http://get.openbaton.org/bootstraps/bootstrap) develop
+<pre><code class="bash">sh &lt;(curl -s http://get.openbaton.org/bootstrap) develop
 </code></pre>
 
 <p><strong>NOTE - By default RabbitMQ is installed on the host of the NFVO. Be aware of the fact that during the installation you will be prompted for entering the RabbitMQ IP and Port. Please make sure that this IP can be
