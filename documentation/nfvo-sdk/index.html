@@ -173,7 +173,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../nfvo-installation/">Install Open Baton</a>
+        <a class="" href="../nfvo-installation-deb/">Install Open Baton</a>
         
     </li>
 
@@ -196,6 +196,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../use/">Introduction</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../security/">First access</a>
         
     </li>
 
@@ -440,6 +449,8 @@ console.log('--------');
 		
 		
 		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -469,7 +480,7 @@ console.log('--------');
 }
 
 dependencies {
-    compile 'org.openbaton:sdk:2.0.1'
+    compile 'org.openbaton:sdk:2.1.1'
 }
 </code></pre>
 
@@ -488,18 +499,26 @@ dependencies {
 <tbody>
 <tr>
 <td>username</td>
-<td align="right">the username if the security is enabled in the NFVO</td>
+<td align="right">the username</td>
 </tr>
 <tr>
 <td>password</td>
-<td align="right">the password if the security is enabled in the NFVO</td>
+<td align="right">the password</td>
 </tr>
 <tr>
-<td>nfvo_ip</td>
+<td>projectId</td>
+<td align="right">the id of the project to use</td>
+</tr>
+<tr>
+<td>sslEnabled</td>
+<td align="right">set this to true if the NFVO uses SSL</td>
+</tr>
+<tr>
+<td>nfvoIp</td>
 <td align="right">the ip of the NFVO</td>
 </tr>
 <tr>
-<td>nfvo_port</td>
+<td>nfvoPort</td>
 <td align="right">the port of the orchestrator</td>
 </tr>
 <tr>
@@ -516,6 +535,8 @@ dependencies {
 <li>NetworkServiceDescriptorRestAgent</li>
 <li>VirtualNetworkFunctionDescriptorRestAgent</li>
 <li>NetworkServiceRecordRestAgent</li>
+<li>ProjectAgent</li>
+<li>UserAgent</li>
 <li>VimInstanceRestAgent</li>
 <li>VirtualLinkRestAgent</li>
 <li>VNFFGRestAgent</li>
@@ -552,12 +573,13 @@ dependencies {
 <li>updateSecurity</li>
 </ul>
 <p>The method names are explicit, they do what the name explains.</p>
-<h3 id="use-it">Use it</h3>
-<h6 id="create-viminstance">Create VimInstance</h6>
+<h3 id="usage-example">Usage example</h3>
+<h6 id="create-a-viminstance-using-the-sdk">Create a VimInstance using the SDK</h6>
 <pre><code class="java">public class Main {
 
     public static void main(String[] args) {
-        NFVORequestor nfvoRequestor = new NFVORequestor(&quot;username&quot;,&quot;password&quot;,&quot;nfvo_ip&quot;,&quot;nfvo_port&quot;,&quot;1&quot;);
+        boolean sslEnabled = true;
+        NFVORequestor nfvoRequestor = new NFVORequestor(&quot;username&quot;, &quot;password&quot;, &quot;projectId&quot;, sslEnabled, &quot;nfvo_ip&quot;, &quot;nfvo_port&quot;, &quot;1&quot;);
         VimInstanceRestAgent vimInstanceAgent = nfvoRequestor.getVimInstanceAgent();
 
         VimInstance vimInstance = new VimInstance();

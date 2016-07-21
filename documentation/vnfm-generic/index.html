@@ -173,7 +173,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../nfvo-installation/">Install Open Baton</a>
+        <a class="" href="../nfvo-installation-deb/">Install Open Baton</a>
         
     </li>
 
@@ -196,6 +196,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../use/">Introduction</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../security/">First access</a>
         
     </li>
 
@@ -440,6 +449,8 @@ console.log('--------');
 		
 		
 		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -568,7 +579,13 @@ Here an example (to make it more readable it is shown only the <strong>VNF lifec
 
 <ul>
 <li><strong>configurations</strong>: it contains specific parameters which you want to use in the scripts.</li>
-<li><strong>out-of-the-box</strong>: some parameters are automatically available into the scripts. These parameters are the IPs. They can be used in the script just using a variable called with the network name.</li>
+<li><strong>out-of-the-box</strong>: the following parameters are automatically available into the scripts:  <ol>
+<li>Private IP</li>
+<li>Floating IP (if requested)</li>
+<li>Hostname<br />
+Please check the example at the end of the page to understand this mechanism.</li>
+</ol>
+</li>
 </ul>
 <p>In the INSTANTIATE scripts, the parameters defined in these two fields are then available as environment variables into the script exactly as defined (i.e. you can get by $parameter_name).</p>
 <p>In the MODIFY scripts, the INSTANTIATE parameters are still available but plus there are environment variables that come from other VNF sources, where they are specified in the provides field. 
@@ -579,14 +596,14 @@ These kind of parameters are defined in the <em>requires</em> fields (of the VNF
 <h2 id="launch-the-generic-vnfm">Launch the Generic VNFM</h2>
 <p>To launch the Generic VNFM, execute the following command:</p>
 <pre><code class="bash">$ cd &lt;generic directory&gt;
-$ ./generic.sh start
+$ ./generic-vnfm.sh start
 </code></pre>
 
 <p>The Generic VNFM can handle more than one VNF (in parallel) of the same or different type, so that you need to start only one Generic VNFM.</p>
 <h1 id="example-with-dependency-and-scripts">EXAMPLE WITH DEPENDENCY AND SCRIPTS</h1>
-<p>Let's see a simple example with two VNFs: vnf-server and vnf-database.
+<p>Let's see a simple example with two VNFs: vnf-server and vnf-database.<br />
 The vnf-server needs the ip of the vnf-database to be able to connect properly. The following figure shows the source (vnf-database), the target (vnf-server)
-and the dependency (IP).</p>
+and the dependency (IP). Such VNFs are connected in the same virtual network called "vnet".</p>
 <p><img alt="ns with dependency" src="../images/generic-vnfm-ns-with-dependency.png" /></p>
 <p><strong>INSTANTIATE scripts</strong></p>
 <p>To start the VNFs we'll have two scripts <strong>instantiate-vnf-server.sh</strong> and <strong>instantiate-vnf-database.sh</strong> (more scripts are possible). Here an example of the instantiate-vnf-server.sh script:</p>
@@ -594,21 +611,31 @@ and the dependency (IP).</p>
 
 echo &quot;INSTANTIATIATION of the VNF server&quot;
 echo &quot;The following parameters are available:&quot;
+
+echo &quot;Out-of-the-box parameters:&quot;
+echo &quot;Hostname: ${hostname}&quot;
+echo &quot;Private IP: ${vnet}&quot;
+echo &quot;Floating IP (if requested otherwise it does not exist): ${vnet_floatingIp}&quot;
+
+echo &quot;Configuration parameters:&quot;
 echo &quot;The answer to everything is.. ${ANSWER_TO_EVERYTHING}&quot;
 
 # ... Add the code to start the vnf_server ...
 </code></pre>
 
-<p><strong>MODIFY script</strong></p>
+<p><strong>CONFIGURE script</strong></p>
 <p>After the instantiation of the vnf-server we would configure it with the following <strong>database_connectToDb.sh</strong> script:</p>
 <pre><code class="bash">#!/bin/bash
 
-echo &quot;This is the ip of the vnf-database: ${database_private}&quot;
-# ... Add the code to connect to the vnf-database with the ip: ${database_private1} ...
+echo &quot;This is the ip of the vnf-database: ${database_vnet}&quot;
+echo &quot;This is the floating ip of the vnf-database: ${database_vnet_floatingIp}&quot;
+echo &quot;This is the hostname of the vnf-database: ${database_hostname}&quot;
+
+# ... Add the code to connect to the vnf-database with the ip: ${database_vnet} ...
 
 </code></pre>
 
-<p><strong>Note1</strong>: <em>database</em> is the type of the vnf-database, <em>private</em> is the name of the network.</p>
+<p><strong>Note1</strong>: <em>database</em> is the type of the vnf-database, <em>vnet</em> is the name of the network.</p>
 <p><strong>Note2</strong>: All the scripts need to be in a repository or in the vnf package (see the vnf package structure <a href="../vnfpackage">here</a>).</p>
 <p>In order to deploy the VNFs we have to create both the VNF descriptor: <strong>vnf-database-descriptor.json</strong> and <strong>vnf-server-descriptor.json</strong>. Below we'll be showed the most relevant part of them:</p>
 <p><strong>vnf-database-descriptor.json</strong></p>
@@ -677,7 +704,7 @@ echo &quot;This is the ip of the vnf-database: ${database_private}&quot;
     ],
     &quot;vld&quot;:[
         {
-            &quot;name&quot;:&quot;private&quot;
+            &quot;name&quot;:&quot;vnet&quot;
         }
     ],
     &quot;vnf_dependency&quot;:[
@@ -689,7 +716,7 @@ echo &quot;This is the ip of the vnf-database: ${database_private}&quot;
                 &quot;name&quot;: &quot;vnf-server&quot;
             },
             &quot;parameters&quot;:[
-                &quot;private&quot;
+                &quot;vnet&quot;
             ]
         }
     ]

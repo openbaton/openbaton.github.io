@@ -173,7 +173,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../nfvo-installation/">Install Open Baton</a>
+        <a class="" href="../nfvo-installation-deb/">Install Open Baton</a>
         
     </li>
 
@@ -196,6 +196,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../use/">Introduction</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../security/">First access</a>
         
     </li>
 
@@ -440,6 +449,8 @@ console.log('--------');
 		
 		
 		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -527,7 +538,7 @@ mainClassName = 'org.myplugin.example.Starter'
 
 
 dependencies {
-    compile 'org.openbaton:plugin-sdk:2.0.1'
+    compile 'org.openbaton:plugin-sdk:2.1.1'
     compile'org.springframework:spring-context:4.2.1.RELEASE'
 }
 
@@ -540,16 +551,10 @@ dependencies {
 <li>The <strong>Starter Class</strong> that contain the main function for bootstrapping the Vim plugin</li>
 </ol>
 <h4 id="type-of-vim-instance">Type of Vim Instance</h4>
-<p>OpenBaton expects only these three <strong>type</strong> of Vim Instance:</p>
-<ol>
-<li>Test</li>
-<li>OpenStack</li>
-<li>Amazon</li>
-</ol>
-<p><strong>NOTE:</strong> Your Vim plugin implementation <strong><em>type</em></strong> should be one of these to be launched and used by OpenBaton</p>
+<p>OpenBaton provides a specific class for handling the <strong>openstack</strong> type or the <strong>test</strong> type thus these two types are supported. For all the other types a generic class will handle the communication between the NFVO and your plugin.</p>
 <h3 id="1-implement-vimdriver">1. Implement VimDriver</h3>
-<p>The <em>VimDriver</em> is an bastract class that contains tha basic functionality that a Vim Instance should be provide, and extends the <a href="http://docs.oracle.com/javase/7/docs/api/java/rmi/Remote.html">Remote Class</a>. </p>
-<p><em><strong>NOTE</strong></em>: If you want to implement a Monitoring plugin, then you need to implement the Interface <em>ResourcePerformanceManagement</em></p>
+<p>The <em>VimDriver</em> is an bastract class that contains tha basic functionalities that a Vim Instance has to provide. </p>
+<p><em><strong>NOTE</strong></em>: If you want to implement a Monitoring plugin, then you need to implement the Abstract Class <em>MonitoringPlugin</em></p>
 <p>Your <strong>MyVim</strong> class will implement the methods inherited from <em>VimDriver</em> that manages your Vim Instance:</p>
 <table>
 <thead>
@@ -671,7 +676,7 @@ import java.util.Set;
 
 @Service
 @Scope(&quot;prototype&quot;)
-public class MyVim implements VimDriver{
+public class MyVim extends VimDriver{
 
 
     private Logger log = LoggerFactory.getLogger(this.getClass());
@@ -692,31 +697,13 @@ public class MyVim implements VimDriver{
     }
 
 
-    // ...
-}
-</code></pre>
-
-<h3 id="2-starter-class">2. Starter Class</h3>
-<p>Create another class and set the path to it in a variable <em>mainClassName</em> in <em>build.gradle</em>.
-The starter class should be like the following:</p>
-<pre><code class="java">package org.myplugin.example;
-
-import org.openbaton.plugin.PluginStarter;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-public class Starter {
-
-    private static Logger log = LoggerFactory.getLogger(Starter.class);
-
     public static void main(String[] args) {
-        log.info(&quot;params are: pluginName registryIp registryPort\ndefault is test localhost 1099&quot;);
-
-    PluginStartup.startPluginRecursive(&quot;./path-to-folder&quot;, true, &quot;broker-ip&quot;, &quot;5672&quot;, 15, &quot;admin&quot;, &quot;openbaton&quot;, &quot;15672&quot;);
-
+        PluginStarter.registerPlugin(MyVim.class, &quot;my-type&quot;, &quot;broker-ip&quot;, 5672, 10);
+    }
 }
 </code></pre>
 
+<p>As you can notice, there is the need of a <em>main</em> method to start multiple instances of the plugin (in this example are 10, the last parameter).</p>
 <h2 id="run-your-vim-plugin-in-openbaton-environment">Run your Vim plugin in OpenBaton environment</h2>
 <p>Under the folder of your project <em>src/main/resources</em> you should create a file <strong>plugin.conf.properties</strong> and write the variable <strong>type = <em>the-vim-type</em></strong>.
 The structure of your project should be like:</p>
@@ -728,7 +715,7 @@ Congratulations you have your version of the interface for your Vim Instance tha
 <h2 id="use-my-plugin">Use my plugin</h2>
 <p>Once you copied the jar file into the right folder, you need to (re)start the NFVO. The plugin will automatically register and you can see that there will be a log file in the NFVO folder called <em>plugin-myPlugin.log</em> containing the logs of the plugin. The myPlugin now acts as a normal plugin so for using it check out the <a href="../vim-instance/">Vim instance documentation</a> in order to point out to the new plugin.</p>
 <p><strong>NOTE</strong>: you can also launch your plugin from your command line just typing</p>
-<pre><code class="bash">$ java -jar myPlugin-1.0-SNAPSHOT.jar [the-vim-type] [rabbitmq-ip] [rabbitmq-port] [n-of-consumers] [user] [password]
+<pre><code class="bash">$ java -jar myPlugin-1.0-SNAPSHOT.jar
 </code></pre>
 
 <!---

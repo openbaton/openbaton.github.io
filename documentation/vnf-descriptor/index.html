@@ -173,7 +173,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../nfvo-installation/">Install Open Baton</a>
+        <a class="" href="../nfvo-installation-deb/">Install Open Baton</a>
         
     </li>
 
@@ -196,6 +196,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../use/">Introduction</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../security/">First access</a>
         
     </li>
 
@@ -438,6 +447,8 @@ console.log('--------');
 		
 		
 		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -632,8 +643,39 @@ Currently supported events are:</p>
 <h3 id="deployment-flavour">Deployment Flavour</h3>
 <p>A delpoyment flavour corresponds to a flavour name existing in the VimInstance.
 For example if you are using Openstack as Vim, the flavour_key parameter shall correspond to a <a href="http://docs.openstack.org/openstack-ops/content/flavors.html">flavour name of Openstack</a> (e.q. m1.small).</p>
-<h3 id="provides-requires">Provides, Requires</h3>
-<p>This list of parameter names defines the parameters that the VnfManager will fill at runtime. For that reason they have a meaning only if you <a href="../vnfm-how-to-write">write your own VnfManager</a>. This parameters are then available in any scripts. For the usage of the parameters, please, refer to <a href="../vnf-parameters">How to use the parameters</a> page.</p>
+<h3 id="provides">Provides</h3>
+<p>This list of parameter names defines the parameters that the VnfManager will fill at runtime. For that reason they have a meaning only if you <a href="../vnfm-how-to-write">write your own VnfManager</a>. These parameters are then available in any scripts. For the usage of the parameters, please, refer to <a href="../vnf-parameters">How to use the parameters</a> page.</p>
+<h3 id="requires">Requires</h3>
+<p>The requires field provides an alternative method for defining VNF dependencies. The regular way is to define VNF dependencies in the Network Service Descriptor by defining the source, target and parameters of the dependency. But you can also use the requires field in the VNFD to achieve the same result. Let's look at an example to understand how to do this. Here is a VNF dependency defined in the classic way. </p>
+<pre><code class="json">...
+&quot;vnf_dependency&quot;:[
+        {
+            &quot;source&quot;:{
+                &quot;name&quot;:&quot;server&quot;
+            },
+            &quot;target&quot;:{
+                &quot;name&quot;:&quot;client&quot;
+            },
+            &quot;parameters&quot;:[
+                &quot;netname_floatingIp&quot;
+            ]
+        }
+]
+...
+</code></pre>
+
+<p>This creates a VNF dependency that provides the floating ip of the VNFD with the type server to the VNFD with the type client. 
+The same can be done by writing the following in the requires field of the VNFD with type client: </p>
+<pre><code class="json">...
+&quot;requires&quot;:{
+    &quot;server&quot;:{
+        &quot;parameters&quot;:[&quot;netname_floatingIp&quot;]
+    }
+}
+...
+</code></pre>
+
+<p>The <em>"server"</em> field specifies that the source of the dependency is the VNFD with the type server. The target is the VNFD that contains the requires field, in this case the VNFD with type client. </p>
 <!---
 References
 -->
@@ -660,7 +702,7 @@ Script for open external links in a new tab
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../zabbix-server-configuration/" class="btn btn-neutral float-right" title="**HIDDEN**"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../nfvo-installation/" class="btn btn-neutral float-right" title="**HIDDEN**"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../FAQ/" class="btn btn-neutral" title="FAQ"><span class="icon icon-circle-arrow-left"></span> Previous</a>
