@@ -173,7 +173,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../nfvo-installation/">Install Open Baton</a>
+        <a class="" href="../nfvo-installation-deb/">Install Open Baton</a>
         
     </li>
 
@@ -196,6 +196,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../use/">Introduction</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../security/">First access</a>
         
     </li>
 
@@ -440,6 +449,8 @@ console.log('--------');
 		
 		
 		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -460,15 +471,30 @@ console.log('--------');
                           <h1 id="openbaton-dashboard">OpenBaton Dashboard</h1>
 <p>The Dashboard of OpenBaton helps you managing the lifecycle of different objects like 
 VimInstaces, Network Service Descriptors/Records and Virtual Network Function Descriptors/Records in the OpenBaton environment.</p>
+<h2 id="login">Login</h2>
+<p>The first page that you will see after typing <em>http://url-to-nfvo:8080</em> or <em>https://url-to-nfvo:8443</em> (depends whether SSL is enabled or not) into your browser is the following login form.</p>
+<p><img alt="Login" src="../images/login.png" /></p>
+<p>The default user is called <em>admin</em> and has the password <em>openbaton</em>. </p>
 <h2 id="overview">Overview</h2>
 <p>The index page shows an overview of the state of the NFVO </p>
 <ol>
 <li>Number of Network Service Records</li>
 <li>Number of Virtual Network Functions</li>
-<li>Number of Virtual Deployment Units</li>
 <li>Number of Network Service Descriptors</li>
 </ol>
 <p><img alt="Overview" src="../images/nfvo-how-to-use-gui-overview.png" /></p>
+<h2 id="security">Security</h2>
+<p>The NFVO uses projects and users with assigned roles so that multiple selected users can work in the same project environment.<br />
+The parts of the GUI to manage users and projects are marked red in the following screenshot. </p>
+<p><img alt="Security overview" src="../images/nfvo-how-to-use-gui-security-overview.png" /></p>
+<p>In the upper right corner you can see a the current project in which you are working next to the folder label.<br />
+Click on it to switch to other projects you have access to.<br />
+Next to this you can see your user name. Click on it to extend a menu with the logout button. 
+You can also change the password by choosing the command in this menu or use the "help" button to open the documentation. </p>
+<p>If you select <em>Projects</em> or <em>Users</em> under the <em>Identity</em> menu item on the left side you will get to overviews of the selected subject. There you can see, add and remove projects and users <strong>if you are authorized</strong>. </p>
+<p>The following screenshot shows the creation of a new user named <em>new user</em> who is assigned to the project <em>default</em> as a <em>GUEST</em> and to the project <em>another project</em> as an <em>ADMIN</em>.</p>
+<p><img alt="Add user" src="../images/nfvo-how-to-use-gui-add-user.png" /></p>
+<p>The NFVO also supports SSL. If SSL is enabled you have to use <em>https://url-to-nfvo:8443</em> to access the GUI. </p>
 <h2 id="manage-pops">Manage PoPs</h2>
 <p>On this page you can see the list of Vim Instances registered</p>
 <p><img alt="List of Vim Instances" src="../images/nfvo-how-to-use-gui-vim-page.png" /></p>
@@ -492,13 +518,12 @@ On this page you can see the list of NS Descriptors stored in OpenBaton</p>
 </ol>
 <p>Upload a json-file that contains the NSD</p>
 <p><img alt="NSD create by File" src="../images/nfvo-how-to-use-gui-NSD-create-file.png" /></p>
-<p>Create a NSD by using the VNFD from the Packages, just click on the button "Create NSD"</p>
-<p><img alt="NSD create by VNFDs" src="../images/nds-create-NSD.png" /></p>
-<p>This is the form which allows you to choose the VNFDs to be used in the NSD come from the Catalogue (and contained inside the VNFPackages)</p>
+<p>Create a NSD by using the VNFD from the Packages, just click on the button "Create NSD".<br />
+This is the form which allows you to choose the VNFDs to be used in the NSD come from the Catalogue (and contained inside the VNFPackages)</p>
 <p><img alt="NSD create by VNFDs" src="../images/form-create-NSD.png" /></p>
-<p>Once you have added the VNFDs to the NSD you can add one o more VLD and VNF Dependency like in the picture below</p>
+<p>Once you have added the VNFDs to the NSD you can add one or more VLD and VNF Dependency like in the picture below using the + button</p>
 <p><img alt="Form with VNFDs" src="../images/form-with-VNFDs.png" /></p>
-<p>In the picture below you can see how to add a VNF Dependency to the NSD and possible parameters</p>
+<p>In the picture below you can see how to add a VNF Dependency to the NSD and possible parameters by clicking on <em>Dependencies +</em></p>
 <p><img alt="Add VNF Dependency NSD" src="../images/form-add-dependecy-pkg.png" /></p>
 <h3 id="network-service-descriptor-information">Network Service Descriptor Information</h3>
 <p>If you click on the id of a NSD shown in the list of NSDs you can see the information
@@ -554,7 +579,7 @@ changes the STATE of a particular <strong>virtualNetworkFunctionId</strong> or <
 <p>For getting the information click on the id link of the Event</p>
 <p><img alt="Event List" src="../images/event-list.png" /></p>
 <p>This are the information of the Event selected</p>
-<p><img alt="Event Info" src="../images/even-info.png" /></p>
+<p><img alt="Event Info" src="../images/event-info.png" /></p>
 <p><!---
 Script for open external links in a new tab
 -->

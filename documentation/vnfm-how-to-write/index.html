@@ -173,7 +173,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../nfvo-installation/">Install Open Baton</a>
+        <a class="" href="../nfvo-installation-deb/">Install Open Baton</a>
         
     </li>
 
@@ -196,6 +196,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../use/">Introduction</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../security/">First access</a>
         
     </li>
 
@@ -427,6 +436,8 @@ console.log('--------');
     
 </ul></li>
                  
+		
+		
 		
 		
 		
@@ -778,7 +789,7 @@ By using the simple vnfm-sdk you need to take care about all the communication b
 
 dependencies {
     compile 'org.hibernate:hibernate-core:4.3.10.Final'
-    compile 'org.openbaton:vnfm-sdk-amqp:2.0.1'
+    compile 'org.openbaton:vnfm-sdk-amqp:2.1.1'
 }
 
 //...
@@ -1044,9 +1055,9 @@ Therefore, you need to do several things:</p>
 <li>Connect an according VIM to the plugin or use the plugin directly</li>
 </ul>
 <p><strong>Note</strong> If you want to use the Vim with plugins, you need to fetch also the interfaces and VIM implementations by adding the following lines to your build.gradle dependencies</p>
-<pre><code class="gradle">compile 'org.openbaton:vim-int:2.0.1'
-compile 'org.openbaton:vim-impl:2.0.1'
-compile 'org.openbaton:sdk:2.0.1'
+<pre><code class="gradle">compile 'org.openbaton:vim-int:2.1.1'
+compile 'org.openbaton:vim-impl:2.1.1'
+compile 'org.openbaton:sdk:2.1.1'
 </code></pre>
 
 <p>After that you need to rebuild your project for fetching the dependencies automatically.</p>

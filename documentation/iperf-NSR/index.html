@@ -173,7 +173,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../nfvo-installation/">Install Open Baton</a>
+        <a class="" href="../nfvo-installation-deb/">Install Open Baton</a>
         
     </li>
 
@@ -196,6 +196,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../use/">Introduction</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../security/">First access</a>
         
     </li>
 
@@ -440,6 +449,8 @@ console.log('--------');
 		
 		
 		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -477,7 +488,7 @@ This tutorial makes use of:</p>
 <h2 id="store-the-network-service-descriptor">Store the Network Service Descriptor</h2>
 <p>Download the following <a href="../descriptors/tutorial-iperf-NSR/tutorial-iperf-NSR-privateIPs.json">iPerf NSD using private IPs</a> or <a href="../descriptors/tutorial-iperf-NSR/tutorial-iperf-NSR-floatingIPs.json">iPerf NSD using floating IPs</a>, and upload it in the catalogue either using the dashboard or the cli.</p>
 <h3 id="using-dashboard">Using dashboard</h3>
-<p>If you want to use the Dashboard (checkout the <a href="../nfvo-how-to-use-gui">dashboard documentation</a> for more information on how to use it), open it at the URL http://your-ip-here:8080, go to <code>Catalogue -&gt; NS Descriptors</code> and choose the NSD of your choice by clicking on <code>Upload NSD</code> and selecting the Descriptor's json file.</p>
+<p>If you want to use the Dashboard (checkout the <a href="../nfvo-how-to-use-gui">dashboard documentation</a> for more information on how to use it), open it at the URL http://your-ip-here:8080 and log in (default username and password are <em>admin</em> and <em>openbaton</em>). Go to <code>Catalogue -&gt; NS Descriptors</code> and choose the NSD of your choice by clicking on <code>Upload NSD</code> and selecting the Descriptor's json file.</p>
 <p><img alt="Onboarding-NSD" src="../images/tutorials/tutorial-iperf-NSR/nsd-onboarding.png" /></p>
 <h3 id="using-cli">Using CLI</h3>
 <p>If you want to use the CLI (checkout the <a href="../nfvo-how-to-use-cli">openbaton-client documentation</a> for more information on how to install it), you need to execute the following command in order to onboard the NSD iof the iPerf scenario by using private IPs:</p>
@@ -647,7 +658,7 @@ sudo apt-get update &amp;&amp; sudo apt-get install -y iperf screen
 <p>As said before in the documentation <a href="../vnfm-generic">VNFManager Generic</a>, <em>the scripts in the CONFIGURE lifecycle event need to start with the type of the source VNF followed by _ and the name of the script</em>, so the `server_configure.sh is:</p>
 <pre><code class="bash">#!/bin/bash
 
-screen -d -m -S client iperf -c $server_private1 -t 300
+screen -d -m -S client iperf -c $server_private -t 300
 </code></pre>
 
 <p>These scripts shown above, are contained in the VNF Package or in a git repository accessible from the VM. Be aware that all the scripts will be executed with root permissions. Once all these steps are done we are ready to create a Network Service Record from the id of the Network Service Descriptor. </p>

@@ -173,7 +173,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../nfvo-installation/">Install Open Baton</a>
+        <a class="" href="../nfvo-installation-deb/">Install Open Baton</a>
         
     </li>
 
@@ -196,6 +196,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../use/">Introduction</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../security/">First access</a>
         
     </li>
 
@@ -438,6 +447,8 @@ console.log('--------');
 		
 		
 		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -456,11 +467,12 @@ console.log('--------');
                       <div class="section">
                         
                           <h1 id="write-your-own-integration-tests">Write your own integration tests</h1>
-<h2 id="description">Description</h2>
-<p>The integration tests are defined in .ini files which are in the directory <em>integration-tests/src/main/resources/integration-test-scenarios</em>. If you want to add an integration test, just add its ini file to this folder. </p>
+<h2 id="overview">Overview</h2>
+<p>In this site we will describe how to write test cases for the integration tests. 
+The test scenarios are defined in .ini files which are in the directory <strong>integration-tests/src/main/resources/integration-test-scenarios</strong>. If you want to add an integration test, just add its ini file to this folder. </p>
 <h3 id="ini-file-structure">Ini file structure</h3>
 <p>In the ini file you can describe a graph or tree like execution plan of different tasks. 
-We will implement here as an example the test which is found in the <em>scenario-real-iperf.ini</em> file step by step. 
+As an example we will implement the test which is found in the <em>scenario-real-iperf.ini</em> file step by step. 
 First we need a base node and define the maximum time of the integration test and the maximum number of concurrent successors. </p>
 <pre><code class="ini">[it]
 ;set the maximum time (in seconds) of the Integration test. e.g. 10 min = 600 seconds
@@ -469,7 +481,7 @@ max-integration-test-time = 800
 max-concurrent-successors = 10
 </code></pre>
 
-<p>After that the first step is to store a vim instance on the orchestrator. </p>
+<p>After that the first step is to store a vim instance to the orchestrator. </p>
 <pre><code class="ini">[it]
 ;set the maximum time (in seconds) of the Integration test. e.g. 10 min = 600 seconds
 max-integration-test-time = 800
@@ -483,9 +495,9 @@ name-file = real-vim.json
 </code></pre>
 
 <p>The node we just added will create a vim instance. That is defined by the class-name field. 
-The class VimInstanceCreate stores a vim instance from the <em>real-vim.json</em> file on the orchestrator. 
+The class VimInstanceCreate stores a vim instance from the <em>real-vim.json</em> file to the orchestrator. 
 A complete list of classes you can use is provided later in this document. 
-The file <em>real-vim.json</em> has to be stored either in <em>/etc/openbaton/integration-test/vim-instances/real-vim.json</em> or in <em>.../integration-tests/src/main/resources/etc/json_file/vim_instances/real-vim.json</em>. 
+The file <em>real-vim.json</em> has to be stored either in <strong>/etc/openbaton/integration-test/vim-instances/real-vim.json</strong> or in <strong>.../integration-tests/src/main/resources/etc/json_file/vim_instances/real-vim.json</strong>. 
 The file in the first folder has a higher priority than the one in the second one.</p>
 <p>We already know that we want to delete this vim from the orchestrator at the end of the test. 
 So we can add the following:</p>
@@ -507,15 +519,15 @@ class-name = VimInstanceDelete
 
 <p>The successor-remover field specifies, that the node <em>vim-d-1</em> will be executed after every child node/task of <em>vim-c-1</em> has finished. 
 Every node can only have one successor-remover. 
-A successor remover node cannot have child nodes. 
 The new node gets the information which vim instance it should delete passed from the first node. </p>
 <p>The next step will be to create and delete a network service descriptor (NSD). </p>
-<p>[it]
+<pre><code class="ini">[it]
 ;set the maximum time (in seconds) of the Integration test. e.g. 10 min = 600 seconds
 max-integration-test-time = 800
 ;set the maximum number of concurrent successors (max number of active child threads)
-max-concurrent-successors = 10</p>
-<pre><code class="ini">;vimInstance-create
+max-concurrent-successors = 10
+
+;vimInstance-create
 [it/vim-c-1]
 class-name = VimInstanceCreate
 name-file = real-vim.json
@@ -543,7 +555,7 @@ At the moment there is just one so only one NSD will be stored on the orchestrat
 But if we would provide for example a 2, then this task would be executed twice concurrently. 
 Every task would be independent and every child node which is defined for <em>nsd-c-1</em> would be executed for every instance separately. 
 The name-file specifies the .json file that shall be used to create the NSD. 
-It may be stored either in <em>/etc/openbaton/integration-test/network-service-descriptors/NetworkServiceDescriptor-iperf-real.json</em> or in <em>.../integration-tests/src/main/resources/etc/json_file/network_service_descriptors/NetworkServiceDescriptor-iperf-real.json</em>. 
+It may be stored either in <strong>/etc/openbaton/integration-test/network-service-descriptors/NetworkServiceDescriptor-iperf-real.json</strong> or in <strong>.../integration-tests/src/main/resources/etc/json_file/network_service_descriptors/NetworkServiceDescriptor-iperf-real.json</strong>. 
 Again the former folder has a higher priority than the latter one. </p>
 <p>In the next step we will deploy the network service record (NSR) from the created NSDs and wait for its instantiation. </p>
 <pre><code class="ini">[it]
@@ -585,7 +597,7 @@ timeout = 600
 action = INSTANTIATE_FINISH
 </code></pre>
 
-<p><em>nsr-c-1</em> works similar to the creation of a NSD. It gets its information on which NSD it should use from the preceiding task, so it has to be the NSD creation node. 
+<p><em>nsr-c-1</em> works similar to the creation of a NSD. It gets its information which NSD it should use from the preceiding task, so it has to be the NSD creation node. 
 The interesting part in this step is the <em>nsr-w-1</em> node. 
 This waits for the orchestrator to send the action INSTANTIATE_FINISH. If it receives it, the task was successful and the integration test proceeds. </p>
 <p>Now we will show how to test, if the network service is actually running.
@@ -594,7 +606,7 @@ Those commands have to be written in scripts which can be placed in two location
 Either in <strong>/etc/openbaton/integration-test/scripts/</strong> or in <strong>/integration-tests/src/main/resources/etc/scripts/</strong> in the
 project itself. The former directory is checked first for a script name. If it does not exist there the latter location is used. 
 Bash sources the scripts on the remote machines. 
-But where do I specify the Virtual Machines on which the scripts shall be executed?? Well, also in the .ini file.
+But where do I specify the Virtual Machines on which the scripts shall be executed? Well, also in the .ini file.
 Use the <em>GenericServiceTester</em>.</p>
 <pre><code class="ini">[it]
 ;set the maximum time (in seconds) of the Integration test. e.g. 10 min = 600 seconds
@@ -760,11 +772,11 @@ fi
 <p>After the iperf-running.sh script, the iperf-srv-connection.sh script will be executed on the server virtual machines 
 and on the client one's also iperf-running.sh and then the script iperf-clt-conection.sh.</p>
 <p>Now imagine, that you did not specify one virtual network function component in the client's NSD, but five. And you want to test them all.
-Do you have to create five tasks for that?? No, if you define the task for the client as shown above, the integration test will execute
+Do you have to create five tasks for that? No, if you define the task for the client as shown above, the integration test will execute
 the scripts on every virtual machine, that was deployed by the vnfd with the type <em>client</em>.</p>
 <p>And if you have some virtual network function components connected to two different networks but just want to test the ones connected
 to one of them, you can add a <em>net-name</em> field to the task and just the ones connected to it will be involved like in the server task.</p>
-<p>Afterwards we want to delete the NSDs and simutaniously wait for a message from the orchestrator, that it has been done. </p>
+<p>Afterwards we want to delete the NSDs and simutaniously wait for a message from the orchestrator, that the deletion finished. </p>
 <pre><code class="ini">[it]
 ;set the maximum time (in seconds) of the Integration test. e.g. 10 min = 600 seconds
 max-integration-test-time = 800
@@ -855,6 +867,37 @@ You can access the floating ips of VNFCs by writing ${vnfrtype_fip} or ${vnfrtyp
 Of course, this will only work if there is a floating ip for that virtual machine. 
 The configurations are accessible by typing ${vnfrtype_configurationkey}. 
 For all the variables it is essential, that you enclose them with braces otherwise they won't work. </p>
+<h2 id="task-execution-order">Task execution order</h2>
+<p>Just to clarify the execution order of the tasks specified in the ini files here is a little example without describing what the tasks do. 
+The successor-removers of a task are just executed when all the other child tasks and their subsequent tasks finished.</p>
+<pre><code class="ini">[it/A]
+successor-remover = H
+
+[it/A/H]
+...
+
+[it/A/B]
+...
+
+[it/A/C]
+...
+
+[it/A/C/D]
+successor-remover = G
+
+[it/A/C/D/G]
+...
+
+[it/A/C/D/E]
+...
+
+[it/A/C/D/F]
+...
+</code></pre>
+
+<p>The execution order of this example looks like this:</p>
+<p><img alt="Execution order" src="../images/execution-order.png" /></p>
+<p>Tasks that are side by side can run concurrently. </p>
 <h2 id="other-important-information">Other important information</h2>
 <p>For the integration test to be able to ssh to the virtual machines on openstack, you have to provide a .pem file of a key-pair you are using on openstack.
 Download this file, name it <em>integration-test.pem</em> and put it into the directory <strong>/etc/openbaton/integration-test/</strong>.
@@ -947,9 +990,9 @@ Do NOT use '-' in types of VNFDs or configuration names as you cannot use them i
 </tr>
 <tr>
 <td>NetworkServiceDescriptorWait</td>
-<td>Used for waiting for the deletion of a NSD from the NFVO</td>
-<td></td>
-<td></td>
+<td>Wait for a specific event of the NFVO to happen that is related to NSDs</td>
+<td>action</td>
+<td>The event which will be waited for to happen</td>
 </tr>
 <tr>
 <td>NetworkServiceRecordCreate</td>
@@ -971,15 +1014,15 @@ Do NOT use '-' in types of VNFDs or configuration names as you cannot use them i
 </tr>
 <tr>
 <td>NetworkServiceRecordWait</td>
-<td>Wait for a specific action of the NFVO to happen that is related to NSRs</td>
+<td>Wait for a specific event of the NFVO to happen that is related to NSRs</td>
 <td>action</td>
-<td>The action which will be waited for to happen</td>
+<td>The event which will be waited for to happen</td>
 </tr>
 <tr>
 <td></td>
 <td></td>
 <td>timeout</td>
-<td>After this time (in seconds) the task will fail if the action did not occur yet</td>
+<td>After this time (in seconds) the task will fail if the event did not occur yet</td>
 </tr>
 <tr>
 <td>PackageDelete</td>
@@ -1048,22 +1091,34 @@ Do NOT use '-' in types of VNFDs or configuration names as you cannot use them i
 <td></td>
 </tr>
 <tr>
+<td>VirtualNetworkFunctionDescriptorDelete</td>
+<td>Delete the VNFDs of a NSD passed from the preceding task, filtered by vnfd name and/or type; if no name and type are passed, all the VNFDs associated to the passed NSD will be deleted</td>
+<td>vnf-type</td>
+<td>The type of the VNFDs that shall be deleted; this field can be omitted if the type is not important for the choice of VNFDs to delete</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>vnf-name</td>
+<td>The name of the VNFDs that shall be deleted; this field can be omitted if the name is not important for the choice of VNFDs to delete</td>
+</tr>
+<tr>
 <td>VirtualNetworkFunctionRecordWait</td>
-<td>Wait for an action sent by the NFVO which is related to a VNFR</td>
+<td>Wait for an event sent by the NFVO which is related to a VNFR</td>
 <td>action</td>
-<td>The action which will be waited for to happen</td>
+<td>The event which will be waited for to happen</td>
 </tr>
 <tr>
 <td></td>
 <td></td>
 <td>timeout</td>
-<td>After this time (in seconds) the task will fail if the action did not occur yet</td>
+<td>After this time (in seconds) the task will fail if the event did not occur yet</td>
 </tr>
 <tr>
 <td></td>
 <td></td>
 <td>vnf-type</td>
-<td>The type of the VNFR that should produce the awaited action</td>
+<td>The type of the VNFR that should produce the awaited event</td>
 </tr>
 <tr>
 <td>VNFRStatusTester</td>
@@ -1175,7 +1230,7 @@ IMPORTANT: in the json file, the old_value must have the following sintax:</p>
 <p>In the json file, passed to the method Parser.randomize(), all the old_value will be replace
 with new_value plus 3 random characters (e.g. new_valuezxd).</p>
 <h3 id="simple-parser-example">Simple parser example</h3>
-<p>Parser config file (parser.config):</p>
+<p>Parser properties file:</p>
 <pre><code>admin=admin***
 </code></pre>
 
@@ -1185,15 +1240,19 @@ with new_value plus 3 random characters (e.g. new_valuezxd).</p>
 }
 </code></pre>
 
-<p>Use of Parser class:</p>
-<pre><code class="java">String newJson = Parser.randomize(oldJson, &quot;parser.config&quot;);
-</code></pre>
-
-<p>The string newJson will be:</p>
+<p>The new json file used by the integration tests will be:</p>
 <pre><code>{
 &quot;username&quot;:&quot;adminxkz&quot;
 }
 </code></pre>
+
+<h3 id="parser-configuration">Parser configuration</h3>
+<p>If you want to apply the parser on NSDs, create the file <strong>/etc/openbaton/integration-test/parser-properties/nsd.properties</strong>.<br />
+If you want to apply the parser on Vim Instances, create the file <strong>/etc/openbaton/integration-test/parser-properties/vim.properties</strong>. </p>
+<!---
+References
+
+-->
                         
                       </div>
                     </div>

@@ -173,7 +173,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../nfvo-installation/">Install Open Baton</a>
+        <a class="" href="../nfvo-installation-deb/">Install Open Baton</a>
         
     </li>
 
@@ -196,6 +196,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../use/">Introduction</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../security/">First access</a>
         
     </li>
 
@@ -440,6 +449,8 @@ console.log('--------');
 		
 		
 		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -459,26 +470,29 @@ console.log('--------');
                         
                           <h1 id="tutorial-dummy-network-service-record">Tutorial: Dummy Network Service Record</h1>
 <hr />
-<p>This tutorial explains how to deploy a Network Service Record composed by Dummy VNFs. It is typically used for testing that the installation of the NFVO went fine. This tutorial makes uses the: </p>
-<ul>
-<li>Test plugin (<a href="https://github.com/openbaton/test-plugin">test-plugin</a>)</li>
-<li>Dummy VNFM (<a href="https://github.com/openbaton/dummy-vnfm-amqp">dummy-vnfm</a>)</li>
-</ul>
+<p>This tutorial explains how to deploy a Network Service Record composed by Dummy VNFs. It is typically used for testing that the installation of the NFVO went fine. This tutorial makes use of: </p>
 <h2 id="requirements">Requirements</h2>
 <p>In order to execute this scenario, you need to have the following components up and running: </p>
 <ul>
-<li>The NFVO</li>
-<li>the test plugin</li>
-<li>the dummy VNFM</li>
-<li>a PoP (of type test) registered. You can use the following <a href="../descriptors/vim-instance/test-vim-instance.json">json descriptor</a></li>
+<li><a href="https://github.com/openbaton/NFVO">NFVO</a></li>
+<li><a href="https://github.com/openbaton/test-plugin">Test plugin</a></li>
+<li><a href="https://github.com/openbaton/dummy-vnfm-amqp">Dummy-VNFM</a> </li>
 </ul>
+<h2 id="preparation">Preparation</h2>
+<p>If not yet running start the NFVO and the Dummy-VNFM (refer to it's readme file on how to start it).</p>
+<h2 id="store-the-viminstance">Store the VimInstance</h2>
+<p>Upload a VimInstance with the type <em>test</em> to the NFVO (e.g. this <a href="../descriptors/vim-instance/test-vim-instance.json">VimInstance</a>). 
+The type <em>test</em> will make sure that the NFVO uses the test-plugin for network services deployed using this VimInstance.  </p>
 <h2 id="store-the-network-service-descriptor">Store the Network Service Descriptor</h2>
-<p>Download the following <a href="../descriptors/tutorial-dummy-NSR/tutorial-dummy-NSR.json">nsd</a> and upload it in the catalogue either using the dashboard or the cli. </p>
+<p>Download the following <a href="../descriptors/tutorial-dummy-NSR/tutorial-dummy-NSR.json">NSD</a> and upload it to the NFVO either using the dashboard or the cli. </p>
 <h2 id="deploy-the-network-service-descriptor">Deploy the Network Service Descriptor</h2>
 <p>Deploy the stored NSD either using the dashboard or the cli. Below you find a view from the dashboard for doing it: </p>
 <p><img alt="nsr-deployment" src="../images/tutorials/tutorial-dummy-NSR/launch-NSD.png" /></p>
 <h2 id="conclusions">Conclusions</h2>
-<p>When all the VNF Records are done with all of the scripts defined in the lifecycle events, the NFVO will put the state of the VNF Record to ACTIVE and when all the VNF Records are in state ACTIVE, also the Network Service Record will be in state ACTIVE. This means that the service was correctly run. </p>
+<p>After the Dummy-Vnfm and the NFVO finished their work the deployed NSR will change to <em>ACTIVE</em> state.<br />
+No virtual machines were created and no real network service was deployed.<br />
+The test-plugin ensured that the NFVO thought that all the required resources were allocated and the VimInstance created. 
+The Dummy-Vnfm lead the NFVO to believe that it created virtual machines and executed the lifecycle event scripts on them. </p>
 <!---
 References
 -->
