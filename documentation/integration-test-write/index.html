@@ -173,7 +173,52 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../nfvo-installation-deb/">Install Open Baton</a>
+        <a class="" href="../nfvo-installation/">Overview</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-deb/">Install on Linux</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-mac/">Install on MacOS</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-docker/">Install with Docker</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-vagrant/">Install with Vagrant</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-configuration/">Configure it</a>
         
     </li>
 
@@ -277,24 +322,6 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../zabbix-plugin/">Use Zabbix plugin</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../tosca-iperf-scenario/">TOSCA iperf scenario</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../tosca-CSAR-onboarding/">TOSCA CSAR on-boarding</a>
         
     </li>
 
@@ -434,6 +461,10 @@ console.log('--------');
     
 </ul></li>
                  
+		
+		
+		
+		
 		
 		
 		
@@ -1043,6 +1074,54 @@ Do NOT use '-' in types of VNFDs or configuration names as you cannot use them i
 <td>The time (in seconds) that this task shall do nothing and after which it will finish</td>
 </tr>
 <tr>
+<td>ProjectCreate</td>
+<td>Used to create a new Project</td>
+<td>as-user-name</td>
+<td>If specified the integration tests will use this user to create the Project. If not the default user specified in the integration-test.properties will be used.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>as-user-password</td>
+<td>The password of the User that shall create the new Project. Just needed if <em>as-user-name</em> is specified.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>expected-to-fail</td>
+<td>Set this to true if you expect the Project creation to fail.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>project-name</td>
+<td>The name of the new Project.</td>
+</tr>
+<tr>
+<td>ProjectDelete</td>
+<td>Used to delete a project</td>
+<td>as-user-name</td>
+<td>If specified the integration tests will use this user to delete the Project. If not the default user specified in the integration-test.properties will be used.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>as-user-password</td>
+<td>The password of the User that shall delete the new Project. Just needed if <em>as-user-name</em> is specified.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>expected-to-fail</td>
+<td>Set this to true if you expect deleting the Project to fail.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>project-name</td>
+<td>The name of the project to delete.</td>
+</tr>
+<tr>
 <td>ScaleIn</td>
 <td>Triggers one scale in operation on a VNFR specified in the ini file</td>
 <td>vnf-type</td>
@@ -1079,16 +1158,196 @@ Do NOT use '-' in types of VNFDs or configuration names as you cannot use them i
 <td>The type of the VNFR whose number of VNFCs should be checked</td>
 </tr>
 <tr>
+<td>UserCreate</td>
+<td>Used to create a new User</td>
+<td>as-user-name</td>
+<td>If specified the integration tests will use this user to create the User. If not the default user specified in the integration-test.properties will be used.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>as-user-password</td>
+<td>The password of the User that shall create the new User. Just needed if <em>as-user-name</em> is specified.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>enabled</td>
+<td>Set to true if the new User should be enabled.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>expected-to-fail</td>
+<td>Set this to true if you expect the User creation to fail.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>guest-projects</td>
+<td>A comma separated list of project names. In each listed project the new User will obtain a GUEST role.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>new-user-is-admin</td>
+<td>Set this to true if the new User should be an ADMIN.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>new-user-name</td>
+<td>The name of the User to create.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>new-user-password</td>
+<td>The password of the User to create.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>user-projects</td>
+<td>A comma separated list of project names. In each listed project the new User will obtain a USER role.</td>
+</tr>
+<tr>
+<td>UserDelete</td>
+<td>Used to delete a User</td>
+<td>as-user-name</td>
+<td>If specified the integration tests will use this user to delete the User. If not the default user specified in the integration-test.properties will be used.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>as-user-password</td>
+<td>The password of the User that shall delete the User. Just needed if <em>as-user-name</em> is specified.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>expected-to-fail</td>
+<td>Set this to true if you expect the User deletion to fail.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>user-to-delete</td>
+<td>The name of the User that shall be deleted.</td>
+</tr>
+<tr>
+<td>UserUpdate</td>
+<td>Used to update a User</td>
+<td>as-user-name</td>
+<td>If specified the integration tests will use this user to update the User. If not the default user specified in the integration-test.properties will be used.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>as-user-password</td>
+<td>The password of the User that shall create the new User. Just needed if <em>as-user-name</em> is specified.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>enabled</td>
+<td>Set to true if the updated User should be enabled.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>expected-to-fail</td>
+<td>Set this to true if you expect updating the User to fail.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>guest-projects</td>
+<td>A comma separated list of project names. In each listed project the updated User will obtain a GUEST role.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>user-is-admin</td>
+<td>Set this to true if the updated User should be an ADMIN.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>user-name-new</td>
+<td>The new name of the User.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>user-name-old</td>
+<td>The name of the User to update.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>user-password-new</td>
+<td>The new password of the User.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>user-projects</td>
+<td>A comma separated list of project names. In each listed project the updated User will obtain a USER role.</td>
+</tr>
+<tr>
 <td>VimInstanceCreate</td>
 <td>Store a vim instance on the NFVO from a json file</td>
 <td>name-file</td>
 <td>The name of the json file that contains the VimInstance</td>
 </tr>
 <tr>
+<td></td>
+<td></td>
+<td>as-user-name</td>
+<td>If specified the integration tests will use this user to create the Vim Instance. If not the default user specified in the integration-test.properties will be used.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>as-user-password</td>
+<td>The password of the user that shall create the Vim Instance. Just needed if <em>as-user-name</em> is specified.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>expected-to-fail</td>
+<td>Set this to true if you expect the Vim Instance creation to fail</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>in-project</td>
+<td>The name of the project to which the Vim Instance shall be uploaded. Just usable if you also specify a user to upload with <em>as-user-name</em> and <em>as-user-password</em>. If not specified the default project specified in the integration-test.properties will be used.</td>
+</tr>
+<tr>
 <td>VimInstanceDelete</td>
 <td>Delete a vim instance</td>
+<td>as-user-name</td>
+<td>If specified the integration tests will use this user to delete the Vim Instance. If not the default user specified in the integration-test.properties will be used.</td>
+</tr>
+<tr>
 <td></td>
 <td></td>
+<td>as-user-password</td>
+<td>The password of the user that shall delete the Vim Instance. Just needed if <em>as-user-name</em> is specified.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>expected-to-fail</td>
+<td>Set this to true if you expect a failure while trying to delete the Vim Instance.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>in-project</td>
+<td>The name of the project to which the Vim Instance shall be uploaded. Just usable if you also specify a user to upload with <em>as-user-name</em> and <em>as-user-password</em>. If not specified the default project specified in the integration-test.properties will be used.</td>
 </tr>
 <tr>
 <td>VirtualNetworkFunctionDescriptorDelete</td>

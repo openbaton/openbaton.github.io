@@ -173,7 +173,52 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../nfvo-installation-deb/">Install Open Baton</a>
+        <a class="" href="../nfvo-installation/">Overview</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-deb/">Install on Linux</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-mac/">Install on MacOS</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-docker/">Install with Docker</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-vagrant/">Install with Vagrant</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-configuration/">Configure it</a>
         
     </li>
 
@@ -279,24 +324,6 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../zabbix-plugin/">Use Zabbix plugin</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../tosca-iperf-scenario/">TOSCA iperf scenario</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../tosca-CSAR-onboarding/">TOSCA CSAR on-boarding</a>
         
     </li>
 
@@ -451,6 +478,10 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -472,19 +503,10 @@ console.log('--------');
 <p>When accessing the dashboard, you will be prompted for a username and password. The first access can only be done with the super user created during the installation. Then it is possible to create other users and projects. For the configuration of the first access please follow this guide.</p>
 <h2 id="roles-and-projects">Roles and projects</h2>
 <p>Openbaton's security model consists of different user roles and projects.</p>
-<p>This security feature is always enabled, so the propery</p>
-<pre><code class="properties">nfvo.security.enabled = true
-</code></pre>
-
-<p>in the <em>/etc/openbaton/openbaton.properties</em> file is <strong>deprecated</strong>. </p>
 <p>A project is a separate realm in which permitted users can work. Users can be assigned to projects and adopt different roles. Changes made in a project's environment are not visible from another project. When the NFVO starts a default project is created. Every project has a <strong>unique</strong> name and a project-id.  </p>
-<p>A user can have the role <em>ADMIN</em> or <em>GUEST</em> in a project. There is only one super user with role <em>OB_ADMIN</em> and he has control over the whole system. He may add and delete users and projects, assign roles and has access to all the projects. When starting the NFVO there will be already the super user (with the role of an <em>OB_ADMIN</em>) defined by default with the user name <em>admin</em> and the default password <em>openbaton</em>.</p>
-<p>The default password can be changed by setting </p>
-<pre><code class="properties">nfvo.security.admin.password = 
-</code></pre>
-
-<p>in <em>openbaton.properties</em>.  </p>
-<p>The next available role is <em>ADMIN</em>. If a user is the <em>ADMIN</em> of a project he can create, delete and update PoPs, NSD, VNFD, VNFPackages, NSR and VNFR in his projects. He cannot access or see other projects or users.</p>
+<p>A user can have the role <em>USER</em> or <em>GUEST</em> in a project. Administrators with the role <em>ADMIN</em> has control over the whole system. He may add and delete users and projects, assign roles and has access to all the projects. When starting the NFVO there will be already the super user (with the role of an <em>ADMIN</em>) defined by default with the user name <em>admin</em> and the default password <em>openbaton</em>.</p>
+<p>The default password can be changed in the top right corner of the dashboard.</p>
+<p>The next available role is <em>USER</em>. If a user is the <em>USER</em> of a project he can create, delete and update PoPs, NSD, VNFD, VNFPackages, NSR and VNFR in his projects. He cannot access or see other projects or users.</p>
 <p>The last role is the <em>GUEST</em>. He can just see the components (PoPs, NSD, NSR etc.) of the project he is assigned to but he cannot create update or delete them. Furthermore he does not see other projects and users.</p>
 <h2 id="ssl">SSL</h2>
 <p>The NFVO can use SSL to encrypt communication. To enable this feature set </p>

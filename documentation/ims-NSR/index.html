@@ -173,7 +173,52 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../nfvo-installation-deb/">Install Open Baton</a>
+        <a class="" href="../nfvo-installation/">Overview</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-deb/">Install on Linux</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-mac/">Install on MacOS</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-docker/">Install with Docker</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-vagrant/">Install with Vagrant</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-configuration/">Configure it</a>
         
     </li>
 
@@ -277,24 +322,6 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../zabbix-plugin/">Use Zabbix plugin</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../tosca-iperf-scenario/">TOSCA iperf scenario</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../tosca-CSAR-onboarding/">TOSCA CSAR on-boarding</a>
         
     </li>
 
@@ -451,6 +478,10 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -470,7 +501,7 @@ console.log('--------');
                         
                           <h1 id="tutorial-openimscore-network-service-record">Tutorial: OpenIMSCore Network Service Record</h1>
 <hr />
-<p>This tutorial shows how to deploy a Network Service Record composed by 5 VNFs, a basic OpenIMSCore.</p>
+<p>This tutorial shows how to deploy a Network Service Record composed by 5 VNFs, a basic <a href="http://www.openimscore.org">OpenIMSCore</a>.</p>
 <p>Compared to the <a href="http://openbaton.github.io/documentation/iperf-NSR/">Iperf-Server - Iperf-Client</a> the example provided here is far more complex. So we assume you are fimiliar with the architecture.</p>
 <h2 id="requirements">Requirements</h2>
 <p>In order to execute this scenario, you need to have the following components up and running: </p>
@@ -482,7 +513,7 @@ console.log('--------');
 <h2 id="store-the-viminstance">Store the VimInstance</h2>
 <p>Upload a VimInstance to the NFVO (e.g. this <a href="../descriptors/vim-instance/openstack-vim-instance.json">VimInstance</a>). </p>
 <h2 id="prepare-the-vnf-packages">Prepare the VNF Packages</h2>
-<p>Download the necessary <a href="http://openbaton.github.io/documentation/vnfpackage/">files</a> from the <a href="https://github.com/openbaton/openimscore-packages">github repository</a> and pack the <a href="http://openbaton.github.io/documentation/vnfpackage/">VNF Packages</a> for all 5 components ( scscf, icscf, pcscf, bind9, fhoss ).</p>
+<p>Download the necessary files from the <a href="https://github.com/openbaton/openimscore-packages">github repository</a> and pack the <a href="http://openbaton.github.io/documentation/vnfpackage/">VNF Packages</a> for all 5 components ( scscf, icscf, pcscf, bind9, fhoss ).</p>
 <h4 id="example-for-creating-the-icscf-virtual-network-function-package">Example for creating the Icscf Virtual Network Function Package</h4>
 <pre><code class="bash"># Where to save the scripts
 GIT_REPO_LOC=/opt/vnf_packages_example_openimscore_openbaton
@@ -498,16 +529,16 @@ tar -cf icscf.tar *
 <h2 id="store-the-network-service-descriptor">Store the Network Service Descriptor</h2>
 <p>Download the following <a href="../descriptors/tutorial-ims-NSR/tutorial-ims-NSR.json">NSD</a> and upload it to the NFVO either using the dashboard or the cli. 
 Take care to replace the vnfd ids with the ones you deployed.</p>
-<p>Open the Dashboard (checkout the <a href="http://openbaton.github.io/documentation/nfvo-how-to-use-gui/">dashboard documentation</a> for more information on how to use it), open it at the URL http://your-ip-here:8080 and log in (default username and password are <em>admin</em> and <em>openbaton</em>). Go to <code>Catalogue -&gt; NS Descriptors</code> and choose the NSD of your choice by clicking on <code>Upload NSD</code> and selecting the Descriptor's json file.</p>
+<p>Open the Dashboard (checkout the <a href="../nfvo-how-to-use-gui">dashboard documentation</a>) for more information on how to use it), open it at the URL http://your-ip-here:8080 and log in (default username and password are <em>admin</em> and <em>openbaton</em>). Go to <code>Catalogue -&gt; NS Descriptors</code> and choose the NSD of your choice by clicking on <code>Upload NSD</code> and selecting the Descriptor's json file.</p>
 <h2 id="deploy-the-network-service-descriptor">Deploy the Network Service Descriptor</h2>
 <p>Deploy the stored NSD either using the dashboard.</p>
 <p>You need to go again to the GUI, go to <code>Catalogue -&gt; NS Descriptors</code>, and open the drop down menu by clicking on <code>Action</code>. Afterwards you need to press the <code>Launch</code> button in order to start the deployment of this NSD.</p>
 <p>If you go to <code>Orchestrate NS -&gt; NS Records</code> in the menu on the left side, you can follow the deployment process and check the current status of the deploying NSD.</p>
 <h2 id="conclusions">Conclusions</h2>
-<p>Once the Network Service Record went to "ACTIVE" your <a href="http://www.openimscore.org/">OpenIMSCore</a> - <a href="https://wiki.ubuntuusers.de/DNS-Server_Bind">Bind9</a> - <a href="http://www.openimscore.org/">FHoSS</a> deployment is finished.</p>
+<p>Once the Network Service Record went to "ACTIVE" your <a href="http://www.openimscore.org">OpenIMSCore</a> - <a href="https://wiki.ubuntuusers.de/DNS-Server_Bind">Bind9</a> - <a href="http://www.openimscore.org">FHoSS</a> deployment is finished.</p>
 <p><img alt="ims-deployment" src="../images/ims-architecture.png" /></p>
-<p>To test your <a href="http://www.openimscore.org/">OpenIMSCore</a> you may use a Sip client of your choice. Be sure to use the realm defined in your <a href="../bind9/vnfd.json">Bind9 Virtual Network Function Descriptor</a> while testing registration and call. By default the <a href="http://www.openimscore.org/">FHoSS</a> conaints 2 users : alice and bob. The user is the same as the password, but you may also alter it to your needs modifying the <a href="https://github.com/openbaton/openimscore-packages">FHoSS Virtual Network Function Descriptor</a> ( You will find the users in "var_user_data.sql" file under the fhoss folder)</p>
-<p>For Benchmarking we can use <a href="http://sipp.sourceforge.net/ims_bench/">IMS Bench SIPp</a> but then you should add more users to the <a href="http://www.openimscore.org/">FHoSS</a> database since by default it only contains 2 users.</p>
+<p>To test your <a href="http://www.openimscore.org">OpenIMSCore</a> you may use a Sip client of your choice. Be sure to use the realm defined in your <a href="../bind9/vnfd.json">Bind9 Virtual Network Function Descriptor</a> while testing registration and call. By default the <a href="http://www.openimscore.org/">FHoSS</a> conaints 2 users : alice and bob. The user is the same as the password, but you may also alter it to your needs modifying the <a href="https://github.com/openbaton/openimscore-packages">FHoSS Virtual Network Function Descriptor</a> ( You will find the users in "var_user_data.sql" file under the fhoss folder)</p>
+<p>For Benchmarking we can use <a href="http://sipp.sourceforge.net/ims_bench/">IMS Bench SIPp</a> but then you should add more users to the <a href="http://www.openimscore.org">FHoSS</a> database since by default it only contains 2 users.</p>
 <!---
 References
 -->

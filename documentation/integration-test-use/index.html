@@ -173,7 +173,52 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../nfvo-installation-deb/">Install Open Baton</a>
+        <a class="" href="../nfvo-installation/">Overview</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-deb/">Install on Linux</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-mac/">Install on MacOS</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-docker/">Install with Docker</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-vagrant/">Install with Vagrant</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-configuration/">Configure it</a>
         
     </li>
 
@@ -277,24 +322,6 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../zabbix-plugin/">Use Zabbix plugin</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../tosca-iperf-scenario/">TOSCA iperf scenario</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../tosca-CSAR-onboarding/">TOSCA CSAR on-boarding</a>
         
     </li>
 
@@ -451,6 +478,10 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -471,7 +502,7 @@ console.log('--------');
                           <h1 id="how-to-use-the-integration-tests">How to use the Integration Tests</h1>
 <h2 id="overview">Overview</h2>
 <p>This project provides integration tests for OpenBaton. 
-Ten tests are run.</p>
+Eleven tests are run.</p>
 <h2 id="test-descriptions">Test descriptions</h2>
 <ol>
 <li>scenario-dummy-iperf</li>
@@ -484,6 +515,7 @@ Ten tests are run.</p>
 <li>error-in-start</li>
 <li>error-in-terminate</li>
 <li>wrong-lifecycle-event</li>
+<li>user-project-test</li>
 </ol>
 <p><em>scenario-dummy-iperf</em> uses the <a href="https://github.com/openbaton/dummy-vnfm-amqp">Dummy VNFM</a> to simulate a VNFM and therefore tests the communication between NFVO and VNFM. 
 It does not actually deploy a network service. The fake network service is a simple iperf scenario with one server and one client. </p>
@@ -505,7 +537,9 @@ It also examines if the client instances are provided with the ip addresses of t
 To see detailed information about which scaling functions are executed exactly please refer to the <em>scenario-scaling.ini</em> file in the project.</p>
 <p>The tests <em>error-in-configure</em>, <em>error-in-instantiate</em>, <em>error-in-start</em>, <em>error-in-terminate</em> each deploy a network service from a NSD which contains a failing script in the particular lifecycle event and tests if the NFVO handles it correctly. </p>
 <p>The test <em>wrong-lifecycle-event</em> tries to onboard a NSD to the NFVO which contains an undefined lifecycle event. The test will pass if the onboarding is not successful. </p>
-<p>In every test a vim instance and a network service descriptor are stored on the orchestrator and the network service launched. 
+<p>The user-project-test checks if the NFVO handles user and project management correctly. It adds and deletes users, projects and a vim instance from different 
+user perspectives. This test can be executed without a VNFManager. </p>
+<p>In most of the tests a vim instance and a network service descriptor are stored on the orchestrator and the network service launched. 
 If that is successful, the network service is stopped and the network service record, network service descriptor and the vim instance are removed. 
 In the cases of the <em>scenario-real-iperf</em>, <em>scenario-complex-ncat</em> and <em>scenario-scaling</em> test also the service itself is tested, i.e. if iperf is running and the clients can connect to the server. Therefore the integration tests will execute some scripts for testing on the virtual machines. </p>
 <h2 id="requirements">Requirements</h2>

@@ -173,7 +173,52 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../nfvo-installation-deb/">Install Open Baton</a>
+        <a class="" href="../nfvo-installation/">Overview</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-deb/">Install on Linux</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-mac/">Install on MacOS</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-docker/">Install with Docker</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-vagrant/">Install with Vagrant</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-configuration/">Configure it</a>
         
     </li>
 
@@ -279,24 +324,6 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../zabbix-plugin/">Use Zabbix plugin</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../tosca-iperf-scenario/">TOSCA iperf scenario</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../tosca-CSAR-onboarding/">TOSCA CSAR on-boarding</a>
         
     </li>
 
@@ -451,6 +478,10 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -486,7 +517,7 @@ source nfvo.properties
 <h2 id="openbaton-client-usage">Openbaton Client usage</h2>
 <p>After you typed in all the required properties you can start using the cli for sending commands to the NFVO. </p>
 <h3 id="run-a-command">Run a command:</h3>
-<pre><code class="sh">### openbaton.sh command-name [arg-1] [arg-2] [arg-3]
+<pre><code class="sh"># openbaton.sh command_name [arg-1] [arg-2] [arg-3]
 </code></pre>
 
 <h3 id="show-the-configuration">Show the configuration:</h3>
@@ -494,7 +525,7 @@ source nfvo.properties
 </code></pre>
 
 <h3 id="activate-debug-mode">Activate debug mode:</h3>
-<pre><code class="sh">openbaton.sh -d command-name [arg-1] [arg-2] [arg-3]
+<pre><code class="sh">openbaton.sh -d COMMAND [arg-1] [arg-2] [arg-3]
 </code></pre>
 
 <h3 id="print-help">Print help:</h3>
@@ -502,7 +533,7 @@ source nfvo.properties
 </code></pre>
 
 <h3 id="print-help-for-a-command">Print help for a command:</h3>
-<pre><code class="sh">openbaton.sh command-name help
+<pre><code class="sh">openbaton.sh COMMAND help
 </code></pre>
 
 <h3 id="list-the-available-commands">List the available commands:</h3>

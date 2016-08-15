@@ -173,7 +173,52 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../nfvo-installation-deb/">Install Open Baton</a>
+        <a class="" href="../nfvo-installation/">Overview</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-deb/">Install on Linux</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-mac/">Install on MacOS</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-docker/">Install with Docker</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-vagrant/">Install with Vagrant</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-configuration/">Configure it</a>
         
     </li>
 
@@ -277,24 +322,6 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../zabbix-plugin/">Use Zabbix plugin</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../tosca-iperf-scenario/">TOSCA iperf scenario</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../tosca-CSAR-onboarding/">TOSCA CSAR on-boarding</a>
         
     </li>
 
@@ -451,6 +478,10 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -470,7 +501,7 @@ console.log('--------');
                         
                           <h1 id="tutorial-dummy-network-service-record">Tutorial: Dummy Network Service Record</h1>
 <hr />
-<p>This tutorial explains how to deploy a Network Service Record composed by Dummy VNFs. It is typically used for testing that the installation of the NFVO went fine. This tutorial makes use of: </p>
+<p>This tutorial explains how to deploy a Network Service Record composed by Dummy VNFs. It is typically used for testing that the installation of the NFVO went fine.</p>
 <h2 id="requirements">Requirements</h2>
 <p>In order to execute this scenario, you need to have the following components up and running: </p>
 <ul>
@@ -482,7 +513,7 @@ console.log('--------');
 <p>If not yet running start the NFVO and the Dummy-VNFM (refer to it's readme file on how to start it).</p>
 <h2 id="store-the-viminstance">Store the VimInstance</h2>
 <p>Upload a VimInstance with the type <em>test</em> to the NFVO (e.g. this <a href="../descriptors/vim-instance/test-vim-instance.json">VimInstance</a>). 
-The type <em>test</em> will make sure that the NFVO uses the test-plugin for network services deployed using this VimInstance.  </p>
+The type <em>test</em> will make sure that the NFVO uses the test-plugin for deploying network services.  </p>
 <h2 id="store-the-network-service-descriptor">Store the Network Service Descriptor</h2>
 <p>Download the following <a href="../descriptors/tutorial-dummy-NSR/tutorial-dummy-NSR.json">NSD</a> and upload it to the NFVO either using the dashboard or the cli. </p>
 <h2 id="deploy-the-network-service-descriptor">Deploy the Network Service Descriptor</h2>
@@ -522,7 +553,7 @@ Script for open external links in a new tab
         <a href="../iperf-NSR/" class="btn btn-neutral float-right" title="Iperf Scenario"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../tosca-CSAR-onboarding/" class="btn btn-neutral" title="TOSCA CSAR on-boarding"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../zabbix-plugin/" class="btn btn-neutral" title="Use Zabbix plugin"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

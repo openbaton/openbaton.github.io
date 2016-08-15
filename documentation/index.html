@@ -175,7 +175,52 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="nfvo-installation-deb/">Install Open Baton</a>
+        <a class="" href="nfvo-installation/">Overview</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="nfvo-installation-deb/">Install on Linux</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="nfvo-installation-mac/">Install on MacOS</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="nfvo-installation-docker/">Install with Docker</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="nfvo-installation-vagrant/">Install with Vagrant</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="nfvo-configuration/">Configure it</a>
         
     </li>
 
@@ -279,24 +324,6 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="zabbix-plugin/">Use Zabbix plugin</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="tosca-iperf-scenario/">TOSCA iperf scenario</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="tosca-CSAR-onboarding/">TOSCA CSAR on-boarding</a>
         
     </li>
 
@@ -451,6 +478,10 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -468,8 +499,8 @@ console.log('--------');
                     <div role="main">
                       <div class="section">
                         
-                          <h2 id="openbaton">OpenBaton</h2>
-<p>OpenBaton is an open source project providing a comprehensive implementation of the ETSI Management and Orchestration (MANO) specification. </p>
+                          <h2 id="open-baton">Open Baton</h2>
+<p>Open Baton is an open source project providing a comprehensive implementation of the ETSI Management and Orchestration (MANO) specification. </p>
 <h2 id="what-is-nfv">What is NFV</h2>
 <p>ETSI NFV represents a concerted telco operator initiative fostering the development of virtual network infrastructures by porting and further adapting network functions to the specific cloud environment. 
 ETSI NFV has defined a large set of virtualisation use cases, spanning from the cloudification of the main core network functions such as IMS, Evolved Packet Core, and Radio Access Networks, as well as providing on demand and complete virtualised infrastructures as IaaS or PaaS to third parties, such as enterprises and professional radio. 
@@ -477,7 +508,7 @@ That enables providing elastic deployments of cost efficient network infrastruct
 One of the main concerns of ETSI NFV is to prove the feasibility of the cloud deployments of the typical network functions through proof of concept trials and prototypes as well as providing indications for further standardization in the areas of underlying infrastructures, software architectures, networking and management, and orchestration to improve performance and grant security of the overall infrastructure.
 ETSI NFV limits itself to this level of indications, considering that other standardization bodies and de-facto open source standards such as 3GPP and OpenStack should finalize the specific implementation work. </p>
 <h2 id="its-main-components">Its main components</h2>
-<p>OpenBaton rel.2 provides the many different features and components. </p>
+<p>Open Baton rel.2 provides the many different features and components. </p>
 <ul>
 <li>A Network Function Virtualisation Orchestrator (NFVO) completely designed and implemented following the ETSI MANO specification. Read more <a href="./nfvo-installation">here</a></li>
 <li>A generic Virtual Network Function Manager (VNFM) able to manage the lifecycle of VNFs based on their descriptors. Read more <a href="./vnfm-generic">here</a></li>
@@ -495,8 +526,8 @@ ETSI NFV limits itself to this level of indications, considering that other stan
 <li>integrating your own VNFM. In this case you can use either the REST interface, or the AMQP one for interoperating with the NFVO</li>
 <li>implementing a set of scripts which can be executed as part of the lifecycle event of your Virtual Network Function Descriptor. We provide a generic VNFM and EMS which can be used for executing them</li>
 </ul>
-<h2 id="can-i-use-openbaton-to-build-my-own-network-service">Can I use OpenBaton to build my own Network Service?</h2>
-<p>Yes! OpenBaton provides a NFVO which can interoperate with VNFMs implemented by third parties. In this project we provide also a set of tools (like the vnfm-sdk) which supports developers in building their own VNFM. </p>
+<h2 id="can-i-use-open-baton-to-build-my-own-network-service">Can I use Open Baton to build my own Network Service?</h2>
+<p>Yes! Open Baton provides a NFVO which can interoperate with VNFMs implemented by third parties. In this project we provide also a set of tools (like the vnfm-sdk) which supports developers in building their own VNFM. </p>
 <h2 id="get-started">Get started</h2>
 <p>In order to get started you can follow the <a href="./nfvo-installation">installation guide</a></p>
 <h2 id="get-in-contact">Get in contact</h2>
@@ -506,7 +537,7 @@ ETSI NFV limits itself to this level of indications, considering that other stan
 <li>Sending us an email to: <a href="mailto:info@openbaton.org">info-at-openbaton-dot-org</a></li>
 </ul>
 <h2 id="supported-by">Supported by</h2>
-<p>Open Baton is a project developed by Fraunhofer FOKUS and TU Berlin. It is supported by different European publicly funded projects: <a href="https://www.nubomedia.eu/">NUBOMEDIA</a>, <a href="http://mobile-cloud-networking.eu/site/">Mobile Cloud Networking</a>, <a href="http://www.cognet.5g-ppp.eu/cognet-in-5gpp/">CogNet</a></p>
+<p>Open Baton is a project developed by Fraunhofer FOKUS and TU Berlin. It is supported by different European publicly funded projects: <a href="https://www.nubomedia.eu/">NUBOMEDIA</a>, <a href="http://mobile-cloud-networking.eu/site/">Mobile Cloud Networking</a>, <a href="http://www.cognet.5g-ppp.eu/cognet-in-5gpp/">CogNet</a>, <a href="https://www.softfire.eu/">SoftFIRE</a>.</p>
 <!---
  Script for open external links in a new tab
 -->
@@ -529,7 +560,7 @@ ETSI NFV limits itself to this level of indications, considering that other stan
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="nfvo-installation-deb/" class="btn btn-neutral float-right" title="Install Open Baton"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="nfvo-installation/" class="btn btn-neutral float-right" title="Overview"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
     </div>
@@ -560,6 +591,6 @@ ETSI NFV limits itself to this level of indications, considering that other stan
 
 <!--
 MkDocs version : 0.14.0
-Build Date UTC : 2016-07-21 19:08:09.865765
+Build Date UTC : 2016-08-15 16:51:46.749804
 -->
 

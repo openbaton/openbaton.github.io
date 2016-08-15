@@ -173,7 +173,52 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../nfvo-installation-deb/">Install Open Baton</a>
+        <a class="" href="../nfvo-installation/">Overview</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-deb/">Install on Linux</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-mac/">Install on MacOS</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-docker/">Install with Docker</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-vagrant/">Install with Vagrant</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-configuration/">Configure it</a>
         
     </li>
 
@@ -277,24 +322,6 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../zabbix-plugin/">Use Zabbix plugin</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../tosca-iperf-scenario/">TOSCA iperf scenario</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../tosca-CSAR-onboarding/">TOSCA CSAR on-boarding</a>
         
     </li>
 
@@ -451,6 +478,10 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -485,7 +516,7 @@ Moreover, the vnfm-sdk contains all the things you may need for the development 
 </ul>
 <h2 id="develop-your-own-vnfmanager">Develop your own VNFManager</h2>
 <p>This part is going to describe the steps you need to do to develop your own VNFManager with the help of any vnfm-sdk.</p>
-<p>The practical parts of implementing a basic VNFManager will focus on the usage of a specific vnfm-sdk, namely the vnfm-sdk-jms.</p>
+<p>The practical parts of implementing a basic VNFManager will focus on the usage of a specific vnfm-sdk, namely the vnfm-sdk-amqp.</p>
 <h3 id="preparations">Preparations</h3>
 <p>This section describes the initial steps for creating the project structure and configuring essential files for developing your own VNFManager.
 This can be done in two ways.
@@ -723,7 +754,6 @@ enabled = true
 endpoint-type = RABBIT
 script-max-time = 300000
 concurrency = 15
-transacted = false
 
 
 #### Additionally
@@ -765,11 +795,7 @@ vim-plugin-dir = ./plugins
 </tr>
 <tr>
 <td>concurrency</td>
-<td>The number of concurrent Receiver (only for vnfm-sdk-jms)</td>
-</tr>
-<tr>
-<td>transacted</td>
-<td>Whenever the JMS receiver method shoud be transacted, this allows the message to be resent in case of exception VNFManager side (only for vnfm-sdk-jms)</td>
+<td>The number of concurrent Receiver (only for vnfm-sdk-amqp)</td>
 </tr>
 </tbody>
 </table>
@@ -781,7 +807,7 @@ But have in mind that both libraries depend on <a href="http://projects.spring.i
 So, if you want to avoid this dependency, a third option might be: just use the simple vnfm-sdk artifact.
 By using the simple vnfm-sdk you need to take care about all the communication between NFVO and VNFManager by yourself.</p>
 <p>Once you have imported one of the vnfm-sdks you will have access to all the model classes and the vnfm-sdk classes needed to implement a VNFManager.</p>
-<p>The following section shows you how to import the vnfm-sdk-jms, representative for all the other opportunities.</p>
+<p>The following section shows you how to import the vnfm-sdk-amqp, representative for all the other opportunities.</p>
 <h3 id="import-a-vnfm-sdk">Import a vnfm-sdk</h3>
 <p>This section shows how to import and configure your VNFManager to make use of the vnfm-sdk-amqp.</p>
 <p>For gathering the vnfm-sdk-amqp library you need to import the libraries by adding the missing lines to your build.gradle:</p>
@@ -789,7 +815,7 @@ By using the simple vnfm-sdk you need to take care about all the communication b
 
 dependencies {
     compile 'org.hibernate:hibernate-core:4.3.10.Final'
-    compile 'org.openbaton:vnfm-sdk-amqp:2.1.1'
+    compile 'org.openbaton:vnfm-sdk-amqp:2.1.2'
 }
 
 //...
@@ -818,7 +844,7 @@ repositories {
 }
 
 dependencies {
-    compile 'org.openbaton:vnfm-sdk-amqp:2.0.0'
+    compile 'org.openbaton:vnfm-sdk-amqp:2.1.2'
     compile 'org.hibernate:hibernate-core:4.3.10.Final'
 }
 
@@ -837,7 +863,7 @@ bootRepackage {
 <p>This will fetch all the dependencies defined in the build.gradle and gives you access to all the Classes you need.
 You can also do this by using the IDE by running the corresponding gradle task.</p>
 <h2 id="implementation-of-the-vnfmanager">Implementation of the VNFManager</h2>
-<p>This section is going to describe the implementation of a basic VNFManager by using the vnfm-sdk-jms.
+<p>This section is going to describe the implementation of a basic VNFManager by using the vnfm-sdk-amqp.
 In the end, the VNFManager will be able to allocate and terminate resources by using its own openstack-plugin.</p>
 <p>So first of all you need to define the main method used for starting your VNFManager.
 So add the following to your Main Class that it looks as follows:</p>
@@ -1055,9 +1081,9 @@ Therefore, you need to do several things:</p>
 <li>Connect an according VIM to the plugin or use the plugin directly</li>
 </ul>
 <p><strong>Note</strong> If you want to use the Vim with plugins, you need to fetch also the interfaces and VIM implementations by adding the following lines to your build.gradle dependencies</p>
-<pre><code class="gradle">compile 'org.openbaton:vim-int:2.1.1'
-compile 'org.openbaton:vim-impl:2.1.1'
-compile 'org.openbaton:sdk:2.1.1'
+<pre><code class="gradle">compile 'org.openbaton:vim-int:2.1.2'
+compile 'org.openbaton:vim-impl:2.1.2'
+compile 'org.openbaton:sdk:2.1.2'
 </code></pre>
 
 <p>After that you need to rebuild your project for fetching the dependencies automatically.</p>
@@ -1084,7 +1110,7 @@ import java.io.IOException;
 import java.util.Collection;
 import java.util.Map;
 
-public class MyVNFM extends AbstractVnfmSpringJMS {
+public class MyVNFM extends AbstractVnfmSpringAmqp {
 
     @Autowired
     private ConfigurableApplicationContext context;

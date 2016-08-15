@@ -22,16 +22,16 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "**HIDDEN**";
+    var mkdocs_page_name = "Overview";
     var mkdocs_page_input_path = "nfvo-installation.md";
     var mkdocs_page_url = "/nfvo-installation/";
      var mkdocs_page_url = "/nfvo-installation/";
   </script>
   
   <!-- site_name == OpenBaton Documentation -->
-  <!-- page_title == **HIDDEN** -->
+  <!-- page_title == Overview -->
   <!-- base_url == .. -->
-  <!-- current_page == **HIDDEN** - /nfvo-installation/ [*]
+  <!-- current_page == Overview - /nfvo-installation/ [*]
  -->
   <script src="../js/jquery-2.1.1.min.js"></script>
   <script src="../js/modernizr-2.8.3.min.js"></script>
@@ -86,14 +86,14 @@ display: block;
 $( document).ready(function(){
       //console.log("test");
 
-    //$('.subnav').not( ":has('**HIDDEN**')" ).hide();
+    //$('.subnav').not( ":has('Overview')" ).hide();
     $('li.subnav_drop').find('ul.subnav').hide();
     //$('li.subnav_drop').find('ul.subnav').each(function(i,e){console.log(i,e)});
-       $( ".subnav" ).find( "li:contains('**HIDDEN**')" ).each(function(i,e){
+       $( ".subnav" ).find( "li:contains('Overview')" ).each(function(i,e){
           var currentElement = $(e);
           currentElement.parent().css({"display":"block","visibility":"visible"}); //css("background-color","blue");
           currentElement.css({"display":"block","visibility":"visible"});
-       });//$( ".subnav" ).find( "li:contains('**HIDDEN**')" ).css("display","block");
+       });//$( ".subnav" ).find( "li:contains('Overview')" ).css("display","block");
        //$(".current").css({"background-color":"blue","display":"block","visibility":"visible"});
        //show(1000,function(i,e){console.log(i,e)});
        //$('li.subnav_drop').find('ul.subnav').css("background-color","blue");
@@ -105,11 +105,11 @@ $( document).ready(function(){
 
 });
    
-$( ".wy-nav-content" ).find( "li:contains('**HIDDEN**')" ).css('color','red');
+$( ".wy-nav-content" ).find( "li:contains('Overview')" ).css('color','red');
 console.log('--------');
-console.log($( ".wy-nav-content" ).find( "div:contains('**HIDDEN**')" ).css("color","red"));
+console.log($( ".wy-nav-content" ).find( "div:contains('Overview')" ).css("color","red"));
 console.log('--------');
-console.log($( ".subnav" ).find( "li:contains('**HIDDEN**')" ));
+console.log($( ".subnav" ).find( "li:contains('Overview')" ));
 console.log('--------');
   </script>
 
@@ -172,8 +172,55 @@ console.log('--------');
         
              
 
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Overview</a>
+        
+         
+        
+    </li>
+
+
+        
+             
+
     <li class="toctree-l1 ">
-        <a class="" href="../nfvo-installation-deb/">Install Open Baton</a>
+        <a class="" href="../nfvo-installation-deb/">Install on Linux</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-mac/">Install on MacOS</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-docker/">Install with Docker</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-vagrant/">Install with Vagrant</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-configuration/">Configure it</a>
         
     </li>
 
@@ -277,24 +324,6 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../zabbix-plugin/">Use Zabbix plugin</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../tosca-iperf-scenario/">TOSCA iperf scenario</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../tosca-CSAR-onboarding/">TOSCA CSAR on-boarding</a>
         
     </li>
 
@@ -449,6 +478,10 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -466,252 +499,26 @@ console.log('--------');
                     <div role="main">
                       <div class="section">
                         
-                          <h1 id="install-open-baton-from-source-code">Install Open Baton from source code</h1>
+                          <h1 id="install-open-baton">Install Open Baton</h1>
 <p>This tutorial will guide towards the installation of a minimal Open Baton environment composed by the following components: </p>
 <ul>
 <li>The NFVO implemented in java using the <a href="https://spring.io">spring.io</a> framework. For more details about the NFVO architecture, you can refer to the next sections</li>
-<li>RabbitMQ as messaging system <a href="https://www.rabbitmq.com/">RabbitMQ</a>.</li>
-<li>Test plugin for being able to execute the <a href="../dummy-NSR/">dummy NSR</a> tutorial without needing an OpenStack instance. </li>
 </ul>
 <p>And a set of optional components: </p>
 <ul>
-<li>Generic VNFM</li>
-<li>OpenStack plugin: in case you want to use OpenStack as VIM</li>
+<li>Generic VNFM if you don't want to implement your own VNFM</li>
+<li>OpenStack plugin in case you want to use OpenStack as VIM</li>
+<li>Test plugin for being able to execute the <a href="../dummy-NSR/">dummy NSR</a> tutorial without needing an OpenStack instance. </li>
 </ul>
-<h3 id="install-the-latest-stable-open-baton-environment-from-source-code">Install the latest stable Open Baton environment from source code</h3>
-<p>This installation guide will provide you details on how to install the minimal set of Open Baton components using the boostrap scripts.</p>
-<p>To facilitate the installation procedures we provide a bootstrap script which will install the desired components and configure them for running a hello world VNF out of the box. To execute the bootstrap procedure you need to have curl installed (see http://curl.haxx.se/). This command should work on any linux system: </p>
-<pre><code class="bash">sh &lt;(curl -s http://get.openbaton.org/bootstrap) develop
-</code></pre>
-
-<p><strong>NOTE - By default RabbitMQ is installed on the host of the NFVO. Be aware of the fact that during the installation you will be prompted for entering the RabbitMQ IP and Port. Please make sure that this IP can be
-  reached by external components (VMs, or host where will run other VNFMs) otherwise you will have runtime issues. If you are installing Open Baton on a VM running in OpenStack, the best is that you put here
-  the floating IP. </strong></p>
-<p>During the bootstrap procedure you will be prompted for inputs. For instance you can choose to install or not the Generic VNFM, or enable or not SSL. 
-At the end of the bootstrap procedure, if there are no errors, the dashboard shuold be reachable at: <a href="http://localhost:8080/">localhost:8080</a> and you should have the following structure:</p>
-<pre><code class="bash">/opt/openbaton/
-├── generic-vnfm
-└── nfvo
-</code></pre>
-
-<p>Where:</p>
+<p>In order to execute the minimal Open Baton setup you need the RabbitMQ messaging system (<a href="https://www.rabbitmq.com/">RabbitMQ</a>). For some environments we provide installation mechanisms for automatically installing and configuring RabbitMQ. In some other cases you will need to manually install and configure it.</p>
+<p>We provide several ways for installing Open Baton. You can choose between: </p>
 <ul>
-<li><code>generic-vnfm</code>contains the source code and scripts required for dealing with the generic-vnfm  </li>
-<li><code>nfvo</code> contains the source code and scripts of the NFVO</li>
+<li><strong>Linux OS</strong>: Direct installation on top of a Linux OS (ubuntu/debian) using either the <a href="../nfvo-installation-src/">source-code</a> or <a href="../nfvo-installation-deb/">binary</a> version</li>
+<li><strong>Mac OS</strong>: Install it on MacOS using the provided brew formula. More info <a href="../nfvo-installation-mac/">here</a></li>
+<li><strong>Docker</strong>: Launching a pre-configured docker image containing a standalone Open Baton environment. More info <a href="../nfvo-installation-docker/">here</a></li>
+<li><strong>Vagrant</strong>: Launching a vagrant box using the provided vagrantfile. More info <a href="../nfvo-installation-vagrant/">here</a></li>
 </ul>
-<p>At this point the NFVO is ready to be used. Please refer to the <a href="../use/">Introduction</a> on how to start using it.</p>
-<h3 id="starting-and-stopping-nfvo">Starting and stopping NFVO</h3>
-<p>After the installation procedure the nfvo is running. If you want to stop it, enter this command:</p>
-<pre><code class="bash">cd /opt/openbaton/nfvo
-./openbaton.sh stop
-</code></pre>
-
-<p><strong>Note (in case you are also using the generic-vnfm):</strong> remember to stop also the Generic VNFM with the following command:</p>
-<pre><code class="bash">cd /opt/openbaton/generic-vnfm
-./generic-vnfm.sh stop
-</code></pre>
-
-<p>To start the nfvo, enter the command:</p>
-<pre><code class="bash">cd /opt/openbaton/nfvo
-./openbaton.sh start
-</code></pre>
-
-<p><strong>Note (in case you are also using the generic-vnfm):</strong> remember to start also the Generic VNFM with the following command:</p>
-<pre><code class="bash">cd /opt/openbaton/generic-vnfm
-./generic-vnfm.sh start
-</code></pre>
-
-<h3 id="nfvo-properties-overview">NFVO properties overview</h3>
-<p>After the bootstrap procedure, the NFVO the configuration file is located at: </p>
-<pre><code class="bash">/etc/openbaton/openbaton.properties
-</code></pre>
-
-<p>Feel free to modify that file for adding or removing specific functionalities. For instance, you can decide to change logging levels (TRACE, DEBUG, INFO, WARN, and ERROR) and mechanisms:</p>
-<pre><code class="properties">logging.level.org.springframework=INFO
-logging.level.org.hibernate=INFO
-logging.level.org.apache=INFO
-logging.level.org.jclouds=WARN
-logging.level.org.springframework.web = WARN
-
-# Level for loggers on classes inside the root package &quot;org.project.openbaton&quot; (and its sub-packages)
-logging.level.org.openbaton=INFO
-
-# Direct log to a log file
-logging.file=/var/log/openbaton.log
-</code></pre>
-
-<p>Or parameters related with persistency (hibernate):</p>
-<pre><code class="properties"># DB properties
-spring.datasource.username=admin
-spring.datasource.password=changeme
-# hsql jdbc
-spring.datasource.url=jdbc:hsqldb:file:/tmp/openbaton/openbaton.hsdb
-spring.datasource.driver-class-name=org.hsqldb.jdbc.JDBCDriver
-spring.jpa.database-platform=org.hibernate.dialect.HSQLDialect
-# mysql jdbc
-#spring.datasource.url=jdbc:mysql://localhost:3306/openbaton
-#spring.datasource.driver-class-name=com.mysql.jdbc.Driver
-#spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
-# hibernate properties
-spring.jpa.show-sql=false
-spring.jpa.hibernate.ddl-auto=create-drop
-</code></pre>
-
-<p><strong>IMPORTANT NOTES:</strong></p>
-<p>(Keep in mind that whenever some of the parameters below referred are changed, you will need to restart the NFVO)</p>
-<p>1) By default RabbitMQ is installed on the host of the NFVO. Be aware of the fact that if you want your VNFM to be executed on a different host, you will need RabbitMQ to be reachable also from the outside.<br />
-So when you want to deploy a VNF (EMS) in a VM which runs on a different host in respect to the NFVO, you will need to configure the rabbitmq endpoint (<strong>nfvo.rabbit.brokerIp</strong>) with the real IP of the NFVO host (instead of localhost).</p>
-<p>This can be done changing the following properties of the <em>/etc/openbaton/openbaton.properties</em> file:</p>
-<pre><code class="properties">nfvo.rabbit.brokerIp = localhost 
-</code></pre>
-
-<p>to:</p>
-<pre><code class="properties">nfvo.rabbit.brokerIp = the rabbitmq broker ip
-</code></pre>
-
-<p>2) At the end of the installation the NFVO is working with a in-memory database. In order to start using persistency through mysql database, you need to make the properties changes shown below:</p>
-<pre><code class="properties"># DB properties
-spring.datasource.username=admin
-spring.datasource.password=changeme
-# hsql jdbc
-# spring.datasource.url=jdbc:hsqldb:file:/tmp/openbaton/openbaton.hsdb
-# spring.datasource.driver-class-name=org.hsqldb.jdbc.JDBCDriver
-# spring.jpa.database-platform=org.hibernate.dialect.HSQLDialect
-
-# mysql jdbc
-spring.datasource.url=jdbc:mysql://localhost:3306/openbaton
-spring.datasource.driver-class-name=com.mysql.jdbc.Driver
-spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
-
-# hibernate properties
-spring.jpa.show-sql=false
-# spring.jpa.hibernate.ddl-auto=create-drop
-spring.jpa.hibernate.ddl-auto=update
-</code></pre>
-
-<p>Where:
-<em> <em>spring.datasource.username</em> and <em>spring.datasource.password</em> need to be adapted to the mysql username and password.</em> <em>spring.jpa.hibernate.ddl-auto</em> has to be set to <strong>update</strong> if you want the NFVO not to drop all the tables after being shut down and to make it reuse the same tables after restarting.</p>
-<p>For more details please see the <a href="http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html">Spring Documentation</a> regarding the configuration parameters.</p>
-<p>These are other parameters about the configuration of Rabbit MQ:</p>
-<pre><code class="properties">#########################################
-############## RabbitMQ #################
-#########################################
-
-# Comma-separated list of addresses to which the client should connect to.
-# spring.rabbitmq.addresses=${nfvo.rabbit.brokerIp}
-# Create an AmqpAdmin bean.
-spring.rabbitmq.dynamic=true
-# RabbitMQ host.
-spring.rabbitmq.host= ${nfvo.rabbit.brokerIp}
-# spring.rabbitmq.host= localhost
-# Acknowledge mode of container.
-# spring.rabbitmq.listener.acknowledge-mode=
-# Start the container automatically on startup.
-# spring.rabbitmq.listener.auto-startup=true
-# Minimum number of consumers.
-spring.rabbitmq.listener.concurrency= 5
-# Maximum number of consumers.
-spring.rabbitmq.listener.max-concurrency= 30
-# Number of messages to be handled in a single request. It should be greater than or equal to the transaction size (if used).
-# spring.rabbitmq.listener.prefetch=
-# Number of messages to be processed in a transaction. For best results it should be less than or equal to the prefetch count.
-# spring.rabbitmq.listener.transaction-size=
-# Login user to authenticate to the broker.
-spring.rabbitmq.username= admin
-# Login to authenticate against the broker.
-spring.rabbitmq.password= openbaton
-# RabbitMQ port.
-spring.rabbitmq.port=5672
-# Requested heartbeat timeout, in seconds; zero for none.
-# spring.rabbitmq.requested-heartbeat=
-# Enable SSL support.
-# spring.rabbitmq.ssl.enabled=false
-# Path to the key store that holds the SSL certificate.
-# spring.rabbitmq.ssl.key-store=
-# Password used to access the key store.
-# spring.rabbitmq.ssl.key-store-password=
-# Trust store that holds SSL certificates.
-# spring.rabbitmq.ssl.trust-store=
-# Password used to access the trust store.
-# spring.rabbitmq.ssl.trust-store-password=
-# Virtual host to use when connecting to the broker.
-# spring.rabbitmq.virtual-host=
-
-</code></pre>
-
-<p>These parameters represent the maximum file size of the VNF Package which can be uploaded to the NFVO and the total maximum request size</p>
-<pre><code class="properties"># filesUpload
-multipart.maxFileSize=2046MB
-multipart.maxRequestSize=2046MB
-</code></pre>
-
-<p>The following properties are related to the plugin mechanism used for loading VIM and Monitoring instances. The <code>vim-plugin-installation-dir</code> is the directory where all the jar files are, which implement the VIM interface (see the <a href="../vim-plugin">vim plugin documentation</a>). The NFVO will load them at runtime.  </p>
-<pre><code class="properties">########## plugin install ###############
-# directory for the vim driver plugins
-plugin-installation-dir = /usr/local/lib/openbaton/plugins
-</code></pre>
-
-<p>This property allows the user to delete the Network Service Records no matter in which status are they. Pleas note that in any case it is possible to remove a Network Service Record in <em>NULL</em> state.</p>
-<pre><code class="properties"># nfvo behaviour
-nfvo.delete.all-status = true
-</code></pre>
-
-<p><strong>MONITORING:</strong> Openbaton allows the monitoring of the VNFs via Zabbix. If you want to use this feature, install and configure Zabbix server following the guide at this page <a href="../zabbix-server-configuration/">Zabbix server configuration</a>.
-Once the Zabbix server is correctly configured and running, you need only to add following property. 
-Every time a new Network Service is instantiated, each VNFC (VM) is automatically registered to Zabbix server.</p>
-<pre><code class="properties">nfvo.monitoring.ip = the Zabbix server ip
-</code></pre>
-
-<p>These are other parameters about the configuration of the nfvo behaviour:</p>
-<pre><code class="properties"># Wait for the NSR to be deleted
-nfvo.delete.wait = false 
-# The broker ip that needs to be reachable from all the components
-nfvo.rabbit.brokerIp = the broker ip here 
-# Set the queues to be autodeleted after the shut down
-nfvo.rabbit.autodelete = true 
-# Setting the number of plugin active consumers
-nfvo.plugin.active.consumers = 5 
-# Setting the number of minimum concurrency of the nfvo receivers
-nfvo.rabbit.minConcurrency = 5 
-# Setting the number of maximum concurrency of the nfvo receivers
-nfvo.rabbit.maxConcurrency = 15
-# Setting the management port number of rabbitmq
-nfvo.rabbit.management.port = 15672 
-
-# Setting the heartbeat between ems and the broker
-nfvo.ems.queue.heartbeat = 60
-# Set the ems queues to be autodeleted after the shut down
-nfvo.ems.queue.autodelete = true
-# Set the ems version to be installed
-nfvo.ems.version = 0.17
-
-# Allow infinite quotas during the GRANT_OPERATION
-nfvo.vim.drivers.allowInfiniteQuota = false
-# Execute the start event sequentially and in order based on the VNFDependencies. This implies the NSD not to have cycling dependencies
-nfvo.start.ordered = false
-# Avoid doing the GRANT_OPERATION
-nfvo.quota.check = true
-# if true, deleting the nsd will remove also its vnfd
-nfvo.vnfd.cascade.delete = false
-# if true, deleting the vnfd will remove also its vnfpackage
-vnfd.vnfp.cascade.delete = false
-# if true, after deleting a NSR, the nfvo will wait for &quot;nfvo.delete.vnfr.wait.timeout&quot; after that timeout the VMs and VNFR will be deleted anyway from the NFVO
-nfvo.delete.vnfr.wait = false
-# this timeout is useful only if &quot;nfvo.delete.vnfr.wait&quot; is set to true
-nfvo.delete.vnfr.wait.timeout = 60
-</code></pre>
-
-<p>Those properties are needed in case you want to tune a bit the performances of the NFVO. When the VNFMs send a message to the NFVO, there is a pool of threads able to process these messages in parallel. These parameters allows you to change the pool configuration, for more details please check the <a href="http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/scheduling/concurrent/ThreadPoolTaskExecutor.html">spring documentation regarding thread pool executor</a> </p>
-<pre><code class="properties"># Thread pool executor configuration
-# for info see http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/scheduling/concurrent/ThreadPoolTaskExecutor.html
-nfvo.vmanager.executor.corepoolsize = 20
-nfvo.vmanager.executor.maxpoolsize = 30
-nfvo.vmanager.executor.queuecapacity = 500
-nfvo.vmanager.executor.keepalive = 30
-</code></pre>
-
-<h3 id="lets-move-to-the-next-step">Let's move to the next step</h3>
-<p>Dependening on the approach used for deploying your VNF, you'll have either to install the generic-VNFM or install and register your own VNFM</p>
+<p>Once you have done with the installation, you can decide either to fine tune your environment configuring the different parameters as described in the <a href="../nfvo-configuration/">configuration guide</a> or to move forward and start with your first <a href="../dummy-NSR/">hello world tutorial</a>.</p>
 <!---
 Script for open external links in a new tab
 -->
@@ -734,10 +541,10 @@ Script for open external links in a new tab
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../zabbix-server-configuration/" class="btn btn-neutral float-right" title="**HIDDEN**"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../nfvo-installation-deb/" class="btn btn-neutral float-right" title="Install on Linux"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../vnf-descriptor/" class="btn btn-neutral" title="**HIDDEN**"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href=".." class="btn btn-neutral" title="Get Started"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

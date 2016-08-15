@@ -173,7 +173,52 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../nfvo-installation-deb/">Install Open Baton</a>
+        <a class="" href="../nfvo-installation/">Overview</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-deb/">Install on Linux</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-mac/">Install on MacOS</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-docker/">Install with Docker</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-vagrant/">Install with Vagrant</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-configuration/">Configure it</a>
         
     </li>
 
@@ -277,24 +322,6 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../zabbix-plugin/">Use Zabbix plugin</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../tosca-iperf-scenario/">TOSCA iperf scenario</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../tosca-CSAR-onboarding/">TOSCA CSAR on-boarding</a>
         
     </li>
 
@@ -451,6 +478,10 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -470,7 +501,7 @@ console.log('--------');
                         
                           <h1 id="tutorial-iperf-network-service">Tutorial: iPerf Network Service</h1>
 <hr />
-<p>This tutorial explains how to deploy Network Service that uses iPerf. iPerf is a tool for active measurements of the maximum achievable bandwidth between two or more machines.
+<p>This tutorial explains how to deploy a network service that uses iPerf. <a href="https://iperf.fr">iPerf</a> is a tool for active measurements of the maximum achievable bandwidth between two or more machines.
 This tutorial makes use of:</p>
 <ul>
 <li>Generic VNFM (<a href="https://github.com/openbaton/generic-vnfm">generic-vnfm</a>)</li>
@@ -491,11 +522,11 @@ This tutorial makes use of:</p>
 <p>If you want to use the Dashboard (checkout the <a href="../nfvo-how-to-use-gui">dashboard documentation</a> for more information on how to use it), open it at the URL http://your-ip-here:8080 and log in (default username and password are <em>admin</em> and <em>openbaton</em>). Go to <code>Catalogue -&gt; NS Descriptors</code> and choose the NSD of your choice by clicking on <code>Upload NSD</code> and selecting the Descriptor's json file.</p>
 <p><img alt="Onboarding-NSD" src="../images/tutorials/tutorial-iperf-NSR/nsd-onboarding.png" /></p>
 <h3 id="using-cli">Using CLI</h3>
-<p>If you want to use the CLI (checkout the <a href="../nfvo-how-to-use-cli">openbaton-client documentation</a> for more information on how to install it), you need to execute the following command in order to onboard the NSD iof the iPerf scenario by using private IPs:</p>
+<p>If you want to use the CLI (checkout the <a href="../nfvo-how-to-use-cli">openbaton-client documentation</a> for more information on how to install it), you need to execute the following command in order to onboard the iPerf's NSD by using private IPs:</p>
 <pre><code class="bash">$./openbaton.sh NetworkServiceDescriptor-create tutorial-iperf-NSR-privateIPs.json
 </code></pre>
 
-<p>Once this request is processed successfully it returns the following:</p>
+<p>Once this request is processed successfully, it returns the following:</p>
 <pre><code class="bash">+------------------ +------------------------------------------------------------------ +
 | PROPERTY          | VALUE                                                             |
 +------------------ +------------------------------------------------------------------ +
@@ -524,7 +555,7 @@ This tutorial makes use of:</p>
 </code></pre>
 
 <h2 id="deploy-the-network-service-descriptor">Deploy the Network Service Descriptor</h2>
-<p>As soon as you onboarded the NSD to the NFVO you can deploy this NSD either by using the dashboard or the CLI.</p>
+<p>As soon as you onboarded the NSD in the NFVO you can deploy this NSD either by using the dashboard or the CLI.</p>
 <h3 id="using-dashboard_1">Using dashboard</h3>
 <p>This part shows you how to deploy an onboarded NSD via the dashboard. You need to go again to the GUI, go to <code>Catalogue -&gt; NS Descriptors</code>, and open the drop down menu by clicking on <code>Action</code>. Afterwards you need to press the <code>Launch</code> button in order to start the deployment of this NSD.</p>
 <p><img alt="nsr-deployment" src="../images/tutorials/tutorial-iperf-NSR/nsd-deploy.png" /></p>
@@ -596,7 +627,7 @@ This tutorial makes use of:</p>
 <p>The following pictures shows what is going to be deployed, an <a href="https://iperf.fr">Iperf</a> client and an Iperf server.</p>
 <p><img alt="iperf-deployment" src="../images/use-case-example-iperf-client-server.png" /></p>
 <p>As shown in the picture, the iperf server is the source of the dependency and the client is the target. In this case the client needs the IP of the server. The semantics of the vnf dependency is: the source provides some parameters to the target.</p>
-<p>Before starting we need to send the VimInstance to the NFVO and the Network Service Descriptor. For doing this please have a look into the <a href="../vim-instance-documentation">Vim instance documentation</a>, <a href="../vnfpackage">VNF Package documentation</a> and <a href="../ns-descriptor">Network Service Descriptor documentation</a>. In fact, for creating a Network Service Record, we need to have a Network Service Descriptor loaded into the catalogue with two Virtual Network Functions (iperf client and server) created from a VNF Package. A Virtual Network Function Descriptor Json-File for Iperf client looks like this:</p>
+<p>Before starting we need to send the VimInstance to the NFVO and the Network Service Descriptor. For doing this please have a look into the <a href="../vim-instance">Vim instance documentation</a>, <a href="../vnfpackage">VNF Package documentation</a> and <a href="../ns-descriptor">Network Service Descriptor documentation</a>. In fact, for creating a Network Service Record, we need to have a Network Service Descriptor loaded into the catalogue with two Virtual Network Functions (iperf client and server) created from a VNF Package. A Virtual Network Function Descriptor Json-File for Iperf client looks like this:</p>
 <pre><code class="json">{
   &quot;name&quot;:&quot;iperf-client&quot;,
   &quot;vendor&quot;:&quot;FOKUS&quot;,

@@ -173,7 +173,52 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../nfvo-installation-deb/">Install Open Baton</a>
+        <a class="" href="../nfvo-installation/">Overview</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-deb/">Install on Linux</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-mac/">Install on MacOS</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-docker/">Install with Docker</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-vagrant/">Install with Vagrant</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-configuration/">Configure it</a>
         
     </li>
 
@@ -279,24 +324,6 @@ console.log('--------');
         <a class="current" href="./">Use Zabbix plugin</a>
         
          
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../tosca-iperf-scenario/">TOSCA iperf scenario</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../tosca-CSAR-onboarding/">TOSCA CSAR on-boarding</a>
         
     </li>
 
@@ -436,6 +463,10 @@ console.log('--------');
     
 </ul></li>
                  
+		
+		
+		
+		
 		
 		
 		
@@ -599,12 +630,12 @@ external-properties-file=/etc/openbaton/plugins/zabbix-plugin.conf
 <h2 id="using-it-via-monitoringplugincaller">Using it via MonitoringPluginCaller</h2>
 <p>In order to use the MonitorPluginCaller you need to import the relative plugin-sdk, coming from <a href="http://openbaton.github.io">Openbaton</a> project.
 To import the plugin-sdk, please add in your gradle file the following dependencies:</p>
-<pre><code>repositories {
+<pre><code class="gradle">repositories {
        maven { url &quot;http://get.openbaton.org:8081/nexus/content/groups/public/&quot; }
 }
 
 dependencies {
-    compile 'org.openbaton:plugin-sdk:2.0.0'
+    compile 'org.openbaton:plugin-sdk:2.1.2'
 }
 </code></pre>
 
@@ -789,8 +820,8 @@ Refer to <a href="https://www.zabbix.com/documentation/2.2/manual/config/trigger
 <strong>filter</strong>: AlarmEndpoint object which contains:
 -  name: name of the alarmEndpoint.
 -  resourceId: hostname which we want to subscribe.
--  type: REST or JMS.
--  endpoint: endpoint where we want to be notified. It is and url for REST or a queue name for JMS. (actually only rest is supported).
+-  type: REST or RABBIT.
+-  endpoint: endpoint where we want to be notified. It is and url for REST or a queue name for RabbitMQ. (actually only rest is supported).
 -  perceivedSeverity: define the severity of the alarm we want to get.
     If we specify PerceivedSeverity.WARNING we will able to get notification from alarm with severity equals or higher than WARNING.</p>
 <p>In the following example we subscribe for all alarms with severity higher than WARNING coming from the host 'host-1'.</p>
@@ -869,7 +900,7 @@ it creates an alarm (mapping zabbix notification into standard Alarm) and notify
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../tosca-iperf-scenario/" class="btn btn-neutral float-right" title="TOSCA iperf scenario"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../dummy-NSR/" class="btn btn-neutral float-right" title="Dummy NSR"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../nfvo-sdk/" class="btn btn-neutral" title="Use via the SDK"><span class="icon icon-circle-arrow-left"></span> Previous</a>

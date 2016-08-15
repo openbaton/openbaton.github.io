@@ -173,7 +173,52 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../nfvo-installation-deb/">Install Open Baton</a>
+        <a class="" href="../nfvo-installation/">Overview</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-deb/">Install on Linux</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-mac/">Install on MacOS</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-docker/">Install with Docker</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-vagrant/">Install with Vagrant</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-configuration/">Configure it</a>
         
     </li>
 
@@ -279,24 +324,6 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../zabbix-plugin/">Use Zabbix plugin</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../tosca-iperf-scenario/">TOSCA iperf scenario</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../tosca-CSAR-onboarding/">TOSCA CSAR on-boarding</a>
         
     </li>
 
@@ -451,6 +478,10 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -527,7 +558,7 @@ console.log('--------');
 </tr>
 <tr>
 <td>vnf_dependency</td>
-<td>A list of VNF_Dependencies</td>
+<td>A list of VNF_Dependencies (<strong>Not mandatory</strong>, please check the <a href="../vnf-descriptor">vnfd page</a> in order to understand how to get rid of it)</td>
 </tr>
 </tbody>
 </table>
@@ -536,7 +567,7 @@ console.log('--------');
 The VLD must contain a parameter <em>name</em> with the value of a network that will be used by the VirtualNetworkFunctionDescriptors.
 If the network exists, then this network will be used, if not a new one will be created.</p>
 <h3 id="vnf-dependencies">VNF Dependencies</h3>
-<p>A VNF Dependency is composed by </p>
+<p>A VNF Dependency is composed by:</p>
 <table>
 <thead>
 <tr>
@@ -559,6 +590,7 @@ If the network exists, then this network will be used, if not a new one will be 
 </tr>
 </tbody>
 </table>
+<p>It is possible to let the Orchestrator to calculate dependencies automatically by providing some parameters in the VNF Descriptor part. Please check the <a href="../vnf-descriptor">VNF Descriptor page</a></p>
 <!---
 References
 -->
