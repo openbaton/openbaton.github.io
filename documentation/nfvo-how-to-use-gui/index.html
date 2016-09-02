@@ -482,6 +482,16 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -559,6 +569,10 @@ On this page you can see the list of NS Descriptors stored in OpenBaton</p>
 <li>
 <p>Press <em>Launch with VIM key</em> in order to use the key you have mentioned in VIM instance JSON or to use no key at all(this will be the case if no key was mentioned in the VIM file). </p>
 </li>
+<li>
+<p>You can now also pick PoP if you have named VDUs in your NSD, if you pick no PoP, NFVO will pick one of the PoPs that you have written in NSD's VDUs. You can pick one PoP for all the named VDU by simply pressing plus and adding picking a PoP in selection bar. If you want to pick PoP per VNF, you can mark expand and it will let you add PoP choice per VNF, the same goes for picking PoPs per VDU. 
+ <em>IMPORTANT</em>: Only the named VDU will be affected by higher level choices, unnamed VDUs' PoPs will be picked by NFVO automatically. </p>
+</li>
 </ol>
 <p><img alt="NSD Launch" src="../images/nfvo-how-to-use-gui-launch-nsd.png" /></p>
 <h4 id="storing-nsd">Storing NSD</h4>
@@ -607,7 +621,7 @@ and the information about the <em>Dependencies</em> stored in the Network Servic
 <p>In the list of Virtual Network Function Descriptors in NSD template you can click on the id of a Virtual Network Function Descriptor to get to this page</p>
 <p><img alt="VNF Descriptor Information" src="../images/nfvo-how-to-use-gui-VNFD-information.png" /></p>
 <p>At the bottom of the page you can see the Virtual Deployment Unit (VDU) tab and if you click on the <strong>id</strong> of the 
-VDU you can see the details of it</p>
+VDU you can see the details of it. Here you can also start stop VNFC Instances with button. </p>
 <p><img alt="VDU Information" src="../images/nfvo-how-to-use-gui-VDU-information.png" /></p>
 <h3 id="vnf-packages">VNF Packages</h3>
 <p>On this page you can upload the <strong>VNF Package</strong>. For more information about the VNF Package please read the <a href="../vnfpackage/">VNF Package documentation</a> 

@@ -482,6 +482,16 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -695,18 +705,31 @@ source nfvo.properties
 <h3 id="network-service-record-subcommands"><strong>Network Service Record Subcommands</strong></h3>
 <p><strong>create</strong></p>
 <ul>
-<li>Create a Network Service Record from a file</li>
-</ul>
-<pre><code class="sh"> $ openbaton.sh NetworkServiceRecord-create file.json
-</code></pre>
-
-<p><strong>create</strong></p>
-<ul>
 <li>Create a Network Service Record from a Network Service Descriptor stored in the orchestrator</li>
 </ul>
-<pre><code class="sh"> $ openbaton.sh NetworkServiceRecord-create id-network-service-descriptor
+<pre><code class="sh"> $ openbaton.sh NetworkServiceRecord-create id-network-service-descriptor vim-map-file keypair-file configurations-file
 </code></pre>
 
+<p>The three arguments after the NSD id can be used to specify the VIM on which a VDU should be deployed, the keypairs that shall be used to deploy the NSR and configuration parameters for the VNFRs.<br />
+If you want to specify the VIM to use for a particular VDU you can pass a file containing a map like this:</p>
+<pre><code class="json"> {&quot;vdu1Name&quot;:[vim1,vim2,vim3], &quot;vdu2Name&quot;:[vim1]}
+</code></pre>
+
+<p>In this case the VDU named vdu2Name would be deployed on vim1 and the VDU named vdu1Name randomly on one of the VIMs vim1, vim2 or vim3.  </p>
+<p>The second command argument specifies a file containing a list that describes which keypairs shall be used to deploy the NSR. Here is an example: </p>
+<pre><code class="json"> [&quot;key1&quot;, &quot;key2&quot;, &quot;key3&quot;]
+</code></pre>
+
+<p>The last command argument specifies a file containing a map of VNFR names and configuration parameters. Here is an example: </p>
+<pre><code class="json">{
+  &quot;configurations&quot;:{ 
+    &quot;vnfrName1&quot;:{&quot;name&quot;:&quot;conf1&quot;,&quot;configurationParameters&quot;:[{&quot;confKey&quot;:&quot;key1&quot;, &quot;value&quot;:&quot;value1&quot;, &quot;description&quot;:&quot;description1&quot;}]}, 
+    &quot;vnfrName2&quot;:{&quot;name&quot;:&quot;conf2&quot;,&quot;configurationParameters&quot;:[{&quot;confKey&quot;:&quot;key1&quot;, &quot;value&quot;:&quot;value1&quot;, &quot;description&quot;:&quot;description1&quot;}]} 
+  }
+}
+</code></pre>
+
+<p>Of course you do not have to specify VIMs, keys and configurations. If you do not want to specify them just put empty objects into the files i.e. {} and []. </p>
 <p><strong>delete</strong></p>
 <ul>
 <li>Delete a Network Service Record passing its id</li>
@@ -756,43 +779,30 @@ source nfvo.properties
 <pre><code class="sh"> $ openbaton.sh NetworkServiceRecord-deleteVirtualNetworkFunctionRecord id-network-service-record id-vnfr
 </code></pre>
 
-<ul>
-<li>
 <p><strong>createVNFDependency</strong></p>
-</li>
-<li>
-<p>Create a Virtual Network Function Record Dependency of a NetworkServiceRecord with a specific id</p>
-</li>
+<ul>
+<li>Create a Virtual Network Function Record Dependency of a NetworkServiceRecord with a specific id</li>
 </ul>
 <pre><code class="sh"> $ openbaton.sh NetworkServiceRecord-createVNFDependency id-network-service-record file.json
 </code></pre>
 
-<ul>
-<li>
 <p><strong>deleteVNFDependency</strong></p>
-</li>
-<li>
-<p>Delete the Virtual Network Function Record Dependency of a NetworkServiceRecord with a specific id
-  <code>sh
-   $ openbaton.sh NetworkServiceRecord-deleteVNFDependency id-network-service-record id-vnfdependency</code></p>
-</li>
-<li>
+<ul>
+<li>Delete the Virtual Network Function Record Dependency of a NetworkServiceRecord with a specific id</li>
+</ul>
+<pre><code class="sh"> $ openbaton.sh NetworkServiceRecord-deleteVNFDependency id-network-service-record id-vnfdependency
+</code></pre>
+
 <p><strong>getVNFDependencies</strong></p>
-</li>
-<li>
-<p>Get all the Virtual Network Function Record Dependencies of a Network Service Record with a specific id</p>
-</li>
+<ul>
+<li>Get all the Virtual Network Function Record Dependencies of a Network Service Record with a specific id</li>
 </ul>
 <pre><code class="sh"> $ openbaton.sh NetworkServiceRecord-getVNFDependencies id-network-service-record
 </code></pre>
 
-<ul>
-<li>
 <p><strong>getVNFDependency</strong></p>
-</li>
-<li>
-<p>Get the Virtual Network Function Record Dependency of a Network Service Record with a specific id</p>
-</li>
+<ul>
+<li>Get the Virtual Network Function Record Dependency of a Network Service Record with a specific id</li>
 </ul>
 <pre><code class="sh"> $ openbaton.sh NetworkServiceRecord-getVNFDependency id-network-service-record id-vnfdependency
 </code></pre>
@@ -809,6 +819,137 @@ source nfvo.properties
 <li>Perform a SCALE_IN operation on a Virtual Network Function by deleting a VNFCInstance from the Virtual Network Function Record</li>
 </ul>
 <pre><code class="sh">$ openbaton.sh NetworkServiceRecord-deleteVNFCInstance id-network-service-record id-virtual-network-function-record
+</code></pre>
+
+<p><strong>startVNFCInstance</strong></p>
+<ul>
+<li>Start a VNFCInstance specified by it's id</li>
+</ul>
+<pre><code class="sh">$ openbaton.sh NetworkServiceRecord-startVNFCInstance id-nsr id-vnfr id-vdu id-vnfcinstance
+</code></pre>
+
+<p><strong>stopVNFCInstance</strong></p>
+<ul>
+<li>Stop a VNFCInstance specified by it's id</li>
+</ul>
+<pre><code class="sh">$ openbaton.sh NetworkServiceRecord-stopVNFCInstance id-nsr id-vnfr id-vdu id-vnfcinstance
+</code></pre>
+
+<h3 id="user-subcommands"><strong>User Subcommands</strong></h3>
+<p><strong>create</strong></p>
+<ul>
+<li>Create a new User</li>
+</ul>
+<pre><code class="sh">$ openbaton.sh User-create file.json
+</code></pre>
+
+<p><strong>delete</strong></p>
+<ul>
+<li>Delete a user passing his id</li>
+</ul>
+<pre><code>$ openbaton.sh User-delete user-id
+</code></pre>
+
+<p><strong>update</strong></p>
+<ul>
+<li>Update a User</li>
+</ul>
+<pre><code class="sh">$ openbaton.sh User-update file.json user-id
+</code></pre>
+
+<p><strong>findAll</strong></p>
+<ul>
+<li>Find all Users</li>
+</ul>
+<pre><code class="sh">$ openbaton.sh User-findAll
+</code></pre>
+
+<p><strong>findByName</strong></p>
+<ul>
+<li>Find a User by his username</li>
+</ul>
+<pre><code class="sh">$ openbaton.sh User-findByName username
+</code></pre>
+
+<p><strong>changePassword</strong></p>
+<ul>
+<li>Change the password of the current user</li>
+</ul>
+<pre><code class="sh">$ openbaton.sh User-changePassword oldPassword newPassword
+</code></pre>
+
+<p>Remember to source nfvo.properties afterwards and set the new password if you want to continue working as this User. </p>
+<h3 id="project-subcommands"><strong>Project Subcommands</strong></h3>
+<p><strong>create</strong></p>
+<ul>
+<li>Create a new Project</li>
+</ul>
+<pre><code class="sh">$ openbaton.sh Project-create file.json
+</code></pre>
+
+<p><strong>delete</strong></p>
+<ul>
+<li>Delete a Project passing its id</li>
+</ul>
+<pre><code class="sh">$ openbaton.sh Project-delete id-project
+</code></pre>
+
+<p><strong>update</strong></p>
+<ul>
+<li>Delete a Project passing its id</li>
+</ul>
+<pre><code class="sh">$ openbaton.sh Project-delete id-project
+</code></pre>
+
+<p><strong>findAll</strong></p>
+<ul>
+<li>Find all Projects</li>
+</ul>
+<pre><code class="sh">$ openbaton.sh Project-findAll
+</code></pre>
+
+<p><strong>findById</strong></p>
+<ul>
+<li>Find a Project by passing its id</li>
+</ul>
+<pre><code class="sh">$ openbaton.sh Project-findById id-project
+</code></pre>
+
+<h3 id="key-subcommands"><strong>Key Subcommands</strong></h3>
+<p><strong>generateKey</strong></p>
+<ul>
+<li>Generate a new Key in the NFVO</li>
+</ul>
+<pre><code class="sh">$ openbaton.sh Key-generateKey keyname
+</code></pre>
+
+<p>You will get back the private key.</p>
+<p><strong>importKey</strong></p>
+<ul>
+<li>Import a Key into the NFVO</li>
+</ul>
+<pre><code class="sh">$ openbaton.sh Key-importKey keyname publicKey
+</code></pre>
+
+<p><strong>delete</strong></p>
+<ul>
+<li>Delete a Key passing its id</li>
+</ul>
+<pre><code class="sh">$ openbaton.sh Key-delete id-key
+</code></pre>
+
+<p><strong>findAll</strong></p>
+<ul>
+<li>Find all Keys</li>
+</ul>
+<pre><code class="sh">$ openbaton.sh Key-findAll
+</code></pre>
+
+<p><strong>findById</strong></p>
+<ul>
+<li>Find a Key by passing its id</li>
+</ul>
+<pre><code class="sh">$ openbaton.sh Key-findById id-key
 </code></pre>
 
 <h3 id="event-subcommands"><strong>Event Subcommands</strong></h3>
@@ -852,7 +993,7 @@ source nfvo.properties
 <ul>
 <li>Delete a Configuration passing its id</li>
 </ul>
-<pre><code class="sh"> $ openbaton.sh Configuration-delete id-configuration
+<pre><code class="sh">$ openbaton.sh Configuration-delete id-configuration
 </code></pre>
 
 <p><strong>findAll</strong></p>

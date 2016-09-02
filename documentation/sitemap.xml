@@ -5,7 +5,7 @@
         
     <url>
      <loc>None/</loc>
-     <lastmod>2016-08-15</lastmod>
+     <lastmod>2016-09-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -15,37 +15,37 @@
         
     <url>
      <loc>None/nfvo-installation/</loc>
-     <lastmod>2016-08-15</lastmod>
+     <lastmod>2016-09-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/nfvo-installation-deb/</loc>
-     <lastmod>2016-08-15</lastmod>
+     <lastmod>2016-09-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/nfvo-installation-mac/</loc>
-     <lastmod>2016-08-15</lastmod>
+     <lastmod>2016-09-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/nfvo-installation-docker/</loc>
-     <lastmod>2016-08-15</lastmod>
+     <lastmod>2016-09-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/nfvo-installation-vagrant/</loc>
-     <lastmod>2016-08-15</lastmod>
+     <lastmod>2016-09-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/nfvo-configuration/</loc>
-     <lastmod>2016-08-15</lastmod>
+     <lastmod>2016-09-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -55,61 +55,61 @@
         
     <url>
      <loc>None/use/</loc>
-     <lastmod>2016-08-15</lastmod>
+     <lastmod>2016-09-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/security/</loc>
-     <lastmod>2016-08-15</lastmod>
+     <lastmod>2016-09-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/vim-instance/</loc>
-     <lastmod>2016-08-15</lastmod>
+     <lastmod>2016-09-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/vnfpackage/</loc>
-     <lastmod>2016-08-15</lastmod>
+     <lastmod>2016-09-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/vnfm-generic/</loc>
-     <lastmod>2016-08-15</lastmod>
+     <lastmod>2016-09-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/ns-descriptor/</loc>
-     <lastmod>2016-08-15</lastmod>
+     <lastmod>2016-09-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/nfvo-how-to-use-gui/</loc>
-     <lastmod>2016-08-15</lastmod>
+     <lastmod>2016-09-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/nfvo-how-to-use-cli/</loc>
-     <lastmod>2016-08-15</lastmod>
+     <lastmod>2016-09-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/nfvo-sdk/</loc>
-     <lastmod>2016-08-15</lastmod>
+     <lastmod>2016-09-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/zabbix-plugin/</loc>
-     <lastmod>2016-08-15</lastmod>
+     <lastmod>2016-09-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -119,25 +119,25 @@
         
     <url>
      <loc>None/dummy-NSR/</loc>
-     <lastmod>2016-08-15</lastmod>
+     <lastmod>2016-09-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/iperf-NSR/</loc>
-     <lastmod>2016-08-15</lastmod>
+     <lastmod>2016-09-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/ims-NSR/</loc>
-     <lastmod>2016-08-15</lastmod>
+     <lastmod>2016-09-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/integration-test-use/</loc>
-     <lastmod>2016-08-15</lastmod>
+     <lastmod>2016-09-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -147,31 +147,31 @@
         
     <url>
      <loc>None/extend/</loc>
-     <lastmod>2016-08-15</lastmod>
+     <lastmod>2016-09-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/nfvo-architecture/</loc>
-     <lastmod>2016-08-15</lastmod>
+     <lastmod>2016-09-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/vim-plugin/</loc>
-     <lastmod>2016-08-15</lastmod>
+     <lastmod>2016-09-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/vnfm-how-to-write/</loc>
-     <lastmod>2016-08-15</lastmod>
+     <lastmod>2016-09-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/vnfm-vendor-specific/</loc>
-     <lastmod>2016-08-15</lastmod>
+     <lastmod>2016-09-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -181,7 +181,7 @@
         
     <url>
      <loc>None/FAQ/</loc>
-     <lastmod>2016-08-15</lastmod>
+     <lastmod>2016-09-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -190,7 +190,7 @@
     
     <url>
      <loc>None/tosca-iperf-scenario/</loc>
-     <lastmod>2016-08-15</lastmod>
+     <lastmod>2016-09-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -198,7 +198,7 @@
     
     <url>
      <loc>None/tosca-CSAR-onboarding/</loc>
-     <lastmod>2016-08-15</lastmod>
+     <lastmod>2016-09-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -206,7 +206,7 @@
     
     <url>
      <loc>None/vnf-descriptor/</loc>
-     <lastmod>2016-08-15</lastmod>
+     <lastmod>2016-09-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -214,7 +214,7 @@
     
     <url>
      <loc>None/nfvo-installation-src/</loc>
-     <lastmod>2016-08-15</lastmod>
+     <lastmod>2016-09-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -222,7 +222,47 @@
     
     <url>
      <loc>None/zabbix-server-configuration/</loc>
-     <lastmod>2016-08-15</lastmod>
+     <lastmod>2016-09-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/tosca-iperf-scenario/</loc>
+     <lastmod>2016-09-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/tosca-dummy-nsr/</loc>
+     <lastmod>2016-09-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/tosca-CSAR-onboarding/</loc>
+     <lastmod>2016-09-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/tosca-vnfd/</loc>
+     <lastmod>2016-09-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/tosca-ims/</loc>
+     <lastmod>2016-09-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -230,7 +270,7 @@
     
     <url>
      <loc>None/vnfr-states/</loc>
-     <lastmod>2016-08-15</lastmod>
+     <lastmod>2016-09-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -238,7 +278,7 @@
     
     <url>
      <loc>None/vnf-parameters/</loc>
-     <lastmod>2016-08-15</lastmod>
+     <lastmod>2016-09-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -246,7 +286,7 @@
     
     <url>
      <loc>None/nsd-json-example/</loc>
-     <lastmod>2016-08-15</lastmod>
+     <lastmod>2016-09-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -254,7 +294,7 @@
     
     <url>
      <loc>None/integration-test-write/</loc>
-     <lastmod>2016-08-15</lastmod>
+     <lastmod>2016-09-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     

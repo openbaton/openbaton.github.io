@@ -480,6 +480,16 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -497,594 +507,156 @@ console.log('--------');
                     <div role="main">
                       <div class="section">
                         
-                          <h1 id="tosca-definition">TOSCA definition</h1>
-<p>The definition follows the TOSCA Simple Profile for Network Functions Virtualization (NFV) <a href="http://docs.oasis-open.org/tosca/tosca-nfv/v1.0/tosca-nfv-v1.0.html">Version 1.0</a>
-Regarding the objects defined from ETSI please see: <a href="https://www.etsi.org/deliver/etsi_gs/NFV-MAN/001_099/001/01.01.01_60/gs_NFV-MAN001v010101p.pdf">ETSI GS NFV-MAN 001</a></p>
-<p>Premise: some of the objects are defined by OpenBaton</p>
-<h2 id="prerequisites">Prerequisites</h2>
-<p>The prerequisites are:</p>
+                          <h1 id="tosca-iperf-scenario">TOSCA Iperf Scenario</h1>
+<p>The definition follows the TOSCA Simple Profile for Network Functions Virtualization (NFV) <a href="http://docs.oasis-open.org/tosca/tosca-nfv/v1.0/tosca-nfv-v1.0.html">Version 1.0</a>. Information about creating a complete TOSCA Template from scratch can be found in this <a href="../tosca-dummy-nsr">tutorial</a>.</p>
+<p>This tutorial explains how to deploy a network service that uses iPerf. <a href="https://iperf.fr">iPerf</a> is a tool for active measurements of the maximum achievable bandwidth between two or more machines.
+This tutorial makes use of:</p>
 <ul>
-<li>OpenBaton running</li>
-<li>Generic VNFM running</li>
-<li><a href="../vim-instance">Vim Instance</a> stored in the Catalogue</li>
+<li>Generic VNFM (<a href="https://github.com/openbaton/generic-vnfm">generic-vnfm</a>)</li>
+<li>Generic EMS (<a href="https://github.com/openbaton/ems/tree/master">generic ems</a>)</li>
+<li>OpenStack plugin (<a href="https://github.com/openbaton/openstack-plugin">openstack-plugin</a>)</li>
 </ul>
-<h2 id="mapping-between-tosca-and-etsi-nfv">Mapping between TOSCA and ETSI NFV</h2>
-<table>
-<thead>
-<tr>
-<th>TOSCA Type</th>
-<th>ETSI Entity</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>openbaton.type.VNF.GENERIC</td>
-<td>Virtual Network Function Descriptor (type: GENERIC)</td>
-</tr>
-<tr>
-<td>openbaton.type.VDU</td>
-<td>Virtual Deployment Unit (vnfd:vdu)</td>
-</tr>
-<tr>
-<td>tosca.nodes.nfv.VL</td>
-<td>Virtual Link Descriptor</td>
-</tr>
-<tr>
-<td>tosca.nodes.nfv.CP</td>
-<td>Connection Point</td>
-</tr>
-</tbody>
-</table>
-<h2 id="deploy-an-iperf-tosca-definition">Deploy an Iperf TOSCA definition</h2>
-<p>We are going to create a NSD from TOSCA-definition that create a <a href="https://iperf.fr">iperf</a> scenario.</p>
-<p>The components in the definition are these in the picture below:</p>
-<p><img alt="Iperf overview" src="../images/iperf.png" /></p>
-<h2 id="node-templates">Node Templates</h2>
-<p>The Node Templates are the description of the Objects which constitute the Network Service Descriptor.
-Each Object is defined by <code>Map&lt;String , Object&gt;</code></p>
-<h3 id="node-template-vnf">Node Template: VNF</h3>
-<p>You can see the definition of the VNF as described below:</p>
-<pre><code class="yaml">iperf-server: #VNF1
-      type: openbaton.type.VNF.GENERIC
-      properties:
-        id:
-        vendor: Fokus
-        version: 0.1
-        configurations:
-          name: server-configurations
-          configurationParameters:
-            - key: value
-            - key2: value2
-        vnfPackageLocation: https://gitlab.fokus.fraunhofer.de/openbaton/scripts-test-public.git
-        deployment_flavour:
-          - flavour_key: m1.small
-      requirements:
-        - virtualLink: private
-        - host:
-            node: VDU2
-            type: openbaton.relationships.HostedOn
-      interfaces:
-        Standard: # lifecycle
-          create: install.sh
-          start: install-srv.sh
-</code></pre>
+<h2 id="requirements">Requirements</h2>
+<p>In order to execute this scenario, you need to have the following components up and running:</p>
+<ul>
+<li>The NFVO</li>
+<li>the OpenStack plugin</li>
+<li>the Generic VNFM (includes already generic EMS)</li>
+<li>a PoP (of type openstack) registered. You can use the following <a href="../descriptors/vim-instance/openstack-vim-instance.json">json descriptor</a> by changing the values to your needs.</li>
+</ul>
+<p>More information about the Iperf Scenario <a href="../iperf-NSR">here</a>.</p>
+<h3 id="complete-example">Complete Example</h3>
+<pre><code class="yaml">tosca_definitions_version: tosca_simple_iperf_scenario
+description: Example of NSD
 
-<p>This VNF is called <code>iperf-server</code> and below you can see the description of the fields:</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Value</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>type</td>
-<td>openbaton.type.VNF.GENERIC</td>
-<td>It is the type of the VNF and defines the type of the Virtual Network Function Manager (VNFG) which will handle the VNF</td>
-</tr>
-<tr>
-<td>properties</td>
-<td>See the Table below</td>
-<td>It is  a Object where are mapped some values for deploying the VNF</td>
-</tr>
-<tr>
-<td>requirements</td>
-<td>See the Table below</td>
-<td>It describes the requirements for the VNF</td>
-</tr>
-<tr>
-<td>interfaces</td>
-<td>See the Table below</td>
-<td>It is an Object which maps for each lifecycle interface  with the Script that will be executed for the lifecycle event specified</td>
-</tr>
-</tbody>
-</table>
-<p>The <strong>Properties</strong> for the VNF are:</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Value</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>id</td>
-<td>String</td>
-<td>Identifier of the VNF</td>
-</tr>
-<tr>
-<td>vendor</td>
-<td>String</td>
-<td>Name of the provider of the VNF</td>
-</tr>
-<tr>
-<td>version</td>
-<td>String</td>
-<td>Version of the provider of the VNF</td>
-</tr>
-<tr>
-<td>configurations</td>
-<td>Object with two values <strong>name</strong>, <strong>configurationParameters</strong></td>
-<td><strong>name</strong>: is a String with the name of the Configuration, <strong>configurationParameters</strong>: the list of Parameters defined by a pair of &lt; key, value &gt;</td>
-</tr>
-<tr>
-<td>vnfPackageLocation</td>
-<td>URL</td>
-<td>It is URL where the Orchestrator will fetch the Scripts needed in the lifecycle events defined in the <strong>interfaces</strong></td>
-</tr>
-<tr>
-<td>deployment_flavour</td>
-<td>List of flavour_key</td>
-<td>It is a list flavors each one refers to Virtual hardware templates called "flavors" in OpenStack</td>
-</tr>
-</tbody>
-</table>
-<p>The <strong>Requirements</strong> for the VNF are:</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Value</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>virtualLink</td>
-<td>List</td>
-<td>It is the List of <em>virtuaLink</em> where this VNF is connected</td>
-</tr>
-<tr>
-<td>host</td>
-<td>List of VDU</td>
-<td>It is the List of VDU. Each <em>host</em> refers to a <strong>node</strong> VDU. This parameter follows the ETSI definition of VNF which should have the list of VDU.</td>
-</tr>
-</tbody>
-</table>
-<p>The <strong>Interfaces</strong> for the VNF cloud be of two types:
-The TOSCA-Parser can handle both configurations.</p>
-<h4 id="1-standard">1. Standard</h4>
-<p>This interface follows the definition of <strong>tosca.interfaces.node.lifecycle.Standard</strong> described in the <a href="http://docs.oasis-open.org/tosca/TOSCA-Simple-Profile-YAML/v1.0/csprd01/TOSCA-Simple-Profile-YAML-v1.0-csprd01.html#_Toc430015766">TOSCA Simple YAML</a> standard.</p>
-<table>
-<thead>
-<tr>
-<th>Lifecycle event</th>
-<th>Value</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>create</td>
-<td>Script file</td>
-<td>The Script will be called for this Lifecycle event</td>
-</tr>
-<tr>
-<td>configure</td>
-<td>Script file</td>
-<td>The Script will be called for this Lifecycle event</td>
-</tr>
-<tr>
-<td>start</td>
-<td>Script file</td>
-<td>The Script will be called for this Lifecycle event</td>
-</tr>
-<tr>
-<td>stop</td>
-<td>Script file</td>
-<td>The Script will be called for this Lifecycle event</td>
-</tr>
-<tr>
-<td>delete</td>
-<td>Script file</td>
-<td>The Script will be called for this Lifecycle event</td>
-</tr>
-</tbody>
-</table>
-<p><strong>NOTE</strong> You can define the relationship between two VNFs in the <em>configuration</em> event like you can see in the example below:</p>
-<pre><code class="yaml">interfaces:
-   Standard: # lifecycle
-      create: install.sh
-      configure:
-         implementation: configure.sh
-         inputs:
-            server_ip: { get_attribute: [iperf-server, mgmt] }
-      start: start.sh
-
-</code></pre>
-
-<p>The <code>configure</code> has two fields:</p>
-<ol>
-<li><strong>implementation</strong>: refers to the script which will be execute for this event</li>
-<li><strong>inputs</strong>: is the list of parameters that this VNF needs from the <em>source</em> VNF in the case above the source is <strong>iperf-server</strong> and the parameter is <strong>mgmt</strong></li>
-</ol>
-<h4 id="2-openbatoninterfaceslifecycle">2. openbaton.interfaces.lifecycle</h4>
-<p>This Interface has these events compared with the definition by TOSCA this one follows the ETSI Lifecycle Events. </p>
-<table>
-<thead>
-<tr>
-<th>Lifecycle event</th>
-<th>Value</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>INSTANTIATE</td>
-<td>List of Script files</td>
-<td>The Scripts will be called for this Lifecycle event</td>
-</tr>
-<tr>
-<td>CONFIGURE</td>
-<td>List of Script files</td>
-<td>The Scripts will be called for this Lifecycle event</td>
-</tr>
-<tr>
-<td>START</td>
-<td>List of Script files</td>
-<td>The Scripts will be called for this Lifecycle event</td>
-</tr>
-<tr>
-<td>STOP</td>
-<td>List of Script files</td>
-<td>The Scripts will be called for this Lifecycle event</td>
-</tr>
-<tr>
-<td>TERMINATE</td>
-<td>List of Script files</td>
-<td>The Scripts will be called for this Lifecycle event</td>
-</tr>
-</tbody>
-</table>
-<h3 id="node-template-vdu">Node Template: VDU</h3>
-<p>This is the definition of VDU called <code>VDU1</code>:</p>
-<pre><code class="yaml">VDU1:
-      type: openbaton.type.VDU
-      properties:
-        vm_image:
-          - ubuntu-14.04-server-cloudimg-amd64-disk1
-        scale_in_out: 2
-        vimInstanceName: vim-instance
-      requirements:
-         - virtual_link: [CP1]
-      capabilities:
-        host:
-          valid_source_types: openbaton.type.VDU
-
-</code></pre>
-
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Value</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>type</td>
-<td>openbaton.type.VDU</td>
-<td>It is the type of the VDU</td>
-</tr>
-<tr>
-<td>properties</td>
-<td>See the Table below</td>
-<td>It is  a Object where are mapped some values for deploying the VDU</td>
-</tr>
-<tr>
-<td>requirements</td>
-<td>List of requirement</td>
-<td>It describes the requirements for the VDU in the example above the VDU needs a virtual_link which is a list of Connection Point in this case <strong>CP1</strong></td>
-</tr>
-<tr>
-<td>capabilities</td>
-<td>Object</td>
-<td>Type of capability offered</td>
-</tr>
-</tbody>
-</table>
-<p>The <strong>Properties</strong> for the VDU are:</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Value</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>vm_image</td>
-<td>List &lt; String &gt;</td>
-<td>It is the list of images present in the OpenStack that will be used to instantiate a VNFC (aka Virtual Machine)</td>
-</tr>
-<tr>
-<td>scale_in_out</td>
-<td>Integer</td>
-<td>Maximum value of VNFCs that can be instantiated in the process of scale-in/out</td>
-</tr>
-<tr>
-<td>vimInstanceName</td>
-<td>String</td>
-<td>Name of Point of Persistence (PoP aka Datacenter) where this VNFC will be instantiated</td>
-</tr>
-</tbody>
-</table>
-<h3 id="node-template-connection-point-cp">Node Template: Connection Point (CP)</h3>
-<p>This is the definition of CP called <code>CP2</code>:</p>
-<pre><code class="yaml">CP2: #endpoint of VDU2
-      type: tosca.nodes.nfv.CP
-      properties:
-        floatingIp: random
-      requirements:
-        virtualbinding: VDU2
-      virtualLink: private
-
-</code></pre>
-
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Value</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>type</td>
-<td>tosca.nodes.nfv.CP</td>
-<td>It is the type of the CP</td>
-</tr>
-<tr>
-<td>properties</td>
-<td>Object</td>
-<td>It is a Object where are mapped some values for deploying the CP in this case <strong>floatingIp</strong> means that has a public IP chosen <strong>random</strong>  by OpenStack</td>
-</tr>
-<tr>
-<td>requirements</td>
-<td>Object</td>
-<td>It describes the requirements for the CP in the example above the CP needs a virtualbinding to the VDU in this case <strong>VDU2</strong></td>
-</tr>
-<tr>
-<td>virtualLink</td>
-<td>String</td>
-<td>It refers to Node Template which describes the Virtual Link in this case the Virtual Link is called <strong>private</strong></td>
-</tr>
-</tbody>
-</table>
-<h3 id="node-template-virtual-link-vl">Node Template: Virtual Link (VL)</h3>
-<p>OpenBaton uses virtual Link name as subnets from OpenStack.</p>
-<p>This is the definition of VL called <code>private</code>:</p>
-<pre><code class="yaml">private:
-    type: tosca.nodes.nfv.VL
-    properties:
-      vendor: Fokus
-    capabilities:
-      virtual_linkable:
-        valid_source_types: tosca.nodes.nfv.CP
-
-</code></pre>
-
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Value</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>type</td>
-<td>tosca.nodes.nfv.VL</td>
-<td>It is the type of the CP</td>
-</tr>
-<tr>
-<td>properties</td>
-<td>Object</td>
-<td>It is a Object that has some information in this case vendor</td>
-</tr>
-<tr>
-<td>capabilities</td>
-<td>Object</td>
-<td>Type of capability offered</td>
-</tr>
-</tbody>
-</table>
-<h3 id="relationships-template">Relationships Template</h3>
-<p>The Relationships Template creates the dependency between two VNFs.
-This is the definition of Relationships Template called <code>connection_server_client</code>:</p>
-<pre><code class="yaml">
-relationships_template:
-  connection_server_client:
-    type: tosca.nodes.relationships.ConnectsTo
-    source: iperf-server
-    target: iperf-client
-    parameters:
-        - private
-
-</code></pre>
-
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Value</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>type</td>
-<td>tosca.nodes.relationships.ConnectsTo</td>
-<td>It is the type of the Relationships Template</td>
-</tr>
-<tr>
-<td>source</td>
-<td>String</td>
-<td>It is a String which refers to the Node Template that describes the source VNF that provides some parameters in order to realize the dependency with the target VNF</td>
-</tr>
-<tr>
-<td>target</td>
-<td>String</td>
-<td>It is a String which refers to the Node Template that describes the target VNF that requires some parameters in order to realize the dependency with the source VNF</td>
-</tr>
-<tr>
-<td>parameters</td>
-<td>List &lt; String &gt;</td>
-<td>List of parameters for this dependency</td>
-</tr>
-</tbody>
-</table>
-<p>The yaml definition that describe all the components and creates the Iperf-NSD is this below:</p>
-<pre><code class="yaml">tosca_definitions_version: tosca_iperf_1_0_0
-tosca_default_namespace:    # Optional. default namespace (schema, types version)
-description: NSD for deploing an iperf scenario
 metadata:
-  ID:                 # ID of this Network Service Descriptor
-  vendor: Fokus       # Provider or vendor of the Network Service
-  version: 0.1 Alpha  # Version of the Network Service Descriptor
+  ID: NSD-Iperf + Floating Ips
+  vendor: Fokus
+  version: 1.0
 
 topology_template:
+
   node_templates:
+
     iperf-server: #VNF1
-      type: openbaton.type.VNF.GENERIC
-      properties:
-        id:
-        vendor: Fokus
-        version: 0.1
-        configurations:
-          name: server-configurations
-          configurationParameters:
-            - key: value
-            - key2: value2
-        vnfPackageLocation: https://gitlab.fokus.fraunhofer.de/openbaton/scripts-test-public.git
-        deployment_flavour:
-          - flavour_key: m1.small
-      requirements:
-        - virtualLink: private
-        - host:
-            node: VDU2
-            type: openbaton.relationships.HostedOn
-      interfaces:
-        Standard: # lifecycle
-          create: install.sh
-          start: install-srv.sh
+        type: openbaton.type.VNF
+        properties:
+          vendor: Fokus
+          version: 1.0
+          endpoint: generic
+          type: server
+          vnfPackageLocation: https://github.com/openbaton/vnf-scripts.git
+          deploymentFlavour:
+            - flavour_key: m1.small
+        requirements:
+          - virtualLink: private
+          - vdu: VDU2
+        interfaces:
+          lifecycle: # lifecycle
+            instantiate:
+              - install.sh
+              - install-srv.sh
+
     iperf-client:
-      type: openbaton.type.VNF.GENERIC
+      type: openbaton.type.VNF
       properties:
-        id:
+        ID: x
         vendor: Fokus
-        version: 0.1
-        configurations:
-          name: client-configurations
-          configurationParameters:
-            - key: value
-            - key2: value2
-        vnfPackageLocation: https://gitlab.fokus.fraunhofer.de/openbaton/scripts-test-public.git
-        deployment_flavour:
+        version: 1.0
+        type: client
+        vnfPackageLocation: https://github.com/openbaton/vnf-scripts.git
+        deploymentFlavour:
           - flavour_key: m1.small
+        endpoint: generic
       requirements:
-        - virtualLink: private
-        - host:
-            node: VDU1
-            type: openbaton.relationships.HostedOn
+         - virtualLink: private
+         - vdu: VDU1
       interfaces:
-        openbaton.interfaces.lifecycle: # lifecycle
-          INSTANCIATE:
-            - install.sh
-          CONFIGURE:
-            - server_configure_only.sh
-          START:
-            - iperf_client_start.sh
+          lifecycle: # lifecycle
+            INSTANTIATE:
+              - install.sh
+            CONFIGURE:
+              - server_configure.sh
+
     VDU1:
-      type: openbaton.type.VDU
+      type: tosca.nodes.nfv.VDU
       properties:
-        vm_image:
-          - ubuntu-14.04-server-cloudimg-amd64-disk1
-        scale_in_out: 2
-        vimInstanceName: vim-instance
-      requirements:
-         - virtual_link: [CP1]
-      capabilities:
-        host:
-          valid_source_types: openbaton.type.VDU
+        scale_in_out: 1
+        vim_instance_name:
+          - vim-instance
+      artifacts:
+        VDU1Image:
+          type: tosca.artifacts.Deployment.Image.VM
+          file: ubuntu-14.04-server-cloudimg-amd64-disk1
+
     VDU2:
-      type: openbaton.type.VDU
+      type: tosca.nodes.nfv.VDU
       properties:
         vm_image:
           - ubuntu-14.04-server-cloudimg-amd64-disk1
-        scale_in_out: 2
-        vimInstanceName: vim-instance
+        scale_in_out: 3
+        vim_instance_name:
+          - vim-instance
       requirements:
-        - virtual_link: [CP2]
-      capabilities:
-        host:
-          valid_source_types: openbaton.type.VDU
+        - virtual_link: CP2
+      artifacts:
+        VDU1Image:
+          type: tosca.artifacts.Deployment.Image.VM
+          file: ubuntu-14.04-server-cloudimg-amd64-disk1
+
+    CP1:
+      type: tosca.nodes.nfv.CP
+      properties:
+        floatingIP: random
+      requirements:
+        - virtualBinding: VDU1
+        - virtualLink: private
+
+    CP2: #endpoints of VNF2
+      type: tosca.nodes.nfv.CP
+      requirements:
+        - virtualBinding: VDU2
+        - virtualLink: private
 
     private:
       type: tosca.nodes.nfv.VL
       properties:
         vendor: Fokus
-      capabilities:
-        virtual_linkable:
-          valid_source_types: tosca.nodes.nfv.CP
-
-    CP1: #endpoint of VDU1
-      type: tosca.nodes.nfv.CP
-      properties:
-      requirements:
-        virtualbinding: VDU1
-      virtualLink: private
-
-    CP2: #endpoint of VDU2
-      type: tosca.nodes.nfv.CP
-      properties:
-        floatingIp: random
-      requirements:
-        virtualbinding: VDU2
-      virtualLink: private
 
 relationships_template:
-  connection_server_client:
+  connection_server_client: #DO I NEED THIS AT ALL ?
     type: tosca.nodes.relationships.ConnectsTo
     source: iperf-server
     target: iperf-client
     parameters:
         - private
 
-
 </code></pre>
 
-<p><strong>NOTE</strong>: Save the definition in a file called iperf-TOSCA.yaml.</p>
-<p>To store this NSD written in TOSCA in the NFVO catalogue you need to send it to the NFVO with this curl command:</p>
-<pre><code class="bash">$ curl -i -X POST http://localhost:8080/api/v1/tosca -H &quot;Content-Type: text/yaml&quot; &quot;Accept: application/json&quot; --data-binary @iperf-TOSCA.yaml
+<p><strong>NOTE</strong>: Save the definition in a file called iperf-floating-ips.yaml.</p>
+<p>Using the API you can store the NSD written in TOSCA directly in the NFVO. You will need the dummy-vnfm and test vim instance.
+ To do that follow these steps:</p>
+<p>1) Authentication:
+Run this command:</p>
+<pre><code class="bash">$curl -v -u openbatonOSClient:secret -X POST http://localhost:8080/oauth/token -H &quot;Accept: application/json&quot; -d &quot;username=admin&amp;password=openbaton&amp;grant_type=password&quot;
+</code></pre>
+
+<p>The NFVO will answer with an authetication key and a project id. You will need them to send the NSD in the next step. The response should look like this:</p>
+<pre><code class="bash">{
+  # Authentication Key
+  &quot;value&quot;: &quot;e8726a35-61c8-4bcb-873e-3ab6cc989f6f&quot;,
+  &quot;expiration&quot;: &quot;Aug 30, 2016 9:14:22 PM&quot;,
+  &quot;tokenType&quot;: &quot;bearer&quot;,
+  &quot;refreshToken&quot;: {
+    &quot;expiration&quot;: &quot;Sep 29, 2016 9:14:22 AM&quot;,
+    # Project ID
+    &quot;value&quot;: &quot;336ca2e6-8e78-48eb-b8f8-c5de862a21da&quot;
+  },...
+</code></pre>
+
+<p><strong>Note: </strong> Do not pay attention to the project-id supplied in this response.</p>
+<p>2) To send the NSD in the TOSCA format save the example above in a file named testNSDIperf.yaml and get the project id of your project from the Dashboard under the menu Identity &gt; Menu. After that run this :</p>
+<pre><code class="bash">$curl -i -X POST http://localhost:8080/api/v1/nsd-tosca -H &quot;Content-Type: text/yaml&quot; &quot;Accept: application/json&quot; -H &quot;project-id: $Project-ID HERE$&quot; -H &quot;Authorization: Bearer $AUTH KEY HERE$&quot; --data-binary @iperf-floating-ips.yaml
 </code></pre>
 
 <p>The NFVO will answer with json translation of the NSD. 
@@ -1115,10 +687,10 @@ Script for open external links in a new tab
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../tosca-CSAR-onboarding/" class="btn btn-neutral float-right" title="**HIDDEN**"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../tosca-dummy-nsr/" class="btn btn-neutral float-right" title="**HIDDEN**"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../FAQ/" class="btn btn-neutral" title="FAQ"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../zabbix-server-configuration/" class="btn btn-neutral" title="**HIDDEN**"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

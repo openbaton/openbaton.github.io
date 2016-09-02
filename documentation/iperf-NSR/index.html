@@ -482,6 +482,16 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -562,7 +572,7 @@ This tutorial makes use of:</p>
 <p>If you go to <code>Orchestrate NS -&gt; NS Records</code> in the menu on the left side, you can follow the deployment process and check the current status of the deploying NSD.</p>
 <h3 id="using-cli_1">Using CLI</h3>
 <p>You can also use the CLI for deploying existing NSDs. Therefore, you need to execute the following command in order to start the deployment. The ID of the NSD to deploy can be found either by using the dashboard or getting it from the output when onboarding a new NSD as done in the previous step. The command to deploy the previously onboarded NSD looks like shown below:</p>
-<pre><code class="bash">$./openbaton.sh NetworkServiceRecord-create 658c2b21-4af6-4489-84f7-ee864159404c
+<pre><code class="bash">$./openbaton.sh NetworkServiceRecord-create 658c2b21-4af6-4489-84f7-ee864159404c {} []
 </code></pre>
 
 <p>The execution of this command produces the following output:</p>
