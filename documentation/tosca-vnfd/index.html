@@ -22,16 +22,16 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "**HIDDEN**";
+    var mkdocs_page_name = "Introduction";
     var mkdocs_page_input_path = "tosca-vnfd.md";
     var mkdocs_page_url = "/tosca-vnfd/";
      var mkdocs_page_url = "/tosca-vnfd/";
   </script>
   
   <!-- site_name == OpenBaton Documentation -->
-  <!-- page_title == **HIDDEN** -->
+  <!-- page_title == Introduction -->
   <!-- base_url == .. -->
-  <!-- current_page == **HIDDEN** - /tosca-vnfd/ [*]
+  <!-- current_page == Introduction - /tosca-vnfd/ [*]
  -->
   <script src="../js/jquery-2.1.1.min.js"></script>
   <script src="../js/modernizr-2.8.3.min.js"></script>
@@ -86,14 +86,14 @@ display: block;
 $( document).ready(function(){
       //console.log("test");
 
-    //$('.subnav').not( ":has('**HIDDEN**')" ).hide();
+    //$('.subnav').not( ":has('Introduction')" ).hide();
     $('li.subnav_drop').find('ul.subnav').hide();
     //$('li.subnav_drop').find('ul.subnav').each(function(i,e){console.log(i,e)});
-       $( ".subnav" ).find( "li:contains('**HIDDEN**')" ).each(function(i,e){
+       $( ".subnav" ).find( "li:contains('Introduction')" ).each(function(i,e){
           var currentElement = $(e);
           currentElement.parent().css({"display":"block","visibility":"visible"}); //css("background-color","blue");
           currentElement.css({"display":"block","visibility":"visible"});
-       });//$( ".subnav" ).find( "li:contains('**HIDDEN**')" ).css("display","block");
+       });//$( ".subnav" ).find( "li:contains('Introduction')" ).css("display","block");
        //$(".current").css({"background-color":"blue","display":"block","visibility":"visible"});
        //show(1000,function(i,e){console.log(i,e)});
        //$('li.subnav_drop').find('ul.subnav').css("background-color","blue");
@@ -105,11 +105,11 @@ $( document).ready(function(){
 
 });
    
-$( ".wy-nav-content" ).find( "li:contains('**HIDDEN**')" ).css('color','red');
+$( ".wy-nav-content" ).find( "li:contains('Introduction')" ).css('color','red');
 console.log('--------');
-console.log($( ".wy-nav-content" ).find( "div:contains('**HIDDEN**')" ).css("color","red"));
+console.log($( ".wy-nav-content" ).find( "div:contains('Introduction')" ).css("color","red"));
 console.log('--------');
-console.log($( ".subnav" ).find( "li:contains('**HIDDEN**')" ));
+console.log($( ".subnav" ).find( "li:contains('Introduction')" ));
 console.log('--------');
   </script>
 
@@ -337,6 +337,39 @@ console.log('--------');
                   <li><ul> 
     
    
+    <li class="subnav_drop"><span>TOSCA</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Introduction</a>
+        
+         
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../tosca-CSAR-onboarding/">CSAR on boarding</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
     <li class="subnav_drop"><span>Tutorials</span>
 <ul class="subnav">
         
@@ -486,10 +519,6 @@ console.log('--------');
 		
 		
 		
-		
-		
-		
-		
               </ul>
             </div>
             &nbsp;
@@ -511,14 +540,6 @@ console.log('--------');
 <p>The definition follows the TOSCA Simple Profile for Network Functions Virtualization (NFV) <a href="http://docs.oasis-open.org/tosca/tosca-nfv/v1.0/tosca-nfv-v1.0.html">Version 1.0</a>
 Regarding the objects defined from ETSI please see: <a href="https://www.etsi.org/deliver/etsi_gs/NFV-MAN/001_099/001/01.01.01_60/gs_NFV-MAN001v010101p.pdf">ETSI GS NFV-MAN 001</a></p>
 <p>Premise: some of the objects are defined by OpenBaton</p>
-<h2 id="prerequisites">Prerequisites</h2>
-<p>The prerequisites are:</p>
-<ul>
-<li>OpenBaton running</li>
-<li>Dummy VNFM running</li>
-<li>Test plugin</li>
-<li><a href="../descriptors/vim-instance/test-vim-instance.json">Vim Instance</a> stored in the Catalogue</li>
-</ul>
 <h2 id="mapping-between-tosca-and-etsi-nfv">Mapping between TOSCA and ETSI NFV</h2>
 <table>
 <thead>
@@ -962,10 +983,10 @@ Script for open external links in a new tab
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../tosca-ims/" class="btn btn-neutral float-right" title="**HIDDEN**"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../tosca-CSAR-onboarding/" class="btn btn-neutral float-right" title="CSAR on boarding"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../tosca-CSAR-onboarding/" class="btn btn-neutral" title="**HIDDEN**"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../zabbix-plugin/" class="btn btn-neutral" title="Use Zabbix plugin"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
