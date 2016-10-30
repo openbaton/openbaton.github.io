@@ -22,11 +22,13 @@
             <a href="index.html" class="logo"></a>
             <a href="#" id="menu-icon"></a>
             <ul class="navigation">
+
                 <li><a href="index.html#about">About</a></li>
-                <li><a href="cases.html">Use Cases</a></li>
+                <li><a href="cases.html"> Use Cases</a></li>
                 <li><a href="features.html">Features</a></li>
                 <li><a href="documentation">Documentation</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="http://marketplace.openbaton.org"><i class="material-icons">shopping_cart </i>  Marketplace<div class="ripple-container"></div></a></li>
             </ul>
         </nav>
     </div>
@@ -40,20 +42,28 @@
     <div class="holder">
         <div class="txtleft"><img src="images/feature1.png" width="422px" height="421"></div>
         <div class="featuretxt" >
-            <p><h4 style="text-align:left;">Open Baton</h4></p>
+            <p><h4 style="text-align:left;">Open Baton Release 3</h4></p>
 
-            Open Baton rel.2 provides the many different features and components.
+            Open Baton rel.3 provides many different features and components:
             <ul>
-                <li>A <b>Network Function Virtualisation Orchestrator (NFVO)</b>completely designed and implemented following the ETSI MANO specification. Read more  <a href="http://openbaton.github.io/documentation/nfvo-installation/">here</a> </li>
-                <li>A <b>generic Virtual Network Function Manager (VNFM)</b>able to manage the lifecycle of VNFs based on their descriptors. Read more <a href="http://http://openbaton.github.io/documentation/vnfm-generic/">here</a>  </li>
-                <li>A <b>plugin</b> mechanism for adding and removing different type of VIMs without having to re-write anything in your orchestration logic. Read more  <a href="http://openbaton.github.io/documentation/vim-plugin/">here</a>  </li>
-                <li>A powerful <b>event engine</b>useful based on a pub/sub mechanism for the dispatching of lifecycle events execution.</li>
-                <li>An <b>autoscaling engine</b> which can be used for automatic runtime management of the scaling operation operations of your VNFs.  Read more  <a href="https://github.com/openbaton/autoscaling/">here</a>  </li>
-                <li>A <b>fault management system</b>which can be used for automatic runtime management of faults which may occur at any level.Read more  <a href="https://github.com/openbaton/fm-system">here</a> </li>
-                <li>It integrates with the <b>Zabbix monitoring</b>system. Read more <a href="https://github.com/openbaton/zabbix-plugin">here</a> </li>
-                <li>A set of libraries (the openbaton-libs) which could be used for building your own VNFM. Read more <a href="https://github.com/openbaton/openbaton-libs">here</a></li>
+                <li>A <b>Network Function Virtualisation Orchestrator (NFVO)</b>completely designed and implemented following the ETSI MANO specification.
+                    Read more  <a href="http://openbaton.github.io/documentation/">here</a> </li>
+                <li>A <b>Generic Virtual Network Function Manager (VNFM)</b>able to manage the lifecycle of VNFs based on their descriptors.
+                    Read more <a href="http://http://openbaton.github.io/documentation/vnfm-generic/">here</a>  </li>
+                <li>A <b>Juju Virtual Network Function Manager (VNFM)</b>able to manage the lifecycle of VNFs based on their descriptors.
+                    Read more <a href="http://http://openbaton.github.io/documentation/vnfm-generic/">here</a>  </li>
+                <li>An <b>Autoscaling Engine</b> which can be used for automatic runtime management of the scaling operation operations of your VNFs.
+                    Read more  <a href="https://github.com/openbaton/autoscaling/">here</a>  </li>
+                <li>A <b>Fault Management System</b>which can be used for automatic runtime management of faults which may occur at any level.
+                    Read more  <a href="https://github.com/openbaton/fm-system">here</a> </li>
+                <li>A <b>plugin</b> mechanism for adding and removing different type of VIMs without having to re-write anything in your orchestration logic.
+                    Read more  <a href="http://openbaton.github.io/documentation/vim-plugin/">here</a>  </li>
+                <li>A powerful <b>event engine</b> useful based on a pub/sub mechanism for the dispatching of lifecycle events execution.</li>
+                <li>It integrates with the <b>Zabbix monitoring</b> system.
+                    Read more <a href="https://github.com/openbaton/zabbix-plugin">here</a> </li>
+                <li>A set of libraries (the openbaton-libs) which could be used for building your own VNFM.
+                    Read more <a href="https://github.com/openbaton/openbaton-libs">here</a></li>
             </ul>
-            Through this functionality the orchestrator provides a multi-tenant environment distributed on top of hetereogeneous cloud infrastructures.
 
         </div>
     </div>
@@ -102,13 +112,13 @@
 
             <h4 style="text-align:left;">supporting external vnfms</h4>
 
-            Albeit, Open Baton offers a generic VNFM which can be easily extended for the different services, it includes also a set of mechanisms which enable the support of external VNFMs. This can be done in the following ways:
+            Albeit, Open Baton offers a generic VNFM which can be used for different scenarios, it provides also a set of mechanisms which enable the support of external VNFMs. This can be done in the following ways:
 
             <ul>
-                <li>Publish/Subscribe mechanism using a message queue based on AMQP;</li>
-                <li>A JSON REST API </li>
+                <li>Publish/Subscribe mechanism using a message queue based on AMQP</li>
+                <li>REST APIs</li>
             </ul>
-            The two APIs supports all the typical functionalities required on the interface between the NFVO and the VNFM.
+            The two APIs supports all the typical functionalities of the Or-Vnfm reference point.
         </div>
 
     </div>

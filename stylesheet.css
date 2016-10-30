@@ -158,6 +158,32 @@ margin: 0 auto !important;
 }
 }
 
+
+/* fallback */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'), local('MaterialIcons-Regular'), url(https://fonts.gstatic.com/s/materialicons/v18/2fcrYFNaTjcS6g4U3t-Y5UEw0lE80llgEseQY3FEmqw.woff2) format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+
+
 @media only screen and (max-width : 800px){
   
 #menu-icon {
@@ -355,7 +381,7 @@ margin: 0 auto !important;
 
 
 /*media query */
-ul, ol { padding:0; margin: 0 }
+ul, ol { padding:0; margin: 30;}
 
 .logo{
 	float: left;
@@ -611,7 +637,7 @@ h6{
 
 
 .featuretxt {
-  width: 30%;
+  width: 40%;
   float: left;
   line-height: 1.5em;
   padding-left: 2em;
@@ -728,5 +754,3 @@ a,.circle2 a, .featuretxt a{
 .form-style-8 input[type="submit"]:hover {
     background-color:#ea8e0c;
 }
-
-
