@@ -279,15 +279,6 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vim-driver/">Install a VIM Driver</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
         <a class="" href="../vim-instance/">Register a PoP</a>
         
     </li>
@@ -307,6 +298,28 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../ns-descriptor/">Network Service Descriptor</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>VIM Driver</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vim-driver/">VIM Driver Overview</a>
         
     </li>
 
@@ -532,7 +545,25 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../tutorial-sipp/">SIPp example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorial-juju/">OpenIMSCore with Juju VNFM</a>
         
     </li>
 
@@ -657,6 +688,12 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -724,7 +761,7 @@ So when you want to deploy a VNF (EMS) in a VM which runs on a different host th
 <pre><code class="properties">nfvo.rabbit.brokerIp = &lt;the rabbitmq broker ip&gt;
 </code></pre>
 
-<p>2) Depending on the installation mode you selected, it maybe that you have an in-memory database. In order to reconfigure the NFVO to use a more persistent database, like MySQL, you need to change the properties as shown below:</p>
+<p>2) Depending on the installation mode you selected, it may be that you have an in-memory database. In order to reconfigure the NFVO to use a persistent database, like MySQL, you need to change the properties as shown below:</p>
 <pre><code class="properties"># DB properties
 spring.datasource.username=admin
 spring.datasource.password=changeme
@@ -805,8 +842,8 @@ plugin-installation-dir = /usr/local/lib/openbaton/plugins
 nfvo.delete.all-status = true
 </code></pre>
 
-<p><strong>MONITORING:</strong> Openbaton allows the monitoring of the VMs on top of which the VNFs are exeucting via an external monitoring system. At the moment Zabbix is the monitoring system supported. If you want to enable it, you need first to install and configure Zabbix server following the guide at this page <a href="../zabbix-server-configuration/">Zabbix server configuration</a>.
-Once the Zabbix server is correctly configured and running, you only need to add following property.</p>
+<p><strong>MONITORING:</strong> Open Baton allows the monitoring of the VMs on top of which the VNFs are executing via an external monitoring system. At the moment Zabbix is the monitoring system supported. If you want to enable it, you need first to install and configure Zabbix server following the guide at this page <a href="../zabbix-server-configuration/">Zabbix server configuration</a>.
+Once the Zabbix server is correctly configured and running, you only need to add following property:</p>
 <pre><code class="properties">nfvo.monitoring.ip = the Zabbix server ip
 </code></pre>
 
@@ -850,7 +887,7 @@ nfvo.delete.vnfr.wait = false
 nfvo.delete.vnfr.wait.timeout = 60
 </code></pre>
 
-<p>Those properties are needed in case you want to tune a bit the performances of the NFVO. When the VNFMs send a message to the NFVO, there is a pool of threads able to process these messages in parallel. These parameters allows you to change the pool configuration, for more details please check the <a href="http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/scheduling/concurrent/ThreadPoolTaskExecutor.html">spring documentation regarding thread pool executor</a> </p>
+<p>Those properties are needed in case you want to tune a bit the performances of the NFVO. When the VNFMs send a message to the NFVO, there is a pool of threads able to process these messages in parallel. These parameters allows you to change the pool configuration, for more details please check the <a href="http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/scheduling/concurrent/ThreadPoolTaskExecutor.html">spring documentation regarding thread pool executor</a>. </p>
 <pre><code class="properties"># Thread pool executor configuration
 # for info see http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/scheduling/concurrent/ThreadPoolTaskExecutor.html
 nfvo.vmanager.executor.corepoolsize = 20

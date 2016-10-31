@@ -279,15 +279,6 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="vim-driver/">Install a VIM Driver</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
         <a class="" href="vim-instance/">Register a PoP</a>
         
     </li>
@@ -307,6 +298,28 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="ns-descriptor/">Network Service Descriptor</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>VIM Driver</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="vim-driver/">VIM Driver Overview</a>
         
     </li>
 
@@ -532,7 +545,25 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="tutorial-sipp/">SIPp example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="ims-NSR/">OpenIMSCore example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="tutorial-juju/">OpenIMSCore with Juju VNFM</a>
         
     </li>
 
@@ -657,6 +688,12 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -683,7 +720,7 @@ console.log('--------');
 <li>A generic Virtual Network Function Manager (VNFM) able to manage the lifecycle of VNFs based on their descriptors. Read more <a href="./vnfm-generic">here</a></li>
 <li>A Juju VNFM Adapter in order to deploy Juju Charms or Open Baton VNF Packages using the Juju VNFM. Read more <a href="./vnfm-juju">here</a></li>
 <li>A driver mechanism for adding and removing different type of VIMs without having to re-write anything in your orchestration logic. Read more <a href="./vim-driver">here</a></li>
-<li>A powerful event engine useful based on a pub/sub mechanism for the dispatching of lifecycle events execution</li>
+<li>A powerful event engine useful based on a pub/sub mechanism for the dispatching of lifecycle events execution. Read more <a href="./how-to-register-event">here</a></li>
 <li>An autoscaling engine which can be used for automatic runtime management of the scaling operation operations of your VNFs. Read more <a href="https://github.com/openbaton/autoscaling">here</a></li>
 <li>A fault management system which can be used for automatic runtime management of faults which may occur at any level. Read more <a href="https://github.com/openbaton/fm-system">here</a></li>
 <li>It integrates with the Zabbix monitoring system. Read more <a href="./zabbix-plugin">here</a></li>
@@ -694,17 +731,17 @@ console.log('--------');
 <h2 id="can-i-plug-in-my-network-functions">Can I plug in my Network Functions?</h2>
 <p>Yes, this is possible using (at least) two different approaches:</p>
 <ul>
-<li>Integrating your own VNFM. In this case you can use either the REST interface, or the AMQP one for interoperating with the NFVO</li>
-<li>Implementing a set of scripts which can be executed as part of the lifecycle event of your Virtual Network Function Descriptor. We provide a generic VNFM and EMS which can be used for executing them</li>
+<li>Integrating your own VNFM. In this case you can use either the REST interface, or the AMQP one for interoperating with the NFVO.</li>
+<li>Implementing a set of scripts which can be executed as part of the lifecycle event of your Virtual Network Function Descriptor. We provide a generic VNFM and EMS which can be used for executing them.</li>
 </ul>
-<p>Learn more <a href="./use">here</a></p>
+<p>Learn more <a href="./use">here</a>.</p>
 <h2 id="can-i-use-open-baton-to-build-my-own-network-service">Can I use Open Baton to build my own Network Service?</h2>
 <p>Yes! Open Baton provides a NFVO which can interoperate with VNFMs implemented by third parties. We provide also a set of tools (like the vnfm-sdk) which supports developers in building their own VNFM. </p>
-<p>Learn more <a href="./use">here</a></p>
+<p>Learn more <a href="./use">here</a>.</p>
 <h2 id="get-started">Get started</h2>
-<p>In order to get started you can follow the <a href="./nfvo-installation">installation guide</a></p>
+<p>In order to get started you can follow the <a href="./nfvo-installation">installation guide</a>.</p>
 <h2 id="learn-more">Learn more</h2>
-<p>Please refer to the "Tutorials" and "Learn More" sections for having more information about the Open Baton project. You can also learn more via our video tutorials published on the Open Baton <a href="https://www.youtube.com/channel/UCYXY4rGKrKbBNheClFEKaAw">Youtube Channel</a></p>
+<p>Please refer to the "Tutorials" and "Learn More" sections for having more information about the Open Baton project. You can also learn more via our video tutorials published on the Open Baton <a href="https://www.youtube.com/channel/UCYXY4rGKrKbBNheClFEKaAw">Youtube Channel</a>.</p>
 <h2 id="what-is-nfv">What is NFV</h2>
 <p>ETSI NFV represents a concerted telco operator initiative fostering the development of virtual network infrastructures by porting and further adapting network functions to the specific cloud environment. 
 ETSI NFV has defined a large set of virtualisation use cases, spanning from the cloudification of the main core network functions such as IMS, Evolved Packet Core, and Radio Access Networks, as well as providing on demand and complete virtualised infrastructures as IaaS or PaaS to third parties, such as enterprises and professional radio. 
@@ -718,7 +755,7 @@ ETSI NFV limits itself to this level of indications, considering that other stan
 <li>Sending us an email to: <a href="mailto:info@openbaton.org">info-at-openbaton-dot-org</a></li>
 </ul>
 <h2 id="supported-by">Supported by</h2>
-<p>Open Baton is a project developed by Fraunhofer FOKUS and TU Berlin. It is supported by different European publicly funded projects: <a href="https://www.nubomedia.eu/">NUBOMEDIA</a>, <a href="http://mobile-cloud-networking.eu/site/">Mobile Cloud Networking</a>, <a href="http://www.cognet.5g-ppp.eu/cognet-in-5gpp/">CogNet</a>, <a href="https://www.softfire.eu/">SoftFIRE</a>. Open Baton is one of the main components in the <a href="http://www.5g-berlin.org/">5G Berlin</a> initiative.  </p>
+<p>Open Baton is a project developed by Fraunhofer FOKUS and TU Berlin. It is supported by different European publicly funded projects: <a href="https://www.nubomedia.eu/">NUBOMEDIA</a>, <a href="http://mobile-cloud-networking.eu/site/">Mobile Cloud Networking</a>, <a href="http://www.cognet.5g-ppp.eu/cognet-in-5gpp/">CogNet</a>, <a href="https://www.softfire.eu/">SoftFIRE</a>. Open Baton is one of the main components of the <a href="http://www.5g-berlin.org/">5G Berlin</a> initiative.  </p>
 <!---
  Script for open external links in a new tab
 -->
@@ -774,6 +811,6 @@ ETSI NFV limits itself to this level of indications, considering that other stan
 
 <!--
 MkDocs version : 0.14.0
-Build Date UTC : 2016-10-30 16:14:23.279789
+Build Date UTC : 2016-10-31 13:29:12.601541
 -->
 

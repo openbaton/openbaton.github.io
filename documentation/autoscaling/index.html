@@ -277,15 +277,6 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vim-driver/">Install a VIM Driver</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
         <a class="" href="../vim-instance/">Register a PoP</a>
         
     </li>
@@ -305,6 +296,28 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../ns-descriptor/">Network Service Descriptor</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>VIM Driver</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vim-driver/">VIM Driver Overview</a>
         
     </li>
 
@@ -532,7 +545,25 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../tutorial-sipp/">SIPp example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorial-juju/">OpenIMSCore with Juju VNFM</a>
         
     </li>
 
@@ -657,6 +688,12 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -677,7 +714,7 @@ console.log('--------');
                           <h1 id="autoscaling-engine">AutoScaling Engine</h1>
 <p>This external component provides an NFV-compliant AutoScaling Engine (ASE). In the following fundamentals are described such as installing the ASE, configuring it and how to use it such as creating AutoScaling policies.</p>
 <p>The <code>autoscaling-engine</code> is implemented in java using the <a href="https://spring.io/">spring.io</a> framework. It runs as an external component and communicates with the NFVO via Open Baton's SDK.</p>
-<p>Additionally, the AutoScaling Engine uses the plugin mechanism to allow whatever Monitoring System you prefer. We use <a href="http://www.zabbix.com/">Zabbix</a> as the monitoring system in the following that must be preinstalled and configured. Additional information about <a href="http://openbaton.github.io/documentation/zabbix-plugin/">zabbix-plugin</a> can be found [here][zabbix-plugin-doc].</p>
+<p>Additionally, the AutoScaling Engine uses the plugin mechanism to allow whatever Monitoring System you prefer. We use <a href="http://www.zabbix.com/">Zabbix</a> as the monitoring system in the following that must be preinstalled and configured. Additional information about <a href="http://openbaton.github.io/documentation/zabbix-plugin/">zabbix-plugin</a> can be found <a href="http://openbaton.github.io/documentation/zabbix-plugin/">here</a>.</p>
 <p>Before starting this component you have to do the configuration of the AutoScaling Engine that is described in the <a href="#manual-configuration-of-the-autoscaling-engine">next chapter</a> followed by the guide of <a href="#starting-the-autoscaling-engine">how to start</a> and <a href="#how-to-use-the-autoscaling-engine">how to use</a> it.</p>
 <h1 id="technical-requirements">Technical Requirements</h1>
 <ul>
@@ -686,6 +723,7 @@ console.log('--------');
 <li>Preconfgiured and running zabbix plugin either located in the folder <code>NFVO/plugins</code> or <code>autoscaling/plugins</code> to let it start automatically; or started manually. (if Zabbix is the monitoring system of choice)</li>
 </ul>
 <h1 id="how-to-install-autoscaling-engine">How to install AutoScaling Engine</h1>
+<p>If you installed this component already with the general bootstrap of Open Baton, the ASE is already installed, configured and running. In this case you can jump directly to this section <a href="#how-to-use-autoscaling-engine">How to use AutoScaling Engine</a>. If the NSE is not yet installed please continue with this section.</p>
 <p>Different options are available for the installation of the AutoScaling Engine. Either you use the fully automated bootstrap where all configurations are done automatically where you can choose between the installation based on the debian package or on the source code which is suggested for development. Apart from the bootstrap you can also use the debian or the source code installation where you need to configure the AutoScaling Engine manually. </p>
 <h2 id="installation-via-bootstrap">Installation via bootstrap</h2>
 <p>Using the bootstrap gives a fully automated installation of this component including installation and configuration. If you use the bootstrap you should place your monitoring plugin of choice directly in the <code>NFVO/plugins</code> folder before starting the orchestrator to have it already available when starting the AutoScaling Engine.</p>

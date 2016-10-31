@@ -277,15 +277,6 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vim-driver/">Install a VIM Driver</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
         <a class="" href="../vim-instance/">Register a PoP</a>
         
     </li>
@@ -307,6 +298,28 @@ console.log('--------');
         <a class="current" href="./">Network Service Descriptor</a>
         
          
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>VIM Driver</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vim-driver/">VIM Driver Overview</a>
         
     </li>
 
@@ -532,7 +545,25 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../tutorial-sipp/">SIPp example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorial-juju/">OpenIMSCore with Juju VNFM</a>
         
     </li>
 
@@ -657,6 +688,12 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -675,7 +712,9 @@ console.log('--------');
                       <div class="section">
                         
                           <h1 id="network-service-descriptor">Network Service Descriptor</h1>
-<p>The Network Service Descriptor contains the values that are defined in <a href="http://www.etsi.org/deliver/etsi_gs/NFV-MAN/001_099/001/01.01.01_60/gs_NFV-MAN001v010101p.pdf">ETSI MANO specification</a>. The NFVO is able to handle JSON file describing a Network Service Descriptor. An example of the most important fields follows:</p>
+<p>The Network Service Descriptor contains the values that are defined in <a href="http://www.etsi.org/deliver/etsi_gs/NFV-MAN/001_099/001/01.01.01_60/gs_NFV-MAN001v010101p.pdf">ETSI MANO specification</a>. The NFVO is able to handle JSON file describing a Network Service Descriptor.</p>
+<p>The NFVO can also handle onboarding a Network Service Template inside a CSAR compliant with the <a href="http://docs.oasis-open.org/tosca/tosca-nfv/v1.0/csd03/tosca-nfv-v1.0-csd03.pdf">TOSCA Simple Profile for NFV</a>. Refer to the <a href="../tosca-nsd">NS Template tutorial</a> and <a href="../tosca-CSAR-onboarding">CSAR Onboarding tutorial</a>.</p>
+<p>An example of the most important fields follows:</p>
 <pre><code>{  
     &quot;name&quot;:&quot;iperf-NSD&quot;,
     &quot;vendor&quot;:&quot;fokus&quot;,
@@ -766,6 +805,8 @@ If the network exists, then this network will be used, if not a new one will be 
 </tbody>
 </table>
 <p>It is possible to let the Orchestrator to calculate dependencies automatically by providing some parameters in the VNF Descriptor part. Please check the <a href="../vnf-descriptor">VNF Descriptor page</a></p>
+<h3 id="network-service-onboarding">Network Service Onboarding</h3>
+<p>After saving the NSD as json you could easily upload it via the <a href="../nfvo-how-to-use-gui">Dashboard</a> or the <a href="../nfvo-how-to-use-cli">Command Line Interface</a>. </p>
 <!---
 References
 -->
@@ -792,7 +833,7 @@ Script for open external links in a new tab
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../vnfm-intro/" class="btn btn-neutral float-right" title="VNFM intro"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../vim-driver/" class="btn btn-neutral float-right" title="VIM Driver Overview"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../vnf-package/" class="btn btn-neutral" title="VNF Packages"><span class="icon icon-circle-arrow-left"></span> Previous</a>

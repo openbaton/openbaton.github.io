@@ -277,15 +277,6 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vim-driver/">Install a VIM Driver</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
         <a class="" href="../vim-instance/">Register a PoP</a>
         
     </li>
@@ -305,6 +296,28 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../ns-descriptor/">Network Service Descriptor</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>VIM Driver</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vim-driver/">VIM Driver Overview</a>
         
     </li>
 
@@ -530,7 +543,25 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../tutorial-sipp/">SIPp example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorial-juju/">OpenIMSCore with Juju VNFM</a>
         
     </li>
 
@@ -655,6 +686,12 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -672,7 +709,7 @@ console.log('--------');
                     <div role="main">
                       <div class="section">
                         
-                          <h2 id="tosca-definition">TOSCA Definition</h2>
+                          <h2 id="tosca-virtual-network-function-template">TOSCA Virtual Network Function Template</h2>
 <p>The definition follows the TOSCA Simple Profile for Network Functions Virtualization (NFV) <a href="http://docs.oasis-open.org/tosca/tosca-nfv/v1.0/tosca-nfv-v1.0.html">Version 1.0</a>
 Regarding the objects defined from ETSI please see: <a href="https://www.etsi.org/deliver/etsi_gs/NFV-MAN/001_099/001/01.01.01_60/gs_NFV-MAN001v010101p.pdf">ETSI GS NFV-MAN 001</a></p>
 <p>Premise: some of the objects are defined by OpenBaton</p>
@@ -1088,34 +1125,7 @@ topology_template:
 </code></pre>
 
 <p><strong>NOTE</strong>: Save the template in a file called server-iperf.yaml.</p>
-<p>Using the API you can store the VNFD written in TOSCA directly in the NFVO. You will need the dummy-vnfm and test vim instance.
- To do that follow these steps:</p>
-<p>1) Authentication:
-Run this command:</p>
-<pre><code class="bash">$curl -v -u openbatonOSClient:secret -X POST http://localhost:8080/oauth/token -H &quot;Accept: application/json&quot; -d &quot;username=admin&amp;password=openbaton&amp;grant_type=password&quot;
-</code></pre>
-
-<p>The NFVO will answer with an authetication key and a project id. You will need them to send the VNFD in the next step. The response should look like this:</p>
-<pre><code class="bash">{
-  # Authentication Key
-  &quot;value&quot;: &quot;e8726a35-61c8-4bcb-873e-3ab6cc989f6f&quot;,
-  &quot;expiration&quot;: &quot;Aug 30, 2016 9:14:22 PM&quot;,
-  &quot;tokenType&quot;: &quot;bearer&quot;,
-  &quot;refreshToken&quot;: {
-    &quot;expiration&quot;: &quot;Sep 29, 2016 9:14:22 AM&quot;,
-    # Project ID
-    &quot;value&quot;: &quot;336ca2e6-8e78-48eb-b8f8-c5de862a21da&quot;
-  },...
-</code></pre>
-
-<p><strong>Note: </strong> Do not pay attention to the project-id supplied in this response.</p>
-<p>2) To send the VNFD in the TOSCA format save the example above in a file named dummy-vnf.yaml and get the project id of your project from the Dashboard under the menu Identity &gt; Menu. After that run this :</p>
-<pre><code class="bash">$curl -i -X POST http://localhost:8080/api/v1/nsd-tosca -H &quot;Content-Type: text/yaml&quot; &quot;Accept: application/json&quot; -H &quot;project-id: $Project-ID HERE$&quot; -H &quot;Authorization: Bearer $AUTH KEY HERE$&quot; --data-binary @dummy-vnf.yaml
-</code></pre>
-
-<p>```</p>
-<p>The NFVO will answer with json translation of the VNFD. 
-To retrieve or to instantiate this VNFD please use the Dashboard of OpenBaton in the page under the menu Catalogue &gt; VNF Descriptors.</p>
+<p>You can create a <a href="../tosca-CSAR-onboarding">CSAR</a> and upload it to the NFVO using the <a href="../nfvo-how-to-use-gui">Dashboard</a>. </p>
 <!------------
 References
 -------------->
@@ -1142,7 +1152,7 @@ Script for open external links in a new tab
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../tosca-CSAR-onboarding/" class="btn btn-neutral float-right" title="**HIDDEN**"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../tosca-nsd/" class="btn btn-neutral float-right" title="**HIDDEN**"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../tosca-ims/" class="btn btn-neutral" title="**HIDDEN**"><span class="icon icon-circle-arrow-left"></span> Previous</a>

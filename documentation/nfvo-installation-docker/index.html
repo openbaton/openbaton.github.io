@@ -279,15 +279,6 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vim-driver/">Install a VIM Driver</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
         <a class="" href="../vim-instance/">Register a PoP</a>
         
     </li>
@@ -307,6 +298,28 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../ns-descriptor/">Network Service Descriptor</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>VIM Driver</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vim-driver/">VIM Driver Overview</a>
         
     </li>
 
@@ -532,7 +545,25 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../tutorial-sipp/">SIPp example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorial-juju/">OpenIMSCore with Juju VNFM</a>
         
     </li>
 
@@ -657,6 +688,12 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -686,7 +723,7 @@ console.log('--------');
 </ul>
 <p>To have a running standalone Open Baton Docker container type the following commands:</p>
 <pre><code class="bash">sudo docker pull openbaton/standalone
-sudo docker run -d -h openbaton-rabbitmq -p 8080:8080 -p 5672:5672 -p 15672:15672 -p 8443:8443 -e RABBITMQ_BROKERIP=&lt;RabbitMQ IP&gt; openbaton/standalone
+sudo docker run --name openbaton -d -h openbaton-rabbitmq -p 8080:8080 -p 5672:5672 -p 15672:15672 -p 8443:8443 -e RABBITMQ_BROKERIP=&lt;RabbitMQ IP&gt; openbaton/standalone
 </code></pre>
 
 <p><strong><em>VERY IMPORTANT NOTE</em></strong> - You should put as input for the RABBITMQ_BROKERIP the RabbitMQ IP making sure that this IP can be
@@ -707,7 +744,7 @@ cfc4a7fb23d0        openbaton/standalone:latest  &quot;/usr/bin/supervisord&quot
 </code></pre>
 
 <p>To connect to the running container containing Open Baton you can type the following command:</p>
-<pre><code class="bash">sudo docker exec -ti cfc4a7fb23d02c47e25b447d30f6fe7c0464355a16ee1b02d84657f6fba88e07 bash
+<pre><code class="bash">sudo docker exec -ti openbaton bash
 </code></pre>
 
 <p>After few minutes the Open Baton NFVO should be started, then you can open a browser and go on localhost:8080.
@@ -717,8 +754,8 @@ password: openbaton
 </code></pre>
 
 <p>To stop and delete the running Open Baton container you can type respectively the following commands:</p>
-<pre><code class="bash">sudo docker stop cfc4a7fb23d02c47e25b447d30f6fe7c0464355a16ee1b02d84657f6fba88e07
-sudo docker rm cfc4a7fb23d02c47e25b447d30f6fe7c0464355a16ee1b02d84657f6fba88e07
+<pre><code class="bash">sudo docker stop openbaton
+sudo docker rm openbaton
 </code></pre>
 
 <!---

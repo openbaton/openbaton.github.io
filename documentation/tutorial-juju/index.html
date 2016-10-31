@@ -23,16 +23,16 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "NFVO intro";
-    var mkdocs_page_input_path = "use.md";
-    var mkdocs_page_url = "/use/";
-     var mkdocs_page_url = "/use/";
+    var mkdocs_page_name = "OpenIMSCore with Juju VNFM";
+    var mkdocs_page_input_path = "tutorial-juju.md";
+    var mkdocs_page_url = "/tutorial-juju/";
+     var mkdocs_page_url = "/tutorial-juju/";
   </script>
   
   <!-- site_name == OpenBaton Documentation -->
-  <!-- page_title == NFVO intro -->
+  <!-- page_title == OpenIMSCore with Juju VNFM -->
   <!-- base_url == .. -->
-  <!-- current_page == NFVO intro - /use/ [*]
+  <!-- current_page == OpenIMSCore with Juju VNFM - /tutorial-juju/ [*]
  -->
   <script src="../js/jquery-2.1.1.min.js"></script>
   <script src="../js/modernizr-2.8.3.min.js"></script>
@@ -87,14 +87,14 @@ display: block;
 $( document).ready(function(){
       //console.log("test");
 
-    //$('.subnav').not( ":has('NFVO intro')" ).hide();
+    //$('.subnav').not( ":has('OpenIMSCore with Juju VNFM')" ).hide();
     $('li.subnav_drop').find('ul.subnav').hide();
     //$('li.subnav_drop').find('ul.subnav').each(function(i,e){console.log(i,e)});
-       $( ".subnav" ).find( "li:contains('NFVO intro')" ).each(function(i,e){
+       $( ".subnav" ).find( "li:contains('OpenIMSCore with Juju VNFM')" ).each(function(i,e){
           var currentElement = $(e);
           currentElement.parent().css({"display":"block","visibility":"visible"}); //css("background-color","blue");
           currentElement.css({"display":"block","visibility":"visible"});
-       });//$( ".subnav" ).find( "li:contains('NFVO intro')" ).css("display","block");
+       });//$( ".subnav" ).find( "li:contains('OpenIMSCore with Juju VNFM')" ).css("display","block");
        //$(".current").css({"background-color":"blue","display":"block","visibility":"visible"});
        //show(1000,function(i,e){console.log(i,e)});
        //$('li.subnav_drop').find('ul.subnav').css("background-color","blue");
@@ -106,11 +106,11 @@ $( document).ready(function(){
 
 });
    
-$( ".wy-nav-content" ).find( "li:contains('NFVO intro')" ).css('color','red');
+$( ".wy-nav-content" ).find( "li:contains('OpenIMSCore with Juju VNFM')" ).css('color','red');
 console.log('--------');
-console.log($( ".wy-nav-content" ).find( "div:contains('NFVO intro')" ).css("color","red"));
+console.log($( ".wy-nav-content" ).find( "div:contains('OpenIMSCore with Juju VNFM')" ).css("color","red"));
 console.log('--------');
-console.log($( ".subnav" ).find( "li:contains('NFVO intro')" ));
+console.log($( ".subnav" ).find( "li:contains('OpenIMSCore with Juju VNFM')" ));
 console.log('--------');
   </script>
 
@@ -240,10 +240,8 @@ console.log('--------');
         
              
 
-    <li class="toctree-l1 current">
-        <a class="current" href="./">NFVO intro</a>
-        
-         
+    <li class="toctree-l1 ">
+        <a class="" href="../use/">NFVO intro</a>
         
     </li>
 
@@ -562,8 +560,10 @@ console.log('--------');
         
              
 
-    <li class="toctree-l1 ">
-        <a class="" href="../tutorial-juju/">OpenIMSCore with Juju VNFM</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">OpenIMSCore with Juju VNFM</a>
+        
+         
         
     </li>
 
@@ -711,35 +711,86 @@ console.log('--------');
                     <div role="main">
                       <div class="section">
                         
-                          <h1 id="how-to-use-openbaton">How to use OpenBaton</h1>
-<p>After completing the installation, you should be able to reach the dashboard of the NFVO at the following url: http://your-ip-here:8080</p>
-<p>When accessing the dashboard, you will be prompted for a username and password. The first access can only be done with the super user ("admin") created during the installation process. Please refer to the <a href="../security">Identity Management</a> section for more information about security mechanisms. 
-Please refer to the following documentation for learning how to use the <a href="../nfvo-how-to-use-gui">Open Baton dashboard</a> or the <a href="../nfvo-how-to-use-cli">Command Line Interface</a></p>
-<p>In order to use Open Baton for launching your first Network Service, you will need to follow these steps:</p>
-<ol>
-<li>Install a VIM driver. <a href="../vim-driver">Learn more here</a></li>
-<li>Register one or more Point of Presences (PoPs). <a href="../vim-instance">Learn more here</a></li>
-<li>Install a VNF Manager. <a href="../vnfm-intro">Learn more here</a></li>
-<li>Build or download one or more VNF Packages. <a href="../vnf-package">Learn more here</a></li>
-<li>Prepare the Network Service Descriptor (NSD). <a href="../ns-descriptor">Learn more here</a></li>
-<li>Launch the NSD. <a href="../nfvo-how-to-use-gui">Learn more here</a></li>
-</ol>
-<p>Once these steps are completed you will be able to orchestrate your Network Service from the <a href="../nfvo-how-to-use-gui">dashboard</a> or via the <a href="http://get.openbaton.org/api/ApiDoc.pdf">REST APIs</a>. </p>
-<!---
-Script for open external links in a new tab
--->
+                          <h1 id="openims-tutorial-with-juju-vnfm-and-openstack">OpenIMS Tutorial with Juju-VNFM and Openstack</h1>
+<p>This Tutorial will demonstrate how to deploy the OpenIMSCore implementation on Openstack using Open Baton and the Juju-VNFM. </p>
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li>NFVO (&gt; 3.0.0) </li>
+<li>Juju and Juju VNFM installed and configured following the <a href="../vnfm-juju">installation-guide</a>  </li>
+<li>An Openstack instance configured and available as PoP</li>
+<li><a href="https://github.com/openbaton/openimscore-packages/tree/master">OpenIMSCore packages</a></li>
+</ul>
+<h2 id="configure-juju-to-work-with-openstack">Configure Juju to work with Openstack</h2>
+<p>Create a document called <em>mystack.yaml</em>. 
+Here you will provide the necessary information for Juju to connect to Openstack. 
+The content of the file could look something like this:</p>
+<pre><code class="yaml">  clouds:
+    mystack:
+      type: openstack
+      auth-types: [userpass]
+      use-floating-ip: true
+      use-default-secgroup: true
+      regions:
+        RegionOne:
+          endpoint: http://auth-url:5000/v2.0
+</code></pre>
 
-<script type="text/javascript" charset="utf-8">
-      // Creating custom :external selector
-      $.expr[':'].external = function(obj){
-          return !obj.href.match(/^mailto\:/)
-                  && (obj.hostname != location.hostname);
-      };
-      $(function(){
-        $('a:external').addClass('external');
-        $(".external").attr('target','_blank');
-      })
-</script>
+<p>Values for <em>auth-type</em>, <em>region</em> or <em>endpoint</em> may vary according to your Openstack setup, but <em>use-floating-ip</em> and <em>use-default-secgroup</em> 
+have to be set to true. </p>
+<p>Now we will add the cloud to Juju with the following command: </p>
+<pre><code class="bash">juju add-cloud mystack {pathToMystackFile}/mystack.yaml
+</code></pre>
+
+<p>The next step is to set credentials for the mystack cloud configuration. Execute the following command and enter the required values. </p>
+<pre><code class="yaml">juju add-credential mystack
+</code></pre>
+
+<h2 id="configure-openstack-to-work-with-juju">Configure Openstack to work with Juju</h2>
+<p>Then we also have to configure Openstack to provide an image usable by Juju. 
+For this please refer to <a href="https://jujucharms.com/docs/devel/howto-privatecloud">this</a> guide. </p>
+<h2 id="bootstrap-the-environment">Bootstrap the environment</h2>
+<p>Finally we can bootstrap the openstack environment using this command:</p>
+<pre><code class="bash">juju bootstrap obcontroller mystack --config image-metadata-url=$METADATA_URL --config network=$NETWORK_ID --config use-floating-ip=true --config use-default-secgroup=true --bootstrap-series=$SERIES
+</code></pre>
+
+<p>where the $METADATA_URL has to be replaced by the endpoint you created in the previously mentioned guide to configure Openstack. 
+If you followed it you should be able to obtain the url by executing </p>
+<pre><code class="bash">openstack endpoint show product-streams
+</code></pre>
+
+<p>and copying the printed public url. 
+It will look something like this: 
+http:/\/openstack-url:8080/v1/AUTH_e4f353a5d2184b1fa3f359aaf02abbee/simplestreams/images</p>
+<p>The $NETWORK_ID has to be the network's id from Openstack that shall be used. </p>
+<p>And the $SERIES should be set to an Ubuntu series according to the image you want to use. 
+By default the Juju-VNFM uses trusty while deploying. </p>
+<h2 id="deploy-the-openimscore">Deploy the OpenIMSCore</h2>
+<p>Now that the setup is ready we can start looking at the actual deployment of the OpenIMSCore. </p>
+<p>Clone the git repository containing the packages from <a href="https://github.com/openbaton/openimscore-packages/tree/master">here</a>. 
+But before we create tar archives for uploading to the NFVO we have to configure them to work with the Juju-VNFM. 
+In every component's directory (bind9, fhoss, scscf, pcscf, icscf) you will find a file containing the VNFD. 
+In these VNFDs you have to change the <em>endpoint</em> value from generic to juju. 
+Furthermore you (currently) have to edit a file in the script folders of icscf, pccs and scscf. 
+That are the files <em>icscf.conf</em>, <em>scscf.conf</em> and <em>pcscf.conf</em>. 
+In those scripts please comment the lines starting from <strong>pre-start script</strong> until the next <strong>end script</strong>. </p>
+<p>Like this for example: </p>
+<pre><code class="bash"># pre-start script
+#   exec /opt/OpenIMSCore/bin/icscf.kill.sh
+#   exit 0
+# end script
+</code></pre>
+
+<p>Afterwards you can create the packages for each IMS component. 
+For icscf for example change into the icscf directory and execute </p>
+<pre><code class="bash">tar -cf icscf.tar *
+</code></pre>
+
+<p>Start the NFVO and the Juju-VNFM and upload a VimInstance named <em>vim-instance</em> with type <em>test</em> to the NFVO. 
+Then upload the VNFPackages to the NFVO using the Gui or Cli. 
+This will also create VNFDs in the NFVO. Download this <a href="http://openbaton.github.io/documentation/descriptors/tutorial-ims-NSR/tutorial-ims-NSR.json">NSD</a> and replace the VNFD ids with the ones of the stored VNFDs. 
+Upload the NSD to the NFVO and launch it. This will create an NSR and deploy the OpenIMSCore on Openstack. 
+Since the correct reporting of the deployment's status from the Juju-VNFM to the NFVO is still a future task 
+you should not rely on the NSR status shown by the Gui, but check using the <em>juju status</em> command. </p>
                         
                       </div>
                     </div>
@@ -747,10 +798,10 @@ Script for open external links in a new tab
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../security/" class="btn btn-neutral float-right" title="Identity management"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../fms-sipp-tutorial/" class="btn btn-neutral float-right" title="Fault Management System"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../nfvo-configuration/" class="btn btn-neutral" title="Configure it"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../ims-NSR/" class="btn btn-neutral" title="OpenIMSCore example"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

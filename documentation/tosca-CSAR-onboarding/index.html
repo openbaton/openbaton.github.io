@@ -277,15 +277,6 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vim-driver/">Install a VIM Driver</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
         <a class="" href="../vim-instance/">Register a PoP</a>
         
     </li>
@@ -305,6 +296,28 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../ns-descriptor/">Network Service Descriptor</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>VIM Driver</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vim-driver/">VIM Driver Overview</a>
         
     </li>
 
@@ -530,7 +543,25 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../tutorial-sipp/">SIPp example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorial-juju/">OpenIMSCore with Juju VNFM</a>
         
     </li>
 
@@ -655,6 +686,12 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -709,7 +746,9 @@ image:
 <p>The <strong>Scripts</strong> folder contains all the files required from the lifecycle interfaces of the VNFs.
 If the CSAR has a Network Service Template, then for every type of VNF included in the NS Template you have to include a folder with the scripts for that particular type.
 Example if one VNF is of type client, then the scripts for that VNF have to be put in Scripts/client folder. </p>
-<p>The <strong>testNSDIperf.yaml</strong> is a Definition of Network Service. It contains this descriptor.</p>
+<p>In this example <strong>testNSDIperf.yaml</strong> is a template for a Network Service. 
+In a CSAR the template can define either a Virtual Network Function or a Network Service that consists of multiple Virtual Network Functions. 
+The <a href="../tosca-vnfd">VNF Tosca tutorial</a> and <a href="../tosca-nsd">NS Tosca tutorial</a> provide more information on how to construct a template of each kind. </p>
 <pre><code class="yaml">tosca_definitions_version: tosca_simple_iperf_scenario
 description: Example of NSD
 
@@ -851,7 +890,7 @@ Script for open external links in a new tab
         <a href="../vnfr-states/" class="btn btn-neutral float-right" title="**HIDDEN**"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../tosca-vnfd/" class="btn btn-neutral" title="**HIDDEN**"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../tosca-nsd/" class="btn btn-neutral" title="**HIDDEN**"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

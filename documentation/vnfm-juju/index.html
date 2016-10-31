@@ -277,15 +277,6 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vim-driver/">Install a VIM Driver</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
         <a class="" href="../vim-instance/">Register a PoP</a>
         
     </li>
@@ -305,6 +296,28 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../ns-descriptor/">Network Service Descriptor</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>VIM Driver</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vim-driver/">VIM Driver Overview</a>
         
     </li>
 
@@ -532,7 +545,25 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../tutorial-sipp/">SIPp example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorial-juju/">OpenIMSCore with Juju VNFM</a>
         
     </li>
 
@@ -657,6 +688,12 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -708,10 +745,10 @@ console.log('--------');
 <li>A running Juju 2.0 instance with a controller named <em>obcontroller</em>. Please refer to the juju <a href="https://jujucharms.com/docs/stable/getting-started">installation guide</a></li>
 <li>The <a href="https://github.com/openbaton/juju-vnfm">Juju-VNFM</a> needs to run on the same machine where Juju is installed</li>
 </ul>
-<h1 id="how-to-install-the-juju-vnf-manager-from-source-code">How to install the Juju VNF Manager from source code</h1>
-<p>Git clone the <a href="https://github.com/openbaton/juju-vnfm">project</a> into the /opt/openbaton directory (you may need to be logged in as root user, unless you change the permissions on the /opt/openbaton folder): </p>
-<pre><code class="bash">mkdir -p /opt/openbaton
-cd /opt/openbaton
+<h2 id="how-to-install-the-juju-vnf-manager-from-source-code">How to install the Juju VNF Manager from source code</h2>
+<p>Git clone the project into the /opt/openbaton directory (you may need to be logged in as root user, unless you change the permissions on the /opt/openbaton folder): </p>
+<pre><code class="bash">sudo apt-get install openjdk-7-jdk #in case you don't have java installed
+mkdir /opt/openbaton
 git clone https://github.com/openbaton/juju-vnfm.git
 </code></pre>
 
@@ -720,31 +757,20 @@ git clone https://github.com/openbaton/juju-vnfm.git
 </code></pre>
 
 <p>to compile it. </p>
-<h1 id="configure-the-juju-vnf-manager">Configure the Juju VNF Manager</h1>
-<p>The Juju VNF Manager uses rabbitmq to communicate with the NFVO. 
-If you want to run the Juju VNF Manager on another machine than on which rabbitmq is running you first have to configure it.<br />
-Either you use the <em>application.properties</em> file in the project's resources folder to configure it or you create the file 
-<em>/etc/openbaton/juju-vnfm.properties</em>, copy the previously mentioned <em>application.properties</em> file's content into it 
-and configure it there.<br />
-Then change the properties <em>spring.rabbitmq.host</em> and <em>spring.rabbitmq.port</em> to the ip address and host on which rabbitmq are running and compile again.<br />
-If you decided to create the file <em>/etc/openbaton/juju-vnfm.properties</em> the Juju VNF Manager will only use this one so make sure 
-that all the properties from the file <em>application.properties</em> are present.  </p>
-<h1 id="how-to-control-the-juju-vnf-manager">How to control the Juju VNF Manager</h1>
+<h2 id="configure-the-juju-vnf-manager">Configure the Juju VNF Manager</h2>
+<p>The Juju VNF Manager uses AMQP to communicate with the NFVO, therefore it needs to reach RabbitMQ in order to properly register with the NFVO.<br />
+In order to configure the VNFM to reach the proper NFVO you need to modify the juju configuration file. First of all, copy the application.properties file into the following location</p>
+<pre><code class="bash">sudo mkdir /etc/openbaton/ # in case it does not exists
+sudo cp src/main/resources/application.properties /etc/openbaton/
+</code></pre>
+
+<p>Then change open it with your favourite editor and modify the properties <em>spring.rabbitmq.host</em> and <em>spring.rabbitmq.port</em> adding the ip address and port on which rabbitmq is running. Please make sure to update also the <em>spring.rabbitmq.username</em> and <em>spring.rabbitmq.password</em> with the one used also on the NFVO side. </p>
+<h2 id="how-to-control-the-juju-vnf-manager">How to control the Juju VNF Manager</h2>
 <p>To start the Juju VNF Manager execute</p>
-<pre><code class="bash">cd /opt/openbaton/juju-vnfm
-./juju-vnfm.sh start
-</code></pre>
-
-<p>This will create a new screen window which you can access using <em>screen -x openbaton</em>.<br />
-You have to run the Juju VNFM on the same machine on which Juju runs. 
-Furthermore Juju has to contain a controller named <em>obcontroller</em>. 
-You can bootsrap a controller by executing (you can see more details on the juju <a href="https://jujucharms.com/docs/stable/getting-started#create-a-controller">installation guide</a>)</p>
-<pre><code class="bash">juju bootstrap obcontroller {cloudname}
-</code></pre>
-
-<p>The cloudname specifies where the controller will run and instantiate the model (e.g. lxd, openstack). 
-This step is fairly important and may differ depending on which cloud you want to use. 
-Take a look at the tutorial sections down below to see an example for Openstack. </p>
+<p><code>bash
+ cd /opt/openbaton/juju-vnfm
+ ./juju-vnfm.sh start</code></p>
+<p>This will create a new screen window which you can access using <em>screen -x openbaton</em>. </p>
 <h1 id="how-to-use-the-juju-vnf-manager">How to use the Juju VNF Manager</h1>
 <p>To use the Juju VNF Manager for deploying a network service you have to store a VimInstance with type <em>test</em> in the NFVO 
 and the Virtual Network Function Descriptors used to describe the network service have to define their <em>endpoint</em> as <em>juju</em>. 
@@ -773,87 +799,6 @@ That means the scripts used by this lifecycle event will be executed by the corr
 <p>If the VNFD is a target of a dependency the START lifecycle will not be mapped to the start hook because the lifecycle's scripts 
 should be executed after the relation-changed hook which runs the CONFIGURE scripts. 
 In these cases a <em>startAfterDependency</em> script will be created and the relation-changed hook will trigger its execution after it has finished. </p>
-<h1 id="openims-tutorial-with-juju-vnfm-and-openstack">OpenIMS Tutorial with Juju-VNFM and Openstack</h1>
-<p>This Tutorial will demonstrate how to deploy the OpenIMSCore implementation on Openstack using Open Baton and the Juju-VNFM. </p>
-<h2 id="requirements_1">Requirements</h2>
-<ul>
-<li>NFVO</li>
-<li>Juju</li>
-<li>Juju-VNFM</li>
-<li>Openstack</li>
-<li><a href="https://github.com/openbaton/openimscore-packages/tree/master">OpenIMSCore packages</a></li>
-</ul>
-<h2 id="configure-juju-to-work-with-openstack">Configure Juju to work with Openstack</h2>
-<p>Create a document called <em>mystack.yaml</em>. 
-Here you will provide the necessary information for Juju to connect to Openstack. 
-The content of the file could look something like this:</p>
-<pre><code class="yaml">  clouds:
-    mystack:
-      type: openstack
-      auth-types: [userpass]
-      use-floating-ip: true
-      use-default-secgroup: true
-      regions:
-        RegionOne:
-          endpoint: http://auth-url:5000/v2.0
-</code></pre>
-
-<p>Values for <em>auth-type</em>, <em>region</em> or <em>endpoint</em> may vary according to your Openstack setup, but <em>use-floating-ip</em> and <em>use-default-secgroup</em> 
-have to be set to true. </p>
-<p>Now we will add the cloud to Juju with the following command: </p>
-<pre><code class="bash">juju add-cloud mystack {pathToMystackFile}/mystack.yaml
-</code></pre>
-
-<p>The next step is to set credentials for the mystack cloud configuration. Execute the following command and enter the required values. </p>
-<pre><code class="yaml">juju add-credential mystack
-</code></pre>
-
-<h2 id="configure-openstack-to-work-with-juju">Configure Openstack to work with Juju</h2>
-<p>Then we also have to configure Openstack to provide an image usable by Juju. 
-For this please refer to <a href="https://jujucharms.com/docs/devel/howto-privatecloud">this</a> guide. </p>
-<h2 id="bootstrap-the-environment">Bootstrap the environment</h2>
-<p>Finally we can bootstrap the openstack environment using this command:</p>
-<pre><code class="bash">juju bootstrap obcontroller mystack --config image-metadata-url=$METADATA_URL --config network=$NETWORK_ID --config use-floating-ip=true --config use-default-secgroup=true --bootstrap-series=$SERIES
-</code></pre>
-
-<p>where the $METADATA_URL has to be replaced by the endpoint you created in the previously mentioned guide to configure Openstack. 
-If you followed it you should be able to obtain the url by executing </p>
-<pre><code class="bash">openstack endpoint show product-streams
-</code></pre>
-
-<p>and copying the printed public url. 
-It will look something like this: 
-http:/\/openstack-url:8080/v1/AUTH_e4f353a5d2184b1fa3f359aaf02abbee/simplestreams/images</p>
-<p>The $NETWORK_ID has to be the network's id from Openstack that shall be used. </p>
-<p>And the $SERIES should be set to an Ubuntu series according to the image you want to use. 
-By default the Juju-VNFM uses trusty while deploying. </p>
-<h2 id="deploy-the-openimscore">Deploy the OpenIMSCore</h2>
-<p>Now that the setup is ready we can start looking at the actual deployment of the OpenIMSCore. </p>
-<p>Clone the git repository containing the packages from <a href="https://github.com/openbaton/openimscore-packages/tree/master">here</a>. 
-But before we create tar archives for uploading to the NFVO we have to configure them to work with the Juju-VNFM. 
-In every component's directory (bind9, fhoss, scscf, pcscf, icscf) you will find a file containing the VNFD. 
-In these VNFDs you have to change the <em>endpoint</em> value from generic to juju. 
-Furthermore you (currently) have to edit a file in the script folders of icscf, pccs and scscf. 
-That are the files <em>icscf.conf</em>, <em>scscf.conf</em> and <em>pcscf.conf</em>. 
-In those scripts please comment the lines starting from <strong>pre-start script</strong> until the next <strong>end script</strong>. </p>
-<p>Like this for example: </p>
-<pre><code class="bash"># pre-start script
-#   exec /opt/OpenIMSCore/bin/icscf.kill.sh
-#   exit 0
-# end script
-</code></pre>
-
-<p>Afterwards you can create the packages for each IMS component. 
-For icscf for example change into the icscf directory and execute </p>
-<pre><code class="bash">tar -cf icscf.tar *
-</code></pre>
-
-<p>Start the NFVO and the Juju-VNFM and upload a VimInstance named <em>vim-instance</em> with type <em>test</em> to the NFVO. 
-Then upload the VNFPackages to the NFVO using the Gui or Cli. 
-This will also create VNFDs in the NFVO. Download this <a href="http://openbaton.github.io/documentation/descriptors/tutorial-ims-NSR/tutorial-ims-NSR.json">NSD</a> and replace the VNFD ids with the ones of the stored VNFDs. 
-Upload the NSD to the NFVO and launch it. This will create an NSR and deploy the OpenIMSCore on Openstack. 
-Since the correct reporting of the deployment's status from the Juju-VNFM to the NFVO is still a future task 
-you should not rely on the NSR status shown by the Gui, but check using the <em>juju status</em> command. </p>
                         
                       </div>
                     </div>

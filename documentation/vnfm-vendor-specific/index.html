@@ -277,15 +277,6 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vim-driver/">Install a VIM Driver</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
         <a class="" href="../vim-instance/">Register a PoP</a>
         
     </li>
@@ -305,6 +296,28 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../ns-descriptor/">Network Service Descriptor</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>VIM Driver</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vim-driver/">VIM Driver Overview</a>
         
     </li>
 
@@ -532,7 +545,25 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../tutorial-sipp/">SIPp example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorial-juju/">OpenIMSCore with Juju VNFM</a>
         
     </li>
 
@@ -657,6 +688,12 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -675,11 +712,11 @@ console.log('--------');
                       <div class="section">
                         
                           <h1 id="use-my-vnfm">Use my VNFM</h1>
-<p>In this section are described the REST interfaces which allow you to integrate your VNFM with Openbaton's NFVO.</p>
+<p>In this section are described the REST interfaces which allow you to use your Virtual Network Function Manager (VNFM) with Openbaton's Network Function Virtualization Orchestrator (NFVO).</p>
 <h1 id="nfvo-vnfm-rest-interface">NFVO - VNFM ReST interface</h1>
-<p>Nfvo exposes a ReST interface for the communication with the VnfManagers. The sequence diagram regarding the instantiation of a NetworkServiceRecord is shown in the following picture.</p>
-<p><img alt="NFVO - VNFM ReST interface" src="../images/nfvo-rest-vnfm-seq-dg.png" /></p>
-<p>As shown in the picture, NFVO calls some ReST methods on the vnfm in a particular order. Then it expects some kind of back call. The list of these call exchange is described in the following sections. The ALLOCATE_RESOURCES call is not needed if the vnfm will take care of creating VMs. The communication with the EMS is particular to each VnfManagers. In order to be able to be found, the Vnfm needs to register to the NFVO. This can be done through a particular call.</p>
+<p>NFVO exposes a REST interface for the communication with the VnfManagers. The sequence diagram regarding the instantiation of a NetworkServiceRecord is shown in the following picture.</p>
+<p><img alt="NFVO - VNFM REST interface" src="../images/nfvo-rest-vnfm-seq-dg.png" /></p>
+<p>As shown in the picture, the NFVO calls some ReST methods on the VNFM in a particular order. Then it expects the corresponding call back. The different types of exchanges are described in the following sections. The ALLOCATE_RESOURCES call is not needed if the VNFM will take care of creating VMs. The communication with the EMS is particular to each VNFM. In order to be able to be found, the VNFM needs to register to the NFVO. This can be done through a particular registration call.</p>
 <p>In the following 'Vnfm-Or' means that the Vnfm sends to the Nfvo and 'Or-Vnfm' means that the Nfvo sends to the Vnfm.</p>
 <table>
 <thead>
@@ -691,16 +728,16 @@ console.log('--------');
 <tbody>
 <tr>
 <td><em><em>OrEndpoint</em></em></td>
-<td align="right">the endpoint of the NFVO (i.e. http://127.0.0.1:8080)</td>
+<td align="right">The endpoint of the NFVO (i.e. http://127.0.0.1:8080)</td>
 </tr>
 <tr>
 <td><em><em>VnfmEnpoint</em></em></td>
-<td align="right">the endpoint of the Vnfm. this is given to the nfvo while registering</td>
+<td align="right">The endpoint of the VNFM. This is given to the NFVO while registering</td>
 </tr>
 </tbody>
 </table>
-<h4 id="registering-a-vnfm-to-the-nfvo-vnfm-or">Registering a Vnfm to the Nfvo (Vnfm-Or)</h4>
-<p>This call registers a vnfm to a nfvo. </p>
+<h4 id="registering-a-vnfm-to-the-nfvo-vnfm-or">Registering a VNFM to the NFVO (Vnfm-Or)</h4>
+<p>This call registers a VNFM to an NFVO. </p>
 <h6 id="request-path">request path</h6>
 <p>POST request on</p>
 <p><em><em>OrEndpoint</em></em>/admin/v1/vnfm-register</p>
@@ -725,20 +762,20 @@ console.log('--------');
 <tbody>
 <tr>
 <td><em><em>type</em></em></td>
-<td align="right">the vnfm type you are going to handle (specified in VirtualNetowrkFunctionDescriptor → endpoint)</td>
+<td align="right">the VNFM type you are going to handle (specified in VirtualNetworkFunctionDescriptor → endpoint)</td>
 </tr>
 <tr>
 <td><em><em>endpointType</em></em></td>
-<td align="right">the vnfm type you are going to implement (REST or AMQP)</td>
+<td align="right">the VNFM type you are going to implement (REST or AMQP)</td>
 </tr>
 <tr>
 <td><em><em>endpoint</em></em></td>
-<td align="right">the vnfm endpoint you have chosen (basically http://&lt;IP>:&lt;PORT>)</td>
+<td align="right">the VNFM endpoint to which the NFVO will connect (basically http://&lt;IP>:&lt;PORT>)</td>
 </tr>
 </tbody>
 </table>
 <h3 id="instantiate-or-vnfm">INSTANTIATE (Or-Vnfm)</h3>
-<p>This call sends the Vnfm the Virtual Network Function Descriptor, which shall be used to create the Virtual Network Funtion Record and also sends to the Vnfm all the scripts which are executed in actions like INSTANTIATE, MODIFY or START. This call triggers the creation of a virtual machine for the sent vnfd and the execution of the scripts which are associated with the INSTANTIATE lifecycle event in the vnfd. </p>
+<p>This call sends the Virtual Network Function Descriptor (VNFD) to the VNFM, which shall be used to create the Virtual Network Funtion Record (VNFR) and also sends to the VNFM all the scripts which are executed in actions like INSTANTIATE, MODIFY or START. This call triggers the creation of a Virtual Machine for the VNFCInstances specified in the sent VNFD and triggers the execution of the scripts which are associated with the INSTANTIATE lifecycle event in the VNFD. </p>
 <h6 id="request-path_1">request path</h6>
 <p>POST request on <em><em>VnfmEnpoint</em></em></p>
 <h6 id="request-body_1">request body</h6>
@@ -776,7 +813,7 @@ console.log('--------');
 <tbody>
 <tr>
 <td><em><em>vnfd</em></em></td>
-<td align="right">the VirtualNetworkFunctionDescriptor from which a VirtualNetworkFunctionRecord is created</td>
+<td align="right">the VNFD used to create the VNFR</td>
 </tr>
 <tr>
 <td><em><em>vnfdf</em></em></td>
@@ -796,11 +833,11 @@ console.log('--------');
 </tr>
 <tr>
 <td><em><em>vimInstances</em></em></td>
-<td align="right">a map containing per each vdu id the list of VimInstance objects</td>
+<td align="right">a map containing per each VDU id the list of VimInstance objects</td>
 </tr>
 <tr>
 <td><em><em>vnfPackage</em></em></td>
-<td align="right">the VNFPackage of the VirtualNetowrkFunctionRecord</td>
+<td align="right">the VNFPackage of the VNFR</td>
 </tr>
 <tr>
 <td><em><em>keypairs</em></em></td>
@@ -809,7 +846,7 @@ console.log('--------');
 </tbody>
 </table>
 <h3 id="grantoperation-vnfm-or">GrantOperation (Vnfm-Or)</h3>
-<p>This call sends the Virtual Network Function Record to the Nfvo in order to ask if there are enough resources</p>
+<p>This call sends the VNFR to the NFVO in order to ask if there are enough resources</p>
 <h6 id="request-path_2">request path</h6>
 <p>POST request on <em><em>OrEndpoint</em></em>/admin/v1/vnfm-core-grant</p>
 <h6 id="request-body_2">request body</h6>
@@ -830,16 +867,16 @@ console.log('--------');
 <tbody>
 <tr>
 <td><em><em>action</em></em></td>
-<td align="right">the action has to be executed</td>
+<td align="right">GRANT_OPERATION</td>
 </tr>
 <tr>
 <td><em><em>virtualNetworkFunctionRecord</em></em></td>
-<td align="right">the VirtualNetowrkFunctionRecord</td>
+<td align="right">the VNFR</td>
 </tr>
 </tbody>
 </table>
 <h3 id="grantoperation-or-vnfm">GrantOperation (Or-Vnfm)</h3>
-<p>This call returns the answer from the Nfvo of the grant operation</p>
+<p>This call returns the NFVO's answer to the grant operation call</p>
 <h6 id="request-path_3">request path</h6>
 <p>POST request on <em><em>VnfmEnpoint</em></em></p>
 <h6 id="request-body_3">request body</h6>
@@ -865,20 +902,20 @@ console.log('--------');
 <tbody>
 <tr>
 <td><em><em>grantAllowed</em></em></td>
-<td align="right">if the nfvo has granted the allocate resources</td>
+<td align="right">if the NFVO has granted the allocate resources</td>
 </tr>
 <tr>
 <td><em><em>vduVim</em></em></td>
-<td align="right">which vim was chosen per vdu</td>
+<td align="right">which VIM was chosen per VDU</td>
 </tr>
 <tr>
 <td><em><em>virtualNetworkFunctionRecord</em></em></td>
-<td align="right">the virtualNetworkFunctionRecord</td>
+<td align="right">the VNFR</td>
 </tr>
 </tbody>
 </table>
 <h3 id="allocateresources-vnfm-or">AllocateResources (Vnfm-Or)</h3>
-<p>This call sends the Virtual Network Function Record to the Nfvo in order to allocate resources</p>
+<p>This call sends the VNFR to the NFVO in order to allocate resources</p>
 <h6 id="request-path_4">request path</h6>
 <p>POST request on <em><em>OrEndpoint</em></em>/admin/v1/vnfm-core-allocate</p>
 <h6 id="request-body_4">request body</h6>
@@ -905,11 +942,11 @@ console.log('--------');
 <tbody>
 <tr>
 <td><em><em>virtualNetworkFunctionRecord</em></em></td>
-<td align="right">the VirtualNetowrkFunctionRecord</td>
+<td align="right">the VNFR</td>
 </tr>
 <tr>
 <td><em><em>vimInstances</em></em></td>
-<td align="right">the chosen vim per vdu</td>
+<td align="right">the chosen VIM per VDU</td>
 </tr>
 <tr>
 <td><em><em>userdata</em></em></td>
@@ -922,7 +959,7 @@ console.log('--------');
 </tbody>
 </table>
 <h3 id="allocateresources-or-vnfm">AllocateResources (Or-Vnfm)</h3>
-<p>This call returns the new VirtualNetowrkFunctionRecord to the Vnfm</p>
+<p>This call returns the new VNFR to the VNFM</p>
 <h6 id="request-path_5">request path</h6>
 <p>POST request on <em><em>VnfmEnpoint</em></em></p>
 <h6 id="request-body_5">request body</h6>
@@ -942,12 +979,12 @@ console.log('--------');
 <tbody>
 <tr>
 <td><em><em>virtualNetworkFunctionRecord</em></em></td>
-<td align="right">the virtualNetworkFunctionRecord updated</td>
+<td align="right">the updated VNFR</td>
 </tr>
 </tbody>
 </table>
 <h3 id="instantiate-vnfm-or">Instantiate (Vnfm-Or)</h3>
-<p>This call sends back the created Virtual Network Function Record to the Nfvo. </p>
+<p>This call sends back the created Virtual Network Function Record to the NFVO. </p>
 <h6 id="request-path_6">request path</h6>
 <p>POST request on <em><em>OrEndpoint</em></em>/admin/v1/vnfm-core-actions</p>
 <h6 id="request-body_6">request body</h6>
@@ -977,7 +1014,7 @@ console.log('--------');
 </tbody>
 </table>
 <h3 id="modify-aka-addrelations-or-vnfm">Modify (aka AddRelations) (Or-Vnfm)</h3>
-<p>The Nfvo uses this request to provide dependencies of Virtual Network Functions to the Vnfm. The scripts associated with the CONFIGURATION lifecycle event in the vnfr will be executed.</p>
+<p>The Nfvo uses this request to provide dependencies of Virtual Network Functions to the VNFM. The scripts associated with the CONFIGURATION lifecycle event in the VNFR will be executed.</p>
 <h6 id="request-path_7">request path</h6>
 <p>POST request on</p>
 <p><em><em>VnfmEnpoint</em></em></p>
@@ -1000,7 +1037,7 @@ console.log('--------');
 <tbody>
 <tr>
 <td><em><em>vnfr</em></em></td>
-<td align="right">the VirtualNetowrkFunctionRecord target of the depedendecy</td>
+<td align="right">the dependency's target VNFR</td>
 </tr>
 <tr>
 <td><em><em>vnfrd</em></em></td>
@@ -1013,7 +1050,7 @@ console.log('--------');
 </tbody>
 </table>
 <h3 id="modify-aka-addrelations-vnfm-or">Modify (aka AddRelations) (Vnfm-Or)</h3>
-<p>This call sends back the modified Virtual Network Function Record to the Nfvo. </p>
+<p>This call sends back the modified Virtual Network Function Record to the NFVO. </p>
 <h6 id="request-path_8">request path</h6>
 <p>POST request on</p>
 <p><em><em>OrEndpoint</em></em>/admin/v1/vnfm-core-actions</p>
@@ -1035,7 +1072,7 @@ console.log('--------');
 <tbody>
 <tr>
 <td><em><em>virtualNetworkFunctionRecord</em></em></td>
-<td align="right">the VirtualNetworkFunctionRecord</td>
+<td align="right">the VNFR</td>
 </tr>
 <tr>
 <td><em><em>action</em></em></td>
@@ -1044,7 +1081,7 @@ console.log('--------');
 </tbody>
 </table>
 <h3 id="start-or-vnfm">Start (Or-Vnfm)</h3>
-<p>This call will trigger the execution of the scripts associated with the START lifecycle event in the vnfr. </p>
+<p>This call will trigger the execution of the scripts associated with the START lifecycle event in the VNFR. </p>
 <h6 id="request-path_9">request path</h6>
 <p>POST request on</p>
 <p><em><em>VnfmEnpoint</em></em></p>
@@ -1066,7 +1103,7 @@ console.log('--------');
 <tbody>
 <tr>
 <td><em><em>vnfr</em></em></td>
-<td align="right"></td>
+<td align="right">the VNFR to start</td>
 </tr>
 <tr>
 <td><em><em>action</em></em></td>
@@ -1104,10 +1141,11 @@ console.log('--------');
 </tr>
 </tbody>
 </table>
-<p>With this last message the VNF managed by this VNFM will be set to ACTIVE. When all the VNF are set to ACTIVE also the NSR will be set to ACTIVE and the deployment is concluded.
+<p>With this last message the VNF managed by this VNFM will be set to ACTIVE. When all the VNF are set to ACTIVE also the NSR will be set to ACTIVE and the deployment succeeded.</p>
 <!---
 References
---></p>
+-->
+
 <!---
 Script for open external links in a new tab
 -->

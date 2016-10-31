@@ -23,16 +23,16 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "NFVO intro";
-    var mkdocs_page_input_path = "use.md";
-    var mkdocs_page_url = "/use/";
-     var mkdocs_page_url = "/use/";
+    var mkdocs_page_name = "OpenStack VIM Driver";
+    var mkdocs_page_input_path = "vim-driver-openstack.md";
+    var mkdocs_page_url = "/vim-driver-openstack/";
+     var mkdocs_page_url = "/vim-driver-openstack/";
   </script>
   
   <!-- site_name == OpenBaton Documentation -->
-  <!-- page_title == NFVO intro -->
+  <!-- page_title == OpenStack VIM Driver -->
   <!-- base_url == .. -->
-  <!-- current_page == NFVO intro - /use/ [*]
+  <!-- current_page == OpenStack VIM Driver - /vim-driver-openstack/ [*]
  -->
   <script src="../js/jquery-2.1.1.min.js"></script>
   <script src="../js/modernizr-2.8.3.min.js"></script>
@@ -87,14 +87,14 @@ display: block;
 $( document).ready(function(){
       //console.log("test");
 
-    //$('.subnav').not( ":has('NFVO intro')" ).hide();
+    //$('.subnav').not( ":has('OpenStack VIM Driver')" ).hide();
     $('li.subnav_drop').find('ul.subnav').hide();
     //$('li.subnav_drop').find('ul.subnav').each(function(i,e){console.log(i,e)});
-       $( ".subnav" ).find( "li:contains('NFVO intro')" ).each(function(i,e){
+       $( ".subnav" ).find( "li:contains('OpenStack VIM Driver')" ).each(function(i,e){
           var currentElement = $(e);
           currentElement.parent().css({"display":"block","visibility":"visible"}); //css("background-color","blue");
           currentElement.css({"display":"block","visibility":"visible"});
-       });//$( ".subnav" ).find( "li:contains('NFVO intro')" ).css("display","block");
+       });//$( ".subnav" ).find( "li:contains('OpenStack VIM Driver')" ).css("display","block");
        //$(".current").css({"background-color":"blue","display":"block","visibility":"visible"});
        //show(1000,function(i,e){console.log(i,e)});
        //$('li.subnav_drop').find('ul.subnav').css("background-color","blue");
@@ -106,11 +106,11 @@ $( document).ready(function(){
 
 });
    
-$( ".wy-nav-content" ).find( "li:contains('NFVO intro')" ).css('color','red');
+$( ".wy-nav-content" ).find( "li:contains('OpenStack VIM Driver')" ).css('color','red');
 console.log('--------');
-console.log($( ".wy-nav-content" ).find( "div:contains('NFVO intro')" ).css("color","red"));
+console.log($( ".wy-nav-content" ).find( "div:contains('OpenStack VIM Driver')" ).css("color","red"));
 console.log('--------');
-console.log($( ".subnav" ).find( "li:contains('NFVO intro')" ));
+console.log($( ".subnav" ).find( "li:contains('OpenStack VIM Driver')" ));
 console.log('--------');
   </script>
 
@@ -240,10 +240,8 @@ console.log('--------');
         
              
 
-    <li class="toctree-l1 current">
-        <a class="current" href="./">NFVO intro</a>
-        
-         
+    <li class="toctree-l1 ">
+        <a class="" href="../use/">NFVO intro</a>
         
     </li>
 
@@ -313,28 +311,6 @@ console.log('--------');
                   <li><ul> 
     
    
-    <li class="subnav_drop"><span>VIM Driver</span>
-<ul class="subnav">
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vim-driver/">VIM Driver Overview</a>
-        
-    </li>
-
-
-        
-</li>
-</ul>
-    
-</ul></li>
-                 
-		
-		
-                  <li><ul> 
-    
-   
     <li class="subnav_drop"><span>VNF Managers</span>
 <ul class="subnav">
         
@@ -364,6 +340,52 @@ console.log('--------');
     </li>
 
 
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>VIM Driver</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vim-driver/">VIM Driver Overview</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 current">
+        <a class="current" href="./">OpenStack VIM Driver</a>
+        
+         
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>VNF Managers</span>
+<ul class="subnav">
         
              
 
@@ -545,25 +567,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tutorial-sipp/">SIPp example</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
         <a class="" href="../ims-NSR/">OpenIMSCore example</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../tutorial-juju/">OpenIMSCore with Juju VNFM</a>
         
     </li>
 
@@ -690,10 +694,6 @@ console.log('--------');
 		
 		
 		
-		
-		
-		
-		
               </ul>
             </div>
             &nbsp;
@@ -711,35 +711,7 @@ console.log('--------');
                     <div role="main">
                       <div class="section">
                         
-                          <h1 id="how-to-use-openbaton">How to use OpenBaton</h1>
-<p>After completing the installation, you should be able to reach the dashboard of the NFVO at the following url: http://your-ip-here:8080</p>
-<p>When accessing the dashboard, you will be prompted for a username and password. The first access can only be done with the super user ("admin") created during the installation process. Please refer to the <a href="../security">Identity Management</a> section for more information about security mechanisms. 
-Please refer to the following documentation for learning how to use the <a href="../nfvo-how-to-use-gui">Open Baton dashboard</a> or the <a href="../nfvo-how-to-use-cli">Command Line Interface</a></p>
-<p>In order to use Open Baton for launching your first Network Service, you will need to follow these steps:</p>
-<ol>
-<li>Install a VIM driver. <a href="../vim-driver">Learn more here</a></li>
-<li>Register one or more Point of Presences (PoPs). <a href="../vim-instance">Learn more here</a></li>
-<li>Install a VNF Manager. <a href="../vnfm-intro">Learn more here</a></li>
-<li>Build or download one or more VNF Packages. <a href="../vnf-package">Learn more here</a></li>
-<li>Prepare the Network Service Descriptor (NSD). <a href="../ns-descriptor">Learn more here</a></li>
-<li>Launch the NSD. <a href="../nfvo-how-to-use-gui">Learn more here</a></li>
-</ol>
-<p>Once these steps are completed you will be able to orchestrate your Network Service from the <a href="../nfvo-how-to-use-gui">dashboard</a> or via the <a href="http://get.openbaton.org/api/ApiDoc.pdf">REST APIs</a>. </p>
-<!---
-Script for open external links in a new tab
--->
-
-<script type="text/javascript" charset="utf-8">
-      // Creating custom :external selector
-      $.expr[':'].external = function(obj){
-          return !obj.href.match(/^mailto\:/)
-                  && (obj.hostname != location.hostname);
-      };
-      $(function(){
-        $('a:external').addClass('external');
-        $(".external").attr('target','_blank');
-      })
-</script>
+                          
                         
                       </div>
                     </div>
@@ -747,10 +719,10 @@ Script for open external links in a new tab
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../security/" class="btn btn-neutral float-right" title="Identity management"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../vnfm-how-to-write/" class="btn btn-neutral float-right" title="Develop a VNFM"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../nfvo-configuration/" class="btn btn-neutral" title="Configure it"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../vim-driver/" class="btn btn-neutral" title="VIM Driver Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

@@ -277,15 +277,6 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vim-driver/">Install a VIM Driver</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
         <a class="" href="../vim-instance/">Register a PoP</a>
         
     </li>
@@ -307,6 +298,28 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../ns-descriptor/">Network Service Descriptor</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>VIM Driver</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vim-driver/">VIM Driver Overview</a>
         
     </li>
 
@@ -532,7 +545,25 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../tutorial-sipp/">SIPp example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorial-juju/">OpenIMSCore with Juju VNFM</a>
         
     </li>
 
@@ -657,6 +688,12 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -677,6 +714,7 @@ console.log('--------');
                           <h1 id="vnf-package">VNF Package</h1>
 <p>This doc describes essential components of a VNF Package, how to create them and how to use them after onboarding.
 Therefore, you can find a practical tutorial at the end with all the steps starting from the creation over onboarding and finally referencing it by an NSD.</p>
+<p>The NFVO can also work with CSAR as described in the <a href="https://docs.oasis-open.org/tosca/tosca-nfv/v1.0/tosca-nfv-v1.0.html">Tosca simple profile for NFV</a>. More information about building and deploying compliant CSARs in this <a href="../tosca-CSAR-onboarding">tutorial</a>.</p>
 <p>A VNF Package is a tar-archive that contains all the information required for creating a VNF for the Open Baton's NFVO.
 After onboarding the VNF Package to the NFVO you can use the VNF directly in the NSD by referencing the VNFD by its ID.
 A VNF Package includes the VNFD, the image, scripts and a Metadata file structured as shown in the next part.</p>
@@ -965,40 +1003,7 @@ Important to notice here is that the vm_image defined in the Metadata.yaml is fi
 <p>The image we have to choose must be a debian 64bit image (e.g. ubuntu amd64) for satisfying the EMS and scripts which are designed for that kind of architecture.
 We have chosen this one <a href="http://uec-images.ubuntu.com/releases/14.04/release/ubuntu-14.04-server-cloudimg-amd64-disk1.img">ubuntu-14.04.3-server-amd64.iso</a>.</p>
 <h2 id="onboarding-vnf-packages">Onboarding VNF Packages</h2>
-<p>Once we have finalized the creation of VNF Packages and packed them into a tar we can onboard them to the NFVO. Make sure that you also uploaded a VimInstance before onboarding the package. Onboarding can be done as shown in the following:</p>
-<pre><code class="bash">$ curl -X POST -v -F file=@vnf-package.tar &quot;http://localhost:8080/api/v1/vnf-packages&quot;
-</code></pre>
-
-<p>This must be done for both VNF Packages expecting that the NFVO is running locally and the tar archive is called vnf-package.tar.
-Otherwise you need to adapt the path to the package and also the URL where the NFVO is located.
-Now where we onboarded the VNF Packages they are available on the NFVO and we can make use of it by referencing them in the NSD by their IDs'.</p>
-<p><strong>Note</strong> You could use the <a href="../nfvo-how-to-use-gui">Dashboard</a> as well for onboarding the VNF Packages.</p>
-<p>To get the IDs of the newly created VNFDs you need to fetch the VNFDs by invoking the following command:</p>
-<pre><code class="bash">$ curl -X GET &quot;http://localhost:8080/api/v1/vnf-descriptors&quot;
-</code></pre>
-
-<p>This request will return a list of already existing VNFDs.
-Just looking for the VNFDs we created before and use their IDs to reference them in the NSD.
-The following list of VNFDs is an output example of this request.
-To make it more readable only the interesting parts are shown.</p>
-<pre><code class="json">[
-  [...]
-  {
-    [...]
-    &quot;id&quot;: &quot;29d918b9-6245-4dc4-abc6-b7dd6e84f2c1&quot;,
-    &quot;name&quot;: &quot;iperf-server&quot;,
-    [...]
-  },
-  {
-    [...]
-    &quot;id&quot;: &quot;87820607-4048-4fad-b02b-dbcab8bb5c1c&quot;,
-    &quot;name&quot;: &quot;iperf-client&quot;,
-    [...]
-  }
-  [...]
-]
-</code></pre>
-
+<p>Once we have finalized the creation of VNF Packages and packed them into a tar we can onboard them to the NFVO. Make sure that you also uploaded a VimInstance before onboarding the package. Onboarding can be done easily via the <a href="../nfvo-how-to-use-gui">Dashboard</a> or the <a href="../nfvo-how-to-use-cli">Command Line Interface</a>.</p>
 <h2 id="nsd-iperf">NSD [iperf]</h2>
 <p>In this section we will create a <a href="../ns-descriptor">NSD</a> and reference the previously created VNF Packages by their IDs.
 For doing that we just need to define the <strong>id</strong> for each VNFPackges' VNFD in the list of VNFDs.
@@ -1038,21 +1043,8 @@ To provide also the iperf-servers' IP to the iperf-client we need to define depe
 </code></pre>
 
 <p>Finally you can onboard this NSD and deploy an NSR that bases on both VNF Packages created before.</p>
-<h3 id="onboard-nsd">Onboard NSD</h3>
-<p>The following command will onboard the NSD on the NFVO:</p>
-<pre><code class="bash">$ curl -X POST -v -F file=@nsd.json &quot;http://localhost:8080/api/v1/ns-descriptors&quot;
-</code></pre>
-
-<p>This will return the NSD with the ID we need to create the NSR.
-Afterwards, we can deploy the NSD.</p>
-<p><strong>Note</strong> You could use the <a href="../nfvo-how-to-use-gui">Dashboard</a> as well for onboarding the NSD.</p>
-<h3 id="create-nsr-deployment">Create NSR (Deployment)</h3>
-<p>To deploy the NSD we create a NSR with the following command:</p>
-<pre><code class="bash">$ curl -X POST -v -F file=@vnf-package.tar &quot;http://localhost:8080/api/v1/ns-records/&lt;NSD_ID&gt;&quot;
-</code></pre>
-
-<p>Installation and configuration is done automatically and provides you with a configured iperf server/client service.</p>
-<p><strong>Note</strong> You could use the <a href="../nfvo-how-to-use-gui">Dashboard</a> as well for creating the NSR of this NSD.</p>
+<h3 id="onboarding-and-deploying-nsd">Onboarding and deploying NSD</h3>
+<p>You could also use the <a href="../nfvo-how-to-use-gui">Dashboard</a> or the <a href="../nfvo-how-to-use-cli">Command Line Interface</a> as well for onboarding and deploying the NSD.</p>
 <!---
 Script for open external links in a new tab
 -->

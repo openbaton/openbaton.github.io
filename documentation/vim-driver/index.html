@@ -23,16 +23,16 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Install a VIM Driver";
+    var mkdocs_page_name = "VIM Driver Overview";
     var mkdocs_page_input_path = "vim-driver.md";
     var mkdocs_page_url = "/vim-driver/";
      var mkdocs_page_url = "/vim-driver/";
   </script>
   
   <!-- site_name == OpenBaton Documentation -->
-  <!-- page_title == Install a VIM Driver -->
+  <!-- page_title == VIM Driver Overview -->
   <!-- base_url == .. -->
-  <!-- current_page == Install a VIM Driver - /vim-driver/ [*]
+  <!-- current_page == VIM Driver Overview - /vim-driver/ [*]
  -->
   <script src="../js/jquery-2.1.1.min.js"></script>
   <script src="../js/modernizr-2.8.3.min.js"></script>
@@ -87,14 +87,14 @@ display: block;
 $( document).ready(function(){
       //console.log("test");
 
-    //$('.subnav').not( ":has('Install a VIM Driver')" ).hide();
+    //$('.subnav').not( ":has('VIM Driver Overview')" ).hide();
     $('li.subnav_drop').find('ul.subnav').hide();
     //$('li.subnav_drop').find('ul.subnav').each(function(i,e){console.log(i,e)});
-       $( ".subnav" ).find( "li:contains('Install a VIM Driver')" ).each(function(i,e){
+       $( ".subnav" ).find( "li:contains('VIM Driver Overview')" ).each(function(i,e){
           var currentElement = $(e);
           currentElement.parent().css({"display":"block","visibility":"visible"}); //css("background-color","blue");
           currentElement.css({"display":"block","visibility":"visible"});
-       });//$( ".subnav" ).find( "li:contains('Install a VIM Driver')" ).css("display","block");
+       });//$( ".subnav" ).find( "li:contains('VIM Driver Overview')" ).css("display","block");
        //$(".current").css({"background-color":"blue","display":"block","visibility":"visible"});
        //show(1000,function(i,e){console.log(i,e)});
        //$('li.subnav_drop').find('ul.subnav').css("background-color","blue");
@@ -106,11 +106,11 @@ $( document).ready(function(){
 
 });
    
-$( ".wy-nav-content" ).find( "li:contains('Install a VIM Driver')" ).css('color','red');
+$( ".wy-nav-content" ).find( "li:contains('VIM Driver Overview')" ).css('color','red');
 console.log('--------');
-console.log($( ".wy-nav-content" ).find( "div:contains('Install a VIM Driver')" ).css("color","red"));
+console.log($( ".wy-nav-content" ).find( "div:contains('VIM Driver Overview')" ).css("color","red"));
 console.log('--------');
-console.log($( ".subnav" ).find( "li:contains('Install a VIM Driver')" ));
+console.log($( ".subnav" ).find( "li:contains('VIM Driver Overview')" ));
 console.log('--------');
   </script>
 
@@ -276,17 +276,6 @@ console.log('--------');
         
              
 
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Install a VIM Driver</a>
-        
-         
-        
-    </li>
-
-
-        
-             
-
     <li class="toctree-l1 ">
         <a class="" href="../vim-instance/">Register a PoP</a>
         
@@ -307,6 +296,30 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../ns-descriptor/">Network Service Descriptor</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>VIM Driver</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 current">
+        <a class="current" href="./">VIM Driver Overview</a>
+        
+         
         
     </li>
 
@@ -532,7 +545,25 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../tutorial-sipp/">SIPp example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorial-juju/">OpenIMSCore with Juju VNFM</a>
         
     </li>
 
@@ -657,6 +688,12 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -675,6 +712,18 @@ console.log('--------');
                       <div class="section">
                         
                           <h1 id="vim-drivers">VIM Drivers</h1>
+<p>Open Baton uses the Remote Procedure Call (RPC) mechanism for implementing VIM drivers. It offers an implementation of an interface that is used by the NFVO. </p>
+<h2 id="what-are-the-supported-vim-types">What are the supported VIM types?</h2>
+<p>By default the NFVO is installed with the two following VIM drivers: </p>
+<ul>
+<li>openstack: for interoperating with an OpenStack instance</li>
+<li>test: for testing purposes implementing a VIM mockup</li>
+</ul>
+<p>For each of those types there is a different implementation of the VIM API. The NFVO uses a driver mechanism for interacting with VIMs. Inside the NFVO folder is a folder called <code>plugins</code> where the binary file that implements the interface to your VIM ( i.e. <a href="https://www.openstack.org/">Openstack</a> ) should be placed (you can change the folder where Open Baton searches for the plugins by changing the variable <code>plugin-installation-dir</code> in the <code>openbaton.properties</code> file under /etc/openbaton).<br />
+This binary file is the implementation of the interface that communicates with your VIM.</p>
+<p><strong>Note</strong>: You can implement your own interface just follow the documentation on writing your own <a href="../vim-driver-create/">VIM driver</a>.</p>
+<h2 id="where-can-i-find-other-open-source-vim-drivers">Where can I find other open source VIM drivers?</h2>
+<p>Open Baton platform provides an openstack and a test plugin. They are automatically download by the bootstrap. During next releases there will be additional drivers available on our <a href="http://marketplace.openbaton.org:8082/#/">Marketplace</a></p>
                         
                       </div>
                     </div>
@@ -682,10 +731,10 @@ console.log('--------');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../vim-instance/" class="btn btn-neutral float-right" title="Register a PoP"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../vnfm-intro/" class="btn btn-neutral float-right" title="VNFM intro"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../nfvo-how-to-use-cli/" class="btn btn-neutral" title="Use via the CLI"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../ns-descriptor/" class="btn btn-neutral" title="Network Service Descriptor"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

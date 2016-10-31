@@ -23,16 +23,16 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Iperf Scenario";
-    var mkdocs_page_input_path = "iperf-NSR.md";
-    var mkdocs_page_url = "/iperf-NSR/";
-     var mkdocs_page_url = "/iperf-NSR/";
+    var mkdocs_page_name = "SIPp example";
+    var mkdocs_page_input_path = "tutorial-sipp.md";
+    var mkdocs_page_url = "/tutorial-sipp/";
+     var mkdocs_page_url = "/tutorial-sipp/";
   </script>
   
   <!-- site_name == OpenBaton Documentation -->
-  <!-- page_title == Iperf Scenario -->
+  <!-- page_title == SIPp example -->
   <!-- base_url == .. -->
-  <!-- current_page == Iperf Scenario - /iperf-NSR/ [*]
+  <!-- current_page == SIPp example - /tutorial-sipp/ [*]
  -->
   <script src="../js/jquery-2.1.1.min.js"></script>
   <script src="../js/modernizr-2.8.3.min.js"></script>
@@ -87,14 +87,14 @@ display: block;
 $( document).ready(function(){
       //console.log("test");
 
-    //$('.subnav').not( ":has('Iperf Scenario')" ).hide();
+    //$('.subnav').not( ":has('SIPp example')" ).hide();
     $('li.subnav_drop').find('ul.subnav').hide();
     //$('li.subnav_drop').find('ul.subnav').each(function(i,e){console.log(i,e)});
-       $( ".subnav" ).find( "li:contains('Iperf Scenario')" ).each(function(i,e){
+       $( ".subnav" ).find( "li:contains('SIPp example')" ).each(function(i,e){
           var currentElement = $(e);
           currentElement.parent().css({"display":"block","visibility":"visible"}); //css("background-color","blue");
           currentElement.css({"display":"block","visibility":"visible"});
-       });//$( ".subnav" ).find( "li:contains('Iperf Scenario')" ).css("display","block");
+       });//$( ".subnav" ).find( "li:contains('SIPp example')" ).css("display","block");
        //$(".current").css({"background-color":"blue","display":"block","visibility":"visible"});
        //show(1000,function(i,e){console.log(i,e)});
        //$('li.subnav_drop').find('ul.subnav').css("background-color","blue");
@@ -106,11 +106,11 @@ $( document).ready(function(){
 
 });
    
-$( ".wy-nav-content" ).find( "li:contains('Iperf Scenario')" ).css('color','red');
+$( ".wy-nav-content" ).find( "li:contains('SIPp example')" ).css('color','red');
 console.log('--------');
-console.log($( ".wy-nav-content" ).find( "div:contains('Iperf Scenario')" ).css("color","red"));
+console.log($( ".wy-nav-content" ).find( "div:contains('SIPp example')" ).css("color","red"));
 console.log('--------');
-console.log($( ".subnav" ).find( "li:contains('Iperf Scenario')" ));
+console.log($( ".subnav" ).find( "li:contains('SIPp example')" ));
 console.log('--------');
   </script>
 
@@ -533,10 +533,8 @@ console.log('--------');
         
              
 
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Iperf Scenario</a>
-        
-         
+    <li class="toctree-l1 ">
+        <a class="" href="../iperf-NSR/">Iperf Scenario</a>
         
     </li>
 
@@ -544,8 +542,10 @@ console.log('--------');
         
              
 
-    <li class="toctree-l1 ">
-        <a class="" href="../tutorial-sipp/">SIPp example</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">SIPp example</a>
+        
+         
         
     </li>
 
@@ -711,28 +711,25 @@ console.log('--------');
                     <div role="main">
                       <div class="section">
                         
-                          <h1 id="tutorial-iperf-network-service">Tutorial: iPerf Network Service</h1>
+                          <h1 id="tutorial-sipp-network-service">Tutorial: SIPp Network Service</h1>
 <hr />
-<p>This tutorial explains how to deploy a network service that uses iPerf.<br />
-<a href="https://iperf.fr">iPerf</a> is a tool for active measurements of the maximum achievable bandwidth between two or more machines where an iPerf client connects to an iPerf server.</p>
-<p>You can execute also the same tutorial using the <a href="../tosca-iperf-scenario/">TOSCA</a> definitions. </p>
+<p>This tutorial explains how to deploy a network service that uses SIPp.<br />
+<a href="http://sipp.sourceforge.net/">SIPp</a> is a free Open Source test tool / traffic generator for the SIP protocol which follows a client/server approach. In the following you will see how to create the NSD which defines the allocations of virtual resources, the installation and configuration of the the SIPp server and client. Furthermore, you can see how to create dependencies.</p>
 <p>This tutorial makes use of:</p>
 <ul>
 <li><a href="https://github.com/openbaton/NFVO">NFVO</a></li>
 <li><a href="https://github.com/openbaton/generic-vnfm">Generic VNFM</a></li>
-<li>Generic <a href="https://github.com/openbaton/ems/tree/master">EMS</a></li>
+<li><a href="https://github.com/openbaton/ems/tree/master">Generic EMS</a></li>
 <li><a href="https://github.com/openbaton/openstack-plugin">OpenStack vim driver</a></li>
 </ul>
 <h2 id="requirements">Requirements</h2>
 <p>In order to execute this scenario, you need to have the following components up and running:</p>
 <ul>
-<li>The <a href="https://github.com/openbaton/NFVO">NFVO</a></li>
-<li>the <a href="https://github.com/openbaton/openstack-plugin">OpenStack vim driver</a></li>
-<li>the <a href="https://github.com/openbaton/generic-vnfm">Generic VNFM</a></li>
-<li>OpenStack</li>
+<li>Configured and running <a href="https://github.com/openbaton/NFVO">NFVO</a></li>
+<li>Running <a href="https://github.com/openbaton/openstack-plugin">OpenStack vim driver</a></li>
+<li>Running <a href="https://github.com/openbaton/generic-vnfm">Generic VNFM</a></li>
+<li>Configured and running OpenStack environment</li>
 </ul>
-<p>Start the NFVO and Generic VNFM depending on how you <a href="../nfvo-installation">installed</a> it.<br />
-If you used the bootstrap script for installing you do not have to care about the OpenStack vim driver as it will be installed already. </p>
 <h2 id="store-the-vim-instance">Store the Vim Instance</h2>
 <p>For registering the Point of Presence of type OpenStack to the NFVO you have to upload a Vim Instance. You can use the following <a href="../descriptors/vim-instance/openstack-vim-instance.json">json descriptor</a> by changing the values to your needs. </p>
 <h3 id="using-the-dashboard">Using the dashboard</h3>
@@ -745,43 +742,43 @@ Go to <code>Manage PoPs -&gt; PoP Instances</code> and choose the Vim Instance o
 </code></pre>
 
 <h2 id="store-the-network-service-descriptor">Store the Network Service Descriptor</h2>
-<p>Download the <a href="../descriptors/tutorial-iperf-NSR/tutorial-iperf-NSR-privateIPs.json">iPerf NSD using private IPs</a> or <a href="../descriptors/tutorial-iperf-NSR/tutorial-iperf-NSR-floatingIPs.json">iPerf NSD using floating IPs</a>, and upload it in the catalogue either using the dashboard or the CLI.<br />
+<p>Download the <a href="../descriptors/tutorial-sipp/NetworkServiceDescriptor-SIPp.json">SIPp NSD using private IPs</a> or <a href="../descriptors/tutorial-sipp/NetworkServiceDescriptor-SIPp-floatingIPs.json">SIPp NSD using floating IPs</a>, and upload it in the catalogue either using the dashboard or the CLI.<br />
 The difference is that the first NSD will deploy Virtual Machines without floating IPs on OpenStack whereas the second one will use floating IPs. </p>
 <h3 id="using-the-dashboard_1">Using the dashboard</h3>
 <p>If you want to use the Dashboard go to <code>Catalogue -&gt; NS Descriptors</code> and choose the NSD of your choice by clicking on <code>Upload NSD</code> and selecting the Descriptor's json file.</p>
-<p><img alt="Onboarding-NSD" src="../images/tutorials/tutorial-iperf-NSR/nsd-onboarding.png" /></p>
+<p><img alt="Onboarding-NSD" src="../images/tutorials/tutorial-sipp/nsd-onboarding.png" /></p>
 <h3 id="using-the-cli_1">Using the CLI</h3>
 <p>If you want to use the CLI you need to execute the following command in order to onboard the NSD:</p>
-<pre><code class="bash">$./openbaton.sh NetworkServiceDescriptor-create tutorial-iperf-NSD.json
+<pre><code class="bash">$./openbaton.sh NetworkServiceDescriptor-create NetworkServiceDescriptor-SIPp-FloatingIPs.json
 </code></pre>
 
 <p>Once this request is processed successfully, it returns the following:</p>
-<pre><code class="bash">+------------------ +------------------------------------------------------------------ + 
-| PROPERTY          | VALUE                                                             | 
-+------------------ +------------------------------------------------------------------ + 
-| VNFD              |                                                                   | 
-|                   | id: 2dd6a30d-0eee-4f88-aa45-9f3a420f341b - name:  iperf-server    | 
-|                   | id: 55ac1b21-fdf0-4fe3-861e-5b1f6b5079e3 - name:  iperf-client    | 
-|                   |                                                                   | 
-| VNF_DEPENDENCY    |                                                                   | 
-|                   | id: 123b3dc1-4310-405c-8c50-17dbb1becd2d                          | 
-|                   |                                                                   | 
-| id                | f2086f71-4ecf-4ed8-a692-36775ebdfc68                              | 
-|                   |                                                                   | 
-| hb_version        | 1                                                                 | 
-|                   |                                                                   | 
-| name              | NSD iperf + privateIPs                                            | 
-|                   |                                                                   | 
-| projectId         | 7bc76eb0-c48c-4328-a234-c779ab54cd2a                              | 
-|                   |                                                                   | 
-| vendor            | FOKUS                                                             | 
-|                   |                                                                   | 
-| version           | 1.0                                                               | 
-|                   |                                                                   | 
-| VLD               |                                                                   | 
-|                   | id: bd65ee00-ce56-42f4-9d31-5cd220ee64a6 - name:  private         | 
-|                   |                                                                   | 
-+------------------ +------------------------------------------------------------------ + 
+<pre><code class="bash">+------------------ +----------------------------------------------------------------- +
+| PROPERTY          | VALUE                                                            |
++------------------ +----------------------------------------------------------------- +
+| VNFD              |                                                                  |
+|                   | id: b9e7fb33-d777-43e2-9120-8d5ab5478c3f - name:  sipp-server    |
+|                   | id: 1f35a049-b3fc-4905-b495-d0c30e8560e1 - name:  sipp-client    |
+|                   |                                                                  |
+| VNF_DEPENDENCY    |                                                                  |
+|                   | id: 46a85018-221e-4f6e-9b58-8f2b4143a4ab                         |
+|                   |                                                                  |
+| id                | a4882ae8-8f43-4646-8a36-475b6b0560b3                             |
+|                   |                                                                  |
+| hb_version        | 1                                                                |
+|                   |                                                                  |
+| name              | NSD SIPp Floating IPs                                            |
+|                   |                                                                  |
+| projectId         | 0c60579d-a2aa-486a-b2a4-dc93f9c64fa7                             |
+|                   |                                                                  |
+| vendor            | FOKUS                                                            |
+|                   |                                                                  |
+| version           | 1.0                                                              |
+|                   |                                                                  |
+| VLD               |                                                                  |
+|                   | id: d296dbb8-b966-4d01-b8ed-01e5faf88a67 - name:  private        |
+|                   |                                                                  |
++------------------ +----------------------------------------------------------------- +
 </code></pre>
 
 <h2 id="deploy-the-network-service-descriptor">Deploy the Network Service Descriptor</h2>
@@ -789,11 +786,11 @@ The difference is that the first NSD will deploy Virtual Machines without floati
 This will create a Network Service Record (NSR) and actually launch the Virtual Machines on OpenStack. </p>
 <h3 id="using-the-dashboard_2">Using the dashboard</h3>
 <p>This part shows you how to deploy an onboarded NSD via the dashboard. You need to go to the GUI again and navigate to <code>Catalogue -&gt; NS Descriptors</code>. Open the drop down menu by clicking on <code>Action</code>. Afterwards you need to press the <code>Launch</code> button and a window with launching options will appear. Just click on <code>Launch</code> again in order to start the deployment of this NSD.</p>
-<p><img alt="nsr-deploy" src="../images/tutorials/tutorial-iperf-NSR/nsr-deploy.png" /></p>
+<p><img alt="nsr-deploy" src="../images/tutorials/tutorial-sipp/launch-nsd.png" /></p>
 <p>If you go to <code>Orchestrate NS -&gt; NS Records</code> in the menu on the left side, you can follow the deployment process and check the current status of the created NSR.</p>
 <h3 id="using-the-cli_2">Using the CLI</h3>
 <p>You can also use the CLI for deploying existing NSDs. The command needs the ID of the NSD to deploy as an argument. It can be found either by using the dashboard or getting it from the output when onboarding a new NSD as done in the previous step. The command to deploy the previously onboarded NSD looks like shown below:</p>
-<pre><code class="bash">$./openbaton.sh NetworkServiceRecord-create f2086f71-4ecf-4ed8-a692-36775ebdfc68 vimmap.json keypair.json conf.json
+<pre><code class="bash">$./openbaton.sh NetworkServiceRecord-create 82ac4b14-a014-4185-b1b2-c4b0f9b1712e vimmap.json keypair.json conf.json
 </code></pre>
 
 <p>The first argument is the ID of the NSD from which the NSR will be created. The following arguments are files that can contain additional configuration while deploying. 
@@ -807,137 +804,179 @@ The <em>vimmap.json</em> and the <em>conf.json</em> files should contain this:</
 </code></pre>
 
 <p>The execution of this command produces the following output:</p>
-<pre><code class="bash">+------------------------ +------------------------------------------------------------- + 
-| PROPERTY                | VALUE                                                        | 
-+------------------------ +------------------------------------------------------------- + 
-| id                      | af12b18b-9aa2-4fed-9b07-bbe1dcad9c98                         | 
-|                         |                                                              | 
-| vendor                  | FOKUS                                                        | 
-|                         |                                                              | 
-| projectId               | 7bc76eb0-c48c-4328-a234-c779ab54cd2a                         | 
-|                         |                                                              | 
-| task                    | Onboarding                                                   | 
-|                         |                                                              | 
-| version                 | 1.0                                                          | 
-|                         |                                                              | 
-| VLR                     |                                                              | 
-|                         | id: 7c9996a4-eac8-4862-872b-dfccc4ab1790 - name:  private    | 
-|                         |                                                              | 
-| VNF_DEPENDENCY          |                                                              | 
-|                         | id: 4b0d291e-883b-40e0-b64e-faeb196d2aaf                     | 
-|                         |                                                              | 
-| descriptor_reference    | f2086f71-4ecf-4ed8-a692-36775ebdfc68                         | 
-|                         |                                                              | 
-| status                  | NULL                                                         | 
-|                         |                                                              | 
-| createdAt               | 2016.10.25 at 11:52:04 CEST                                  | 
-|                         |                                                              | 
-| name                    | NSD iperf + privateIPs                                       | 
-|                         |                                                              | 
-+------------------------ +------------------------------------------------------------- + 
+<pre><code class="bash">+------------------------ +------------------------------------------------------------- +
+| PROPERTY                | VALUE                                                        |
++------------------------ +------------------------------------------------------------- +
+| id                      | a648c1fa-621e-4cc3-9f27-8e950e695d17                         |
+|                         |                                                              |
+| vendor                  | FOKUS                                                        |
+|                         |                                                              |
+| projectId               | 0c60579d-a2aa-486a-b2a4-dc93f9c64fa7                         |
+|                         |                                                              |
+| task                    | Onboarding                                                   |
+|                         |                                                              |
+| version                 | 1.0                                                          |
+|                         |                                                              |
+| VLR                     |                                                              |
+|                         | id: 492af81d-42dc-43c2-af7b-a5149451edc7 - name:  private    |
+|                         |                                                              |
+| VNF_DEPENDENCY          |                                                              |
+|                         | id: 46d28db8-d80e-4c3d-b2e6-a6dfbad80e1c                     |
+|                         |                                                              |
+| descriptor_reference    | 82ac4b14-a014-4185-b1b2-c4b0f9b1712e                         |
+|                         |                                                              |
+| status                  | NULL                                                         |
+|                         |                                                              |
+| createdAt               | 2016.10.27 at 17:35:01 MESZ                                  |
+|                         |                                                              |
+| name                    | NSD SIPp Floating IPs                                        |
+|                         |                                                              |
++------------------------ +------------------------------------------------------------- +
 </code></pre>
 
 <p>In order to follow the deployment process you can retrieve information by passing the ID of the deploying NSR to this command:</p>
-<pre><code class="bash">$./openbaton.sh NetworkServiceRecord-findById af12b18b-9aa2-4fed-9b07-bbe1dcad9c98
+<pre><code class="bash">$./openbaton.sh NetworkServiceRecord-findById a648c1fa-621e-4cc3-9f27-8e950e695d17
 
 
-+------------------------ +------------------------------------------------------------------ + 
-| PROPERTY                | VALUE                                                             | 
-+------------------------ +------------------------------------------------------------------ + 
-| id                      | af12b18b-9aa2-4fed-9b07-bbe1dcad9c98                              | 
-|                         |                                                                   | 
-| vendor                  | FOKUS                                                             | 
-|                         |                                                                   | 
-| projectId               | 7bc76eb0-c48c-4328-a234-c779ab54cd2a                              | 
-|                         |                                                                   | 
-| task                    | Onboarded                                                         | 
-|                         |                                                                   | 
-| version                 | 1.0                                                               | 
-|                         |                                                                   | 
-| VLR                     |                                                                   | 
-|                         | id: 7c9996a4-eac8-4862-872b-dfccc4ab1790 - name:  private         | 
-|                         |                                                                   | 
-| VNFR                    |                                                                   | 
-|                         | id: ecd372b4-b170-46de-93a4-06b8f03a6436 - name:  iperf-server    | 
-|                         | id: 20011a5c-73a5-46d6-a7c8-19bfa47de0e6 - name:  iperf-client    | 
-|                         |                                                                   | 
-| VNF_DEPENDENCY          |                                                                   | 
-|                         | id: 4b0d291e-883b-40e0-b64e-faeb196d2aaf                          | 
-|                         |                                                                   | 
-| descriptor_reference    | f2086f71-4ecf-4ed8-a692-36775ebdfc68                              | 
-|                         |                                                                   | 
-| status                  | ACTIVE                                                            | 
-|                         |                                                                   | 
-| createdAt               | 2016.10.25 at 11:52:04 CEST                                       | 
-|                         |                                                                   | 
-| name                    | NSD iperf + privateIPs                                            | 
-|                         |                                                                   | 
-+------------------------ +------------------------------------------------------------------ + 
++------------------------ +----------------------------------------------------------------- +
+| PROPERTY                | VALUE                                                            |
++------------------------ +----------------------------------------------------------------- +
+| id                      | a648c1fa-621e-4cc3-9f27-8e950e695d17                             |
+|                         |                                                                  |
+| vendor                  | FOKUS                                                            |
+|                         |                                                                  |
+| projectId               | 0c60579d-a2aa-486a-b2a4-dc93f9c64fa7                             |
+|                         |                                                                  |
+| task                    | Onboarded                                                        |
+|                         |                                                                  |
+| version                 | 1.0                                                              |
+|                         |                                                                  |
+| VLR                     |                                                                  |
+|                         | id: 492af81d-42dc-43c2-af7b-a5149451edc7 - name:  private        |
+|                         |                                                                  |
+| VNFR                    |                                                                  |
+|                         | id: bda67156-49ec-40c9-a58d-e00623e8e2ef - name:  sipp-server    |
+|                         | id: ec95ff3b-9013-4f57-a782-e51f40c7cb8a - name:  sipp-client    |
+|                         |                                                                  |
+| VNF_DEPENDENCY          |                                                                  |
+|                         | id: 46d28db8-d80e-4c3d-b2e6-a6dfbad80e1c                         |
+|                         |                                                                  |
+| descriptor_reference    | 82ac4b14-a014-4185-b1b2-c4b0f9b1712e                             |
+|                         |                                                                  |
+| status                  | ACTIVE                                                           |
+|                         |                                                                  |
+| createdAt               | 2016.10.27 at 17:35:01 MESZ                                      |
+|                         |                                                                  |
+| name                    | NSD SIPp Floating IPs                                            |
+|                         |                                                                  |
++------------------------ +----------------------------------------------------------------- +
 </code></pre>
 
 <h2 id="conclusions">Conclusions</h2>
 <p>When all the VNF Records are done with all of the scripts defined in the lifecycle events, the NFVO will put the state of the VNF Record to ACTIVE and when all the VNF Records are in state ACTIVE, also the Network Service Record will be in state ACTIVE. This means that the service is deployed correctly. For learning more about the states of a VNF Record please refer to the <a href="../vnfr-states">VNF Record state documentation</a>.</p>
-<h1 id="addtional-information-about-this-scenario">Addtional information about this scenario</h1>
-<p>When you access your OpenStack dashboard you should be able to see the deployed Virtual Machines. One of them will act as an iPerf server and the other one as an iPerf client that connects to the server. </p>
-<p>The following pictures shows the deployment.</p>
-<p><img alt="iperf-deployment" src="../images/use-case-example-iperf-client-server.png" /></p>
-<p>As indicated by the blue arrow the iperf server is the source of a dependency and the client is the target. In this case the client needs the IP of the server in order to connect.
+<h2 id="configuration-parameters">Configuration Parameters</h2>
+<p>Additionally, there are a bundge of parameters which can configure the SIP client to simulate several scenarios such as increasing number of calls, changing the call rates or changing the transport mode. These parameters can be changed inside the NSD directly or provided during the launch of the NSD. Below you can find the configuration parameters as put in the SIPp NSD, in particular in the SIPp client VNFD. Checkout the following overview of all available paramters and the meanings.</p>
+<pre><code class="json">&quot;configurations&quot;: {
+    &quot;configurationParameters&quot;: [
+        {
+            &quot;confKey&quot;: &quot;SIPP_LENGTH&quot;,
+            &quot;value&quot;: &quot;0&quot;,
+            &quot;description&quot;: &quot;Controls the length (in milliseconds) of calls. More precisely, this controls the duration of 'pause' instructions in the scenario, if they do not have a 'milliseconds' section. Default value is 0.&quot;
+        },
+        {
+            &quot;confKey&quot;: &quot;SIPP_RATE&quot;,
+            &quot;value&quot;: &quot;10&quot;,
+            &quot;description&quot;: &quot;Set the call rate (in calls per seconds). Default is 10. If the -rp option is used, the call rate is calculated with the period in ms given by the user.&quot;
+        },
+        {
+            &quot;confKey&quot;: &quot;SIPP_RATE_PERIOD&quot;,
+            &quot;value&quot;: &quot;1000&quot;,
+            &quot;description&quot;: &quot;Specify the rate period in milliseconds for the call rate.  Default is 1 second.  This allows you to have n calls every m milliseconds (by using -r n -rp m). Example: -r 7 -rp 2000 ==&gt; 7 calls every 2 seconds.&quot;
+        },
+        {
+            &quot;confKey&quot;: &quot;SIPP_RATE_MAX&quot;,
+            &quot;value&quot;: &quot;10&quot;,
+            &quot;description&quot;: &quot;If -rate_increase is set, then quit after the rate reaches this value. Example: -rate_increase 10 -max_rate 100 ==&gt; increase calls by 10 until 100 cps is hit.&quot;
+        },
+        {
+            &quot;confKey&quot;: &quot;SIPP_RATE_INCREASE&quot;,
+            &quot;value&quot;: &quot;0&quot;,
+            &quot;description&quot;: &quot;Specify the rate increase every -fd seconds.  This allows you to increase the load for each independent logging period. Example: -rate_increase 10 -fd 10 ==&gt; increase calls by 10 every 10 seconds.&quot;
+        },
+        {
+            &quot;confKey&quot;: &quot;SIPP_RTP_ECHO&quot;,
+            &quot;value&quot;: &quot;10&quot;,
+            &quot;description&quot;: &quot;Enable RTP echo. RTP/UDP packets received on port defined by -mp are echoed to their sender. RTP/UDP packets coming on this port + 2 are also echoed to their sender (used for sound and video echo).&quot;
+        },
+        {
+            &quot;confKey&quot;: &quot;SIPP_TRANSPORT_MODE&quot;,
+            &quot;value&quot;: &quot;u1&quot;,
+            &quot;description&quot;: &quot;Set the transport mode: - u1: UDP with one socket (default), - un: UDP with one socket per call, - ui: UDP with one socket per IP address The IP addresses must be defined in the injection file. - t1: TCP with one socket, - tn: TCP with one socket per call, - l1: TLS with one socket, - ln: TLS with one socket per call, - c1: u1 + compression (only if compression plugin loaded), - cn: un + compression (only if compression plugin loaded).&quot;
+        }
+    ],
+    &quot;name&quot;: &quot;sipp-configuration&quot;
+}
+</code></pre>
+
+<h2 id="dependencies-between-vnfs">Dependencies between VNFs</h2>
+<p>When you access your OpenStack dashboard you should be able to see the deployed Virtual Machines. One of them will act as a SIPp server and the other one as a SIPp client that connects to the server. </p>
+<p>In this scenario the SIPp server is the source of a dependency and the client is the target. This mean the client needs the IP of the server in order to connect.
 Let's have a look at the NSD we used to deploy this scenario in order to see how the dependencies are described.<br />
 You will see that the NSD contains a field called <em>vnf_dependency</em>. </p>
 <pre><code class="json">&quot;vnf_dependency&quot;:[
     {
       &quot;source&quot;:{
-        &quot;name&quot;:&quot;iperf-server&quot;
+        &quot;name&quot;:&quot;sipp-server&quot;
       },
       &quot;target&quot;:{
-        &quot;name&quot;:&quot;iperf-client&quot;
+        &quot;name&quot;:&quot;sipp-client&quot;
       },
       &quot;parameters&quot;:[
-        &quot;private_floatingIp&quot;
+        &quot;private&quot;
       ]
     }
   ]
 </code></pre>
 
-<p>The json array <em>vnf_dependency</em> may contain multiple dependencies. In our case it is just one, which describes that the VNFD named <em>iperf-client</em> needs a parameter called <em>private_floaingIp</em> from the VNFD <em>iperf-server</em>. This parameter can be used by the iperf-client as a variable in its lifecycle scripts. </p>
-<p>Also the lifecycle scripts are specified in the NSD. For example the VNFD <em>iperf-client</em> has the following lifecycle events: </p>
+<p>The json array <em>vnf_dependency</em> may contain multiple dependencies. In our case it is just one, which describes that the VNFD named <em>sipp-client</em> needs a parameter called <em>private</em> from the VNFD <em>sipp-server</em>. This parameter can be used by the sipp-client as a variable in its lifecycle scripts. </p>
+<p>Also the lifecycle scripts are specified in the NSD. For example the VNFD <em>sipp-client</em> has the following lifecycle events: </p>
 <pre><code class="json">&quot;lifecycle_event&quot;:[
-        {
-          &quot;event&quot;:&quot;CONFIGURE&quot;,
-          &quot;lifecycle_events&quot;:[
-            &quot;server_configure_floatingIp.sh&quot;
-          ]
-        },
-        {
-          &quot;event&quot;:&quot;INSTANTIATE&quot;,
-          &quot;lifecycle_events&quot;:[
-            &quot;install.sh&quot;
-          ]
-        }
-      ]
+                {
+                    &quot;event&quot;:&quot;CONFIGURE&quot;,
+                    &quot;lifecycle_events&quot;:[
+                        &quot;server_sipp_start.sh&quot;
+                    ]
+                },
+                {
+                    &quot;event&quot;:&quot;INSTANTIATE&quot;,
+                    &quot;lifecycle_events&quot;:[
+                        &quot;sipp_install.sh&quot;
+                    ]
+                }
+            ]
 </code></pre>
 
 <p>You can see that there is one lifecycle event called <em>INSTANTIATE</em> and one called <em>CONFIGURE</em>. Actually there exist also other lifecycle events, read about them <a href="../vnf-descriptor">here</a>.<br />
 Each one will be executed at a different point in time. By execution we mean that the scripts that are listed in the <em>lifecycle_events</em> field will run with root permissions on the Virtual Machine.<br />
 The scripts are located in a public git repository. The url is specified in the <em>vnfPackageLocation</em> field in the VNFDs.<br />
-In our example the <em>INSTANTIATE</em> event will run first after the Virtual Machine was initialized. It will run the <em>install.sh</em> script which installs iPerf and screen on the Virtual Machine.<br />
+In our example the <em>INSTANTIATE</em> event will run first after the Virtual Machine was initialized. It will run the <em>sipp_install.sh</em> script which installs SIP and screen on the Virtual Machine.<br />
 The <em>CONFIGURE</em> lifecycle event starts after the <em>INSTANTIATE</em> lifecycle event. The <em>CONFIGURE</em> lifecycle event has a special role. In the lifecycle scripts of this event the dependency parameters are available.<br />
-That is why we use this event to tell iPerf to connect to the server ip. In the example NSD that uses floating IPs the dependency parameter is called <em>private_floatingIp</em>. 
+That is why we use this event to tell SIP to connect to the server ip. In the example NSD that uses floating IPs the dependency parameter is called <em>private</em>. 
 In the <em>CONFIGURE</em> lifecycle script we will therefore run </p>
-<pre><code class="bash">screen -d -m -S client iperf -c $server_private_floatingIp -t 300
+<pre><code class="bash">screen -d -m -S client sipp -sn uac $server_private -d $SIPP_LENGTH -r $SIPP_RATE -rp $SIPP_RATE_PERIOD -rate_increase $SIPP_RATE_INCREASE -fd $SIPP_RATE_INCREASE -rate_max $SIPP_RATE_MAX -rtp_echo -t $SIPP_TRANSPORT_MODE -trace_msg -trace_screen -trace_err -trace_rtt -trace_logs -trace_rtt -trace_logs
 </code></pre>
 
-<p>You wonder why the variable in the script has another name than the dependency parameter? Well, you have to prepend the type of the source VNFD and an underscore to the variable. This is why <em>private_floatingIp</em> becomes <em>server_private_floatingIp</em>.<br />
+<p>You wonder why the variable in the script has another name than the dependency parameter? Well, you have to prepend the type of the source VNFD and an underscore to the variable. This is why <em>private</em> becomes <em>server_private</em>.<br />
 And there is another restriction. In order to use the dependency parameter in the <em>CONFIGURE</em> script its name has to start with the source VNFD type followed by an underscore.<br />
 If you want to learn more about dependencies, lifecycle events and variables read <a href="../vnfm-generic">this</a> section. </p>
 <h2 id="the-process-in-details">The process in details</h2>
 <p>Let's again have a look at the sequence diagram of a create Network Service Record operation.</p>
 <p><img alt="CreateNSR Sequence Diagram" src="../images/use-case-example-sequence-diagram-os-vnfm-ems.png" /></p>
-<p>When the Network Service Record create is called with the Iperf Network Service Descriptor's id, the steps defined in the sequence diagram above happen.</p>
+<p>When the Network Service Record create is called with the SIP Network Service Descriptor's id, the steps defined in the sequence diagram above happen.</p>
 <h5 id="instantiate-method">INSTANTIATE Method</h5>
 <p>The first message sent to the Generic VNFM is the INSTANTIATE message <strong>(1)</strong>. This message contains the VNF Descriptor and some other parameters needed to create the VNF Record, for instance the list of Virtual Link Records. The Generic VNFM  is called and then the create Virtual Network Function Record and the Virtual Network Function Record is created <strong>(2)</strong> and sent back to the NFVO into a GrantOperation message <strong>(3)</strong>. This message will trigger the NFVO to check if there are enough resources to create that VNF Record. If so, then a GrantOperation message with the updated VNF Record is sent back to the Generic VNFManager. Then the Generic VNFManager creates an AllocateResources message with the received VNF Record and sends it to the NFVO <strong>(4)</strong>. After creating the resources (VMs) the NFVO sends back the AllocateResources message to the VNFManager. Here the instantiate method is called <strong>(5)</strong>. Inside this method, the scripts contained in the VNF Package (or the git repository containing the scripts) is sent to the EMS, the scripts are saved locally to the VM and then the Generic VNFManager will call the execution of each script defined in the VNF Descriptor <strong>(6)</strong>. Once all of the scripts are executed and there wasn't any error, the VNFManager sends the Instantiate message back to the NFVO <strong>(7)</strong>. </p>
 <h5 id="modify-method">MODIFY Method</h5>
-<p>If the VNF is target for some dependencies, like the iperf client, the MODIFY message is sent to the VNFManager by the NFVO <strong>(8)</strong>. Then the VNFManager executes the scripts contained in the CONFIGURE lifecycle event defined in the VNF Descriptor <strong>(9)</strong>, and sends back the modify message to the NFVO <strong>(10)</strong>, if no errors occurred. In this case, the scripts environment will contain the variables defined in the related VNF dependency.</p>
+<p>If the VNF is target for some dependencies, like the SIP client, the MODIFY message is sent to the VNFManager by the NFVO <strong>(8)</strong>. Then the VNFManager executes the scripts contained in the CONFIGURE lifecycle event defined in the VNF Descriptor <strong>(9)</strong>, and sends back the modify message to the NFVO <strong>(10)</strong>, if no errors occurred. In this case, the scripts environment will contain the variables defined in the related VNF dependency.</p>
 <h5 id="start-method">START Method</h5>
 <p>Here exactly as before, the NFVO sends the START message to the Generic VNFManager <strong>(11)</strong>, and the VNFManager calls the EMS for execution of the scripts defined in the START lifecycle (none for this example) <strong>(12)</strong>. And the start message is then sent back to the NFVO meaning that no errors occurred <strong>(13)</strong>.</p>
 <!---
@@ -966,10 +1005,10 @@ Script for open external links in a new tab
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../tutorial-sipp/" class="btn btn-neutral float-right" title="SIPp example"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../ims-NSR/" class="btn btn-neutral float-right" title="OpenIMSCore example"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../dummy-NSR/" class="btn btn-neutral" title="Dummy NSR"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../iperf-NSR/" class="btn btn-neutral" title="Iperf Scenario"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

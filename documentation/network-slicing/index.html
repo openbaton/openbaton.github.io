@@ -277,15 +277,6 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vim-driver/">Install a VIM Driver</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
         <a class="" href="../vim-instance/">Register a PoP</a>
         
     </li>
@@ -305,6 +296,28 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../ns-descriptor/">Network Service Descriptor</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>VIM Driver</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vim-driver/">VIM Driver Overview</a>
         
     </li>
 
@@ -532,7 +545,25 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../tutorial-sipp/">SIPp example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorial-juju/">OpenIMSCore with Juju VNFM</a>
         
     </li>
 
@@ -657,6 +688,12 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -683,10 +720,11 @@ console.log('--------');
 <h1 id="technical-requirements">Technical Requirements</h1>
 <p>This section covers the requirements that must be met by the environment in order to satisfy the demands of the NSE:</p>
 <ul>
-<li>Installed and configured Open Baton NFVO/gVNFM (&gt;=2.1.3)</li>
-<li>Installed and configured Openstack (&gt;=Mitaka)</li>
+<li>Installed and configured Open Baton NFVO/gVNFM (&gt;=3.0.0)</li>
+<li>Installed and configured Openstack (&gt;=Mitaka) (for Mitaka check <a href="http://docs.openstack.org/mitaka/networking-guide/config-qos.html">here</a> or Newton <a href="http://docs.openstack.org/newton/networking-guide/config-qos.html">here</a>) </li>
 </ul>
 <h1 id="how-to-install-network-slicing-engine">How to install Network Slicing Engine</h1>
+<p>If you installed this component already with the general bootstrap of Open Baton, the NSE is already installed, configured and running. In this case you can jump directly to this section <a href="#how-to-use-network-slicing-engine">How to use Network Slicing Engine</a>. If the NSE is not yet installed please continue with this section.</p>
 <p>Different options are available for the installation of the NSE. Either you use the fully automated bootstrap where all configurations are done automatically where you can choose between the installation based on the debian package or on the source code which is suggested for development. Apart from the bootstrap you can also use the debian or the source code installation where you need to configure the NSE manually. </p>
 <h2 id="installation-via-bootstrap">Installation via bootstrap</h2>
 <p>Using the bootstrap gives a fully automated standalone installation of the NS including installation and configuration.</p>

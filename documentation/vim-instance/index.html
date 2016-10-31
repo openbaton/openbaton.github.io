@@ -276,15 +276,6 @@ console.log('--------');
         
              
 
-    <li class="toctree-l1 ">
-        <a class="" href="../vim-driver/">Install a VIM Driver</a>
-        
-    </li>
-
-
-        
-             
-
     <li class="toctree-l1 current">
         <a class="current" href="./">Register a PoP</a>
         
@@ -307,6 +298,28 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../ns-descriptor/">Network Service Descriptor</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>VIM Driver</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vim-driver/">VIM Driver Overview</a>
         
     </li>
 
@@ -532,7 +545,25 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../tutorial-sipp/">SIPp example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorial-juju/">OpenIMSCore with Juju VNFM</a>
         
     </li>
 
@@ -632,6 +663,12 @@ console.log('--------');
     
 </ul></li>
                  
+		
+		
+		
+		
+		
+		
 		
 		
 		
@@ -764,17 +801,6 @@ Under the menu <code>Manage PoPs</code> you can see the <code>PoP instances</cod
 <p>Once the VIM instance is registered, it will appear on the list of available PoPs, filled with the information regarding the available images, networks and flavors. At this point the VIM/PoP can be included in your Network Service Descriptors.</p>
 <p><strong><em>Please note that the name chosen must be unique inside the project and will be used to refer to the VimInstance</em>.</strong></p>
 <p>For more information about the dashboard see: <a href="../nfvo-how-to-use-gui/">OpenBaton Dashboard</a></p>
-<h2 id="what-are-the-supported-vim-types">What are the supported VIM types?</h2>
-<p>By default the NFVO is installed with the two following VIM drivers: </p>
-<ul>
-<li>openstack: for interoperating with an OpenStack instance</li>
-<li>test: for testing purposes implementing a VIM mockup</li>
-</ul>
-<p>For each of those types there is a different implementation of the VIM API. The NFVO uses a driver mechanism for interacting with VIMs. Inside the NFVO folder is a folder called <code>plugins</code> where the binary file that implements the interface to your VIM ( i.e. <a href="https://www.openstack.org/">Openstack</a> ) should be placed (you can change the folder where Open Baton searches for the plugins by changing the variable <code>plugin-installation-dir</code> in the <code>openbaton.properties</code> file under /etc/openbaton).<br />
-This binary file is the implementation of the interface that communicates with your VIM.</p>
-<p><strong>Note</strong>: You can implement your own interface just follow the documentation on writing your own <a href="../vim-driver-create/">VIM driver</a>.</p>
-<h2 id="where-do-i-find-the-open-source-plugins">Where do I find the open source plugins?</h2>
-<p>Open Baton platform provides an openstack and a test plugin. They are automatically download by the bootstrap. Anyway they can be found on our <a href="http://marketplace.openbaton.org:8082/#/">Marketplace</a></p>
 <!---
 Script for open external links in a new tab
 -->
@@ -800,7 +826,7 @@ Script for open external links in a new tab
         <a href="../vnf-package/" class="btn btn-neutral float-right" title="VNF Packages"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../vim-driver/" class="btn btn-neutral" title="Install a VIM Driver"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../nfvo-how-to-use-cli/" class="btn btn-neutral" title="Use via the CLI"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

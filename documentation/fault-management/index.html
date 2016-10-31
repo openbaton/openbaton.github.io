@@ -277,15 +277,6 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vim-driver/">Install a VIM Driver</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
         <a class="" href="../vim-instance/">Register a PoP</a>
         
     </li>
@@ -305,6 +296,28 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../ns-descriptor/">Network Service Descriptor</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>VIM Driver</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vim-driver/">VIM Driver Overview</a>
         
     </li>
 
@@ -532,7 +545,25 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../tutorial-sipp/">SIPp example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorial-juju/">OpenIMSCore with Juju VNFM</a>
         
     </li>
 
@@ -657,6 +688,12 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -675,7 +712,9 @@ console.log('--------');
                       <div class="section">
                         
                           <h1 id="open-baton-fault-management-system-fms">Open Baton Fault Management System (FMS)</h1>
-<p>The Open Baton FMS project is a module of the Open Baton Orchestrator. It provides an extensive Fault Management System that is based on alarms coming from the VIM and executes actions through the NFVO.</p>
+<p>The Open Baton FMS project is a module of the Open Baton Orchestrator. 
+It provides an extensive Fault Management System that is based on alarms coming from the VIM and executes actions through the NFVO.<br />
+<strong>Note</strong>: if you followed the installation guide using the bootstrap, you can jump to the section "How to use Open Baton FM"</p>
 <h1 id="technical-requirements">Technical Requirements</h1>
 <p>The technical requirements are:  </p>
 <ul>
@@ -709,7 +748,7 @@ At default they are username=admin and password:changeme.</p>
 </code></pre>
 
 <h1 id="how-to-use-open-baton-fm">How to use Open Baton FM</h1>
-<p><img alt="Fault management system use case" src="../img/fms-use-case.png" /></p>
+<p><img alt="Fault management system use case" src="../images/fms-use-case.png" /></p>
 <p>The actions are listed below:</p>
 <table>
 <thead>
@@ -919,6 +958,9 @@ In order to have a VNFC in standby, such information must be included in the VNF
 Then in a Drools rule this action can be called as following:</p>
 <pre><code>highAvailabilityManager.switchToRedundantVNFC(failedVnfcInstance,vnfr,vdu);
 </code></pre>
+
+<h2 id="tutorial">Tutorial</h2>
+<p>The tutorial is available at this <a href="../fms-sipp-tutorial/">page</a>. </p>
                         
                       </div>
                     </div>

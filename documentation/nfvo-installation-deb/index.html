@@ -279,15 +279,6 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vim-driver/">Install a VIM Driver</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
         <a class="" href="../vim-instance/">Register a PoP</a>
         
     </li>
@@ -307,6 +298,28 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../ns-descriptor/">Network Service Descriptor</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>VIM Driver</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vim-driver/">VIM Driver Overview</a>
         
     </li>
 
@@ -532,7 +545,25 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../tutorial-sipp/">SIPp example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorial-juju/">OpenIMSCore with Juju VNFM</a>
         
     </li>
 
@@ -657,6 +688,12 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -713,29 +750,31 @@ console.log('--------');
   the floating IP.</p>
 <p>During the bootstrap procedure you will be prompted for inputs. For instance you can choose to install or not the Generic VNFM as well as other additional components, or enable or not SSL. </p>
 <p>At the end of the bootstrap procedure, if there are no errors, the dashboard should be reachable at: <a href="http://localhost:8080/">localhost:8080</a>. 
-Depending on which additional component you decided to add to the Open Baton installation then you should have the following structure:</p>
+Depending on which additional component you decided to add to the Open Baton installation then you should have a structure similar to the following:</p>
 <pre><code class="bash">/usr/lib/openbaton
-├── openbaton-*.jar
-├── gvnfm
+├── nfvo
+├── vnfm/generic
 ├── fms
 ├── ase
 ├── nse
-└── plugins
+├── plugins
+└── systemd
 </code></pre>
 
 <p>Where:</p>
 <ul>
-<li><code>openbaton-*jar</code> is the jar file related to the version of the NFVO which has been installed</li>
-<li><code>gvnfm</code> contains the jar file related to the Open Baton Generic VNFM</li>
-<li><code>fms</code> contains the jar file related to the Open Baton Fault Management System (FMS)</li>
-<li><code>ase</code> contains the jar file related to the Open Baton Auto Scaling Engine (ASE)</li>
-<li><code>nse</code> contains the jar file related to the Open Baton Network Slicing Engine (NSE)</li>
-<li><code>plugins</code> contains the plugins for Open Baton. By default the Test VIM Driver plugin is installed, therefore its jar file is stored in this directory. Additionally, if during the installation procedure you decide to install the OpenStack VIM-Driver Plugins then also its jar file will be stored in this directory.</li>
+<li><code>nfvo</code> contains the jar file of the Open Baton NFV Orchestrator (NFVO)</li>
+<li><code>vnfm/generic</code> contains the jar file of the Open Baton Generic VNF Manager (VNFMG)</li>
+<li><code>fms</code> contains the jar file related of Open Baton Fault Management System (FMS)</li>
+<li><code>ase</code> contains the jar file related of Open Baton Auto Scaling Engine (ASE)</li>
+<li><code>nse</code> contains the jar file related of Open Baton Network Slicing Engine (NSE)</li>
+<li><code>plugins</code> contains the plugins for Open Baton. By default the Test VIM Driver plugin is installed, therefore its jar file is stored in this directory. Additionally, if during the installation procedure you decide to install the OpenStack VIM-Driver Plugins then also its jar file will be stored in this directory</li>
+<li><code>systemd</code> contains the Open Baton configuration files for the system and service manager "systemd"</li>
 </ul>
 <p>Additionally, still depending on which additional component you decided to add to the Open Baton installation, then you should also have the following structure:</p>
 <pre><code class="bash">/usr/bin
 ├── openbaton-nfvo
-├── openbaton-gvnfm
+├── openbaton-vnfm-generic
 ├── openbaton-fms
 ├── openbaton-ase
 └── openbaton-nse
@@ -744,7 +783,7 @@ Depending on which additional component you decided to add to the Open Baton ins
 <p>Where:</p>
 <ul>
 <li><code>openbaton-nfvo</code> is the Open Baton NFVO executable</li>
-<li><code>openbaton-gvnfm</code> is the Open Baton Generic VNFM executable</li>
+<li><code>openbaton-vnfm-generic</code> is the Open Baton Generic VNFM executable</li>
 <li><code>openbaton-fms</code> is the Open Baton FMS executable</li>
 <li><code>openbaton-ase</code> is the Open Baton ASE executable</li>
 <li><code>openbaton-nse</code> is the Open Baton NSE executable</li>
@@ -792,14 +831,14 @@ sudo openbaton-nfvo stop
 <ul>
 <li>With Ubuntu 14.04:</li>
 </ul>
-<pre><code class="bash">sudo service openbaton-gvnfm stop
-sudo stop openbaton-gvnfm
+<pre><code class="bash">sudo service openbaton-vnfm-generic stop
+sudo stop openbaton-vnfm-generic
 </code></pre>
 
 <ul>
 <li>With Debian Jessie:</li>
 </ul>
-<pre><code class="bash">sudo systemctl stop openbaton-gvnfm.service
+<pre><code class="bash">sudo systemctl stop openbaton-vnfm-generic.service
 </code></pre>
 
 <p><br></p>
@@ -807,24 +846,24 @@ sudo stop openbaton-gvnfm
 <ul>
 <li>With Ubuntu 14.04:</li>
 </ul>
-<pre><code class="bash">sudo service openbaton-gvnfm start
-sudo start openbaton-gvnfm
+<pre><code class="bash">sudo service openbaton-vnfm-generic start
+sudo start openbaton-vnfm-generic
 </code></pre>
 
 <ul>
 <li>With Debian Jessie:</li>
 </ul>
-<pre><code class="bash">sudo systemctl start openbaton-gvnfm.service
+<pre><code class="bash">sudo systemctl start openbaton-vnfm-generic.service
 </code></pre>
 
 <p><br></p>
 <p>Instead, to start and stop the Generic VNFM as a normal process, you can use the Open Baton executables in the '/usr/bin/' folder and type the following commands:</p>
-<pre><code class="bash">sudo openbaton-gvnfm start
-sudo openbaton-gvnfm stop
+<pre><code class="bash">sudo openbaton-vnfm-generic start
+sudo openbaton-vnfm-generic stop
 </code></pre>
 
 <p><br></p>
-<p><strong><em>NOTE</em></strong> - For all the other additional components the commands above still apply just adapted to the specific component (e.g.: for the Fault Management System you can substitute the 'openbaton-gvnfm' with 'openbaton-fms', etc.)</p>
+<p><strong><em>NOTE</em></strong> - For all the other additional components the commands above still apply just adapted to the specific component (e.g.: for the Fault Management System you can substitute the 'openbaton-vnfm-generic' with 'openbaton-fms', etc.)</p>
 <h3 id="configure-it">Configure it</h3>
 <p>For specific configuration refer to the <a href="../nfvo-configuration/">configuration</a></p>
 <!---
