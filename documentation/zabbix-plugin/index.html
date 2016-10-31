@@ -10,7 +10,8 @@
   <title>OpenBaton Documentation</title>
   
 
-  <link rel="shortcut icon" href="../img/favicon.ico">
+  <link rel="shortcut icon" href="../favicon.ico">
+  
 
   
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,300,600,700" rel="stylesheet" type="text/css">
@@ -22,16 +23,16 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Use Zabbix plugin";
+    var mkdocs_page_name = "Zabbix plugin";
     var mkdocs_page_input_path = "zabbix-plugin.md";
     var mkdocs_page_url = "/zabbix-plugin/";
      var mkdocs_page_url = "/zabbix-plugin/";
   </script>
   
   <!-- site_name == OpenBaton Documentation -->
-  <!-- page_title == Use Zabbix plugin -->
+  <!-- page_title == Zabbix plugin -->
   <!-- base_url == .. -->
-  <!-- current_page == Use Zabbix plugin - /zabbix-plugin/ [*]
+  <!-- current_page == Zabbix plugin - /zabbix-plugin/ [*]
  -->
   <script src="../js/jquery-2.1.1.min.js"></script>
   <script src="../js/modernizr-2.8.3.min.js"></script>
@@ -86,14 +87,14 @@ display: block;
 $( document).ready(function(){
       //console.log("test");
 
-    //$('.subnav').not( ":has('Use Zabbix plugin')" ).hide();
+    //$('.subnav').not( ":has('Zabbix plugin')" ).hide();
     $('li.subnav_drop').find('ul.subnav').hide();
     //$('li.subnav_drop').find('ul.subnav').each(function(i,e){console.log(i,e)});
-       $( ".subnav" ).find( "li:contains('Use Zabbix plugin')" ).each(function(i,e){
+       $( ".subnav" ).find( "li:contains('Zabbix plugin')" ).each(function(i,e){
           var currentElement = $(e);
           currentElement.parent().css({"display":"block","visibility":"visible"}); //css("background-color","blue");
           currentElement.css({"display":"block","visibility":"visible"});
-       });//$( ".subnav" ).find( "li:contains('Use Zabbix plugin')" ).css("display","block");
+       });//$( ".subnav" ).find( "li:contains('Zabbix plugin')" ).css("display","block");
        //$(".current").css({"background-color":"blue","display":"block","visibility":"visible"});
        //show(1000,function(i,e){console.log(i,e)});
        //$('li.subnav_drop').find('ul.subnav').css("background-color","blue");
@@ -105,11 +106,11 @@ $( document).ready(function(){
 
 });
    
-$( ".wy-nav-content" ).find( "li:contains('Use Zabbix plugin')" ).css('color','red');
+$( ".wy-nav-content" ).find( "li:contains('Zabbix plugin')" ).css('color','red');
 console.log('--------');
-console.log($( ".wy-nav-content" ).find( "div:contains('Use Zabbix plugin')" ).css("color","red"));
+console.log($( ".wy-nav-content" ).find( "div:contains('Zabbix plugin')" ).css("color","red"));
 console.log('--------');
-console.log($( ".subnav" ).find( "li:contains('Use Zabbix plugin')" ));
+console.log($( ".subnav" ).find( "li:contains('Zabbix plugin')" ));
 console.log('--------');
   </script>
 
@@ -127,7 +128,7 @@ console.log('--------');
                 <li><a href="../../features.html">Features</a></li>
                 <li><a href="#">Documentation</a></li>
                 <li><a href="../../index.html#contact">Contact</a></li>
-                <li><a href="https://github.com/openbaton">GitHub</a></li>
+                <li><a href="http://marketplace.openbaton.org"><i class="material-icons">shopping_cart </i>  Marketplace<div class="ripple-container"></div></a></li>
           </ul>
       </nav>
      </div>
@@ -234,13 +235,13 @@ console.log('--------');
                   <li><ul> 
     
    
-    <li class="subnav_drop"><span>Use it</span>
+    <li class="subnav_drop"><span>NFV Orchestrator</span>
 <ul class="subnav">
         
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../use/">Introduction</a>
+        <a class="" href="../use/">NFVO intro</a>
         
     </li>
 
@@ -249,43 +250,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../security/">First access</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vim-instance/">Register a PoP</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vnfpackage/">Create your own VNF Package</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vnfm-generic/">Generic VNFM</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../ns-descriptor/">Create the NSD</a>
+        <a class="" href="../security/">Identity management</a>
         
     </li>
 
@@ -312,7 +277,114 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../nfvo-sdk/">Use via the SDK</a>
+        <a class="" href="../vim-driver/">Install a VIM Driver</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vim-instance/">Register a PoP</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnf-package/">VNF Packages</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ns-descriptor/">Network Service Descriptor</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>VNF Managers</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-intro/">VNFM intro</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-generic/">Generic VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-juju/">Juju VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-how-to-write/">Develop a VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-vendor-specific/">Integrate your own VNFM</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Monitoring</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../monitoring/">Monitoring overview</a>
         
     </li>
 
@@ -321,7 +393,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 current">
-        <a class="current" href="./">Use Zabbix plugin</a>
+        <a class="current" href="./">Zabbix plugin</a>
         
          
         
@@ -339,22 +411,79 @@ console.log('--------');
                   <li><ul> 
     
    
-    <li class="subnav_drop"><span>TOSCA</span>
+    <li class="subnav_drop"><span>Autoscaling</span>
 <ul class="subnav">
         
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tosca-vnfd/">Introduction</a>
+        <a class="" href="../autoscaling/">Autoscaling overview</a>
         
     </li>
 
 
         
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Fault Management</span>
+<ul class="subnav">
+        
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tosca-CSAR-onboarding/">CSAR on boarding</a>
+        <a class="" href="../fault-management/">FM overview</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Network Slicing</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../network-slicing/">NS overview</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Marketplace</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../marketplace/">Marketplace overview</a>
         
     </li>
 
@@ -372,6 +501,15 @@ console.log('--------');
    
     <li class="subnav_drop"><span>Tutorials</span>
 <ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorial/">Tutorials overview</a>
+        
+    </li>
+
+
         
              
 
@@ -403,6 +541,15 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../fms-sipp-tutorial/">Fault Management System</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../integration-test-use/">Integration Tests</a>
         
     </li>
@@ -419,17 +566,8 @@ console.log('--------');
                   <li><ul> 
     
    
-    <li class="subnav_drop"><span>Extend it</span>
+    <li class="subnav_drop"><span>Learn more</span>
 <ul class="subnav">
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../extend/">Extend it</a>
-        
-    </li>
-
-
         
              
 
@@ -443,7 +581,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vim-plugin/">Write your own Plugin</a>
+        <a class="" href="../vim-driver-create/">Create a VIM Driver</a>
         
     </li>
 
@@ -452,7 +590,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vnfm-how-to-write/">Write your own VNFM</a>
+        <a class="" href="../nfvo-sdk/">Open Baton SDKs</a>
         
     </li>
 
@@ -461,7 +599,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vnfm-vendor-specific/">Integrate your own VNFM</a>
+        <a class="" href="../how-to-register-event/">The Event Mechanism tutorial</a>
         
     </li>
 
@@ -538,19 +676,18 @@ console.log('--------');
                         
                           <h1 id="zabbix-plugin">Zabbix plugin</h1>
 <p>Zabbix plugin (see it on <a href="https://github.com/openbaton/zabbix-plugin">GitHub</a>) is an open source project providing a reference implementation of two interfaces of the VIM, based on the ETSI <a href="http://www.etsi.org/deliver/etsi_gs/NFV-MAN/001_099/001/01.01.01_60/gs_nfv-man001v010101p.pdf">NFV MANO</a> specification.</p>
-<p>The two interfaces are:
--   VirtualisedResourceFaultManagement
+<p>The two interfaces are:<br />
+-   VirtualisedResourceFaultManagement<br />
 -   VirtualisedResourcePerformanceManagement</p>
-<p>A detailed description of the interfaces is in the last ETSI Draft <a href="https://docbox.etsi.org/isg/nfv/open/Drafts/IFA005_Or-Vi_ref_point_Spec/">IFA005_Or-Vi_ref_point_Spec</a>.<br />
+<p>A detailed description of the interfaces is in the last ETSI Draft <a href="http://www.etsi.org/deliver/etsi_gs/NFV-IFA/001_099/005/02.01.01_60/gs_nfv-ifa005v020101p.pdf">IFA005_Or-Vi_ref_point_Spec</a>.<br />
 In particular with the Zabbix plugin you can create/delete items, trigger and action on-demand. </p>
 <p><img alt="Zabbix plugin architecture" src="../images/zabbix-plugin-architecture.png" /></p>
-<p>Some of the benefits introduced by the usage of such plugin: 
+<p>Some of the benefits introduced by the usage of such plugin:<br />
 1) Make the consumers (NFVO, VNFM) indipendent to the monitoring system.<br />
 2) The communication between the consumers and zabbix-plugin is JSON based, so the consumers can be written in any languages.<br />
-3) The values of the items are cached and updated periodically in order to avoid to contact the zabbix server each time a specific metric is required.
-4) If your consumer is written in java, we provide a simple class MonitoringPluginCaller which handle the communication via RabbitMQ.</p>
-<h2 id="getting-started">Getting Started</h2>
-<h3 id="prerequisites">Prerequisites</h3>
+3) The values of the items are cached and updated periodically in order to avoid to contact the zabbix server each time a specific metric is required.<br />
+4) If your consumer is written in java, we provide a simple class MonitoringPluginCaller which handle the communication via RabbitMQ.  </p>
+<h2 id="prerequisites">Prerequisites</h2>
 <p>The prerequisites are:  </p>
 <ul>
 <li>Zabbix server installed and running. See <a href="../zabbix-server-configuration/">how to configure Zabbix server</a>.</li>
@@ -561,13 +698,13 @@ In particular with the Zabbix plugin you can create/delete items, trigger and ac
 <h2 id="additional-zabbix-server-configuration-required-for-receiving-notifications">Additional Zabbix Server configuration required for receiving notifications</h2>
 <p>How is the zabbix-plugin receiving notification from the Zabbix Server? </p>
 <p>When using the method createThreshold provided by the plugin,it automatically creates an <a href="https://www.zabbix.com/documentation/2.2/manual/config/notifications/action">action</a> executed when the specific condition is met. 
-If the threshold is crossed (the status of the trigger goes from OK to PROBLEM or viceversa) the action is performed. The action gets the informations of the threshold and sends them to a custom alertScript.
-The custom alertscripts is executed on the zabbix server and its task is to send the informations received from the action to the zabbix-plugin. </p>
-<p>The zabbix-pluging waits for notifications at the url: http://zabbix-plugin-ip:defaultPort/defaultContext.</p>
+If the threshold is crossed (the status of the trigger goes from OK to PROBLEM or vice versa) the action is performed. The action gets the information of the threshold and sends them to a custom alertScript.
+The custom alertScript is executed on the zabbix server and its task is to send the information received from the action to the zabbix-plugin. </p>
+<p>The zabbix-plugin waits for notifications at the url: http://zabbix-plugin-ip:defaultPort/defaultContext.</p>
 <p>Defatult context and ports are specified in the configuration file as: 
 <em> <strong>notification-receiver-server-context</strong>.
 </em> <strong>notification-receiver-server-port</strong>.</p>
-<p>The custom alert script we use is the following:  </p>
+<p>The custom alert script in use is the following:  </p>
 <pre><code class="bash">#!/bin/bash
 to=$1
 body=$3
@@ -576,18 +713,18 @@ curl -X POST -H &quot;Accept: application/json&quot; -H &quot;Content-Type: appl
 
 <p>Copy this script in the directory defined in the Zabbix server configuration file as AlertScriptsPath variable.
 The variable 'to' is the endpoint where zabbix-plugin receives the notification (specified in <strong>notification-receiver-server-context</strong> property). 
-After you copied the script in the right directoy, the Zabbix server needs to be configured correctly in order to use <a href="https://www.zabbix.com/documentation/2.2/manual/config/notifications/media/script">custom alertscripts</a>. 
-This configuration will be automatized in later releases. </p>
+After you copied the script in the right directory, the Zabbix server needs to be configured correctly in order to use <a href="https://www.zabbix.com/documentation/2.2/manual/config/notifications/media/script">custom alertscripts</a>. 
+This configuration will be done automatically in later releases. </p>
 <h3 id="installation">Installation</h3>
 <p>Once the prerequisites are met, you can clone the following project from git, compile it using gradle and launch it:  </p>
 <pre><code class="bash">git clone https://github.com/openbaton/zabbix-plugin.git
 cd zabbix-plugin
 ./gradlew build
-java -jar build/lib/zabbix-agent-&lt;version&gt;.jar
+java -jar build/lib/zabbix-plugin-&lt;version&gt;.jar
 </code></pre>
 
 <h3 id="configuration">Configuration</h3>
-<p>Create a configuration file called zabbix-plugin.conf in the path /etc/openbaton/plugins/ and fill it with the configuration parameter explained in the following section.</p>
+<p>Create a configuration file called zabbix-plugin.conf in the folder /etc/openbaton/plugins/ and fill it with the configuration parameter explained in the following section.</p>
 <table>
 <thead>
 <tr>
@@ -649,11 +786,11 @@ java -jar build/lib/zabbix-agent-&lt;version&gt;.jar
 </tr>
 </tbody>
 </table>
-<p>The configuration file should look like the one below:</p>
+<p>The configuration file should look like as shown below:</p>
 <pre><code class="bash">zabbix-ip = xxx.xxx.xxx.xxx
 zabbix-port = xxxxx
 type = zabbix-plugin
-user-zbx = zabbixUSer
+user-zbx = zabbixUser
 password-zbx = zabbixPassword
 client-request-frequency = 10
 history-length = 250
@@ -668,11 +805,11 @@ external-properties-file=/etc/openbaton/plugins/zabbix-plugin.conf
 <p>In order to use the MonitorPluginCaller you need to import the relative plugin-sdk, coming from <a href="http://openbaton.github.io">Openbaton</a> project.
 To import the plugin-sdk, please add in your gradle file the following dependencies:</p>
 <pre><code class="gradle">repositories {
-       maven { url &quot;http://get.openbaton.org:8081/nexus/content/groups/public/&quot; }
+     mavenCental()
 }
 
 dependencies {
-    compile 'org.openbaton:plugin-sdk:2.1.2'
+    compile 'org.openbaton:plugin-sdk:3.0.0'
 }
 </code></pre>
 
@@ -690,81 +827,28 @@ try {
 </code></pre>
 
 <h2 id="functionalities-provided-by-the-zabbix-plugin-interface">Functionalities provided by the Zabbix Plugin Interface</h2>
+<p>In the following you can find the interfaces and explanations which are implemented by the Zabbix plugin.</p>
 <h3 id="virtualisedresourceperformancemanagement-interface">VirtualisedResourcePerformanceManagement interface</h3>
-<table>
-<thead>
-<tr>
-<th>Methods</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>CREATE PM JOB</td>
-<td>Create one or more items to be monitored in one or more hosts.</td>
-</tr>
-<tr>
-<td>DELETE PM JOB</td>
-<td>Delete a PM job.</td>
-</tr>
-<tr>
-<td>QUERY PM JOB</td>
-<td>Get item values from one or more host. Fast method since the item values are cached.</td>
-</tr>
-<tr>
-<td>SUBSCRIBE</td>
-<td>Subscribe to a pm job or a threshold in order to be notified.</td>
-</tr>
-<tr>
-<td>NOTIFY</td>
-<td>Notification method invoked by zabbix plugin, the customer must not invoke directly this method.</td>
-</tr>
-<tr>
-<td>CREATE THRESHOLD</td>
-<td>Create trigger on a specific item for one or more hosts</td>
-</tr>
-<tr>
-<td>DELETE THRESHOLD</td>
-<td>Delete a threshold.</td>
-</tr>
-<tr>
-<td>QUERY THRESHOLD</td>
-<td>Get information about the status of the thresholds</td>
-</tr>
-</tbody>
-</table>
-<h3 id="virtualisedresourcefaultmanagement-interface">VirtualisedResourceFaultManagement interface</h3>
-<table>
-<thead>
-<tr>
-<th>Methods</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>SUBSCRIBE</td>
-<td>Subscribe for alarm coming from an host</td>
-</tr>
-<tr>
-<td>NOTIFY</td>
-<td>Notification method invoked by zabbix plugin, the customer must not invoke directly this method.</td>
-</tr>
-<tr>
-<td>GET ALARM LIST</td>
-<td>Get alarms and relative status</td>
-</tr>
-</tbody>
-</table>
-<h3 id="virtualisedresourceperformancemanagement-interface_1">VirtualisedResourcePerformanceManagement interface</h3>
+<p>In the overview below you can find all methods which have to be implemented by this interface.
+| Methods             | Description
+| ------------------- | --------------
+| CREATE PM JOB       |  Create one or more items to be monitored in one or more hosts.
+| DELETE PM JOB       |  Delete a PM job.
+| QUERY PM JOB        |  Get item values from one or more host. Fast method since the item values are cached.
+| SUBSCRIBE           |  Subscribe to a pm job or a threshold in order to be notified.
+| NOTIFY              |  Notification method invoked by zabbix plugin, the customer must not invoke directly this method.
+| CREATE THRESHOLD    |  Create trigger on a specific item for one or more hosts
+| DELETE THRESHOLD    |  Delete a threshold.
+| QUERY THRESHOLD     |  Get information about the status of the thresholds</p>
+<p>In the following sections you can find descriptions of all methods mentioned above.</p>
 <h4 id="create-pm-job">Create PM Job</h4>
 <pre><code class="java">String createPMJob(ObjectSelection selector, List&lt;String&gt; performanceMetrics, List&lt;String&gt; performanceMetricGroup, Integer collectionPeriod,Integer reportingPeriod) throws MonitoringException;
 </code></pre>
 
-<p>This method create one or more items to be monitored in one or more hosts.</p>
-<p><strong>selector</strong>: object to select the hosts in which we want to add the items.</p>
+<p>This method creates one or more items to be monitored in one or more hosts.</p>
+<p><strong>selector</strong>: Object to select the hosts in which we want to add the items.</p>
 <p><strong>performanceMetrics</strong>: List of items. We can create items which are available in the <a href="https://www.zabbix.com/documentation/2.2/manual/config/items/itemtypes/zabbix_agent">Zabbix documentation 2.2</a>.</p>
-<p><strong>performanceMetricGroup</strong>: pre-defined list of metrics. (NOT YET IMPLEMENTED, please pass an empty list of string).</p>
+<p><strong>performanceMetricGroup</strong>: Pre-defined list of metrics. (NOT YET IMPLEMENTED, please pass an empty list of string).</p>
 <p><strong>collectionPeriod</strong>: Update interval of the item/s in seconds.</p>
 <p><strong>reportingPeriod</strong>: Specifies the periodicity at which the VIM will report to the customers about performance information  . (NOT YET IMPLEMENTED, please pass an integer &gt;= 0 ).</p>
 <p>In the following example we create two items ('net.tcp.listen[8080]' and 'agent.ping') for two hosts ('host-1' and 'host-2'). As a return value we get the ID of the PMJob.</p>
@@ -802,10 +886,10 @@ private ObjectSelection getObjectSelector(String ... hosts) {
 </code></pre>
 
 <p>This method get item values from one or more host. As a return value we get the list of items.</p>
-<p><strong>hostnames</strong>: list of hostnames which we want to know items values.</p>
-<p><strong>performanceMetrics</strong>: List of items. We can get items which are available in: the <a href="https://www.zabbix.com/documentation/2.2/manual/config/items/itemtypes/zabbix_agent">Zabbix documentation 2.2</a> and in the <strong>hostnames</strong>.</p>
-<p><strong>period</strong>: period in seconds. If period is 0 than you get the last available value of the item. If &gt; 0 you get the average of the values inside that period.
-    Remember than the zabbix-plugin read all value of the all hosts every <strong>client-request-frequency</strong> (see the configuration section) and keep them in the history.
+<p><strong>hostnames</strong>: List of hostnames which we want to know items values.</p>
+<p><strong>performanceMetrics</strong>: List of items which are available in the <a href="https://www.zabbix.com/documentation/2.2/manual/config/items/itemtypes/zabbix_agent">Zabbix documentation 2.2</a> and in the <strong>hostnames</strong>.</p>
+<p><strong>period</strong>: Period in seconds for the frequent check. If period is 0 than you get the last available value of the item. If &gt; 0 you get the average of the values inside that period.
+    Remember that the zabbix-plugin read all values of the all hosts every <strong>client-request-frequency</strong> (see the configuration section) and keep them in the history.
     So if <strong>client-request-frequency</strong> is 15 seconds and the period 30 seconds you get the average of the previous 2 values of the item.</p>
 <p>In the following example we ask for the last value of two items ('net.tcp.listen[8080]' and 'agent.ping') for the hosts 'host-1'.</p>
 <pre><code class="java">ArrayList&lt;String&gt; hostnames = getHostnames(&quot;host-1&quot;);
@@ -813,18 +897,18 @@ ArrayList&lt;String&gt; performanceMetrics = getPerformanceMetrics(&quot;net.tcp
 List&lt;Item&gt; items = monitoringPluginCaller.queryPMJob(hostnames,performanceMetrics,&quot;0&quot;);
 </code></pre>
 
-<p><strong>items</strong>: list of items. An item is a simple object of openbaton-libs which contains properties like: metric, hostname, lastValue, value.</p>
+<p><strong>items</strong>: List of items which are coming from Zabbix. An item is a simple object of openbaton-libs which contains properties like: metric, hostname, lastValue, value.</p>
 <h4 id="subscribe-notifyinfo">Subscribe &amp; notifyInfo</h4>
-<p>NOT YET IMPLEMENTED</p>
+<p><strong>NOT YET IMPLEMENTED</strong></p>
 <h4 id="create-threshold">Create Threshold</h4>
 <pre><code class="java">String createThreshold(ObjectSelection selector, String performanceMetric, ThresholdType thresholdType, ThresholdDetails thresholdDetails) throws MonitoringException;
 </code></pre>
 
-<p>This method create a trigger on a specific item for one or more hosts. As a return value we get the id of the threshold.</p>
-<p><strong>selector</strong>: object to select the hosts which will be part of the trigger.</p>
-<p><strong>performanceMetric</strong>: item to include in the trigger. The item need to be already present in the hosts specified in the <em>selector</em>.</p>
-<p><strong>thresholdType</strong>: defines the type of threshold . (NOT YET IMPLEMENTED, please pass ThresholdType.SINGLE for the moment).</p>
-<p><strong>thresholdDetails</strong>: details of the threshold. It contains:</p>
+<p>This method creates a trigger on a specific item for one or more hosts. As a return value we get the id of the threshold.</p>
+<p><strong>selector</strong>: This is the object to select hosts which will be part of the trigger.</p>
+<p><strong>performanceMetric</strong>: Item to include in the trigger which needs to be already present in the hosts specified in the <em>selector</em>.</p>
+<p><strong>thresholdType</strong>: Defines the type of threshold. (NOT YET IMPLEMENTED, please pass ThresholdType.SINGLE for the moment).</p>
+<p><strong>thresholdDetails</strong>: This contains details of the threshold. It contains:</p>
 <ul>
 <li>function: refer to <a href="https://www.zabbix.com/documentation/2.2/manual/appendix/triggers/functions">Zabbix trigger function 2.2</a>  </li>
 <li>triggerOperator: operator</li>
@@ -845,10 +929,34 @@ Refer to <a href="https://www.zabbix.com/documentation/2.2/manual/config/trigger
 <pre><code class="java">List&lt;String&gt; deleteThreshold(List&lt;String&gt; thresholdIds) throws MonitoringException;
 </code></pre>
 
-<p>This method delete an existing threshold/s. We can get the id of the threshold after the creation with createThreshold. As a return value we get the list of the ID of the threshold effectively deleted.</p>
+<p>This method delete an existing threshold or several threshold. We can get the id of the threshold after the creation with createThreshold. As a return value we get the list of the ID of the threshold effectively deleted.</p>
 <h4 id="query-threshold">Query Threshold</h4>
 <p>NOT YET IMPLEMENTED</p>
-<h3 id="virtualisedresourcefaultmanagement-interface_1">VirtualisedResourceFaultManagement interface</h3>
+<h3 id="virtualisedresourcefaultmanagement-interface">VirtualisedResourceFaultManagement interface</h3>
+<p>This interface implements the methods responsible of the fault management. The following table shows a short overview of the methods available.</p>
+<table>
+<thead>
+<tr>
+<th>Methods</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SUBSCRIBE</td>
+<td>Subscribe for alarm coming from an host</td>
+</tr>
+<tr>
+<td>NOTIFY</td>
+<td>Notification method invoked by zabbix plugin, the customer must not invoke directly this method.</td>
+</tr>
+<tr>
+<td>GET ALARM LIST</td>
+<td>Get alarms and relative status</td>
+</tr>
+</tbody>
+</table>
+<p>In the next sections all of the methods which needs to be implemented are explained more in detail.</p>
 <h4 id="subscribe">Subscribe</h4>
 <pre><code class="java">String subscribeForFault(AlarmEndpoint filter) throws MonitoringException;
 </code></pre>
@@ -870,12 +978,12 @@ String subscriptionId = monitoringPluginCaller.subscribeForFault(alarmEndpoint);
 <pre><code class="java">String unsubscribeForFault(String subscriptionId) throws MonitoringException;
 </code></pre>
 
-<p>This method detele the subscription with the ID passed as a argument. As a return value we get the id of the subscription effectively deleted.
+<p>This method deletes the subscription with the ID passed as an argument. As a return value we get the id of the subscription effectively deleted.
 We can get the id of the subscription after the creation with subscribeForFault.</p>
 <h4 id="get-alarm-list">Get alarm list</h4>
 <p>NOT YET IMPLEMENTED</p>
 <h4 id="notify">Notify</h4>
-<p>This method cannot be invoked by the customers as specified in the ETSI draft <a href="https://docbox.etsi.org/isg/nfv/open/Drafts/IFA005_Or-Vi_ref_point_Spec/">IFA005_Or-Vi_ref_point_Spec</a>.</p>
+<p>This method cannot be invoked by the customers as specified in the ETSI draft <a href="http://www.etsi.org/deliver/etsi_gs/NFV-IFA/001_099/005/02.01.01_60/gs_nfv-ifa005v020101p.pdf">IFA005_Or-Vi_ref_point_Spec</a>.</p>
 <h2 id="zabbix-severity-mapping-with-etsi-severity">Zabbix severity mapping with ETSI severity</h2>
 <p>In Zabbix we can specify a severity of a trigger: not classified, information, warning, average, high, disaster.</p>
 <p>In the ETSI draft there are different level of severity, called perceived severity: Indeterminate, warning, minor, major, critical.</p>
@@ -919,17 +1027,17 @@ We can get the id of the subscription after the creation with subscribeForFault.
 According to ETSI specification there are 4 types of notifications. </p>
 <p>The interface VirtualisedResourcePerformanceManagement sends two types of notifications:  </p>
 <ol>
-<li>PerformanceInformationAvailableNotification (NOT YET IMPLEMENTED)  : this notification informs the receiver that performance information is available.      </li>
-<li>hresholdCrossedNotification  (NOT YET IMPLEMENTED) : his notification informs the receiver that a threshold value has been crossed.   </li>
+<li>PerformanceInformationAvailableNotification (NOT YET IMPLEMENTED): This notification informs the receiver that performance information are available.  </li>
+<li>thresholdCrossedNotification (NOT YET IMPLEMENTED) : This notification informs the receiver that a threshold value has been crossed.  </li>
 </ol>
 <p>The interface VirtualisedResourceFaultManagement sends the following notifications:</p>
 <ol>
-<li>AlarmNotification : This notification informs the receiver of alarms resulting from the faults related to the virtualised resources managed by the VIM . It contains the Alarm with all the information about the fault.</li>
-<li>AlarmStateChangedNotification : This notification informs the receiver of state change of alarm related to the virtualised resources managed by the VIM, e.g. the alarm shall be set to “cleared” if the corresponding fault has been solved.
-    It contains the id of the Alarm and the actual status which could be (CLEARED,FIRED,UPDATED). </li>
+<li>AlarmNotification: This notification informs the receiver of alarms resulting from the faults related to the virtualised resources managed by the VIM. It contains the Alarm with all the information about the fault.</li>
+<li>AlarmStateChangedNotification: This notification informs the receiver of state change of alarm related to the virtualised resources managed by the VIM, e.g. the alarm shall be set to “cleared” if the corresponding fault has been solved.
+    It contains the id of the Alarm and the actual status which could be (CLEARED,FIRED,UPDATED).</li>
 </ol>
-<p>Actually the zabbix-plugin when receives the notification by zabbix server, <strong>if the trigger has severity higher than Information</strong>, 
-it creates an alarm (mapping zabbix notification into standard Alarm) and notify the subscribers with a AlarmNotification. If the notification is not new, then it sends an AlarmStateChangedNotification.</p>
+<p>Actually, the zabbix-plugin receives the notification by the Zabbix server, <strong>if the trigger has severity higher than Information</strong>. 
+It creates an alarm (mapping zabbix notification into standard Alarm) and notifies the subscribers with a AlarmNotification. If the notification is not new, then it sends an AlarmStateChangedNotification.</p>
                         
                       </div>
                     </div>
@@ -937,10 +1045,10 @@ it creates an alarm (mapping zabbix notification into standard Alarm) and notify
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../tosca-vnfd/" class="btn btn-neutral float-right" title="Introduction"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../autoscaling/" class="btn btn-neutral float-right" title="Autoscaling overview"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../nfvo-sdk/" class="btn btn-neutral" title="Use via the SDK"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../monitoring/" class="btn btn-neutral" title="Monitoring overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -949,6 +1057,8 @@ it creates an alarm (mapping zabbix notification into standard Alarm) and notify
 
   <div role="contentinfo">
     <!-- Copyright etc -->
+    
+      <p>Copyright (c) 2016 Open Baton (http://www.openbaton.org)</p>
     
   </div>
 

@@ -10,7 +10,8 @@
   <title>OpenBaton Documentation</title>
   
 
-  <link rel="shortcut icon" href="../img/favicon.ico">
+  <link rel="shortcut icon" href="../favicon.ico">
+  
 
   
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,300,600,700" rel="stylesheet" type="text/css">
@@ -22,16 +23,16 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "First access";
+    var mkdocs_page_name = "Identity management";
     var mkdocs_page_input_path = "security.md";
     var mkdocs_page_url = "/security/";
      var mkdocs_page_url = "/security/";
   </script>
   
   <!-- site_name == OpenBaton Documentation -->
-  <!-- page_title == First access -->
+  <!-- page_title == Identity management -->
   <!-- base_url == .. -->
-  <!-- current_page == First access - /security/ [*]
+  <!-- current_page == Identity management - /security/ [*]
  -->
   <script src="../js/jquery-2.1.1.min.js"></script>
   <script src="../js/modernizr-2.8.3.min.js"></script>
@@ -86,14 +87,14 @@ display: block;
 $( document).ready(function(){
       //console.log("test");
 
-    //$('.subnav').not( ":has('First access')" ).hide();
+    //$('.subnav').not( ":has('Identity management')" ).hide();
     $('li.subnav_drop').find('ul.subnav').hide();
     //$('li.subnav_drop').find('ul.subnav').each(function(i,e){console.log(i,e)});
-       $( ".subnav" ).find( "li:contains('First access')" ).each(function(i,e){
+       $( ".subnav" ).find( "li:contains('Identity management')" ).each(function(i,e){
           var currentElement = $(e);
           currentElement.parent().css({"display":"block","visibility":"visible"}); //css("background-color","blue");
           currentElement.css({"display":"block","visibility":"visible"});
-       });//$( ".subnav" ).find( "li:contains('First access')" ).css("display","block");
+       });//$( ".subnav" ).find( "li:contains('Identity management')" ).css("display","block");
        //$(".current").css({"background-color":"blue","display":"block","visibility":"visible"});
        //show(1000,function(i,e){console.log(i,e)});
        //$('li.subnav_drop').find('ul.subnav').css("background-color","blue");
@@ -105,11 +106,11 @@ $( document).ready(function(){
 
 });
    
-$( ".wy-nav-content" ).find( "li:contains('First access')" ).css('color','red');
+$( ".wy-nav-content" ).find( "li:contains('Identity management')" ).css('color','red');
 console.log('--------');
-console.log($( ".wy-nav-content" ).find( "div:contains('First access')" ).css("color","red"));
+console.log($( ".wy-nav-content" ).find( "div:contains('Identity management')" ).css("color","red"));
 console.log('--------');
-console.log($( ".subnav" ).find( "li:contains('First access')" ));
+console.log($( ".subnav" ).find( "li:contains('Identity management')" ));
 console.log('--------');
   </script>
 
@@ -127,7 +128,7 @@ console.log('--------');
                 <li><a href="../../features.html">Features</a></li>
                 <li><a href="#">Documentation</a></li>
                 <li><a href="../../index.html#contact">Contact</a></li>
-                <li><a href="https://github.com/openbaton">GitHub</a></li>
+                <li><a href="http://marketplace.openbaton.org"><i class="material-icons">shopping_cart </i>  Marketplace<div class="ripple-container"></div></a></li>
           </ul>
       </nav>
      </div>
@@ -234,13 +235,13 @@ console.log('--------');
                   <li><ul> 
     
    
-    <li class="subnav_drop"><span>Use it</span>
+    <li class="subnav_drop"><span>NFV Orchestrator</span>
 <ul class="subnav">
         
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../use/">Introduction</a>
+        <a class="" href="../use/">NFVO intro</a>
         
     </li>
 
@@ -249,45 +250,9 @@ console.log('--------');
              
 
     <li class="toctree-l1 current">
-        <a class="current" href="./">First access</a>
+        <a class="current" href="./">Identity management</a>
         
          
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vim-instance/">Register a PoP</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vnfpackage/">Create your own VNF Package</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vnfm-generic/">Generic VNFM</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../ns-descriptor/">Create the NSD</a>
         
     </li>
 
@@ -314,7 +279,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../nfvo-sdk/">Use via the SDK</a>
+        <a class="" href="../vim-driver/">Install a VIM Driver</a>
         
     </li>
 
@@ -323,7 +288,25 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../zabbix-plugin/">Use Zabbix plugin</a>
+        <a class="" href="../vim-instance/">Register a PoP</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnf-package/">VNF Packages</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ns-descriptor/">Network Service Descriptor</a>
         
     </li>
 
@@ -339,13 +322,13 @@ console.log('--------');
                   <li><ul> 
     
    
-    <li class="subnav_drop"><span>TOSCA</span>
+    <li class="subnav_drop"><span>VNF Managers</span>
 <ul class="subnav">
         
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tosca-vnfd/">Introduction</a>
+        <a class="" href="../vnfm-intro/">VNFM intro</a>
         
     </li>
 
@@ -354,7 +337,153 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tosca-CSAR-onboarding/">CSAR on boarding</a>
+        <a class="" href="../vnfm-generic/">Generic VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-juju/">Juju VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-how-to-write/">Develop a VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-vendor-specific/">Integrate your own VNFM</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Monitoring</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../monitoring/">Monitoring overview</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../zabbix-plugin/">Zabbix plugin</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Autoscaling</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../autoscaling/">Autoscaling overview</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Fault Management</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../fault-management/">FM overview</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Network Slicing</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../network-slicing/">NS overview</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Marketplace</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../marketplace/">Marketplace overview</a>
         
     </li>
 
@@ -372,6 +501,15 @@ console.log('--------');
    
     <li class="subnav_drop"><span>Tutorials</span>
 <ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorial/">Tutorials overview</a>
+        
+    </li>
+
+
         
              
 
@@ -403,6 +541,15 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../fms-sipp-tutorial/">Fault Management System</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../integration-test-use/">Integration Tests</a>
         
     </li>
@@ -419,17 +566,8 @@ console.log('--------');
                   <li><ul> 
     
    
-    <li class="subnav_drop"><span>Extend it</span>
+    <li class="subnav_drop"><span>Learn more</span>
 <ul class="subnav">
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../extend/">Extend it</a>
-        
-    </li>
-
-
         
              
 
@@ -443,7 +581,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vim-plugin/">Write your own Plugin</a>
+        <a class="" href="../vim-driver-create/">Create a VIM Driver</a>
         
     </li>
 
@@ -452,7 +590,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vnfm-how-to-write/">Write your own VNFM</a>
+        <a class="" href="../nfvo-sdk/">Open Baton SDKs</a>
         
     </li>
 
@@ -461,7 +599,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vnfm-vendor-specific/">Integrate your own VNFM</a>
+        <a class="" href="../how-to-register-event/">The Event Mechanism tutorial</a>
         
     </li>
 
@@ -536,17 +674,19 @@ console.log('--------');
                     <div role="main">
                       <div class="section">
                         
-                          <h1 id="first-access-to-the-open-baton-platform">First access to the Open Baton platform</h1>
-<p>When accessing the dashboard, you will be prompted for a username and password. The first access can only be done with the super user created during the installation. Then it is possible to create other users and projects. For the configuration of the first access please follow this guide.</p>
+                          <h1 id="identity-management">Identity management</h1>
+<p>Open Baton provides several mechanisms for managing users, roles and projects. When accessing the dashboard, you will be prompted for a username and password. 
+The first access can only be done with the super user created during the installation. Then it is possible to create other users and projects. The super user(admin) password is set while installing the platform.</p>
 <h3 id="roles-and-projects">Roles and projects</h3>
-<p>Openbaton's security model consists of different user roles and projects.</p>
-<p>A project is a separate realm in which permitted users can work. Users can be assigned to projects and adopt different roles. Changes made in a project's environment are not visible from another project. When the NFVO starts a default project is created. Every project has a <strong>unique</strong> name and a project-id.  </p>
-<p>A user can have the role <em>USER</em> or <em>GUEST</em> in a project. Administrators with the role <em>ADMIN</em> has control over the whole system. He may add and delete users and projects, assign roles and has access to all the projects. When starting the NFVO there will be already the super user (with the role of an <em>ADMIN</em>) defined by default with the user name <em>admin</em> and the default password <em>openbaton</em>.</p>
-<p>The default password can be changed in the top right corner of the dashboard.</p>
-<p>The next available role is <em>USER</em>. If a user is the <em>USER</em> of a project he can create, delete and update PoPs, NSD, VNFD, VNFPackages, NSR and VNFR in his projects. He cannot access or see other projects or users.</p>
-<p>The last role is the <em>GUEST</em>. He can just see the components (PoPs, NSD, NSR etc.) of the project he is assigned to but he cannot create update or delete them. Furthermore he does not see other projects and users.</p>
-<h3 id="ssl">SSL</h3>
-<p>The NFVO can use SSL to encrypt communication. To enable this feature set </p>
+<p>Open Baton security model consists of different users, roles and projects.</p>
+<p>A project can be used for isolating a group of users from the others and/or VNFs. Users can be assigned to projects and adopt a different role per project. Changes made in a project's environment are not visible from another project. 
+When the NFVO starts a default project is created. Every project has a <strong>unique</strong> name and a project-id.  </p>
+<p>A user can have the role <em>USER</em> or <em>GUEST</em> in a project. Administrators with the role <em>ADMIN</em> has control over the whole system. Admin user can add and delete users and projects, assign roles and has access to all the projects. When starting the NFVO there will be already one super user (with the role of an <em>ADMIN</em>) defined by default with the user name <em>admin</em> and the password chosen during installation (<strong>openbaton</strong> by default)</p>
+<p>The password can be changed in the top right corner of the dashboard, by clicking on the username drop down menu.</p>
+<p>A user with the role <em>USER</em> in some specific projects, can create, delete and update PoPs, NSD, VNFD, VNFPackages, NSR and VNFR only inside his projects. He cannot access or modify other projects or users.</p>
+<p>A user with the role <em>GUEST</em> can just see the components (PoPs, NSD, NSR etc.) of the project he is assigned to but he cannot create, update or delete them. Furthermore he does not see other projects and users.</p>
+<h3 id="enabling-ssl">Enabling SSL</h3>
+<p>The NFVO can use SSL to encrypt communication on the norhbound REST APIs. To enable this feature set</p>
 <pre><code class="properties">server.ssl.enabled = true
 server.port: 8443
 server.ssl.key-store = /etc/openbaton/keystore.p12
@@ -555,8 +695,9 @@ server.ssl.keyStoreType = PKCS12
 server.ssl.keyAlias = tomcat
 </code></pre>
 
-<p>in the <em>openbaton.properties</em> file.<br />
-Start the NFVO and it will use SSL from now on and run on port 8443 instead of 8080, but port 8080 is redirected to 8443. To access the dashboard the use of https is required.</p>
+<p>in the <em>openbaton.properties</em> file.  </p>
+<p>Start the NFVO and it will use SSL from now on and run on port 8443 instead of 8080, but port 8080 is redirected to 8443. To access the dashboard the use of https is required.
+It is also possible to specify different key store file or even third part authorities. For a more documentation on this feature please refer to <a href="https://spring.io/guides/tutorials/bookmarks/">the Spring Doc and Tutorials</a></p>
 <!---
 Script for open external links in a new tab
 -->
@@ -579,10 +720,10 @@ Script for open external links in a new tab
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../vim-instance/" class="btn btn-neutral float-right" title="Register a PoP"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../nfvo-how-to-use-gui/" class="btn btn-neutral float-right" title="Use via the Dashboard"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../use/" class="btn btn-neutral" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../use/" class="btn btn-neutral" title="NFVO intro"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -591,6 +732,8 @@ Script for open external links in a new tab
 
   <div role="contentinfo">
     <!-- Copyright etc -->
+    
+      <p>Copyright (c) 2016 Open Baton (http://www.openbaton.org)</p>
     
   </div>
 

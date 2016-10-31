@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>OpenBaton Documentation</title>
+  
+
+  <link rel="shortcut icon" href="../favicon.ico">
+  
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,300,600,700" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Monitoring overview";
+    var mkdocs_page_input_path = "monitoring.md";
+    var mkdocs_page_url = "/monitoring/";
+     var mkdocs_page_url = "/monitoring/";
+  </script>
+  
+  <!-- site_name == OpenBaton Documentation -->
+  <!-- page_title == Monitoring overview -->
+  <!-- base_url == .. -->
+  <!-- current_page == Monitoring overview - /monitoring/ [*]
+ -->
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-68429895-1', 'openbaton.github.io');
+      ga('send', 'pageview');
+  </script>
+  
+
+<style>
+
+.subnav_drop{
+  cursor: pointer;
+
+
+}
+
+ul.subnav {
+/*display:none ;*/
+cursor: pointer;
+border-bottom: 1px solid #e1e1e5;
+}
+
+.subnav:last-child{
+  border-bottom: none;
+
+}
+
+ul.subnav:active {
+display:block;
+}
+
+.wy-menu-vertical li ul {
+display: block;
+
+  }
+
+</style>
+</head>
+
+<body role="document">
+
+<script type="text/javascript">
+$( document).ready(function(){
+      //console.log("test");
+
+    //$('.subnav').not( ":has('Monitoring overview')" ).hide();
+    $('li.subnav_drop').find('ul.subnav').hide();
+    //$('li.subnav_drop').find('ul.subnav').each(function(i,e){console.log(i,e)});
+       $( ".subnav" ).find( "li:contains('Monitoring overview')" ).each(function(i,e){
+          var currentElement = $(e);
+          currentElement.parent().css({"display":"block","visibility":"visible"}); //css("background-color","blue");
+          currentElement.css({"display":"block","visibility":"visible"});
+       });//$( ".subnav" ).find( "li:contains('Monitoring overview')" ).css("display","block");
+       //$(".current").css({"background-color":"blue","display":"block","visibility":"visible"});
+       //show(1000,function(i,e){console.log(i,e)});
+       //$('li.subnav_drop').find('ul.subnav').css("background-color","blue");
+      //$(this).find('ul.subnav').toggle();
+    $('li.subnav_drop').click(function(i,e) {  
+      $('li.subnav_drop').not(this).find('ul.subnav').hide();
+      $(this).find('ul.subnav').toggle();
+    }); 
+
+});
+   
+$( ".wy-nav-content" ).find( "li:contains('Monitoring overview')" ).css('color','red');
+console.log('--------');
+console.log($( ".wy-nav-content" ).find( "div:contains('Monitoring overview')" ).css("color","red"));
+console.log('--------');
+console.log($( ".subnav" ).find( "li:contains('Monitoring overview')" ));
+console.log('--------');
+  </script>
+
+
+
+<div class="navcontainer" style="margin:0px; background:#000;">
+    <div class="navholder">
+      <nav>
+        <a href="../../index.html" class="logo"></a>
+        <a href="#" id="menu-icon"></a>
+        <ul class="navigation">
+          
+                <li><a href="../../index.html#about">About</a></li>
+                <li><a href="../../cases.html">Use Cases</a></li>
+                <li><a href="../../features.html">Features</a></li>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="../../index.html#contact">Contact</a></li>
+                <li><a href="http://marketplace.openbaton.org"><i class="material-icons">shopping_cart </i>  Marketplace<div class="ripple-container"></div></a></li>
+          </ul>
+      </nav>
+     </div>
+</div>
+<div  class="container">
+  <div class="holder"> 
+        <div class="wy-grid-for-nav">
+
+          
+          <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+            <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+              <ul class="current">
+                
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Get Started</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="..">Get Started</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Installation</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation/">Overview</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-deb/">Install on Linux</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-mac/">Install on MacOS</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-docker/">Install with Docker</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-vagrant/">Install with Vagrant</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-configuration/">Configure it</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>NFV Orchestrator</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../use/">NFVO intro</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../security/">Identity management</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-how-to-use-gui/">Use via the Dashboard</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-how-to-use-cli/">Use via the CLI</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vim-driver/">Install a VIM Driver</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vim-instance/">Register a PoP</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnf-package/">VNF Packages</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ns-descriptor/">Network Service Descriptor</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>VNF Managers</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-intro/">VNFM intro</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-generic/">Generic VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-juju/">Juju VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-how-to-write/">Develop a VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-vendor-specific/">Integrate your own VNFM</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Monitoring</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Monitoring overview</a>
+        
+         
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../zabbix-plugin/">Zabbix plugin</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Autoscaling</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../autoscaling/">Autoscaling overview</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Fault Management</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../fault-management/">FM overview</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Network Slicing</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../network-slicing/">NS overview</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Marketplace</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../marketplace/">Marketplace overview</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Tutorials</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorial/">Tutorials overview</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../dummy-NSR/">Dummy NSR</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../iperf-NSR/">Iperf Scenario</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../fms-sipp-tutorial/">Fault Management System</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../integration-test-use/">Integration Tests</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Learn more</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-architecture/">NFVO Architecture</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vim-driver-create/">Create a VIM Driver</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-sdk/">Open Baton SDKs</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../how-to-register-event/">The Event Mechanism tutorial</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>FAQ</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../FAQ/">FAQ</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+              </ul>
+            </div>
+            &nbsp;
+          </nav>
+        </div>
+    <div class="content_container">
+        <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+         
+
+          
+                <div class="wy-nav-content">
+                  <div class="rst-content">
+                   
+                    <div role="main">
+                      <div class="section">
+                        
+                          <h2 id="monitoring">Monitoring</h2>
+<p>Open Baton interfaces with monitoring systems using a plugin mechanism. 
+The plugin mechanism allows Open Baton to easily use multiple monitoring system. The following figure shows how the monitoring plugin communicate with the NFVO.</p>
+<p><img alt="monitoring-pic" src="../images/monitoring.png" /></p>
+<p>As you can see from the picture above the Monitoring Plugin (or Driver) is an intermediate between Open Baton and the specific monitoring system. 
+Monitoring Plugin implements a Standard interface in order to be used by Open Baton.
+An example of monitoring plugin is Zabbix plugin which allows Open Baton to use Zabbix Server. 
+The Zabbix Plugin is already available and you can find the documentation in the next page.</p>
+                        
+                      </div>
+                    </div>
+                    <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../zabbix-plugin/" class="btn btn-neutral float-right" title="Zabbix plugin"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../vnfm-vendor-specific/" class="btn btn-neutral" title="Integrate your own VNFM"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright (c) 2016 Open Baton (http://www.openbaton.org)</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          	  
+                  </div>
+                </div>
+
+        </section>
+    </div>
+  </div>
+</div>
+
+
+
+</body>
+</html>
+

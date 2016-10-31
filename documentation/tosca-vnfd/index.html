@@ -10,7 +10,8 @@
   <title>OpenBaton Documentation</title>
   
 
-  <link rel="shortcut icon" href="../img/favicon.ico">
+  <link rel="shortcut icon" href="../favicon.ico">
+  
 
   
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,300,600,700" rel="stylesheet" type="text/css">
@@ -22,16 +23,16 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Introduction";
+    var mkdocs_page_name = "**HIDDEN**";
     var mkdocs_page_input_path = "tosca-vnfd.md";
     var mkdocs_page_url = "/tosca-vnfd/";
      var mkdocs_page_url = "/tosca-vnfd/";
   </script>
   
   <!-- site_name == OpenBaton Documentation -->
-  <!-- page_title == Introduction -->
+  <!-- page_title == **HIDDEN** -->
   <!-- base_url == .. -->
-  <!-- current_page == Introduction - /tosca-vnfd/ [*]
+  <!-- current_page == **HIDDEN** - /tosca-vnfd/ [*]
  -->
   <script src="../js/jquery-2.1.1.min.js"></script>
   <script src="../js/modernizr-2.8.3.min.js"></script>
@@ -86,14 +87,14 @@ display: block;
 $( document).ready(function(){
       //console.log("test");
 
-    //$('.subnav').not( ":has('Introduction')" ).hide();
+    //$('.subnav').not( ":has('**HIDDEN**')" ).hide();
     $('li.subnav_drop').find('ul.subnav').hide();
     //$('li.subnav_drop').find('ul.subnav').each(function(i,e){console.log(i,e)});
-       $( ".subnav" ).find( "li:contains('Introduction')" ).each(function(i,e){
+       $( ".subnav" ).find( "li:contains('**HIDDEN**')" ).each(function(i,e){
           var currentElement = $(e);
           currentElement.parent().css({"display":"block","visibility":"visible"}); //css("background-color","blue");
           currentElement.css({"display":"block","visibility":"visible"});
-       });//$( ".subnav" ).find( "li:contains('Introduction')" ).css("display","block");
+       });//$( ".subnav" ).find( "li:contains('**HIDDEN**')" ).css("display","block");
        //$(".current").css({"background-color":"blue","display":"block","visibility":"visible"});
        //show(1000,function(i,e){console.log(i,e)});
        //$('li.subnav_drop').find('ul.subnav').css("background-color","blue");
@@ -105,11 +106,11 @@ $( document).ready(function(){
 
 });
    
-$( ".wy-nav-content" ).find( "li:contains('Introduction')" ).css('color','red');
+$( ".wy-nav-content" ).find( "li:contains('**HIDDEN**')" ).css('color','red');
 console.log('--------');
-console.log($( ".wy-nav-content" ).find( "div:contains('Introduction')" ).css("color","red"));
+console.log($( ".wy-nav-content" ).find( "div:contains('**HIDDEN**')" ).css("color","red"));
 console.log('--------');
-console.log($( ".subnav" ).find( "li:contains('Introduction')" ));
+console.log($( ".subnav" ).find( "li:contains('**HIDDEN**')" ));
 console.log('--------');
   </script>
 
@@ -127,7 +128,7 @@ console.log('--------');
                 <li><a href="../../features.html">Features</a></li>
                 <li><a href="#">Documentation</a></li>
                 <li><a href="../../index.html#contact">Contact</a></li>
-                <li><a href="https://github.com/openbaton">GitHub</a></li>
+                <li><a href="http://marketplace.openbaton.org"><i class="material-icons">shopping_cart </i>  Marketplace<div class="ripple-container"></div></a></li>
           </ul>
       </nav>
      </div>
@@ -234,13 +235,13 @@ console.log('--------');
                   <li><ul> 
     
    
-    <li class="subnav_drop"><span>Use it</span>
+    <li class="subnav_drop"><span>NFV Orchestrator</span>
 <ul class="subnav">
         
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../use/">Introduction</a>
+        <a class="" href="../use/">NFVO intro</a>
         
     </li>
 
@@ -249,43 +250,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../security/">First access</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vim-instance/">Register a PoP</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vnfpackage/">Create your own VNF Package</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vnfm-generic/">Generic VNFM</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../ns-descriptor/">Create the NSD</a>
+        <a class="" href="../security/">Identity management</a>
         
     </li>
 
@@ -312,7 +277,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../nfvo-sdk/">Use via the SDK</a>
+        <a class="" href="../vim-driver/">Install a VIM Driver</a>
         
     </li>
 
@@ -321,7 +286,25 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../zabbix-plugin/">Use Zabbix plugin</a>
+        <a class="" href="../vim-instance/">Register a PoP</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnf-package/">VNF Packages</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ns-descriptor/">Network Service Descriptor</a>
         
     </li>
 
@@ -337,15 +320,13 @@ console.log('--------');
                   <li><ul> 
     
    
-    <li class="subnav_drop"><span>TOSCA</span>
+    <li class="subnav_drop"><span>VNF Managers</span>
 <ul class="subnav">
         
              
 
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Introduction</a>
-        
-         
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-intro/">VNFM intro</a>
         
     </li>
 
@@ -354,7 +335,153 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tosca-CSAR-onboarding/">CSAR on boarding</a>
+        <a class="" href="../vnfm-generic/">Generic VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-juju/">Juju VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-how-to-write/">Develop a VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-vendor-specific/">Integrate your own VNFM</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Monitoring</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../monitoring/">Monitoring overview</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../zabbix-plugin/">Zabbix plugin</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Autoscaling</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../autoscaling/">Autoscaling overview</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Fault Management</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../fault-management/">FM overview</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Network Slicing</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../network-slicing/">NS overview</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Marketplace</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../marketplace/">Marketplace overview</a>
         
     </li>
 
@@ -372,6 +499,15 @@ console.log('--------');
    
     <li class="subnav_drop"><span>Tutorials</span>
 <ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorial/">Tutorials overview</a>
+        
+    </li>
+
+
         
              
 
@@ -403,6 +539,15 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../fms-sipp-tutorial/">Fault Management System</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../integration-test-use/">Integration Tests</a>
         
     </li>
@@ -419,17 +564,8 @@ console.log('--------');
                   <li><ul> 
     
    
-    <li class="subnav_drop"><span>Extend it</span>
+    <li class="subnav_drop"><span>Learn more</span>
 <ul class="subnav">
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../extend/">Extend it</a>
-        
-    </li>
-
-
         
              
 
@@ -443,7 +579,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vim-plugin/">Write your own Plugin</a>
+        <a class="" href="../vim-driver-create/">Create a VIM Driver</a>
         
     </li>
 
@@ -452,7 +588,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vnfm-how-to-write/">Write your own VNFM</a>
+        <a class="" href="../nfvo-sdk/">Open Baton SDKs</a>
         
     </li>
 
@@ -461,7 +597,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vnfm-vendor-specific/">Integrate your own VNFM</a>
+        <a class="" href="../how-to-register-event/">The Event Mechanism tutorial</a>
         
     </li>
 
@@ -563,6 +699,7 @@ Regarding the objects defined from ETSI please see: <a href="https://www.etsi.or
 </tr>
 </tbody>
 </table>
+<p><strong>Important Note:</strong> Remember for each component to specify the type and always use the types above. Otherwise the component will not be recognised and can not be parsed.</p>
 <h2 id="deploy-a-vnfd-tosca-template">Deploy a VNFD TOSCA Template</h2>
 <p>We are going to create a Virtual Network Function Descriptor (VNFD) from a TOSCA-defined VNFD Template.
 It has the following structure:</p>
@@ -588,7 +725,7 @@ topology_template: #Explained below
 <tbody>
 <tr>
 <td>tosca_definitions_version</td>
-<td>The version of the template that follows it.</td>
+<td>The TOSCA NFV version that the template follows.</td>
 </tr>
 <tr>
 <td>description</td>
@@ -609,7 +746,7 @@ topology_template: #Explained below
 </tbody>
 </table>
 <h2 id="inputs-template">Inputs Template</h2>
-<p>The Inputs Template consists of parameters needed for creating a Virtual Network Function Descriptor that can be added to OpenBaton. An example of how the template should look like is shown below.</p>
+<p>The Inputs Template consists of parameters needed for creating a Virtual Network Function Descriptor that can be added to Open Baton. An example of how the template should look like is shown below.</p>
 <pre><code class="yaml">inputs:
   vnfPackageLocation: https://github.com/openbaton/vnf-scripts.git
   endpoint: dummy
@@ -712,12 +849,12 @@ topology_template: #Explained below
 <pre><code class="yaml">VDU2:
   type: tosca.nodes.nfv.VDU
   properties:
-    vm_image:
-      - ubuntu-14.04-server-cloudimg-amd64-disk1
     scale_in_out: 2
-    vimInstanceName: vim-instance
-  requirements:
-    - virtual_link: CP2
+    vim_instance_name:
+         - test-vim-instance
+  artifacts:
+    type: tosca.artifacts.Deployment.Image.VM
+    file: ubuntu-14.04-server-cloudimg-amd64-disk1
 </code></pre>
 
 <table>
@@ -744,6 +881,11 @@ topology_template: #Explained below
 <td>List of requirement</td>
 <td>Describes the component requirements for the VDU</td>
 </tr>
+<tr>
+<td>artifacts</td>
+<td>List of artifacts</td>
+<td>Describes the list of images in OpenStack that will be used to instantiate a VNFC</td>
+</tr>
 </tbody>
 </table>
 <p>The <strong>Properties</strong> Object of a VDU node has the following components:</p>
@@ -757,11 +899,6 @@ topology_template: #Explained below
 </thead>
 <tbody>
 <tr>
-<td>vm_image</td>
-<td>List &lt; String &gt;</td>
-<td>It is the list of images present in the OpenStack that will be used to instantiate a VNFC (aka Virtual Machine)</td>
-</tr>
-<tr>
 <td>scale_in_out</td>
 <td>Integer</td>
 <td>Maximum value of VNFCs that can be instantiated in the process of scale-in/out</td>
@@ -769,7 +906,29 @@ topology_template: #Explained below
 <tr>
 <td>vim_instance_name</td>
 <td>List &lt; String &gt;</td>
-<td>Names of Points of Persistence (PoP) where this VNFC will be instantiated</td>
+<td>Names of Points of Persistence (PoP) where this VNFC will be instantiated <strong>NOTE:</strong> This is not required.</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>Artifacts</strong> Object of a VDU node has the following components:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>tosca.artifacts.Deployment.Image.VM</td>
+<td>Only one type supported at the moment</td>
+</tr>
+<tr>
+<td>file</td>
+<td>String</td>
+<td>Name of the file located on OpenStack</td>
 </tr>
 </tbody>
 </table>
@@ -817,7 +976,7 @@ topology_template: #Explained below
 <td>Type of the node. In the example it defines the node as a CP node.</td>
 </tr>
 <tr>
-<td>properties: floatiIP</td>
+<td>properties: floatingIP</td>
 <td>String</td>
 <td>Only property defined at the moment is <strong>floatingIP</strong>. In this case <strong>floatingIp</strong> means that has a public IP chosen <strong>random</strong>  by OpenStack</td>
 </tr>
@@ -835,12 +994,12 @@ topology_template: #Explained below
 </table>
 <h3 id="node-template-virtual-link-vl">Node Template: Virtual Link (VL)</h3>
 <p>OpenBaton uses Virtual Link names as subnets from OpenStack.</p>
-<p>This is the definition of VL called <code>private</code>:</p>
-<pre><code class="yaml">private:
+<p>This is the definition of a Virtual Link called <strong>private</strong>:</p>
+<pre><code class="yaml">
+private:
   type: tosca.nodes.nfv.VL
   properties:
     vendor: Fokus
-
 </code></pre>
 
 <table>
@@ -860,7 +1019,7 @@ topology_template: #Explained below
 <tr>
 <td>properties:vendor</td>
 <td>String</td>
-<td>Information about the vendor of this VL.</td>
+<td>Information about the vendor of this Virtual Link.</td>
 </tr>
 </tbody>
 </table>
@@ -983,10 +1142,10 @@ Script for open external links in a new tab
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../tosca-CSAR-onboarding/" class="btn btn-neutral float-right" title="CSAR on boarding"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../tosca-CSAR-onboarding/" class="btn btn-neutral float-right" title="**HIDDEN**"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../zabbix-plugin/" class="btn btn-neutral" title="Use Zabbix plugin"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../tosca-ims/" class="btn btn-neutral" title="**HIDDEN**"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -995,6 +1154,8 @@ Script for open external links in a new tab
 
   <div role="contentinfo">
     <!-- Copyright etc -->
+    
+      <p>Copyright (c) 2016 Open Baton (http://www.openbaton.org)</p>
     
   </div>
 

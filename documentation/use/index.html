@@ -10,7 +10,8 @@
   <title>OpenBaton Documentation</title>
   
 
-  <link rel="shortcut icon" href="../img/favicon.ico">
+  <link rel="shortcut icon" href="../favicon.ico">
+  
 
   
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,300,600,700" rel="stylesheet" type="text/css">
@@ -22,16 +23,16 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Introduction";
+    var mkdocs_page_name = "NFVO intro";
     var mkdocs_page_input_path = "use.md";
     var mkdocs_page_url = "/use/";
      var mkdocs_page_url = "/use/";
   </script>
   
   <!-- site_name == OpenBaton Documentation -->
-  <!-- page_title == Introduction -->
+  <!-- page_title == NFVO intro -->
   <!-- base_url == .. -->
-  <!-- current_page == Introduction - /use/ [*]
+  <!-- current_page == NFVO intro - /use/ [*]
  -->
   <script src="../js/jquery-2.1.1.min.js"></script>
   <script src="../js/modernizr-2.8.3.min.js"></script>
@@ -86,14 +87,14 @@ display: block;
 $( document).ready(function(){
       //console.log("test");
 
-    //$('.subnav').not( ":has('Introduction')" ).hide();
+    //$('.subnav').not( ":has('NFVO intro')" ).hide();
     $('li.subnav_drop').find('ul.subnav').hide();
     //$('li.subnav_drop').find('ul.subnav').each(function(i,e){console.log(i,e)});
-       $( ".subnav" ).find( "li:contains('Introduction')" ).each(function(i,e){
+       $( ".subnav" ).find( "li:contains('NFVO intro')" ).each(function(i,e){
           var currentElement = $(e);
           currentElement.parent().css({"display":"block","visibility":"visible"}); //css("background-color","blue");
           currentElement.css({"display":"block","visibility":"visible"});
-       });//$( ".subnav" ).find( "li:contains('Introduction')" ).css("display","block");
+       });//$( ".subnav" ).find( "li:contains('NFVO intro')" ).css("display","block");
        //$(".current").css({"background-color":"blue","display":"block","visibility":"visible"});
        //show(1000,function(i,e){console.log(i,e)});
        //$('li.subnav_drop').find('ul.subnav').css("background-color","blue");
@@ -105,11 +106,11 @@ $( document).ready(function(){
 
 });
    
-$( ".wy-nav-content" ).find( "li:contains('Introduction')" ).css('color','red');
+$( ".wy-nav-content" ).find( "li:contains('NFVO intro')" ).css('color','red');
 console.log('--------');
-console.log($( ".wy-nav-content" ).find( "div:contains('Introduction')" ).css("color","red"));
+console.log($( ".wy-nav-content" ).find( "div:contains('NFVO intro')" ).css("color","red"));
 console.log('--------');
-console.log($( ".subnav" ).find( "li:contains('Introduction')" ));
+console.log($( ".subnav" ).find( "li:contains('NFVO intro')" ));
 console.log('--------');
   </script>
 
@@ -127,7 +128,7 @@ console.log('--------');
                 <li><a href="../../features.html">Features</a></li>
                 <li><a href="#">Documentation</a></li>
                 <li><a href="../../index.html#contact">Contact</a></li>
-                <li><a href="https://github.com/openbaton">GitHub</a></li>
+                <li><a href="http://marketplace.openbaton.org"><i class="material-icons">shopping_cart </i>  Marketplace<div class="ripple-container"></div></a></li>
           </ul>
       </nav>
      </div>
@@ -234,13 +235,13 @@ console.log('--------');
                   <li><ul> 
     
    
-    <li class="subnav_drop"><span>Use it</span>
+    <li class="subnav_drop"><span>NFV Orchestrator</span>
 <ul class="subnav">
         
              
 
     <li class="toctree-l1 current">
-        <a class="current" href="./">Introduction</a>
+        <a class="current" href="./">NFVO intro</a>
         
          
         
@@ -251,43 +252,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../security/">First access</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vim-instance/">Register a PoP</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vnfpackage/">Create your own VNF Package</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vnfm-generic/">Generic VNFM</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../ns-descriptor/">Create the NSD</a>
+        <a class="" href="../security/">Identity management</a>
         
     </li>
 
@@ -314,7 +279,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../nfvo-sdk/">Use via the SDK</a>
+        <a class="" href="../vim-driver/">Install a VIM Driver</a>
         
     </li>
 
@@ -323,7 +288,25 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../zabbix-plugin/">Use Zabbix plugin</a>
+        <a class="" href="../vim-instance/">Register a PoP</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnf-package/">VNF Packages</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ns-descriptor/">Network Service Descriptor</a>
         
     </li>
 
@@ -339,13 +322,13 @@ console.log('--------');
                   <li><ul> 
     
    
-    <li class="subnav_drop"><span>TOSCA</span>
+    <li class="subnav_drop"><span>VNF Managers</span>
 <ul class="subnav">
         
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tosca-vnfd/">Introduction</a>
+        <a class="" href="../vnfm-intro/">VNFM intro</a>
         
     </li>
 
@@ -354,7 +337,153 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tosca-CSAR-onboarding/">CSAR on boarding</a>
+        <a class="" href="../vnfm-generic/">Generic VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-juju/">Juju VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-how-to-write/">Develop a VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-vendor-specific/">Integrate your own VNFM</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Monitoring</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../monitoring/">Monitoring overview</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../zabbix-plugin/">Zabbix plugin</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Autoscaling</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../autoscaling/">Autoscaling overview</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Fault Management</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../fault-management/">FM overview</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Network Slicing</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../network-slicing/">NS overview</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Marketplace</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../marketplace/">Marketplace overview</a>
         
     </li>
 
@@ -372,6 +501,15 @@ console.log('--------');
    
     <li class="subnav_drop"><span>Tutorials</span>
 <ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorial/">Tutorials overview</a>
+        
+    </li>
+
+
         
              
 
@@ -403,6 +541,15 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../fms-sipp-tutorial/">Fault Management System</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../integration-test-use/">Integration Tests</a>
         
     </li>
@@ -419,17 +566,8 @@ console.log('--------');
                   <li><ul> 
     
    
-    <li class="subnav_drop"><span>Extend it</span>
+    <li class="subnav_drop"><span>Learn more</span>
 <ul class="subnav">
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../extend/">Extend it</a>
-        
-    </li>
-
-
         
              
 
@@ -443,7 +581,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vim-plugin/">Write your own Plugin</a>
+        <a class="" href="../vim-driver-create/">Create a VIM Driver</a>
         
     </li>
 
@@ -452,7 +590,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vnfm-how-to-write/">Write your own VNFM</a>
+        <a class="" href="../nfvo-sdk/">Open Baton SDKs</a>
         
     </li>
 
@@ -461,7 +599,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vnfm-vendor-specific/">Integrate your own VNFM</a>
+        <a class="" href="../how-to-register-event/">The Event Mechanism tutorial</a>
         
     </li>
 
@@ -537,39 +675,19 @@ console.log('--------');
                       <div class="section">
                         
                           <h1 id="how-to-use-openbaton">How to use OpenBaton</h1>
-<p>In order to use OpenBaton for launching your first Network Service, you will need to follow these steps:</p>
+<p>After completing the installation, you should be able to reach the dashboard of the NFVO at the following url: http://your-ip-here:8080</p>
+<p>When accessing the dashboard, you will be prompted for a username and password. The first access can only be done with the super user ("admin") created during the installation process. Please refer to the <a href="../security">Identity Management</a> section for more information about security mechanisms. 
+Please refer to the following documentation for learning how to use the <a href="../nfvo-how-to-use-gui">Open Baton dashboard</a> or the <a href="../nfvo-how-to-use-cli">Command Line Interface</a></p>
+<p>In order to use Open Baton for launching your first Network Service, you will need to follow these steps:</p>
 <ol>
+<li>Install a VIM driver. <a href="../vim-driver">Learn more here</a></li>
 <li>Register one or more Point of Presences (PoPs). <a href="../vim-instance">Learn more here</a></li>
-<li>Build your VNF Package<ul>
-<li>Decide which VNFM to use.</li>
-<li>Create the VNF Package(s).</li>
-<li>Prepare the Network Service Descriptor (NSD).</li>
-</ul>
-</li>
+<li>Install a VNF Manager. <a href="../vnfm-intro">Learn more here</a></li>
+<li>Build or download one or more VNF Packages. <a href="../vnf-package">Learn more here</a></li>
+<li>Prepare the Network Service Descriptor (NSD). <a href="../ns-descriptor">Learn more here</a></li>
+<li>Launch the NSD. <a href="../nfvo-how-to-use-gui">Learn more here</a></li>
 </ol>
-<p>Once these steps are completed you will be able to orchestrate your Network Service from the dashboard or via the <a href="http://get.openbaton.org/api/ApiDoc.pdf">REST APIs</a>. </p>
-<h2 id="virtual-network-function-manager-approaches">Virtual Network Function Manager Approaches</h2>
-<p>In order to manage the Virtual Network Function(s), the NFV-MANO architectural framework expects a Virtual Network Function Manager (VNFM).
-To facilitate ease of use and extensibility, the Openbaton project provides three different approaches to using a VNFM:</p>
-<ol>
-<li>Use the Generic VNFM</li>
-<li>Build a VNFM using the SDK</li>
-<li>Use your own VNFM</li>
-</ol>
-<h2 id="main-purposes-of-the-approaches">Main purposes of the approaches</h2>
-<h3 id="1-use-the-generic-vnfm">1. Use the Generic VNFM</h3>
-<p>Using the generic VNFM you don't need to create a VNFM to use Openbaton.
-It is called "Generic" because it may be assigned the management of a single VNF instance, or the management of VNF multiple instances of the same type or of different types.
-It is already included in Openbaton as default.</p>
-<p>Please refer to the following doc for more details: <a href="../vnfm-generic">Use the generic VNFM</a></p>
-<h3 id="2-build-a-vnfm-using-the-sdk">2. Build a VNFM using the SDK</h3>
-<p>Openbaton provides a Java SDK called vnfm-sdk which helps you to simply create a VNFM for your VNF.
-Regarding the type of the communication between the NFVO and the VNFM (Or-Vnfm), you can use the vnfm-sdk-amqp or vnfm-sdk-rest, depending if you prefer to communicate with AMQP or REST.</p>
-<p>Please refer to the following doc for more details: <a href="../vnfm-how-to-write">Build your own VNFM</a></p>
-<h3 id="3-use-your-own-vnfm">3. Use your own VNFM</h3>
-<p>This approach allows you to integrate your VNFM and VNF within Openbaton. In this case, the Or-Vnfm communication will be via REST interfaces.</p>
-<p>The three pages following describe in details these three different approaches.</p>
-<p>Please refer to the following doc for more details: <a href="../vnfm-vendor-specific">Bring your own VNFM</a></p>
+<p>Once these steps are completed you will be able to orchestrate your Network Service from the <a href="../nfvo-how-to-use-gui">dashboard</a> or via the <a href="http://get.openbaton.org/api/ApiDoc.pdf">REST APIs</a>. </p>
 <!---
 Script for open external links in a new tab
 -->
@@ -592,7 +710,7 @@ Script for open external links in a new tab
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../security/" class="btn btn-neutral float-right" title="First access"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../security/" class="btn btn-neutral float-right" title="Identity management"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../nfvo-configuration/" class="btn btn-neutral" title="Configure it"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -604,6 +722,8 @@ Script for open external links in a new tab
 
   <div role="contentinfo">
     <!-- Copyright etc -->
+    
+      <p>Copyright (c) 2016 Open Baton (http://www.openbaton.org)</p>
     
   </div>
 

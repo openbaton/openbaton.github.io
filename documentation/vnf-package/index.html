@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>OpenBaton Documentation</title>
+  
+
+  <link rel="shortcut icon" href="../favicon.ico">
+  
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,300,600,700" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "VNF Packages";
+    var mkdocs_page_input_path = "vnf-package.md";
+    var mkdocs_page_url = "/vnf-package/";
+     var mkdocs_page_url = "/vnf-package/";
+  </script>
+  
+  <!-- site_name == OpenBaton Documentation -->
+  <!-- page_title == VNF Packages -->
+  <!-- base_url == .. -->
+  <!-- current_page == VNF Packages - /vnf-package/ [*]
+ -->
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-68429895-1', 'openbaton.github.io');
+      ga('send', 'pageview');
+  </script>
+  
+
+<style>
+
+.subnav_drop{
+  cursor: pointer;
+
+
+}
+
+ul.subnav {
+/*display:none ;*/
+cursor: pointer;
+border-bottom: 1px solid #e1e1e5;
+}
+
+.subnav:last-child{
+  border-bottom: none;
+
+}
+
+ul.subnav:active {
+display:block;
+}
+
+.wy-menu-vertical li ul {
+display: block;
+
+  }
+
+</style>
+</head>
+
+<body role="document">
+
+<script type="text/javascript">
+$( document).ready(function(){
+      //console.log("test");
+
+    //$('.subnav').not( ":has('VNF Packages')" ).hide();
+    $('li.subnav_drop').find('ul.subnav').hide();
+    //$('li.subnav_drop').find('ul.subnav').each(function(i,e){console.log(i,e)});
+       $( ".subnav" ).find( "li:contains('VNF Packages')" ).each(function(i,e){
+          var currentElement = $(e);
+          currentElement.parent().css({"display":"block","visibility":"visible"}); //css("background-color","blue");
+          currentElement.css({"display":"block","visibility":"visible"});
+       });//$( ".subnav" ).find( "li:contains('VNF Packages')" ).css("display","block");
+       //$(".current").css({"background-color":"blue","display":"block","visibility":"visible"});
+       //show(1000,function(i,e){console.log(i,e)});
+       //$('li.subnav_drop').find('ul.subnav').css("background-color","blue");
+      //$(this).find('ul.subnav').toggle();
+    $('li.subnav_drop').click(function(i,e) {  
+      $('li.subnav_drop').not(this).find('ul.subnav').hide();
+      $(this).find('ul.subnav').toggle();
+    }); 
+
+});
+   
+$( ".wy-nav-content" ).find( "li:contains('VNF Packages')" ).css('color','red');
+console.log('--------');
+console.log($( ".wy-nav-content" ).find( "div:contains('VNF Packages')" ).css("color","red"));
+console.log('--------');
+console.log($( ".subnav" ).find( "li:contains('VNF Packages')" ));
+console.log('--------');
+  </script>
+
+
+
+<div class="navcontainer" style="margin:0px; background:#000;">
+    <div class="navholder">
+      <nav>
+        <a href="../../index.html" class="logo"></a>
+        <a href="#" id="menu-icon"></a>
+        <ul class="navigation">
+          
+                <li><a href="../../index.html#about">About</a></li>
+                <li><a href="../../cases.html">Use Cases</a></li>
+                <li><a href="../../features.html">Features</a></li>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="../../index.html#contact">Contact</a></li>
+                <li><a href="http://marketplace.openbaton.org"><i class="material-icons">shopping_cart </i>  Marketplace<div class="ripple-container"></div></a></li>
+          </ul>
+      </nav>
+     </div>
+</div>
+<div  class="container">
+  <div class="holder"> 
+        <div class="wy-grid-for-nav">
+
+          
+          <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+            <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+              <ul class="current">
+                
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Get Started</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="..">Get Started</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Installation</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation/">Overview</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-deb/">Install on Linux</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-mac/">Install on MacOS</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-docker/">Install with Docker</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-vagrant/">Install with Vagrant</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-configuration/">Configure it</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>NFV Orchestrator</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../use/">NFVO intro</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../security/">Identity management</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-how-to-use-gui/">Use via the Dashboard</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-how-to-use-cli/">Use via the CLI</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vim-driver/">Install a VIM Driver</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vim-instance/">Register a PoP</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 current">
+        <a class="current" href="./">VNF Packages</a>
+        
+         
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ns-descriptor/">Network Service Descriptor</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>VNF Managers</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-intro/">VNFM intro</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-generic/">Generic VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-juju/">Juju VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-how-to-write/">Develop a VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-vendor-specific/">Integrate your own VNFM</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Monitoring</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../monitoring/">Monitoring overview</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../zabbix-plugin/">Zabbix plugin</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Autoscaling</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../autoscaling/">Autoscaling overview</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Fault Management</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../fault-management/">FM overview</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Network Slicing</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../network-slicing/">NS overview</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Marketplace</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../marketplace/">Marketplace overview</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Tutorials</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorial/">Tutorials overview</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../dummy-NSR/">Dummy NSR</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../iperf-NSR/">Iperf Scenario</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../fms-sipp-tutorial/">Fault Management System</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../integration-test-use/">Integration Tests</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Learn more</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-architecture/">NFVO Architecture</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vim-driver-create/">Create a VIM Driver</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-sdk/">Open Baton SDKs</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../how-to-register-event/">The Event Mechanism tutorial</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>FAQ</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../FAQ/">FAQ</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+              </ul>
+            </div>
+            &nbsp;
+          </nav>
+        </div>
+    <div class="content_container">
+        <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+         
+
+          
+                <div class="wy-nav-content">
+                  <div class="rst-content">
+                   
+                    <div role="main">
+                      <div class="section">
+                        
+                          <h1 id="vnf-package">VNF Package</h1>
+<p>This doc describes essential components of a VNF Package, how to create them and how to use them after onboarding.
+Therefore, you can find a practical tutorial at the end with all the steps starting from the creation over onboarding and finally referencing it by an NSD.</p>
+<p>A VNF Package is a tar-archive that contains all the information required for creating a VNF for the Open Baton's NFVO.
+After onboarding the VNF Package to the NFVO you can use the VNF directly in the NSD by referencing the VNFD by its ID.
+A VNF Package includes the VNFD, the image, scripts and a Metadata file structured as shown in the next part.</p>
+<h1 id="package-structure">Package structure</h1>
+<p>The VNF Package has the following structure:</p>
+<pre><code class="bash">- Metadata.yaml
+- vnfd.json
+- scripts/
+    - 1_script.sh
+    - 2_script.sh
+- image.img (not supported at the moment, use image-link!)
+</code></pre>
+
+<h2 id="metadatayaml">Metadata.yaml</h2>
+<p>The Metadata.yaml defines essential properties for the VNF. This file is based on the YAML syntax where information are stored in simple &lt;key> : &lt;value> associations.</p>
+<p>The example of the Metadata file below shows a basic definition of a VNF Package.</p>
+<pre><code class="yaml">name: VNF Package_name
+scripts-link: scripts_link
+vim_types: list_of_vim_types
+image:
+    upload: option
+    ids: list_of_ids
+    names: list_of_names
+    link: image_link
+image-config:
+    name: image_name
+    diskFormat: disk_format
+    containerFormat: container_format
+    minCPU: min_cpu
+    minDisk: min_disk
+    minRam: min_ram
+    isPublic: is_public
+</code></pre>
+
+<p>In the following each property is explained in more detail. Please consider also the notes since some properties are optional (or even not implemented) and if they are defined, they may have more priority than other and override them therefore.</p>
+<ul>
+<li><strong><em>name</em></strong>: The name defines the name of the VNF Package itself used to store it in the database.</li>
+<li><strong><em>vim_types</em></strong>: The list of the vim types that the VNF Package supports.</li>
+<li><strong><em>scripts-link</em></strong>: This link points to a public git repository where scripts are stored that are needed to be executed for managing the lifecycle of the exposed VNF.<ul>
+<li><strong>Note</strong> Either you can define the scripts-link or put the scripts into the folder scripts/.
+    The scripts-link has a higher priority than the scripts located in the folder scripts/.
+    So if you set the scripts-link, the scripts in folder scripts/ are ignored completely.</li>
+<li><strong>Note</strong> The scripts-link is processed by the Element Management System (EMS) in the meaning of fetching the files from that link.
+    So you need to take care about ensuring that the URL defined is available.</li>
+<li><strong>Note</strong> Scripts are executed during different lifecycle-events.</li>
+</ul>
+</li>
+<li><strong><em>image</em></strong>:<ul>
+<li><strong><em>upload</em></strong>: Here you can choose between different options (true, false, check).<ul>
+<li>true: choosing this option means to upload the defined image on all the VimInstances. It does not matter if an image with the defined name exists or not.</li>
+<li>false: choosing this option means that you assume that the image (defined in the ids or names) is already present.
+If the image does not exist, the VNF Package onboarding will throw an exception.
+In this case the image (if defined) will be ignored.</li>
+<li>check: this option means that the VNF PackageManagement checks first if the image is available (defined in ids or names).
+If the image does not exist, a new one with the image defined in the VNF Package will be created.</li>
+<li><strong>Note</strong> Please use quotation marks for this option since the values are handled as strings internally.
+Otherwise true and false will be handled as a boolean that would lead to a faulty behavior when onboarding a new VNF Package.</li>
+</ul>
+</li>
+<li><strong><em>ids</em></strong>: The list of image IDs is used to fetch the image from the corresponding VimInstance.
+    To do it, the manager iterates over all IDs and checks if an image with that ID exists on the VimInstance.
+    The defined IDs have a higher priority than the list of names.
+    We distinguish between the following cases:<ul>
+<li>If it finds no image with these IDs, it continues with the list of image names.</li>
+<li>If it finds one image with these IDs, this image will be used.</li>
+<li>If it finds multiple images with the same ID (should never happen) or multiple IDs matching to multiple images, an exception will be thrown because it is not clear which image to use.</li>
+</ul>
+</li>
+<li><strong><em>names</em></strong>: The list of image names is used to fetch the image from the corresponding VimInstance.
+    To do it, manager iterates over all names and checks if an image with that name exists on the VimInstance.
+    The list of names have a lower priority than the list of IDs.
+    We distinguish between the following cases:<ul>
+<li>If it finds no image with that name, an exception will be thrown except you defined the upload option check.
+Then it will create a new image defined in the VNF Package.</li>
+<li>If it finds one image, this image will be used.</li>
+<li>If it finds multiple images with the same name or multiple names matching to multiple images, an exception will be thrown because it is not clear which image to use.</li>
+</ul>
+</li>
+<li><strong><em>link</em></strong>: This link points to an image available at this URL used to upload the image to the cloud environment.<ul>
+<li><strong>Note</strong> Either you have to define the image link or put the image directly into the VNF Package if you want to upload a new Image to the VIM by using image upload option <code>true</code> or <code>check</code>.
+    Otherwise a NotFoundException will be thrown and the VNF Package will not be onboarded.
+    The image-link has a higher priority than the image stored in the VNF Package directly.</li>
+<li><strong><em>*Note</em></strong>* At the moment it is only supported to upload an image by using the <code>link</code>. Image uploading from an image inside the package is disabled.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong><em>image-config</em></strong>: All the properties explained below are required to upload the image to the cloud environment properly.
+    In case of creating a new image this configuration will be used and is obviously mandatory.<ul>
+<li><strong><em>name</em></strong>: This defines the name for the image to upload either located directly in the VNF Package or available via the URL defined in image-link.</li>
+<li><strong><em>diskFormat</em></strong>: The diskFormat defines the format in which disk type the image is stored.</li>
+<li><strong><em>containerFormat</em></strong>: The containerFormat defines the format in which container type the image is stored .</li>
+<li><strong><em>minCPU</em></strong>: The minCPU defines the minimum amount of CPU cores for using this image properly.</li>
+<li><strong><em>minDisk</em></strong>: The minDisk defines the minimum amount of disk space for using this image properly.</li>
+<li><strong><em>minRam</em></strong>: The minRam defines the minimum amount of RAM for using this image properly.</li>
+<li><strong><em>isPublic</em></strong>: The isPublic defines whether the image is available public or not.</li>
+</ul>
+</li>
+</ul>
+<h2 id="vnfd62json">&lt;VNFD>.json</h2>
+<p>The &lt;vnfd>.json contains the VirtualNetworkFunctionDescriptor (VNFD) onboarded to the Orchestrator.
+This VNFD can later be referenced in a NSD by its ID to make use of it.
+A more detailed explanation of the VNFD can be found <a href="../vnf-descriptor">here</a>.</p>
+<p><strong>Note</strong> The name of the file is not is up to you but the file extension .json is must be present since the VNFPackageManagement is looking for this kind of file.</p>
+<h2 id="scripts">scripts</h2>
+<p>The scripts folder contains all the scripts required for starting, configuring or whatever you want to do on the running instance during specific lifecycles.
+The execution order is defined by the lifecycle_events inside the VNFD.
+This lifecycle_events are triggered by the NFVO in the meaning of: if the event "INSTANTIATE" contains a script in the lifecycle_events, this script is executed when the NFVO calls the instantiate method for the specific VNFR.</p>
+<p><strong>Note</strong> The scripts in the folder <strong><em>scripts</em></strong> are fetched only if the <strong><em>scripts-link</em></strong> is not defined in the <strong><em>Metadata.yaml</em></strong>.
+    This means that the scripts in that folder have less priority than the scripts located under <strong><em>scripts-link</em></strong>.</p>
+<p><strong>Note</strong> Scripts are executed when a specific Event is fired and this Event references to specific scripts.
+<strong>Note</strong> The <em>scripts</em> folder cannot contain subfolder. All scripts must be under the <em>scripts</em> folder.
+<strong>Note</strong> The scripts inside the <em>scripts</em> folder can be either shell scripts or python scripts. In both cases the parameters are passed as environment variables.</p>
+<h2 id="image62img">&lt;image>.img</h2>
+<p><strong>Note</strong> At the moment it is only supported to upload an image by using the <code>link</code> defined in <strong>Metadata.yaml</strong>. Image uploading from an image inside the package is disabled.</p>
+<p>This image is used for uploading it to all the cloud environments which are addressed inside the VNFD with that image.
+It doesn't matter whether an image already exists on the considered cloud environment or not.</p>
+<p><strong>Note</strong> This image has lower priority than the <strong><em>image-links</em></strong> defined in <strong><em>Metadata.yaml</em></strong>.
+    This means that the image will be ignored if the <strong><em>image-links</em></strong> is defined.</p>
+<p><strong>Note</strong> The name of the image doesn't matter but the suffix .img since the VNFPackageManagement is looking for a file with this suffix.
+    However, the name and all the properties for storing it on the cloud environment are defined in <strong><em>Metadata.yaml</em></strong> under the key <strong><em>image</em></strong>.</p>
+<h1 id="tutorial">Tutorial</h1>
+<p>This section explains how to create, upload and make use of VNF Packages.
+The chosen scenario is a Network Service for testing the network connectivity by using <a href="https://iperf.fr/">iPerf</a>.
+iPerf is a tool for active measurements of the maximum achievable bandwidth on IP networks.
+Therefore, we need a server and a client installing the iPerf server/client and configuring them for communication between.</p>
+<h2 id="creation-of-vnf-packages">Creation of VNF Packages</h2>
+<p>For doing so, we need to create two VNF Packages and reference them in the NSD.
+So we need a VNF Package for the iperf server (called iperf-server) and for the iperf client (called iperf-client).
+First we will start with the creation of the iperf-server VNF Package and then we will create the iperf-client VNF Package.</p>
+<p>First of all we should create a directory for each VNF Package where we put all the files related to the VNF Package because in the end we need to pack them into a tar archive for onboarding it on the NFVO.</p>
+<h3 id="vnf-package-iperf-server">VNF Package [iperf-server]</h3>
+<p>This iperf-server VNF Package has to install the iperf server and needs to provide its ip to the iperf client.</p>
+<h4 id="metadata-iperf-server">Metadata [iperf-server]</h4>
+<p>In the Metadata.yaml we define the name of the VNF Package, the scripts location and also the properties for the image to use or upload.
+Since passing an image is not supported in the current release we will use the image link inside the <code>Metadata.yaml</code>.
+Finally, it looks as shown below.</p>
+<pre><code class="yaml">name: iperf-server
+scripts-link: https://script-link-to-git.git
+image:
+    upload: &quot;check&quot;
+    names:
+        - iperf_server_image
+    link: &quot;http://releases.ubuntu.com/14.04/ubuntu-14.04.3-server-amd64.iso&quot;
+image-config:
+    name: iperf_server_image
+    diskFormat: QCOW2
+    containerFormat: BARE
+    minCPU: 2
+    minDisk: 5
+    minRam: 2048
+    isPublic: false
+</code></pre>
+
+<h4 id="vnfd-iperf-server">VNFD [iperf-server]</h4>
+<p>This is how the <a href="../vnf-descriptor">VNFD</a> looks like for the iperf-server VNF Package.
+Important to notice here is that the vm_image defined in the Metadata.yaml is filled automatically during the onboarding process of the VNF Package.</p>
+<pre><code class="json">{
+  &quot;name&quot;:&quot;iperf-server&quot;,
+  &quot;vendor&quot;:&quot;FOKUS&quot;,
+  &quot;version&quot;:&quot;1.0&quot;,
+  &quot;lifecycle_event&quot;:[
+    {
+      &quot;event&quot;:&quot;INSTANTIATE&quot;,
+      &quot;lifecycle_events&quot;:[
+        &quot;install.sh&quot;,
+        &quot;install-srv.sh&quot;
+      ]
+    }
+  ],
+  &quot;virtual_link&quot;:[
+    {
+      &quot;name&quot;:&quot;private&quot;
+    }
+  ],
+  &quot;vdu&quot;:[
+    {
+      &quot;vm_image&quot;:[
+      ],
+      &quot;scale_in_out&quot;:1,
+      &quot;vnfc&quot;:[
+        {
+          &quot;connection_point&quot;:[
+            {
+              &quot;virtual_link_reference&quot;:&quot;private&quot;
+            }
+          ]
+        }
+      ],
+      &quot;vimInstanceName&quot;:[&quot;vim-instance&quot;]
+    }
+  ],
+  &quot;deployment_flavour&quot;:[
+    {
+      &quot;flavour_key&quot;:&quot;m1.small&quot;
+    }
+  ],
+  &quot;type&quot;:&quot;server&quot;,
+  &quot;endpoint&quot;:&quot;generic&quot;,
+  &quot;vnfPackageLocation&quot;:&quot;https://github.com/openbaton/vnf-scripts.git&quot;
+}
+</code></pre>
+
+<h4 id="image">Image</h4>
+<p>The image we have to choose must be a debian 64bit image (e.g. ubuntu amd64) for satisfying the EMS and scripts which are designed for that kind of image.
+We have chosen this one <a href="http://uec-images.ubuntu.com/releases/14.04/release/ubuntu-14.04-server-cloudimg-amd64-disk1.img">ubuntu-14.04.3-server-amd64.iso</a>.</p>
+<h3 id="vnf-package-iperf-client">VNF Package [iperf-client]</h3>
+<p>This iperf-client VNF Package has to install the iPerf client and needs to be configured in order to know the iPerf servers' IP.</p>
+<h4 id="metadata-iperf-client">Metadata [iperf-client]</h4>
+<p>In the Metadata.yaml we define the name of the VNF Package, the scripts location and also the properties for the image to upload.
+Since passing an image is not supported in the current release we will use the image link inside the <code>Metadata.yaml</code>.
+Finally, it looks as shown below.</p>
+<pre><code class="yaml">name: iperf-client
+scripts-link: https://gitlab.fokus.fraunhofer.de/openbaton/scripts-test-public.git
+image:
+    upload: &quot;check&quot;
+    names:
+        - iperf_client_image
+    link: &quot;http://releases.ubuntu.com/14.04/ubuntu-14.04.3-server-amd64.iso&quot;
+image-config:
+    name: iperf_client_image
+    diskFormat: QCOW2
+    containerFormat: BARE
+    minCPU: 2
+    minDisk: 5
+    minRam: 2048
+    isPublic: false
+</code></pre>
+
+<h4 id="vnfd-iperf-client">VNFD [iperf-client]</h4>
+<p>This is how the <a href="../vnf-descriptor">VNFD</a> looks like for the iperf-client VNF Package.
+Important to notice here is that the vm_image defined in the Metadata.yaml is filled automatically during the onboarding process of the VNF Package.</p>
+<pre><code class="json">{
+  &quot;name&quot;:&quot;iperf-client&quot;,
+  &quot;vendor&quot;:&quot;FOKUS&quot;,
+  &quot;version&quot;:&quot;1.0&quot;,
+  &quot;lifecycle_event&quot;:[
+    {
+      &quot;event&quot;:&quot;CONFIGURE&quot;,
+      &quot;lifecycle_events&quot;:[
+        &quot;server_configure.sh&quot;
+      ]
+    },
+    {
+      &quot;event&quot;:&quot;INSTANTIATE&quot;,
+      &quot;lifecycle_events&quot;:[
+        &quot;install.sh&quot;
+      ]
+    }
+  ],
+  &quot;vdu&quot;:[
+    {
+      &quot;vm_image&quot;:[
+        &quot;&quot;
+      ],
+      &quot;scale_in_out&quot;:1,
+      &quot;vnfc&quot;:[
+        {
+          &quot;connection_point&quot;:[
+            {
+              &quot;virtual_link_reference&quot;:&quot;private&quot;
+            }
+          ]
+        }
+      ],
+      &quot;vimInstanceName&quot;:[&quot;vim-instance&quot;]
+    }
+  ],
+  &quot;virtual_link&quot;:[
+    {
+      &quot;name&quot;:&quot;private&quot;
+    }
+  ],
+  &quot;deployment_flavour&quot;:[
+    {
+      &quot;flavour_key&quot;:&quot;m1.small&quot;
+    }
+  ],
+  &quot;type&quot;:&quot;client&quot;,
+  &quot;endpoint&quot;:&quot;generic&quot;,
+  &quot;vnfPackageLocation&quot;:&quot;https://github.com/openbaton/vnf-scripts.git&quot;
+}
+</code></pre>
+
+<h4 id="image_1">Image</h4>
+<p>The image we have to choose must be a debian 64bit image (e.g. ubuntu amd64) for satisfying the EMS and scripts which are designed for that kind of architecture.
+We have chosen this one <a href="http://uec-images.ubuntu.com/releases/14.04/release/ubuntu-14.04-server-cloudimg-amd64-disk1.img">ubuntu-14.04.3-server-amd64.iso</a>.</p>
+<h2 id="onboarding-vnf-packages">Onboarding VNF Packages</h2>
+<p>Once we have finalized the creation of VNF Packages and packed them into a tar we can onboard them to the NFVO. Make sure that you also uploaded a VimInstance before onboarding the package. Onboarding can be done as shown in the following:</p>
+<pre><code class="bash">$ curl -X POST -v -F file=@vnf-package.tar &quot;http://localhost:8080/api/v1/vnf-packages&quot;
+</code></pre>
+
+<p>This must be done for both VNF Packages expecting that the NFVO is running locally and the tar archive is called vnf-package.tar.
+Otherwise you need to adapt the path to the package and also the URL where the NFVO is located.
+Now where we onboarded the VNF Packages they are available on the NFVO and we can make use of it by referencing them in the NSD by their IDs'.</p>
+<p><strong>Note</strong> You could use the <a href="../nfvo-how-to-use-gui">Dashboard</a> as well for onboarding the VNF Packages.</p>
+<p>To get the IDs of the newly created VNFDs you need to fetch the VNFDs by invoking the following command:</p>
+<pre><code class="bash">$ curl -X GET &quot;http://localhost:8080/api/v1/vnf-descriptors&quot;
+</code></pre>
+
+<p>This request will return a list of already existing VNFDs.
+Just looking for the VNFDs we created before and use their IDs to reference them in the NSD.
+The following list of VNFDs is an output example of this request.
+To make it more readable only the interesting parts are shown.</p>
+<pre><code class="json">[
+  [...]
+  {
+    [...]
+    &quot;id&quot;: &quot;29d918b9-6245-4dc4-abc6-b7dd6e84f2c1&quot;,
+    &quot;name&quot;: &quot;iperf-server&quot;,
+    [...]
+  },
+  {
+    [...]
+    &quot;id&quot;: &quot;87820607-4048-4fad-b02b-dbcab8bb5c1c&quot;,
+    &quot;name&quot;: &quot;iperf-client&quot;,
+    [...]
+  }
+  [...]
+]
+</code></pre>
+
+<h2 id="nsd-iperf">NSD [iperf]</h2>
+<p>In this section we will create a <a href="../ns-descriptor">NSD</a> and reference the previously created VNF Packages by their IDs.
+For doing that we just need to define the <strong>id</strong> for each VNFPackges' VNFD in the list of VNFDs.
+To provide also the iperf-servers' IP to the iperf-client we need to define dependencies you can find under the key <strong>vnf_dependency</strong> setting the source to <strong>iperf-server</strong> and the target to <strong>iperf-client</strong> by providing the parameter <strong>private</strong> that indicates the private IP address of the iPerf server in the network "private".</p>
+<p><strong>Note</strong> When creating the NSD the VNFD is fetched by the ID defined. Other properties we would set in the VNFD in this NSD will be ignored.</p>
+<pre><code class="json">{
+    &quot;name&quot;:&quot;iperf&quot;,
+    &quot;vendor&quot;:&quot;fokus&quot;,
+    &quot;version&quot;:&quot;0.1-ALPHA&quot;,
+    &quot;vnfd&quot;:[
+        {
+            &quot;id&quot;:&quot;29d918b9-6245-4dc4-abc6-b7dd6e84f2c1&quot;
+        },
+        {
+            &quot;id&quot;:&quot;87820607-4048-4fad-b02b-dbcab8bb5c1c&quot;
+        }
+    ],
+    &quot;vld&quot;:[
+        {
+            &quot;name&quot;:&quot;private&quot;
+        }
+    ],
+    &quot;vnf_dependency&quot;:[
+        {
+            &quot;source&quot; : {
+                &quot;name&quot;: &quot;iperf-server&quot;
+            },
+            &quot;target&quot;:{
+                &quot;name&quot;: &quot;iperf-client&quot;
+            },
+            &quot;parameters&quot;:[
+                &quot;private&quot;
+            ]
+        }
+    ]
+}
+</code></pre>
+
+<p>Finally you can onboard this NSD and deploy an NSR that bases on both VNF Packages created before.</p>
+<h3 id="onboard-nsd">Onboard NSD</h3>
+<p>The following command will onboard the NSD on the NFVO:</p>
+<pre><code class="bash">$ curl -X POST -v -F file=@nsd.json &quot;http://localhost:8080/api/v1/ns-descriptors&quot;
+</code></pre>
+
+<p>This will return the NSD with the ID we need to create the NSR.
+Afterwards, we can deploy the NSD.</p>
+<p><strong>Note</strong> You could use the <a href="../nfvo-how-to-use-gui">Dashboard</a> as well for onboarding the NSD.</p>
+<h3 id="create-nsr-deployment">Create NSR (Deployment)</h3>
+<p>To deploy the NSD we create a NSR with the following command:</p>
+<pre><code class="bash">$ curl -X POST -v -F file=@vnf-package.tar &quot;http://localhost:8080/api/v1/ns-records/&lt;NSD_ID&gt;&quot;
+</code></pre>
+
+<p>Installation and configuration is done automatically and provides you with a configured iperf server/client service.</p>
+<p><strong>Note</strong> You could use the <a href="../nfvo-how-to-use-gui">Dashboard</a> as well for creating the NSR of this NSD.</p>
+<!---
+Script for open external links in a new tab
+-->
+
+<script type="text/javascript" charset="utf-8">
+      // Creating custom :external selector
+      $.expr[':'].external = function(obj){
+          return !obj.href.match(/^mailto\:/)
+                  && (obj.hostname != location.hostname);
+      };
+      $(function(){
+        $('a:external').addClass('external');
+        $(".external").attr('target','_blank');
+      })
+</script>
+                        
+                      </div>
+                    </div>
+                    <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../ns-descriptor/" class="btn btn-neutral float-right" title="Network Service Descriptor"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../vim-instance/" class="btn btn-neutral" title="Register a PoP"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright (c) 2016 Open Baton (http://www.openbaton.org)</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          	  
+                  </div>
+                </div>
+
+        </section>
+    </div>
+  </div>
+</div>
+
+
+
+</body>
+</html>
+

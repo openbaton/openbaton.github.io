@@ -10,7 +10,8 @@
   <title>OpenBaton Documentation</title>
   
 
-  <link rel="shortcut icon" href="../img/favicon.ico">
+  <link rel="shortcut icon" href="../favicon.ico">
+  
 
   
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,300,600,700" rel="stylesheet" type="text/css">
@@ -22,16 +23,16 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Use via the SDK";
+    var mkdocs_page_name = "Open Baton SDKs";
     var mkdocs_page_input_path = "nfvo-sdk.md";
     var mkdocs_page_url = "/nfvo-sdk/";
      var mkdocs_page_url = "/nfvo-sdk/";
   </script>
   
   <!-- site_name == OpenBaton Documentation -->
-  <!-- page_title == Use via the SDK -->
+  <!-- page_title == Open Baton SDKs -->
   <!-- base_url == .. -->
-  <!-- current_page == Use via the SDK - /nfvo-sdk/ [*]
+  <!-- current_page == Open Baton SDKs - /nfvo-sdk/ [*]
  -->
   <script src="../js/jquery-2.1.1.min.js"></script>
   <script src="../js/modernizr-2.8.3.min.js"></script>
@@ -86,14 +87,14 @@ display: block;
 $( document).ready(function(){
       //console.log("test");
 
-    //$('.subnav').not( ":has('Use via the SDK')" ).hide();
+    //$('.subnav').not( ":has('Open Baton SDKs')" ).hide();
     $('li.subnav_drop').find('ul.subnav').hide();
     //$('li.subnav_drop').find('ul.subnav').each(function(i,e){console.log(i,e)});
-       $( ".subnav" ).find( "li:contains('Use via the SDK')" ).each(function(i,e){
+       $( ".subnav" ).find( "li:contains('Open Baton SDKs')" ).each(function(i,e){
           var currentElement = $(e);
           currentElement.parent().css({"display":"block","visibility":"visible"}); //css("background-color","blue");
           currentElement.css({"display":"block","visibility":"visible"});
-       });//$( ".subnav" ).find( "li:contains('Use via the SDK')" ).css("display","block");
+       });//$( ".subnav" ).find( "li:contains('Open Baton SDKs')" ).css("display","block");
        //$(".current").css({"background-color":"blue","display":"block","visibility":"visible"});
        //show(1000,function(i,e){console.log(i,e)});
        //$('li.subnav_drop').find('ul.subnav').css("background-color","blue");
@@ -105,11 +106,11 @@ $( document).ready(function(){
 
 });
    
-$( ".wy-nav-content" ).find( "li:contains('Use via the SDK')" ).css('color','red');
+$( ".wy-nav-content" ).find( "li:contains('Open Baton SDKs')" ).css('color','red');
 console.log('--------');
-console.log($( ".wy-nav-content" ).find( "div:contains('Use via the SDK')" ).css("color","red"));
+console.log($( ".wy-nav-content" ).find( "div:contains('Open Baton SDKs')" ).css("color","red"));
 console.log('--------');
-console.log($( ".subnav" ).find( "li:contains('Use via the SDK')" ));
+console.log($( ".subnav" ).find( "li:contains('Open Baton SDKs')" ));
 console.log('--------');
   </script>
 
@@ -127,7 +128,7 @@ console.log('--------');
                 <li><a href="../../features.html">Features</a></li>
                 <li><a href="#">Documentation</a></li>
                 <li><a href="../../index.html#contact">Contact</a></li>
-                <li><a href="https://github.com/openbaton">GitHub</a></li>
+                <li><a href="http://marketplace.openbaton.org"><i class="material-icons">shopping_cart </i>  Marketplace<div class="ripple-container"></div></a></li>
           </ul>
       </nav>
      </div>
@@ -234,13 +235,13 @@ console.log('--------');
                   <li><ul> 
     
    
-    <li class="subnav_drop"><span>Use it</span>
+    <li class="subnav_drop"><span>NFV Orchestrator</span>
 <ul class="subnav">
         
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../use/">Introduction</a>
+        <a class="" href="../use/">NFVO intro</a>
         
     </li>
 
@@ -249,43 +250,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../security/">First access</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vim-instance/">Register a PoP</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vnfpackage/">Create your own VNF Package</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vnfm-generic/">Generic VNFM</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../ns-descriptor/">Create the NSD</a>
+        <a class="" href="../security/">Identity management</a>
         
     </li>
 
@@ -311,10 +276,8 @@ console.log('--------');
         
              
 
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Use via the SDK</a>
-        
-         
+    <li class="toctree-l1 ">
+        <a class="" href="../vim-driver/">Install a VIM Driver</a>
         
     </li>
 
@@ -323,7 +286,25 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../zabbix-plugin/">Use Zabbix plugin</a>
+        <a class="" href="../vim-instance/">Register a PoP</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnf-package/">VNF Packages</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ns-descriptor/">Network Service Descriptor</a>
         
     </li>
 
@@ -339,13 +320,13 @@ console.log('--------');
                   <li><ul> 
     
    
-    <li class="subnav_drop"><span>TOSCA</span>
+    <li class="subnav_drop"><span>VNF Managers</span>
 <ul class="subnav">
         
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tosca-vnfd/">Introduction</a>
+        <a class="" href="../vnfm-intro/">VNFM intro</a>
         
     </li>
 
@@ -354,7 +335,153 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tosca-CSAR-onboarding/">CSAR on boarding</a>
+        <a class="" href="../vnfm-generic/">Generic VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-juju/">Juju VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-how-to-write/">Develop a VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-vendor-specific/">Integrate your own VNFM</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Monitoring</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../monitoring/">Monitoring overview</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../zabbix-plugin/">Zabbix plugin</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Autoscaling</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../autoscaling/">Autoscaling overview</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Fault Management</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../fault-management/">FM overview</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Network Slicing</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../network-slicing/">NS overview</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Marketplace</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../marketplace/">Marketplace overview</a>
         
     </li>
 
@@ -372,6 +499,15 @@ console.log('--------');
    
     <li class="subnav_drop"><span>Tutorials</span>
 <ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorial/">Tutorials overview</a>
+        
+    </li>
+
+
         
              
 
@@ -403,6 +539,15 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../fms-sipp-tutorial/">Fault Management System</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../integration-test-use/">Integration Tests</a>
         
     </li>
@@ -419,17 +564,8 @@ console.log('--------');
                   <li><ul> 
     
    
-    <li class="subnav_drop"><span>Extend it</span>
+    <li class="subnav_drop"><span>Learn more</span>
 <ul class="subnav">
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../extend/">Extend it</a>
-        
-    </li>
-
-
         
              
 
@@ -443,7 +579,18 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vim-plugin/">Write your own Plugin</a>
+        <a class="" href="../vim-driver-create/">Create a VIM Driver</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Open Baton SDKs</a>
+        
+         
         
     </li>
 
@@ -452,16 +599,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vnfm-how-to-write/">Write your own VNFM</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../vnfm-vendor-specific/">Integrate your own VNFM</a>
+        <a class="" href="../how-to-register-event/">The Event Mechanism tutorial</a>
         
     </li>
 
@@ -536,19 +674,22 @@ console.log('--------');
                     <div role="main">
                       <div class="section">
                         
-                          <h1 id="nfvo-sdk">NFVO SDK</h1>
+                          <h1 id="nfvo-northbound-sdk">NFVO Northbound SDK</h1>
 <p>A SDK is available if you want to use the NFVO from a java application.</p>
-<h3 id="import-it">Import it</h3>
+<h2 id="import-it">Import it</h2>
 <p>The build.gradle file must contain:</p>
 <pre><code class="gradle">repositories {
     mavenCentral()
+    /**
+     * Only needed for openbaton snapshots dependencies
+     */
     maven {
-        url &quot;http://get.openbaton.org:8081/nexus/content/groups/public&quot;
+        url 'https://oss.sonatype.org/content/repositories/snapshots/'
     }
 }
 
 dependencies {
-    compile 'org.openbaton:sdk:2.1.2'
+    compile 'org.openbaton:sdk:3.0.0'
 }
 </code></pre>
 
@@ -595,6 +736,7 @@ dependencies {
 </tr>
 </tbody>
 </table>
+<p><strong>Important NOTE</strong>: Please pay attention that the NFVORequestor <em>is not</em> thread safe! To make it so is up to the developer. </p>
 <p>Once you have the NFVORequestor object, you can get the Agents. Available agents are:</p>
 <ul>
 <li>ConfigurationRestRequest</li>
@@ -676,10 +818,10 @@ References
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../zabbix-plugin/" class="btn btn-neutral float-right" title="Use Zabbix plugin"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../how-to-register-event/" class="btn btn-neutral float-right" title="The Event Mechanism tutorial"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../nfvo-how-to-use-cli/" class="btn btn-neutral" title="Use via the CLI"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../vim-driver-create/" class="btn btn-neutral" title="Create a VIM Driver"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -688,6 +830,8 @@ References
 
   <div role="contentinfo">
     <!-- Copyright etc -->
+    
+      <p>Copyright (c) 2016 Open Baton (http://www.openbaton.org)</p>
     
   </div>
 

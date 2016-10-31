@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>OpenBaton Documentation</title>
+  
+
+  <link rel="shortcut icon" href="../favicon.ico">
+  
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,300,600,700" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Juju VNFM";
+    var mkdocs_page_input_path = "vnfm-juju.md";
+    var mkdocs_page_url = "/vnfm-juju/";
+     var mkdocs_page_url = "/vnfm-juju/";
+  </script>
+  
+  <!-- site_name == OpenBaton Documentation -->
+  <!-- page_title == Juju VNFM -->
+  <!-- base_url == .. -->
+  <!-- current_page == Juju VNFM - /vnfm-juju/ [*]
+ -->
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-68429895-1', 'openbaton.github.io');
+      ga('send', 'pageview');
+  </script>
+  
+
+<style>
+
+.subnav_drop{
+  cursor: pointer;
+
+
+}
+
+ul.subnav {
+/*display:none ;*/
+cursor: pointer;
+border-bottom: 1px solid #e1e1e5;
+}
+
+.subnav:last-child{
+  border-bottom: none;
+
+}
+
+ul.subnav:active {
+display:block;
+}
+
+.wy-menu-vertical li ul {
+display: block;
+
+  }
+
+</style>
+</head>
+
+<body role="document">
+
+<script type="text/javascript">
+$( document).ready(function(){
+      //console.log("test");
+
+    //$('.subnav').not( ":has('Juju VNFM')" ).hide();
+    $('li.subnav_drop').find('ul.subnav').hide();
+    //$('li.subnav_drop').find('ul.subnav').each(function(i,e){console.log(i,e)});
+       $( ".subnav" ).find( "li:contains('Juju VNFM')" ).each(function(i,e){
+          var currentElement = $(e);
+          currentElement.parent().css({"display":"block","visibility":"visible"}); //css("background-color","blue");
+          currentElement.css({"display":"block","visibility":"visible"});
+       });//$( ".subnav" ).find( "li:contains('Juju VNFM')" ).css("display","block");
+       //$(".current").css({"background-color":"blue","display":"block","visibility":"visible"});
+       //show(1000,function(i,e){console.log(i,e)});
+       //$('li.subnav_drop').find('ul.subnav').css("background-color","blue");
+      //$(this).find('ul.subnav').toggle();
+    $('li.subnav_drop').click(function(i,e) {  
+      $('li.subnav_drop').not(this).find('ul.subnav').hide();
+      $(this).find('ul.subnav').toggle();
+    }); 
+
+});
+   
+$( ".wy-nav-content" ).find( "li:contains('Juju VNFM')" ).css('color','red');
+console.log('--------');
+console.log($( ".wy-nav-content" ).find( "div:contains('Juju VNFM')" ).css("color","red"));
+console.log('--------');
+console.log($( ".subnav" ).find( "li:contains('Juju VNFM')" ));
+console.log('--------');
+  </script>
+
+
+
+<div class="navcontainer" style="margin:0px; background:#000;">
+    <div class="navholder">
+      <nav>
+        <a href="../../index.html" class="logo"></a>
+        <a href="#" id="menu-icon"></a>
+        <ul class="navigation">
+          
+                <li><a href="../../index.html#about">About</a></li>
+                <li><a href="../../cases.html">Use Cases</a></li>
+                <li><a href="../../features.html">Features</a></li>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="../../index.html#contact">Contact</a></li>
+                <li><a href="http://marketplace.openbaton.org"><i class="material-icons">shopping_cart </i>  Marketplace<div class="ripple-container"></div></a></li>
+          </ul>
+      </nav>
+     </div>
+</div>
+<div  class="container">
+  <div class="holder"> 
+        <div class="wy-grid-for-nav">
+
+          
+          <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+            <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+              <ul class="current">
+                
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Get Started</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="..">Get Started</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Installation</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation/">Overview</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-deb/">Install on Linux</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-mac/">Install on MacOS</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-docker/">Install with Docker</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-installation-vagrant/">Install with Vagrant</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-configuration/">Configure it</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>NFV Orchestrator</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../use/">NFVO intro</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../security/">Identity management</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-how-to-use-gui/">Use via the Dashboard</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-how-to-use-cli/">Use via the CLI</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vim-driver/">Install a VIM Driver</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vim-instance/">Register a PoP</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnf-package/">VNF Packages</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ns-descriptor/">Network Service Descriptor</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>VNF Managers</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-intro/">VNFM intro</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-generic/">Generic VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Juju VNFM</a>
+        
+         
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-how-to-write/">Develop a VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-vendor-specific/">Integrate your own VNFM</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Monitoring</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../monitoring/">Monitoring overview</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../zabbix-plugin/">Zabbix plugin</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Autoscaling</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../autoscaling/">Autoscaling overview</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Fault Management</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../fault-management/">FM overview</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Network Slicing</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../network-slicing/">NS overview</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Marketplace</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../marketplace/">Marketplace overview</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Tutorials</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorial/">Tutorials overview</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../dummy-NSR/">Dummy NSR</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../iperf-NSR/">Iperf Scenario</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../fms-sipp-tutorial/">Fault Management System</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../integration-test-use/">Integration Tests</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>Learn more</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-architecture/">NFVO Architecture</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vim-driver-create/">Create a VIM Driver</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../nfvo-sdk/">Open Baton SDKs</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../how-to-register-event/">The Event Mechanism tutorial</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+                  <li><ul> 
+    
+   
+    <li class="subnav_drop"><span>FAQ</span>
+<ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../FAQ/">FAQ</a>
+        
+    </li>
+
+
+        
+</li>
+</ul>
+    
+</ul></li>
+                 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+              </ul>
+            </div>
+            &nbsp;
+          </nav>
+        </div>
+    <div class="content_container">
+        <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+         
+
+          
+                <div class="wy-nav-content">
+                  <div class="rst-content">
+                   
+                    <div role="main">
+                      <div class="section">
+                        
+                          <h1 id="juju-vnf-manager-beta-version">Juju VNF Manager (Beta version)</h1>
+<p>The Juju VNF Manager enables the Open Baton NFVO to interoperate with Juju as a generic VNFM. This initial version does not provide full interoperability between this VNFM and the Generic one provided by Open Baton. However, with this VNFM you can execute the following: </p>
+<ul>
+<li>deploy Open Baton VNF Packages </li>
+<li>deploy Juju charms which are available on the <a href="https://jujucharms.com/store">Juju Charm Store</a></li>
+</ul>
+<p>Please be careful in reading the list of unsupported functionalities in the next section. Those functionalities are part of the roadmap of this component and will be available in the next releases.  </p>
+<h1 id="constraints-and-future-work">Constraints and future work</h1>
+<p>Here is a list of known constraints and features that do not work at the moment. </p>
+<p>In case you are planning to use the Juju VNFM to deploy Open Baton VNF Packages keep in mind that: </p>
+<ul>
+<li>Lifecycle scripts have to be bash scripts</li>
+<li>Execution order of CONFIGURE lifecycle scripts cannot be ensured</li>
+<li>No actual creation of networks (virtual links)</li>
+<li>VNFDs with the same name in different NSDs cause problems</li>
+</ul>
+<p>In case you are planning to use the Juju VNFM to deploy Juju charms then keep in mind that: </p>
+<ul>
+<li>Dependencies between charms from the Juju Charm Store cannot be resolved yet</li>
+</ul>
+<p>In general, keep in mind that: </p>
+<ul>
+<li>No accurate NSR/VNFR status feedback</li>
+<li>Scaling is not supported</li>
+<li>Dependencies between VNFs are only working when using the same VNFM</li>
+</ul>
+<p>These list of issues is something we are working on for the future release.</p>
+<h1 id="requirements">Requirements</h1>
+<ul>
+<li>A running <a href="https://github.com/openbaton/NFVO">NFVO</a></li>
+<li>The <a href="https://github.com/openbaton/test-plugin">Test vim driver</a></li>
+<li>A running Juju 2.0 instance with a controller named <em>obcontroller</em>. Please refer to the juju <a href="https://jujucharms.com/docs/stable/getting-started">installation guide</a></li>
+<li>The <a href="https://github.com/openbaton/juju-vnfm">Juju-VNFM</a> needs to run on the same machine where Juju is installed</li>
+</ul>
+<h1 id="how-to-install-the-juju-vnf-manager-from-source-code">How to install the Juju VNF Manager from source code</h1>
+<p>Git clone the <a href="https://github.com/openbaton/juju-vnfm">project</a> into the /opt/openbaton directory (you may need to be logged in as root user, unless you change the permissions on the /opt/openbaton folder): </p>
+<pre><code class="bash">mkdir -p /opt/openbaton
+cd /opt/openbaton
+git clone https://github.com/openbaton/juju-vnfm.git
+</code></pre>
+
+<p>And Execute </p>
+<pre><code class="bash">cd /opt/openbaton/juju-vnfm; ./juju-vnfm.sh compile
+</code></pre>
+
+<p>to compile it. </p>
+<h1 id="configure-the-juju-vnf-manager">Configure the Juju VNF Manager</h1>
+<p>The Juju VNF Manager uses rabbitmq to communicate with the NFVO. 
+If you want to run the Juju VNF Manager on another machine than on which rabbitmq is running you first have to configure it.<br />
+Either you use the <em>application.properties</em> file in the project's resources folder to configure it or you create the file 
+<em>/etc/openbaton/juju-vnfm.properties</em>, copy the previously mentioned <em>application.properties</em> file's content into it 
+and configure it there.<br />
+Then change the properties <em>spring.rabbitmq.host</em> and <em>spring.rabbitmq.port</em> to the ip address and host on which rabbitmq are running and compile again.<br />
+If you decided to create the file <em>/etc/openbaton/juju-vnfm.properties</em> the Juju VNF Manager will only use this one so make sure 
+that all the properties from the file <em>application.properties</em> are present.  </p>
+<h1 id="how-to-control-the-juju-vnf-manager">How to control the Juju VNF Manager</h1>
+<p>To start the Juju VNF Manager execute</p>
+<pre><code class="bash">cd /opt/openbaton/juju-vnfm
+./juju-vnfm.sh start
+</code></pre>
+
+<p>This will create a new screen window which you can access using <em>screen -x openbaton</em>.<br />
+You have to run the Juju VNFM on the same machine on which Juju runs. 
+Furthermore Juju has to contain a controller named <em>obcontroller</em>. 
+You can bootsrap a controller by executing (you can see more details on the juju <a href="https://jujucharms.com/docs/stable/getting-started#create-a-controller">installation guide</a>)</p>
+<pre><code class="bash">juju bootstrap obcontroller {cloudname}
+</code></pre>
+
+<p>The cloudname specifies where the controller will run and instantiate the model (e.g. lxd, openstack). 
+This step is fairly important and may differ depending on which cloud you want to use. 
+Take a look at the tutorial sections down below to see an example for Openstack. </p>
+<h1 id="how-to-use-the-juju-vnf-manager">How to use the Juju VNF Manager</h1>
+<p>To use the Juju VNF Manager for deploying a network service you have to store a VimInstance with type <em>test</em> in the NFVO 
+and the Virtual Network Function Descriptors used to describe the network service have to define their <em>endpoint</em> as <em>juju</em>. 
+Now you can launch the NSD as usual. Juju uses Ubuntu series names to specify which image to use while deploying a charm.
+You can specify this series in the application.properties, the default is trusty. </p>
+<p>If you want to deploy a charm from the Juju Charm Store you have to set the VNFD's <em>vnfPackageLocation</em> to <em>juju charm store</em> 
+and name the VNFD after the charm name. 
+This will cause the Juju VNFM to deploy the specified charm from the Juju Charm Store. 
+This is currently a fairly simple mechanism and does not provide further integration into the Open Baton Network Service deployment. 
+So it is not possible to include a VNFD that specifies a Juju Charm that has dependencies to other VNFDs or to pass configurations while deploying the Charm. </p>
+<h1 id="how-it-works">How it works</h1>
+<p><img alt="Architecture" src="../images/juju-vnfm-architecture.png" /></p>
+<p>The Juju VNFM translates Open Baton NSD's into Juju Charms, stores them in directories in <em>/tmp/openbaton/juju</em> and deploys them 
+using an already running Juju controller.<br />
+After the NFVO transmitted the last START event of a Network Service to the Juju VNFM, the charm is 
+created and the juju deploy command called. If dependencies exist, the Juju VNFM will also add relations between the charms. 
+The charm directory will be removed afterwards. 
+In the following diagram you can see the work flow. </p>
+<p><img alt="Juju flow" src="../images/juju-flow.png" /></p>
+<p>The basic lifecycle mapping between the Open Baton and the Juju model maps Open Baton's INSTANTIATE lifecycle to Juju's install hook, the START lifecycle 
+to the start hook and the TERMINATE lifecycle to the stop hook. 
+But since Open Baton and Juju handle dependencies differently you cannot simply map Open Baton's CONFIGURE lifecycle to an existing Juju hook. 
+The following table shows in which VNFD dependency cases which Open Baton lifecycle is mapped to which Juju hook. 
+That means the scripts used by this lifecycle event will be executed by the corresponding Juju hook. </p>
+<p><img alt="Mapping table" src="../images/mapping-table.png" /></p>
+<p>If the VNFD is a target of a dependency the START lifecycle will not be mapped to the start hook because the lifecycle's scripts 
+should be executed after the relation-changed hook which runs the CONFIGURE scripts. 
+In these cases a <em>startAfterDependency</em> script will be created and the relation-changed hook will trigger its execution after it has finished. </p>
+<h1 id="openims-tutorial-with-juju-vnfm-and-openstack">OpenIMS Tutorial with Juju-VNFM and Openstack</h1>
+<p>This Tutorial will demonstrate how to deploy the OpenIMSCore implementation on Openstack using Open Baton and the Juju-VNFM. </p>
+<h2 id="requirements_1">Requirements</h2>
+<ul>
+<li>NFVO</li>
+<li>Juju</li>
+<li>Juju-VNFM</li>
+<li>Openstack</li>
+<li><a href="https://github.com/openbaton/openimscore-packages/tree/master">OpenIMSCore packages</a></li>
+</ul>
+<h2 id="configure-juju-to-work-with-openstack">Configure Juju to work with Openstack</h2>
+<p>Create a document called <em>mystack.yaml</em>. 
+Here you will provide the necessary information for Juju to connect to Openstack. 
+The content of the file could look something like this:</p>
+<pre><code class="yaml">  clouds:
+    mystack:
+      type: openstack
+      auth-types: [userpass]
+      use-floating-ip: true
+      use-default-secgroup: true
+      regions:
+        RegionOne:
+          endpoint: http://auth-url:5000/v2.0
+</code></pre>
+
+<p>Values for <em>auth-type</em>, <em>region</em> or <em>endpoint</em> may vary according to your Openstack setup, but <em>use-floating-ip</em> and <em>use-default-secgroup</em> 
+have to be set to true. </p>
+<p>Now we will add the cloud to Juju with the following command: </p>
+<pre><code class="bash">juju add-cloud mystack {pathToMystackFile}/mystack.yaml
+</code></pre>
+
+<p>The next step is to set credentials for the mystack cloud configuration. Execute the following command and enter the required values. </p>
+<pre><code class="yaml">juju add-credential mystack
+</code></pre>
+
+<h2 id="configure-openstack-to-work-with-juju">Configure Openstack to work with Juju</h2>
+<p>Then we also have to configure Openstack to provide an image usable by Juju. 
+For this please refer to <a href="https://jujucharms.com/docs/devel/howto-privatecloud">this</a> guide. </p>
+<h2 id="bootstrap-the-environment">Bootstrap the environment</h2>
+<p>Finally we can bootstrap the openstack environment using this command:</p>
+<pre><code class="bash">juju bootstrap obcontroller mystack --config image-metadata-url=$METADATA_URL --config network=$NETWORK_ID --config use-floating-ip=true --config use-default-secgroup=true --bootstrap-series=$SERIES
+</code></pre>
+
+<p>where the $METADATA_URL has to be replaced by the endpoint you created in the previously mentioned guide to configure Openstack. 
+If you followed it you should be able to obtain the url by executing </p>
+<pre><code class="bash">openstack endpoint show product-streams
+</code></pre>
+
+<p>and copying the printed public url. 
+It will look something like this: 
+http:/\/openstack-url:8080/v1/AUTH_e4f353a5d2184b1fa3f359aaf02abbee/simplestreams/images</p>
+<p>The $NETWORK_ID has to be the network's id from Openstack that shall be used. </p>
+<p>And the $SERIES should be set to an Ubuntu series according to the image you want to use. 
+By default the Juju-VNFM uses trusty while deploying. </p>
+<h2 id="deploy-the-openimscore">Deploy the OpenIMSCore</h2>
+<p>Now that the setup is ready we can start looking at the actual deployment of the OpenIMSCore. </p>
+<p>Clone the git repository containing the packages from <a href="https://github.com/openbaton/openimscore-packages/tree/master">here</a>. 
+But before we create tar archives for uploading to the NFVO we have to configure them to work with the Juju-VNFM. 
+In every component's directory (bind9, fhoss, scscf, pcscf, icscf) you will find a file containing the VNFD. 
+In these VNFDs you have to change the <em>endpoint</em> value from generic to juju. 
+Furthermore you (currently) have to edit a file in the script folders of icscf, pccs and scscf. 
+That are the files <em>icscf.conf</em>, <em>scscf.conf</em> and <em>pcscf.conf</em>. 
+In those scripts please comment the lines starting from <strong>pre-start script</strong> until the next <strong>end script</strong>. </p>
+<p>Like this for example: </p>
+<pre><code class="bash"># pre-start script
+#   exec /opt/OpenIMSCore/bin/icscf.kill.sh
+#   exit 0
+# end script
+</code></pre>
+
+<p>Afterwards you can create the packages for each IMS component. 
+For icscf for example change into the icscf directory and execute </p>
+<pre><code class="bash">tar -cf icscf.tar *
+</code></pre>
+
+<p>Start the NFVO and the Juju-VNFM and upload a VimInstance named <em>vim-instance</em> with type <em>test</em> to the NFVO. 
+Then upload the VNFPackages to the NFVO using the Gui or Cli. 
+This will also create VNFDs in the NFVO. Download this <a href="http://openbaton.github.io/documentation/descriptors/tutorial-ims-NSR/tutorial-ims-NSR.json">NSD</a> and replace the VNFD ids with the ones of the stored VNFDs. 
+Upload the NSD to the NFVO and launch it. This will create an NSR and deploy the OpenIMSCore on Openstack. 
+Since the correct reporting of the deployment's status from the Juju-VNFM to the NFVO is still a future task 
+you should not rely on the NSR status shown by the Gui, but check using the <em>juju status</em> command. </p>
+                        
+                      </div>
+                    </div>
+                    <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../vnfm-how-to-write/" class="btn btn-neutral float-right" title="Develop a VNFM"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../vnfm-generic/" class="btn btn-neutral" title="Generic VNFM"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright (c) 2016 Open Baton (http://www.openbaton.org)</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          	  
+                  </div>
+                </div>
+
+        </section>
+    </div>
+  </div>
+</div>
+
+
+
+</body>
+</html>
+
