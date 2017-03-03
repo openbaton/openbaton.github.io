@@ -10,7 +10,7 @@
   <title>OpenBaton Documentation</title>
   
 
-  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="shortcut icon" href="favicon.ico">
   
 
   
@@ -694,6 +694,14 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -730,7 +738,7 @@ repositories {
 }
 
 dependencies {
-    compile 'org.openbaton:sdk:3.0.0'
+    compile 'org.openbaton:sdk:3.2.0'
 }
 </code></pre>
 
@@ -918,7 +926,8 @@ public class RestApi {
   private Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
   @RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
-  public void receiveEvent(JsonObject event){
+  public void receiveEvent(@RequestBody String msg){
+    JsonObject event = new JsonParser().parse(msg).getAsJsonObject();
     System.out.println(&quot;Received event from NFVO:\n&quot; + event);
     String action = event.get(&quot;action&quot;).getAsString();
     System.out.println(&quot;The action is: &quot; + action);
@@ -947,7 +956,7 @@ public class RestApi {
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../FAQ/" class="btn btn-neutral float-right" title="FAQ"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../FAQ/" class="btn btn-neutral float-right" title="FAQ">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../nfvo-sdk/" class="btn btn-neutral" title="Open Baton SDKs"><span class="icon icon-circle-arrow-left"></span> Previous</a>

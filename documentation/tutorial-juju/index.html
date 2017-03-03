@@ -10,7 +10,7 @@
   <title>OpenBaton Documentation</title>
   
 
-  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="shortcut icon" href="favicon.ico">
   
 
   
@@ -694,6 +694,14 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -717,10 +725,10 @@ console.log('--------');
 <ul>
 <li>NFVO (&gt; 3.0.0) </li>
 <li>Juju and Juju VNFM installed and configured following the <a href="../vnfm-juju">installation-guide</a>  </li>
-<li>An Openstack instance configured and available as PoP</li>
+<li>An OpenStack instance configured and available as PoP</li>
 <li><a href="https://github.com/openbaton/openimscore-packages/tree/master">OpenIMSCore packages</a></li>
 </ul>
-<h2 id="configure-juju-to-work-with-openstack">Configure Juju to work with Openstack</h2>
+<h2 id="configure-juju-to-work-with-openstack">Configure Juju to work with OpenStack</h2>
 <p>Create a document called <em>mystack.yaml</em>. 
 Here you will provide the necessary information for Juju to connect to Openstack. 
 The content of the file could look something like this:</p>
@@ -745,11 +753,11 @@ have to be set to true. </p>
 <pre><code class="yaml">juju add-credential mystack
 </code></pre>
 
-<h2 id="configure-openstack-to-work-with-juju">Configure Openstack to work with Juju</h2>
-<p>Then we also have to configure Openstack to provide an image usable by Juju. 
+<h2 id="configure-openstack-to-work-with-juju">Configure OpenStack to work with Juju</h2>
+<p>Then we also have to configure OpenStack to provide an image usable by Juju. 
 For this please refer to <a href="https://jujucharms.com/docs/devel/howto-privatecloud">this</a> guide. </p>
 <h2 id="bootstrap-the-environment">Bootstrap the environment</h2>
-<p>Finally we can bootstrap the openstack environment using this command:</p>
+<p>Finally we can bootstrap the OpenStack environment using this command:</p>
 <pre><code class="bash">juju bootstrap obcontroller mystack --config image-metadata-url=$METADATA_URL --config network=$NETWORK_ID --config use-floating-ip=true --config use-default-secgroup=true --bootstrap-series=$SERIES
 </code></pre>
 
@@ -788,7 +796,7 @@ For icscf for example change into the icscf directory and execute </p>
 <p>Start the NFVO and the Juju-VNFM and upload a VimInstance named <em>vim-instance</em> with type <em>test</em> to the NFVO. 
 Then upload the VNFPackages to the NFVO using the Gui or Cli. 
 This will also create VNFDs in the NFVO. Download this <a href="http://openbaton.github.io/documentation/descriptors/tutorial-ims-NSR/tutorial-ims-NSR.json">NSD</a> and replace the VNFD ids with the ones of the stored VNFDs. 
-Upload the NSD to the NFVO and launch it. This will create an NSR and deploy the OpenIMSCore on Openstack. 
+Upload the NSD to the NFVO and launch it. This will create an NSR and deploy the OpenIMSCore on OpenStack. 
 Since the correct reporting of the deployment's status from the Juju-VNFM to the NFVO is still a future task 
 you should not rely on the NSR status shown by the Gui, but check using the <em>juju status</em> command. </p>
                         
@@ -798,7 +806,7 @@ you should not rely on the NSR status shown by the Gui, but check using the <em>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../fms-sipp-tutorial/" class="btn btn-neutral float-right" title="Fault Management System"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../fms-sipp-tutorial/" class="btn btn-neutral float-right" title="Fault Management System">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../ims-NSR/" class="btn btn-neutral" title="OpenIMSCore example"><span class="icon icon-circle-arrow-left"></span> Previous</a>

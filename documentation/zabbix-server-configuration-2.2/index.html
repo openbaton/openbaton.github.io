@@ -23,16 +23,16 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Tutorials overview";
-    var mkdocs_page_input_path = "tutorial.md";
-    var mkdocs_page_url = "/tutorial/";
-     var mkdocs_page_url = "/tutorial/";
+    var mkdocs_page_name = "**HIDDEN**";
+    var mkdocs_page_input_path = "zabbix-server-configuration-2.2.md";
+    var mkdocs_page_url = "/zabbix-server-configuration-2.2/";
+     var mkdocs_page_url = "/zabbix-server-configuration-2.2/";
   </script>
   
   <!-- site_name == OpenBaton Documentation -->
-  <!-- page_title == Tutorials overview -->
+  <!-- page_title == **HIDDEN** -->
   <!-- base_url == .. -->
-  <!-- current_page == Tutorials overview - /tutorial/ [*]
+  <!-- current_page == **HIDDEN** - /zabbix-server-configuration-2.2/ [*]
  -->
   <script src="../js/jquery-2.1.1.min.js"></script>
   <script src="../js/modernizr-2.8.3.min.js"></script>
@@ -87,14 +87,14 @@ display: block;
 $( document).ready(function(){
       //console.log("test");
 
-    //$('.subnav').not( ":has('Tutorials overview')" ).hide();
+    //$('.subnav').not( ":has('**HIDDEN**')" ).hide();
     $('li.subnav_drop').find('ul.subnav').hide();
     //$('li.subnav_drop').find('ul.subnav').each(function(i,e){console.log(i,e)});
-       $( ".subnav" ).find( "li:contains('Tutorials overview')" ).each(function(i,e){
+       $( ".subnav" ).find( "li:contains('**HIDDEN**')" ).each(function(i,e){
           var currentElement = $(e);
           currentElement.parent().css({"display":"block","visibility":"visible"}); //css("background-color","blue");
           currentElement.css({"display":"block","visibility":"visible"});
-       });//$( ".subnav" ).find( "li:contains('Tutorials overview')" ).css("display","block");
+       });//$( ".subnav" ).find( "li:contains('**HIDDEN**')" ).css("display","block");
        //$(".current").css({"background-color":"blue","display":"block","visibility":"visible"});
        //show(1000,function(i,e){console.log(i,e)});
        //$('li.subnav_drop').find('ul.subnav').css("background-color","blue");
@@ -106,11 +106,11 @@ $( document).ready(function(){
 
 });
    
-$( ".wy-nav-content" ).find( "li:contains('Tutorials overview')" ).css('color','red');
+$( ".wy-nav-content" ).find( "li:contains('**HIDDEN**')" ).css('color','red');
 console.log('--------');
-console.log($( ".wy-nav-content" ).find( "div:contains('Tutorials overview')" ).css("color","red"));
+console.log($( ".wy-nav-content" ).find( "div:contains('**HIDDEN**')" ).css("color","red"));
 console.log('--------');
-console.log($( ".subnav" ).find( "li:contains('Tutorials overview')" ));
+console.log($( ".subnav" ).find( "li:contains('**HIDDEN**')" ));
 console.log('--------');
   </script>
 
@@ -515,10 +515,8 @@ console.log('--------');
         
              
 
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Tutorials overview</a>
-        
-         
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorial/">Tutorials overview</a>
         
     </li>
 
@@ -719,14 +717,55 @@ console.log('--------');
                     <div role="main">
                       <div class="section">
                         
-                          <h1 id="open-baton-tutorials">Open Baton Tutorials</h1>
-<p>This section provides you a set of tutorials for facilitating your first contact with Open Baton. Those tutorials makes use of VNF Packages and Network Service Descriptors that could also be downloaded directly from the Open Baton <a href="http://markteplace.openbaton.org">Marketplace</a></p>
-<p>Each tutorial is organised in the following way: </p>
-<ol>
-<li>A description of the tutorial is provided. It describes the scenario that is going to be deployed</li>
-<li>It provides a list of required components. Considering the specific scenario which will be deployed following the tutorial, it will specify what are the Open Baton components which are required for executing this specific tutorial</li>
-<li>It specifies the list of steps which needs to be executed in order to run the tutorial</li>
-</ol>
+                          <h1 id="zabbix-server-22-installation-and-configuration">Zabbix server (2.2) installation and configuration</h1>
+<h2 id="on-ubuntu-1404">On Ubuntu 14.04</h2>
+<p>While performing the installation on the same host where the NFVO was installed, remember that both systems are heavily consuming CPU and Memory resources, therefore you'll need a powerful machine in order to satisfy both requirements</p>
+<p>During the installation the installer will request to put a password for the user root of the mysql server. You can choose the password you like, however make sure you use the same password while configuring zabbix components</p>
+<pre><code class="sh">sudo su
+wget http://repo.zabbix.com/zabbix/2.2/ubuntu/pool/main/z/zabbix-release/zabbix-release_2.2-1+trusty_all.deb
+dpkg -i zabbix-release_2.2-1+trusty_all.deb
+apt-get update &amp;&amp; apt-get -y install mysql-server zabbix-server-mysql zabbix-frontend-php
+</code></pre>
+
+<p>Once done, you should configure the file /etc/php5/apache2/php.ini file with the following parameters: </p>
+<pre><code>[PHP]
+.....
+max_execution_time = 300
+memory_limit = 128M
+post_max_size = 16M
+upload_max_filesize = 2M
+max_input_time =  300
+......
+[Date]
+date.timezone = Europe/Berlin
+</code></pre>
+
+<p>Restart the apache service and you are almost done:</p>
+<pre><code class="sh">/etc/init.d/apache2 restart
+</code></pre>
+
+<p>At this point the Zabbix frontend should be available at http://your-ip/zabbix in the browser. Default username/password is Admin/zabbix. It will pop up a wizard window which will guide you through the final configuration of the server. </p>
+<p>Additionally, you need to configure the auto registration action so that VNFs hosts are added automatically into zabbix db when they are started. For doing it you can either do it via the zabbix dashboard reachable at  http://your-ip/zabbix/actionconf.php or using the provided sql file. Both options are explained below</p>
+<h2 id="configure-the-auto-registration-using-the-dashboard">Configure the auto registration using the dashboard</h2>
+<p>First of all you need to open the actions tab</p>
+<p><img alt="zabbix-create-action-1" src="../images/zabbix-add-action-1.png" /></p>
+<p>Then you need to create an action:</p>
+<p><img alt="zabbix-create-action-2" src="../images/zabbix-add-action-2.png" /></p>
+<p>Finally you need to add two operations:</p>
+<ul>
+<li>add host</li>
+<li>link to template: you can select the template you prefer</li>
+</ul>
+<p><img alt="zabbix-create-action-3" src="../images/zabbix-add-action-3.png" /></p>
+<p>Remember to save all the changes in all tabs.</p>
+<h2 id="configure-the-auto-registration-importing-the-sql-file">Configure the auto registration importing the sql file</h2>
+<p>In order to facilitate the configuration of the Zabbix Server, we also provide a zabbix.sql file with all the configuration already done. The file can be found in the folder zabbix-configuration of the zabbix-plugin project.
+You should run the following command into the host: </p>
+<pre><code class="sh"># Please note that this will overwrite whatever configuration or data is stored into the existing zabbix db.
+mysql -u root -p zabbix &lt; zabbix.sql
+</code></pre>
+
+<p>After that, the zabbix server is ready to monitor your VNFs!</p>
                         
                       </div>
                     </div>
@@ -734,10 +773,10 @@ console.log('--------');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../dummy-NSR/" class="btn btn-neutral float-right" title="Dummy NSR">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../tosca-iperf-scenario/" class="btn btn-neutral float-right" title="**HIDDEN**">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../marketplace/" class="btn btn-neutral" title="Marketplace overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../zabbix-server-configuration-3.0/" class="btn btn-neutral" title="**HIDDEN**"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

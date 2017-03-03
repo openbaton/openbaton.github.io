@@ -10,7 +10,7 @@
   <title>OpenBaton Documentation</title>
   
 
-  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="shortcut icon" href="favicon.ico">
   
 
   
@@ -694,6 +694,14 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -731,9 +739,12 @@ A VNF Package includes the VNFD, the image, scripts and a Metadata file structur
 <h2 id="metadatayaml">Metadata.yaml</h2>
 <p>The Metadata.yaml defines essential properties for the VNF. This file is based on the YAML syntax where information are stored in simple &lt;key> : &lt;value> associations.</p>
 <p>The example of the Metadata file below shows a basic definition of a VNF Package.</p>
-<pre><code class="yaml">name: VNF Package_name
+<pre><code class="yaml">name: VNF_package_name
 scripts-link: scripts_link
 vim_types: list_of_vim_types
+description: description_of_VNF
+provider: provider_of_package
+nfvo_version: target_NFVO_version
 image:
     upload: option
     ids: list_of_ids
@@ -752,7 +763,10 @@ image-config:
 <p>In the following each property is explained in more detail. Please consider also the notes since some properties are optional (or even not implemented) and if they are defined, they may have more priority than other and override them therefore.</p>
 <ul>
 <li><strong><em>name</em></strong>: The name defines the name of the VNF Package itself used to store it in the database.</li>
+<li><strong><em>description</em></strong>: Human readable description of the VNF.</li>
+<li><strong><em>provider</em></strong>: The creator and maintainer of the VNF.</li>
 <li><strong><em>vim_types</em></strong>: The list of the vim types that the VNF Package supports.</li>
+<li><strong><em>nfvo_version</em></strong>: The version of the NFVO which supports this package. First two digits will be used for the check.</li>
 <li><strong><em>scripts-link</em></strong>: This link points to a public git repository where scripts are stored that are needed to be executed for managing the lifecycle of the exposed VNF.<ul>
 <li><strong>Note</strong> Either you can define the scripts-link or put the scripts into the folder scripts/.
     The scripts-link has a higher priority than the scripts located in the folder scripts/.
@@ -853,12 +867,17 @@ First we will start with the creation of the iperf-server VNF Package and then w
 Since passing an image is not supported in the current release we will use the image link inside the <code>Metadata.yaml</code>.
 Finally, it looks as shown below.</p>
 <pre><code class="yaml">name: iperf-server
+description: iPerf server
+provider: FOKUS
 scripts-link: https://script-link-to-git.git
+nfvo_version: 3.2.0
+vim_types:
+ - openstack
 image:
     upload: &quot;check&quot;
     names:
         - iperf_server_image
-    link: &quot;http://releases.ubuntu.com/14.04/ubuntu-14.04.3-server-amd64.iso&quot;
+    link: &quot;http://cloud-images.ubuntu.com/trusty/current/trusty-server-cloudimg-amd64-disk1.img&quot;
 image-config:
     name: iperf_server_image
     diskFormat: QCOW2
@@ -867,6 +886,8 @@ image-config:
     minDisk: 5
     minRam: 2048
     isPublic: false
+vim_types:
+    - openstack
 </code></pre>
 
 <h4 id="vnfd-iperf-server">VNFD [iperf-server]</h4>
@@ -904,7 +925,7 @@ Important to notice here is that the vm_image defined in the Metadata.yaml is fi
           ]
         }
       ],
-      &quot;vimInstanceName&quot;:[&quot;vim-instance&quot;]
+      &quot;vimInstanceName&quot;:[]
     }
   ],
   &quot;deployment_flavour&quot;:[
@@ -920,7 +941,7 @@ Important to notice here is that the vm_image defined in the Metadata.yaml is fi
 
 <h4 id="image">Image</h4>
 <p>The image we have to choose must be a debian 64bit image (e.g. ubuntu amd64) for satisfying the EMS and scripts which are designed for that kind of image.
-We have chosen this one <a href="http://uec-images.ubuntu.com/releases/14.04/release/ubuntu-14.04-server-cloudimg-amd64-disk1.img">ubuntu-14.04.3-server-amd64.iso</a>.</p>
+We have chosen this one <a href="http://cloud-images.ubuntu.com/trusty/current/trusty-server-cloudimg-amd64-disk1.img">trusty-server-cloudimg-amd64-disk1.img</a>.</p>
 <h3 id="vnf-package-iperf-client">VNF Package [iperf-client]</h3>
 <p>This iperf-client VNF Package has to install the iPerf client and needs to be configured in order to know the iPerf servers' IP.</p>
 <h4 id="metadata-iperf-client">Metadata [iperf-client]</h4>
@@ -928,12 +949,17 @@ We have chosen this one <a href="http://uec-images.ubuntu.com/releases/14.04/rel
 Since passing an image is not supported in the current release we will use the image link inside the <code>Metadata.yaml</code>.
 Finally, it looks as shown below.</p>
 <pre><code class="yaml">name: iperf-client
+description: iPerf client
+provider: FOKUS
+nfvo_version: 3.2.0
+vim_types:
+ - openstack
 scripts-link: https://gitlab.fokus.fraunhofer.de/openbaton/scripts-test-public.git
 image:
     upload: &quot;check&quot;
     names:
         - iperf_client_image
-    link: &quot;http://releases.ubuntu.com/14.04/ubuntu-14.04.3-server-amd64.iso&quot;
+    link: &quot;http://cloud-images.ubuntu.com/trusty/current/trusty-server-cloudimg-amd64-disk1.img&quot;
 image-config:
     name: iperf_client_image
     diskFormat: QCOW2
@@ -942,6 +968,8 @@ image-config:
     minDisk: 5
     minRam: 2048
     isPublic: false
+vim_types:
+    - openstack
 </code></pre>
 
 <h4 id="vnfd-iperf-client">VNFD [iperf-client]</h4>
@@ -980,7 +1008,7 @@ Important to notice here is that the vm_image defined in the Metadata.yaml is fi
           ]
         }
       ],
-      &quot;vimInstanceName&quot;:[&quot;vim-instance&quot;]
+      &quot;vimInstanceName&quot;:[]
     }
   ],
   &quot;virtual_link&quot;:[
@@ -1001,7 +1029,7 @@ Important to notice here is that the vm_image defined in the Metadata.yaml is fi
 
 <h4 id="image_1">Image</h4>
 <p>The image we have to choose must be a debian 64bit image (e.g. ubuntu amd64) for satisfying the EMS and scripts which are designed for that kind of architecture.
-We have chosen this one <a href="http://uec-images.ubuntu.com/releases/14.04/release/ubuntu-14.04-server-cloudimg-amd64-disk1.img">ubuntu-14.04.3-server-amd64.iso</a>.</p>
+We have chosen this one <a href="http://cloud-images.ubuntu.com/trusty/current/trusty-server-cloudimg-amd64-disk1.img">trusty-server-cloudimg-amd64-disk1.img</a>.</p>
 <h2 id="onboarding-vnf-packages">Onboarding VNF Packages</h2>
 <p>Once we have finalized the creation of VNF Packages and packed them into a tar we can onboard them to the NFVO. Make sure that you also uploaded a VimInstance before onboarding the package. Onboarding can be done easily via the <a href="../nfvo-how-to-use-gui">Dashboard</a> or the <a href="../nfvo-how-to-use-cli">Command Line Interface</a>.</p>
 <h2 id="nsd-iperf">NSD [iperf]</h2>
@@ -1067,7 +1095,7 @@ Script for open external links in a new tab
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../ns-descriptor/" class="btn btn-neutral float-right" title="Network Service Descriptor"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../ns-descriptor/" class="btn btn-neutral float-right" title="Network Service Descriptor">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../vim-instance/" class="btn btn-neutral" title="Register a PoP"><span class="icon icon-circle-arrow-left"></span> Previous</a>

@@ -23,16 +23,16 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Tutorials overview";
-    var mkdocs_page_input_path = "tutorial.md";
-    var mkdocs_page_url = "/tutorial/";
-     var mkdocs_page_url = "/tutorial/";
+    var mkdocs_page_name = "**HIDDEN**";
+    var mkdocs_page_input_path = "vnfm-generic-configuration.md";
+    var mkdocs_page_url = "/vnfm-generic-configuration/";
+     var mkdocs_page_url = "/vnfm-generic-configuration/";
   </script>
   
   <!-- site_name == OpenBaton Documentation -->
-  <!-- page_title == Tutorials overview -->
+  <!-- page_title == **HIDDEN** -->
   <!-- base_url == .. -->
-  <!-- current_page == Tutorials overview - /tutorial/ [*]
+  <!-- current_page == **HIDDEN** - /vnfm-generic-configuration/ [*]
  -->
   <script src="../js/jquery-2.1.1.min.js"></script>
   <script src="../js/modernizr-2.8.3.min.js"></script>
@@ -87,14 +87,14 @@ display: block;
 $( document).ready(function(){
       //console.log("test");
 
-    //$('.subnav').not( ":has('Tutorials overview')" ).hide();
+    //$('.subnav').not( ":has('**HIDDEN**')" ).hide();
     $('li.subnav_drop').find('ul.subnav').hide();
     //$('li.subnav_drop').find('ul.subnav').each(function(i,e){console.log(i,e)});
-       $( ".subnav" ).find( "li:contains('Tutorials overview')" ).each(function(i,e){
+       $( ".subnav" ).find( "li:contains('**HIDDEN**')" ).each(function(i,e){
           var currentElement = $(e);
           currentElement.parent().css({"display":"block","visibility":"visible"}); //css("background-color","blue");
           currentElement.css({"display":"block","visibility":"visible"});
-       });//$( ".subnav" ).find( "li:contains('Tutorials overview')" ).css("display","block");
+       });//$( ".subnav" ).find( "li:contains('**HIDDEN**')" ).css("display","block");
        //$(".current").css({"background-color":"blue","display":"block","visibility":"visible"});
        //show(1000,function(i,e){console.log(i,e)});
        //$('li.subnav_drop').find('ul.subnav').css("background-color","blue");
@@ -106,11 +106,11 @@ $( document).ready(function(){
 
 });
    
-$( ".wy-nav-content" ).find( "li:contains('Tutorials overview')" ).css('color','red');
+$( ".wy-nav-content" ).find( "li:contains('**HIDDEN**')" ).css('color','red');
 console.log('--------');
-console.log($( ".wy-nav-content" ).find( "div:contains('Tutorials overview')" ).css("color","red"));
+console.log($( ".wy-nav-content" ).find( "div:contains('**HIDDEN**')" ).css("color","red"));
 console.log('--------');
-console.log($( ".subnav" ).find( "li:contains('Tutorials overview')" ));
+console.log($( ".subnav" ).find( "li:contains('**HIDDEN**')" ));
 console.log('--------');
   </script>
 
@@ -515,10 +515,8 @@ console.log('--------');
         
              
 
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Tutorials overview</a>
-        
-         
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorial/">Tutorials overview</a>
         
     </li>
 
@@ -719,14 +717,117 @@ console.log('--------');
                     <div role="main">
                       <div class="section">
                         
-                          <h1 id="open-baton-tutorials">Open Baton Tutorials</h1>
-<p>This section provides you a set of tutorials for facilitating your first contact with Open Baton. Those tutorials makes use of VNF Packages and Network Service Descriptors that could also be downloaded directly from the Open Baton <a href="http://markteplace.openbaton.org">Marketplace</a></p>
-<p>Each tutorial is organised in the following way: </p>
-<ol>
-<li>A description of the tutorial is provided. It describes the scenario that is going to be deployed</li>
-<li>It provides a list of required components. Considering the specific scenario which will be deployed following the tutorial, it will specify what are the Open Baton components which are required for executing this specific tutorial</li>
-<li>It specifies the list of steps which needs to be executed in order to run the tutorial</li>
-</ol>
+                          <h1 id="how-to-configure-the-generic-vnfm">How to configure the Generic VNFM</h1>
+<p>This guide explains you how to configure the Generic VNFM after installation is completed. In general, after using the bootsrap procedure no changes described here are required unless you want to tune up your installation. </p>
+<h2 id="generic-vnfm-properties-overview">Generic VNFM properties overview</h2>
+<p>After the bootstrap procedure the Generic VNFM's configuration file should be located under /etc located at: </p>
+<pre><code class="bash">/etc/openbaton/openbaton-gvnfm.properties
+</code></pre>
+
+<p>Keep in mind that whenever some of the parameters below referred are changed, you will need to restart the NFVO.</p>
+<h3 id="modify-rabbitmq-parameters">modify RabbitMQ parameters</h3>
+<p>By default RabbitMQ maybe installed on the same host where the generic VNFM is running. Be aware of the fact that if you want the Generic VNFM to interact with the NFVO you will need RabbitMQ to be reachable also from the outside.  </p>
+<p><strong>IMPORTANT NOTES:</strong></p>
+<p>The Generic VNFM uses RabbitMQ to interact with the EMS agent installed inside VMs (ececuting VNF software). Therefore, you will need to configure the RabbitMQ endpoint (<strong>vnfm.rabbit.brokerIp</strong>) with the reachable IP of RabbitMQ (instead of localhost).
+from:</p>
+<pre><code class="properties">vnfm.rabbitmq.brokerIp = localhost 
+</code></pre>
+
+<p>to:</p>
+<pre><code class="properties">vnfm.rabbitmq.brokerIp = &lt;the rabbitmq broker ip&gt;
+</code></pre>
+
+<h4 id="additional-rabbitmq-paramters-required-by-the-generic-vnfm">additional rabbitMQ paramters required by the Generic VNFM:</h4>
+<pre><code class="parameters">vnfm.rabbitmq.autodelete = true
+vnfm.rabbitmq.durable = true
+vnfm.rabbitmq.exclusive = false
+vnfm.rabbitmq.minConcurrency = 15
+vnfm.rabbitmq.maxConcurrency = 30
+
+# Timeout in seconds for any sendAndReceive
+vnfm.rabbitmq.sar.timeout = 1000
+</code></pre>
+
+<h3 id="parameters-related-with-the-ems">parameters related with the EMS</h3>
+<pre><code class="parameters">vnfm.ems.queue.autodelete = true
+vnfm.ems.queue.heartbeat = 120
+vnfm.ems.version = 0.20
+
+# Timeout in seconds for waiting the EMS to boot
+vnfm.ems.start.timeout = 500
+
+# delete the script where last modified is older than vnfm.ems.script.old (in minutes)
+vnfm.ems.script.old = 180
+#where the script log are stored
+vnfm.ems.script.logpath = /var/log/openbaton/scriptsLog/
+vnfm.ems.userdata.filepath = /etc/openbaton/openbaton-vnfm-generic-user-data.sh
+</code></pre>
+
+<h3 id="modify-logging-levels">Modify logging levels</h3>
+<p>Feel free to modify that file for adding or removing specific functionalities.  For instance, you can decide to change logging levels (TRACE, DEBUG, INFO, WARN, and ERROR) and mechanisms:</p>
+<pre><code class="parameters">#########################################
+############### logging ################
+#########################################
+
+logging.level.org.springframework=WARN
+# logging.level.org.springframework=INFO
+logging.level.org.hibernate=WARN
+logging.level.org.jclouds=WARN
+logging.level.org.springframework.security=WARN
+# logging.level.org.springframework.amqp=DEBUG
+
+# Level for loggers on classes inside the root package &quot;de.fhg.fokus.ngni.osco&quot; (and its
+# sub-packages)
+logging.level.org.openbaton = DEBUG
+
+logging.file=/var/log/openbaton/generic-vnfm.log
+</code></pre>
+
+<h3 id="modify-rabbitmq-parameters_1">Modify RabbitMQ parameters</h3>
+<p>These are additional parameters about the configuration of Rabbit MQ:</p>
+<pre><code class="parameters">#########################################
+############## RabbitMQ #################
+#########################################
+
+# Comma-separated list of addresses to which the client should connect to.
+# spring.rabbitmq.addresses= 192.168.145.54
+# Create an AmqpAdmin bean.
+spring.rabbitmq.dynamic=true
+# RabbitMQ host.
+spring.rabbitmq.host= ${vnfm.rabbitmq.brokerIp}
+# Acknowledge mode of container.
+# spring.rabbitmq.listener.acknowledge-mode=
+# Start the container automatically on startup.
+# spring.rabbitmq.listener.auto-startup=true
+# Minimum number of consumers.
+spring.rabbitmq.listener.concurrency= 15
+# Maximum number of consumers.
+spring.rabbitmq.listener.max-concurrency= 30
+# Number of messages to be handled in a single request. It should be greater than or equal to the transaction size (if used).
+# spring.rabbitmq.listener.prefetch=
+# Number of messages to be processed in a transaction. For best results it should be less than or equal to the prefetch count.
+# spring.rabbitmq.listener.transaction-size=
+# Login user to authenticate to the broker.
+spring.rabbitmq.username= admin
+# Login to authenticate against the broker.
+spring.rabbitmq.password= openbaton
+# RabbitMQ port.
+spring.rabbitmq.port=5672
+# Requested heartbeat timeout, in seconds; zero for none.
+spring.rabbitmq.requested-heartbeat = 60
+# Enable SSL support.
+# spring.rabbitmq.ssl.enabled=false
+# Path to the key store that holds the SSL certificate.
+# spring.rabbitmq.ssl.key-store=
+# Password used to access the key store.
+# spring.rabbitmq.ssl.key-store-password=
+# Trust store that holds SSL certificates.
+# spring.rabbitmq.ssl.trust-store=
+# Password used to access the trust store.
+# spring.rabbitmq.ssl.trust-store-password=
+# Virtual host to use when connecting to the broker.
+# spring.rabbitmq.virtual-host=
+</code></pre>
                         
                       </div>
                     </div>
@@ -734,10 +835,10 @@ console.log('--------');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../dummy-NSR/" class="btn btn-neutral float-right" title="Dummy NSR">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../nsd-json-example/" class="btn btn-neutral float-right" title="**HIDDEN**">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../marketplace/" class="btn btn-neutral" title="Marketplace overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../vnf-parameters/" class="btn btn-neutral" title="**HIDDEN**"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

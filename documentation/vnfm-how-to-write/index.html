@@ -10,7 +10,7 @@
   <title>OpenBaton Documentation</title>
   
 
-  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="shortcut icon" href="favicon.ico">
   
 
   
@@ -694,6 +694,14 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -977,37 +985,37 @@ vim-plugin-dir = ./plugins
 <thead>
 <tr>
 <th>Params</th>
-<th>Meaning</th>
+<th align="right">Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>type</td>
-<td>The type of VNF you are going to handle</td>
+<td align="right">The type of VNF you are going to handle</td>
 </tr>
 <tr>
 <td>endpoint</td>
-<td>The endpoint used for requesting this VNFManager</td>
+<td align="right">The endpoint used for requesting this VNFManager</td>
 </tr>
 <tr>
 <td>description</td>
-<td>Just a useless description</td>
+<td align="right">Just a useless description</td>
 </tr>
 <tr>
 <td>endpoint-type</td>
-<td>type of the endpoint, either RABBIT or REST, depending on the sdk chosen. Check out next section</td>
+<td align="right">type of the endpoint, either RABBIT or REST, depending on the sdk chosen. Check out next section</td>
 </tr>
 <tr>
 <td>enabled</td>
-<td>true if you want your vnfm to be enabled</td>
+<td align="right">true if you want your vnfm to be enabled</td>
 </tr>
 <tr>
 <td>allocate</td>
-<td>true if the NFVO will ALLOCATE_RESOURCES, false if the VNFManager will do</td>
+<td align="right">true if the VNFM will ALLOCATE_RESOURCES, false if the NFVO will do</td>
 </tr>
 <tr>
 <td>concurrency</td>
-<td>The number of concurrent Receiver (only for vnfm-sdk-amqp)</td>
+<td align="right">The number of concurrent Receiver (only for vnfm-sdk-amqp)</td>
 </tr>
 </tbody>
 </table>
@@ -1027,7 +1035,7 @@ By using the simple vnfm-sdk you need to take care about all the communication b
 
 dependencies {
     compile 'org.hibernate:hibernate-core:4.3.10.Final'
-    compile 'org.openbaton:vnfm-sdk-amqp:3.0.0'
+    compile 'org.openbaton:vnfm-sdk-amqp:3.2.0'
 }
 
 //...
@@ -1059,7 +1067,7 @@ repositories {
 }
 
 dependencies {
-    compile 'org.openbaton:vnfm-sdk-amqp:3.0.0'
+    compile 'org.openbaton:vnfm-sdk-amqp:3.2.0'
     compile 'org.hibernate:hibernate-core:4.3.10.Final'
 }
 
@@ -1325,9 +1333,9 @@ Therefore, you need to do several things:</p>
 <li>Connect an according VIM to the plugin or use the plugin directly</li>
 </ul>
 <p><strong>Note</strong> If you want to use the Vim with plugins, you need to fetch also the interfaces and VIM implementations by adding the following lines to your build.gradle dependencies</p>
-<pre><code class="gradle">compile 'org.openbaton:vim-int:3.0.0'
-compile 'org.openbaton:vim-impl:3.0.0'
-compile 'org.openbaton:sdk:3.0.0'
+<pre><code class="gradle">compile 'org.openbaton:vim-int:3.2.0'
+compile 'org.openbaton:vim-impl:3.2.0'
+compile 'org.openbaton:sdk:3.2.0'
 </code></pre>
 
 <p>After that you need to rebuild your project for fetching the dependencies automatically.</p>
@@ -1520,7 +1528,7 @@ Script for open external links in a new tab
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../vnfm-vendor-specific/" class="btn btn-neutral float-right" title="Integrate your own VNFM"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../vnfm-vendor-specific/" class="btn btn-neutral float-right" title="Integrate your own VNFM">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../vnfm-juju/" class="btn btn-neutral" title="Juju VNFM"><span class="icon icon-circle-arrow-left"></span> Previous</a>

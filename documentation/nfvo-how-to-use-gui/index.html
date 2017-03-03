@@ -10,7 +10,7 @@
   <title>OpenBaton Documentation</title>
   
 
-  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="shortcut icon" href="favicon.ico">
   
 
   
@@ -694,6 +694,14 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -726,7 +734,7 @@ VimInstaces, Network Service Descriptors/Records and Virtual Network Function De
 <li>Number of Network Service Descriptors</li>
 <li>Number of SSH Keys</li>
 </ol>
-<p>It also shows the summary of the available resources, like floating ips, instances, RAM and CPU cores. The data is collected from the available PoPs if possible and then the summary is displayed. Test POPs do not grant any resources. You can now also see the NFVO version on the header panel.</p>
+<p>It also shows the summary of the available resources, like floating ips, instances, RAM and CPU cores. The data is collected from the available PoPs if possible and then the summary is displayed. Test POPs do not grant any resources. The quota informatrion is backed up in cache to avoid unnecessary traffic. You can refresh the data by going into upper right corner drop down menu and choosing refresh quota option. You can now also see the NFVO version on the header panel. </p>
 <p><img alt="Overview" src="../images/nfvo-how-to-use-gui-overview.png" /></p>
 <h2 id="security">Security</h2>
 <p>The NFVO uses projects and users with assigned roles so that multiple selected users can work in the same project environment.<br />
@@ -743,10 +751,12 @@ You can also change the password by choosing the command in this menu or use the
 <h2 id="vim-driver-installation">Vim Driver Installation</h2>
 <p>If you are admin you call also use vim-drivers menu to download the drivers from marketplace and install and start them. You also have an access to the information about the drivers that are already installed. </p>
 <h2 id="manage-pops">Manage PoPs</h2>
-<p>On this page you can see the list of Vim Instances registered</p>
+<p>On this page you can see the list of PoPs registered</p>
 <p><img alt="List of Vim Instances" src="../images/nfvo-how-to-use-gui-vim-page.png" /></p>
-<p>For registering a new Vim Instance you should click on the button in the top-right corner <strong>Register Vim</strong> of this page and select your json to register a Vim Instance</p>
-<p><img alt="Register a new Vim Instances" src="../images/vim-instance-register-new-pop.png" /></p>
+<p>For registering a new Point-of-Presence you can click on the button in the top-right corner <strong>Register Vim</strong> of this page. In the new window you have two ways to register a new PoP. First is to fill out the form with all the data needed to register the PoP. You can choose the type of PoP from the drivers that you currently have installed (test, openstack, etc).
+<img alt="Register a new Vim Instances" src="../images/vim-instance-register-new-pop.png" /></p>
+<p>You can copy json with the data or provide a file.</p>
+<p><img alt="Register PoP form" src="../images/vim-instance-register-new-pop-file.png" /></p>
 <p>If you want to delete a Vim Instance you can click on the button <strong>Action</strong> and then <strong>Delete</strong> in the menu</p>
 <h2 id="catalogue">Catalogue</h2>
 <p>In the menu on the left side under the template <em>Catalogue</em> you can manage </p>
@@ -866,7 +876,7 @@ Script for open external links in a new tab
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../nfvo-how-to-use-cli/" class="btn btn-neutral float-right" title="Use via the CLI"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../nfvo-how-to-use-cli/" class="btn btn-neutral float-right" title="Use via the CLI">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../security/" class="btn btn-neutral" title="Identity management"><span class="icon icon-circle-arrow-left"></span> Previous</a>

@@ -10,7 +10,7 @@
   <title>OpenBaton Documentation</title>
   
 
-  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="shortcut icon" href="favicon.ico">
   
 
   
@@ -692,6 +692,14 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -718,25 +726,25 @@ In this documentation we will present how to create a TOSCA Network Service Temp
 <thead>
 <tr>
 <th>TOSCA Type</th>
-<th>ETSI Entity</th>
+<th align="right">ETSI Entity</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>openbaton.type.VNF</td>
-<td>Virtual Network Function Descriptor</td>
+<td align="right">Virtual Network Function Descriptor</td>
 </tr>
 <tr>
 <td>tosca.nodes.nfv.VDU</td>
-<td>Virtual Deployment Unit</td>
+<td align="right">Virtual Deployment Unit</td>
 </tr>
 <tr>
 <td>tosca.nodes.nfv.VL</td>
-<td>Virtual Link Descriptor</td>
+<td align="right">Virtual Link Descriptor</td>
 </tr>
 <tr>
 <td>tosca.nodes.nfv.CP</td>
-<td>Connection Point</td>
+<td align="right">Connection Point</td>
 </tr>
 </tbody>
 </table>
@@ -791,7 +799,7 @@ relationships_template: #Explained below
 <p>The Node Templates are the description of the objects which constitute the Network Service Descriptor. Each node is defined by its name and the parameters needed to create its descriptor.</p>
 <h3 id="node-template-virtual-network-function-vnf">Node Template: Virtual Network Function (VNF)</h3>
 <p>This is an example of VNF Template defined inside the NSD Template. The parameters available and needed to create a Virtual Network Function Descriptor are defined and explained below: </p>
-<pre><code class="yaml">dummy-server: #VNF1
+<pre><code class="yaml">dummy-server:
         type: openbaton.type.VNF
         properties:
           vendor: Fokus
@@ -821,30 +829,30 @@ relationships_template: #Explained below
 <thead>
 <tr>
 <th>Name</th>
-<th>Value</th>
-<th>Description</th>
+<th align="right">Value</th>
+<th align="right">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>type</td>
-<td>openbaton.type.VNF</td>
-<td>Type of the node. In the example it defines the node as a VNF node.</td>
+<td align="right">openbaton.type.VNF</td>
+<td align="right">Type of the node. In the example it defines the node as a VNF node.</td>
 </tr>
 <tr>
 <td>properties</td>
-<td>See the Table below</td>
-<td>Defines parameters needed for deploying a VNFD</td>
+<td align="right">See the Table below</td>
+<td align="right">Defines parameters needed for deploying a VNFD</td>
 </tr>
 <tr>
 <td>requirements</td>
-<td>See the Table below</td>
-<td>Describes the component requirements for the VNF</td>
+<td align="right">See the Table below</td>
+<td align="right">Describes the component requirements for the VNF</td>
 </tr>
 <tr>
 <td>interfaces</td>
-<td>See the Table below</td>
-<td>Defines the lifecycle events and the scripts needed for their execution.</td>
+<td align="right">See the Table below</td>
+<td align="right">Defines the lifecycle events and the scripts needed for their execution.</td>
 </tr>
 </tbody>
 </table>
@@ -853,40 +861,40 @@ relationships_template: #Explained below
 <thead>
 <tr>
 <th>Name</th>
-<th>Value</th>
-<th>Description</th>
+<th align="right">Value</th>
+<th align="right">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>vendor</td>
-<td>String</td>
-<td>Name of the provider of the VNF</td>
+<td align="right">String</td>
+<td align="right">Name of the provider of the VNF</td>
 </tr>
 <tr>
 <td>version</td>
-<td>String</td>
-<td>Version of the provider of the VNF</td>
+<td align="right">String</td>
+<td align="right">Version of the provider of the VNF</td>
 </tr>
 <tr>
 <td>configurations</td>
-<td>Object with two values <strong>name</strong>, <strong>configurationParameters</strong></td>
-<td><strong>name</strong>: is a String with the name of the Configuration, <strong>configurationParameters</strong>: the list of Parameters defined by a pair of &lt; key, value &gt;</td>
+<td align="right">Object with two values <strong>name</strong>, <strong>configurationParameters</strong></td>
+<td align="right"><strong>name</strong>: is a String with the name of the Configuration, <strong>configurationParameters</strong>: the list of Parameters defined by a pair of &lt; key, value &gt;</td>
 </tr>
 <tr>
 <td>vnfPackageLocation</td>
-<td>URL</td>
-<td>It is URL where the Orchestrator will fetch the Scripts needed in the lifecycle events defined in the <strong>interfaces</strong></td>
+<td align="right">URL</td>
+<td align="right">It is URL where the Orchestrator will fetch the Scripts needed in the lifecycle events defined in the <strong>interfaces</strong></td>
 </tr>
 <tr>
 <td>deploymentFlavour</td>
-<td>List of flavour_key</td>
-<td>It is a list flavors each one refers to Virtual hardware templates called "flavors" in OpenStack</td>
+<td align="right">List of flavour_key</td>
+<td align="right">It is a list flavors each one refers to Virtual hardware templates called "flavors" in OpenStack</td>
 </tr>
 <tr>
 <td>endpoint</td>
-<td>String</td>
-<td>The VNFManager deploying the VNF itself</td>
+<td align="right">String</td>
+<td align="right">The VNFManager deploying the VNF itself</td>
 </tr>
 </tbody>
 </table>
@@ -895,20 +903,20 @@ relationships_template: #Explained below
 <thead>
 <tr>
 <th>Name</th>
-<th>Value</th>
-<th>Description</th>
+<th align="right">Value</th>
+<th align="right">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>virtualLink</td>
-<td>String</td>
-<td>Shows where the VNF is connected</td>
+<td align="right">String</td>
+<td align="right">Shows where the VNF is connected</td>
 </tr>
 <tr>
 <td>vdu</td>
-<td>String</td>
-<td>Defines a VDU which is a part of the VNF</td>
+<td align="right">String</td>
+<td align="right">Defines a VDU which is a part of the VNF</td>
 </tr>
 </tbody>
 </table>
@@ -918,35 +926,35 @@ relationships_template: #Explained below
 <thead>
 <tr>
 <th>Lifecycle event</th>
-<th>Value</th>
-<th>Description</th>
+<th align="right">Value</th>
+<th align="right">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>INSTANTIATE</td>
-<td>List of Script files</td>
-<td>The Scripts will be called for this Lifecycle event</td>
+<td align="right">List of Script files</td>
+<td align="right">The Scripts will be called for this Lifecycle event</td>
 </tr>
 <tr>
 <td>CONFIGURE</td>
-<td>List of Script files</td>
-<td>The Scripts will be called for this Lifecycle event</td>
+<td align="right">List of Script files</td>
+<td align="right">The Scripts will be called for this Lifecycle event</td>
 </tr>
 <tr>
 <td>START</td>
-<td>List of Script files</td>
-<td>The Scripts will be called for this Lifecycle event</td>
+<td align="right">List of Script files</td>
+<td align="right">The Scripts will be called for this Lifecycle event</td>
 </tr>
 <tr>
 <td>STOP</td>
-<td>List of Script files</td>
-<td>The Scripts will be called for this Lifecycle event</td>
+<td align="right">List of Script files</td>
+<td align="right">The Scripts will be called for this Lifecycle event</td>
 </tr>
 <tr>
 <td>TERMINATE</td>
-<td>List of Script files</td>
-<td>The Scripts will be called for this Lifecycle event</td>
+<td align="right">List of Script files</td>
+<td align="right">The Scripts will be called for this Lifecycle event</td>
 </tr>
 </tbody>
 </table>
@@ -967,30 +975,30 @@ relationships_template: #Explained below
 <thead>
 <tr>
 <th>Name</th>
-<th>Value</th>
-<th>Description</th>
+<th align="right">Value</th>
+<th align="right">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>type</td>
-<td>tosca.nodes.nfv.VDU</td>
-<td>Type of the node. In the example it defines the node as a VDU node.</td>
+<td align="right">tosca.nodes.nfv.VDU</td>
+<td align="right">Type of the node. In the example it defines the node as a VDU node.</td>
 </tr>
 <tr>
 <td>properties</td>
-<td>See the Table below</td>
-<td>Defines parameters needed for deploying a VDU</td>
+<td align="right">See the Table below</td>
+<td align="right">Defines parameters needed for deploying a VDU</td>
 </tr>
 <tr>
 <td>requirements</td>
-<td>List of requirement</td>
-<td>Describes the component requirements for the VDU</td>
+<td align="right">List of requirement</td>
+<td align="right">Describes the component requirements for the VDU</td>
 </tr>
 <tr>
 <td>artifacts</td>
-<td>List of artifacts</td>
-<td>Describes the list of images in OpenStack that will be used to instantiate a VNFC</td>
+<td align="right">List of artifacts</td>
+<td align="right">Describes the list of images in OpenStack that will be used to instantiate a VNFC</td>
 </tr>
 </tbody>
 </table>
@@ -999,20 +1007,20 @@ relationships_template: #Explained below
 <thead>
 <tr>
 <th>Name</th>
-<th>Value</th>
-<th>Description</th>
+<th align="right">Value</th>
+<th align="right">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>scale_in_out</td>
-<td>Integer</td>
-<td>Maximum value of VNFCs that can be instantiated in the process of scale-in/out</td>
+<td align="right">Integer</td>
+<td align="right">Maximum value of VNFCs that can be instantiated in the process of scale-in/out</td>
 </tr>
 <tr>
 <td>vim_instance_name</td>
-<td>List &lt; String &gt;</td>
-<td>Names of Points of Persistence (PoP) where this VNFC will be instantiated <strong>NOTE:</strong> This is not required.</td>
+<td align="right">List &lt; String &gt;</td>
+<td align="right">Names of Points of Persistence (PoP) where this VNFC will be instantiated <strong>NOTE:</strong> This is not required.</td>
 </tr>
 </tbody>
 </table>
@@ -1021,20 +1029,20 @@ relationships_template: #Explained below
 <thead>
 <tr>
 <th>Name</th>
-<th>Value</th>
-<th>Description</th>
+<th align="right">Value</th>
+<th align="right">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>type</td>
-<td>tosca.artifacts.Deployment.Image.VM</td>
-<td>Only one type supported at the moment</td>
+<td align="right">tosca.artifacts.Deployment.Image.VM</td>
+<td align="right">Only one type supported at the moment</td>
 </tr>
 <tr>
 <td>file</td>
-<td>String</td>
-<td>Name of the file located on OpenStack</td>
+<td align="right">String</td>
+<td align="right">Name of the file located on OpenStack</td>
 </tr>
 </tbody>
 </table>
@@ -1043,15 +1051,15 @@ relationships_template: #Explained below
 <thead>
 <tr>
 <th>Name</th>
-<th>Value</th>
-<th>Description</th>
+<th align="right">Value</th>
+<th align="right">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>virtualLink</td>
-<td>String</td>
-<td>Shows where the VDU is connected</td>
+<td align="right">String</td>
+<td align="right">Shows where the VDU is connected</td>
 </tr>
 </tbody>
 </table>
@@ -1071,30 +1079,30 @@ relationships_template: #Explained below
 <thead>
 <tr>
 <th>Name</th>
-<th>Value</th>
-<th>Description</th>
+<th align="right">Value</th>
+<th align="right">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>type</td>
-<td>tosca.nodes.nfv.CP</td>
-<td>Type of the node. In the example it defines the node as a CP node.</td>
+<td align="right">tosca.nodes.nfv.CP</td>
+<td align="right">Type of the node. In the example it defines the node as a CP node.</td>
 </tr>
 <tr>
 <td>properties: floatingIP</td>
-<td>String</td>
-<td>Only property defined at the moment is <strong>floatingIP</strong>. In this case <strong>floatingIp</strong> means that has a public IP chosen <strong>random</strong>  by OpenStack</td>
+<td align="right">String</td>
+<td align="right">Only property defined at the moment is <strong>floatingIP</strong>. In this case <strong>floatingIp</strong> means that has a public IP chosen <strong>random</strong>  by OpenStack</td>
 </tr>
 <tr>
 <td>requirements: virtualBinding</td>
-<td>String</td>
-<td>It describes the requirements for the CP in the example above the CP needs a <strong>virtualBinding</strong> to the VDU in this case <strong>VDU1</strong>. The bindings can be multiple hence the requirements is a node.</td>
+<td align="right">String</td>
+<td align="right">It describes the requirements for the CP in the example above the CP needs a <strong>virtualBinding</strong> to the VDU in this case <strong>VDU1</strong>. The bindings can be multiple hence the requirements is a node.</td>
 </tr>
 <tr>
 <td>requirements: virtualLink</td>
-<td>String</td>
-<td>It refers to Node Template which describes the Virtual Link in this case the Virtual Link is called <strong>private</strong>. Same applies here regarding requirements being a list.</td>
+<td align="right">String</td>
+<td align="right">It refers to Node Template which describes the Virtual Link in this case the Virtual Link is called <strong>private</strong>. Same applies here regarding requirements being a list.</td>
 </tr>
 </tbody>
 </table>
@@ -1112,20 +1120,20 @@ private:
 <thead>
 <tr>
 <th>Name</th>
-<th>Value</th>
-<th>Description</th>
+<th align="right">Value</th>
+<th align="right">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>type</td>
-<td>tosca.nodes.nfv.VL</td>
-<td>It is the type of the node. In this example Virtual Link.</td>
+<td align="right">tosca.nodes.nfv.VL</td>
+<td align="right">It is the type of the node. In this example Virtual Link.</td>
 </tr>
 <tr>
 <td>properties:vendor</td>
-<td>String</td>
-<td>Information about the vendor of this Virtual Link.</td>
+<td align="right">String</td>
+<td align="right">Information about the vendor of this Virtual Link.</td>
 </tr>
 </tbody>
 </table>
@@ -1147,30 +1155,30 @@ relationships_template:
 <thead>
 <tr>
 <th>Name</th>
-<th>Value</th>
-<th>Description</th>
+<th align="right">Value</th>
+<th align="right">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>type</td>
-<td>tosca.nodes.relationships.ConnectsTo</td>
-<td>It is the type of the Relationships Template</td>
+<td align="right">tosca.nodes.relationships.ConnectsTo</td>
+<td align="right">It is the type of the Relationships Template</td>
 </tr>
 <tr>
 <td>source</td>
-<td>String</td>
-<td>It is a String which refers to the Node Template that describes the source VNF that provides some parameters in order to realize the dependency with the target VNF</td>
+<td align="right">String</td>
+<td align="right">It is a String which refers to the Node Template that describes the source VNF that provides some parameters in order to realize the dependency with the target VNF</td>
 </tr>
 <tr>
 <td>target</td>
-<td>String</td>
-<td>It is a String which refers to the Node Template that describes the target VNF that requires some parameters in order to realize the dependency with the source VNF</td>
+<td align="right">String</td>
+<td align="right">It is a String which refers to the Node Template that describes the target VNF that requires some parameters in order to realize the dependency with the source VNF</td>
 </tr>
 <tr>
 <td>parameters</td>
-<td>List &lt; String &gt;</td>
-<td>List of parameters for this dependency</td>
+<td align="right">List &lt; String &gt;</td>
+<td align="right">List of parameters for this dependency</td>
 </tr>
 </tbody>
 </table>
@@ -1183,7 +1191,7 @@ relationships_template:
 </code></pre>
 
 <h3 id="complete-example">Complete Example</h3>
-<pre><code class="yaml">tosca_definitions_version: tosca_simple_dummy_nsd
+<pre><code class="yaml">tosca_definitions_version: tosca_simple_profile_for_nfv_1_0
 description: Example of NSD
 
 metadata:
@@ -1195,7 +1203,7 @@ topology_template:
 
   node_templates:
 
-    dummy-server: #VNF1
+    dummy-server:
         type: openbaton.type.VNF
         properties:
           vendor: Fokus
@@ -1215,8 +1223,8 @@ topology_template:
           - virtualLink: private
           - vdu: VDU2
         interfaces:
-          lifecycle: # lifecycle
-            instantiate:
+          lifecycle:
+            INSTANTIATE:
               - install.sh
               - install-srv.sh
 
@@ -1255,8 +1263,6 @@ topology_template:
     VDU2:
       type: tosca.nodes.nfv.VDU
       properties:
-        vm_image:
-          - ubuntu-14.04-server-cloudimg-amd64-disk1
         scale_in_out: 2
         vim_instance_name:
           - test-vim-instance
@@ -1325,7 +1331,7 @@ Script for open external links in a new tab
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../tosca-CSAR-onboarding/" class="btn btn-neutral float-right" title="**HIDDEN**"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../tosca-CSAR-onboarding/" class="btn btn-neutral float-right" title="**HIDDEN**">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../tosca-vnfd/" class="btn btn-neutral" title="**HIDDEN**"><span class="icon icon-circle-arrow-left"></span> Previous</a>

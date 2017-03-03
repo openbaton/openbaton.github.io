@@ -10,7 +10,7 @@
   <title>OpenBaton Documentation</title>
   
 
-  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="shortcut icon" href="favicon.ico">
   
 
   
@@ -694,6 +694,14 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -719,35 +727,69 @@ It provides an extensive Fault Management System that is based on alarms coming 
 <p>The technical requirements are:  </p>
 <ul>
 <li>Zabbix plugin running (see the <a href="https://github.com/openbaton/docs/blob/develop/docs/zabbix-plugin.md">doc of Zabbix plugin</a>)</li>
-<li><a href="#create-the-database">Database</a> called "faultmanagement"</li>
-<li>Open Baton version 3.x running</li>
-<li>Generic VNFM 3.x running</li>
+<li>Mysql server installed and running</li>
+<li>Open Baton 3.2.x running</li>
+<li>Generic VNFM 3.2.x running</li>
 </ul>
-<h1 id="how-to-install-open-baton-fms">How to install Open Baton FMS</h1>
-<p>Once the prerequisites are met, you can clone the following project from git, compile it using Gradle and launch it:  </p>
-<pre><code class="bash">git clone https://github.com/openbaton/fm-system.git openbaton-fm
-cd openbaton-fm
-./openbaton-fm.sh compile start
-</code></pre>
-
-<p>The configuration file is etc/fms.properties, you have to copy it in the Open Baton folder ( /etc/openbaton ). You can do it typing the following command:</p>
-<pre><code class="bash">cp etc/fms.properties /etc/openbaton/fms.properties
-</code></pre>
-
-<p>Now change the "nfvo.ip" property with the IP of the NFVO and that is all.</p>
+<h1 id="how-to-install-open-baton-fm">How to install Open Baton FM</h1>
+<p>Once the prerequisites are met, you need to execute the following steps.</p>
 <h2 id="create-the-database">Create the database</h2>
-<p>In order to create the database be sure you have installed <a href="http://dev.mysql.com/doc/refman/5.7/en/linux-installation.html">mysql server</a>.
-Then access to mysql-server with the credential you choose during the installation procedure, and create a new database called faultmanagement.</p>
-<pre><code class="bash">mysql create database faultmanagement;
+<p>In order to create the database be sure you have installed <a href="http://dev.mysql.com/doc/refman/5.7/en/linux-installation.html">mysql server</a> as already mentioned in the requirements section. 
+You need root access to mysql-server in order to create a new database called faultmanagement. Once you access into mysql, execute the following operation: </p>
+<pre><code class="bash">create database faultmanagement;
 </code></pre>
 
-<p>Now give the permission to this database to the user with the credential you specified in the DB properties
-(spring.datasource.username=admin, spring.datasource.password=changeme) of the Open Baton configuration file.
-At default they are username=admin and password:changeme.</p>
-<pre><code class="bash">GRANT ALL PRIVILEGES ON faultmanagement.* TO admin@'%' IDENTIFIED BY 'changeme';
+<p>Once the database has been created, you should create a user which will be used by the FM system to access and store data on the database. If you decide to use the <code>root</code> user you can skip this step, but you need to modify the fms.properties file accordingly as defined in the next section. 
+By default username and password are set with the following values in the fms.properties properties file (see next section if you plan to use a different user and password): </p>
+<ul>
+<li>username=fmsuser</li>
+<li>password=changeme</li>
+</ul>
+<p>Grant the access to the database "faultmanagement", to the user, running the following command:</p>
+<pre><code class="bash">GRANT ALL PRIVILEGES ON faultmanagement.* TO fmsuser@'%' IDENTIFIED BY 'changeme';
+</code></pre>
+
+<h2 id="modify-fmsproperties-file-in-order-to-use-different-credentials-for-the-database">Modify fms.properties file in order to use different credentials for the database</h2>
+<p>In the folder "etc" of this project, there is a file called fms.properties containing all the default properties values used by the FM system. </p>
+<p>In order to use different credentials, you need to modify the following DB properties: </p>
+<pre><code class="bash"># DB properties
+spring.datasource.username=fmsuser
+spring.datasource.password=changeme
+</code></pre>
+
+<p>In case your DB is running remotely, you can specifcy a different host, instead of localhost, in the following property (be careful to have port 3306 open and accessible from remote): </p>
+<pre><code class="bash">spring.datasource.url=jdbc:mysql://localhost:3306/faultmanagement
+</code></pre>
+
+<h2 id="additional-configuration-options">Additional configuration options</h2>
+<p>As already mentioned in the previous section, in the folder "etc" of this project, there is a file called fms.properties containing all the default properties values used by the FM system.
+You should update this file in order to make it work with your NFVO instance. Change the Open Baton related properties section: </p>
+<pre><code class="bash">################################################
+####### Open Baton Related properties ##########
+################################################
+nfvo.ip=localhost
+nfvo.port=8080
+nfvo-usr=admin
+nfvo-pwd=openbaton
+</code></pre>
+
+<h2 id="checkout-the-source-code-of-the-project-compile-and-run-it">Checkout the source code of the project, compile and run it</h2>
+<p>You can clone this repository with this command:</p>
+<pre><code class="bash">git clone https://github.com/openbaton/fm-system.git
+</code></pre>
+
+<p>The configuration file is etc/fms.properties, you have to copy it in the Open Baton etc folder ( /etc/openbaton ). You can do it typing the following command </p>
+<pre><code class="bash">cd fm-system
+cp etc/fms.properties /etc/openbaton/fms.properties
+</code></pre>
+
+<p>Now, you can finally compile and start the FM System. </p>
+<pre><code class="bash">./fm-system.sh compile start
 </code></pre>
 
 <h1 id="how-to-use-open-baton-fm">How to use Open Baton FM</h1>
+<p>Open Baton FM is a rule-driven tool. The rules define when to generate an alarm and how to react. The rule for generating the alarm is called fault management policy (see the next section). 
+The rule for defining how to react upon alarms is a Drools Rule. Once such rules are in place, Open Baton FM follows the following workflow.</p>
 <p><img alt="Fault management system use case" src="../images/fms-use-case.png" /></p>
 <p>The actions are listed below:</p>
 <table>
@@ -793,12 +835,13 @@ At default they are username=admin and password:changeme.</p>
 ]
 </code></pre>
 
+<p>You can find an example of the fault management policy for the <strong>TOSCA YAML descriptors</strong> <a href="../tosca-fm/">here</a>.</p>
 <p>Description of the fault management policy:  </p>
 <table>
 <thead>
 <tr>
 <th>Property</th>
-<th>Derscription</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -812,7 +855,7 @@ At default they are username=admin and password:changeme.</p>
 </tr>
 <tr>
 <td>criteria</td>
-<td>The criteria defines a threshold on a monitoring paramenter. When the threshold is crossed an alarm is fired.</td>
+<td>The criteria defines a threshold on a monitoring parameter. When the threshold is crossed an alarm is fired.</td>
 </tr>
 <tr>
 <td>period</td>
@@ -829,7 +872,7 @@ At default they are username=admin and password:changeme.</p>
 <thead>
 <tr>
 <th>Property</th>
-<th>Derscription</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -839,11 +882,11 @@ At default they are username=admin and password:changeme.</p>
 </tr>
 <tr>
 <td>function</td>
-<td>The function to apply to the parameter ( last(0) means the last value available of the parameter). Since currently only Zabbix is supported, look at the <a href="https://www.zabbix.com/documentation/2.2/manual/appendix/triggers/functions">Zabbix documentation</a> for the all available funcitons.</td>
+<td>The function to apply to the parameter ( last(0) means the last value available of the parameter). Since currently only Zabbix is supported, look at the <a href="https://www.zabbix.com/documentation/2.2/manual/appendix/triggers/functions">Zabbix documentation</a> for the all available functions.</td>
 </tr>
 <tr>
 <td>vnfc_selector</td>
-<td>select if the criteria is met when all VNFC components cross the thresold (all) or at least one (at_least_one)</td>
+<td>select if the criteria is met when all VNFC components cross the threshold (all) or at least one (at_least_one)</td>
 </tr>
 <tr>
 <td>comparison_operator</td>
@@ -968,7 +1011,7 @@ Then in a Drools rule this action can be called as following:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../network-slicing/" class="btn btn-neutral float-right" title="NS overview"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../network-slicing/" class="btn btn-neutral float-right" title="NS overview">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../autoscaling/" class="btn btn-neutral" title="Autoscaling overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>

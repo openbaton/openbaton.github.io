@@ -10,7 +10,7 @@
   <title>OpenBaton Documentation</title>
   
 
-  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="shortcut icon" href="favicon.ico">
   
 
   
@@ -694,6 +694,14 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -728,6 +736,7 @@ Eleven tests are run.</p>
 <li>error-in-terminate</li>
 <li>wrong-lifecycle-event</li>
 <li>user-project-test</li>
+<li>stress-test</li>
 </ol>
 <p><strong>scenario-dummy-iperf</strong> uses the [Dummy VNFM][vnfm-dummy] to simulate a VNFM and therefore tests the communication between NFVO and VNFM. 
 It does not actually deploy a network service. The fake network service is a simple iperf scenario with one server and one client. </p>
@@ -751,6 +760,7 @@ To see detailed information about which scaling functions are executed exactly p
 <p>The test <strong>wrong-lifecycle-event</strong> tries to onboard a NSD to the NFVO which contains an undefined lifecycle event. The test will pass if the onboarding is not successful. </p>
 <p>The <strong>user-project-test</strong> checks if the NFVO handles user and project management correctly. It adds and deletes users, projects and a vim instance from different 
 user perspectives. This test can be executed without a VNFManager. </p>
+<p>The <strong>stress-test</strong> checks if the NFVO can handle a large number of NSR deployments from the same or different NSDs at the same time. This test uses the Dummy-VNFM. For this test you should set the property <em>nfvo.vmanager.executor.maxpoolsize</em> to a large number (e.g. 200) in the /etc/openbaton/openbaton.properties file.</p>
 <p>In most of the tests a vim instance and a network service descriptor are stored on the orchestrator and the network service launched. 
 If that is successful, the network service is stopped and the network service record, network service descriptor and the vim instance are removed. 
 In the cases of the <strong>scenario-real-iperf</strong>, <strong>scenario-complex-ncat</strong> and <strong>scenario-scaling</strong> test also the service itself is tested, i.e. if iperf is running and the clients can connect to the server. Therefore the integration tests will execute some scripts for testing on the virtual machines. </p>
@@ -763,61 +773,61 @@ In the cases of the <strong>scenario-real-iperf</strong>, <strong>scenario-compl
 </ol>
 <h2 id="installation-and-configuration">Installation and configuration</h2>
 <p>Use git to clone the integration-test project to your machine. 
-In <em>integration-tests/src/main/resources</em> is a file named integration-test.properties. 
+In <em>integration-tests/src/main/resources</em> is a file named integration-tests.properties. 
 Open it and set the property values according to your needs. </p>
 <table>
 <thead>
 <tr>
 <th>Field</th>
-<th>Value</th>
+<th align="right">Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>nfvo-ip</td>
-<td>The ip of the machine on which the NFVO you want to use is running</td>
+<td align="right">The ip of the machine on which the NFVO you want to use is running</td>
 </tr>
 <tr>
 <td>nfvo-port</td>
-<td>The port on which the NFVO is running</td>
+<td align="right">The port on which the NFVO is running</td>
 </tr>
 <tr>
 <td>nfvo-usr</td>
-<td>The username required for logging in the NFVO</td>
+<td align="right">The username required for logging in the NFVO</td>
 </tr>
 <tr>
 <td>nfvo-pwd</td>
-<td>The password required for logging in the NFVO</td>
+<td align="right">The password required for logging in the NFVO</td>
 </tr>
 <tr>
 <td>nfvo-project-id</td>
-<td>The id of the project that the integration tests shall use</td>
+<td align="right">The id of the project that the integration tests shall use</td>
 </tr>
 <tr>
 <td>nfvo-ssl-enabled</td>
-<td>Set this to <em>true</em> if the NFVO uses SSL</td>
+<td align="right">Set this to <em>true</em> if the NFVO uses SSL</td>
 </tr>
 <tr>
 <td>local-ip</td>
-<td>The ip of the machine on which the integration test is running</td>
+<td align="right">The ip of the machine on which the integration test is running</td>
 </tr>
 <tr>
 <td>clear-after-test</td>
-<td>If set to <em>true</em>, the NFVO will be cleared of all the remaining NSRs, NSD, VNFPackages and Vim-Instances left from previous test</td>
+<td align="right">If set to <em>true</em>, the NFVO will be cleared of all the remaining NSRs, NSD, VNFPackages and Vim-Instances left from previous test</td>
 </tr>
 <tr>
 <td>integration-test-scenarios</td>
-<td>Here you can specify a folder in which you can put integration test scenarios. If <em>.ini</em> files exist in this folder, the integration test will use just those files. If there are no files it will use the ones in the projects resource folder</td>
+<td align="right">Here you can specify a folder in which you can put integration test scenarios. If <em>.ini</em> files exist in this folder, the integration test will use just those files. If there are no files it will use the ones in the projects resource folder</td>
 </tr>
 <tr>
 <td>external-properties-file</td>
-<td>If you want to use another file for fetching the properties. It is already preset to <em>/etc/openbaton/integration-test/integration-test.properties</em>. If it does not exist it will not be used.</td>
+<td align="right">If you want to use another file for fetching the properties. It is already preset to <em>/etc/openbaton/integration-tests/integration-tests.properties</em>. If it does not exist it will not be used.</td>
 </tr>
 </tbody>
 </table>
 <p>After that you will also need a keypair for OpenStack. Create one and download the private key as a .pem file. 
 Rename it to <em>integration-test.pem</em> and provide it with the needed permissions by executing <em>chmod 400 integration-test.pem</em>.
-If it does not exist already create the directory <em>/etc/openbaton/integration-test</em> on your machine and move the pem file into it. 
+If it does not exist already create the directory <em>/etc/openbaton/integration-tests</em> on your machine and move the pem file into it. 
 The next step is to create a vim file. 
 Here is an example where you just have to change some fields. </p>
 <pre><code class="json">{
@@ -884,7 +894,7 @@ Script for open external links in a new tab
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../nfvo-architecture/" class="btn btn-neutral float-right" title="NFVO Architecture"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../nfvo-architecture/" class="btn btn-neutral float-right" title="NFVO Architecture">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../fms-sipp-tutorial/" class="btn btn-neutral" title="Fault Management System"><span class="icon icon-circle-arrow-left"></span> Previous</a>

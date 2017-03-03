@@ -10,7 +10,7 @@
   <title>OpenBaton Documentation</title>
   
 
-  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="shortcut icon" href="favicon.ico">
   
 
   
@@ -692,6 +692,14 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -740,7 +748,7 @@ name-file = real-vim.json
 <p>The node we just added will create a vim instance. That is defined by the class-name field. 
 The class VimInstanceCreate stores a vim instance from the <em>real-vim.json</em> file to the orchestrator. 
 A complete list of classes you can use is provided later in this document. 
-The file <em>real-vim.json</em> has to be stored either in <strong>/etc/openbaton/integration-test/vim-instances/real-vim.json</strong> or in <strong>.../integration-tests/src/main/resources/etc/json_file/vim_instances/real-vim.json</strong>. 
+The file <em>real-vim.json</em> has to be stored either in <strong>/etc/openbaton/integration-tests/vim-instances/real-vim.json</strong> or in <strong>.../integration-tests/src/main/resources/etc/json_file/vim_instances/real-vim.json</strong>. 
 The file in the first folder has a higher priority than the one in the second one.</p>
 <p>We already know that we want to delete this vim from the orchestrator at the end of the test. 
 So we can add the following:</p>
@@ -798,7 +806,7 @@ At the moment there is just one so only one NSD will be stored on the orchestrat
 But if we would provide for example a 2, then this task would be executed twice concurrently. 
 Every task would be independent and every child node which is defined for <em>nsd-c-1</em> would be executed for every instance separately. 
 The name-file specifies the .json file that shall be used to create the NSD. 
-It may be stored either in <strong>/etc/openbaton/integration-test/network-service-descriptors/NetworkServiceDescriptor-iperf-real.json</strong> or in <strong>.../integration-tests/src/main/resources/etc/json_file/network_service_descriptors/NetworkServiceDescriptor-iperf-real.json</strong>. 
+It may be stored either in <strong>/etc/openbaton/integration-tests/network-service-descriptors/NetworkServiceDescriptor-iperf-real.json</strong> or in <strong>.../integration-tests/src/main/resources/etc/json_file/network_service_descriptors/NetworkServiceDescriptor-iperf-real.json</strong>. 
 Again the former folder has a higher priority than the latter one. </p>
 <p>In the next step we will deploy the network service record (NSR) from the created NSDs and wait for its instantiation. </p>
 <pre><code class="ini">[it]
@@ -846,7 +854,7 @@ This waits for the orchestrator to send the action INSTANTIATE_FINISH. If it rec
 <p>Now we will show how to test, if the network service is actually running.
 Therefore you can tell the integration test to ssh the instantiated virtual machines and execute commands.
 Those commands have to be written in scripts which can be placed in two locations.
-Either in <strong>/etc/openbaton/integration-test/scripts/</strong> or in <strong>/integration-tests/src/main/resources/etc/scripts/</strong> in the
+Either in <strong>/etc/openbaton/integration-tests/scripts/</strong> or in <strong>/integration-tests/src/main/resources/etc/scripts/</strong> in the
 project itself. The former directory is checked first for a script name. If it does not exist there the latter location is used. 
 Bash sources the scripts on the remote machines. 
 But where do I specify the Virtual Machines on which the scripts shall be executed? Well, also in the .ini file.
@@ -1143,7 +1151,7 @@ successor-remover = G
 <p>Tasks that are side by side can run concurrently. </p>
 <h2 id="other-important-information">Other important information</h2>
 <p>For the integration test to be able to ssh to the virtual machines on openstack, you have to provide a .pem file of a key-pair you are using on openstack.
-Download this file, name it <em>integration-test.pem</em> and put it into the directory <strong>/etc/openbaton/integration-test/</strong>.
+Download this file, name it <em>integration-test.pem</em> and put it into the directory <strong>/etc/openbaton/integration-tests/</strong>.
 Furthermore it has to have the correct permissions so you probably have to execute <em>chmod 400 integration-test.pem</em>.
 And don't forget to make the scripts executable.
 Do NOT use '-' in types of VNFDs or configuration names as you cannot use them in bash scripts it will not work for the integration test scripts. </p>
@@ -1153,455 +1161,455 @@ Do NOT use '-' in types of VNFDs or configuration names as you cannot use them i
 <thead>
 <tr>
 <th>class-name</th>
-<th>purpose</th>
-<th>fields</th>
-<th>field purpose</th>
+<th align="right">purpose</th>
+<th align="right">fields</th>
+<th align="right">field purpose</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>GenericServiceTester</td>
-<td>Test the network service itself</td>
-<td>script-1</td>
-<td>The first script to be executed on the VM</td>
+<td align="right">Test the network service itself</td>
+<td align="right">script-1</td>
+<td align="right">The first script to be executed on the VM</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>...</td>
-<td></td>
+<td align="right"></td>
+<td align="right">...</td>
+<td align="right"></td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>script-n</td>
-<td>The n-th script to be executed on the VM</td>
+<td align="right"></td>
+<td align="right">script-n</td>
+<td align="right">The n-th script to be executed on the VM</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>vnf-type</td>
-<td>The type of the VNFs that shall be tested</td>
+<td align="right"></td>
+<td align="right">vnf-type</td>
+<td align="right">The type of the VNFs that shall be tested</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>user-name</td>
-<td>The user account on the VM on which the scripts will be executed</td>
+<td align="right"></td>
+<td align="right">user-name</td>
+<td align="right">The user account on the VM on which the scripts will be executed</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>vm-scripts-path</td>
-<td>The path to the directory of the VM where the scripts will be stored before execution</td>
+<td align="right"></td>
+<td align="right">vm-scripts-path</td>
+<td align="right">The path to the directory of the VM where the scripts will be stored before execution</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>net-name</td>
-<td>Specifies the network/virtual-link to which the VMs that shall be tested are connected</td>
+<td align="right"></td>
+<td align="right">net-name</td>
+<td align="right">Specifies the network/virtual-link to which the VMs that shall be tested are connected</td>
 </tr>
 <tr>
 <td>NetworkServiceDescriptorCreate</td>
-<td>Store a NSD on the NFVO</td>
-<td>expected-to-fail</td>
-<td>If set to true the task will fail if the onboarding of the NSD is successful</td>
+<td align="right">Store a NSD on the NFVO</td>
+<td align="right">expected-to-fail</td>
+<td align="right">If set to true the task will fail if the onboarding of the NSD is successful</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>name-file</td>
-<td>The name of the json file which contains the NSD</td>
+<td align="right"></td>
+<td align="right">name-file</td>
+<td align="right">The name of the json file which contains the NSD</td>
 </tr>
 <tr>
 <td>NetworkServiceDescriptorCreateFromPackage</td>
-<td>Create a NSD by using a VNFPackage that was uploaded beforehand</td>
-<td>expected-to-fail</td>
-<td>If set to true the task will fail if the onboarding of the NSD is successful</td>
+<td align="right">Create a NSD by using a VNFPackage that was uploaded beforehand</td>
+<td align="right">expected-to-fail</td>
+<td align="right">If set to true the task will fail if the onboarding of the NSD is successful</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>name-file</td>
-<td>The name of the json file which contains the NSD</td>
+<td align="right"></td>
+<td align="right">name-file</td>
+<td align="right">The name of the json file which contains the NSD</td>
 </tr>
 <tr>
 <td>NetworkServiceDescriptorDelete</td>
-<td>Delete a NSD from the NFVO</td>
-<td></td>
-<td></td>
+<td align="right">Delete a NSD from the NFVO</td>
+<td align="right"></td>
+<td align="right"></td>
 </tr>
 <tr>
 <td>NetworkServiceDescriptorWait</td>
-<td>Wait for a specific event of the NFVO to happen that is related to NSDs</td>
-<td>action</td>
-<td>The event which will be waited for to happen</td>
+<td align="right">Wait for a specific event of the NFVO to happen that is related to NSDs</td>
+<td align="right">action</td>
+<td align="right">The event which will be waited for to happen</td>
 </tr>
 <tr>
 <td>NetworkServiceRecordCreate</td>
-<td>Deploy a network service from a NSD and create the NSR</td>
-<td></td>
-<td></td>
+<td align="right">Deploy a network service from a NSD and create the NSR</td>
+<td align="right"></td>
+<td align="right"></td>
 </tr>
 <tr>
 <td>NetworkServiceRecordDelete</td>
-<td>Delete the NSR</td>
-<td></td>
-<td></td>
+<td align="right">Delete the NSR</td>
+<td align="right"></td>
+<td align="right"></td>
 </tr>
 <tr>
 <td>NetworkServiceRecordGetLatest</td>
-<td>Expects to get passed a NSR from its preceding task, retrieves the latest version of this NSR from the NFVO and passes it to the following task</td>
-<td></td>
-<td></td>
+<td align="right">Expects to get passed a NSR from its preceding task, retrieves the latest version of this NSR from the NFVO and passes it to the following task</td>
+<td align="right"></td>
+<td align="right"></td>
 </tr>
 <tr>
 <td>NetworkServiceRecordWait</td>
-<td>Wait for a specific event of the NFVO to happen that is related to NSRs</td>
-<td>action</td>
-<td>The event which will be waited for to happen</td>
+<td align="right">Wait for a specific event of the NFVO to happen that is related to NSRs</td>
+<td align="right">action</td>
+<td align="right">The event which will be waited for to happen</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>timeout</td>
-<td>After this time (in seconds) the task will fail if the event did not occur yet</td>
+<td align="right"></td>
+<td align="right">timeout</td>
+<td align="right">After this time (in seconds) the task will fail if the event did not occur yet</td>
 </tr>
 <tr>
 <td>PackageDelete</td>
-<td>Delete a VNFPackage</td>
-<td>package-name</td>
-<td>The name of the package that will be deleted</td>
+<td align="right">Delete a VNFPackage</td>
+<td align="right">package-name</td>
+<td align="right">The name of the package that will be deleted</td>
 </tr>
 <tr>
 <td>PackageUpload</td>
-<td>Upload a VNFPackage</td>
-<td>package-upload</td>
-<td>The name of the package that will be uploaded</td>
+<td align="right">Upload a VNFPackage</td>
+<td align="right">package-upload</td>
+<td align="right">The name of the package that will be uploaded</td>
 </tr>
 <tr>
 <td>Pause</td>
-<td>Used to elapse time until the next task will start</td>
-<td>duration</td>
-<td>The time (in seconds) that this task shall do nothing and after which it will finish</td>
+<td align="right">Used to elapse time until the next task will start</td>
+<td align="right">duration</td>
+<td align="right">The time (in seconds) that this task shall do nothing and after which it will finish</td>
 </tr>
 <tr>
 <td>ProjectCreate</td>
-<td>Used to create a new Project</td>
-<td>as-user-name</td>
-<td>If specified the integration tests will use this user to create the Project. If not the default user specified in the integration-test.properties will be used.</td>
+<td align="right">Used to create a new Project</td>
+<td align="right">as-user-name</td>
+<td align="right">If specified the integration tests will use this user to create the Project. If not the default user specified in the integration-tests.properties will be used.</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>as-user-password</td>
-<td>The password of the User that shall create the new Project. Just needed if <em>as-user-name</em> is specified.</td>
+<td align="right"></td>
+<td align="right">as-user-password</td>
+<td align="right">The password of the User that shall create the new Project. Just needed if <em>as-user-name</em> is specified.</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>expected-to-fail</td>
-<td>Set this to true if you expect the Project creation to fail.</td>
+<td align="right"></td>
+<td align="right">expected-to-fail</td>
+<td align="right">Set this to true if you expect the Project creation to fail.</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>project-name</td>
-<td>The name of the new Project.</td>
+<td align="right"></td>
+<td align="right">project-name</td>
+<td align="right">The name of the new Project.</td>
 </tr>
 <tr>
 <td>ProjectDelete</td>
-<td>Used to delete a project</td>
-<td>as-user-name</td>
-<td>If specified the integration tests will use this user to delete the Project. If not the default user specified in the integration-test.properties will be used.</td>
+<td align="right">Used to delete a project</td>
+<td align="right">as-user-name</td>
+<td align="right">If specified the integration tests will use this user to delete the Project. If not the default user specified in the integration-tests.properties will be used.</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>as-user-password</td>
-<td>The password of the User that shall delete the new Project. Just needed if <em>as-user-name</em> is specified.</td>
+<td align="right"></td>
+<td align="right">as-user-password</td>
+<td align="right">The password of the User that shall delete the new Project. Just needed if <em>as-user-name</em> is specified.</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>expected-to-fail</td>
-<td>Set this to true if you expect deleting the Project to fail.</td>
+<td align="right"></td>
+<td align="right">expected-to-fail</td>
+<td align="right">Set this to true if you expect deleting the Project to fail.</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>project-name</td>
-<td>The name of the project to delete.</td>
+<td align="right"></td>
+<td align="right">project-name</td>
+<td align="right">The name of the project to delete.</td>
 </tr>
 <tr>
 <td>ScaleIn</td>
-<td>Triggers one scale in operation on a VNFR specified in the ini file</td>
-<td>vnf-type</td>
-<td>The type of VNFR that shall be scaled in</td>
+<td align="right">Triggers one scale in operation on a VNFR specified in the ini file</td>
+<td align="right">vnf-type</td>
+<td align="right">The type of VNFR that shall be scaled in</td>
 </tr>
 <tr>
 <td>ScaleOut</td>
-<td>Triggers one scale out operation on a VNFR specified in the ini file</td>
-<td>floating-ip</td>
-<td>The floating IP which shall be assigned to the new instance</td>
+<td align="right">Triggers one scale out operation on a VNFR specified in the ini file</td>
+<td align="right">floating-ip</td>
+<td align="right">The floating IP which shall be assigned to the new instance</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>virtual-link</td>
-<td>The network/virtual-link to which the new instance shall be connected</td>
+<td align="right"></td>
+<td align="right">virtual-link</td>
+<td align="right">The network/virtual-link to which the new instance shall be connected</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>vnf-type</td>
-<td>The type of the VNFR on which the scale out shall be performed</td>
+<td align="right"></td>
+<td align="right">vnf-type</td>
+<td align="right">The type of the VNFR on which the scale out shall be performed</td>
 </tr>
 <tr>
 <td>ScalingTester</td>
-<td>Verifies if the number of VNFCInstances is equal to a given number and passes an updated NSR to the next task, which can be important after a scaling operation</td>
-<td>vnfc-count</td>
-<td>The expected number of instances of this VNF</td>
+<td align="right">Verifies if the number of VNFCInstances is equal to a given number and passes an updated NSR to the next task, which can be important after a scaling operation</td>
+<td align="right">vnfc-count</td>
+<td align="right">The expected number of instances of this VNF</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>vnf-type</td>
-<td>The type of the VNFR whose number of VNFCs should be checked</td>
+<td align="right"></td>
+<td align="right">vnf-type</td>
+<td align="right">The type of the VNFR whose number of VNFCs should be checked</td>
 </tr>
 <tr>
 <td>UserCreate</td>
-<td>Used to create a new User</td>
-<td>as-user-name</td>
-<td>If specified the integration tests will use this user to create the User. If not the default user specified in the integration-test.properties will be used.</td>
+<td align="right">Used to create a new User</td>
+<td align="right">as-user-name</td>
+<td align="right">If specified the integration tests will use this user to create the User. If not the default user specified in the integration-tests.properties will be used.</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>as-user-password</td>
-<td>The password of the User that shall create the new User. Just needed if <em>as-user-name</em> is specified.</td>
+<td align="right"></td>
+<td align="right">as-user-password</td>
+<td align="right">The password of the User that shall create the new User. Just needed if <em>as-user-name</em> is specified.</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>enabled</td>
-<td>Set to true if the new User should be enabled.</td>
+<td align="right"></td>
+<td align="right">enabled</td>
+<td align="right">Set to true if the new User should be enabled.</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>expected-to-fail</td>
-<td>Set this to true if you expect the User creation to fail.</td>
+<td align="right"></td>
+<td align="right">expected-to-fail</td>
+<td align="right">Set this to true if you expect the User creation to fail.</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>guest-projects</td>
-<td>A comma separated list of project names. In each listed project the new User will obtain a GUEST role.</td>
+<td align="right"></td>
+<td align="right">guest-projects</td>
+<td align="right">A comma separated list of project names. In each listed project the new User will obtain a GUEST role.</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>new-user-is-admin</td>
-<td>Set this to true if the new User should be an ADMIN.</td>
+<td align="right"></td>
+<td align="right">new-user-is-admin</td>
+<td align="right">Set this to true if the new User should be an ADMIN.</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>new-user-name</td>
-<td>The name of the User to create.</td>
+<td align="right"></td>
+<td align="right">new-user-name</td>
+<td align="right">The name of the User to create.</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>new-user-password</td>
-<td>The password of the User to create.</td>
+<td align="right"></td>
+<td align="right">new-user-password</td>
+<td align="right">The password of the User to create.</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>user-projects</td>
-<td>A comma separated list of project names. In each listed project the new User will obtain a USER role.</td>
+<td align="right"></td>
+<td align="right">user-projects</td>
+<td align="right">A comma separated list of project names. In each listed project the new User will obtain a USER role.</td>
 </tr>
 <tr>
 <td>UserDelete</td>
-<td>Used to delete a User</td>
-<td>as-user-name</td>
-<td>If specified the integration tests will use this user to delete the User. If not the default user specified in the integration-test.properties will be used.</td>
+<td align="right">Used to delete a User</td>
+<td align="right">as-user-name</td>
+<td align="right">If specified the integration tests will use this user to delete the User. If not the default user specified in the integration-tests.properties will be used.</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>as-user-password</td>
-<td>The password of the User that shall delete the User. Just needed if <em>as-user-name</em> is specified.</td>
+<td align="right"></td>
+<td align="right">as-user-password</td>
+<td align="right">The password of the User that shall delete the User. Just needed if <em>as-user-name</em> is specified.</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>expected-to-fail</td>
-<td>Set this to true if you expect the User deletion to fail.</td>
+<td align="right"></td>
+<td align="right">expected-to-fail</td>
+<td align="right">Set this to true if you expect the User deletion to fail.</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>user-to-delete</td>
-<td>The name of the User that shall be deleted.</td>
+<td align="right"></td>
+<td align="right">user-to-delete</td>
+<td align="right">The name of the User that shall be deleted.</td>
 </tr>
 <tr>
 <td>UserUpdate</td>
-<td>Used to update a User</td>
-<td>as-user-name</td>
-<td>If specified the integration tests will use this user to update the User. If not the default user specified in the integration-test.properties will be used.</td>
+<td align="right">Used to update a User</td>
+<td align="right">as-user-name</td>
+<td align="right">If specified the integration tests will use this user to update the User. If not the default user specified in the integration-tests.properties will be used.</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>as-user-password</td>
-<td>The password of the User that shall create the new User. Just needed if <em>as-user-name</em> is specified.</td>
+<td align="right"></td>
+<td align="right">as-user-password</td>
+<td align="right">The password of the User that shall create the new User. Just needed if <em>as-user-name</em> is specified.</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>enabled</td>
-<td>Set to true if the updated User should be enabled.</td>
+<td align="right"></td>
+<td align="right">enabled</td>
+<td align="right">Set to true if the updated User should be enabled.</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>expected-to-fail</td>
-<td>Set this to true if you expect updating the User to fail.</td>
+<td align="right"></td>
+<td align="right">expected-to-fail</td>
+<td align="right">Set this to true if you expect updating the User to fail.</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>guest-projects</td>
-<td>A comma separated list of project names. In each listed project the updated User will obtain a GUEST role.</td>
+<td align="right"></td>
+<td align="right">guest-projects</td>
+<td align="right">A comma separated list of project names. In each listed project the updated User will obtain a GUEST role.</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>user-is-admin</td>
-<td>Set this to true if the updated User should be an ADMIN.</td>
+<td align="right"></td>
+<td align="right">user-is-admin</td>
+<td align="right">Set this to true if the updated User should be an ADMIN.</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>user-name-new</td>
-<td>The new name of the User.</td>
+<td align="right"></td>
+<td align="right">user-name-new</td>
+<td align="right">The new name of the User.</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>user-name-old</td>
-<td>The name of the User to update.</td>
+<td align="right"></td>
+<td align="right">user-name-old</td>
+<td align="right">The name of the User to update.</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>user-password-new</td>
-<td>The new password of the User.</td>
+<td align="right"></td>
+<td align="right">user-password-new</td>
+<td align="right">The new password of the User.</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>user-projects</td>
-<td>A comma separated list of project names. In each listed project the updated User will obtain a USER role.</td>
+<td align="right"></td>
+<td align="right">user-projects</td>
+<td align="right">A comma separated list of project names. In each listed project the updated User will obtain a USER role.</td>
 </tr>
 <tr>
 <td>VimInstanceCreate</td>
-<td>Store a vim instance on the NFVO from a json file</td>
-<td>name-file</td>
-<td>The name of the json file that contains the VimInstance</td>
+<td align="right">Store a vim instance on the NFVO from a json file</td>
+<td align="right">name-file</td>
+<td align="right">The name of the json file that contains the VimInstance</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>as-user-name</td>
-<td>If specified the integration tests will use this user to create the Vim Instance. If not the default user specified in the integration-test.properties will be used.</td>
+<td align="right"></td>
+<td align="right">as-user-name</td>
+<td align="right">If specified the integration tests will use this user to create the Vim Instance. If not the default user specified in the integration-tests.properties will be used.</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>as-user-password</td>
-<td>The password of the user that shall create the Vim Instance. Just needed if <em>as-user-name</em> is specified.</td>
+<td align="right"></td>
+<td align="right">as-user-password</td>
+<td align="right">The password of the user that shall create the Vim Instance. Just needed if <em>as-user-name</em> is specified.</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>expected-to-fail</td>
-<td>Set this to true if you expect the Vim Instance creation to fail</td>
+<td align="right"></td>
+<td align="right">expected-to-fail</td>
+<td align="right">Set this to true if you expect the Vim Instance creation to fail</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>in-project</td>
-<td>The name of the project to which the Vim Instance shall be uploaded. Just usable if you also specify a user to upload with <em>as-user-name</em> and <em>as-user-password</em>. If not specified the default project specified in the integration-test.properties will be used.</td>
+<td align="right"></td>
+<td align="right">in-project</td>
+<td align="right">The name of the project to which the Vim Instance shall be uploaded. Just usable if you also specify a user to upload with <em>as-user-name</em> and <em>as-user-password</em>. If not specified the default project specified in the integration-tests.properties will be used.</td>
 </tr>
 <tr>
 <td>VimInstanceDelete</td>
-<td>Delete a vim instance</td>
-<td>as-user-name</td>
-<td>If specified the integration tests will use this user to delete the Vim Instance. If not the default user specified in the integration-test.properties will be used.</td>
+<td align="right">Delete a vim instance</td>
+<td align="right">as-user-name</td>
+<td align="right">If specified the integration tests will use this user to delete the Vim Instance. If not the default user specified in the integration-tests.properties will be used.</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>as-user-password</td>
-<td>The password of the user that shall delete the Vim Instance. Just needed if <em>as-user-name</em> is specified.</td>
+<td align="right"></td>
+<td align="right">as-user-password</td>
+<td align="right">The password of the user that shall delete the Vim Instance. Just needed if <em>as-user-name</em> is specified.</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>expected-to-fail</td>
-<td>Set this to true if you expect a failure while trying to delete the Vim Instance.</td>
+<td align="right"></td>
+<td align="right">expected-to-fail</td>
+<td align="right">Set this to true if you expect a failure while trying to delete the Vim Instance.</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>in-project</td>
-<td>The name of the project to which the Vim Instance shall be uploaded. Just usable if you also specify a user to upload with <em>as-user-name</em> and <em>as-user-password</em>. If not specified the default project specified in the integration-test.properties will be used.</td>
+<td align="right"></td>
+<td align="right">in-project</td>
+<td align="right">The name of the project to which the Vim Instance shall be uploaded. Just usable if you also specify a user to upload with <em>as-user-name</em> and <em>as-user-password</em>. If not specified the default project specified in the integration-tests.properties will be used.</td>
 </tr>
 <tr>
 <td>VirtualNetworkFunctionDescriptorDelete</td>
-<td>Delete the VNFDs of a NSD passed from the preceding task, filtered by vnfd name and/or type; if no name and type are passed, all the VNFDs associated to the passed NSD will be deleted</td>
-<td>vnf-type</td>
-<td>The type of the VNFDs that shall be deleted; this field can be omitted if the type is not important for the choice of VNFDs to delete</td>
+<td align="right">Delete the VNFDs of a NSD passed from the preceding task, filtered by vnfd name and/or type; if no name and type are passed, all the VNFDs associated to the passed NSD will be deleted</td>
+<td align="right">vnf-type</td>
+<td align="right">The type of the VNFDs that shall be deleted; this field can be omitted if the type is not important for the choice of VNFDs to delete</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>vnf-name</td>
-<td>The name of the VNFDs that shall be deleted; this field can be omitted if the name is not important for the choice of VNFDs to delete</td>
+<td align="right"></td>
+<td align="right">vnf-name</td>
+<td align="right">The name of the VNFDs that shall be deleted; this field can be omitted if the name is not important for the choice of VNFDs to delete</td>
 </tr>
 <tr>
 <td>VirtualNetworkFunctionRecordWait</td>
-<td>Wait for an event sent by the NFVO which is related to a VNFR</td>
-<td>action</td>
-<td>The event which will be waited for to happen</td>
+<td align="right">Wait for an event sent by the NFVO which is related to a VNFR</td>
+<td align="right">action</td>
+<td align="right">The event which will be waited for to happen</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>timeout</td>
-<td>After this time (in seconds) the task will fail if the event did not occur yet</td>
+<td align="right"></td>
+<td align="right">timeout</td>
+<td align="right">After this time (in seconds) the task will fail if the event did not occur yet</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>vnf-type</td>
-<td>The type of the VNFR that should produce the awaited event</td>
+<td align="right"></td>
+<td align="right">vnf-type</td>
+<td align="right">The type of the VNFR that should produce the awaited event</td>
 </tr>
 <tr>
 <td>VNFRStatusTester</td>
-<td>Checks if the status of a specified VNFR is as expected</td>
-<td>status</td>
-<td>The expected status in which the VNFR should be</td>
+<td align="right">Checks if the status of a specified VNFR is as expected</td>
+<td align="right">status</td>
+<td align="right">The expected status in which the VNFR should be</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>vnf-type</td>
-<td>The type of the VNFR whose status shall be checked</td>
+<td align="right"></td>
+<td align="right">vnf-type</td>
+<td align="right">The type of the VNFR whose status shall be checked</td>
 </tr>
 </tbody>
 </table>
@@ -1645,7 +1653,7 @@ class-name = NetworkServiceDescriptorDelete
 </code></pre>
 
 <p>This example begins by storing a vim instance. Then the package iperf-server-package.tar is stored by specifying the package file name in the package-name attribute. 
-The packages have to be in the directory /etc/openbaton/integration-test/vnf-packages/. 
+The packages have to be in the directory /etc/openbaton/integration-tests/vnf-packages/. 
 Afterwards a NSD is created from the VNFDs in the package and right after that deleted (to keep this example short we did not create a NSR from the NSD and so on). Be aware that you 
 have to use the class NetworkServiceDescriptorCreateFromPackage to store a NSD from a package. 
 Then also the package will be deleted. You have to provide the name of the package you want to delete (not the file name this time but the name of the package defined in the Metadata.yaml). 
@@ -1700,6 +1708,8 @@ References
                     <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../tosca-fm/" class="btn btn-neutral float-right" title="**HIDDEN**">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../nsd-json-example/" class="btn btn-neutral" title="**HIDDEN**"><span class="icon icon-circle-arrow-left"></span> Previous</a>

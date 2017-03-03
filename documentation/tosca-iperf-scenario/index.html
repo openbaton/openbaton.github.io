@@ -10,7 +10,7 @@
   <title>OpenBaton Documentation</title>
   
 
-  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="shortcut icon" href="favicon.ico">
   
 
   
@@ -692,6 +692,14 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -728,11 +736,11 @@ This tutorial makes use of:</p>
 </ul>
 <p>More information about the Iperf Scenario <a href="../iperf-NSR">here</a>.</p>
 <h3 id="complete-example">Complete Example</h3>
-<pre><code class="yaml">tosca_definitions_version: tosca_simple_iperf_scenario
+<pre><code class="yaml">tosca_definitions_version: tosca_simple_profile_for_nfv_1_0
 description: Example of NSD
 
 metadata:
-  ID: NSD-Iperf + Floating Ips
+  ID: NSD-Iperf+FloatingIps
   vendor: Fokus
   version: 1.0
 
@@ -752,9 +760,10 @@ topology_template:
             - flavour_key: m1.small
         requirements:
           - virtualLink: private
-          - vdu: VDU2        interfaces:
+          - vdu: VDU2        
+        interfaces:
           lifecycle: # lifecycle
-            instantiate:
+            INSTANTIATE:
               - install.sh
               - install-srv.sh
 
@@ -855,10 +864,10 @@ Script for open external links in a new tab
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../tosca-dummy-nsr/" class="btn btn-neutral float-right" title="**HIDDEN**"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../tosca-dummy-nsr/" class="btn btn-neutral float-right" title="**HIDDEN**">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../zabbix-server-configuration/" class="btn btn-neutral" title="**HIDDEN**"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../zabbix-server-configuration-2.2/" class="btn btn-neutral" title="**HIDDEN**"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

@@ -10,7 +10,7 @@
   <title>OpenBaton Documentation</title>
   
 
-  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="shortcut icon" href="favicon.ico">
   
 
   
@@ -692,6 +692,14 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -738,7 +746,8 @@ console.log('--------');
                     &quot;connection_point&quot;:[  
                         {  
                             &quot;floatingIp&quot;:&quot;random&quot;,
-                            &quot;virtual_link_reference&quot;:&quot;private&quot;
+                            &quot;virtual_link_reference&quot;:&quot;private&quot;,
+                            &quot;interfaceId&quot;:0
                         }
                     ]
                 }
@@ -777,29 +786,29 @@ console.log('--------');
 <thead>
 <tr>
 <th>Params</th>
-<th>Meaning</th>
+<th align="right">Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>name</td>
-<td>The name to give to the VirtualNetworkFunctionDescriptor</td>
+<td align="right">The name to give to the VirtualNetworkFunctionDescriptor</td>
 </tr>
 <tr>
 <td>vendor</td>
-<td>The vendor creating this VirtualNetworkFunctionDescriptor</td>
+<td align="right">The vendor creating this VirtualNetworkFunctionDescriptor</td>
 </tr>
 <tr>
 <td>version</td>
-<td>The version of the VirtualNetworkFunctionDescriptor (can be any string)</td>
+<td align="right">The version of the VirtualNetworkFunctionDescriptor (can be any string)</td>
 </tr>
 <tr>
 <td>type</td>
-<td>The type of the VirtualNetworkFunctionDescriptor (can be any string) and it is used in the dependency parameters in the scripts</td>
+<td align="right">The type of the VirtualNetworkFunctionDescriptor (can be any string) and it is used in the dependency parameters in the scripts</td>
 </tr>
 <tr>
 <td>endpoint</td>
-<td>The endpoint of the VirtualNetworkFunctionDescriptor (can be any string) needs to point to a registered VnfManager</td>
+<td align="right">The endpoint of the VirtualNetworkFunctionDescriptor (can be any string) needs to point to a registered VnfManager</td>
 </tr>
 </tbody>
 </table>
@@ -809,25 +818,25 @@ console.log('--------');
 <thead>
 <tr>
 <th>Params</th>
-<th>Meaning</th>
+<th align="right">Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>vm_image</td>
-<td>The list of image names or ids existing in the VimInstance or in the VNF Package</td>
+<td align="right">The list of image names or ids existing in the VimInstance or in the VNF Package</td>
 </tr>
 <tr>
 <td>vimInstanceName</td>
-<td>The list of VimInstances. Only one of it will be chosen, randomly</td>
+<td align="right">The list of VimInstances. Only one of it will be chosen, randomly</td>
 </tr>
 <tr>
 <td>scale_in_out</td>
-<td>The maximum number of instances (VMs) which can be created to support scale out/in.</td>
+<td align="right">The maximum number of instances (VMs) which can be created to support scale out/in.</td>
 </tr>
 <tr>
 <td>vnfc</td>
-<td>This field contains a list of VNFComponents which will be deployed for this VNFD.</td>
+<td align="right">This field contains a list of VNFComponents which will be deployed for this VNFD.</td>
 </tr>
 </tbody>
 </table>
@@ -838,13 +847,13 @@ VNFCs contain the following fields:</p>
 <thead>
 <tr>
 <th>Params</th>
-<th>Meaning</th>
+<th align="right">Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>connection_point</td>
-<td>each connection point is a reference to an Internal Virtual Link (see Connection Point at <a href="http://www.etsi.org/deliver/etsi_gs/NFV-MAN/001_099/001/01.01.01_60/gs_NFV-MAN001v010101p.pdf">ETSI NFV</a>). Moreover you can specify a floatingIp to be assigned to this connection point. The possible values are the actual floatingip ip or "random" if no preference is specified. If omitted no floatingip will be assigned.</td>
+<td align="right">each connection point is a reference to an Internal Virtual Link (see Connection Point at <a href="http://www.etsi.org/deliver/etsi_gs/NFV-MAN/001_099/001/01.01.01_60/gs_NFV-MAN001v010101p.pdf">ETSI NFV</a>). Moreover you can specify a floatingIp to be assigned to this connection point in the form "192.168.0.123". Please be aware of the fact that the NFVO will try to allocate this IP from the external network associated to the tenant. Therefore it is important to have an already configured external network before making use of floating IPs. The possible values are the actual floatingip ip or "random" if no preference is specified. If omitted no floatingip will be assigned. Optionally, the ethernet interface to be attached to a specific network can be chosen through the <code>interfaceId</code>. The interfaceId have to be a numeric value and is used while sorting the list of networks.</td>
 </tr>
 </tbody>
 </table>
@@ -861,29 +870,29 @@ Currently supported events are:</p>
 <thead>
 <tr>
 <th>Event name</th>
-<th>Description</th>
+<th align="right">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>INSTANTIATE</td>
-<td>...</td>
+<td align="right">...</td>
 </tr>
 <tr>
 <td>CONFIGURE</td>
-<td>...</td>
+<td align="right">...</td>
 </tr>
 <tr>
 <td>START</td>
-<td>...</td>
+<td align="right">...</td>
 </tr>
 <tr>
 <td>TERMINATE</td>
-<td>...</td>
+<td align="right">...</td>
 </tr>
 <tr>
 <td>SCALE_IN</td>
-<td>...</td>
+<td align="right">...</td>
 </tr>
 </tbody>
 </table>
@@ -950,7 +959,7 @@ Script for open external links in a new tab
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../nfvo-installation-src/" class="btn btn-neutral float-right" title="**HIDDEN**"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../nfvo-installation-src/" class="btn btn-neutral float-right" title="**HIDDEN**">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../tosca-CSAR-onboarding/" class="btn btn-neutral" title="**HIDDEN**"><span class="icon icon-circle-arrow-left"></span> Previous</a>

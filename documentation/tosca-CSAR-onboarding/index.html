@@ -10,7 +10,7 @@
   <title>OpenBaton Documentation</title>
   
 
-  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="shortcut icon" href="favicon.ico">
   
 
   
@@ -692,6 +692,14 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -729,18 +737,18 @@ The CSAR is a zip file with this structure:</p>
 <p>The <strong>TOSCA.meta</strong> file must contain the reference to the template in this case <strong>Entry-Definitions: Definitions/testNSDIperf.yaml</strong>. An optional feature is to define the vm image here in the metadata. It is easier to add it here one time instead of adding it multiple times in the template.</p>
 <pre><code class="bash">TOSCA-Meta-File-Version: 1.0
 CSAR-Version: 1.1
-Created-By: OASIS TOSCA TC
+Created-By: Fokus
 Entry-Definitions: Definitions/testNSDIperf.yaml
-image: ubuntu-14.04-server-cloudimg-amd64-disk1 # optional
 </code></pre>
 
 <p>The <strong>Metadata.yaml</strong> defines essential properties for the VNF or VNFs and every CSAR has to include one. For more information on how to create such a file refer to the <a href="../vnf-package">VNF Package tutorial</a>. This is a simple example:</p>
-<pre><code class="yaml">name: bind9
+<pre><code class="yaml">name: NSDExample
 image:
     upload: false
     names:
         - ubuntu-14.04-server-cloudimg-amd64-disk1
-
+vim_types:
+    - openstack
 </code></pre>
 
 <p>The <strong>Scripts</strong> folder contains all the files required from the lifecycle interfaces of the VNFs.
@@ -749,11 +757,11 @@ Example if one VNF is of type client, then the scripts for that VNF have to be p
 <p>In this example <strong>testNSDIperf.yaml</strong> is a template for a Network Service. 
 In a CSAR the template can define either a Virtual Network Function or a Network Service that consists of multiple Virtual Network Functions. 
 The <a href="../tosca-vnfd">VNF Tosca tutorial</a> and <a href="../tosca-nsd">NS Tosca tutorial</a> provide more information on how to construct a template of each kind. </p>
-<pre><code class="yaml">tosca_definitions_version: tosca_simple_iperf_scenario
+<pre><code class="yaml">tosca_definitions_version: tosca_simple_profile_for_nfv_1_0
 description: Example of NSD
 
 metadata:
-  ID: NSD-Iperf + Floating Ips
+  ID: NSD-Iperf
   vendor: Fokus
   version: 1.0
 
@@ -886,7 +894,7 @@ Script for open external links in a new tab
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../vnfr-states/" class="btn btn-neutral float-right" title="**HIDDEN**"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../vnfr-states/" class="btn btn-neutral float-right" title="**HIDDEN**">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../tosca-nsd/" class="btn btn-neutral" title="**HIDDEN**"><span class="icon icon-circle-arrow-left"></span> Previous</a>

@@ -23,16 +23,16 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Tutorials overview";
-    var mkdocs_page_input_path = "tutorial.md";
-    var mkdocs_page_url = "/tutorial/";
-     var mkdocs_page_url = "/tutorial/";
+    var mkdocs_page_name = "**HIDDEN**";
+    var mkdocs_page_input_path = "tosca-fm.md";
+    var mkdocs_page_url = "/tosca-fm/";
+     var mkdocs_page_url = "/tosca-fm/";
   </script>
   
   <!-- site_name == OpenBaton Documentation -->
-  <!-- page_title == Tutorials overview -->
+  <!-- page_title == **HIDDEN** -->
   <!-- base_url == .. -->
-  <!-- current_page == Tutorials overview - /tutorial/ [*]
+  <!-- current_page == **HIDDEN** - /tosca-fm/ [*]
  -->
   <script src="../js/jquery-2.1.1.min.js"></script>
   <script src="../js/modernizr-2.8.3.min.js"></script>
@@ -87,14 +87,14 @@ display: block;
 $( document).ready(function(){
       //console.log("test");
 
-    //$('.subnav').not( ":has('Tutorials overview')" ).hide();
+    //$('.subnav').not( ":has('**HIDDEN**')" ).hide();
     $('li.subnav_drop').find('ul.subnav').hide();
     //$('li.subnav_drop').find('ul.subnav').each(function(i,e){console.log(i,e)});
-       $( ".subnav" ).find( "li:contains('Tutorials overview')" ).each(function(i,e){
+       $( ".subnav" ).find( "li:contains('**HIDDEN**')" ).each(function(i,e){
           var currentElement = $(e);
           currentElement.parent().css({"display":"block","visibility":"visible"}); //css("background-color","blue");
           currentElement.css({"display":"block","visibility":"visible"});
-       });//$( ".subnav" ).find( "li:contains('Tutorials overview')" ).css("display","block");
+       });//$( ".subnav" ).find( "li:contains('**HIDDEN**')" ).css("display","block");
        //$(".current").css({"background-color":"blue","display":"block","visibility":"visible"});
        //show(1000,function(i,e){console.log(i,e)});
        //$('li.subnav_drop').find('ul.subnav').css("background-color","blue");
@@ -106,11 +106,11 @@ $( document).ready(function(){
 
 });
    
-$( ".wy-nav-content" ).find( "li:contains('Tutorials overview')" ).css('color','red');
+$( ".wy-nav-content" ).find( "li:contains('**HIDDEN**')" ).css('color','red');
 console.log('--------');
-console.log($( ".wy-nav-content" ).find( "div:contains('Tutorials overview')" ).css("color","red"));
+console.log($( ".wy-nav-content" ).find( "div:contains('**HIDDEN**')" ).css("color","red"));
 console.log('--------');
-console.log($( ".subnav" ).find( "li:contains('Tutorials overview')" ));
+console.log($( ".subnav" ).find( "li:contains('**HIDDEN**')" ));
 console.log('--------');
   </script>
 
@@ -515,10 +515,8 @@ console.log('--------');
         
              
 
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Tutorials overview</a>
-        
-         
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorial/">Tutorials overview</a>
         
     </li>
 
@@ -719,14 +717,50 @@ console.log('--------');
                     <div role="main">
                       <div class="section">
                         
-                          <h1 id="open-baton-tutorials">Open Baton Tutorials</h1>
-<p>This section provides you a set of tutorials for facilitating your first contact with Open Baton. Those tutorials makes use of VNF Packages and Network Service Descriptors that could also be downloaded directly from the Open Baton <a href="http://markteplace.openbaton.org">Marketplace</a></p>
-<p>Each tutorial is organised in the following way: </p>
-<ol>
-<li>A description of the tutorial is provided. It describes the scenario that is going to be deployed</li>
-<li>It provides a list of required components. Considering the specific scenario which will be deployed following the tutorial, it will specify what are the Open Baton components which are required for executing this specific tutorial</li>
-<li>It specifies the list of steps which needs to be executed in order to run the tutorial</li>
-</ol>
+                          <h1 id="fault-management-in-tosca">Fault Management in TOSCA</h1>
+<p>This is an example of how to use the Fault Management system with the yaml descriptor. 
+The Fault Management specifics must be placed in the properties of the VDU node. </p>
+<p>This is an example of a VDU Node with a Fault Management Policy:</p>
+<pre><code class="yaml">VDU1:
+  type: tosca.nodes.nfv.VDU
+  properties:
+    scale_in_out: 1
+    fault_management_policy:
+      fm1:                                      # Name of the Policy
+        isVNFAlarm: true
+        criteria:
+          criteria1:                            # Criteria name
+            parameter_ref: &quot;net.tcp.listen[80]&quot;
+            function: &quot;last()&quot;
+            comparison_operator: &quot;=&quot;
+            threshold: &quot;0&quot;
+        period: 5
+        severity: CRITICAL
+  requirements:
+    - virtual_link: CP1
+
+</code></pre>
+
+<p>More about Fault Management and how to se it up: <a href="../fault-management">Fault Management</a></p>
+<!------------
+References
+-------------->
+
+<!---
+Script for open external links in a new tab
+-->
+
+<script type="text/javascript" charset="utf-8">
+      // Creating custom :external selector
+      $.expr[':'].external = function(obj){
+          return !obj.href.match(/^mailto\:/)
+                  && (obj.hostname != location.hostname);
+      };
+      $(function(){
+        $('a:external').addClass('external');
+        $(".external").attr('target','_blank');
+      })
+</script>
                         
                       </div>
                     </div>
@@ -734,10 +768,10 @@ console.log('--------');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../dummy-NSR/" class="btn btn-neutral float-right" title="Dummy NSR">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../tosca-asp/" class="btn btn-neutral float-right" title="**HIDDEN**">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../marketplace/" class="btn btn-neutral" title="Marketplace overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../integration-test-write/" class="btn btn-neutral" title="**HIDDEN**"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

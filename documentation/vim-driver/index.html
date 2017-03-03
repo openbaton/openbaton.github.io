@@ -10,7 +10,7 @@
   <title>OpenBaton Documentation</title>
   
 
-  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="shortcut icon" href="favicon.ico">
   
 
   
@@ -694,6 +694,14 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -719,7 +727,7 @@ console.log('--------');
 <li>openstack: for interoperating with an OpenStack instance</li>
 <li>test: for testing purposes implementing a VIM mockup</li>
 </ul>
-<p>For each of those types there is a different implementation of the VIM API. The NFVO uses a driver mechanism for interacting with VIMs. Inside the NFVO folder is a folder called <code>plugins</code> where the binary file that implements the interface to your VIM ( i.e. <a href="https://www.openstack.org/">Openstack</a> ) should be placed (you can change the folder where Open Baton searches for the plugins by changing the variable <code>plugin-installation-dir</code> in the <code>openbaton.properties</code> file under /etc/openbaton).<br />
+<p>For each of those types there is a different implementation of the VIM API. The NFVO uses a driver mechanism for interacting with VIMs. Inside the NFVO folder is a folder called <code>plugins</code> where the binary file that implements the interface to your VIM ( i.e. <a href="https://www.openstack.org/">Openstack</a> ) should be placed (you can change the folder where Open Baton searches for the plugins by changing the variable <code>nfvo.plugin.installation-dir</code> in the <code>openbaton.properties</code> file under /etc/openbaton).<br />
 This binary file is the implementation of the interface that communicates with your VIM.</p>
 <p><strong>Note</strong>: You can implement your own interface just follow the documentation on writing your own <a href="../vim-driver-create/">VIM driver</a>.</p>
 <h2 id="where-can-i-find-other-open-source-vim-drivers">Where can I find other open source VIM drivers?</h2>
@@ -731,7 +739,7 @@ This binary file is the implementation of the interface that communicates with y
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../vnfm-intro/" class="btn btn-neutral float-right" title="VNFM intro"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../vnfm-intro/" class="btn btn-neutral float-right" title="VNFM intro">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../ns-descriptor/" class="btn btn-neutral" title="Network Service Descriptor"><span class="icon icon-circle-arrow-left"></span> Previous</a>

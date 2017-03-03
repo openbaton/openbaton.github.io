@@ -10,7 +10,7 @@
   <title>OpenBaton Documentation</title>
   
 
-  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="shortcut icon" href="favicon.ico">
   
 
   
@@ -694,6 +694,14 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -713,16 +721,10 @@ console.log('--------');
                         
                           <h1 id="openbaton-command-line-interface-cli">OpenBaton Command Line Interface (CLI)</h1>
 <p>The <a href="https://github.com/openbaton/openbaton-client">Openbaton Client project</a> provides a command-line interface, which enables you to use the NFVO's API and send commands to it. </p>
-<h2 id="install-the-openbaton-client">Install the Openbaton Client</h2>
+<h2 id="install-the-openbaton-client-as-binaries">Install the Openbaton Client as binaries</h2>
 <p>On Linux you can install the Open Baton Command Line Iterface while installing Open Baton using the <a href="../nfvo-installation-deb">bootstrap script</a>. It will prompt you with the question if you also want to install the Command Line Interface.<br />
 If you did not want to install the CLI at this point you can install it later on Linux using <em>sudo apt-get install openbaton-cli</em>.<br />
 If you use MacOS you have to install the CLI from source code. </p>
-<h3 id="set-the-required-environment-variables">Set the required environment variables</h3>
-<p>Source <em>/etc/openbaton/cli/nfvo.properties</em> to set the required environment variables. A dialog appears and will ask you for some properties. </p>
-<pre><code class="sh">source /etc/openbaton/cli/nfvo.properties
-</code></pre>
-
-<p>This has to be done every time before you start working with the CLI in a new terminal. </p>
 <h2 id="install-the-openbaton-client-from-source-code">Install the Openbaton Client from source code</h2>
 <p>Git clone the <a href="https://github.com/openbaton/openbaton-client">Openbaton Client project</a>. Navigate into the root directory of the project and execute <em>./gradlew build</em>.</p>
 <pre><code class="sh">git clone https://github.com/openbaton/openbaton-client.git
@@ -730,7 +732,14 @@ cd openbaton-client
 ./gradlew build
 </code></pre>
 
-<h3 id="set-the-required-environment-variables_1">Set the required environment variables</h3>
+<h2 id="set-the-required-environment-variables">Set the required environment variables</h2>
+<h3 id="in-case-of-binaries-installation">in case of binaries installation</h3>
+<p>Source <em>/etc/openbaton/openbaton-cli.properties</em> to set the required environment variables. A dialog appears and will ask you for some properties. </p>
+<pre><code class="sh">source /etc/openbaton/openbaton-cli.properties
+</code></pre>
+
+<p>This has to be done every time before you start working with the CLI in a new terminal. </p>
+<h3 id="in-case-of-source-code-insallation">in case of source code insallation</h3>
 <p>Navigate into the project's root directory and execute <em>source nfvo.properties</em>. A dialog appears and will ask you for some properties. </p>
 <pre><code class="sh">cd openbaton-client
 source nfvo.properties
@@ -738,9 +747,9 @@ source nfvo.properties
 
 <p>This has to be done every time before you start working with the CLI in a new terminal. </p>
 <h2 id="openbaton-client-usage">Openbaton Client usage</h2>
-<p>After you typed in all the required properties you can start using the cli for sending commands to the NFVO.<br />
-If you installed the Open Baton Client while installing Open Baton with the bootstrap script or with apt-get install you can use the command <em>openbaton.sh</em>.<br />
-If you installed it from source code you have to execute the script <em>openbaton.sh</em> in the directory where you cloned the Open Baton Client repository.</p>
+<p>After environment variables have been set, you can start using the cli for sending commands to the NFVO.<br />
+If you installed the Open Baton Client while installing Open Baton with the bootstrap script or with apt-get install the command <em>openbaton</em> should be available.<br />
+If you installed it from source code you have to execute the script <em>openbaton.sh</em> within the directory where you cloned the Open Baton Client repository.</p>
 <h3 id="run-a-command">Run a command:</h3>
 <pre><code class="sh">openbaton.sh command_name [arg-1] [arg-2] [arg-3]
 </code></pre>
@@ -1309,7 +1318,7 @@ Script for open external links in a new tab
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../vim-instance/" class="btn btn-neutral float-right" title="Register a PoP"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../vim-instance/" class="btn btn-neutral float-right" title="Register a PoP">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../nfvo-how-to-use-gui/" class="btn btn-neutral" title="Use via the Dashboard"><span class="icon icon-circle-arrow-left"></span> Previous</a>

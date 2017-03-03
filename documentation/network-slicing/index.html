@@ -10,7 +10,7 @@
   <title>OpenBaton Documentation</title>
   
 
-  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="shortcut icon" href="favicon.ico">
   
 
   
@@ -694,6 +694,14 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -843,6 +851,7 @@ echo &quot;deb http://get.openbaton.org/repos/apt/debian/ stable main&quot; &gt;
 <p><strong>Note</strong> Since the NSE subscribes to specific events towards the NFVO, you should take care about that the NFVO is already running when starting the NSE.</p>
 <h1 id="how-to-use-network-slicing-engine">How to use Network Slicing Engine</h1>
 <p>The currently only supported driver is neutron, which will use the native QoS capabilities of Openstack Mitaka. To use it simply set <code>nse.driver=neutron</code> in the configuration file. To set QoS policies in your NSD specify the following QoS parameter in the virtual_link of your vnfd configuration. </p>
+<p>In JSON:</p>
 <pre><code>  &quot;virtual_link&quot;:[
     {
       &quot;name&quot;:&quot;NAME_OF_THE_NETWORK&quot;,
@@ -852,6 +861,16 @@ echo &quot;deb http://get.openbaton.org/repos/apt/debian/ stable main&quot; &gt;
     }
   ]
 </code></pre>
+
+<p>In YAML:</p>
+<pre><code class="yaml">mgmt:
+  type: tosca.nodes.nfv.VL
+  properties:
+    vendor: Fokus
+    qos:
+      - minimum_bandwith:BRONZE
+
+</code></pre>
                         
                       </div>
                     </div>
@@ -859,7 +878,7 @@ echo &quot;deb http://get.openbaton.org/repos/apt/debian/ stable main&quot; &gt;
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../marketplace/" class="btn btn-neutral float-right" title="Marketplace overview"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../marketplace/" class="btn btn-neutral float-right" title="Marketplace overview">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../fault-management/" class="btn btn-neutral" title="FM overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>

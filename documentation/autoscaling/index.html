@@ -10,7 +10,7 @@
   <title>OpenBaton Documentation</title>
   
 
-  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="shortcut icon" href="favicon.ico">
   
 
   
@@ -694,6 +694,14 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -751,15 +759,15 @@ echo &quot;deb http://get.openbaton.org/repos/apt/debian/ stable main&quot; &gt;
 <pre><code class="bash">git clone https://github.com/openbaton/autoscaling.git
 </code></pre>
 
-<p>Once this is done, go inside the cloned folder and make use of the provided script to compile the project as done below:</p>
-<pre><code class="bash">./autoscaling-engine.sh compile
+<p>Once this is done, go inside the cloned folder and make use of the provided script to compile the project and start as done below:</p>
+<pre><code class="bash">./autoscaling-engine.sh compile start
 </code></pre>
 
 <h1 id="manual-configuration-of-the-autoscaling-engine">Manual configuration of the AutoScaling Engine</h1>
 <p>This chapter describes what needs to be done before starting the AutoScaling Engine. This includes the configuration file and properties, and also how to make use of monitoring plugin.</p>
 <h2 id="configuration-file">Configuration file</h2>
-<p>The configuration file must be copied to <code>etc/openbaton/autoscaling.properties</code> by executing the following command from inside the repository folder:</p>
-<pre><code class="bash">cp etc/autoscaling.properties /etc/openbaton/autoscaling.properties
+<p>The configuration file must be copied to <code>etc/openbaton/openbaton-ase.properties</code> by executing the following command from inside the repository folder:</p>
+<pre><code class="bash">cp etc/ase.properties /etc/openbaton/autoscaling.properties
 </code></pre>
 
 <p>If done, check out the following chapter in order to understand the configuration parameters.</p>
@@ -882,6 +890,7 @@ An example of an AutoScalePolicy can be found below followed by descriptions for
 ]
 </code></pre>
 
+<p>An example using the <strong>TOSCA YAML descriptors</strong> can be found <a href="../tosca-asp/">here</a>.</p>
 <p>This AutoScalePolicy indicates an scaling-out operation of two new VNFC Instances if the averaged value of all measurement results of the metric <code>cpu load</code> is greater than the threshold of 0.7 (70%).
 This condition is checked every 30 seconds as defined via the period. Once the scaling-out is finished it starts a cooldown of 60 seconds. For this cooldown time further scaling requests are rejected by the AutoScaling Engine.</p>
 <p>The following table describes the meanings of the parameters more in detail.</p>
@@ -1022,7 +1031,7 @@ This condition is checked every 30 seconds as defined via the period. Once the s
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../fault-management/" class="btn btn-neutral float-right" title="FM overview"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../fault-management/" class="btn btn-neutral float-right" title="FM overview">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../zabbix-plugin/" class="btn btn-neutral" title="Zabbix plugin"><span class="icon icon-circle-arrow-left"></span> Previous</a>
