@@ -1,173 +1,307 @@
-<html>
-<title></title>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,300,600,700' rel='stylesheet' type='text/css'>
+    <title>Open Baton: an open source reference implementation of the ETSI Network Function Virtualization MANO
+        specification</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="resources/w3.js"></script>
+    <link rel='stylesheet' type='text/css'
+          href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
+    <link rel="stylesheet" href="resources/styles.css">
     <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
         ga('create', 'UA-68429895-1', 'auto');
         ga('send', 'pageview');
 
     </script>
     <head>
-<body>
-<a href="https://github.com/openbaton"><img style="position: fixed; top: 0; right: 0; border: 0;    z-index: 2;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
-<div class="navcontainer" style="margin:0px; background:#000;position:fixed;">
-    <div class="navholder">
-        <nav>
-            <a href="index.html" class="logo"></a>
-            <a href="#" id="menu-icon"></a>
-            <ul class="navigation">
+    </head>
+<body class="imprintFontsize">
+<nav class="navbar navbar-default navbar-fixed-top one-edge-shadow">
+    <div class="container">
 
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="cases.html"> Use Cases</a></li>
-                <li><a href="features.html">Features</a></li>
-                <li><a href="documentation">Documentation</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-                <li><a href="http://marketplace.openbaton.org"><i class="material-icons">shopping_cart </i>  Marketplace<div class="ripple-container"></div></a></li>
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#top-nav">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="index.html"><img src="resources/images/logo1-default.png" class="img-responsive"
+                                                    title="openbaton" alt="openbaton"/></a>
+        </div>
+        <div class="collapse navbar-collapse" id="top-nav">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="page-scroll">
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="cases.html">Use Cases</a>
+                </li>
+                <li class="page-scroll">
+                    <a class="active" href="features.html">Features</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="http://openbaton.github.io/documentation/">Documentation</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="index.html#contact">Contact</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="http://marketplace.openbaton.org">Marketplace</a>
+                </li>
             </ul>
-        </nav>
+        </div>
     </div>
+</nav>
+<div class="aboutSection">
+    <div class="container">
+        <div class="aboutHeading">
+            <h2>OPEN BATON <span class="ornageColor">FEATURES</span></h2>
+            <p>Open Baton includes a consistent set of features enabling the deployment of VNFs on top of cloud
+                infrastructures, following the ETSI MANO specification.</p>
+        </div>
 
-</div>
-<div class="container2" id="features" style="padding-top:100px";>
-    <div class="holder">
-        <p><h4>open baton features</h4></p>
-        <h5>Open Baton includes a consistent set of features enabling the deployment of VNFs <br>on top of cloud infrastructures, following the ETSI MANO specification. </h5>
-    </div>
-    <div class="holder">
-        <div class="txtleft"><img src="images/feature1.png" width="422px" height="421"></div>
-        <div class="featuretxt" >
-            <p><h4 style="text-align:left;">Open Baton Release 3</h4></p>
+        <div class="row">
+            <div class="col-md-6">
+                <img width="70%" src="resources/images/feature2.png" alt="">
+            </div>
+            <div class="col-md-6">
+                <div>
+                    <br>
+                    <br>
+                    <h2>Generic VNFM</h2>
+                    <div class="overflow-h">
+                        <p style="text-align:justify;  text-justify:auto;">The Generic VNFM provides a generic mechanism
+                            for managing VNFs. It is tightly coupled with the Open Baton EMS deployed as an agent in the
+                            instantiated VNF Components. The Generic VNFM can execute the following operations:
+                        </p>
+                        <ul class="list-unstyled">
+                            <li><i class="fa fa-check ornageColor"></i> Request to the NFVO the allocation of specific
+                                resources for the virtual network instance (using a granting mechanism, read more <a
+                                        class="ornageColor"
+                                        href="http://openbaton.github.io/documentation/vnfm-generic/">here</a>)
+                            </li>
+                            <li><i class="fa fa-check ornageColor"></i> Can request from the NFVO the instantiation,
+                                modification, starting and stopping of the virtual services (or directly to the VIM)
+                            </li>
+                            <li><i class="fa fa-check ornageColor"></i> Instructs the generic Open Baton EMS to save and
+                                to execute specific configuration scripts within the virtual machine instances
+                            </li>
+                            <li><i class="fa fa-check ornageColor"></i> The Generic VNFM can be easily extended to
+                                support the management of third party VNFs
+                            </li>
+                        </ul>
+                        <br>
+                        <br>
 
-            Open Baton rel.3 provides many different features and components:
-            <ul>
-                <li>A <b>Network Function Virtualisation Orchestrator (NFVO)</b>completely designed and implemented following the ETSI MANO specification.
-                    Read more  <a href="http://openbaton.github.io/documentation/">here</a> </li>
-                <li>A <b>Generic Virtual Network Function Manager (VNFM)</b>able to manage the lifecycle of VNFs based on their descriptors.
-                    Read more <a href="http://http://openbaton.github.io/documentation/vnfm-generic/">here</a>  </li>
-                <li>A <b>Juju Virtual Network Function Manager (VNFM)</b>able to manage the lifecycle of VNFs based on their descriptors.
-                    Read more <a href="http://http://openbaton.github.io/documentation/vnfm-generic/">here</a>  </li>
-                <li>An <b>Autoscaling Engine</b> which can be used for automatic runtime management of the scaling operation operations of your VNFs.
-                    Read more  <a href="https://github.com/openbaton/autoscaling/">here</a>  </li>
-                <li>A <b>Fault Management System</b>which can be used for automatic runtime management of faults which may occur at any level.
-                    Read more  <a href="https://github.com/openbaton/fm-system">here</a> </li>
-                <li>A <b>plugin</b> mechanism for adding and removing different type of VIMs without having to re-write anything in your orchestration logic.
-                    Read more  <a href="http://openbaton.github.io/documentation/vim-plugin/">here</a>  </li>
-                <li>A powerful <b>event engine</b> useful based on a pub/sub mechanism for the dispatching of lifecycle events execution.</li>
-                <li>It integrates with the <b>Zabbix monitoring</b> system.
-                    Read more <a href="https://github.com/openbaton/zabbix-plugin">here</a> </li>
-                <li>A set of libraries (the openbaton-libs) which could be used for building your own VNFM.
-                    Read more <a href="https://github.com/openbaton/openbaton-libs">here</a></li>
-            </ul>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>
 </div>
+<div class="aboutSection bgwhite">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="headline-left margin-bottom-20">
+                    <h2>Open Baton Release 3</h2>
+                    <p>Open Baton rel.3 provides many different features and components:</p>
+                </div>
 
-<div class="container">
-
-    <div class="holder">
-        <div class="txtright"><img src="images/feature2.png" width="455" height="399"></div>
-        <div class="featuretxt2" id="interop">
-            <p><h4 style="text-align:left;">generic vnfm</h4></p>
-            The Generic VNFM provides a generic mechanism for managing VNFs. It is tightly coupled with the Open Baton EMS deployed as an agent in the instantiated VNF Components.
-            The Generic VNFM can execute the following operations:
-            <ul>
-                <li>Request to the NFVO the allocation of specific resources for the virtual network instance (using a granting mechanism, read more <a href="http://openbaton.github.io/documentation/vnfm-generic/">here</a>) </li>
-                <li>Can request from the NFVO the instantiation, modification, starting and stopping of the virtual services (or directly to the VIM)</li>
-                <li>Instructs the generic Open Baton EMS to save and to execute specific configuration scripts within the virtual machine instances</li>
-
-            </ul>
-            The Generic VNFM can be easily extended to support the management of third party VNFs.
+                <div class="row">
+                    <div class="col-sm-5">
+                        <ul class="list-unstyled checked-list">
+                            <li><i class="fa fa-check ornageColor"></i> A Network Function Virtualisation Orchestrator
+                                (NFVO)completely designed and implemented following the ETSI MANO specification.<br> <a
+                                        class="ornageColor" href="http://openbaton.github.io/documentation/">Read more
+                                    here</a></li>
+                            <li><i class="fa fa-check ornageColor"></i> A Generic Virtual Network Function Manager
+                                (VNFM)able to manage the lifecycle of VNFs based on their descriptors. <br><a
+                                        class="ornageColor"
+                                        href="http://http//openbaton.github.io/documentation/vnfm-generic/">Read more
+                                    here</a></li>
+                            <li><i class="fa fa-check ornageColor"></i> A Juju Virtual Network Function Manager
+                                (VNFM)able to manage the lifecycle of VNFs based on their descriptors.<br> <a
+                                        class="ornageColor"
+                                        href="http://http//openbaton.github.io/documentation/vnfm-generic/">Read more
+                                    here</a></li>
+                            <li><i class="fa fa-check ornageColor"></i> An Autoscaling Engine which can be used for
+                                automatic runtime management of the scaling operation operations of your VNFs.<br> <a
+                                        class="ornageColor" href="https://github.com/openbaton/autoscaling/">Read more
+                                    here</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-5 col-sm-offset-1">
+                        <ul class="list-unstyled checked-list">
+                            <li><i class="fa fa-check ornageColor"></i> A Fault Management Systemwhich can be used for
+                                automatic runtime management of faults which may occur at any level.<br> <a
+                                        class="ornageColor" href="https://github.com/openbaton/fm-system">Read more
+                                    here</a></li>
+                            <li><i class="fa fa-check ornageColor"></i> A plugin mechanism for adding and removing
+                                different type of VIMs without having to re-write anything in your orchestration
+                                logic.<br><a class="ornageColor"
+                                             href="http://openbaton.github.io/documentation/vim-plugin/">Read more
+                                    here</a></li>
+                            <li><i class="fa fa-check ornageColor"></i> A powerful event engine useful based on a
+                                pub/sub mechanism for the ornageColor of lifecycle events execution.
+                            </li>
+                            <li><i class="fa fa-check ornageColor"></i> It integrates with the Zabbix monitoring system.<br><a
+                                    class="ornageColor" href="https://github.com/openbaton/zabbix-plugin">Read more
+                                here</a></li>
+                            <li><i class="fa fa-check ornageColor"></i> A set of libraries (the openbaton-libs) which
+                                could be used for building your own VNFM.<br> <a class="ornageColor"
+                                                                                 href="https://github.com/openbaton/openbaton-libs">
+                                    Read more here</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <img src="resources/images/feature1.png" alt="">
+            </div>
 
         </div>
     </div>
 </div>
-<div class="container2">
-    <div class="holder">
-        <div class="txtleft"><img src="images/openbaton3.png" width="449" height="362"></div>
-        <div class="featuretxt" id="interop">
-            <p><h4 style="text-align:left;">uses openstack as main PoP</h4></p>
+<div class="aboutSection">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img width="70%" src="resources/images/openbaton3.png" alt="">
+            </div>
+            <div class="col-md-6">
+                <div>
+                    <br>
+                    <br>
+                    <h2>Uses Openstack as Main PoP</h2>
+                    <div class="overflow-h">
+                        <p style="text-align:justify;  text-justify:auto;">
 
-            Open Baton integrates via Plugins to different VIM. By default an OpenStack plugin is provided for:
+                            Open Baton integrates via Plugins to different VIM. By default an OpenStack plugin is
+                            provided for:
 
-            <ul>
-                <li>Creating virtual networks based on the requirements provided in the VNFDs;</li>
-                <li>Managing virtual machines images;</li>
-                <li>Creating virtual machines used for hosting the VNFCs</li>
-            </ul>
-            The quota information provided by the VIM are used for reserving the resources required by each network service.
+                        </p>
+                        <ul class="list-unstyled">
+                            <li><i class="fa fa-check ornageColor"></i> Creating virtual networks based on the
+                                requirements provided in the VNFDs
+                            </li>
+                            <li><i class="fa fa-check ornageColor"></i> Managing virtual machines images</li>
+                            <li><i class="fa fa-check ornageColor"></i> Creating virtual machines used for hosting the
+                                VNFCs
+                            </li>
+                            <li><i class="fa fa-check ornageColor"></i> The Generic VNFM can be easily extended to
+                                support the management of third party VNFs
+                            </li>
+                            <p>The quota information provided by the VIM are used for reserving the resources required
+                                by each network service</p>
+                        </ul>
+                        <br>
+                        <br>
+
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
-<div class="container">
-    <div class="holder">
-        <div class="txtright"><img src="images/feature3.png" width="488px" height="396"></div>
-        <div class="featuretxt2" id="interop">
+<div class="aboutSection bgwhite">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="headline-left margin-bottom-20">
+                    <h2>Supporting External VNFMs</h2>
+                    <p>Albeit, Open Baton offers a generic VNFM which can be used for different scenarios, it provides
+                        also a set of mechanisms which enable the support of external VNFMs. This can be done in the
+                        following ways:</p>
+                </div>
 
-            <h4 style="text-align:left;">supporting external vnfms</h4>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <ul class="list-unstyled checked-list">
+                            <li><i class="fa fa-check ornageColor"></i> Publish/Subscribe mechanism using a message
+                                queue based on AMQP
+                            </li>
+                            <li><i class="fa fa-check ornageColor"></i> REST APIs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <img width="70%" src="resources/images/feature3.png" alt="">
+            </div>
 
-            Albeit, Open Baton offers a generic VNFM which can be used for different scenarios, it provides also a set of mechanisms which enable the support of external VNFMs. This can be done in the following ways:
-
-            <ul>
-                <li>Publish/Subscribe mechanism using a message queue based on AMQP</li>
-                <li>REST APIs</li>
-            </ul>
-            The two APIs supports all the typical functionalities of the Or-Vnfm reference point.
-        </div>
-
-    </div>
-
-</div>
-</div>
-<div class="container2">
-    <div class="holder">
-        <div class="txtleft"><img src="images/feature5.png" width="550" height="351"></div>
-        <div class="featuretxt" id="interop">
-            <p><h4 style="text-align:left;">dashboard</h4></p>
-            Open Baton includes a user-user friendly dashboard which enables the management of the complete environment including:
-            <ul>
-                <li>The control of the infrastructure enabling the easy understanding and modification of the dynamic registered NFV PoPs;</li>
-                <li>The management of the deployed network services – their creation and the overview of the deployed services. </li>
-            </ul>
         </div>
     </div>
 </div>
+<div class="aboutSection">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img width="70%" src="resources/images/feature5.png" alt="">
+            </div>
+            <div class="col-md-6">
+                <div>
+                    <br>
+                    <br>
+                    <h2>Dashboard</h2>
+                    <div class="overflow-h">
+                        <p style="text-align:justify;  text-justify:auto;">
 
-<div class="container2">
-    <div class="holder">
+                            Open Baton includes a user-user friendly dashboard which enables the management of the
+                            complete environment including:
 
-        <ul class="circle">
-            <h4>powered by</h4>
+                        </p>
+                        <ul class="list-unstyled">
+                            <li><i class="fa fa-check ornageColor"></i> The control of the infrastructure enabling the
+                                easy understanding and modification of the dynamic registered NFV PoPs
+                            </li>
+                            <li><i class="fa fa-check ornageColor"></i> The management of the deployed network services
+                                – their creation and the overview of the deployed services
+                            </li>
+                        </ul>
+                        <br>
+                        <br>
 
-            <li>
-                <div><a href="http://www.av.tu-berlin.de"><img src="images/tu.png" width="150" height="113"></a></div>
-            </li>
-            <li> <div><a href="https://www.fokus.fraunhofer.de/"><img src="images/fokus.png" width="300" height="98"></a></div>
-            </li>
-            <li>
-                <div><a href="http://www.5g-berlin.org/"><img src="images/5GBerlinLogo_grau_SU_400px.png"></a></div>
-            </li>
+                    </div>
+                </div>
+            </div>
 
-        </ul>
+        </div>
     </div>
 </div>
-
-
-<div class="container">
-    <div class="holder">
-
-        The Open Baton repository is available under <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0
-        License</a>
-        <p></p>
-    </div>
-</div>
-
+<div w3-include-html="footer.html"></div>
+<script>
+    w3.includeHTML();
+</script>
+<!-- jQuery -->
+<script src="resources/jquery-3.2.1.min.js"></script>
+<script src="resources/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="resources/scripts.js"></script>
+<script>
+    $(document).ready(function () {
+        $(window).scroll(function () {
+            // Using toggleClass
+            $(".navbar-default").toggleClass("navbar-shrink", $(this).scrollTop() > 50)
+        });
+    });
+</script>
 </body>
-
 </html>
