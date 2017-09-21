@@ -50,10 +50,10 @@
                     <a  href="index.html">Home</a>
                 </li>
                 <li class="page-scroll">
-                    <a class="active" href="cases.html">Use Cases</a>
+                    <a href="features.html">Features</a>
                 </li>
                 <li class="page-scroll">
-                    <a href="features.html">Features</a>
+                    <a class="active" href="cases.html">Use Cases</a>
                 </li>
                 <li class="page-scroll">
                     <a  href="documentation/">Documentation</a>
@@ -68,21 +68,7 @@
         </div>
     </div>
 </nav>
-<div class="slider text-center text-white">
-    <h2 class="text-uppercase headingslider">Open Baton release 4 is available!</h2>
-    <p class="slidersubheading text-white">
 
-        It provides lots of additional features for <br/>developing Network Function Virtualization
-    </p>
-    <div>
-        <hr style="width: 80px;" class="text-center">
-    </div>
-    <a class="btn btntrnsparent btnstyled btn-default text-white font-normal" href="https://github.com/openbaton"
-       role="button">Download Now</a>
-
-    <a class="btn btn-default text-white backgroundorange backgroundimgNone btnstyled borderOrange"
-       href="index.html#about" role="button">Read More</a>
-</div>
 <div class="aboutSection">
     <div class="container">
         <div class="row">
@@ -95,7 +81,7 @@
                     <div class="overflow-h">
                         <p style="text-align:justify;  text-justify:auto;">While implementing Open Baton we have
                             followed as much as possible the ETSI NFV MANO specification keeping in mind as first
-                            requirement interoperability among different existing solutions. For this reason, Open Baton
+                            requirement interoperability among heterogeneous solutions. For this reason, Open Baton
                             provides several mechanisms for being extended at every level in order to interoperate with
                             heterogeneous network functions and cloud infrastructures.</p>
                     </div>
@@ -120,7 +106,7 @@
                     <div class="overflow-h">
                         <p style="text-align:justify;  text-justify:auto;">
                             Open Baton supports several VNFM solutions. It provides a generic Virtual Network Function
-                            Manager (combined with its own specific Element Management System) which can be used for
+                            Manager (combined with its own Generic Element Management System) which can be used for
                             managing VNF Packages. Furthermore, it supports additional mechanisms for integrating
                             external VNFMs: either over a message bus using the pub/sub mechanism or using a RESTFul
                             API. For both scenarios a SDK is provided for easily building new VNFMs.
@@ -140,11 +126,11 @@
                     <br>
                     <br>
 
-                    <h2>Integration with a Multisite Cloud Environment</h2>
+                    <h2>Integration with a Multi-site NFV Infrastructure</h2>
                     <div class="overflow-h">
                         <p style="text-align:justify;  text-justify:auto;">
 
-                            Open Baton fully integrates with OpenStack as first Point of Presence. The VIM Driver
+                            Open Baton fully integrates with OpenStack as first Point of Presence (PoP). The VIM Driver
                             mechanism allow to integrate external heterogeneous PoPs without modification to the
                             orchestration logic. The provided OpenStack driver uses the OpenStack APIs for requesting
                             virtual compute and networking resources. Following the ETSI NFV specification the OpenStack
@@ -169,14 +155,16 @@
             </div>
             <div class="col-md-6">
                 <div class="banner-info dark margin-bottom-10">
-                    <h2>VIMS to Get Started Immediately</h2>
+                    <h2>vIMS to Get Started Immediately</h2>
                     <div class="overflow-h">
                         <p style="text-align:justify;  text-justify:auto;">
-                            Open Baton supports several VNFM solutions. It provides a generic Virtual Network Function
-                            Manager (combined with its own specific Element Management System) which can be used for
-                            managing VNF Packages. Furthermore, it supports additional mechanisms for integrating
-                            external VNFMs: either over a message bus using the pub/sub mechanism or using a RESTFul
-                            API. For both scenarios a SDK is provided for easily building new VNFMs.
+                            Open Baton supports several VNFs. In order to get started immediately,
+                            you can play with the <a
+                                class="ornageColor" href="http://openimscore.org/">OpenIMSCore</a> VNFs already provided via the Marketplace.
+                            With few steps you should be able to deploy a complete IMS Network Service on top of OpenStack.
+                            Please check also our <a
+                                class="ornageColor" href="http://openbaton.github.io/documentation/tutorial/">tutorial</a>
+                            section on the documentation website for additional use cases.
                     </div>
                 </div>
 

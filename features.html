@@ -50,10 +50,10 @@
                     <a  href="index.html">Home</a>
                 </li>
                 <li class="page-scroll">
-                    <a href="cases.html">Use Cases</a>
+                    <a class="active" href="features.html">Features</a>
                 </li>
                 <li class="page-scroll">
-                    <a class="active" href="features.html">Features</a>
+                    <a href="cases.html">Use Cases</a>
                 </li>
                 <li class="page-scroll">
                     <a  href="documentation/">Documentation</a>
@@ -71,49 +71,66 @@
 <div class="aboutSection">
     <div class="container">
         <div class="aboutHeading">
-            <h2>OPEN BATON <span class="ornageColor">FEATURES</span></h2>
+            <h2>OPEN BATON <span class="ornageColor">Release 4 Architecture</span></h2>
             <p>Open Baton includes a consistent set of features enabling the deployment of VNFs on top of cloud
                 infrastructures, following the ETSI MANO specification.</p>
+                <img src="resources/images/openbaton-arch-4.png" alt="">
         </div>
 
         <div class="row">
-            <div class="col-md-6">
-                <img width="70%" src="resources/images/feature2.png" alt="">
+            <div class="col-sm-5">
+                <ul class="list-unstyled checked-list">
+                    <li><i class="fa fa-check ornageColor"></i> A Network Function Virtualisation Orchestrator
+                        (NFVO)completely designed and implemented following the ETSI MANO specification.<br> <a
+                                class="ornageColor" href="http://openbaton.github.io/documentation/">Read more
+                            here</a></li>
+                    <li><i class="fa fa-check ornageColor"></i>  A Generic Virtual Network Function Manager (VNFM) and Generic
+                        Element Management System (EMS) able to manage the lifecycle of VNFs based on their descriptors.<br><a
+                                class="ornageColor"
+                                href="http://openbaton.github.io/documentation/vnfm-generic/">Read more
+                            here</a></li>
+                    <li><i class="fa fa-check ornageColor"></i> A Juju VNFM Adapter in order to deploy Juju Charms
+                        or Open Baton VNF Packages using the Juju VNFM. <br> <a
+                                class="ornageColor"
+                                href="http://openbaton.github.io/documentation/vnfm-generic/">Read more
+                            here</a></li>
+                    <li><i class="fa fa-check ornageColor"></i> A driver mechanism supporting different type of VIMs
+                        without having to re-write anything in the orchestration logic.<br> <a
+                                class="ornageColor" href="http://openbaton.github.io/documentation/vim-driver/">Read more
+                            here</a></li>
+                    <li><i class="fa fa-check ornageColor"></i> A powerful event engine based on a pub/sub mechanism
+                        for the dispatching of the lifecycle events execution.<br> <a
+                                class="ornageColor" href="http://openbaton.github.io/documentation/how-to-register-event/">Read more
+                            here</a></li>
+                </ul>
             </div>
-            <div class="col-md-6">
-                <div>
-                    <br>
-                    <br>
-                    <h2>Generic VNFM</h2>
-                    <div class="overflow-h">
-                        <p style="text-align:justify;  text-justify:auto;">The Generic VNFM provides a generic mechanism
-                            for managing VNFs. It is tightly coupled with the Open Baton EMS deployed as an agent in the
-                            instantiated VNF Components. The Generic VNFM can execute the following operations:
-                        </p>
-                        <ul class="list-unstyled">
-                            <li><i class="fa fa-check ornageColor"></i> Request to the NFVO the allocation of specific
-                                resources for the virtual network instance (using a granting mechanism, read more <a
-                                        class="ornageColor"
-                                        href="http://openbaton.github.io/documentation/vnfm-generic/">here</a>)
-                            </li>
-                            <li><i class="fa fa-check ornageColor"></i> Can request from the NFVO the instantiation,
-                                modification, starting and stopping of the virtual services (or directly to the VIM)
-                            </li>
-                            <li><i class="fa fa-check ornageColor"></i> Instructs the generic Open Baton EMS to save and
-                                to execute specific configuration scripts within the virtual machine instances
-                            </li>
-                            <li><i class="fa fa-check ornageColor"></i> The Generic VNFM can be easily extended to
-                                support the management of third party VNFs
-                            </li>
-                        </ul>
-                        <br>
-                        <br>
-
-                    </div>
-                </div>
+            <div class="col-sm-5 col-sm-offset-1">
+                <ul class="list-unstyled checked-list">
+                    <li><i class="fa fa-check ornageColor"></i> An Autoscaling Engine which can be used for
+                        automatic runtime management of the scaling operation operations of your VNFs.<br> <a
+                                class="ornageColor" href="http://openbaton.github.io/documentation/autoscaling/">Read more
+                            here</a></li>
+                    <li><i class="fa fa-check ornageColor"></i> A Fault Management System which can be used for
+                        automatic runtime management of faults which may occur at any level.<br> <a
+                                class="ornageColor" href="http://openbaton.github.io/documentation/fault-management">Read more
+                            here</a></li>
+                    <li><i class="fa fa-check ornageColor"></i>A network slicing engine which can be used to ensure a specific QoS for your NS.<br><a class="ornageColor"
+                                     href="http://openbaton.github.io/documentation/network-slicing/">Read more
+                            here</a></li>
+                    <li><i class="fa fa-check ornageColor"></i>A monitoring plugin integrating Zabbix as monitoring system.
+                        <br><a class="ornageColor" href="http://openbaton.github.io/documentation/zabbix-plugin/">Read more
+                        here</a></li>
+                    <li><i class="fa fa-check ornageColor"></i> A Marketplace useful for downloading VNFs compatible with the Open Baton NFVO and VNFMs. <br><a
+                            class="ornageColor" href="http://openbaton.github.io/documentation/marketplace">Read more
+                        here</a></li>
+                    <li><i class="fa fa-check ornageColor"></i> A set of libraries (in Java, Go, and Python) which
+                        could be used for building your own VNFM adapter and VIM driver.<br> <a class="ornageColor"
+                                                                         href="http://openbaton.github.io/documentation/openbaton-libs">
+                            Read more here</a></li>
+                </ul>
             </div>
-
         </div>
+
     </div>
 </div>
 <div class="aboutSection bgwhite">
@@ -121,60 +138,47 @@
         <div class="row">
             <div class="col-md-7">
                 <div class="headline-left margin-bottom-20">
-                    <h2>Open Baton Release 3</h2>
-                    <p>Open Baton rel.3 provides many different features and components:</p>
+                    <h2>Generic VNFM and Generic EMS</h2>
+                    <p style="text-align:justify;  text-justify:auto;">The Generic VNFM provides a generic mechanism
+                        for managing VNFs. It is tightly coupled with the Open Baton EMS deployed as an agent in the
+                        instantiated VNF Components. The Generic VNFM can execute the following operations:
+                    </p>
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div>
+                                <div class="overflow-h">
+
+                                    <ul class="list-unstyled">
+                                        <li><i class="fa fa-check ornageColor"></i> Request to the NFVO the allocation of specific
+                                            resources for the virtual network instance (using a granting mechanism, read more <a
+                                                    class="ornageColor"
+                                                    href="http://openbaton.github.io/documentation/vnfm-generic/">here</a>)
+                                        </li>
+                                        <li><i class="fa fa-check ornageColor"></i> Can request from the NFVO the instantiation,
+                                            modification, starting and stopping of the virtual services (or directly to the VIM)
+                                        </li>
+                                        <li><i class="fa fa-check ornageColor"></i> Instructs the generic Open Baton EMS to save and
+                                            to execute specific configuration scripts within the virtual machine instances
+                                        </li>
+                                        <li><i class="fa fa-check ornageColor"></i> The Generic VNFM can be easily extended to
+                                            support the management of third party VNFs
+                                        </li>
+                                    </ul>
+                                    <br>
+                                    <br>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
                 </div>
 
-                <div class="row">
-                    <div class="col-sm-5">
-                        <ul class="list-unstyled checked-list">
-                            <li><i class="fa fa-check ornageColor"></i> A Network Function Virtualisation Orchestrator
-                                (NFVO)completely designed and implemented following the ETSI MANO specification.<br> <a
-                                        class="ornageColor" href="http://openbaton.github.io/documentation/">Read more
-                                    here</a></li>
-                            <li><i class="fa fa-check ornageColor"></i> A Generic Virtual Network Function Manager
-                                (VNFM)able to manage the lifecycle of VNFs based on their descriptors. <br><a
-                                        class="ornageColor"
-                                        href="http://http//openbaton.github.io/documentation/vnfm-generic/">Read more
-                                    here</a></li>
-                            <li><i class="fa fa-check ornageColor"></i> A Juju Virtual Network Function Manager
-                                (VNFM)able to manage the lifecycle of VNFs based on their descriptors.<br> <a
-                                        class="ornageColor"
-                                        href="http://http//openbaton.github.io/documentation/vnfm-generic/">Read more
-                                    here</a></li>
-                            <li><i class="fa fa-check ornageColor"></i> An Autoscaling Engine which can be used for
-                                automatic runtime management of the scaling operation operations of your VNFs.<br> <a
-                                        class="ornageColor" href="https://github.com/openbaton/autoscaling/">Read more
-                                    here</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-5 col-sm-offset-1">
-                        <ul class="list-unstyled checked-list">
-                            <li><i class="fa fa-check ornageColor"></i> A Fault Management Systemwhich can be used for
-                                automatic runtime management of faults which may occur at any level.<br> <a
-                                        class="ornageColor" href="https://github.com/openbaton/fm-system">Read more
-                                    here</a></li>
-                            <li><i class="fa fa-check ornageColor"></i> A plugin mechanism for adding and removing
-                                different type of VIMs without having to re-write anything in your orchestration
-                                logic.<br><a class="ornageColor"
-                                             href="http://openbaton.github.io/documentation/vim-plugin/">Read more
-                                    here</a></li>
-                            <li><i class="fa fa-check ornageColor"></i> A powerful event engine useful based on a
-                                pub/sub mechanism for the ornageColor of lifecycle events execution.
-                            </li>
-                            <li><i class="fa fa-check ornageColor"></i> It integrates with the Zabbix monitoring system.<br><a
-                                    class="ornageColor" href="https://github.com/openbaton/zabbix-plugin">Read more
-                                here</a></li>
-                            <li><i class="fa fa-check ornageColor"></i> A set of libraries (the openbaton-libs) which
-                                could be used for building your own VNFM.<br> <a class="ornageColor"
-                                                                                 href="https://github.com/openbaton/openbaton-libs">
-                                    Read more here</a></li>
-                        </ul>
-                    </div>
-                </div>
             </div>
             <div class="col-md-5">
-                <img src="resources/images/feature1.png" alt="">
+                <img width="70%" src="resources/images/feature2.png" alt="">
             </div>
 
         </div>
