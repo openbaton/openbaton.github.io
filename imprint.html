@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Open Baton: an open source reference implementation of the ETSI Network Function Virtualization MANO
+        specification</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="resources/w3.js"></script>
+    <link rel='stylesheet' type='text/css'
+          href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
+    <link rel="stylesheet" href="resources/styles.css">
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-68429895-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+
+<body class="imprintFontsize">
+<nav class="navbar navbar-default navbar-fixed-top one-edge-shadow">
+    <div class="container">
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#top-nav">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="index.html"><img src="resources/images/logo1-default.png" class="img-responsive"
+                                                    title="openbaton" alt="openbaton"/></a>
+        </div>
+        <div class="collapse navbar-collapse" id="top-nav">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="page-scroll">
+                    <a class="active" href="index.html">Home</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="features.html">Features</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="cases.html">Use Cases</a>
+                </li>
+                <li class="page-scroll">
+                    <a  href="documentation/">Documentation</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="index.html#contact">Contact</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="http://marketplace.openbaton.org">Marketplace</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="imprintBlock bgLight">
+    <div class="container content">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="banner-info dark margin-bottom-10">
+                    <h3>Imprint</h3>
+                    <br>
+                    <div class="overflow-h">
+                        <p style="text-align:justify;  text-justify:auto;">
+                            The Fraunhofer Institute for Open Communication Systems FOKUS
+                            <br>
+                            Kaiserin-Augusta-Allee 31
+                            <br>
+                            10589 Berlin
+                            <br>
+                            Phone +49 30 3463-7000
+                            <br>
+                            info@fokus.fraunhofer.de
+                            <br>
+                            is a constituent entity of the Fraunhofer Gesellschaft, and as such has no separate legal
+                            status.
+                            <br>
+                            Fraunhofer-Gesellschaft
+                            <br>
+                            zur Förderung der angewandten Forschung e.V.
+                            <br>
+                            Hansastraße 27 c
+                            <br>
+                            80686 München
+                            <br>
+                            <a class="ornageColor" href="https://www.fraunhofer.de/">www.fraunhofer.de</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="margin-bottom-20"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="imprintBlock">
+    <div class="container content">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Tax Information</h1>
+
+                <p style="    text-align: justify;text-justify: auto;">
+                    <b>VAT Identification Number in accordance with §27 a VAT Tax Act:</b>
+                    DE 129515865
+                    <br>
+
+                    <b> Court of jurisdiction</b>
+                    <br>
+                    Amtsgericht München (district court)
+                    <br>
+                    Registered nonprofit association
+                    <br>
+                    Registration no. VR 4461
+                    <br>
+                    <b>Responsible editor:</b>
+                    <br>
+                    <a class="ornageColor" href="mailto:info@openbaton.org">Webmaster</a>
+                    <br>
+                    Please note: If you have general questions concerning the institute please refer to persons
+                    mentioned under “Contact".
+                    <br>
+                    <b>Executive Board</b>
+                    <br>
+                    Prof. Dr.-Ing. Reimund Neugebauer, President, Corporate Policy and Research Management
+                    <br>
+                    Prof. Dr. Georg Rosenfeld, Technology Marketing and Business Models
+                    <br>
+                    Prof. Dr. Alexander Kurz, Human Resources, Legal Affairs and IP Management
+                    <br>
+                    Prof. (Univ. Stellenbosch) Dr. Alfred Gossner, Finance, Controlling (incl. Business Administration,
+                    Purchasing and Real Estate) and Information Systems
+                </p>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="imprintBlock bgLight">
+    <div class="container content">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="banner-info dark margin-bottom-10">
+                    <h3>Usage Rights</h3>
+                    <br>
+                    <div class="overflow-h">
+                        <p style="text-align:justify;  text-justify:auto;">
+                            Copyright © by: Fraunhofer-Gesellschaft
+                            <br>
+                            All rights reserved.
+                            <br>
+                            All copyright for this Web site are owned in full by the Fraunhofer-Gesellschaft.
+                            <br>
+                            Permission is granted to download or print material published on this site for personal use
+                            only. Its use for any other purpose, and in particular its commercial use or distribution,
+                            are strictly forbidden in the absence of prior written approval. Please address your
+                            requests for approval to:
+                            <br>
+                            <br>
+                            Fraunhofer Institute for Open Communication Systems FOKUS
+                            <br>
+                            Kaiserin-Augusta-Allee 31
+                            <br>
+                            10589 Berlin
+                            <br>
+                            Phone +49 30 3463-7000
+                            <br>
+                            <br>
+                            Notwithstanding this requirement, material may be downloaded or printed for use in
+                            connection with press reports on the activities of the Fraunhofer-Gesellschaft and its
+                            constituent institutes, on condition that the following terms are complied with:
+                            No alterations may be made to pictorial content, with the exception of framing modifications
+                            to emphasize the central motif. The source must be quoted and two free reference copies must
+                            be sent to the above-mentioned address. Such usage is free of charge.
+                        </p>
+                    </div>
+                </div>
+                <div class="margin-bottom-20"></div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<div class="imprintBlock">
+    <div class="container content">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Disclaimer</h1>
+                <p style="    text-align: justify;text-justify: auto;">
+                    We cannot assume any liability for the content of external pages. Solely the operators of those
+                    linked pages are responsible for their content.
+                    <br>
+                    We make every reasonable effort to ensure that the content of this Web site is kept up to date, and
+                    that it is accurate and complete. Nevertheless, the possibility of errors cannot be entirely ruled
+                    out. We do not give any warranty in respect of the timeliness, accuracy or completeness of material
+                    published on this Web site, and disclaim all liability for (material or non-material) loss or damage
+                    incurred by third parties arising from the use of content obtained from the Web site.
+                    <br>
+                    Registered trademarks and proprietary names, and copyrighted text and images, are not generally
+                    indicated as such on our Web pages. But the absence of such indications in no way implies that these
+                    names, images or text belong to the public domain in the context of trademark or copyright law.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div w3-include-html="footer.html"></div>
+<script>
+    w3.includeHTML();
+</script>
+<!-- jQuery -->
+<script src="resources/jquery-3.2.1.min.js"></script>
+<script src="resources/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="resources/scripts.js"></script>
+<script>
+    $(document).ready(function () {
+        $(window).scroll(function () {
+            // Using toggleClass
+            $(".navbar-default").toggleClass("navbar-shrink", $(this).scrollTop() > 50)
+        });
+    });
+</script>
+</body>
+</html>
