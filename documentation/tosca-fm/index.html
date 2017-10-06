@@ -155,14 +155,14 @@ console.log('--------');
 
 <nav class="navbar navbar-default navbar-fixed-top one-edge-shadow">
   <div class="container">
-    <div class="navbar-header page-scroll">
+    <div style="margin: auto;" class="navbar-header page-scroll">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#top-nav">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="brand" href="../../index.html"><img src="../resources/images/logo1-default.png" class="img-responsive" title="openbaton" alt="openbaton" /></a>
+      <a class="brand" href="../../index.html"><img style="width: 120px;" src="../resources/images/logo1-default.png" class="img-responsive" title="openbaton" alt="openbaton" /></a>
     </div>
     <div class="collapse navbar-collapse" id="top-nav">
       <ul class="nav navbar-nav navbar-right">
@@ -831,7 +831,7 @@ console.log('--------');
                         
                           <h1 id="fault-management-in-tosca">Fault Management in TOSCA</h1>
 <p>This is an example of how to use the Fault Management system with the yaml descriptor. 
-The Fault Management specifics must be placed in the properties of the VDU node. </p>
+The Fault Management specifics must be placed in the <strong>properties</strong> of the VDU node. </p>
 <p>This is an example of a VDU Node with a Fault Management Policy:</p>
 <pre><code class="yaml">VDU1:
   type: tosca.nodes.nfv.VDU

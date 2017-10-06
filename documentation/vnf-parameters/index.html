@@ -155,14 +155,14 @@ console.log('--------');
 
 <nav class="navbar navbar-default navbar-fixed-top one-edge-shadow">
   <div class="container">
-    <div class="navbar-header page-scroll">
+    <div style="margin: auto;" class="navbar-header page-scroll">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#top-nav">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="brand" href="../../index.html"><img src="../resources/images/logo1-default.png" class="img-responsive" title="openbaton" alt="openbaton" /></a>
+      <a class="brand" href="../../index.html"><img style="width: 120px;" src="../resources/images/logo1-default.png" class="img-responsive" title="openbaton" alt="openbaton" /></a>
     </div>
     <div class="collapse navbar-collapse" id="top-nav">
       <ul class="nav navbar-nav navbar-right">
@@ -831,7 +831,9 @@ console.log('--------');
                         
                           <h1 id="vnf-parameters">VNF Parameters</h1>
 <hr />
-<p>The useful parameters that you can use in your scripts are defined in two different fields of a VNFD.</p>
+<p>VNF parameters are parameters that are defined in VNFDs and that you can use in lifecycle event scripts.</p>
+<h3 id="configuration-parameters">Configuration parameters</h3>
+<p>The VNFD's <em>configurations</em> field describes an entity which contains a set of configuration parameters. Configuration parameters are key-value pairs. Here is an example of a VNFD's <em>configurations</em> field:</p>
 <pre><code class="json">...
 &quot;configurations&quot;:{
     &quot;name&quot;:&quot;config_name&quot;,
@@ -842,9 +844,19 @@ console.log('--------');
         }
     ]
 },
-
 ...
+</code></pre>
 
+<h3 id="out-of-the-box-parameters">Out-of-the-box parameters</h3>
+<p>There are some out-of-the-box parameters that will be added automatically to the execution environment when running the scripts. These parameters are:</p>
+<ul>
+<li>The IP address of the VNF</li>
+<li>The floating IP address of the VNF (if it exists)</li>
+<li>The hostname of the VNF</li>
+</ul>
+<h3 id="provides-parameters">Provides parameters</h3>
+<p>The VNFD's <em>provides</em> field is not used when working with the Generic-VNFM so you can ignore them if you are not planning to use your own VNFM. The <em>provides</em> field is a list of parameter keys that will be available in all your scripts. The difference is that these parameters are parameters whose actual value will be known only at runtime. For that reason these parameters can only be filled by a specific VNFM. So you need to implement a VNFM able to handle these specific parameters in the fillSpecificParameters method (see <a href="../vnfm-how-to-write">How to write a VNFM</a>).</p>
+<pre><code>...
 &quot;provides&quot;:[
     &quot;param1&quot;,
     &quot;param2&quot;
@@ -852,48 +864,67 @@ console.log('--------');
 ...
 </code></pre>
 
-<h3 id="configurations">Configurations</h3>
-<p>This field describes an Entity that has a list of ConfigurationParameters inside. This is a list of Entities containing key:value. These parameters are always available in your scripts. See the section below, <a href="#How to use the parameters">how to use the parameters</a>, in order to see how to use them.</p>
-<h3 id="provides">Provides</h3>
-<p>This field is a list of parameter keys that will be available in all your scripts. The difference is that these parameters are parameters whose actual value will be known only at runtime. For that reason these parameters can only be filled by a specific VNFM. So you need to implement a VNFM able to handle these specific parameters in the fillSpecificParameters method (see <a href="../vnfm-how-to-write">How to write a VNFM</a>).</p>
-<p><strong>NOTE</strong>: 
-  there are some out-of-the-box parameters that will be added automatically to the VNFRecord. These parameters are:
-<em> the networkName=IP,  key = &lt; network_name &gt;, value = &lt; actual-IP &gt;
-</em> the hostname, key = &lt; hostname &gt;, value = the actual hostname
-* the floatingIp, key = &lt; network_name &gt;_floatingIp , value = the actual floatingIp</p>
 <h3 id="how-to-use-the-parameters">How to use the parameters</h3>
-<p>All the above parameters are available in all the scripts of the VNF that defines them. You just need to use them as environment variables, a script of the INSTANTIATE lifecycle event for instance would be:</p>
-<pre><code class="bash">#!/bin/bash
-
-echo &quot;the value of the configuration parameter key1 is $key1&quot;
-</code></pre>
-
-<p>As described in the <a href="../vnfm-generic">Generic VNF Manager</a> page, you can set up dependencies in order to use parameters from another VNF in the MODIFY lifecycle event. For doing that you need to specify in the Network Service Descriptor the VNF Dependency, for instance if a VNF vnf-1 is connected to network net1 and vnf-2 needs the ip of vnf-1 on that network the VNF Dependency will be:</p>
-<pre><code class="json">
+<p>All of the parameters mentioned above are available inside the lifecycle event scripts of the corresponding VNFR as environment variables. You can refer to them with their key. For example, if you defined a configuration parameter with the key <em>title</em> and the value <em>This is the title</em>, you can refer to it by writing <code>$title</code> inside your scripts.</p>
+<p>The out-of-the-box parameters are a special case, since you did not specify a key for them. You can refer to them in the scripts like this:</p>
+<table>
+<thead>
+<tr>
+<th>Out-of-the-box-parameter</th>
+<th>Usage of variables in scripts</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The IP address</td>
+<td>$&lt; network_name &gt;</td>
+<td>The IP address of the virtual machine connected to the network</td>
+</tr>
+<tr>
+<td>The floating IP address</td>
+<td>$&lt; network_name &gt;_floatingIp</td>
+<td>The floating IP address of the virtual machine connected to the network</td>
+</tr>
+<tr>
+<td>The hostname</td>
+<td>$hostname</td>
+<td>The IP address of the virtual machine connected to the network</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note</strong>: Sometimes it may be that the names of VNF parameters are not conform with bash environment variables. For example if a network name contains a hyphen (e.g. network-one). In those cases are the hyphens replaced by Open Baton automatically with underscores. So in you scripts you would write <code>$network_one</code> instead of <code>$network-one</code>.</p>
+<h3 id="how-to-use-parameters-passed-through-a-vnf-dependency">How to use parameters passed through a VNF dependency</h3>
+<p>As described <a href="../vnf-dependencies">here</a>, you can have VNF dependencies between VNFs and pass VNF parameters through these dependencies. If you want to use these parameters inside your scripts, you have to consider a few things. The VNF parameters passed through a VNF dependency are only available inside the CONFIGURE lifecycle event scripts and only if the script names start with the source VNF's type followed by an underscore. In other lifecycle events you will not be able to use them. Environment variables derived from VNF parameters passed through a VNF dependency have a special naming rule. If you have one VNF of type <em>server</em> and another VNF of type <em>client</em> and the server is the source and the client is the target of a VNF dependency passing some VNF parameters, then you have to prepend the type of the source VNF (in our case <em>server</em>) to the environment variables for referring to the VNF parameters. Here is an example:</p>
+<p>Assume that we have the two VNFs described above, that means one of type <em>server</em> and one of type <em>client</em>. And we have a dependency between the two which passes the server's IP address and one of its configuration parameters to the client. Here is how such a dependency might look like:</p>
+<pre><code class="json">...
 &quot;vnf_dependency&quot;:[
-    {
-        &quot;source&quot; : {
-            &quot;name&quot;: &quot;vnf-1&quot;
-        },
-        &quot;target&quot;:{
-            &quot;name&quot;: &quot;vnf-2&quot;
-        },
-        &quot;parameters&quot;:[
-            &quot;net1&quot;
-        ]
-    }
+        {
+            &quot;source&quot;:{
+                &quot;name&quot;:&quot;server&quot;
+            },
+            &quot;target&quot;:{
+                &quot;name&quot;:&quot;client&quot;
+            },
+            &quot;parameters&quot;:[
+                &quot;netname&quot;,
+                &quot;confParam&quot;
+            ]
+        }
 ]
-
+...
 </code></pre>
 
-<p>Done that, in the MODIFY scripts it is possible to use that ip in this way:</p>
+<p>Now we can use the values of the two parameters <em>netname</em> (which is the virtual link to which the server VNF is connected) and <em>confParam</em> inside of the client's CONFIGURATION lifecycle scripts.</p>
 <pre><code class="bash">#!/bin/bash
 
-echo &quot;the value of the ip on net1 of vnf-1 is $vnf1type_net1&quot;
+echo &quot;Server IP: $server_netname&quot;
+echo &quot;Server configuration parameter: $server_confParam&quot;
 </code></pre>
 
+<p><strong>Note</strong>: That the lifecycle script's name has to start with the source VNF's type and an underscore, in this case for example <em>server_configuration_script.sh</em></p>
 <h3 id="conclusion">Conclusion</h3>
-<p>You are always able to use the parameters of a VNF simply using the key as variable name, but when you want to use a parameter of a different VNF (like a relation) you need to specify the type followed by an underscore and then the name of the foreign parameter key (for instance <code>$typeExt_key</code>). In this last case, you can use them only in the MODIFY lifecycle event scripts.</p>
+<p>You are always able to use the parameters of a VNF simply using the key as variable name, but when you want to use a parameter of a different VNF (passed through a dependency) you need to specify the VNF type followed by an underscore and then the name of the foreign parameter key (for instance <code>$typeExt_key</code>). But be aware that you can use foreign parameters only in CONFIGURE lifecycle event scripts.</p>
 <!---
 References
 -->

@@ -155,14 +155,14 @@ console.log('--------');
 
 <nav class="navbar navbar-default navbar-fixed-top one-edge-shadow">
   <div class="container">
-    <div class="navbar-header page-scroll">
+    <div style="margin: auto;" class="navbar-header page-scroll">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#top-nav">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="brand" href="../../index.html"><img src="../resources/images/logo1-default.png" class="img-responsive" title="openbaton" alt="openbaton" /></a>
+      <a class="brand" href="../../index.html"><img style="width: 120px;" src="../resources/images/logo1-default.png" class="img-responsive" title="openbaton" alt="openbaton" /></a>
     </div>
     <div class="collapse navbar-collapse" id="top-nav">
       <ul class="nav navbar-nav navbar-right">
@@ -1392,7 +1392,7 @@ public class MyVNFM extends AbstractVnfmSpringAmqp{
 </code></pre>
 
 <p>Now you can implement whatever you want. If the VirtualNetworkFunctionRecord is returned, it will go back directly to the NFVO.</p>
-<p>One of the methods that can be overwritten is the <em>fillParameters</em>. This method is important when you have specified some "provides" in your VNFD, in facts you can fill them in this method and make them available afterwards to the scripts (see <a href="../vnf-parameters">How to use the parameters</a>). </p>
+<p>One of the methods that can be overwritten is the <em>fillParameters</em>. This method is important when you have specified some "provides" in your VNFD, in fact you can fill them in this method and make them available afterwards to the scripts (see <a href="../vnf-parameters">How to use the parameters</a>). </p>
 <p>An example of allocating and terminating resource by using a plugin can be found <a href="#allocate-resources">here</a> and <a href="#release-resources">here</a>.</p>
 <p><strong>Note</strong> If you use vnfm-sdk-amqp or vnfm-sdk-rest <strong><em>the VNFManager main class needs to be stateless</em></strong> since it can (will) run each method potentially in parallel.
 For what concerns vnfm-sdk-amqp, even setting concurrency to 1, will not ensure to have always the same instance of the class.</p>
