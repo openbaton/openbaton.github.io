@@ -155,14 +155,14 @@ console.log('--------');
 
 <nav class="navbar navbar-default navbar-fixed-top one-edge-shadow">
   <div class="container">
-    <div class="navbar-header page-scroll">
+    <div style="margin: auto;" class="navbar-header page-scroll">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#top-nav">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="brand" href="../../index.html"><img src="../resources/images/logo1-default.png" class="img-responsive" title="openbaton" alt="openbaton" /></a>
+      <a class="brand" href="../../index.html"><img style="width: 120px;" src="../resources/images/logo1-default.png" class="img-responsive" title="openbaton" alt="openbaton" /></a>
     </div>
     <div class="collapse navbar-collapse" id="top-nav">
       <ul class="nav navbar-nav navbar-right">
@@ -830,16 +830,17 @@ console.log('--------');
                       <div class="section">
                         
                           <h1 id="inter-vnf-dependencies">Inter-VNF dependencies</h1>
-<p>In most of the cases, network services are composed by multiple VNFs interoperating together for providing some services to end-users. Those VNFs, should be  Inter-VNF dependencies is one of the most important functions which should be handled by the NFVO while deploying network services composed by multiple VNFs. In order to better understand the problem related with inter-VNF dependencies we'll start providing a very simple example. </p>
-<p>Imagine a network service composed by two VNFs: VNF-A and VNF-B. </p>
+<p>In most cases, Network Services are composed of multiple VNFs operating together for providing a service to the end-user. For achieving this goal, it is necessary to have dependencies between the VNFs.</p>
+<p>Here is a simple example Network Service composed of two VNFs: VNF-A and VNF-B. </p>
 <p><img alt="ns-dependency" src="../images/network-service-dependency.png" /></p>
-<p>VNF-A provides services to VNF-B, therefore they have a dependency in which the VNF-A is the source providing information to VNF-B which is the target. Those information could be related to: </p>
+<p>VNF-A provides some information to VNF-B, therefore they have a dependency in which the VNF-A is the source providing information to VNF-B, which is the target. The information passed through the dependency can be of two types: </p>
 <ul>
-<li>virtual links: the VNF-B "requires" VNF-A to provide its IPs </li>
-<li>configuration parameters: the VNF-B "requires" VNF-A to provide some configuration parameters (defined in the VNFD of VNF-A) </li>
+<li><strong>Out-of-the-box information</strong>: this type of information includes IP addresses and hostnames, their values are set out-of-the-box by Open Baton</li>
+<li><strong>Custom information</strong>: information that is set in the <em>configurations</em> object of the VNFD</li>
 </ul>
-<h2 id="vnf-depenency-specified-at-the-level-of-a-nsd">VNF depenency specified at the level of a NSD</h2>
-<p>A VNF Dependency is composed by:</p>
+<p>For more information on how you can use the information passed through dependencies, have a look at the page about <a href="../vnf-parameters#how-to-use-the-parameters">VNF parameters</a>.</p>
+<h2 id="vnf-depenencies-specified-at-nsd-level">VNF depenencies specified at NSD level</h2>
+<p>A VNF dependency is composed of:</p>
 <table>
 <thead>
 <tr>
@@ -850,11 +851,11 @@ console.log('--------');
 <tbody>
 <tr>
 <td>source</td>
-<td align="right">The name of the VNFD that provides one or more parameters (see [VNFManager Generic][vnfm-generic] and [VNF Parameters][vnf-parameters])</td>
+<td align="right">The name of the VNFD that provides one or more parameters (see <a href="../vnfm-generic">VNFManager Generic</a> and <a href="../vnf-parameters">VNF parameters</a>)</td>
 </tr>
 <tr>
 <td>target</td>
-<td align="right">The name of the VNFD that requires one or more parameters (see [VNFManager Generic][vnfm-generic] and [VNF Parameters][vnf-parameters])</td>
+<td align="right">The name of the VNFD that requires one or more parameters (see <a href="../vnfm-generic">VNFManager Generic</a> and <a href="../vnf-parameters">VNF parameters</a>)</td>
 </tr>
 <tr>
 <td>parameters</td>
@@ -862,12 +863,9 @@ console.log('--------');
 </tr>
 </tbody>
 </table>
-<p>It is possible to let the Orchestrator to calculate dependencies automatically by providing some parameters in the VNF Descriptor part. Please check the <a href="../vnf-descriptor">VNF Descriptor page</a></p>
-<h2 id="vnf-depenency-specified-at-the-level-of-a-vnfd">VNF depenency specified at the level of a VNFD</h2>
-<h3 id="provides">Provides</h3>
-<p>This list of parameter names defines the parameters that the VnfManager will fill at runtime. For that reason they have a meaning only if you [write your own VnfManager][vnfm-how-to]. These parameters are then available in any scripts. For the usage of the parameters, please, refer to [How to use the parameters][param-how-to] page.</p>
+<h2 id="vnf-depenencies-specified-at-vnfd-level">VNF depenencies specified at VNFD level</h2>
 <h3 id="requires">Requires</h3>
-<p>The requires field provides an alternative method for defining VNF dependencies. The regular way is to define VNF dependencies in the Network Service Descriptor by defining the source, target and parameters of the dependency. But you can also use the requires field in the VNFD to achieve the same result. Let's look at an example to understand how to do this. Here is a VNF dependency defined in the classic way. </p>
+<p>The <em>requires</em> field provides an alternative method for defining VNF dependencies. The regular way is to define VNF dependencies in the Network Service Descriptor by defining the source, target and parameters of the dependency. But you can also use the requires field in the VNFD to achieve the same result. Let's look at an example to understand how to do this. Here is a VNF dependency defined in the classic way. </p>
 <pre><code class="json">...
 &quot;vnf_dependency&quot;:[
         {
@@ -898,7 +896,7 @@ The same can be done by writing the following in the requires field of the VNFD 
 
 <p>The <em>"server"</em> field specifies that the source of the dependency is the VNFD with the type server. The target is the VNFD that contains the requires field, in this case the VNFD with type client. </p>
 <h2 id="inter-vnf-dependencies-practical-example-generic-vnfm">Inter-VNF dependencies - practical example (Generic VNFM)</h2>
-<p>For a more detailed example of usage of inter-VNF dependencies, you could read the following [tutorial][vnf-depenendencies-generic]</p>
+<p>For a more detailed example of the usage of inter-VNF dependencies you can read the following <a href="../vnf-dependencies-generic">tutorial</a>.</p>
 <!---
 Script for open external links in a new tab
 -->

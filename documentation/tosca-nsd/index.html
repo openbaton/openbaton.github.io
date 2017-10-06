@@ -155,14 +155,14 @@ console.log('--------');
 
 <nav class="navbar navbar-default navbar-fixed-top one-edge-shadow">
   <div class="container">
-    <div class="navbar-header page-scroll">
+    <div style="margin: auto;" class="navbar-header page-scroll">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#top-nav">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="brand" href="../../index.html"><img src="../resources/images/logo1-default.png" class="img-responsive" title="openbaton" alt="openbaton" /></a>
+      <a class="brand" href="../../index.html"><img style="width: 120px;" src="../resources/images/logo1-default.png" class="img-responsive" title="openbaton" alt="openbaton" /></a>
     </div>
     <div class="collapse navbar-collapse" id="top-nav">
       <ul class="nav navbar-nav navbar-right">
@@ -912,31 +912,30 @@ relationships_template: #Explained below
 <h3 id="node-template-virtual-network-function-vnf">Node Template: Virtual Network Function (VNF)</h3>
 <p>This is an example of VNF Template defined inside the NSD Template. The parameters available and needed to create a Virtual Network Function Descriptor are defined and explained below: </p>
 <pre><code class="yaml">dummy-server:
-        type: openbaton.type.VNF
-        properties:
-          vendor: Fokus
-          version: 0.1
-          endpoint: dummy
-          type: server
-          configurations:
-            name: config_name
-            configurationParameters:
-              - key: value
-              - key2: value2
-          vnfPackageLocation: https://github.com/openbaton/vnf-scripts.git
-          deploymentFlavour:
-            - flavour_key: m1.small
-        requirements:
-          - virtualLink: private
-          - vdu: VDU2
-        interfaces:
-          lifecycle: # lifecycle
-            instantiate:
-              - install.sh
-              - start-srv.sh
+  type: openbaton.type.VNF
+  properties:
+    vendor: Fokus
+    version: 0.1
+    endpoint: dummy
+    type: server
+    configurations:
+      name: config_name
+      configurationParameters:
+        - key: value
+        - key2: value2
+    vnfPackageLocation: https://github.com/openbaton/vnf-scripts.git
+    deploymentFlavour:
+      - flavour_key: m1.small
+  requirements:
+    - vdu: VDU2
+  interfaces:
+    lifecycle: # lifecycle
+      instantiate:
+        - install.sh
+        - start-srv.sh
 </code></pre>
 
-<p>This Virtual Network Function is called <code>dummy-server</code> </p>
+<p>This Virtual Network Function is called <strong>dummy-server</strong></p>
 <table>
 <thead>
 <tr>
@@ -1020,11 +1019,6 @@ relationships_template: #Explained below
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>virtualLink</td>
-<td align="right">String</td>
-<td align="right">Shows where the VNF is connected</td>
-</tr>
 <tr>
 <td>vdu</td>
 <td align="right">String</td>
@@ -1221,8 +1215,7 @@ relationships_template: #Explained below
 <h3 id="node-template-virtual-link-vl">Node Template: Virtual Link (VL)</h3>
 <p>OpenBaton uses Virtual Link names as subnets from OpenStack.</p>
 <p>This is the definition of a Virtual Link called <strong>private</strong>:</p>
-<pre><code class="yaml">
-private:
+<pre><code class="yaml">private:
   type: tosca.nodes.nfv.VL
   properties:
     vendor: Fokus
@@ -1251,9 +1244,8 @@ private:
 </table>
 <h3 id="relationships-template">Relationships Template</h3>
 <p>The Relationships Template creates the dependency between two VNFs.
-This is the definition of Relationships Template called <code>connection_server_client</code>:</p>
-<pre><code class="yaml">
-relationships_template:
+This is the definition of Relationships Template called <strong>connection_server_client</strong>:</p>
+<pre><code class="yaml">relationships_template:
   connection_server_client:
     type: tosca.nodes.relationships.ConnectsTo
     source: dummy-server
@@ -1299,7 +1291,6 @@ relationships_template:
     name: server-configurations
     configurationParameters:
       - key: &quot;value&quot;
-
 </code></pre>
 
 <h3 id="complete-example">Complete Example</h3>
@@ -1331,7 +1322,6 @@ topology_template:
           deploymentFlavour:
             - flavour_key: m1.small
         requirements:
-          - virtualLink: private
           - vdu: VDU1
         interfaces:
           lifecycle:
@@ -1351,7 +1341,6 @@ topology_template:
           - flavour_key: m1.small
         endpoint: dummy
       requirements:
-         - virtualLink: private
          - vdu: VDU2
       interfaces:
           lifecycle: # lifecycle
@@ -1410,7 +1399,6 @@ relationships_template:
     target: dummy-client
     parameters:
         - private
-
 
 </code></pre>
 

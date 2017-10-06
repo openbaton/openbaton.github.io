@@ -155,14 +155,14 @@ console.log('--------');
 
 <nav class="navbar navbar-default navbar-fixed-top one-edge-shadow">
   <div class="container">
-    <div class="navbar-header page-scroll">
+    <div style="margin: auto;" class="navbar-header page-scroll">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#top-nav">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="brand" href="../../index.html"><img src="../resources/images/logo1-default.png" class="img-responsive" title="openbaton" alt="openbaton" /></a>
+      <a class="brand" href="../../index.html"><img style="width: 120px;" src="../resources/images/logo1-default.png" class="img-responsive" title="openbaton" alt="openbaton" /></a>
     </div>
     <div class="collapse navbar-collapse" id="top-nav">
       <ul class="nav navbar-nav navbar-right">
@@ -868,7 +868,7 @@ The following sequence diagram explains the communication messages.</p>
 <p>For each operation of the VNF Lifecycle Management interface, the VNFManager sends scripts to the EMS which executes them locally in the VMs.</p>
 <p><strong>Note</strong>: The scripts come from the VNFPackage which you need to create (see <a href="../vnf-package">VNFPackage documentation</a>).</p>
 <p>The ordering of this scripts is defined in the NetworkServiceDescriptor from which the NetworkServiceRecord was created, in particular into the NetworkServiceDescriptor→VirtualNetworkFunctionDescriptor→LifecycleEvents.
-Here an example (to make it more readable it is shown only the <strong>VNF lifecycle event</strong> part):</p>
+Here is an example (to make it more readable it shows only the <strong>VNF lifecycle event</strong> part):</p>
 <pre><code class="json">{// NSD
   ...
   {// VNFD
@@ -912,7 +912,7 @@ Here an example (to make it more readable it is shown only the <strong>VNF lifec
 }
 </code></pre>
 
-<p>In the following table is described for each <strong>VNF lifecycle event</strong> when the scripts are executed.</p>
+<p>The following table describes for each <strong>VNF lifecycle event</strong> at which point in time the scripts are executed.</p>
 <table>
 <thead>
 <tr>
@@ -923,49 +923,47 @@ Here an example (to make it more readable it is shown only the <strong>VNF lifec
 <tbody>
 <tr>
 <td>INSTANTIATE</td>
-<td>During the instantiation of the corresponding VNF</td>
+<td>During the instantiation of the corresponding VNF.</td>
 </tr>
 <tr>
 <td>CONFIGURE</td>
-<td>After the instantiation. Useful if the VNF depends on other VNFs, because we can get parameters provided by them (e.g. IP). The parameters are available as environment variables (see later).</td>
+<td>After the instantiation. Useful if the VNF depends on other VNFs, because we can get parameters that are only available after start-up (e.g. IP addresses). The parameters are available as environment variables (see below).</td>
 </tr>
 <tr>
 <td>START</td>
-<td>After the instantiation or configuration (It depends whether the event CONFIGURE specified).</td>
+<td>After the instantiation and configuration.</td>
 </tr>
 <tr>
 <td>STOP</td>
-<td>During the stop of the corresponding VNF</td>
+<td>During the stopping of the corresponding VNF.</td>
 </tr>
 <tr>
 <td>TERMINATE</td>
-<td>During the termination of the corresponding VNF</td>
+<td>During the termination of the corresponding VNF.</td>
 </tr>
 <tr>
 <td>SCALE_IN</td>
-<td>When the VNF is target of a scaled in vnfcInstance</td>
+<td>When the VNF is target of a VNFC instance on which a scale in operation is performed.</td>
 </tr>
 </tbody>
 </table>
-<p>The available parameters are defined in the VirtualNetworkFunctionDescriptor fields:</p>
+<p>You can use specific environment variables in the scripts which are set by Open Baton.
+The available parameters are defined in the VirtualNetworkFunctionDescriptor fields:</p>
 <!-- * **provides**: it contains the VMs parameters which will be available after the instantiation (e.g. IP) for other VNFs. -->
 
 <ul>
 <li><strong>configurations</strong>: it contains specific parameters which you want to use in the scripts.</li>
-<li><strong>out-of-the-box</strong>: the following parameters are automatically available into the scripts:  <ol>
+<li><strong>out-of-the-box</strong>: the following parameters are automatically available in the scripts:  <ol>
 <li>Private IP</li>
 <li>Floating IP (if requested)</li>
 <li>Hostname  </li>
 </ol>
 </li>
 </ul>
-<p>In the INSTANTIATE scripts, the parameters defined in these two fields are then available as environment variables into the script exactly as defined (i.e. you can get by $parameter_name).</p>
-<p>In the MODIFY scripts, the INSTANTIATE parameters are still available but plus there are environment variables that come from other VNF sources, where they are specified in the provides field.
-These kind of parameters are defined in the <em>requires</em> fields (of the VNF target) and the VNFDependency→parameters fields (of the NSD), and are then available as $<em>type_of_vnf_source</em>_<em>name_of_parameter</em> (in the VNF target).</p>
-<p><em><strong>NOTE</strong></em>: <em>the scripts in the CONFIGURE lifecycle event need to start with the type of the source VNF followed by _ (underscore) and the name of the script (i.e. server_configure.sh)</em></p>
-<h5 id="vms-termination">VMs termination</h5>
-<p>The STOP lifecycle event is meant to just stop the VNF service and afterward be able to start it again. The TERMINATE lifecycle event delete the virtual resources from the PoP
-As for VMs deployment, VMs termination is done by the NFVO. Specific scripts can be run before termination by putting them under the TERMINATE lifecycle event.</p>
+<p>To learn more about the VNF parameters and how you can use them as environment variables inside you scripts, please refer to <a href="../vnf-parameters">this</a> page.</p>
+<h5 id="termination-of-virtual-machines">Termination of Virtual Machines</h5>
+<p>The STOP lifecycle event is meant to just stop the VNF service and afterward be able to start it again. The TERMINATE lifecycle event deletes the virtual resources from the PoP.
+As for VM's deployment, VM's termination is done by the NFVO. Specific scripts can be run before termination by putting them under the TERMINATE lifecycle event.</p>
 <!---
 References
 -->

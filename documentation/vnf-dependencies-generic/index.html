@@ -155,14 +155,14 @@ console.log('--------');
 
 <nav class="navbar navbar-default navbar-fixed-top one-edge-shadow">
   <div class="container">
-    <div class="navbar-header page-scroll">
+    <div style="margin: auto;" class="navbar-header page-scroll">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#top-nav">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="brand" href="../../index.html"><img src="../resources/images/logo1-default.png" class="img-responsive" title="openbaton" alt="openbaton" /></a>
+      <a class="brand" href="../../index.html"><img style="width: 120px;" src="../resources/images/logo1-default.png" class="img-responsive" title="openbaton" alt="openbaton" /></a>
     </div>
     <div class="collapse navbar-collapse" id="top-nav">
       <ul class="nav navbar-nav navbar-right">
@@ -831,14 +831,14 @@ console.log('--------');
                         
                           <h1 id="example-with-dependency-and-scripts">EXAMPLE WITH DEPENDENCY AND SCRIPTS</h1>
 <p>Let's see a simple example with two VNFs: vnf-server and vnf-database.<br />
-The vnf-server needs the ip of the vnf-database to be able to connect properly. The following figure shows the source (vnf-database), the target (vnf-server)
-and the dependency (IP). Such VNFs are connected in the same virtual network called "vnet".</p>
+The vnf-server needs the IP address of the vnf-database to be able to connect properly. The following figure shows the source (vnf-database), the target (vnf-server)
+and the dependency (IP). The VNFs are connected to the same virtual network called "vnet".</p>
 <p><img alt="ns with dependency" src="../images/generic-vnfm-ns-with-dependency.png" /></p>
 <p><strong>INSTANTIATE scripts</strong></p>
-<p>To start the VNFs we'll have two scripts <strong>instantiate-vnf-server.sh</strong> and <strong>instantiate-vnf-database.sh</strong> (more scripts are possible). Here an example of the instantiate-vnf-server.sh script:</p>
+<p>To start the VNFs we have two scripts <strong>instantiate-vnf-server.sh</strong> and <strong>instantiate-vnf-database.sh</strong> (more scripts are possible). Here is the content of the instantiate-vnf-server.sh script:</p>
 <pre><code class="bash">#!/bin/bash
 
-echo &quot;INSTANTIATIATION of the VNF server&quot;
+echo &quot;INSTANTIATION of the VNF server&quot;
 echo &quot;The following parameters are available:&quot;
 
 echo &quot;Out-of-the-box parameters:&quot;
@@ -853,7 +853,7 @@ echo &quot;The answer to everything is.. ${ANSWER_TO_EVERYTHING}&quot;
 </code></pre>
 
 <p><strong>CONFIGURE script</strong></p>
-<p>After the instantiation of the vnf-server we would configure it with the following <strong>database_connectToDb.sh</strong> script:</p>
+<p>After the instantiation of the vnf-server we can configure it with the following <strong>database_connectToDb.sh</strong> script:</p>
 <pre><code class="bash">#!/bin/bash
 
 echo &quot;This is the ip of the vnf-database: ${database_vnet}&quot;
@@ -864,9 +864,9 @@ echo &quot;This is the hostname of the vnf-database: ${database_hostname}&quot;
 
 </code></pre>
 
-<p><strong>Note1</strong>: <em>database</em> is the type of the vnf-database, <em>vnet</em> is the name of the network.</p>
-<p><strong>Note2</strong>: All the scripts need to be in a repository or in the vnf package (see the vnf package structure <a href="../vnfpackage">here</a>).</p>
-<p>In order to deploy the VNFs we have to create both the VNF descriptor: <strong>vnf-database-descriptor.json</strong> and <strong>vnf-server-descriptor.json</strong>. Below we'll be showed the most relevant part of them:</p>
+<p><strong>Note1</strong>: It is important that the name of the configure script starts with the type of the source VNF (in this case <em>database</em>) followed by an underscore. For accessing the parameters from the source VNF we have to use environment variables following this pattern: <em>sourceVnfType</em>_<em>parameterName</em></p>
+<p><strong>Note2</strong>: All the scripts need to be in a repository or in the vnf package (see the vnf package structure <a href="../vnf-package">here</a>).</p>
+<p>In order to deploy the VNFs we have to create both the VNF descriptor: <strong>vnf-database-descriptor.json</strong> and <strong>vnf-server-descriptor.json</strong>. Below you can see the the most relevant part of them:</p>
 <p><strong>vnf-database-descriptor.json</strong></p>
 <pre><code class="json">{
     &quot;name&quot;:&quot;vnf-database&quot;,
@@ -920,7 +920,7 @@ echo &quot;This is the hostname of the vnf-database: ${database_hostname}&quot;
 }
 </code></pre>
 
-<p>The result network service descriptor shall include both the vnf descriptors above and the dependency:</p>
+<p>The Network Service Descriptor has to include both VNFDs from above and the dependency:</p>
 <pre><code class="json">{
     &quot;name&quot;:&quot;simple-nsd&quot;,
     &quot;vnfd&quot;:[
@@ -952,7 +952,6 @@ echo &quot;This is the hostname of the vnf-database: ${database_hostname}&quot;
 }
 </code></pre>
 
-<p>See the complete tutorial → <a href="../vnf-package#tutorial">VNFPackage tutorial</a>.</p>
 <!---
 References
 -->

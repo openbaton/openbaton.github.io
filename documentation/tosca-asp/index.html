@@ -155,14 +155,14 @@ console.log('--------');
 
 <nav class="navbar navbar-default navbar-fixed-top one-edge-shadow">
   <div class="container">
-    <div class="navbar-header page-scroll">
+    <div style="margin: auto;" class="navbar-header page-scroll">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#top-nav">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="brand" href="../../index.html"><img src="../resources/images/logo1-default.png" class="img-responsive" title="openbaton" alt="openbaton" /></a>
+      <a class="brand" href="../../index.html"><img style="width: 120px;" src="../resources/images/logo1-default.png" class="img-responsive" title="openbaton" alt="openbaton" /></a>
     </div>
     <div class="collapse navbar-collapse" id="top-nav">
       <ul class="nav navbar-nav navbar-right">
@@ -830,27 +830,31 @@ console.log('--------');
                       <div class="section">
                         
                           <h1 id="autoscaling-in-tosca">Autoscaling in TOSCA</h1>
-<p>This is an example of how to create Auto-scale policies with the yaml descriptor. </p>
-<pre><code class="yaml">auto_scale_policy:
-  scale-out:                  # Policy name 
-    threshod: 100
-    comparisonOperator: &quot;&gt;=&quot;
-    period: 30
-    cooldown: 60
-    mode: REACTIVE
-    type: WEIGHTED
-    alarms:
-      alarm1:                 # Alarm name      
-        metric: &quot;system.cpu.load[percpu,avg1]&quot;
-        statistic: &quot;avg&quot;
-        comparisonOperator: &quot;&gt;&quot;
-        threshold: 0.7
-        weight: 1
-    actions:
-      action1:                # Action name
-        type: SCALE_OUT
-        value: &quot;2&quot;
-        target: &quot;&lt;target&gt;&quot;
+<p>This is an example of how to create Auto-scale policies with the yaml descriptor. The whole Auto-scale policy goes in the <strong>properties</strong> of the Virtual Network Function node. </p>
+<pre><code class="yaml">example-vnf:
+  type: openbaton.type.VNF
+  properties:
+    # Other properties omitted for brevity
+    auto_scale_policy:
+      scale-out:                  # Policy name 
+        threshod: 100
+        comparisonOperator: &quot;&gt;=&quot;
+        period: 30
+        cooldown: 60
+        mode: REACTIVE
+        type: WEIGHTED
+        alarms:
+          alarm1:                 # Alarm name      
+            metric: &quot;system.cpu.load[percpu,avg1]&quot;
+            statistic: &quot;avg&quot;
+            comparisonOperator: &quot;&gt;&quot;
+            threshold: 0.7
+            weight: 1
+        actions:
+          action1:                # Action name
+            type: SCALE_OUT
+            value: &quot;2&quot;
+            target: &quot;&lt;target&gt;&quot;
 
 </code></pre>
 
