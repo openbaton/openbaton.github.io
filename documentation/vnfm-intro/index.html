@@ -28,16 +28,16 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "VNFM intro";
+    var mkdocs_page_name = "VNFM overview";
     var mkdocs_page_input_path = "vnfm-intro.md";
     var mkdocs_page_url = "/vnfm-intro/";
      var mkdocs_page_url = "/vnfm-intro/";
   </script>
   
   <!-- site_name == OpenBaton Documentation -->
-  <!-- page_title == VNFM intro -->
+  <!-- page_title == VNFM overview -->
   <!-- base_url == .. -->
-  <!-- current_page == VNFM intro - /vnfm-intro/ [*]
+  <!-- current_page == VNFM overview - /vnfm-intro/ [*]
  -->
   <script src="../js/jquery-2.1.1.min.js"> </script>
   <script src="../js/modernizr-2.8.3.min.js"></script>
@@ -124,14 +124,14 @@ display: block;
 $( document).ready(function(){
       //console.log("test");
 
-    //$('.subnav').not( ":has('VNFM intro')" ).hide();
+    //$('.subnav').not( ":has('VNFM overview')" ).hide();
     $('li.subnav_drop').find('ul.subnav').hide();
     //$('li.subnav_drop').find('ul.subnav').each(function(i,e){console.log(i,e)});
-       $( ".subnav" ).find( "li:contains('VNFM intro')" ).each(function(i,e){
+       $( ".subnav" ).find( "li:contains('VNFM overview')" ).each(function(i,e){
           var currentElement = $(e);
           currentElement.parent().css({"display":"block","visibility":"visible"}); //css("background-color","blue");
           currentElement.css({"display":"block","visibility":"visible"});
-       });//$( ".subnav" ).find( "li:contains('VNFM intro')" ).css("display","block");
+       });//$( ".subnav" ).find( "li:contains('VNFM overview')" ).css("display","block");
        //$(".current").css({"background-color":"blue","display":"block","visibility":"visible"});
        //show(1000,function(i,e){console.log(i,e)});
        //$('li.subnav_drop').find('ul.subnav').css("background-color","blue");
@@ -143,11 +143,11 @@ $( document).ready(function(){
 
 });
 
-$( ".wy-nav-content" ).find( "li:contains('VNFM intro')" ).css('color','red');
+$( ".wy-nav-content" ).find( "li:contains('VNFM overview')" ).css('color','red');
 console.log('--------');
-console.log($( ".wy-nav-content" ).find( "div:contains('VNFM intro')" ).css("color","red"));
+console.log($( ".wy-nav-content" ).find( "div:contains('VNFM overview')" ).css("color","red"));
 console.log('--------');
-console.log($( ".subnav" ).find( "li:contains('VNFM intro')" ));
+console.log($( ".subnav" ).find( "li:contains('VNFM overview')" ));
 console.log('--------');
   </script>
 
@@ -323,7 +323,25 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../vnf-package-onboard/">On board your VNF Package</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../ns-descriptor/">Build your Network Service Descriptor</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ns-descriptor-onboard/">On board your Network Service Descriptor</a>
         
     </li>
 
@@ -363,7 +381,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../dummy-NSR/">Dummy NSR</a>
+        <a class="" href="../dummy-NSR/">Dummy NS</a>
         
     </li>
 
@@ -372,7 +390,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../iperf-NSR/">Iperf Scenario</a>
+        <a class="" href="../iperf-NSR/">Iperf NS</a>
         
     </li>
 
@@ -381,7 +399,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tutorial-sipp/">SIPp example</a>
+        <a class="" href="../tutorial-sipp/">SIPp NS</a>
         
     </li>
 
@@ -390,7 +408,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        <a class="" href="../ims-NSR/">OpenIMSCore NS</a>
         
     </li>
 
@@ -399,7 +417,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tutorial-juju/">OpenIMSCore with Juju VNFM</a>
+        <a class="" href="../tutorial-juju/">OpenIMSCore NS with Juju VNFM</a>
         
     </li>
 
@@ -417,7 +435,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../integration-test-use/">Integration Tests</a>
+        <a class="" href="../tutorial-docker/">Docker Tutorials</a>
         
     </li>
 
@@ -488,7 +506,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vim-driver/">VIM Driver Overview</a>
+        <a class="" href="../vim-driver/">VIM drivers overview</a>
         
     </li>
 
@@ -498,6 +516,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../openstack-driver/">OpenStack VIM Driver</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../docker-driver/">Docker VIM Driver</a>
         
     </li>
 
@@ -537,7 +564,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 current">
-        <a class="current" href="./">VNFM intro</a>
+        <a class="current" href="./">VNFM overview</a>
         
          
         
@@ -558,6 +585,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../vnfm-juju/">Juju VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-docker/">Docker VNFM</a>
         
     </li>
 
@@ -622,8 +658,17 @@ console.log('--------');
                   <li><ul> 
     
    
-    <li class="subnav_drop"><span>Autoscaling</span>
+    <li class="subnav_drop"><span>Services</span>
 <ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../services/">Services overview</a>
+        
+    </li>
+
+
         
              
 
@@ -634,19 +679,6 @@ console.log('--------');
 
 
         
-</li>
-</ul>
-    
-</ul></li>
-                 
-		
-		
-                  <li><ul> 
-    
-   
-    <li class="subnav_drop"><span>Fault Management</span>
-<ul class="subnav">
-        
              
 
     <li class="toctree-l1 ">
@@ -655,19 +687,6 @@ console.log('--------');
     </li>
 
 
-        
-</li>
-</ul>
-    
-</ul></li>
-                 
-		
-		
-                  <li><ul> 
-    
-   
-    <li class="subnav_drop"><span>Network Slicing</span>
-<ul class="subnav">
         
              
 
@@ -740,6 +759,15 @@ console.log('--------');
 
 
         
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../integration-test-use/">Continuous Integration</a>
+        
+    </li>
+
+
+        
 </li>
 </ul>
     
@@ -767,6 +795,18 @@ console.log('--------');
     
 </ul></li>
                  
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		
@@ -848,7 +888,7 @@ Regarding the type of the communication between the NFVO and the VNFM (Or-Vnfm),
 <p>Please refer to the following doc for more details: <a href="../vnfm-how-to-write">build your own VNFM</a></p>
 <h3 id="3-use-your-own-vnfm">3. Use your own VNFM</h3>
 <p>This approach allows you to integrate your VNFM with the NFVO. In this case, you can choose eiththe Or-Vnfm communication will be via REST interfaces.</p>
-<p>Please refer to the following doc for more details: <a href="../vnfm-vendor-specific">bring your own VNFM</a></p>
+<p>Please refer to the following doc for more details: <a href="../vnfm-vendor-specific">plug your own VNFM</a></p>
 <p>The pages in this section describe in details these three different approaches.</p>
                         
                       </div>

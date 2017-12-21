@@ -323,7 +323,25 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../vnf-package-onboard/">On board your VNF Package</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../ns-descriptor/">Build your Network Service Descriptor</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ns-descriptor-onboard/">On board your Network Service Descriptor</a>
         
     </li>
 
@@ -365,7 +383,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../dummy-NSR/">Dummy NSR</a>
+        <a class="" href="../dummy-NSR/">Dummy NS</a>
         
     </li>
 
@@ -374,7 +392,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../iperf-NSR/">Iperf Scenario</a>
+        <a class="" href="../iperf-NSR/">Iperf NS</a>
         
     </li>
 
@@ -383,7 +401,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tutorial-sipp/">SIPp example</a>
+        <a class="" href="../tutorial-sipp/">SIPp NS</a>
         
     </li>
 
@@ -392,7 +410,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        <a class="" href="../ims-NSR/">OpenIMSCore NS</a>
         
     </li>
 
@@ -401,7 +419,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tutorial-juju/">OpenIMSCore with Juju VNFM</a>
+        <a class="" href="../tutorial-juju/">OpenIMSCore NS with Juju VNFM</a>
         
     </li>
 
@@ -419,7 +437,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../integration-test-use/">Integration Tests</a>
+        <a class="" href="../tutorial-docker/">Docker Tutorials</a>
         
     </li>
 
@@ -490,7 +508,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vim-driver/">VIM Driver Overview</a>
+        <a class="" href="../vim-driver/">VIM drivers overview</a>
         
     </li>
 
@@ -500,6 +518,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../openstack-driver/">OpenStack VIM Driver</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../docker-driver/">Docker VIM Driver</a>
         
     </li>
 
@@ -539,7 +566,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vnfm-intro/">VNFM intro</a>
+        <a class="" href="../vnfm-intro/">VNFM overview</a>
         
     </li>
 
@@ -558,6 +585,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../vnfm-juju/">Juju VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-docker/">Docker VNFM</a>
         
     </li>
 
@@ -622,8 +658,17 @@ console.log('--------');
                   <li><ul> 
     
    
-    <li class="subnav_drop"><span>Autoscaling</span>
+    <li class="subnav_drop"><span>Services</span>
 <ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../services/">Services overview</a>
+        
+    </li>
+
+
         
              
 
@@ -634,19 +679,6 @@ console.log('--------');
 
 
         
-</li>
-</ul>
-    
-</ul></li>
-                 
-		
-		
-                  <li><ul> 
-    
-   
-    <li class="subnav_drop"><span>Fault Management</span>
-<ul class="subnav">
-        
              
 
     <li class="toctree-l1 ">
@@ -655,19 +687,6 @@ console.log('--------');
     </li>
 
 
-        
-</li>
-</ul>
-    
-</ul></li>
-                 
-		
-		
-                  <li><ul> 
-    
-   
-    <li class="subnav_drop"><span>Network Slicing</span>
-<ul class="subnav">
         
              
 
@@ -735,6 +754,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../security/">Identity management</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../integration-test-use/">Continuous Integration</a>
         
     </li>
 
@@ -814,6 +842,18 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -839,6 +879,53 @@ console.log('--------');
 <li>It provides a list of required components. Considering the specific scenario which will be deployed following the tutorial, it will specify what are the Open Baton components which are required for executing this specific tutorial</li>
 <li>It specifies the list of steps which needs to be executed in order to run the tutorial</li>
 </ol>
+<p>Below you can find a list of all the available tutorials including the list of components which are validated: </p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Components</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dummy NS</td>
+<td>Deploy a Network Service Record composed of Dummy VNFs. Kind of "hello-world" scenario</td>
+<td>test VIM Driver, test VNFM</td>
+</tr>
+<tr>
+<td>Iperf NS</td>
+<td>Deploy a network service that uses iPerf client and server</td>
+<td>OpenStack VIM Driver, Generic VNFM</td>
+</tr>
+<tr>
+<td>SIPp  NS</td>
+<td>Deploy a network service that uses SIPp client and server</td>
+<td>OpenStack VIM Driver, Generic VNFM</td>
+</tr>
+<tr>
+<td>OpenIMSCore NS</td>
+<td>Deploy the OpenIMSCore Network Service</td>
+<td>OpenStack VIM Driver, Generic VNFM</td>
+</tr>
+<tr>
+<td>OpenIMSCore NS with Juju VNFM</td>
+<td>Deploy the OpenIMSCore Network Service using Juju as VNFM</td>
+<td>OpenStack VIM Driver, Juju VNFM</td>
+</tr>
+<tr>
+<td>Fault Management System</td>
+<td>Deploy a network service that uses SIPp client and server showcasing the FMS</td>
+<td>OpenStack VIM Driver, Generic VNFM, Zabbix Plugin, FMS</td>
+</tr>
+<tr>
+<td>Docker Tutorial</td>
+<td>Deploy a network service running as docker container</td>
+<td>Docker VIM Driver, Docker VNFM</td>
+</tr>
+</tbody>
+</table>
                         
                       </div>
                     </div>
@@ -847,7 +934,7 @@ console.log('--------');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../dummy-NSR/" class="btn btn-neutral float-right" title="Dummy NSR">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../dummy-NSR/" class="btn btn-neutral float-right" title="Dummy NS">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../launch-nsd/" class="btn btn-neutral" title="Launch your Network Service"><span class="icon icon-circle-arrow-left"></span> Previous</a>

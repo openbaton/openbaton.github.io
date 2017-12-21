@@ -325,7 +325,25 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../vnf-package-onboard/">On board your VNF Package</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../ns-descriptor/">Build your Network Service Descriptor</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ns-descriptor-onboard/">On board your Network Service Descriptor</a>
         
     </li>
 
@@ -365,7 +383,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../dummy-NSR/">Dummy NSR</a>
+        <a class="" href="../dummy-NSR/">Dummy NS</a>
         
     </li>
 
@@ -374,7 +392,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../iperf-NSR/">Iperf Scenario</a>
+        <a class="" href="../iperf-NSR/">Iperf NS</a>
         
     </li>
 
@@ -383,7 +401,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tutorial-sipp/">SIPp example</a>
+        <a class="" href="../tutorial-sipp/">SIPp NS</a>
         
     </li>
 
@@ -392,7 +410,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        <a class="" href="../ims-NSR/">OpenIMSCore NS</a>
         
     </li>
 
@@ -401,7 +419,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tutorial-juju/">OpenIMSCore with Juju VNFM</a>
+        <a class="" href="../tutorial-juju/">OpenIMSCore NS with Juju VNFM</a>
         
     </li>
 
@@ -419,7 +437,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../integration-test-use/">Integration Tests</a>
+        <a class="" href="../tutorial-docker/">Docker Tutorials</a>
         
     </li>
 
@@ -490,7 +508,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vim-driver/">VIM Driver Overview</a>
+        <a class="" href="../vim-driver/">VIM drivers overview</a>
         
     </li>
 
@@ -500,6 +518,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../openstack-driver/">OpenStack VIM Driver</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../docker-driver/">Docker VIM Driver</a>
         
     </li>
 
@@ -539,7 +566,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vnfm-intro/">VNFM intro</a>
+        <a class="" href="../vnfm-intro/">VNFM overview</a>
         
     </li>
 
@@ -558,6 +585,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../vnfm-juju/">Juju VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-docker/">Docker VNFM</a>
         
     </li>
 
@@ -622,8 +658,17 @@ console.log('--------');
                   <li><ul> 
     
    
-    <li class="subnav_drop"><span>Autoscaling</span>
+    <li class="subnav_drop"><span>Services</span>
 <ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../services/">Services overview</a>
+        
+    </li>
+
+
         
              
 
@@ -634,19 +679,6 @@ console.log('--------');
 
 
         
-</li>
-</ul>
-    
-</ul></li>
-                 
-		
-		
-                  <li><ul> 
-    
-   
-    <li class="subnav_drop"><span>Fault Management</span>
-<ul class="subnav">
-        
              
 
     <li class="toctree-l1 ">
@@ -655,19 +687,6 @@ console.log('--------');
     </li>
 
 
-        
-</li>
-</ul>
-    
-</ul></li>
-                 
-		
-		
-                  <li><ul> 
-    
-   
-    <li class="subnav_drop"><span>Network Slicing</span>
-<ul class="subnav">
         
              
 
@@ -740,6 +759,15 @@ console.log('--------');
 
 
         
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../integration-test-use/">Continuous Integration</a>
+        
+    </li>
+
+
+        
 </li>
 </ul>
     
@@ -767,6 +795,18 @@ console.log('--------');
     
 </ul></li>
                  
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		
@@ -866,9 +906,8 @@ nfvo.rabbitmq.exclusive=false
 <pre><code class="properties"># nfvo behaviour
 nfvo.delete.all-status = true
 # if true, after deleting a NSR, the nfvo will wait for &quot;nfvo.delete.vnfr.wait.timeout&quot; after that timeout the VMs and VNFR will be deleted anyway from the NFVO
-nfvo.delete.vnfr.wait.timeout=60
-nfvo.delete.vnfr.wait=false
-nfvo.delete.wait=false
+nfvo.delete.vnfr.wait.timeout=20
+nfvo.delete.vnfr.wait=true
 
 nfvo.history.clear=false
 nfvo.history.level=1
@@ -892,7 +931,7 @@ Once the Zabbix server is correctly configured and running, you only need to add
 <h4 id="parameters-related-with-the-marketplace">Parameters related with the marketplace</h4>
 <p>This parameters allow you to modify the marketplace IP, in case you want to use a different catalogue for providing VNF Packages.</p>
 <pre><code class="properties">nfvo.marketplace.ip=marketplace.openbaton.org
-nfvo.marketplace.port=8082
+nfvo.marketplace.port=8080
 </code></pre>
 
 <h4 id="parameters-related-with-plugins-and-drivers">Parameters related with plugins and drivers</h4>
@@ -912,9 +951,7 @@ nfvo.plugin.timeout=300000
 While the <code>nfvo.plugin.log.path</code> defines the location where plugin log files will be available.</p>
 <h4 id="parameters-related-with-quota-management">Parameters related with quota management</h4>
 <p>Modify this parameter in case you want to disable checking quota while deploying your network services. Be aware that the NFVO will request to the VIM its quota, so if quota is not properly set on the NFVI, you may have some issues with this. In case of any exceptions which come with some certain scenarios, you can also avoid failing on exceptions by changing the <code>nfvo.quota.check.failOnException</code> to <code>false</code>.</p>
-<pre><code class="properties"># Avoid doing the GRANT_OPERATION
-nfvo.quota.check=true
-# Avoid failing if unpredictable exceptions are thrown.
+<pre><code class="properties">nfvo.quota.check=false
 nfvo.quota.check.failOnException = true
 </code></pre>
 
@@ -997,8 +1034,8 @@ spring.jpa.show-sql=false
 spring.jpa.hibernate.ddl-auto=update
 
 # MYSQL configuration (enable it in order to avoid timeout exceptions)
-spring.datasource.validationQuery=SELECT 1
-spring.datasource.testOnBorrow=true
+#spring.datasource.validationQuery=SELECT 1
+#spring.datasource.testOnBorrow=true
 </code></pre>
 
 <p>Where:

@@ -325,7 +325,25 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../vnf-package-onboard/">On board your VNF Package</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../ns-descriptor/">Build your Network Service Descriptor</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ns-descriptor-onboard/">On board your Network Service Descriptor</a>
         
     </li>
 
@@ -365,7 +383,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../dummy-NSR/">Dummy NSR</a>
+        <a class="" href="../dummy-NSR/">Dummy NS</a>
         
     </li>
 
@@ -374,7 +392,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../iperf-NSR/">Iperf Scenario</a>
+        <a class="" href="../iperf-NSR/">Iperf NS</a>
         
     </li>
 
@@ -383,7 +401,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tutorial-sipp/">SIPp example</a>
+        <a class="" href="../tutorial-sipp/">SIPp NS</a>
         
     </li>
 
@@ -392,7 +410,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        <a class="" href="../ims-NSR/">OpenIMSCore NS</a>
         
     </li>
 
@@ -401,7 +419,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tutorial-juju/">OpenIMSCore with Juju VNFM</a>
+        <a class="" href="../tutorial-juju/">OpenIMSCore NS with Juju VNFM</a>
         
     </li>
 
@@ -419,7 +437,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../integration-test-use/">Integration Tests</a>
+        <a class="" href="../tutorial-docker/">Docker Tutorials</a>
         
     </li>
 
@@ -490,7 +508,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vim-driver/">VIM Driver Overview</a>
+        <a class="" href="../vim-driver/">VIM drivers overview</a>
         
     </li>
 
@@ -500,6 +518,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../openstack-driver/">OpenStack VIM Driver</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../docker-driver/">Docker VIM Driver</a>
         
     </li>
 
@@ -539,7 +566,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vnfm-intro/">VNFM intro</a>
+        <a class="" href="../vnfm-intro/">VNFM overview</a>
         
     </li>
 
@@ -558,6 +585,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../vnfm-juju/">Juju VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-docker/">Docker VNFM</a>
         
     </li>
 
@@ -622,8 +658,17 @@ console.log('--------');
                   <li><ul> 
     
    
-    <li class="subnav_drop"><span>Autoscaling</span>
+    <li class="subnav_drop"><span>Services</span>
 <ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../services/">Services overview</a>
+        
+    </li>
+
+
         
              
 
@@ -634,19 +679,6 @@ console.log('--------');
 
 
         
-</li>
-</ul>
-    
-</ul></li>
-                 
-		
-		
-                  <li><ul> 
-    
-   
-    <li class="subnav_drop"><span>Fault Management</span>
-<ul class="subnav">
-        
              
 
     <li class="toctree-l1 ">
@@ -655,19 +687,6 @@ console.log('--------');
     </li>
 
 
-        
-</li>
-</ul>
-    
-</ul></li>
-                 
-		
-		
-                  <li><ul> 
-    
-   
-    <li class="subnav_drop"><span>Network Slicing</span>
-<ul class="subnav">
         
              
 
@@ -735,6 +754,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../security/">Identity management</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../integration-test-use/">Continuous Integration</a>
         
     </li>
 
@@ -814,6 +842,18 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -840,8 +880,9 @@ Therefore, you can find a practical tutorial at the end with all the steps start
 <li>CSAR archive following the <a href="https://docs.oasis-open.org/tosca/tosca-nfv/v1.0/tosca-nfv-v1.0.html">Tosca simple profile for NFV</a> specification.</li>
 </ul>
 <p>This page provides more information about the first option, while more information about the second option are given in this <a href="../tosca-CSAR-onboarding">tutorial</a>.</p>
-<p><strong>Important note:</strong> in case your scripts are available publicly on GitHub, you may not need the creation of a specific VNF package, but you can just refer them in the VNFD as part of the
+<p><strong>Important note-1:</strong> in case your scripts are available publicly on GitHub, you may not need the creation of a specific VNF package, but you can just refer them in the VNFD as part of the
 <em>vnfPackageLocation</em> parameter</p>
+<p><strong>Important note-2:</strong> in case you are using the Docker VIM Driver and Docker VNFM the script folder is not considered, as the docker approach relies on docker images ready to be launched.</p>
 <h1 id="overview">Overview</h1>
 <p>A VNF Package is a tar-archive containing all the information required for managing the lifecycle of a VNF. First step is to build the archive which then can be onboarded to the NFVO.
 A typical VNF Package includes</p>
@@ -1142,49 +1183,6 @@ Important to notice here is that the vm_image defined in the Metadata.yaml is fi
 <h4 id="image_1">Image</h4>
 <p>The image we have to choose must be a debian 64bit image (e.g. ubuntu amd64) for satisfying the EMS and scripts which are designed for that kind of architecture.
 We have chosen this one <a href="http://cloud-images.ubuntu.com/trusty/current/trusty-server-cloudimg-amd64-disk1.img">trusty-server-cloudimg-amd64-disk1.img</a>.</p>
-<h2 id="onboarding-vnf-packages">Onboarding VNF Packages</h2>
-<p>Once we have finalized the creation of VNF Packages and packed them into a tar we can onboard them to the NFVO. Make sure that you also uploaded a VimInstance before onboarding the package. Onboarding can be done easily via the <a href="../nfvo-how-to-use-gui">Dashboard</a> or the <a href="../nfvo-how-to-use-cli">Command Line Interface</a>.</p>
-<h2 id="nsd-iperf">NSD <a href="../iperf-NSR/">iperf</a></h2>
-<p>In this section we will create a <a href="../ns-descriptor">NSD</a> and reference the previously created VNF Packages by their IDs.
-For doing that we just need to define the <strong>id</strong> for each VNFPackges' VNFD in the list of VNFDs.
-To provide also the iperf-servers' IP to the iperf-client we need to define dependencies you can find under the key <strong>vnf_dependency</strong> setting the source to <strong>iperf-server</strong> and the target to <strong>iperf-client</strong> by providing the parameter <strong>private</strong> that indicates the private IP address of the iPerf server in the network "private".</p>
-<p><strong>Note</strong> When creating the NSD the VNFD is fetched by the ID defined. Other properties we would set in the VNFD in this NSD will be ignored.</p>
-<pre><code class="json">{
-    &quot;name&quot;:&quot;iperf&quot;,
-    &quot;vendor&quot;:&quot;fokus&quot;,
-    &quot;version&quot;:&quot;0.1-ALPHA&quot;,
-    &quot;vnfd&quot;:[
-        {
-            &quot;id&quot;:&quot;29d918b9-6245-4dc4-abc6-b7dd6e84f2c1&quot;
-        },
-        {
-            &quot;id&quot;:&quot;87820607-4048-4fad-b02b-dbcab8bb5c1c&quot;
-        }
-    ],
-    &quot;vld&quot;:[
-        {
-            &quot;name&quot;:&quot;private&quot;
-        }
-    ],
-    &quot;vnf_dependency&quot;:[
-        {
-            &quot;source&quot; : {
-                &quot;name&quot;: &quot;iperf-server&quot;
-            },
-            &quot;target&quot;:{
-                &quot;name&quot;: &quot;iperf-client&quot;
-            },
-            &quot;parameters&quot;:[
-                &quot;private&quot;
-            ]
-        }
-    ]
-}
-</code></pre>
-
-<p>Finally you can onboard this NSD and deploy an NSR that bases on both VNF Packages created before.</p>
-<h3 id="onboarding-and-deploying-nsd">Onboarding and deploying NSD</h3>
-<p>You could also use the <a href="../nfvo-how-to-use-gui">Dashboard</a> or the <a href="../nfvo-how-to-use-cli">Command Line Interface</a> as well for onboarding and deploying the NSD.</p>
 <!---
 Script for open external links in a new tab
 -->
@@ -1208,7 +1206,7 @@ Script for open external links in a new tab
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../ns-descriptor/" class="btn btn-neutral float-right" title="Build your Network Service Descriptor">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../vnf-package-onboard/" class="btn btn-neutral float-right" title="On board your VNF Package">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../pop-registration/" class="btn btn-neutral" title="Register a PoP"><span class="icon icon-circle-arrow-left"></span> Previous</a>

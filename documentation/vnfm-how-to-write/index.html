@@ -323,7 +323,25 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../vnf-package-onboard/">On board your VNF Package</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../ns-descriptor/">Build your Network Service Descriptor</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ns-descriptor-onboard/">On board your Network Service Descriptor</a>
         
     </li>
 
@@ -363,7 +381,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../dummy-NSR/">Dummy NSR</a>
+        <a class="" href="../dummy-NSR/">Dummy NS</a>
         
     </li>
 
@@ -372,7 +390,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../iperf-NSR/">Iperf Scenario</a>
+        <a class="" href="../iperf-NSR/">Iperf NS</a>
         
     </li>
 
@@ -381,7 +399,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tutorial-sipp/">SIPp example</a>
+        <a class="" href="../tutorial-sipp/">SIPp NS</a>
         
     </li>
 
@@ -390,7 +408,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        <a class="" href="../ims-NSR/">OpenIMSCore NS</a>
         
     </li>
 
@@ -399,7 +417,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tutorial-juju/">OpenIMSCore with Juju VNFM</a>
+        <a class="" href="../tutorial-juju/">OpenIMSCore NS with Juju VNFM</a>
         
     </li>
 
@@ -417,7 +435,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../integration-test-use/">Integration Tests</a>
+        <a class="" href="../tutorial-docker/">Docker Tutorials</a>
         
     </li>
 
@@ -488,7 +506,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vim-driver/">VIM Driver Overview</a>
+        <a class="" href="../vim-driver/">VIM drivers overview</a>
         
     </li>
 
@@ -498,6 +516,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../openstack-driver/">OpenStack VIM Driver</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../docker-driver/">Docker VIM Driver</a>
         
     </li>
 
@@ -537,7 +564,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vnfm-intro/">VNFM intro</a>
+        <a class="" href="../vnfm-intro/">VNFM overview</a>
         
     </li>
 
@@ -556,6 +583,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../vnfm-juju/">Juju VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-docker/">Docker VNFM</a>
         
     </li>
 
@@ -622,8 +658,17 @@ console.log('--------');
                   <li><ul> 
     
    
-    <li class="subnav_drop"><span>Autoscaling</span>
+    <li class="subnav_drop"><span>Services</span>
 <ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../services/">Services overview</a>
+        
+    </li>
+
+
         
              
 
@@ -634,19 +679,6 @@ console.log('--------');
 
 
         
-</li>
-</ul>
-    
-</ul></li>
-                 
-		
-		
-                  <li><ul> 
-    
-   
-    <li class="subnav_drop"><span>Fault Management</span>
-<ul class="subnav">
-        
              
 
     <li class="toctree-l1 ">
@@ -655,19 +687,6 @@ console.log('--------');
     </li>
 
 
-        
-</li>
-</ul>
-    
-</ul></li>
-                 
-		
-		
-                  <li><ul> 
-    
-   
-    <li class="subnav_drop"><span>Network Slicing</span>
-<ul class="subnav">
         
              
 
@@ -735,6 +754,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../security/">Identity management</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../integration-test-use/">Continuous Integration</a>
         
     </li>
 
@@ -814,6 +842,18 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -831,8 +871,8 @@ console.log('--------');
                     <div role="main">
                       <div class="section">
                         
-                          <h1 id="how-to-write-a-vnfmanager">How to write a VNFManager</h1>
-<p>This section is going to describe how to write your own VNFManager by using any vnfm-sdk.
+                          <h1 id="how-to-write-a-vnf-manager">How to write a VNF Manager</h1>
+<p>This section is going to describe how to write your own VNF Manager by using the vnfm-sdk.
 Moreover, the vnfm-sdk contains all the things you may need for the development of the VNFManager of your choice as well.</p>
 <p>The vnfm-sdk provides the following things:</p>
 <ul>
@@ -1004,7 +1044,12 @@ If the name or package of your mainClass is different, you need to replace it he
 <p>The previously created properties files are used to define several things.
 They are located in src/main/resources and are called application.properties and conf.properties.</p>
 <p>The <strong>application.properties</strong> contains parameters for setting up all log levels. This file is useful for configuring the springframework (see <a href="http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html">Spring Boot configuration file</a>). This file can contain the following lines.</p>
-<pre><code class="properties">logging.level.org.springframework=INFO
+<pre><code class="properties">
+vnfm.type=my-vnfm
+vnfm.endpoint=my-vnfm-endpoint
+vnfm.endpoint.type = RABBIT
+
+logging.level.org.springframework=INFO
 logging.level.org.hibernate=INFO
 logging.level.org.apache=INFO
 logging.level.org.jclouds=WARN
@@ -1078,9 +1123,7 @@ Furthermore, you can define your own parameters which can be used at runtime for
 So this file has to contain at least the type and endpoint.
 Additionally, it is defined the folder where the vim drivers are located.
 In this case the file should contain the following lines.</p>
-<pre><code class="gradle">type=my-vnfm
-endpoint=my-vnfm-endpoint
-allocate = false
+<pre><code class="gradle">allocate = false
 description=The VNFM able to handle all the VNFs that follow specific conventions, see http://openbaton.github.io/
 enabled = true
 endpoint-type = RABBIT
@@ -1147,7 +1190,7 @@ By using the simple vnfm-sdk you need to take care about all the communication b
 
 dependencies {
     compile 'org.hibernate:hibernate-core:4.3.10.Final'
-    compile 'org.openbaton:vnfm-sdk-amqp:4.0.0'
+    compile 'org.openbaton:vnfm-sdk-amqp:5.1.2'
 }
 
 //...
@@ -1161,7 +1204,7 @@ dependencies {
     }
     dependencies {
         classpath(&quot;org.springframework.boot:spring-boot-gradle-plugin:1.3.1.RELEASE&quot;)
-    }   
+    }
 
 }
 
@@ -1179,7 +1222,7 @@ repositories {
 }
 
 dependencies {
-    compile 'org.openbaton:vnfm-sdk-amqp:4.0.0'
+    compile 'org.openbaton:vnfm-sdk-amqp:5.1.2'
     compile 'org.hibernate:hibernate-core:4.3.10.Final'
 }
 
@@ -1392,7 +1435,7 @@ public class MyVNFM extends AbstractVnfmSpringAmqp{
 </code></pre>
 
 <p>Now you can implement whatever you want. If the VirtualNetworkFunctionRecord is returned, it will go back directly to the NFVO.</p>
-<p>One of the methods that can be overwritten is the <em>fillParameters</em>. This method is important when you have specified some "provides" in your VNFD, in fact you can fill them in this method and make them available afterwards to the scripts (see <a href="../vnf-parameters">How to use the parameters</a>). </p>
+<p>One of the methods that can be overwritten is the <em>fillParameters</em>. This method is important when you have specified some "provides" in your VNFD, in fact you can fill them in this method and make them available afterwards to the scripts (see <a href="../vnf-parameters">How to use the parameters</a>).</p>
 <p>An example of allocating and terminating resource by using a plugin can be found <a href="#allocate-resources">here</a> and <a href="#release-resources">here</a>.</p>
 <p><strong>Note</strong> If you use vnfm-sdk-amqp or vnfm-sdk-rest <strong><em>the VNFManager main class needs to be stateless</em></strong> since it can (will) run each method potentially in parallel.
 For what concerns vnfm-sdk-amqp, even setting concurrency to 1, will not ensure to have always the same instance of the class.</p>
@@ -1445,9 +1488,9 @@ Therefore, you need to do several things:</p>
 <li>Connect an according VIM to the plugin or use the plugin directly</li>
 </ul>
 <p><strong>Note</strong> If you want to use the Vim with plugins, you need to fetch also the interfaces and VIM implementations by adding the following lines to your build.gradle dependencies</p>
-<pre><code class="gradle">compile 'org.openbaton:vim-int:4.0.0'
-compile 'org.openbaton:vim-impl:4.0.0'
-compile 'org.openbaton:sdk:4.0.0'
+<pre><code class="gradle">compile 'org.openbaton:vim-int:5.1.2'
+compile 'org.openbaton:vim-impl:5.1.2'
+compile 'org.openbaton:sdk:5.1.2'
 </code></pre>
 
 <p>After that you need to rebuild your project for fetching the dependencies automatically.</p>
@@ -1644,7 +1687,7 @@ Script for open external links in a new tab
         <a href="../vnfm-vendor-specific/" class="btn btn-neutral float-right" title="Integrate your own VNFM">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../vnfm-juju/" class="btn btn-neutral" title="Juju VNFM"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../vnfm-docker/" class="btn btn-neutral" title="Docker VNFM"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

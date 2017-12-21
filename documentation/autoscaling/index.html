@@ -323,7 +323,25 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../vnf-package-onboard/">On board your VNF Package</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../ns-descriptor/">Build your Network Service Descriptor</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ns-descriptor-onboard/">On board your Network Service Descriptor</a>
         
     </li>
 
@@ -363,7 +381,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../dummy-NSR/">Dummy NSR</a>
+        <a class="" href="../dummy-NSR/">Dummy NS</a>
         
     </li>
 
@@ -372,7 +390,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../iperf-NSR/">Iperf Scenario</a>
+        <a class="" href="../iperf-NSR/">Iperf NS</a>
         
     </li>
 
@@ -381,7 +399,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tutorial-sipp/">SIPp example</a>
+        <a class="" href="../tutorial-sipp/">SIPp NS</a>
         
     </li>
 
@@ -390,7 +408,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        <a class="" href="../ims-NSR/">OpenIMSCore NS</a>
         
     </li>
 
@@ -399,7 +417,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tutorial-juju/">OpenIMSCore with Juju VNFM</a>
+        <a class="" href="../tutorial-juju/">OpenIMSCore NS with Juju VNFM</a>
         
     </li>
 
@@ -417,7 +435,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../integration-test-use/">Integration Tests</a>
+        <a class="" href="../tutorial-docker/">Docker Tutorials</a>
         
     </li>
 
@@ -488,7 +506,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vim-driver/">VIM Driver Overview</a>
+        <a class="" href="../vim-driver/">VIM drivers overview</a>
         
     </li>
 
@@ -498,6 +516,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../openstack-driver/">OpenStack VIM Driver</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../docker-driver/">Docker VIM Driver</a>
         
     </li>
 
@@ -537,7 +564,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vnfm-intro/">VNFM intro</a>
+        <a class="" href="../vnfm-intro/">VNFM overview</a>
         
     </li>
 
@@ -556,6 +583,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../vnfm-juju/">Juju VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-docker/">Docker VNFM</a>
         
     </li>
 
@@ -620,8 +656,17 @@ console.log('--------');
                   <li><ul> 
     
    
-    <li class="subnav_drop"><span>Autoscaling</span>
+    <li class="subnav_drop"><span>Services</span>
 <ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../services/">Services overview</a>
+        
+    </li>
+
+
         
              
 
@@ -634,19 +679,6 @@ console.log('--------');
 
 
         
-</li>
-</ul>
-    
-</ul></li>
-                 
-		
-		
-                  <li><ul> 
-    
-   
-    <li class="subnav_drop"><span>Fault Management</span>
-<ul class="subnav">
-        
              
 
     <li class="toctree-l1 ">
@@ -655,19 +687,6 @@ console.log('--------');
     </li>
 
 
-        
-</li>
-</ul>
-    
-</ul></li>
-                 
-		
-		
-                  <li><ul> 
-    
-   
-    <li class="subnav_drop"><span>Network Slicing</span>
-<ul class="subnav">
         
              
 
@@ -735,6 +754,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../security/">Identity management</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../integration-test-use/">Continuous Integration</a>
         
     </li>
 
@@ -814,6 +842,18 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -840,7 +880,7 @@ console.log('--------');
 <ul>
 <li>Preconfigured Open Baton environment (NFVO, VNFMs, VIM drivers)</li>
 <li>Running Zabbix server (if Zabbix is the monitoring system of choice) </li>
-<li>Preconfgiured and running zabbix plugin either located in the folder <code>NFVO/plugins</code> or <code>autoscaling/plugins</code> to let it start automatically; or started manually. (if Zabbix is the monitoring system of choice)</li>
+<li>Preconfgiured and running zabbix plugin <strong>EITHER</strong> located in the folder <code>NFVO/plugins</code> <strong>OR</strong> <code>autoscaling/plugins</code> to let it start automatically; or started manually. (if Zabbix is the monitoring system of choice)</li>
 </ul>
 <h1 id="how-to-install-autoscaling-engine">How to install AutoScaling Engine</h1>
 <p>If you have the bootstrap procedure and selected the installation of the ASE component, you could skip this section, and move to the <a href="#how-to">How to use AutoScaling Engine</a> one. </p>
@@ -880,7 +920,7 @@ echo &quot;deb http://get.openbaton.org/repos/apt/debian/ stable main&quot; &gt;
 <p>This chapter describes what needs to be done before starting the AutoScaling Engine. This includes the configuration file and properties, and also how to make use of monitoring plugin.</p>
 <h2 id="configuration-file">Configuration file</h2>
 <p>The configuration file must be copied to <code>etc/openbaton/openbaton-ase.properties</code> by executing the following command from inside the repository folder:</p>
-<pre><code class="bash">cp etc/ase.properties /etc/openbaton/autoscaling.properties
+<pre><code class="bash">cp src/main/resources/application.properties /etc/openbaton/openbaton-ase.properties
 </code></pre>
 
 <p>If done, check out the following chapter in order to understand the configuration parameters.</p>
@@ -903,16 +943,20 @@ echo &quot;deb http://get.openbaton.org/repos/apt/debian/ stable main&quot; &gt;
 <td>logging levels of the defined modules</td>
 </tr>
 <tr>
-<td>autoscaling.server.ip</td>
+<td>ase.server.ip</td>
 <td>IP where the AutoScaling Engine is running. localhost might fit for most in the case when the System is running locally. If the System is running on another machine than the NFVO, you have to set the external IP here in order to subscribe for events towards the NFVO properly.</td>
 </tr>
 <tr>
-<td>autoscaling.server.port</td>
+<td>ase.server.port</td>
 <td>Port where the System is reachable</td>
 </tr>
 <tr>
-<td>autoscaling.rabbitmq.brokerIp</td>
+<td>ase.rabbitmq.brokerIp</td>
 <td>IP of the machine where RabbitMQ is running. This is needed for communicating with the monitoring plugin.</td>
+</tr>
+<tr>
+<td>ase.service.key</td>
+<td>Service Key obtained when registering the <code>autoscaling-engine</code> service via the NFVO.</td>
 </tr>
 <tr>
 <td>spring.rabbitmq.username</td>
@@ -929,14 +973,6 @@ echo &quot;deb http://get.openbaton.org/repos/apt/debian/ stable main&quot; &gt;
 <tr>
 <td>nfvo.port</td>
 <td>Port of the NFVO</td>
-</tr>
-<tr>
-<td>nfvo.username</td>
-<td>username for authorizing towards NFVO</td>
-</tr>
-<tr>
-<td>nfvo.password</td>
-<td>password for authorizing towards NFVO</td>
 </tr>
 </tbody>
 </table>
@@ -1148,7 +1184,7 @@ This condition is checked every 30 seconds as defined via the period. Once the s
         <a href="../fault-management/" class="btn btn-neutral float-right" title="FM overview">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../zabbix-plugin/" class="btn btn-neutral" title="Zabbix plugin"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../services/" class="btn btn-neutral" title="Services overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

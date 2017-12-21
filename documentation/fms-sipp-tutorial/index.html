@@ -323,7 +323,25 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../vnf-package-onboard/">On board your VNF Package</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../ns-descriptor/">Build your Network Service Descriptor</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ns-descriptor-onboard/">On board your Network Service Descriptor</a>
         
     </li>
 
@@ -363,7 +381,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../dummy-NSR/">Dummy NSR</a>
+        <a class="" href="../dummy-NSR/">Dummy NS</a>
         
     </li>
 
@@ -372,7 +390,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../iperf-NSR/">Iperf Scenario</a>
+        <a class="" href="../iperf-NSR/">Iperf NS</a>
         
     </li>
 
@@ -381,7 +399,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tutorial-sipp/">SIPp example</a>
+        <a class="" href="../tutorial-sipp/">SIPp NS</a>
         
     </li>
 
@@ -390,7 +408,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        <a class="" href="../ims-NSR/">OpenIMSCore NS</a>
         
     </li>
 
@@ -399,7 +417,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tutorial-juju/">OpenIMSCore with Juju VNFM</a>
+        <a class="" href="../tutorial-juju/">OpenIMSCore NS with Juju VNFM</a>
         
     </li>
 
@@ -419,7 +437,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../integration-test-use/">Integration Tests</a>
+        <a class="" href="../tutorial-docker/">Docker Tutorials</a>
         
     </li>
 
@@ -490,7 +508,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vim-driver/">VIM Driver Overview</a>
+        <a class="" href="../vim-driver/">VIM drivers overview</a>
         
     </li>
 
@@ -500,6 +518,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../openstack-driver/">OpenStack VIM Driver</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../docker-driver/">Docker VIM Driver</a>
         
     </li>
 
@@ -539,7 +566,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vnfm-intro/">VNFM intro</a>
+        <a class="" href="../vnfm-intro/">VNFM overview</a>
         
     </li>
 
@@ -558,6 +585,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../vnfm-juju/">Juju VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-docker/">Docker VNFM</a>
         
     </li>
 
@@ -622,8 +658,17 @@ console.log('--------');
                   <li><ul> 
     
    
-    <li class="subnav_drop"><span>Autoscaling</span>
+    <li class="subnav_drop"><span>Services</span>
 <ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../services/">Services overview</a>
+        
+    </li>
+
+
         
              
 
@@ -634,19 +679,6 @@ console.log('--------');
 
 
         
-</li>
-</ul>
-    
-</ul></li>
-                 
-		
-		
-                  <li><ul> 
-    
-   
-    <li class="subnav_drop"><span>Fault Management</span>
-<ul class="subnav">
-        
              
 
     <li class="toctree-l1 ">
@@ -655,19 +687,6 @@ console.log('--------');
     </li>
 
 
-        
-</li>
-</ul>
-    
-</ul></li>
-                 
-		
-		
-                  <li><ul> 
-    
-   
-    <li class="subnav_drop"><span>Network Slicing</span>
-<ul class="subnav">
         
              
 
@@ -740,6 +759,15 @@ console.log('--------');
 
 
         
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../integration-test-use/">Continuous Integration</a>
+        
+    </li>
+
+
+        
 </li>
 </ul>
     
@@ -767,6 +795,18 @@ console.log('--------');
     
 </ul></li>
                  
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		
@@ -850,7 +890,7 @@ If you used the bootstrap script for installing you do not have to care about th
 <p>For registering the Point of Presence of type OpenStack to the NFVO you have to upload a Vim Instance. You can use the following <a href="../descriptors/vim-instance/openstack-vim-instance.json">json descriptor</a> by changing the values to your needs. </p>
 <h3 id="using-the-dashboard">Using the dashboard</h3>
 <p>If you want to use the Dashboard (checkout the <a href="../nfvo-how-to-use-gui">dashboard documentation</a> for more information on how to use it), open it at the URL http://ip-where-nfvo-runs:8080 (change port and protocol if you use SSL) and log in (default username and password are <em>admin</em> and <em>openbaton</em>).<br />
-Go to <code>Manage PoPs -&gt; PoP Instances</code> and choose the Vim Instance of your choice by clicking on <code>Register Vim</code> and selecting the Vim Instance's json file.</p>
+Go to <code>Manage PoPs -&gt; PoP Instances</code> and choose the Vim Instance of your choice by clicking on <code>Register a new PoP</code> and selecting the Vim Instance's json file.</p>
 <p><img alt="Onboarding-Vim" src="../images/tutorials/tutorial-sipp-fms/vim-onboarding-rel-4.png" /></p>
 <h3 id="using-the-cli">Using the CLI</h3>
 <p>If you want to use the CLI (checkout the <a href="../nfvo-how-to-use-cli">Open Baton Client documentation</a> for more information on how to install and use it), you need to execute the following command in order to onboard the Vim Instance where <em>vim-instance.json</em> is the path to the Vim Instance file:</p>
@@ -861,7 +901,7 @@ Go to <code>Manage PoPs -&gt; PoP Instances</code> and choose the Vim Instance o
 <p>Download the <a href="../descriptors/tutorial-sipp-fms/sipp-fms-nsd.json">sipp-fms-nsd.json</a> file, make sure that all the parameters fit with your environment and then upload it in the catalogue either using the dashboard or the CLI.<br />
 The main parameters you should check before uploading the NSD are: vm_image (make sure you have and Ubuntu image in OpenStack and its name matches the one in this parameter), vimInstanceName (if you only have one vim instance you can leave it empty otherwise you must specify the vim instance name in this parameter or when you will launch the NSD) and flavour_key (make sure you have a flavour in OpenStack matching the one in this parameter).</p>
 <h3 id="using-the-dashboard_1">Using the dashboard</h3>
-<p>If you want to use the Dashboard go to <code>Catalogue -&gt; NS Descriptors</code>, copy the text of NSD "sipp-fms-nsd.json", click <code>Add NSD -&gt; Upload NSD</code>, paste the NSD and click <code>Store NSD</code>.</p>
+<p>If you want to use the Dashboard go to <code>Catalogue -&gt; NS Descriptors</code>, copy the text of NSD "sipp-fms-nsd.json", click <code>On Board NSD -&gt; Upload JSON</code>, paste the NSD and click <code>Upload NSD</code>.</p>
 <h3 id="using-the-cli_1">Using the CLI</h3>
 <p>If you want to use the CLI you need to execute the following command in order to onboard the NSD:</p>
 <pre><code class="bash">$./openbaton.sh NetworkServiceDescriptor-create sipp-fms-nsd.json
@@ -892,10 +932,10 @@ References
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../integration-test-use/" class="btn btn-neutral float-right" title="Integration Tests">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../tutorial-docker/" class="btn btn-neutral float-right" title="Docker Tutorials">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../tutorial-juju/" class="btn btn-neutral" title="OpenIMSCore with Juju VNFM"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../tutorial-juju/" class="btn btn-neutral" title="OpenIMSCore NS with Juju VNFM"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
