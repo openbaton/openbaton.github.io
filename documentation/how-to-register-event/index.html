@@ -323,7 +323,25 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../vnf-package-onboard/">On board your VNF Package</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../ns-descriptor/">Build your Network Service Descriptor</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ns-descriptor-onboard/">On board your Network Service Descriptor</a>
         
     </li>
 
@@ -363,7 +381,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../dummy-NSR/">Dummy NSR</a>
+        <a class="" href="../dummy-NSR/">Dummy NS</a>
         
     </li>
 
@@ -372,7 +390,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../iperf-NSR/">Iperf Scenario</a>
+        <a class="" href="../iperf-NSR/">Iperf NS</a>
         
     </li>
 
@@ -381,7 +399,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tutorial-sipp/">SIPp example</a>
+        <a class="" href="../tutorial-sipp/">SIPp NS</a>
         
     </li>
 
@@ -390,7 +408,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        <a class="" href="../ims-NSR/">OpenIMSCore NS</a>
         
     </li>
 
@@ -399,7 +417,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tutorial-juju/">OpenIMSCore with Juju VNFM</a>
+        <a class="" href="../tutorial-juju/">OpenIMSCore NS with Juju VNFM</a>
         
     </li>
 
@@ -417,7 +435,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../integration-test-use/">Integration Tests</a>
+        <a class="" href="../tutorial-docker/">Docker Tutorials</a>
         
     </li>
 
@@ -488,7 +506,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vim-driver/">VIM Driver Overview</a>
+        <a class="" href="../vim-driver/">VIM drivers overview</a>
         
     </li>
 
@@ -498,6 +516,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../openstack-driver/">OpenStack VIM Driver</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../docker-driver/">Docker VIM Driver</a>
         
     </li>
 
@@ -537,7 +564,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vnfm-intro/">VNFM intro</a>
+        <a class="" href="../vnfm-intro/">VNFM overview</a>
         
     </li>
 
@@ -556,6 +583,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../vnfm-juju/">Juju VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-docker/">Docker VNFM</a>
         
     </li>
 
@@ -620,8 +656,17 @@ console.log('--------');
                   <li><ul> 
     
    
-    <li class="subnav_drop"><span>Autoscaling</span>
+    <li class="subnav_drop"><span>Services</span>
 <ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../services/">Services overview</a>
+        
+    </li>
+
+
         
              
 
@@ -632,19 +677,6 @@ console.log('--------');
 
 
         
-</li>
-</ul>
-    
-</ul></li>
-                 
-		
-		
-                  <li><ul> 
-    
-   
-    <li class="subnav_drop"><span>Fault Management</span>
-<ul class="subnav">
-        
              
 
     <li class="toctree-l1 ">
@@ -653,19 +685,6 @@ console.log('--------');
     </li>
 
 
-        
-</li>
-</ul>
-    
-</ul></li>
-                 
-		
-		
-                  <li><ul> 
-    
-   
-    <li class="subnav_drop"><span>Network Slicing</span>
-<ul class="subnav">
         
              
 
@@ -740,6 +759,15 @@ console.log('--------');
 
 
         
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../integration-test-use/">Continuous Integration</a>
+        
+    </li>
+
+
+        
 </li>
 </ul>
     
@@ -767,6 +795,18 @@ console.log('--------');
     
 </ul></li>
                  
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		
@@ -850,7 +890,7 @@ repositories {
 }
 
 dependencies {
-    compile 'org.openbaton:sdk:4.0.0'
+    compile 'org.openbaton:sdk:5.1.2'
 }
 </code></pre>
 
@@ -861,6 +901,7 @@ import org.openbaton.catalogue.nfvo.Action;
 import org.openbaton.catalogue.nfvo.EndpointType;
 import org.openbaton.catalogue.nfvo.EventEndpoint;
 import org.openbaton.sdk.NFVORequestor;
+import org.openbaton.sdk.NfvoRequestorBuilder;
 import org.openbaton.sdk.api.exception.SDKException;
 import org.openbaton.sdk.api.rest.EventAgent;
 
@@ -880,7 +921,7 @@ public class EventModule {
   /**
    * This is the Project ID used to connect to the NFVO
    */
-  private static String obProjectId = &quot;cef9283a-de4b-47e3-a221-d1192ce9e5bd&quot;;
+  private static String obProjectName = &quot;default&quot;;
   /**
    * This must be true if during the NFVO installation the ssl was enabled
    */
@@ -896,10 +937,16 @@ public class EventModule {
 
   public static void main(String[] args) {
 
-    NFVORequestor
-        requestor =
-        new NFVORequestor(obUsername, obPassword, obProjectId, isSslEnabled, obNfvoIp, obNfvoPort, &quot;1&quot;);
-
+    NFVORequestor requestor =
+        NfvoRequestorBuilder.create()
+            .nfvoIp(obNfvoIp)
+            .nfvoPort(obNfvoPort)
+            .username(obUsername)
+            .password(obPassword)
+            .projectName(obProjectName)
+            .sslEnabled(isSslEnabled)
+            .version(&quot;1&quot;)
+            .build();
     /*
       Now the Event Agent needs to be retrieved
      */

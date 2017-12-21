@@ -28,16 +28,16 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Integration Tests";
+    var mkdocs_page_name = "Continuous Integration";
     var mkdocs_page_input_path = "integration-test-use.md";
     var mkdocs_page_url = "/integration-test-use/";
      var mkdocs_page_url = "/integration-test-use/";
   </script>
   
   <!-- site_name == OpenBaton Documentation -->
-  <!-- page_title == Integration Tests -->
+  <!-- page_title == Continuous Integration -->
   <!-- base_url == .. -->
-  <!-- current_page == Integration Tests - /integration-test-use/ [*]
+  <!-- current_page == Continuous Integration - /integration-test-use/ [*]
  -->
   <script src="../js/jquery-2.1.1.min.js"> </script>
   <script src="../js/modernizr-2.8.3.min.js"></script>
@@ -124,14 +124,14 @@ display: block;
 $( document).ready(function(){
       //console.log("test");
 
-    //$('.subnav').not( ":has('Integration Tests')" ).hide();
+    //$('.subnav').not( ":has('Continuous Integration')" ).hide();
     $('li.subnav_drop').find('ul.subnav').hide();
     //$('li.subnav_drop').find('ul.subnav').each(function(i,e){console.log(i,e)});
-       $( ".subnav" ).find( "li:contains('Integration Tests')" ).each(function(i,e){
+       $( ".subnav" ).find( "li:contains('Continuous Integration')" ).each(function(i,e){
           var currentElement = $(e);
           currentElement.parent().css({"display":"block","visibility":"visible"}); //css("background-color","blue");
           currentElement.css({"display":"block","visibility":"visible"});
-       });//$( ".subnav" ).find( "li:contains('Integration Tests')" ).css("display","block");
+       });//$( ".subnav" ).find( "li:contains('Continuous Integration')" ).css("display","block");
        //$(".current").css({"background-color":"blue","display":"block","visibility":"visible"});
        //show(1000,function(i,e){console.log(i,e)});
        //$('li.subnav_drop').find('ul.subnav').css("background-color","blue");
@@ -143,11 +143,11 @@ $( document).ready(function(){
 
 });
 
-$( ".wy-nav-content" ).find( "li:contains('Integration Tests')" ).css('color','red');
+$( ".wy-nav-content" ).find( "li:contains('Continuous Integration')" ).css('color','red');
 console.log('--------');
-console.log($( ".wy-nav-content" ).find( "div:contains('Integration Tests')" ).css("color","red"));
+console.log($( ".wy-nav-content" ).find( "div:contains('Continuous Integration')" ).css("color","red"));
 console.log('--------');
-console.log($( ".subnav" ).find( "li:contains('Integration Tests')" ));
+console.log($( ".subnav" ).find( "li:contains('Continuous Integration')" ));
 console.log('--------');
   </script>
 
@@ -323,7 +323,25 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../vnf-package-onboard/">On board your VNF Package</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../ns-descriptor/">Build your Network Service Descriptor</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ns-descriptor-onboard/">On board your Network Service Descriptor</a>
         
     </li>
 
@@ -363,7 +381,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../dummy-NSR/">Dummy NSR</a>
+        <a class="" href="../dummy-NSR/">Dummy NS</a>
         
     </li>
 
@@ -372,7 +390,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../iperf-NSR/">Iperf Scenario</a>
+        <a class="" href="../iperf-NSR/">Iperf NS</a>
         
     </li>
 
@@ -381,7 +399,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tutorial-sipp/">SIPp example</a>
+        <a class="" href="../tutorial-sipp/">SIPp NS</a>
         
     </li>
 
@@ -390,7 +408,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        <a class="" href="../ims-NSR/">OpenIMSCore NS</a>
         
     </li>
 
@@ -399,7 +417,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tutorial-juju/">OpenIMSCore with Juju VNFM</a>
+        <a class="" href="../tutorial-juju/">OpenIMSCore NS with Juju VNFM</a>
         
     </li>
 
@@ -416,10 +434,8 @@ console.log('--------');
         
              
 
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Integration Tests</a>
-        
-         
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorial-docker/">Docker Tutorials</a>
         
     </li>
 
@@ -490,7 +506,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vim-driver/">VIM Driver Overview</a>
+        <a class="" href="../vim-driver/">VIM drivers overview</a>
         
     </li>
 
@@ -500,6 +516,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../openstack-driver/">OpenStack VIM Driver</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../docker-driver/">Docker VIM Driver</a>
         
     </li>
 
@@ -539,7 +564,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vnfm-intro/">VNFM intro</a>
+        <a class="" href="../vnfm-intro/">VNFM overview</a>
         
     </li>
 
@@ -558,6 +583,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../vnfm-juju/">Juju VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-docker/">Docker VNFM</a>
         
     </li>
 
@@ -622,8 +656,17 @@ console.log('--------');
                   <li><ul> 
     
    
-    <li class="subnav_drop"><span>Autoscaling</span>
+    <li class="subnav_drop"><span>Services</span>
 <ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../services/">Services overview</a>
+        
+    </li>
+
+
         
              
 
@@ -634,19 +677,6 @@ console.log('--------');
 
 
         
-</li>
-</ul>
-    
-</ul></li>
-                 
-		
-		
-                  <li><ul> 
-    
-   
-    <li class="subnav_drop"><span>Fault Management</span>
-<ul class="subnav">
-        
              
 
     <li class="toctree-l1 ">
@@ -655,19 +685,6 @@ console.log('--------');
     </li>
 
 
-        
-</li>
-</ul>
-    
-</ul></li>
-                 
-		
-		
-                  <li><ul> 
-    
-   
-    <li class="subnav_drop"><span>Network Slicing</span>
-<ul class="subnav">
         
              
 
@@ -740,6 +757,17 @@ console.log('--------');
 
 
         
+             
+
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Continuous Integration</a>
+        
+         
+        
+    </li>
+
+
+        
 </li>
 </ul>
     
@@ -767,6 +795,18 @@ console.log('--------');
     
 </ul></li>
                  
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		
@@ -1006,10 +1046,10 @@ Script for open external links in a new tab
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../nfvo-how-to-use-gui/" class="btn btn-neutral float-right" title="Dashboard">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../FAQ/" class="btn btn-neutral float-right" title="FAQ">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../fms-sipp-tutorial/" class="btn btn-neutral" title="Fault Management System"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../security/" class="btn btn-neutral" title="Identity management"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

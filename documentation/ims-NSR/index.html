@@ -28,16 +28,16 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "OpenIMSCore example";
+    var mkdocs_page_name = "OpenIMSCore NS";
     var mkdocs_page_input_path = "ims-NSR.md";
     var mkdocs_page_url = "/ims-NSR/";
      var mkdocs_page_url = "/ims-NSR/";
   </script>
   
   <!-- site_name == OpenBaton Documentation -->
-  <!-- page_title == OpenIMSCore example -->
+  <!-- page_title == OpenIMSCore NS -->
   <!-- base_url == .. -->
-  <!-- current_page == OpenIMSCore example - /ims-NSR/ [*]
+  <!-- current_page == OpenIMSCore NS - /ims-NSR/ [*]
  -->
   <script src="../js/jquery-2.1.1.min.js"> </script>
   <script src="../js/modernizr-2.8.3.min.js"></script>
@@ -124,14 +124,14 @@ display: block;
 $( document).ready(function(){
       //console.log("test");
 
-    //$('.subnav').not( ":has('OpenIMSCore example')" ).hide();
+    //$('.subnav').not( ":has('OpenIMSCore NS')" ).hide();
     $('li.subnav_drop').find('ul.subnav').hide();
     //$('li.subnav_drop').find('ul.subnav').each(function(i,e){console.log(i,e)});
-       $( ".subnav" ).find( "li:contains('OpenIMSCore example')" ).each(function(i,e){
+       $( ".subnav" ).find( "li:contains('OpenIMSCore NS')" ).each(function(i,e){
           var currentElement = $(e);
           currentElement.parent().css({"display":"block","visibility":"visible"}); //css("background-color","blue");
           currentElement.css({"display":"block","visibility":"visible"});
-       });//$( ".subnav" ).find( "li:contains('OpenIMSCore example')" ).css("display","block");
+       });//$( ".subnav" ).find( "li:contains('OpenIMSCore NS')" ).css("display","block");
        //$(".current").css({"background-color":"blue","display":"block","visibility":"visible"});
        //show(1000,function(i,e){console.log(i,e)});
        //$('li.subnav_drop').find('ul.subnav').css("background-color","blue");
@@ -143,11 +143,11 @@ $( document).ready(function(){
 
 });
 
-$( ".wy-nav-content" ).find( "li:contains('OpenIMSCore example')" ).css('color','red');
+$( ".wy-nav-content" ).find( "li:contains('OpenIMSCore NS')" ).css('color','red');
 console.log('--------');
-console.log($( ".wy-nav-content" ).find( "div:contains('OpenIMSCore example')" ).css("color","red"));
+console.log($( ".wy-nav-content" ).find( "div:contains('OpenIMSCore NS')" ).css("color","red"));
 console.log('--------');
-console.log($( ".subnav" ).find( "li:contains('OpenIMSCore example')" ));
+console.log($( ".subnav" ).find( "li:contains('OpenIMSCore NS')" ));
 console.log('--------');
   </script>
 
@@ -323,7 +323,25 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../vnf-package-onboard/">On board your VNF Package</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../ns-descriptor/">Build your Network Service Descriptor</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ns-descriptor-onboard/">On board your Network Service Descriptor</a>
         
     </li>
 
@@ -363,7 +381,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../dummy-NSR/">Dummy NSR</a>
+        <a class="" href="../dummy-NSR/">Dummy NS</a>
         
     </li>
 
@@ -372,7 +390,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../iperf-NSR/">Iperf Scenario</a>
+        <a class="" href="../iperf-NSR/">Iperf NS</a>
         
     </li>
 
@@ -381,7 +399,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tutorial-sipp/">SIPp example</a>
+        <a class="" href="../tutorial-sipp/">SIPp NS</a>
         
     </li>
 
@@ -390,7 +408,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 current">
-        <a class="current" href="./">OpenIMSCore example</a>
+        <a class="current" href="./">OpenIMSCore NS</a>
         
          
         
@@ -401,7 +419,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tutorial-juju/">OpenIMSCore with Juju VNFM</a>
+        <a class="" href="../tutorial-juju/">OpenIMSCore NS with Juju VNFM</a>
         
     </li>
 
@@ -419,7 +437,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../integration-test-use/">Integration Tests</a>
+        <a class="" href="../tutorial-docker/">Docker Tutorials</a>
         
     </li>
 
@@ -490,7 +508,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vim-driver/">VIM Driver Overview</a>
+        <a class="" href="../vim-driver/">VIM drivers overview</a>
         
     </li>
 
@@ -500,6 +518,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../openstack-driver/">OpenStack VIM Driver</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../docker-driver/">Docker VIM Driver</a>
         
     </li>
 
@@ -539,7 +566,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vnfm-intro/">VNFM intro</a>
+        <a class="" href="../vnfm-intro/">VNFM overview</a>
         
     </li>
 
@@ -558,6 +585,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../vnfm-juju/">Juju VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-docker/">Docker VNFM</a>
         
     </li>
 
@@ -622,8 +658,17 @@ console.log('--------');
                   <li><ul> 
     
    
-    <li class="subnav_drop"><span>Autoscaling</span>
+    <li class="subnav_drop"><span>Services</span>
 <ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../services/">Services overview</a>
+        
+    </li>
+
+
         
              
 
@@ -634,19 +679,6 @@ console.log('--------');
 
 
         
-</li>
-</ul>
-    
-</ul></li>
-                 
-		
-		
-                  <li><ul> 
-    
-   
-    <li class="subnav_drop"><span>Fault Management</span>
-<ul class="subnav">
-        
              
 
     <li class="toctree-l1 ">
@@ -655,19 +687,6 @@ console.log('--------');
     </li>
 
 
-        
-</li>
-</ul>
-    
-</ul></li>
-                 
-		
-		
-                  <li><ul> 
-    
-   
-    <li class="subnav_drop"><span>Network Slicing</span>
-<ul class="subnav">
         
              
 
@@ -740,6 +759,15 @@ console.log('--------');
 
 
         
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../integration-test-use/">Continuous Integration</a>
+        
+    </li>
+
+
+        
 </li>
 </ul>
     
@@ -767,6 +795,18 @@ console.log('--------');
     
 </ul></li>
                  
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		
@@ -862,7 +902,7 @@ tar -cf icscf.tar *
 <h2 id="store-the-network-service-descriptor">Store the Network Service Descriptor</h2>
 <p>Download the following <a href="../descriptors/tutorial-ims-NSR/tutorial-ims-NSR.json">NSD</a> and upload it to the NFVO either using the dashboard or the cli. 
 Take care to replace the vnfd ids with the ones you deployed.</p>
-<p>Open the Dashboard (checkout the <a href="../nfvo-how-to-use-gui">dashboard documentation</a>) for more information on how to use it), open it at the URL http://your-ip-here:8080 and log in (default username and password are <em>admin</em> and <em>openbaton</em>). Go to <code>Catalogue -&gt; NS Descriptors</code> and choose the NSD of your choice by clicking on <code>Upload NSD</code> and selecting the Descriptor's json file.</p>
+<p>Open the Dashboard (checkout the <a href="../nfvo-how-to-use-gui">dashboard documentation</a>) for more information on how to use it), open it at the URL http://your-ip-here:8080 and log in (default username and password are <em>admin</em> and <em>openbaton</em>). Go to <code>Catalogue -&gt; NS Descriptors</code> and choose the NSD of your choice by clicking on <code>On Board NSD -&gt; Upload JSON</code> and selecting the Descriptor's json file.</p>
 <h2 id="deploy-the-network-service-descriptor">Deploy the Network Service Descriptor</h2>
 <p>Deploy the stored NSD either using the dashboard.</p>
 <p>You need to go again to the GUI, go to <code>Catalogue -&gt; NS Descriptors</code>, and open the drop down menu by clicking on <code>Action</code>. Afterwards you need to press the <code>Launch</code> button in order to start the deployment of this NSD.</p>
@@ -899,10 +939,10 @@ Script for open external links in a new tab
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../tutorial-juju/" class="btn btn-neutral float-right" title="OpenIMSCore with Juju VNFM">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../tutorial-juju/" class="btn btn-neutral float-right" title="OpenIMSCore NS with Juju VNFM">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../tutorial-sipp/" class="btn btn-neutral" title="SIPp example"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../tutorial-sipp/" class="btn btn-neutral" title="SIPp NS"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

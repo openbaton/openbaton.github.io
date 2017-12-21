@@ -325,7 +325,25 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../vnf-package-onboard/">On board your VNF Package</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../ns-descriptor/">Build your Network Service Descriptor</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ns-descriptor-onboard/">On board your Network Service Descriptor</a>
         
     </li>
 
@@ -365,7 +383,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../dummy-NSR/">Dummy NSR</a>
+        <a class="" href="../dummy-NSR/">Dummy NS</a>
         
     </li>
 
@@ -374,7 +392,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../iperf-NSR/">Iperf Scenario</a>
+        <a class="" href="../iperf-NSR/">Iperf NS</a>
         
     </li>
 
@@ -383,7 +401,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tutorial-sipp/">SIPp example</a>
+        <a class="" href="../tutorial-sipp/">SIPp NS</a>
         
     </li>
 
@@ -392,7 +410,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        <a class="" href="../ims-NSR/">OpenIMSCore NS</a>
         
     </li>
 
@@ -401,7 +419,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tutorial-juju/">OpenIMSCore with Juju VNFM</a>
+        <a class="" href="../tutorial-juju/">OpenIMSCore NS with Juju VNFM</a>
         
     </li>
 
@@ -419,7 +437,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../integration-test-use/">Integration Tests</a>
+        <a class="" href="../tutorial-docker/">Docker Tutorials</a>
         
     </li>
 
@@ -490,7 +508,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vim-driver/">VIM Driver Overview</a>
+        <a class="" href="../vim-driver/">VIM drivers overview</a>
         
     </li>
 
@@ -500,6 +518,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../openstack-driver/">OpenStack VIM Driver</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../docker-driver/">Docker VIM Driver</a>
         
     </li>
 
@@ -539,7 +566,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vnfm-intro/">VNFM intro</a>
+        <a class="" href="../vnfm-intro/">VNFM overview</a>
         
     </li>
 
@@ -558,6 +585,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../vnfm-juju/">Juju VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-docker/">Docker VNFM</a>
         
     </li>
 
@@ -622,8 +658,17 @@ console.log('--------');
                   <li><ul> 
     
    
-    <li class="subnav_drop"><span>Autoscaling</span>
+    <li class="subnav_drop"><span>Services</span>
 <ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../services/">Services overview</a>
+        
+    </li>
+
+
         
              
 
@@ -634,19 +679,6 @@ console.log('--------');
 
 
         
-</li>
-</ul>
-    
-</ul></li>
-                 
-		
-		
-                  <li><ul> 
-    
-   
-    <li class="subnav_drop"><span>Fault Management</span>
-<ul class="subnav">
-        
              
 
     <li class="toctree-l1 ">
@@ -655,19 +687,6 @@ console.log('--------');
     </li>
 
 
-        
-</li>
-</ul>
-    
-</ul></li>
-                 
-		
-		
-                  <li><ul> 
-    
-   
-    <li class="subnav_drop"><span>Network Slicing</span>
-<ul class="subnav">
         
              
 
@@ -735,6 +754,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../security/">Identity management</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../integration-test-use/">Continuous Integration</a>
         
     </li>
 
@@ -814,6 +842,18 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -833,7 +873,7 @@ console.log('--------');
                         
                           <p><img src="../images/docker-logo.png" alt="Vagrant" style="width: 100px;"/></p>
 <h1 id="install-open-baton-using-docker">Install Open Baton using Docker</h1>
-<p>This tutorial will guide towards the installation of a minimal Open Baton environment on Docker, comprising the following components:</p>
+<p>This tutorial will guide towards the installation of a minimal Open Baton environment on a single Docker container, comprising the following components:</p>
 <ul>
 <li>The NFVO implemented in java using the <a href="https://spring.io">spring.io</a> framework. For more details about the NFVO architecture, you can refer to the next sections</li>
 <li><a href="https://www.rabbitmq.com/">RabbitMQ</a> as messaging system</li>
@@ -841,18 +881,20 @@ console.log('--------');
 <li>OpenStack VIM Driver for deploying VNFs on OpenStack</li>
 <li>Generic VNFM for the instantiation of VNFs part of the Open Baton ecosystem</li>
 </ul>
+<p>In case you would like to run each component in an individual docker container, you can make use of the docker compose files available on the <a href="https://github.com/openbaton/bootstrap/tree/develop/distributions/docker/compose">bootstrap repository</a> </p>
 <h2 id="requirements">Requirements</h2>
-<p>You need to have <a href="https://www.docker.com/">Docker</a> installed.</p>
+<p>You need to have <a href="https://www.docker.com/">Docker</a> installed, please refer to the official docker documentation to setup it on your environment. </p>
 <h2 id="user-guide">User guide</h2>
 <p>To have a running standalone Open Baton Docker container type the following commands:</p>
-<pre><code class="bash">sudo docker pull openbaton/standalone
-sudo docker run --name openbaton -d -h openbaton-rabbitmq -p 8080:8080 -p 5672:5672 -p 15672:15672 -p 8443:8443 -e RABBITMQ_BROKERIP=&lt;RabbitMQ IP&gt; openbaton/standalone
+<pre><code class="bash">docker pull openbaton/standalone
+docker run --name openbaton -d -p 8080:8080 -p 5672:5672 -p 15672:15672 -p 8443:8443 -e RABBITMQ_BROKERIP=&lt;RabbitMQ IP&gt; -e RABBITMQ_ADMIN_PSWD=&lt;RabbitMQ admin password&gt; openbaton/standalone
 </code></pre>
 
 <p><strong><em>VERY IMPORTANT NOTE</em></strong> - You should put as input for the RABBITMQ_BROKERIP the RabbitMQ IP making sure that this IP can be
   reached by external components (VMs, or host where will run other VNFMs) otherwise you will have runtime issues.
   In particular, you should select the external IP of your host on top of which the docker container is running</p>
-<p><strong><em>NOTE</em></strong> - With the command above you will run the latest Open Baton version. You can see all the standalone Open Baton Docker images available from <a href="https://hub.docker.com/r/openbaton/standalone/tags/">this</a> list.</p>
+<p><strong><em>NOTE</em></strong> - the RABBITMQ_ADMIN_PSWD is the password which will be assigned to the "admin" RabbitMQ user. In case you do not set the RABBITMQ_ADMIN_PSWD variable while running the container, the "openbaton" default value will be used as password.</p>
+<p><strong><em>NOTE</em></strong> - With the command above you will run the latest Open Baton version. You can see all the standalone Open Baton Docker images available from <a href="https://hub.docker.com/r/openbaton/standalone/tags/">this</a> list (the RABBITMQ_ADMIN_PSWD environment variable is supported only from version 5.0.0).</p>
 <p>After running the container you should see as output an alphanumeric string (which represents the full ID of the Open Baton container running) similar to the following:</p>
 <pre><code class="bash">cfc4a7fb23d02c47e25b447d30f6fe7c0464355a16ee1b02d84657f6fba88e07
 </code></pre>
@@ -864,7 +906,7 @@ password: openbaton
 
 <h3 id="troubleshooting">Troubleshooting</h3>
 <p>To verify that the container is running you can type the following command:</p>
-<pre><code class="bash">sudo docker ps
+<pre><code class="bash">docker ps
 </code></pre>
 
 <p>which output should be similar to the following:</p>
@@ -872,13 +914,13 @@ password: openbaton
 cfc4a7fb23d0        openbaton/standalone:latest  &quot;/usr/bin/supervisord&quot;   49 seconds ago      Up 49 seconds            0.0.0.0:5672-&gt;5672/tcp, 0.0.0.0:8080-&gt;8080/tcp, 0.0.0.0:8443-&gt;8443/tcp, 0.0.0.0:15672-&gt;15672/tcp   openbaton
 </code></pre>
 
-<p>To connect to the running container containing Open Baton you can type the following command:</p>
-<pre><code class="bash">sudo docker exec -ti openbaton bash
+<p>The standalone container uses the standard debian packages for installing the open baton components, thus logs are available under /var/log/openbaton. To connect to the running container containing Open Baton you can type the following command:</p>
+<pre><code class="bash">docker exec -ti openbaton bash
 </code></pre>
 
 <p>To stop and delete the running Open Baton container you can type respectively the following commands:</p>
-<pre><code class="bash">sudo docker stop openbaton
-sudo docker rm openbaton
+<pre><code class="bash">docker stop openbaton
+docker rm openbaton
 </code></pre>
 
 <!---

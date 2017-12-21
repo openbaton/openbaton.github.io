@@ -323,7 +323,25 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../vnf-package-onboard/">On board your VNF Package</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../ns-descriptor/">Build your Network Service Descriptor</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ns-descriptor-onboard/">On board your Network Service Descriptor</a>
         
     </li>
 
@@ -363,7 +381,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../dummy-NSR/">Dummy NSR</a>
+        <a class="" href="../dummy-NSR/">Dummy NS</a>
         
     </li>
 
@@ -372,7 +390,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../iperf-NSR/">Iperf Scenario</a>
+        <a class="" href="../iperf-NSR/">Iperf NS</a>
         
     </li>
 
@@ -381,7 +399,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tutorial-sipp/">SIPp example</a>
+        <a class="" href="../tutorial-sipp/">SIPp NS</a>
         
     </li>
 
@@ -390,7 +408,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        <a class="" href="../ims-NSR/">OpenIMSCore NS</a>
         
     </li>
 
@@ -399,7 +417,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tutorial-juju/">OpenIMSCore with Juju VNFM</a>
+        <a class="" href="../tutorial-juju/">OpenIMSCore NS with Juju VNFM</a>
         
     </li>
 
@@ -417,7 +435,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../integration-test-use/">Integration Tests</a>
+        <a class="" href="../tutorial-docker/">Docker Tutorials</a>
         
     </li>
 
@@ -488,7 +506,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vim-driver/">VIM Driver Overview</a>
+        <a class="" href="../vim-driver/">VIM drivers overview</a>
         
     </li>
 
@@ -498,6 +516,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../openstack-driver/">OpenStack VIM Driver</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../docker-driver/">Docker VIM Driver</a>
         
     </li>
 
@@ -537,7 +564,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vnfm-intro/">VNFM intro</a>
+        <a class="" href="../vnfm-intro/">VNFM overview</a>
         
     </li>
 
@@ -556,6 +583,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../vnfm-juju/">Juju VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-docker/">Docker VNFM</a>
         
     </li>
 
@@ -620,8 +656,17 @@ console.log('--------');
                   <li><ul> 
     
    
-    <li class="subnav_drop"><span>Autoscaling</span>
+    <li class="subnav_drop"><span>Services</span>
 <ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../services/">Services overview</a>
+        
+    </li>
+
+
         
              
 
@@ -632,19 +677,6 @@ console.log('--------');
 
 
         
-</li>
-</ul>
-    
-</ul></li>
-                 
-		
-		
-                  <li><ul> 
-    
-   
-    <li class="subnav_drop"><span>Fault Management</span>
-<ul class="subnav">
-        
              
 
     <li class="toctree-l1 ">
@@ -653,19 +685,6 @@ console.log('--------');
     </li>
 
 
-        
-</li>
-</ul>
-    
-</ul></li>
-                 
-		
-		
-                  <li><ul> 
-    
-   
-    <li class="subnav_drop"><span>Network Slicing</span>
-<ul class="subnav">
         
              
 
@@ -738,6 +757,15 @@ console.log('--------');
 
 
         
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../integration-test-use/">Continuous Integration</a>
+        
+    </li>
+
+
+        
 </li>
 </ul>
     
@@ -765,6 +793,18 @@ console.log('--------');
     
 </ul></li>
                  
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		
@@ -956,28 +996,25 @@ relationships_template:
  To do that follow these steps:</p>
 <p>1) Authentication:
 Run this command:</p>
-<pre><code class="bash">$curl -v -u openbatonOSClient:secret -X POST http://localhost:8080/oauth/token -H &quot;Accept: application/json&quot; -d &quot;username=admin&amp;password=openbaton&amp;grant_type=password&quot;
+<pre><code class="bash">curl -v -u openbatonOSClient:secret -X POST http://localhost:8080/oauth/token -H &quot;Accept: application/json&quot; -d &quot;username=admin&amp;password=openbaton&amp;grant_type=password&quot;
 </code></pre>
 
 <p>The NFVO will answer with an authetication key and a project id. You will need them to send the NSD in the next step. The response should look like this:</p>
 <pre><code class="bash">{
-  # Authentication Key
-  &quot;value&quot;: &quot;e8726a35-61c8-4bcb-873e-3ab6cc989f6f&quot;,
-  &quot;expiration&quot;: &quot;Aug 30, 2016 9:14:22 PM&quot;,
-  &quot;tokenType&quot;: &quot;bearer&quot;,
-  &quot;refreshToken&quot;: {
-    &quot;expiration&quot;: &quot;Sep 29, 2016 9:14:22 AM&quot;,
-    # Project ID
-    &quot;value&quot;: &quot;336ca2e6-8e78-48eb-b8f8-c5de862a21da&quot;
-  },...
+  &quot;access_token&quot;: &quot;7debc703-8bb3-43b9-9ed9-927d882ad371&quot;,
+  &quot;value&quot;: &quot;7debc703-8bb3-43b9-9ed9-927d882ad371&quot;,
+  &quot;token_type&quot;: &quot;bearer&quot;,
+  &quot;refresh_token&quot;: &quot;a29d9f1b-9d62-495a-958a-e33115d59631&quot;,
+  &quot;expires_in&quot;: 42507,
+  &quot;scope&quot;: &quot;read write&quot;
+} 
 </code></pre>
 
-<p><strong>Note: </strong> Do not pay attention to the project-id supplied in this response.</p>
 <p>2) To send the NSD in the TOSCA format save the example above in a file named dummyns.yaml and get the project id of your project from the Dashboard under the menu Identity &gt; Menu. After that run this :</p>
-<pre><code class="bash">$curl -i -X POST http://localhost:8080/api/v1/nsd-tosca -H &quot;Content-Type: text/yaml&quot; &quot;Accept: application/json&quot; -H &quot;project-id: $Project-ID HERE$&quot; -H &quot;Authorization: Bearer $AUTH KEY HERE$&quot; --data-binary @dummyns.yaml
+<pre><code class="bash">curl -i -X POST http://localhost:8080/api/v1/nsd-tosca -H &quot;Content-Type: text/yaml&quot; &quot;Accept: application/json&quot; -H &quot;project-id: $Project-ID HERE$&quot; -H &quot;Authorization: Bearer $AUTH KEY HERE$&quot; --data-binary @dummyns.yaml
 </code></pre>
 
-<p>To retrieve or to instantiate this NSD please use the Dashboard of OpenBaton in the page under the menu Catalogue &gt; NS Descriptors.</p>
+<p>To retrieve or to launch this NSD please use the Dashboard of OpenBaton in the page under the menu Catalogue &gt; NS Descriptors.</p>
 <!------------
 References
 -------------->
