@@ -325,7 +325,25 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../vnf-package-onboard/">On board your VNF Package</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../ns-descriptor/">Build your Network Service Descriptor</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ns-descriptor-onboard/">On board your Network Service Descriptor</a>
         
     </li>
 
@@ -365,7 +383,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../dummy-NSR/">Dummy NSR</a>
+        <a class="" href="../dummy-NSR/">Dummy NS</a>
         
     </li>
 
@@ -374,7 +392,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../iperf-NSR/">Iperf Scenario</a>
+        <a class="" href="../iperf-NSR/">Iperf NS</a>
         
     </li>
 
@@ -383,7 +401,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tutorial-sipp/">SIPp example</a>
+        <a class="" href="../tutorial-sipp/">SIPp NS</a>
         
     </li>
 
@@ -392,7 +410,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        <a class="" href="../ims-NSR/">OpenIMSCore NS</a>
         
     </li>
 
@@ -401,7 +419,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tutorial-juju/">OpenIMSCore with Juju VNFM</a>
+        <a class="" href="../tutorial-juju/">OpenIMSCore NS with Juju VNFM</a>
         
     </li>
 
@@ -419,7 +437,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../integration-test-use/">Integration Tests</a>
+        <a class="" href="../tutorial-docker/">Docker Tutorials</a>
         
     </li>
 
@@ -490,7 +508,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vim-driver/">VIM Driver Overview</a>
+        <a class="" href="../vim-driver/">VIM drivers overview</a>
         
     </li>
 
@@ -500,6 +518,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../openstack-driver/">OpenStack VIM Driver</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../docker-driver/">Docker VIM Driver</a>
         
     </li>
 
@@ -539,7 +566,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vnfm-intro/">VNFM intro</a>
+        <a class="" href="../vnfm-intro/">VNFM overview</a>
         
     </li>
 
@@ -558,6 +585,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../vnfm-juju/">Juju VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-docker/">Docker VNFM</a>
         
     </li>
 
@@ -622,8 +658,17 @@ console.log('--------');
                   <li><ul> 
     
    
-    <li class="subnav_drop"><span>Autoscaling</span>
+    <li class="subnav_drop"><span>Services</span>
 <ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../services/">Services overview</a>
+        
+    </li>
+
+
         
              
 
@@ -634,19 +679,6 @@ console.log('--------');
 
 
         
-</li>
-</ul>
-    
-</ul></li>
-                 
-		
-		
-                  <li><ul> 
-    
-   
-    <li class="subnav_drop"><span>Fault Management</span>
-<ul class="subnav">
-        
              
 
     <li class="toctree-l1 ">
@@ -655,19 +687,6 @@ console.log('--------');
     </li>
 
 
-        
-</li>
-</ul>
-    
-</ul></li>
-                 
-		
-		
-                  <li><ul> 
-    
-   
-    <li class="subnav_drop"><span>Network Slicing</span>
-<ul class="subnav">
         
              
 
@@ -740,6 +759,15 @@ console.log('--------');
 
 
         
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../integration-test-use/">Continuous Integration</a>
+        
+    </li>
+
+
+        
 </li>
 </ul>
     
@@ -767,6 +795,18 @@ console.log('--------');
     
 </ul></li>
                  
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		
@@ -859,16 +899,18 @@ Here you have an example:</p>
 </code></pre>
 
 <p>Most of the parameters are based on the OpenStack VIM type, since OpenStack represents the standard de-facto VIM in the ETSI NFV specification. 
-However, there are additional VIM drivers provided (soon to come drivers for Amazon EC2 and Docker), therefore refer to the actual VIM driver you are using for more details about what to fill in the JSON file:</p>
+However, there are additional VIM drivers provided, therefore refer to the actual VIM driver you are using for more details about what to fill in the JSON file:</p>
 <ul>
 <li><a href="../pop-openstack/">openstack</a></li>
+<li><a href="../pop-amazon/">amazon</a></li>
+<li><a href="../pop-docker/">docker</a></li>
 <li><a href="../pop-test/">test</a></li>
 </ul>
 <p>Once you have prepared your JSON file, you need to upload it on the NFVO either via the dashboard (described below) or via the CLI. </p>
 <h2 id="register-the-pop-using-the-gui">Register the PoP using the GUI</h2>
 <p>In order to make use of your PoP described within your JSON file, you need to upload the JSON file to the NFVO.
 You can use the dashboard available at <a href="http://localhost:8080">localhost:8080</a> for this purpose.
-Under the menu <code>Manage PoPs</code> you can see the <code>PoP instances</code>. Click on the Register VIM button and upload your JSON file (from the File input section). The following picture shows the dashboard:</p>
+Under the menu <code>Manage PoPs</code> you can see the <code>PoP instances</code>. Click on the Register a new PoP button and upload your JSON file (from the File input section). The following picture shows the dashboard:</p>
 <p><img alt="register a new PoP" src="../images/vim-instance-register-new-pop.png" /></p>
 <p>Once the VIM instance is registered, it will appear on the list of available PoPs, filled with the information regarding the available images, networks and flavors. At this point, you are ready to use this new PoP in any NSDs and VNFDs.</p>
 <p><strong><em>Please note that the name chosen must be unique inside the project and will be used to refer to the VimInstance</em>.</strong></p>

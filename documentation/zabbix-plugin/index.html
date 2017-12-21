@@ -323,7 +323,25 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../vnf-package-onboard/">On board your VNF Package</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../ns-descriptor/">Build your Network Service Descriptor</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ns-descriptor-onboard/">On board your Network Service Descriptor</a>
         
     </li>
 
@@ -363,7 +381,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../dummy-NSR/">Dummy NSR</a>
+        <a class="" href="../dummy-NSR/">Dummy NS</a>
         
     </li>
 
@@ -372,7 +390,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../iperf-NSR/">Iperf Scenario</a>
+        <a class="" href="../iperf-NSR/">Iperf NS</a>
         
     </li>
 
@@ -381,7 +399,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tutorial-sipp/">SIPp example</a>
+        <a class="" href="../tutorial-sipp/">SIPp NS</a>
         
     </li>
 
@@ -390,7 +408,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        <a class="" href="../ims-NSR/">OpenIMSCore NS</a>
         
     </li>
 
@@ -399,7 +417,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tutorial-juju/">OpenIMSCore with Juju VNFM</a>
+        <a class="" href="../tutorial-juju/">OpenIMSCore NS with Juju VNFM</a>
         
     </li>
 
@@ -417,7 +435,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../integration-test-use/">Integration Tests</a>
+        <a class="" href="../tutorial-docker/">Docker Tutorials</a>
         
     </li>
 
@@ -488,7 +506,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vim-driver/">VIM Driver Overview</a>
+        <a class="" href="../vim-driver/">VIM drivers overview</a>
         
     </li>
 
@@ -498,6 +516,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../openstack-driver/">OpenStack VIM Driver</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../docker-driver/">Docker VIM Driver</a>
         
     </li>
 
@@ -537,7 +564,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vnfm-intro/">VNFM intro</a>
+        <a class="" href="../vnfm-intro/">VNFM overview</a>
         
     </li>
 
@@ -556,6 +583,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../vnfm-juju/">Juju VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-docker/">Docker VNFM</a>
         
     </li>
 
@@ -622,8 +658,17 @@ console.log('--------');
                   <li><ul> 
     
    
-    <li class="subnav_drop"><span>Autoscaling</span>
+    <li class="subnav_drop"><span>Services</span>
 <ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../services/">Services overview</a>
+        
+    </li>
+
+
         
              
 
@@ -634,19 +679,6 @@ console.log('--------');
 
 
         
-</li>
-</ul>
-    
-</ul></li>
-                 
-		
-		
-                  <li><ul> 
-    
-   
-    <li class="subnav_drop"><span>Fault Management</span>
-<ul class="subnav">
-        
              
 
     <li class="toctree-l1 ">
@@ -655,19 +687,6 @@ console.log('--------');
     </li>
 
 
-        
-</li>
-</ul>
-    
-</ul></li>
-                 
-		
-		
-                  <li><ul> 
-    
-   
-    <li class="subnav_drop"><span>Network Slicing</span>
-<ul class="subnav">
         
              
 
@@ -735,6 +754,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../security/">Identity management</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../integration-test-use/">Continuous Integration</a>
         
     </li>
 
@@ -814,6 +842,18 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -840,17 +880,15 @@ console.log('--------');
 In particular with the Zabbix plugin you can create/delete items, trigger and action on-demand. </p>
 <p><img alt="Zabbix plugin architecture" src="../images/zabbix-plugin-architecture.png" /></p>
 <p>Some of the benefits introduced by the usage of such plugin:<br />
-1) Make the consumers (NFVO, VNFM) independent to the monitoring system.<br />
-2) The communication between the consumers and zabbix-plugin is JSON based, so the consumers can be written in any languages.<br />
-3) The values of the items are cached and updated periodically in order to avoid to contact the Zabbix Server each time a specific metric is required.<br />
-4) If your consumer is written in java, we provide a simple class MonitoringPluginCaller which handle the communication via RabbitMQ.  </p>
+1) Make the consumers (NFVO, VNF managers, Fault Management System, AutoScaling Engine) independent to the monitoring system.<br />
+2) The communication between the consumers and Zabbix Plugin is JSON based, so the consumers can be written in any languages.<br />
+3) The values of the items are cached and updated periodically in order to avoid to contact the Zabbix Server each time a specific metric is required.</p>
 <h2 id="prerequisites">Prerequisites</h2>
 <p>The prerequisites are:  </p>
 <ul>
 <li>Zabbix server (2.2 or 3.0) installed and running. See <a href="../zabbix-server-configuration-2.2/">how to configure Zabbix server 2.2</a> or <a href="../zabbix-server-configuration-3.0/">Zabbix server 3.0</a>.</li>
-<li>RabbitMQ server installed and running  </li>
+<li>Open Baton NFVO up and running</li>
 <li>Git installed</li>
-<li>Gradle installed</li>
 </ul>
 <h2 id="set-up-environment">Set up environment</h2>
 <p>Create and give the right permissions to the folder which will host the configuration file:</p>
@@ -863,34 +901,6 @@ sudo chwon -R $USER: /etc/openbaton
 sudo chwon -R $USER: /var/log/openbaton
 </code></pre>
 
-<h2 id="additional-zabbix-server-configuration-required-for-receiving-notifications">Additional Zabbix Server configuration required for receiving notifications</h2>
-<p>If you are going to use Open Baton FM system or you wish to use the createThreshold method, you need this additional configuration.<br />
-Create a script called "send_notification.sh" with the following content.</p>
-<pre><code class="bash">#!/bin/bash
-to=$1
-body=$3
-curl -X POST -H &quot;Accept: application/json&quot; -H &quot;Content-Type: application/json&quot; -d &quot;$body&quot; http://$to
-</code></pre>
-
-<p>The variable 'to' is the endpoint where zabbix-plugin receives the notification (specified in <strong>notification-receiver-server-context</strong> property). 
-Copy the following script in the Zabbix Server machine. In particular, in a special directory defined in the Zabbix Server configuration file (/etc/zabbix/zabbix_server.conf) as AlertScriptsPath variable. If the value of the variable AlertScriptsPath is for example "/usr/lib/zabbix/alertscripts", 
-then copy the send_notification.sh script just created in that folder.<br />
-Once you are in the directory "/usr/lib/zabbix/alertscripts", add executable permissions to the script running the command:</p>
-<pre><code class="bash">sudo chmod +x send_notification.sh
-</code></pre>
-
-<p><em>Note</em>: when you will use the method createThreshold, Zabbix Plugin will configure Zabbix Server automatically in order to use the script "send_notification.sh". 
-What it will try to do is the configuration at this page <a href="https://www.zabbix.com/documentation/2.2/manual/config/notifications/media/script">custom alertscripts</a>. 
-If for any reason this auto-configuration won't work, you will see in the Zabbix Plugin logs, then you should execute this configuration manually as explained in the Zabbix documentation.</p>
-<h2 id="notification-mechanism">Notification mechanism</h2>
-<p>How does Zabbix plugin receive notifications from the Zabbix Server? </p>
-<p>When using the method createThreshold provided by the plugin, it automatically creates an <a href="https://www.zabbix.com/documentation/2.2/manual/config/notifications/action">action</a> executed when the specific condition is met. 
-If the threshold is crossed (the status of the trigger goes from OK to PROBLEM or viceversa) the action is performed. The action gets the informations of the threshold and sends them to a custom alertScript.
-The custom alertscripts is executed on the Zabbix Server and its task is to send the information received from the action to the Zabbix plugin. </p>
-<p>Zabbix plugin waits for notifications at the url: http://zabbix-plugin-ip:defaultPort/defaultContext.</p>
-<p>Defatult context and ports are specified in the configuration file as: 
-<em> <strong>notification-receiver-server-context</strong>.
-</em> <strong>notification-receiver-server-port</strong>.</p>
 <h3 id="installation">Installation</h3>
 <p>Once the prerequisites are met, you can clone the following project from git, compile it using gradle and launch it:  </p>
 <pre><code class="bash">git clone https://github.com/openbaton/zabbix-plugin.git
@@ -997,12 +1007,40 @@ password-zbx=zabbix
 zabbix-server-version=3.0
 </code></pre>
 
+<h2 id="additional-zabbix-server-configuration-required-for-receiving-notifications">Additional Zabbix Server configuration required for receiving notifications</h2>
+<p>If you are going to use Open Baton FM system or you wish to use the createThreshold method, you need this additional configuration.<br />
+Create a script called "send_notification.sh" with the following content.</p>
+<pre><code class="bash">#!/bin/bash
+to=$1
+body=$3
+curl -X POST -H &quot;Accept: application/json&quot; -H &quot;Content-Type: application/json&quot; -d &quot;$body&quot; http://$to
+</code></pre>
+
+<p>The variable 'to' is the endpoint where zabbix-plugin receives the notification (specified in <strong>notification-receiver-server-context</strong> property). 
+Copy the following script in the Zabbix Server machine. In particular, in a special directory defined in the Zabbix Server configuration file (/etc/zabbix/zabbix_server.conf) as AlertScriptsPath variable. If the value of the variable AlertScriptsPath is for example "/usr/lib/zabbix/alertscripts", 
+then copy the send_notification.sh script just created in that folder.<br />
+Once you are in the directory "/usr/lib/zabbix/alertscripts", add executable permissions to the script running the command:</p>
+<pre><code class="bash">sudo chmod +x send_notification.sh
+</code></pre>
+
+<p><em>Note</em>: when you will use the method createThreshold, Zabbix Plugin will configure Zabbix Server automatically in order to use the script "send_notification.sh". 
+What it will try to do is the configuration at this page <a href="https://www.zabbix.com/documentation/2.2/manual/config/notifications/media/script">custom alertscripts</a>. 
+If for any reason this auto-configuration won't work, you will see in the Zabbix Plugin logs, then you should execute this configuration manually as explained in the Zabbix documentation.</p>
 <h2 id="run-the-zabbix-plugin">Run the Zabbix Plugin</h2>
 <p>Simply run the jar with:</p>
 <pre><code class="bash">java -jar build/lib/openbaton-plugin-monitoring-zabbix-&lt;version&gt;.jar
 </code></pre>
 
 <p>Check the logs in /var/log/openbaton/openbaton-plugin-monitoring-zabbix.log</p>
+<h2 id="notification-mechanism">Notification mechanism</h2>
+<p>How does Zabbix plugin receive notifications from the Zabbix Server? </p>
+<p>When using the method createThreshold provided by the plugin, it automatically creates an <a href="https://www.zabbix.com/documentation/2.2/manual/config/notifications/action">action</a> executed when the specific condition is met. 
+If the threshold is crossed (the status of the trigger goes from OK to PROBLEM or viceversa) the action is performed. The action gets the informations of the threshold and sends them to a custom alertScript.
+The custom alertscripts is executed on the Zabbix Server and its task is to send the information received from the action to the Zabbix plugin. </p>
+<p>Zabbix plugin waits for notifications at the url: http://zabbix-plugin-ip:defaultPort/defaultContext.</p>
+<p>Default context and ports are specified in the configuration file as: 
+<em> <strong>notification-receiver-server-context</strong>.
+</em> <strong>notification-receiver-server-port</strong>.</p>
 <h2 id="using-it-via-monitoringplugincaller">Using it via MonitoringPluginCaller</h2>
 <p>In order to use the MonitorPluginCaller you need to import the relative plugin-sdk, coming from <a href="http://openbaton.github.io">Openbaton</a> project.
 To import the plugin-sdk, please add in your Gradle file the following dependencies:</p>
@@ -1326,7 +1364,7 @@ it creates an alarm (mapping zabbix notification into standard Alarm) and notify
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../autoscaling/" class="btn btn-neutral float-right" title="Autoscaling overview">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../services/" class="btn btn-neutral float-right" title="Services overview">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../monitoring/" class="btn btn-neutral" title="Monitoring overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>

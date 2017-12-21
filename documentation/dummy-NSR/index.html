@@ -28,16 +28,16 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Dummy NSR";
+    var mkdocs_page_name = "Dummy NS";
     var mkdocs_page_input_path = "dummy-NSR.md";
     var mkdocs_page_url = "/dummy-NSR/";
      var mkdocs_page_url = "/dummy-NSR/";
   </script>
   
   <!-- site_name == OpenBaton Documentation -->
-  <!-- page_title == Dummy NSR -->
+  <!-- page_title == Dummy NS -->
   <!-- base_url == .. -->
-  <!-- current_page == Dummy NSR - /dummy-NSR/ [*]
+  <!-- current_page == Dummy NS - /dummy-NSR/ [*]
  -->
   <script src="../js/jquery-2.1.1.min.js"> </script>
   <script src="../js/modernizr-2.8.3.min.js"></script>
@@ -124,14 +124,14 @@ display: block;
 $( document).ready(function(){
       //console.log("test");
 
-    //$('.subnav').not( ":has('Dummy NSR')" ).hide();
+    //$('.subnav').not( ":has('Dummy NS')" ).hide();
     $('li.subnav_drop').find('ul.subnav').hide();
     //$('li.subnav_drop').find('ul.subnav').each(function(i,e){console.log(i,e)});
-       $( ".subnav" ).find( "li:contains('Dummy NSR')" ).each(function(i,e){
+       $( ".subnav" ).find( "li:contains('Dummy NS')" ).each(function(i,e){
           var currentElement = $(e);
           currentElement.parent().css({"display":"block","visibility":"visible"}); //css("background-color","blue");
           currentElement.css({"display":"block","visibility":"visible"});
-       });//$( ".subnav" ).find( "li:contains('Dummy NSR')" ).css("display","block");
+       });//$( ".subnav" ).find( "li:contains('Dummy NS')" ).css("display","block");
        //$(".current").css({"background-color":"blue","display":"block","visibility":"visible"});
        //show(1000,function(i,e){console.log(i,e)});
        //$('li.subnav_drop').find('ul.subnav').css("background-color","blue");
@@ -143,11 +143,11 @@ $( document).ready(function(){
 
 });
 
-$( ".wy-nav-content" ).find( "li:contains('Dummy NSR')" ).css('color','red');
+$( ".wy-nav-content" ).find( "li:contains('Dummy NS')" ).css('color','red');
 console.log('--------');
-console.log($( ".wy-nav-content" ).find( "div:contains('Dummy NSR')" ).css("color","red"));
+console.log($( ".wy-nav-content" ).find( "div:contains('Dummy NS')" ).css("color","red"));
 console.log('--------');
-console.log($( ".subnav" ).find( "li:contains('Dummy NSR')" ));
+console.log($( ".subnav" ).find( "li:contains('Dummy NS')" ));
 console.log('--------');
   </script>
 
@@ -323,7 +323,25 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../vnf-package-onboard/">On board your VNF Package</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../ns-descriptor/">Build your Network Service Descriptor</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ns-descriptor-onboard/">On board your Network Service Descriptor</a>
         
     </li>
 
@@ -363,7 +381,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 current">
-        <a class="current" href="./">Dummy NSR</a>
+        <a class="current" href="./">Dummy NS</a>
         
          
         
@@ -374,7 +392,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../iperf-NSR/">Iperf Scenario</a>
+        <a class="" href="../iperf-NSR/">Iperf NS</a>
         
     </li>
 
@@ -383,7 +401,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tutorial-sipp/">SIPp example</a>
+        <a class="" href="../tutorial-sipp/">SIPp NS</a>
         
     </li>
 
@@ -392,7 +410,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        <a class="" href="../ims-NSR/">OpenIMSCore NS</a>
         
     </li>
 
@@ -401,7 +419,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tutorial-juju/">OpenIMSCore with Juju VNFM</a>
+        <a class="" href="../tutorial-juju/">OpenIMSCore NS with Juju VNFM</a>
         
     </li>
 
@@ -419,7 +437,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../integration-test-use/">Integration Tests</a>
+        <a class="" href="../tutorial-docker/">Docker Tutorials</a>
         
     </li>
 
@@ -490,7 +508,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vim-driver/">VIM Driver Overview</a>
+        <a class="" href="../vim-driver/">VIM drivers overview</a>
         
     </li>
 
@@ -500,6 +518,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../openstack-driver/">OpenStack VIM Driver</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../docker-driver/">Docker VIM Driver</a>
         
     </li>
 
@@ -539,7 +566,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vnfm-intro/">VNFM intro</a>
+        <a class="" href="../vnfm-intro/">VNFM overview</a>
         
     </li>
 
@@ -558,6 +585,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../vnfm-juju/">Juju VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-docker/">Docker VNFM</a>
         
     </li>
 
@@ -622,8 +658,17 @@ console.log('--------');
                   <li><ul> 
     
    
-    <li class="subnav_drop"><span>Autoscaling</span>
+    <li class="subnav_drop"><span>Services</span>
 <ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../services/">Services overview</a>
+        
+    </li>
+
+
         
              
 
@@ -634,19 +679,6 @@ console.log('--------');
 
 
         
-</li>
-</ul>
-    
-</ul></li>
-                 
-		
-		
-                  <li><ul> 
-    
-   
-    <li class="subnav_drop"><span>Fault Management</span>
-<ul class="subnav">
-        
              
 
     <li class="toctree-l1 ">
@@ -655,19 +687,6 @@ console.log('--------');
     </li>
 
 
-        
-</li>
-</ul>
-    
-</ul></li>
-                 
-		
-		
-                  <li><ul> 
-    
-   
-    <li class="subnav_drop"><span>Network Slicing</span>
-<ul class="subnav">
         
              
 
@@ -735,6 +754,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../security/">Identity management</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../integration-test-use/">Continuous Integration</a>
         
     </li>
 
@@ -814,6 +842,18 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -843,18 +883,24 @@ It will not launch any Virtual Machines nor actually deploy a real Network Servi
 <li><a href="https://github.com/openbaton/test-plugin">Test vim driver</a></li>
 <li><a href="https://github.com/openbaton/dummy-vnfm-amqp">Dummy-VNFM</a> </li>
 </ul>
-<h2 id="preparation">Preparation</h2>
+<h3 id="run-it-manually">Run it manually</h3>
 <p>If not yet running start the NFVO and the Dummy-VNFM (refer to it's <a href="https://github.com/openbaton/dummy-vnfm-amqp">readme</a> file on how to start it).<br />
 If you installed the NFVO using the bootstrap script, the Test vim driver will be installed already.<br />
 Otherwise, you have to provide it manually by cloning the <a href="https://github.com/openbaton/test-plugin">git repository</a> and building the jar file with <em>./gradlew build</em>.
 Now move the built jar into <strong>{path-to-nfvo-source-code}/nfvo/plugins/vim-drivers</strong> and restart the NFVO. </p>
+<h3 id="run-it-with-docker">Run it with Docker</h3>
+<p>You can find a <a href="../compose/dummy-ns.yml">docker-compose</a> file ready to launch the required components for this tutorial. Assuming that you have installed the latest version of Docker and Docker Compose, download the file and execute the following command: </p>
+<pre><code class="bash">docker-compose -p ob -f dummy-ns.yml up -d
+</code></pre>
+
+<p>Feel free to adapt the dummy-ns.yml file as you wish. </p>
 <h2 id="store-the-viminstance">Store the VimInstance</h2>
 <p>Upload a VimInstance with the type <em>test</em> to the NFVO (e.g. this <a href="../descriptors/vim-instance/test-vim-instance.json">VimInstance</a>). 
 The type <em>test</em> will make sure that the NFVO uses the Test vim driver for deploying network services.  </p>
 <p>For registering the Point of Presence of type <em>test</em> to the NFVO you have to upload a Vim Instance. You can use this <a href="../descriptors/vim-instance/test-vim-instance.json">VimInstance</a>. </p>
 <h3 id="using-the-dashboard">Using the dashboard</h3>
 <p>If you want to use the Dashboard (checkout the <a href="../nfvo-how-to-use-gui">dashboard documentation</a> for more information on how to use it), open it at the URL http://ip-where-nfvo-runs:8080 (change port and protocol if you use SSL) and log in (default username and password are <em>admin</em> and <em>openbaton</em>).<br />
-Go to <code>Manage PoPs -&gt; PoP Instances</code> and choose the Vim Instance of your choice by clicking on <code>Register Vim</code> and selecting the Vim Instance's json file.</p>
+Go to <code>Manage PoPs -&gt; PoP Instances</code> and choose the Vim Instance of your choice by clicking on <code>Register a new PoP</code> and selecting the Vim Instance's json file.</p>
 <p><img alt="Onboarding-Vim" src="../images/tutorials/tutorial-dummy-NSR/vim-onboarding.png" /></p>
 <h3 id="using-the-cli">Using the CLI</h3>
 <p>If you want to use the CLI (checkout the [Open Baton Client documentation][cli] for more information on how to install and use it), you need to execute the following command in order to onboard the Vim Instance where <em>vim-instance.json</em> is the path to the Vim Instance file:</p>
@@ -864,7 +910,7 @@ Go to <code>Manage PoPs -&gt; PoP Instances</code> and choose the Vim Instance o
 <h2 id="store-the-network-service-descriptor">Store the Network Service Descriptor</h2>
 <p>Download this <a href="../descriptors/tutorial-dummy-NSR/tutorial-dummy-NSR.json">NSD</a> and upload it to the NFVO either using the dashboard or the cli. </p>
 <h3 id="using-the-dashboard_1">Using the dashboard</h3>
-<p>If you want to use the Dashboard go to <code>Catalogue -&gt; NS Descriptors</code> and choose the NSD of your choice by clicking on <code>Upload NSD</code> and selecting the Descriptor's json file.</p>
+<p>If you want to use the Dashboard go to <code>Catalogue -&gt; NS Descriptors</code> and choose the NSD of your choice by clicking on <code>On Board NSD -&gt; Upload JSON</code> and selecting the Descriptor's json file.</p>
 <p><img alt="Onboarding-NSD" src="../images/tutorials/tutorial-dummy-NSR/nsd-onboarding.png" /></p>
 <h3 id="using-the-cli_1">Using the CLI</h3>
 <p>If you want to use the CLI you need to execute the following command in order to onboard the NSD:</p>
@@ -1023,7 +1069,7 @@ Script for open external links in a new tab
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../iperf-NSR/" class="btn btn-neutral float-right" title="Iperf Scenario">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../iperf-NSR/" class="btn btn-neutral float-right" title="Iperf NS">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../tutorial/" class="btn btn-neutral" title="Tutorials overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>

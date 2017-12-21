@@ -323,7 +323,25 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../vnf-package-onboard/">On board your VNF Package</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../ns-descriptor/">Build your Network Service Descriptor</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ns-descriptor-onboard/">On board your Network Service Descriptor</a>
         
     </li>
 
@@ -365,7 +383,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../dummy-NSR/">Dummy NSR</a>
+        <a class="" href="../dummy-NSR/">Dummy NS</a>
         
     </li>
 
@@ -374,7 +392,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../iperf-NSR/">Iperf Scenario</a>
+        <a class="" href="../iperf-NSR/">Iperf NS</a>
         
     </li>
 
@@ -383,7 +401,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tutorial-sipp/">SIPp example</a>
+        <a class="" href="../tutorial-sipp/">SIPp NS</a>
         
     </li>
 
@@ -392,7 +410,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        <a class="" href="../ims-NSR/">OpenIMSCore NS</a>
         
     </li>
 
@@ -401,7 +419,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tutorial-juju/">OpenIMSCore with Juju VNFM</a>
+        <a class="" href="../tutorial-juju/">OpenIMSCore NS with Juju VNFM</a>
         
     </li>
 
@@ -419,7 +437,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../integration-test-use/">Integration Tests</a>
+        <a class="" href="../tutorial-docker/">Docker Tutorials</a>
         
     </li>
 
@@ -490,7 +508,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vim-driver/">VIM Driver Overview</a>
+        <a class="" href="../vim-driver/">VIM drivers overview</a>
         
     </li>
 
@@ -500,6 +518,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../openstack-driver/">OpenStack VIM Driver</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../docker-driver/">Docker VIM Driver</a>
         
     </li>
 
@@ -539,7 +566,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vnfm-intro/">VNFM intro</a>
+        <a class="" href="../vnfm-intro/">VNFM overview</a>
         
     </li>
 
@@ -558,6 +585,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../vnfm-juju/">Juju VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-docker/">Docker VNFM</a>
         
     </li>
 
@@ -622,8 +658,17 @@ console.log('--------');
                   <li><ul> 
     
    
-    <li class="subnav_drop"><span>Autoscaling</span>
+    <li class="subnav_drop"><span>Services</span>
 <ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../services/">Services overview</a>
+        
+    </li>
+
+
         
              
 
@@ -634,19 +679,6 @@ console.log('--------');
 
 
         
-</li>
-</ul>
-    
-</ul></li>
-                 
-		
-		
-                  <li><ul> 
-    
-   
-    <li class="subnav_drop"><span>Fault Management</span>
-<ul class="subnav">
-        
              
 
     <li class="toctree-l1 ">
@@ -655,19 +687,6 @@ console.log('--------');
     </li>
 
 
-        
-</li>
-</ul>
-    
-</ul></li>
-                 
-		
-		
-                  <li><ul> 
-    
-   
-    <li class="subnav_drop"><span>Network Slicing</span>
-<ul class="subnav">
         
              
 
@@ -735,6 +754,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../security/">Identity management</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../integration-test-use/">Continuous Integration</a>
         
     </li>
 
@@ -814,6 +842,18 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -836,23 +876,40 @@ console.log('--------');
 This will create a Network Service Record (NSR) and actually launch the Virtual Machines on OpenStack.</p>
 <h2 id="using-the-dashboard">Using the dashboard</h2>
 <p>This part shows you how to deploy an onboarded NSD via the dashboard. You need to go to the GUI again and navigate to <code>Catalogue -&gt; NS Descriptors</code>. Open the drop down menu by clicking on <code>Action</code>. Afterwards you need to press the <code>Launch</code> button and a window with launching options will appear. Just click on <code>Launch</code> again in order to start the deployment of this NSD.</p>
-<p><img alt="nsr-deploy" src="../images/tutorials/tutorial-iperf-NSR/nsr-deploy.png" /></p>
+<p><img alt="nsr-deploy" src="../images/launch-nsd.gif" /></p>
 <p>If you go to <code>Orchestrate NS -&gt; NS Records</code> in the menu on the left side, you can follow the deployment process and check the current status of the created NSR.</p>
+<h4 id="availability-zones">Availability Zones</h4>
+<p>If you have a vim instance onboarded of type <code>openstack</code>, in the launch modal you will be able to select in which Availability Zone deploy your VNF. This option is only supported for Vim Instances of type <code>openstack</code>.</p>
 <h2 id="using-the-cli">Using the CLI</h2>
 <p>You can also use the CLI for deploying existing NSDs. The command needs the ID of the NSD to deploy as an argument. It can be found either by using the dashboard or getting it from the output when onboarding a new NSD as done in the previous step. The command to deploy the previously onboarded NSD looks like shown below:</p>
 <pre><code class="bash">$./openbaton.sh NetworkServiceRecord-create f2086f71-4ecf-4ed8-a692-36775ebdfc68 vimmap.json keypair.json conf.json
 </code></pre>
 
 <p>The first argument is the ID of the NSD from which the NSR will be created. The following arguments are files that can contain additional configuration while deploying.
-You have to pass these files even if you do not want to pass any configuration like in our case. So just create the three files and fill them with empty json objects/arrays (i.e. <em>{}</em> and <em>[]</em>).<br />
-The <em>vimmap.json</em> and the <em>conf.json</em> files should contain this:</p>
-<pre><code class="json">{}
+You have to pass these files even if you do not want to pass any configuration like in our case. So just create the three files and fill them with empty json objects/arrays (i.e. <em>{}</em> and <em>[]</em>).  </p>
+<p>The <em>vimmap.json</em> file should contain this:</p>
+<pre><code class="json">{
+  &quot;vduName&quot;:[&quot;vim-instance-name&quot;],
+  &quot;vdu2Name&quot;:[&quot;vim-instance-name2:availabiltyzonename&quot;]
+}
 </code></pre>
 
+<p>or be empty if it is requested the default behaviour.</p>
+<p>The <em>conf.json</em>:</p>
+<pre><code class="json">{
+  &quot;configName&quot;:[{
+    &quot;confKey&quot;:&quot;configKey&quot;,
+    &quot;value&quot;:&quot;value&quot;
+  }]
+}
+</code></pre>
+
+<p>or be empty if it is requested the default behaviour.</p>
 <p>And the <em>keypair.json</em> file this:</p>
-<pre><code class="json">[]
+<pre><code class="json">[&quot;openbaton-keypair&quot;]
 </code></pre>
 
+<p>or be empty if it is requested the default behaviour.</p>
 <p>The execution of this command produces the following output:</p>
 <pre><code class="bash">+------------------------ +------------------------------------------------------------- +
 | PROPERTY                | VALUE                                                        |
@@ -935,7 +992,7 @@ The <em>vimmap.json</em> and the <em>conf.json</em> files should contain this:</
         <a href="../tutorial/" class="btn btn-neutral float-right" title="Tutorials overview">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../ns-descriptor/" class="btn btn-neutral" title="Build your Network Service Descriptor"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../ns-descriptor-onboard/" class="btn btn-neutral" title="On board your Network Service Descriptor"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

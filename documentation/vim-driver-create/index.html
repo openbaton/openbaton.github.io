@@ -323,7 +323,25 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../vnf-package-onboard/">On board your VNF Package</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../ns-descriptor/">Build your Network Service Descriptor</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ns-descriptor-onboard/">On board your Network Service Descriptor</a>
         
     </li>
 
@@ -363,7 +381,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../dummy-NSR/">Dummy NSR</a>
+        <a class="" href="../dummy-NSR/">Dummy NS</a>
         
     </li>
 
@@ -372,7 +390,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../iperf-NSR/">Iperf Scenario</a>
+        <a class="" href="../iperf-NSR/">Iperf NS</a>
         
     </li>
 
@@ -381,7 +399,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tutorial-sipp/">SIPp example</a>
+        <a class="" href="../tutorial-sipp/">SIPp NS</a>
         
     </li>
 
@@ -390,7 +408,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        <a class="" href="../ims-NSR/">OpenIMSCore NS</a>
         
     </li>
 
@@ -399,7 +417,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tutorial-juju/">OpenIMSCore with Juju VNFM</a>
+        <a class="" href="../tutorial-juju/">OpenIMSCore NS with Juju VNFM</a>
         
     </li>
 
@@ -417,7 +435,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../integration-test-use/">Integration Tests</a>
+        <a class="" href="../tutorial-docker/">Docker Tutorials</a>
         
     </li>
 
@@ -488,7 +506,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vim-driver/">VIM Driver Overview</a>
+        <a class="" href="../vim-driver/">VIM drivers overview</a>
         
     </li>
 
@@ -498,6 +516,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../openstack-driver/">OpenStack VIM Driver</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../docker-driver/">Docker VIM Driver</a>
         
     </li>
 
@@ -539,7 +566,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vnfm-intro/">VNFM intro</a>
+        <a class="" href="../vnfm-intro/">VNFM overview</a>
         
     </li>
 
@@ -558,6 +585,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../vnfm-juju/">Juju VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-docker/">Docker VNFM</a>
         
     </li>
 
@@ -622,8 +658,17 @@ console.log('--------');
                   <li><ul> 
     
    
-    <li class="subnav_drop"><span>Autoscaling</span>
+    <li class="subnav_drop"><span>Services</span>
 <ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../services/">Services overview</a>
+        
+    </li>
+
+
         
              
 
@@ -634,19 +679,6 @@ console.log('--------');
 
 
         
-</li>
-</ul>
-    
-</ul></li>
-                 
-		
-		
-                  <li><ul> 
-    
-   
-    <li class="subnav_drop"><span>Fault Management</span>
-<ul class="subnav">
-        
              
 
     <li class="toctree-l1 ">
@@ -655,19 +687,6 @@ console.log('--------');
     </li>
 
 
-        
-</li>
-</ul>
-    
-</ul></li>
-                 
-		
-		
-                  <li><ul> 
-    
-   
-    <li class="subnav_drop"><span>Network Slicing</span>
-<ul class="subnav">
         
              
 
@@ -735,6 +754,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../security/">Identity management</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../integration-test-use/">Continuous Integration</a>
         
     </li>
 
@@ -814,6 +842,18 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -832,9 +872,9 @@ console.log('--------');
                       <div class="section">
                         
                           <h1 id="create-vim-driver">Create Vim Driver</h1>
-<p>This tutorial will give This project plugin-sdk contains modules that are needed to implement a plugin for OpenBaton system.</p>
+<p>This project plugin-sdk contains modules that are needed to implement a plugin for OpenBaton system.</p>
 <h2 id="how-does-this-work">How does this work?</h2>
-<p>OpenBaton use the Remote Procedure Call (RPC) mechanism for implementing the Plugins. It offers an implementation of an interface that is used by the NFVO. </p>
+<p>OpenBaton use the Remote Procedure Call (RPC) mechanism for implementing the Plugins. It offers an implementation of an interface that is used by the NFVO.</p>
 <h2 id="requirements">Requirements</h2>
 <p>Before you can start with developing your own Vim Driver you need to prepare your programming environment by installing/configuring the following requirements:</p>
 <ul>
@@ -890,13 +930,12 @@ buildscript {
 
 repositories {
     mavenCentral()
-    /**
-     * Only needed for openbaton snapshots dependencies
-     */
     maven {
-        url 'https://oss.sonatype.org/content/repositories/snapshots/'
+        url &quot;https://oss.sonatype.org/content/repositories/snapshots/&quot;
     }
-}
+    maven {
+        url &quot;https://oss.sonatype.org/content/repositories/releases/&quot;
+    }
 
 apply plugin: 'java'
 apply plugin: 'maven'
@@ -907,18 +946,18 @@ mainClassName = 'org.myplugin.example.Starter'
 
 
 dependencies {
-    compile 'org.openbaton:plugin-sdk:4.0.0'
+    compile 'org.openbaton:plugin-sdk:5.1.2'
     compile'org.springframework:spring-context:4.2.1.RELEASE'
 }
 
 </code></pre>
 
 <h2 id="write-your-vim-driver">Write your Vim driver</h2>
-<p>The Vim driver is a simple class extending one abstract class and using a Starter utility </p>
+<p>The Vim driver is a simple class extending one abstract class and using a Starter utility</p>
 <h4 id="type-of-vim-instance">Type of Vim Instance</h4>
 <p>OpenBaton provides a specific class for handling the <strong>openstack</strong> type or the <strong>test</strong> type thus these two types are supported. For all the other types a generic class will handle the communication between the NFVO and your plugin.</p>
 <h3 id="implement-vimdriver">Implement VimDriver</h3>
-<p>The <em>VimDriver</em> is an abastract class that contains tha basic functionalities that a Vim Instance has to provide. </p>
+<p>The <em>VimDriver</em> is an abastract class that contains tha basic functionalities that a Vim Instance has to provide.</p>
 <p><em><strong>NOTE</strong></em>: If you want to implement a Monitoring plugin, then you need to implement the Abstract Class <em>MonitoringPlugin</em></p>
 <p>Your <strong>MyVim</strong> class will implement the methods inherited from <em>VimDriver</em> that manages your Vim Instance:</p>
 <table>
@@ -1071,7 +1110,7 @@ public class MyVim extends VimDriver{
 <p><img alt="Vim driver structure" src="../images/vim_plugin_structure.png" /></p>
 <p>Now you can run <strong>./gradlew build</strong> and Gradle will create the jar that you can find in the folder <em>build/libs/myPlugin-1.0-SNAPSHOT.jar</em>.</p>
 <p>Once all these steps are done, you can copy and paste the <em>myPlugin-1.0-SNAPSHOT.jar</em> under the folder specified in the <em>openbaton.properties</em> (under <em>/etc/openbaton</em> folder) <strong>plugin-installation-dir</strong> property, as default path_to_NFVO/plugins.
-The plugin sends the log messages to NFVO, the NFVO writes them into a log file. The path to this file can be set with nfvo.plugin.log.path properties in the /etc/openbaton/openbaton.properties. 
+The plugin sends the log messages to NFVO, the NFVO writes them into a log file. The path to this file can be set with nfvo.plugin.log.path properties in the /etc/openbaton/openbaton.properties.
 Congratulations you have your version of the interface for your Vim Instance that will be used by NFVO</p>
 <h2 id="use-my-plugin">Use my plugin</h2>
 <p>Once you copied the jar file into the right folder, either you need to (re)start the NFVO or you type <em>installPlugin</em> in the NFVO console passing the needed arguments. In case you restart the NFVO, the plugin will automatically register and you can see that there will be a log file in the NFVO folder called <em>plugin-myPlugin.log</em> containing the logs of the plugin. The myPlugin now acts as a normal plugin so for using it check out the <a href="../pop-registration/">Vim instance documentation</a> in order to point out to the new plugin.</p>
@@ -1102,7 +1141,7 @@ Script for open external links in a new tab
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../vnfm-intro/" class="btn btn-neutral float-right" title="VNFM intro">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../vnfm-intro/" class="btn btn-neutral float-right" title="VNFM overview">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../test-driver/" class="btn btn-neutral" title="Test VIM Driver"><span class="icon icon-circle-arrow-left"></span> Previous</a>

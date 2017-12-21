@@ -323,7 +323,25 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
+        <a class="" href="../vnf-package-onboard/">On board your VNF Package</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
         <a class="" href="../ns-descriptor/">Build your Network Service Descriptor</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../ns-descriptor-onboard/">On board your Network Service Descriptor</a>
         
     </li>
 
@@ -363,7 +381,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../dummy-NSR/">Dummy NSR</a>
+        <a class="" href="../dummy-NSR/">Dummy NS</a>
         
     </li>
 
@@ -372,7 +390,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../iperf-NSR/">Iperf Scenario</a>
+        <a class="" href="../iperf-NSR/">Iperf NS</a>
         
     </li>
 
@@ -381,7 +399,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tutorial-sipp/">SIPp example</a>
+        <a class="" href="../tutorial-sipp/">SIPp NS</a>
         
     </li>
 
@@ -390,7 +408,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../ims-NSR/">OpenIMSCore example</a>
+        <a class="" href="../ims-NSR/">OpenIMSCore NS</a>
         
     </li>
 
@@ -399,7 +417,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tutorial-juju/">OpenIMSCore with Juju VNFM</a>
+        <a class="" href="../tutorial-juju/">OpenIMSCore NS with Juju VNFM</a>
         
     </li>
 
@@ -417,7 +435,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../integration-test-use/">Integration Tests</a>
+        <a class="" href="../tutorial-docker/">Docker Tutorials</a>
         
     </li>
 
@@ -490,7 +508,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vim-driver/">VIM Driver Overview</a>
+        <a class="" href="../vim-driver/">VIM drivers overview</a>
         
     </li>
 
@@ -500,6 +518,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../openstack-driver/">OpenStack VIM Driver</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../docker-driver/">Docker VIM Driver</a>
         
     </li>
 
@@ -539,7 +566,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vnfm-intro/">VNFM intro</a>
+        <a class="" href="../vnfm-intro/">VNFM overview</a>
         
     </li>
 
@@ -558,6 +585,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../vnfm-juju/">Juju VNFM</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../vnfm-docker/">Docker VNFM</a>
         
     </li>
 
@@ -622,8 +658,17 @@ console.log('--------');
                   <li><ul> 
     
    
-    <li class="subnav_drop"><span>Autoscaling</span>
+    <li class="subnav_drop"><span>Services</span>
 <ul class="subnav">
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../services/">Services overview</a>
+        
+    </li>
+
+
         
              
 
@@ -634,19 +679,6 @@ console.log('--------');
 
 
         
-</li>
-</ul>
-    
-</ul></li>
-                 
-		
-		
-                  <li><ul> 
-    
-   
-    <li class="subnav_drop"><span>Fault Management</span>
-<ul class="subnav">
-        
              
 
     <li class="toctree-l1 ">
@@ -655,19 +687,6 @@ console.log('--------');
     </li>
 
 
-        
-</li>
-</ul>
-    
-</ul></li>
-                 
-		
-		
-                  <li><ul> 
-    
-   
-    <li class="subnav_drop"><span>Network Slicing</span>
-<ul class="subnav">
         
              
 
@@ -735,6 +754,15 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../security/">Identity management</a>
+        
+    </li>
+
+
+        
+             
+
+    <li class="toctree-l1 ">
+        <a class="" href="../integration-test-use/">Continuous Integration</a>
         
     </li>
 
@@ -814,6 +842,18 @@ console.log('--------');
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
               </ul>
             </div>
             &nbsp;
@@ -832,591 +872,194 @@ console.log('--------');
                       <div class="section">
                         
                           <h1 id="openbaton-command-line-interface-cli">OpenBaton Command Line Interface (CLI)</h1>
-<p>The <a href="https://github.com/openbaton/openbaton-client">Openbaton Client project</a> provides a command-line interface, which enables you to use the NFVO's API and send commands to it.</p>
-<h2 id="install-the-openbaton-client-as-binaries">Install the Openbaton Client as binaries</h2>
-<p>On Linux you can install the Open Baton Command Line Iterface while installing Open Baton using the <a href="../nfvo-installation-deb">bootstrap script</a>. It will prompt you with the question if you also want to install the Command Line Interface.<br />
-If you did not want to install the CLI at this point you can install it later on Linux using <em>sudo apt-get install openbaton-cli</em>.<br />
-If you use MacOS you can install the CLI with <a href="http://brew.sh">Homebrew</a> or source code. </p>
-<h2 id="install-the-openbaton-client-from-source-code">Install the Openbaton Client from source code</h2>
-<p>Git clone the <a href="https://github.com/openbaton/openbaton-client">Openbaton Client project</a>. Navigate into the root directory of the project and execute <em>./gradlew build</em>.</p>
-<pre><code class="sh">git clone https://github.com/openbaton/openbaton-client.git
-cd openbaton-client
-./gradlew build
+<p>The <a href="https://github.com/openbaton/openbaton-cli">Openbaton Cli project</a> provides a command-line interface, which enables you to use the NFVO's API and send commands to it.</p>
+<h2 id="install-the-openbaton-client">Install the Openbaton Client</h2>
+<p>On any OS you can install the Open Baton Command Line Interface using <em>pip</em>.</p>
+<pre><code class="bash">pip install openbaton-cli
 </code></pre>
 
-<h2 id="install-the-openbaton-client-with-homebrew-macos">Install the Openbaton Client with Homebrew (MacOS)</h2>
-<p>In MacOS you need to execute the following instruction:</p>
-<pre><code class="bash">brew install http://get.openbaton.org/homebrew/openbaton-client.rb
+<p>after that check you can run:</p>
+<pre><code class="bash">openbaton --help
+
+usage: openbaton [-h] [-pid PROJECT_ID] [-u USERNAME] [-p PASSWORD] [-d]
+                 [-ip NFVO_IP] [--nfvo-port NFVO_PORT]
+                 agent action [params [params ...]]
+
+positional arguments:
+  agent                 the agent you want to use. Possibilities are:
+                        ['vnfr', 'project', 'user', 'vnfd', 'vnfpackage',
+                        'nsr', 'nsd', 'vim']
+  action                the action you want to call. Possibilities are:
+                        ['list', 'show', 'delete', 'create']
+  params                The id, file or json
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -pid PROJECT_ID, --project-id PROJECT_ID
+                        the project-id to use
+  -u USERNAME, --username USERNAME
+                        the openbaton username
+  -p PASSWORD, --password PASSWORD
+                        the openbaton password
+  -d, --debug           show debug prints
+  -ip NFVO_IP, --nfvo-ip NFVO_IP
+                        the openbaton nfvo ip
+  --nfvo-port NFVO_PORT
+                        the openbaton nfvo port
 </code></pre>
 
-<h2 id="set-the-required-environment-variables">Set the required environment variables</h2>
-<h3 id="in-case-of-binaries-installation">in case of binaries installation</h3>
-<p>Source <em>/etc/openbaton/openbaton-cli.properties</em> to set the required environment variables. A dialog appears and will ask you for some properties.</p>
-<pre><code class="sh">source /etc/openbaton/openbaton-cli.properties
-</code></pre>
-
-<p>This has to be done every time before you start working with the CLI in a new terminal.</p>
-<h3 id="in-case-of-source-code-installation">in case of source code installation</h3>
-<p>Navigate into the project's root directory and execute <em>source nfvo.properties</em>. A dialog appears and will ask you for some properties.</p>
-<pre><code class="sh">cd openbaton-client
-source nfvo.properties
-</code></pre>
-
-<p>This has to be done every time before you start working with the CLI in a new terminal.</p>
-<h3 id="in-case-of-installation-through-homebrew">in case of installation through Homebrew</h3>
-<p>Execute the following command:</p>
-<pre><code class="sh">source /usr/local/etc/openbaton/cli/nfvo.properties
-</code></pre>
-
-<p>This has to be done every time before you start working with the CLI in a new terminal.</p>
 <h2 id="openbaton-client-usage">Openbaton Client usage</h2>
-<p>After environment variables have been set, you can start using the cli for sending commands to the NFVO.<br />
-If you installed the Open Baton Client while installing Open Baton with the bootstrap script or with apt-get install the command <em>openbaton</em> should be available.<br />
-If you installed it from source code you have to execute the script <em>openbaton.sh</em> within the directory where you cloned the Open Baton Client repository.</p>
-<h3 id="run-a-command">Run a command:</h3>
-<pre><code class="sh">openbaton.sh command_name [arg-1] [arg-2] [arg-3]
+<p>For simply configure the cli, just download the openbaton.rc file from the top right drop down menu of the NFVO dashboard:</p>
+<p><img alt="Download Open Baton RC file" src="../images/get-rc-file.gif" /></p>
+<p>After having downaloded the openbaton.rc file, you can source it:</p>
+<pre><code class="sh">source openbaton.rc
+Insert Open Baton Password:
 </code></pre>
 
-<h3 id="show-the-configuration">Show the configuration:</h3>
-<pre><code class="sh">openbaton.sh -c
+<h3 id="run-a-command">Run a command:</h3>
+<p>You are now able to use the CLI by running some commands. For instance:</p>
+<pre><code class="sh">openbaton project list
+
++--------------------------------------+---------+-----------------+
+| id                                   | name    | description     |
++======================================+=========+=================+
+| 366bf453-2c0a-408a-b895-7687c2a58998 | default | default project |
++--------------------------------------+---------+-----------------+
+</code></pre>
+
+<p>or</p>
+<pre><code class="sh">openbaton user list
+
++--------------------------------------+------------+---------+
+| id                                   | username   |   email |
++======================================+============+=========+
+| 6a188511-bdcc-429f-8068-69577f1efc58 | admin      |         |
++--------------------------------------+------------+---------+
 </code></pre>
 
 <h3 id="activate-debug-mode">Activate debug mode:</h3>
-<pre><code class="sh">openbaton.sh -d COMMAND [arg-1] [arg-2] [arg-3]
-</code></pre>
-
-<h3 id="print-help">Print help:</h3>
-<pre><code class="sh">openbaton.sh -h
-</code></pre>
-
-<h3 id="print-help-for-a-command">Print help for a command:</h3>
-<pre><code class="sh">openbaton.sh COMMAND help
-</code></pre>
-
-<h3 id="list-the-available-commands">List the available commands:</h3>
-<pre><code class="sh">openbaton.sh -l
-</code></pre>
-
-<h2 id="available-commands">Available commands</h2>
-<p>In the following section we list all the currently avalilable commands for the cli grouped by the components they work with.<br />
-Typically commands take either IDs or file paths as parameters where the files contain an object in json format.</p>
-<h3 id="vim-instance-subcommands"><strong>Vim Instance Subcommands</strong></h3>
-<p><strong>create</strong></p>
-<ul>
-<li>Create a Vim Instance</li>
-</ul>
-<pre><code class="sh"> $ openbaton.sh VimInstance-create &lt;file.json&gt;
-</code></pre>
-
-<p><strong>delete</strong></p>
-<ul>
-<li>Delete the Vim Instance with the specified id</li>
-</ul>
-<pre><code class="sh"> $ openbaton.sh VimInstance-delete &lt;id-vim-instance&gt;
-</code></pre>
-
-<p><strong>update</strong></p>
-<ul>
-<li>Update a Vim Instance by passing a file containing the new one and the id of the old one</li>
-</ul>
-<pre><code class="sh"> $ openbaton.sh VimInstance-update &lt;file.json&gt; &lt;id-vim-instance&gt;
-</code></pre>
-
-<p><strong>findAll</strong></p>
-<ul>
-<li>Find all Vim Instances</li>
-</ul>
-<pre><code class="sh"> $ openbaton.sh VimInstance-findAll
-</code></pre>
-
-<p><strong>findById</strong></p>
-<ul>
-<li>Find a Vim Instance specified by the id</li>
-</ul>
-<pre><code class="sh"> $ openbaton.sh VimInstance-findById &lt;id-vim-instance&gt;
-</code></pre>
-
-<h3 id="network-service-descriptor-subcommands"><strong>Network Service Descriptor Subcommands</strong></h3>
-<p><strong>create</strong></p>
-<ul>
-<li>Create a Network Service Descriptor</li>
-</ul>
-<pre><code class="sh"> $ openbaton.sh NetworkServiceDescriptor-create &lt;file.json&gt;
-</code></pre>
-
-<p><strong>delete</strong></p>
-<ul>
-<li>Delete a Network Service Descriptor by passing its id</li>
-</ul>
-<pre><code class="sh"> $ openbaton.sh NetworkServiceDescriptor-delete &lt;id-network-service-descriptor&gt;
-</code></pre>
-
-<p><strong>findAll</strong></p>
-<ul>
-<li>Find all Network Service Descriptors</li>
-</ul>
-<pre><code class="sh"> $ openbaton.sh NetworkServiceDescriptor-findAll
-</code></pre>
-
-<p><strong>findById</strong></p>
-<ul>
-<li>Find a Network Service Descriptor by passing its id</li>
-</ul>
-<pre><code class="sh"> $ openbaton.sh NetworkServiceDescriptor-findById &lt;id-network-service-descriptor&gt;
-</code></pre>
-
-<p><strong>createVNFDependency</strong></p>
-<ul>
-<li>Create a Virtual Network Function Descriptor dependency for a Network Service Descriptor with a specific id</li>
-</ul>
-<pre><code class="sh"> $ openbaton.sh NetworkServiceDescriptor-createVNFDependency &lt;id-network-service-descriptor&gt; &lt;file.json&gt;
-</code></pre>
-
-<p>The file should look similar to this:</p>
-<pre><code class="json">{
- &quot;parameters&quot;:[&quot;theParameter&quot;],
- &quot;version&quot;:1,
- &quot;source&quot;:{&quot;id&quot;:&quot;950811b6-ebb6-4a17-bf4e-ab61974acbc8&quot;},
- &quot;target&quot;: {&quot;id&quot;:&quot;9873ad54-2963-424d-ab5d-39403a5dd544&quot;}
-}
-</code></pre>
-
-<p>The ids belong to the particular VirtualNetworkFunctionDescriptor.</p>
-<p><strong>deleteVNFDependency</strong></p>
-<ul>
-<li>Delete the Virtual Network Function Descriptor dependency of a Network Service Descriptor with a specific id</li>
-</ul>
-<pre><code class="sh">   $ openbaton.sh NetworkServiceDescriptor-deleteVNFDependency &lt;id-network-service-descriptor&gt; &lt;id-vnfdependency&gt;
-</code></pre>
-
-<p><strong>getVNFDependencies</strong></p>
-<ul>
-<li>Get all the Virtual Network Function Descriptor Dependencies of a Network Service Descriptor with a specific id</li>
-</ul>
-<pre><code class="sh"> $ openbaton.sh NetworkServiceDescriptor-getVNFDependencies &lt;id-network-service-descriptor&gt;
-</code></pre>
-
-<p><strong>getVNFDependency</strong></p>
-<ul>
-<li>Get a certain Virtual Network Function Descriptor Dependency of a Network Service Descriptor with a specific id</li>
-</ul>
-<pre><code class="sh"> $ openbaton.sh NetworkServiceDescriptor-getVNFDependency &lt;id-network-service-descriptor&gt; &lt;id-vnfdependency&gt;
-</code></pre>
-
-<p><strong>getVirtualNetworkFunctionDescriptors</strong></p>
-<ul>
-<li>Find all Virtual Network Function Descriptors of a certain Network Service Descriptor</li>
-</ul>
-<pre><code class="sh"> $ openbaton.sh NetworkServiceDescriptor-getVirtualNetworkFunctionDescriptors &lt;id-network-service-descriptor&gt;
-</code></pre>
-
-<p><strong>getVirtualNetworkFunctionDescriptor</strong></p>
-<ul>
-<li>Find a Virtual Network Function Descriptor specified by its id and the id of the Network Service Descriptor containing it</li>
-</ul>
-<pre><code class="sh">$ openbaton.sh NetworkServiceDescriptor-getVirtualNetworkFunctionDescriptor &lt;id-network-service-descriptor&gt; &lt;id-vnfd&gt;
-</code></pre>
-
-<h3 id="virtual-network-function-descriptor-subcommands"><strong>Virtual Network Function Descriptor Subcommands</strong></h3>
-<ul>
-<li><strong>create</strong></li>
-<li>Create a Virtual Network Function Descriptor</li>
-</ul>
-<pre><code class="sh"> $ openbaton.sh VirtualNetworkFunctionDescriptor-create &lt;file.json&gt;
-</code></pre>
-
-<ul>
-<li><strong>delete</strong></li>
-<li>Delete a Virtual Network Function Descriptor passing its id</li>
-</ul>
-<pre><code class="sh"> $ openbaton.sh VirtualNetworkFunctionDescriptor-delete &lt;id-virtual-network-function-descriptor&gt;
-</code></pre>
-
-<ul>
-<li><strong>findAll</strong></li>
-<li>Find all Virtual Network Function Descriptors</li>
-</ul>
-<pre><code class="sh"> $ openbaton.sh VirtualNetworkFunctionDescriptor-findAll
-</code></pre>
-
-<ul>
-<li><strong>findById</strong></li>
-<li>Find a Virtual Network Function Descriptor by passing its id</li>
-</ul>
-<pre><code class="sh"> $ openbaton.sh VirtualNetworkFunctionDescriptor-findById &lt;id-virtual-network-function-descriptor&gt;
-</code></pre>
-
-<h3 id="network-service-record-subcommands"><strong>Network Service Record Subcommands</strong></h3>
-<p><strong>create</strong></p>
-<ul>
-<li>Create a Network Service Record from a Network Service Descriptor stored in the orchestrator</li>
-</ul>
-<pre><code class="sh"> $ openbaton.sh NetworkServiceRecord-create &lt;id-network-service-descriptor&gt; &lt;vim-map-file&gt; &lt;keypair-file&gt; &lt;configurations-file&gt;
-</code></pre>
-
-<p>The three arguments after the NSD id can be used to specify the VIM on which a VDU should be deployed, the keypairs that shall be used to deploy the NSR and configuration parameters for the VNFRs.<br />
-If you want to specify the VIM that a particular VDU shall use you can pass a file containing a map like this:</p>
-<pre><code class="json"> {&quot;vdu1Name&quot;:[vim1,vim2,vim3], &quot;vdu2Name&quot;:[vim1]}
-</code></pre>
-
-<p>In this case the VDU named vdu2Name would be deployed on vim1 and the VDU named vdu1Name randomly on one of the VIMs vim1, vim2 or vim3.  </p>
-<p>The second command argument specifies a file containing a list that describes which keypairs shall be used to deploy the NSR. Here is an example:</p>
-<pre><code class="json"> [&quot;key1&quot;, &quot;key2&quot;, &quot;key3&quot;]
-</code></pre>
-
-<p>The last command argument specifies a file containing a map of VNFR names and configuration parameters. Here is an example:</p>
-<pre><code class="json">{
-  &quot;configurations&quot;:{
-    &quot;vnfrName1&quot;:{&quot;name&quot;:&quot;conf1&quot;,&quot;configurationParameters&quot;:[{&quot;confKey&quot;:&quot;key1&quot;, &quot;value&quot;:&quot;value1&quot;, &quot;description&quot;:&quot;description1&quot;}]},
-    &quot;vnfrName2&quot;:{&quot;name&quot;:&quot;conf2&quot;,&quot;configurationParameters&quot;:[{&quot;confKey&quot;:&quot;key1&quot;, &quot;value&quot;:&quot;value1&quot;, &quot;description&quot;:&quot;description1&quot;}]}
-  }
-}
-</code></pre>
-
-<p>Of course you do not have to specify VIMs, keys and configurations. If you do not want to specify them just put empty objects into the files i.e. {} and [].</p>
-<p><strong>delete</strong></p>
-<ul>
-<li>Delete a Network Service Record passing its id</li>
-</ul>
-<pre><code class="sh"> $ openbaton.sh NetworkServiceRecord-delete &lt;id-network-service-record&gt;
-</code></pre>
-
-<p><strong>update</strong></p>
-<ul>
-<li>Update the Network Service Record by passing a file with the new version of it and the id of the Network Service Record to update</li>
-</ul>
-<pre><code class="sh">$ openbaton.sh NetworkServiceRecord-update &lt;file.json&gt; &lt;id-network-service-record&gt;
-</code></pre>
-
-<p><strong>findAll</strong></p>
-<ul>
-<li>Find all Network Service Records</li>
-</ul>
-<pre><code class="sh"> $ openbaton.sh NetworkServiceRecord-findAll
-</code></pre>
-
-<p><strong>findById</strong></p>
-<ul>
-<li>Find a Network Service Record by passing its id</li>
-</ul>
-<pre><code class="sh"> $ openbaton.sh NetworkServiceRecord-findById &lt;id-network-service-record&gt;
-</code></pre>
-
-<p><strong>getVirtualNetworkFunctionRecords</strong></p>
-<ul>
-<li>Get all the Virtual Network Function Records of a Network Service Record with a specific id</li>
-</ul>
-<pre><code class="sh"> $ openbaton.sh NetworkServiceRecord-getVirtualNetworkFunctionRecords &lt;id-network-service-record&gt;
-</code></pre>
-
-<p><strong>getVirtualNetworkFunctionRecord</strong></p>
-<ul>
-<li>Get a Virtual Network Function Record of a Network Service Record by providing its id</li>
-</ul>
-<pre><code class="sh"> $ openbaton.sh NetworkServiceRecord-getVirtualNetworkFunctionRecord &lt;id-network-service-record&gt; &lt;id-vnfr&gt;
-</code></pre>
-
-<p><strong>deleteVirtualNetworkFunctionRecord</strong></p>
-<ul>
-<li>Delete the Virtual Network Function Record of a Network Service Record with a specific id</li>
-</ul>
-<pre><code class="sh"> $ openbaton.sh NetworkServiceRecord-deleteVirtualNetworkFunctionRecord &lt;id-network-service-record&gt; &lt;id-vnfr&gt;
-</code></pre>
-
-<p><strong>createVNFDependency</strong></p>
-<ul>
-<li>Create a Virtual Network Function Record Dependency of a NetworkServiceRecord with a specific id</li>
-</ul>
-<pre><code class="sh"> $ openbaton.sh NetworkServiceRecord-createVNFDependency &lt;id-network-service-record&gt; &lt;file.json&gt;
-</code></pre>
-
-<p><strong>deleteVNFDependency</strong></p>
-<ul>
-<li>Delete the Virtual Network Function Record Dependency of a NetworkServiceRecord with a specific id</li>
-</ul>
-<pre><code class="sh"> $ openbaton.sh NetworkServiceRecord-deleteVNFDependency &lt;id-network-service-record&gt; &lt;id-vnfdependency&gt;
-</code></pre>
-
-<p><strong>getVNFDependencies</strong></p>
-<ul>
-<li>Get all the Virtual Network Function Record Dependencies of a Network Service Record with a specific id</li>
-</ul>
-<pre><code class="sh"> $ openbaton.sh NetworkServiceRecord-getVNFDependencies &lt;id-network-service-record&gt;
-</code></pre>
-
-<p><strong>getVNFDependency</strong></p>
-<ul>
-<li>Get the Virtual Network Function Record Dependency of a Network Service Record with a specific id</li>
-</ul>
-<pre><code class="sh"> $ openbaton.sh NetworkServiceRecord-getVNFDependency &lt;id-network-service-record&gt; &lt;id-vnfdependency&gt;
-</code></pre>
-
-<p><strong>createVNFCInstance</strong></p>
-<ul>
-<li>Perform a SCALE_OUT operation on a Virtual Network Function by adding a VNFCInstance to its Virtual Network Function Record</li>
-</ul>
-<pre><code class="sh">$ openbaton.sh NetworkServiceRecord-createVNFCInstance &lt;id-network-service-record&gt; &lt;id-virtual-network-function-record&gt; &lt;file.json&gt;
-</code></pre>
-
-<p><strong>deleteVNFCInstance</strong></p>
-<ul>
-<li>Perform a SCALE_IN operation on a Virtual Network Function by deleting a VNFCInstance from the Virtual Network Function Record</li>
-</ul>
-<pre><code class="sh">$ openbaton.sh NetworkServiceRecord-deleteVNFCInstance &lt;id-network-service-record&gt; &lt;id-virtual-network-function-record&gt;
-</code></pre>
-
-<p><strong>startVNFCInstance</strong></p>
-<ul>
-<li>Start a VNFCInstance specified by it's id</li>
-</ul>
-<pre><code class="sh">$ openbaton.sh NetworkServiceRecord-startVNFCInstance &lt;id-nsr&gt; &lt;id-vnfr&gt; &lt;id-vdu&gt; &lt;id-vnfcinstance&gt;
-</code></pre>
-
-<p><strong>stopVNFCInstance</strong></p>
-<ul>
-<li>Stop a VNFCInstance specified by it's id</li>
-</ul>
-<pre><code class="sh">$ openbaton.sh NetworkServiceRecord-stopVNFCInstance &lt;id-nsr&gt; &lt;id-vnfr&gt; &lt;id-vdu&gt; &lt;id-vnfcinstance&gt;
-</code></pre>
-
-<h3 id="user-subcommands"><strong>User Subcommands</strong></h3>
-<p><strong>create</strong></p>
-<ul>
-<li>Create a new User</li>
-</ul>
-<pre><code class="sh">$ openbaton.sh User-create &lt;file.json&gt;
-</code></pre>
-
-<p><strong>delete</strong></p>
-<ul>
-<li>Delete a user passing his id</li>
-</ul>
-<pre><code>$ openbaton.sh User-delete &lt;user-id&gt;
-</code></pre>
-
-<p><strong>update</strong></p>
-<ul>
-<li>Update a User</li>
-</ul>
-<pre><code class="sh">$ openbaton.sh User-update &lt;file.json&gt; &lt;user-id&gt;
-</code></pre>
-
-<p><strong>findAll</strong></p>
-<ul>
-<li>Find all Users</li>
-</ul>
-<pre><code class="sh">$ openbaton.sh User-findAll
-</code></pre>
-
-<p><strong>findByName</strong></p>
-<ul>
-<li>Find a User by his username</li>
-</ul>
-<pre><code class="sh">$ openbaton.sh User-findByName &lt;username&gt;
-</code></pre>
-
-<p><strong>changePassword</strong></p>
-<ul>
-<li>Change the password of the current user</li>
-</ul>
-<pre><code class="sh">$ openbaton.sh User-changePassword &lt;oldPassword&gt; &lt;newPassword&gt;
-</code></pre>
-
-<p>Remember to source nfvo.properties afterwards and set the new password if you want to continue working as this User.</p>
-<h3 id="project-subcommands"><strong>Project Subcommands</strong></h3>
-<p><strong>create</strong></p>
-<ul>
-<li>Create a new Project</li>
-</ul>
-<pre><code class="sh">$ openbaton.sh Project-create &lt;file.json&gt;
-</code></pre>
-
-<p><strong>delete</strong></p>
-<ul>
-<li>Delete a Project passing its id</li>
-</ul>
-<pre><code class="sh">$ openbaton.sh Project-delete &lt;id-project&gt;
-</code></pre>
-
-<p><strong>update</strong></p>
-<ul>
-<li>Update a Project</li>
-</ul>
-<pre><code class="sh">$ openbaton.sh Project-update &lt;file.json&gt; &lt;id-project&gt;
-</code></pre>
-
-<p><strong>findAll</strong></p>
-<ul>
-<li>Find all Projects</li>
-</ul>
-<pre><code class="sh">$ openbaton.sh Project-findAll
-</code></pre>
-
-<p><strong>findById</strong></p>
-<ul>
-<li>Find a Project by passing its id</li>
-</ul>
-<pre><code class="sh">$ openbaton.sh Project-findById &lt;id-project&gt;
-</code></pre>
-
-<h3 id="key-subcommands"><strong>Key Subcommands</strong></h3>
-<p><strong>generateKey</strong></p>
-<ul>
-<li>Generate a new Key in the NFVO</li>
-</ul>
-<pre><code class="sh">$ openbaton.sh Key-generateKey &lt;keyname&gt;
-</code></pre>
-
-<p>This command will return the private key.</p>
-<p><strong>importKey</strong></p>
-<ul>
-<li>Import a Key into the NFVO</li>
-</ul>
-<pre><code class="sh">$ openbaton.sh Key-importKey &lt;keyname&gt; &lt;publicKey&gt;
-</code></pre>
-
-<p><strong>delete</strong></p>
-<ul>
-<li>Delete a Key passing its id</li>
-</ul>
-<pre><code class="sh">$ openbaton.sh Key-delete &lt;id-key&gt;
-</code></pre>
-
-<p><strong>findAll</strong></p>
-<ul>
-<li>Find all Keys</li>
-</ul>
-<pre><code class="sh">$ openbaton.sh Key-findAll
-</code></pre>
-
-<p><strong>findById</strong></p>
-<ul>
-<li>Find a Key by passing its id</li>
-</ul>
-<pre><code class="sh">$ openbaton.sh Key-findById &lt;id-key&gt;
-</code></pre>
-
-<h3 id="event-subcommands"><strong>Event Subcommands</strong></h3>
-<p><strong>create</strong></p>
-<ul>
-<li>Create an Event</li>
-</ul>
-<pre><code class="sh"> $ openbaton.sh Event-create &lt;file.json&gt;
-</code></pre>
-
-<p><strong>delete</strong></p>
-<ul>
-<li>Delete an Event passing its id</li>
-</ul>
-<pre><code class="sh">$ openbaton.sh Event-delete &lt;id-event&gt;
-</code></pre>
-
-<p><strong>findAll</strong></p>
-<ul>
-<li>Find all Events</li>
-</ul>
-<pre><code class="sh">$ openbaton.sh Event-findAll
-</code></pre>
-
-<p><strong>findById</strong></p>
-<ul>
-<li>Find an Event by passing its id</li>
-</ul>
-<pre><code class="sh">$ openbaton.sh Event-findById &lt;id-event&gt;
-</code></pre>
-
-<h3 id="configuration-subcommands"><strong>Configuration Subcommands</strong></h3>
-<p><strong>create</strong></p>
-<ul>
-<li>Create a Configuration</li>
-</ul>
-<pre><code class="sh">$ openbaton.sh Configuration-create &lt;file.json&gt;
-</code></pre>
-
-<p><strong>delete</strong></p>
-<ul>
-<li>Delete a Configuration passing its id</li>
-</ul>
-<pre><code class="sh">$ openbaton.sh Configuration-delete &lt;id-configuration&gt;
-</code></pre>
-
-<p><strong>findAll</strong></p>
-<ul>
-<li>Find all Configurations</li>
-</ul>
-<pre><code class="sh"> $ openbaton.sh Configuration-findAll
-</code></pre>
-
-<p><strong>findById</strong></p>
-<ul>
-<li>Find a Configuration by passint its id</li>
-</ul>
-<pre><code class="sh"> $ openbaton.sh Configuration-findById &lt;id-configuration&gt;
-</code></pre>
-
-<h3 id="virtual-link-subcommands"><strong>Virtual Link Subcommands</strong></h3>
-<p><strong>create</strong></p>
-<ul>
-<li>Create a Virtual Link</li>
-</ul>
-<pre><code class="sh"> $ openbaton.sh VirtualLink-create &lt;file.json&gt;
-</code></pre>
-
-<p><strong>delete</strong></p>
-<ul>
-<li>Delete a Virtual Link by passing its id</li>
-</ul>
-<pre><code class="sh"> $ openbaton.sh VirtualLink-delete &lt;id-virtual-link&gt;
-</code></pre>
-
-<p><strong>update</strong></p>
-<ul>
-<li>Update a Virtual Link passing the new object and the id of the old Virtual Link</li>
-</ul>
-<pre><code class="sh"> $ openbaton.sh VirtualLink-update &lt;file.json&gt; &lt;id-virtual-link&gt;
-</code></pre>
-
-<p><strong>findAll</strong></p>
-<ul>
-<li>Find all Virtual Links</li>
-</ul>
-<pre><code class="sh"> $ openbaton.sh VirtualLink-findAll
-</code></pre>
-
-<p><strong>findById</strong></p>
-<ul>
-<li>Find a Virtual Link by passing its id</li>
-</ul>
-<pre><code class="sh"> $ openbaton.sh VirtualLink-findById &lt;id-virtual-link&gt;
-</code></pre>
-
-<h3 id="vnfpackage-subcommands"><strong>VNFPackage Subcommands</strong></h3>
-<p><strong>create</strong></p>
-<ul>
-<li>Create a VNFPackage by uploading a tar file to the NFVO</li>
-</ul>
-<pre><code class="sh"> $ openbaton.sh VNFPackage-upload &lt;file.tar&gt;
-</code></pre>
-
-<p><strong>delete</strong></p>
-<ul>
-<li>Delete a VNFPackage by passing its id</li>
-</ul>
-<pre><code class="sh"> $ openbaton.sh VNFPackage-delete &lt;id-vnfPackage&gt;
-</code></pre>
-
-<p><strong>findAll</strong></p>
-<ul>
-<li>Find all VNFPackages</li>
-</ul>
-<pre><code class="sh"> $ openbaton.sh VNFPackage-findAll
-</code></pre>
-
-<p><strong>findById</strong></p>
-<ul>
-<li>Find a VNFPackage by passing its id</li>
-</ul>
-<pre><code class="sh"> $ openbaton.sh VNFPackage-findById &lt;id-vnfPackage&gt;
+<p>Simply add the <em>--debug</em> argument</p>
+<pre><code class="sh">openbaton --debug project list
+
+DEBUG:org.openbaton.cli.MainAgent:username 'admin'
+DEBUG:org.openbaton.cli.MainAgent:project_id '366bf453-2c0a-408a-b895-7687c2a58998'
+DEBUG:org.openbaton.cli.MainAgent:nfvo_ip 'localhost'
+DEBUG:org.openbaton.cli.MainAgent:nfvo_port '8080'
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost
+DEBUG:urllib3.connectionpool:http://localhost:8080 &quot;POST /oauth/token HTTP/1.1&quot; 200 244
+DEBUG:org.openbaton.cli.RestClient:Got token 3cdc2386-0389-4e04-bd95-a040ea47d7d7
+DEBUG:org.openbaton.cli.RestClient:executing get on url http://localhost:8080/api/v1/projects/, with headers: {'content-type': 'application/json', 'accept': 'application/json', 'Authorization': u'Bearer
+ 3cdc2386-0389-4e04-bd95-a040ea47d7d7', 'project-id': '366bf453-2c0a-408a-b895-7687c2a58998'}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost
+DEBUG:urllib3.connectionpool:http://localhost:8080 &quot;GET /api/v1/projects/ HTTP/1.1&quot; 200 182
+DEBUG:org.openbaton.cli.RestClient:Response status is: 200
+DEBUG:org.openbaton.cli.RestClient:
+
++--------------------------------------+---------+-----------------+
+| id                                   | name    | description     |
++======================================+=========+=================+
+| 366bf453-2c0a-408a-b895-7687c2a58998 | default | default project |
++--------------------------------------+---------+-----------------+
+</code></pre>
+
+<h3 id="create-vim-instance">Create vim instance</h3>
+<pre><code class="sh">openbaton vim create '{ &quot;name&quot;:&quot;pop-1&quot;, &quot;authUrl&quot;:&quot;http://127.0.0.1:5000/v3&quot;, &quot;tenant&quot;:&quot;my-tenant&quot;, &quot;username&quot;:&quot;admin&quot;, &quot;password&quot;:&quot;openbaton&quot;, &quot;type&quot;:&quot;test&quot;, &quot;location&quot;:{ &quot;name&quot;:&quot;Berlin&quot;, &quot;latitude&quot;:&quot;52.525876&quot;, &quot;longitude&quot;:&quot;13.314400&quot; }}'
+
+
++-----------+----------------------------------------+
+|    key    |                 value                  |
++===========+========================================+
+| name      |                                  pop-1 |
++-----------+----------------------------------------+
+| projectId |   366bf453-2c0a-408a-b895-7687c2a58998 |
++-----------+----------------------------------------+
+| id        |   8a96e0a4-21bd-4ab6-95c5-d2f1db57566d |
++-----------+----------------------------------------+
+| active    |                                   True |
++-----------+----------------------------------------+
+| authUrl   |               http://127.0.0.1:5000/v3 |
++-----------+----------------------------------------+
+| location  |                                 Berlin |
++-----------+----------------------------------------+
+| images    |                                   ids: |
+|           |                                        |
+|           | - 06735dfb-f833-4781-9452-7771e93b0e09 |
+|           | - 26009830-76cc-4432-b6cb-486e1bf34068 |
+|           | - 1bd8cae8-74d0-4bab-b260-f50187860b52 |
+|           | - e3eab43c-8fd8-489b-ae7e-929cca58cb59 |
+|           | - 0dcaadc0-7d3d-4eef-9098-91cb695c1403 |
+|           | - 02640d29-c2ce-4ae8-a8d2-bd7657a85b91 |
+|           | - 2602d0d3-5f39-4601-b595-30870cab1202 |
+|           | - 3b3632fe-0de4-4e04-a8e6-0403ee656b9b |
+|           | - 64badcf0-f018-4e32-98b6-6bca351eee83 |
+|           | - e643d544-6941-46f6-827d-93c820f58e3b |
+|           | - 0004a545-db2e-461c-96e9-6373716adc19 |
+|           | - bbe16b76-8cc3-4ec9-9a05-5063f8d904bb |
+|           | - 03781b76-cc18-489c-9375-dc786b2a14db |
+|           | - 76c8f35f-7571-4906-8e33-1252c5776ed6 |
+|           | - e20975cf-5c49-49ee-b7f0-331d9e5d4659 |
+|           | - 0d39815c-5640-4ebf-be60-8219ec4d04cb |
+|           | - 449832f2-5e5c-43d5-ae57-c2bd2110f945 |
+|           | - f318791e-cd6e-44d4-9b70-35daa2ba22af |
+|           | - beceb57d-b40e-49ac-a90b-2aec68cfa17e |
+|           | - 5b441646-f873-4d08-95f2-9018e5fd04dd |
+|           | - 194df8a2-a030-472a-a77a-54a8296948bd |
+|           | - f2de7984-30a1-4e16-add8-a163545ae90f |
+|           | - 986892d3-328e-498f-8dad-2a987467e6c4 |
+|           | - b6912a34-2387-43e2-bcf5-84827bea43d2 |
+|           | - 1d8e46ee-050c-4972-9850-49ccfa1aae2c |
++-----------+----------------------------------------+
+| shared    |                                  False |
++-----------+----------------------------------------+
+| type      |                                   test |
++-----------+----------------------------------------+
+| networks  |                                   ids: |
+|           |                                        |
+|           | - 5de7cd50-9c54-43b4-8a3d-98b4512c5c3a |
+|           | - b566f31e-f994-4150-a17f-80cdd93b5cbb |
+|           | - f7a9384a-810d-493d-802c-8c05c271a0ba |
+|           | - 77bf79bb-a0c8-4b21-bb66-b05c3a6694e3 |
+|           | - d8b05454-aa5c-40a4-88b2-b9105ed24f65 |
+|           | - 8f5f70d1-618c-4370-9794-e5824e57eaa7 |
+|           | - 5b9a0daf-151e-489e-89ec-3f107ee47a75 |
+|           | - b940ac87-52be-49a6-a77e-92a3392e69b9 |
+|           | - 03292dc8-7ef4-44a4-8071-03f4c0336d4f |
+|           | - 7f455e53-57b1-4536-bc91-8818ad783192 |
+|           | - 1b3f0e0e-4048-4dee-9680-1437eff1fb03 |
+|           | - 25ed7294-283b-44f5-94a9-aa77bbaba124 |
+|           | - 85739520-adfc-41ae-ae0f-bdfe5b2b76ae |
+|           | - 93b6cc9a-2490-4653-8bef-d66635535e92 |
+|           | - 52ca2c0d-c00a-4641-af34-4101096847a0 |
+|           | - d90adf1a-616a-4339-ab1f-370530092a1a |
+|           | - e18b7646-ac6e-41ad-8086-29af3a70370a |
+|           | - 80cd74d3-3dcb-450c-bb67-41f694640f12 |
+|           | - 4e392df7-5f21-435f-b8b0-7f9534f52eaf |
+|           | - 6fb15252-9fab-40f2-8070-1052518a7925 |
+|           | - 6969f6d8-de5a-4944-9cdf-3d09f3215876 |
+|           | - b391facf-80ff-45fc-bb69-6fa424628417 |
+|           | - fe9fba90-1ffd-47ff-a70f-1938bf4c83a2 |
+|           | - 4dd96ad8-8fd5-4d68-834b-2f121453049e |
+|           | - fb201778-153f-430d-aa72-14799e6bb284 |
++-----------+----------------------------------------+
+| hbVersion |                                      1 |
++-----------+----------------------------------------+
+</code></pre>
+
+<p>You can check the entities onboarded, for instance the vim instances:</p>
+<pre><code class="sh">openbaton vim list
+
++--------------------------------------+----------+--------------------------------+----------+------------+
+| id                                   | name     | authUrl                        |   tenant |   username |
++======================================+==========+================================+==========+============+
+| 6a72cb08-bd6e-4ef6-b4c1-fa06834fc9ac | vim-test | http://192.168.161.121:5000/v3 |          |            |
++--------------------------------------+----------+--------------------------------+----------+------------+
+| 8a96e0a4-21bd-4ab6-95c5-d2f1db57566d | pop-1    | http://127.0.0.1:5000/v3       |          |            |
++--------------------------------------+----------+--------------------------------+----------+------------+
+</code></pre>
+
+<p>and then delete what you don't need anymore:</p>
+<pre><code class="sh">openbaton vim delete 8a96e0a4-21bd-4ab6-95c5-d2f1db57566d
+Executed delete.
 </code></pre>
 
 <!---
