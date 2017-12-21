@@ -16,33 +16,33 @@
   
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,300,600,700" rel="stylesheet" type="text/css">
 
-  <link rel="stylesheet" href="./css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="./css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="./css/highlight.css">
-  <script src="./resources/w3.js"></script>
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  <script src="../resources/w3.js"></script>
   <link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
-  <link rel="stylesheet" href="./resources/styles.css">
-  <link rel="stylesheet" href="./resources/swagger-ui.css">
-  <link rel="stylesheet" href="./resources/swagger-ui_custom.css">
+  <link rel="stylesheet" href="../resources/styles.css">
+  <link rel="stylesheet" href="../resources/swagger-ui.css">
+  <link rel="stylesheet" href="../resources/swagger-ui_custom.css">
 
   
   <script>
     // Current page data
-    var mkdocs_page_name = "None";
-    var mkdocs_page_input_path = "index.md";
-    var mkdocs_page_url = "/";
-     var mkdocs_page_url = "/";
+    var mkdocs_page_name = "**HIDDEN**";
+    var mkdocs_page_input_path = "how-to-ec2-cli.md";
+    var mkdocs_page_url = "/how-to-ec2-cli/";
+     var mkdocs_page_url = "/how-to-ec2-cli/";
   </script>
   
   <!-- site_name == OpenBaton Documentation -->
-  <!-- page_title == None -->
-  <!-- base_url == . -->
-  <!-- current_page == Overview - / [*]
+  <!-- page_title == **HIDDEN** -->
+  <!-- base_url == .. -->
+  <!-- current_page == **HIDDEN** - /how-to-ec2-cli/ [*]
  -->
-  <script src="./js/jquery-2.1.1.min.js"> </script>
-  <script src="./js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="./js/highlight.pack.js"></script>
-  <script src="./js/theme.js"></script> 
+  <script src="../js/jquery-2.1.1.min.js"> </script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
 
   
   <script>
@@ -124,14 +124,14 @@ display: block;
 $( document).ready(function(){
       //console.log("test");
 
-    //$('.subnav').not( ":has('None')" ).hide();
+    //$('.subnav').not( ":has('**HIDDEN**')" ).hide();
     $('li.subnav_drop').find('ul.subnav').hide();
     //$('li.subnav_drop').find('ul.subnav').each(function(i,e){console.log(i,e)});
-       $( ".subnav" ).find( "li:contains('None')" ).each(function(i,e){
+       $( ".subnav" ).find( "li:contains('**HIDDEN**')" ).each(function(i,e){
           var currentElement = $(e);
           currentElement.parent().css({"display":"block","visibility":"visible"}); //css("background-color","blue");
           currentElement.css({"display":"block","visibility":"visible"});
-       });//$( ".subnav" ).find( "li:contains('None')" ).css("display","block");
+       });//$( ".subnav" ).find( "li:contains('**HIDDEN**')" ).css("display","block");
        //$(".current").css({"background-color":"blue","display":"block","visibility":"visible"});
        //show(1000,function(i,e){console.log(i,e)});
        //$('li.subnav_drop').find('ul.subnav').css("background-color","blue");
@@ -143,11 +143,11 @@ $( document).ready(function(){
 
 });
 
-$( ".wy-nav-content" ).find( "li:contains('None')" ).css('color','red');
+$( ".wy-nav-content" ).find( "li:contains('**HIDDEN**')" ).css('color','red');
 console.log('--------');
-console.log($( ".wy-nav-content" ).find( "div:contains('None')" ).css("color","red"));
+console.log($( ".wy-nav-content" ).find( "div:contains('**HIDDEN**')" ).css("color","red"));
 console.log('--------');
-console.log($( ".subnav" ).find( "li:contains('None')" ));
+console.log($( ".subnav" ).find( "li:contains('**HIDDEN**')" ));
 console.log('--------');
   </script>
 
@@ -162,7 +162,7 @@ console.log('--------');
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="brand" href="../../index.html"><img style="width: 120px;" src="./resources/images/logo1-default.png" class="img-responsive" title="openbaton" alt="openbaton" /></a>
+      <a class="brand" href="../../index.html"><img style="width: 120px;" src="../resources/images/logo1-default.png" class="img-responsive" title="openbaton" alt="openbaton" /></a>
     </div>
     <div class="collapse navbar-collapse" id="top-nav">
       <ul class="nav navbar-nav navbar-right">
@@ -206,10 +206,8 @@ console.log('--------');
         
              
 
-    <li class="toctree-l1 current">
-        <a class="current" href=".">Overview</a>
-        
-         
+    <li class="toctree-l1 ">
+        <a class="" href="..">Overview</a>
         
     </li>
 
@@ -231,7 +229,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="nfvo-installation/">Overview</a>
+        <a class="" href="../nfvo-installation/">Overview</a>
         
     </li>
 
@@ -240,7 +238,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="nfvo-installation-deb/">Install on Linux</a>
+        <a class="" href="../nfvo-installation-deb/">Install on Linux</a>
         
     </li>
 
@@ -249,7 +247,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="nfvo-installation-mac/">Install on MacOS</a>
+        <a class="" href="../nfvo-installation-mac/">Install on MacOS</a>
         
     </li>
 
@@ -258,7 +256,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="nfvo-installation-docker/">Install with Docker</a>
+        <a class="" href="../nfvo-installation-docker/">Install with Docker</a>
         
     </li>
 
@@ -267,7 +265,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="nfvo-installation-vagrant/">Install with Vagrant</a>
+        <a class="" href="../nfvo-installation-vagrant/">Install with Vagrant</a>
         
     </li>
 
@@ -276,7 +274,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="nfvo-configuration/">Configure it</a>
+        <a class="" href="../nfvo-configuration/">Configure it</a>
         
     </li>
 
@@ -298,7 +296,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="use/">Get Started</a>
+        <a class="" href="../use/">Get Started</a>
         
     </li>
 
@@ -307,7 +305,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="pop-registration/">Register a PoP</a>
+        <a class="" href="../pop-registration/">Register a PoP</a>
         
     </li>
 
@@ -316,7 +314,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="vnf-package/">Build your VNF Package</a>
+        <a class="" href="../vnf-package/">Build your VNF Package</a>
         
     </li>
 
@@ -325,7 +323,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="vnf-package-onboard/">On board your VNF Package</a>
+        <a class="" href="../vnf-package-onboard/">On board your VNF Package</a>
         
     </li>
 
@@ -334,7 +332,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="ns-descriptor/">Build your Network Service Descriptor</a>
+        <a class="" href="../ns-descriptor/">Build your Network Service Descriptor</a>
         
     </li>
 
@@ -343,7 +341,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="ns-descriptor-onboard/">On board your Network Service Descriptor</a>
+        <a class="" href="../ns-descriptor-onboard/">On board your Network Service Descriptor</a>
         
     </li>
 
@@ -352,7 +350,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="launch-nsd/">Launch your Network Service</a>
+        <a class="" href="../launch-nsd/">Launch your Network Service</a>
         
     </li>
 
@@ -374,7 +372,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="tutorial/">Tutorials overview</a>
+        <a class="" href="../tutorial/">Tutorials overview</a>
         
     </li>
 
@@ -383,7 +381,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="dummy-NSR/">Dummy NS</a>
+        <a class="" href="../dummy-NSR/">Dummy NS</a>
         
     </li>
 
@@ -392,7 +390,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="iperf-NSR/">Iperf NS</a>
+        <a class="" href="../iperf-NSR/">Iperf NS</a>
         
     </li>
 
@@ -401,7 +399,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="tutorial-sipp/">SIPp NS</a>
+        <a class="" href="../tutorial-sipp/">SIPp NS</a>
         
     </li>
 
@@ -410,7 +408,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="ims-NSR/">OpenIMSCore NS</a>
+        <a class="" href="../ims-NSR/">OpenIMSCore NS</a>
         
     </li>
 
@@ -419,7 +417,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="tutorial-juju/">OpenIMSCore NS with Juju VNFM</a>
+        <a class="" href="../tutorial-juju/">OpenIMSCore NS with Juju VNFM</a>
         
     </li>
 
@@ -428,7 +426,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="fms-sipp-tutorial/">Fault Management System</a>
+        <a class="" href="../fms-sipp-tutorial/">Fault Management System</a>
         
     </li>
 
@@ -437,7 +435,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="tutorial-docker/">Docker Tutorials</a>
+        <a class="" href="../tutorial-docker/">Docker Tutorials</a>
         
     </li>
 
@@ -459,7 +457,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="nfvo-how-to-use-gui/">Dashboard</a>
+        <a class="" href="../nfvo-how-to-use-gui/">Dashboard</a>
         
     </li>
 
@@ -468,7 +466,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="nfvo-how-to-use-cli/">CLI</a>
+        <a class="" href="../nfvo-how-to-use-cli/">CLI</a>
         
     </li>
 
@@ -477,7 +475,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="nfvo-sdk/">Open Baton SDKs</a>
+        <a class="" href="../nfvo-sdk/">Open Baton SDKs</a>
         
     </li>
 
@@ -486,7 +484,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="api/">NFVO REST APIs</a>
+        <a class="" href="../api/">NFVO REST APIs</a>
         
     </li>
 
@@ -508,7 +506,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="vim-driver/">VIM drivers overview</a>
+        <a class="" href="../vim-driver/">VIM drivers overview</a>
         
     </li>
 
@@ -517,7 +515,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="openstack-driver/">OpenStack VIM Driver</a>
+        <a class="" href="../openstack-driver/">OpenStack VIM Driver</a>
         
     </li>
 
@@ -526,7 +524,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="docker-driver/">Docker VIM Driver</a>
+        <a class="" href="../docker-driver/">Docker VIM Driver</a>
         
     </li>
 
@@ -535,7 +533,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="test-driver/">Test VIM Driver</a>
+        <a class="" href="../test-driver/">Test VIM Driver</a>
         
     </li>
 
@@ -544,7 +542,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="vim-driver-create/">Build your own VIM Driver</a>
+        <a class="" href="../vim-driver-create/">Build your own VIM Driver</a>
         
     </li>
 
@@ -566,7 +564,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="vnfm-intro/">VNFM overview</a>
+        <a class="" href="../vnfm-intro/">VNFM overview</a>
         
     </li>
 
@@ -575,7 +573,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="vnfm-generic/">Generic VNFM</a>
+        <a class="" href="../vnfm-generic/">Generic VNFM</a>
         
     </li>
 
@@ -584,7 +582,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="vnfm-juju/">Juju VNFM</a>
+        <a class="" href="../vnfm-juju/">Juju VNFM</a>
         
     </li>
 
@@ -593,7 +591,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="vnfm-docker/">Docker VNFM</a>
+        <a class="" href="../vnfm-docker/">Docker VNFM</a>
         
     </li>
 
@@ -602,7 +600,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="vnfm-how-to-write/">Develop a VNFM</a>
+        <a class="" href="../vnfm-how-to-write/">Develop a VNFM</a>
         
     </li>
 
@@ -611,7 +609,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="vnfm-vendor-specific/">Integrate your own VNFM</a>
+        <a class="" href="../vnfm-vendor-specific/">Integrate your own VNFM</a>
         
     </li>
 
@@ -633,7 +631,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="monitoring/">Monitoring overview</a>
+        <a class="" href="../monitoring/">Monitoring overview</a>
         
     </li>
 
@@ -642,7 +640,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="zabbix-plugin/">Zabbix plugin</a>
+        <a class="" href="../zabbix-plugin/">Zabbix plugin</a>
         
     </li>
 
@@ -664,7 +662,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="services/">Services overview</a>
+        <a class="" href="../services/">Services overview</a>
         
     </li>
 
@@ -673,7 +671,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="autoscaling/">Autoscaling overview</a>
+        <a class="" href="../autoscaling/">Autoscaling overview</a>
         
     </li>
 
@@ -682,7 +680,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="fault-management/">FM overview</a>
+        <a class="" href="../fault-management/">FM overview</a>
         
     </li>
 
@@ -691,7 +689,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="network-slicing/">NS overview</a>
+        <a class="" href="../network-slicing/">NS overview</a>
         
     </li>
 
@@ -713,7 +711,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="marketplace/">Marketplace overview</a>
+        <a class="" href="../marketplace/">Marketplace overview</a>
         
     </li>
 
@@ -735,7 +733,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="nfvo-architecture/">NFVO Architecture</a>
+        <a class="" href="../nfvo-architecture/">NFVO Architecture</a>
         
     </li>
 
@@ -744,7 +742,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="how-to-register-event/">The Event Engine</a>
+        <a class="" href="../how-to-register-event/">The Event Engine</a>
         
     </li>
 
@@ -753,7 +751,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="security/">Identity management</a>
+        <a class="" href="../security/">Identity management</a>
         
     </li>
 
@@ -762,7 +760,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="integration-test-use/">Continuous Integration</a>
+        <a class="" href="../integration-test-use/">Continuous Integration</a>
         
     </li>
 
@@ -784,7 +782,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="FAQ/">FAQ</a>
+        <a class="" href="../FAQ/">FAQ</a>
         
     </li>
 
@@ -871,58 +869,270 @@ console.log('--------');
                     <div role="main">
                       <div class="section">
                         
-                          <h1 id="open-baton">Open Baton</h1>
-<p>Open Baton is an open source platform providing a comprehensive implementation of the ETSI NFV Management and Orchestration (MANO) specification.</p>
-<p><img alt="Open Baton architecture" src="./images/openbaton-release-5.png" /></p>
-<h2 id="main-components">Main components</h2>
-<p>Open Baton provides many different features and components:</p>
-<ul>
-<li>A Network Function Virtualisation Orchestrator (NFVO) completely designed and implemented following the ETSI MANO specification. Read more <a href="./nfvo-installation">here</a></li>
-<li>A generic Virtual Network Function Manager (VNFM) and Generic Element Management System (EMS) able to manage the lifecycle of VNFs based on their descriptors. Read more <a href="./vnfm-generic">here</a></li>
-<li>A Juju VNFM Adapter in order to deploy Juju Charms or Open Baton VNF Packages using the Juju VNFM. Read more <a href="./vnfm-juju">here</a></li>
-<li>A driver mechanism supporting different type of VIMs without having to re-write anything in the orchestration logic. Read more <a href="./vim-driver">here</a></li>
-<li>A Docker VNFM and VIM driver for instantiating containers on top of Docker Engine / Docker Swarm </li>
-<li>A powerful event engine based on a pub/sub mechanism for the dispatching of the lifecycle events execution. Read more <a href="./how-to-register-event">here</a></li>
-<li>An autoscaling engine which can be used for automatic runtime management of the scaling operation operations of your VNFs. Read more <a href="https://github.com/openbaton/autoscaling">here</a></li>
-<li>A fault management system which can be used for automatic runtime management of faults which may occur at any level. Read more <a href="https://github.com/openbaton/fm-system">here</a></li>
-<li>A network slicing engine which can be used to ensure a specific QoS for your NS. Read more <a href="https://github.com/openbaton/network-slicing-engine">here</a></li>
-<li>A monitoring plugin integrating Zabbix as monitoring system. Read more <a href="./zabbix-plugin">here</a></li>
-<li>A <a href="http://marketplace.openbaton.org">Marketplace</a> useful for downloading VNFs compatible with the Open Baton NFVO and VNFMs. Read more at <a href="./marketplace">here</a></li>
-<li>A set of libraries (in Java, Go and Python) which could be used for building your own VNFM. Read more <a href="https://github.com/openbaton/openbaton-libs">here</a></li>
-</ul>
-<h2 id="get-started">Get started</h2>
-<p>In order to get started, first step is to install the framework. You can follow the <a href="./nfvo-installation">installation guide</a> for getting started immediately on several different Operating Systems / virtualization platforms.</p>
-<h2 id="learn-more">Learn more</h2>
-<p>Please refer to the "Tutorials" and "Learn More" sections for having more information on what you can do with Open Baton. You can also learn more via our video tutorials published on the Open Baton <a href="https://www.youtube.com/channel/UCYXY4rGKrKbBNheClFEKaAw">Youtube Channel</a>.</p>
-<h2 id="few-words-about-etsi-nfv">Few words about ETSI NFV</h2>
-<p>ETSI NFV represents a concerted telco operator initiative fostering the development of virtual network infrastructures by porting and further adapting network functions to the specific cloud environment.
-ETSI NFV has defined a large set of virtualisation use cases, spanning from the cloudification of the main core network functions such as IMS, Evolved Packet Core, and Radio Access Networks, as well as providing on demand and complete virtualised infrastructures as IaaS or PaaS to third parties, such as enterprises and professional radio.
-That enables providing elastic deployments of cost efficient network infrastructures.
-One of the main concerns of ETSI NFV is to prove the feasibility of the cloud deployments of the typical network functions through proof of concept trials and prototypes as well as providing indications for further standardization in the areas of underlying infrastructures, software architectures, networking and management, and orchestration to improve performance and grant security of the overall infrastructure.
-ETSI NFV limits itself to this level of indications, considering that other standardization bodies and de-facto open source standards should finalize the specific implementation work.</p>
-<h2 id="get-in-touch-with-the-support-teams">Get in touch with the support teams</h2>
-<ul>
-<li>Via twitter: <a href="https://twitter.com/openbaton">twitter</a></li>
-<li>Subscribing to our mailing list: <a href="mailto:listen@openbaton.org?subject=subscribe%20users">users-at-openbaton-dot-org</a></li>
-<li>Sending us an email to: <a href="mailto:info@openbaton.org">info-at-openbaton-dot-org</a></li>
-</ul>
-<h2 id="supported-by">Supported by</h2>
-<p>Open Baton is a project developed by Fraunhofer FOKUS and TU Berlin. It is supported by different European publicly funded projects: <a href="https://www.nubomedia.eu/">NUBOMEDIA</a>, <a href="http://mobile-cloud-networking.eu/site/">Mobile Cloud Networking</a>, and <a href="https://www.softfire.eu/">SoftFIRE</a>. Open Baton represents also one of the main components of the <a href="http://www.5g-berlin.org/">5G Berlin</a> initiative.  </p>
-<!---
- Script for open external links in a new tab
--->
+                          <h1 id="step-by-step-guide-using-aws-python-client">Step-By-Step guide using aws python client:</h1>
+<p>Install python pip with command:</p>
+<pre><code class="bash">sudo apt-get install python-pip
+</code></pre>
 
-<script type="text/javascript" charset="utf-8">
-      // Creating custom :external selector
-      $.expr[':'].external = function(obj){
-          return !obj.href.match(/^mailto\:/)
-                  && (obj.hostname != location.hostname);
-      };
-      $(function(){
-        $('a:external').addClass('external');
-        $(".external").attr('target','_blank');
-      })
-</script>
+<p>Install aws client:</p>
+<pre><code class="bash">sudo pip install awscli --upgrade
+</code></pre>
+
+<p>After you have installed the client check if it was properly installed by calling:</p>
+<pre><code class="bash">aws --version
+</code></pre>
+
+<p>Next you can configure your AWS profile with the command:</p>
+<pre><code class="bash">aws configure
+AWS Access Key ID [None]: &lt;your key id, which later will be used as username in PoP descriptor&gt;
+AWS Secret Access Key [None]: &lt;your secret key which will be used as password&gt;
+Default region name [None]:&lt; default region name which will go inside desciptor as location name&gt;
+Default output format [None]: json
+</code></pre>
+
+<p>The code of the regions can be found <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">here</a>. You can also find region names by typing:</p>
+<pre><code class="bash">aws ec2 describe-regions --output table
+</code></pre>
+
+<p>After you have setup your account you can start setting up your service environment. For more information about setting up your credentials, please, visit the official Amazon guide <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html">here</a>.</p>
+<p>You can work with default VPC or create a new one. You can list the VPCs existing in your default region by typing</p>
+<pre><code class="bash">aws ec2 describe-vpcs --output table
+---------------------------------------------------------------------------------------------------
+|                                          DescribeVpcs                                           |
++-------------------------------------------------------------------------------------------------+
+||                                             Vpcs                                              ||
+|+---------------+----------------+------------------+------------+-------------+----------------+|
+||   CidrBlock   | DhcpOptionsId  | InstanceTenancy  | IsDefault  |    State    |     VpcId      ||
+|+---------------+----------------+------------------+------------+-------------+----------------+|
+||  172.31.0.0/16|  ------------- |  default         |  True      |  available  |  ------------  ||
+|+---------------+----------------+------------------+------------+-------------+----------------+|
+|||                                   CidrBlockAssociationSet                                   |||
+||+--------------------------------------------------------+------------------------------------+||
+|||                      AssociationId                     |             CidrBlock              |||
+||+--------------------------------------------------------+------------------------------------+||
+|||  ---------------                    |  172.31.0.0/16                                        |||
+||+--------------------------------------------------------+------------------------------------+||
+||||                                      CidrBlockState                                       ||||
+|||+----------------------------------+--------------------------------------------------------+|||
+||||  State                           |  associated                                            ||||
+|||+----------------------------------+--------------------------------------------------------+|||
+
+</code></pre>
+
+<p>If you want to create a new VPC use this command:</p>
+<pre><code class="bash">aws ec2 create-vpc --cidr-block &lt;your-cidr-block&gt;
+</code></pre>
+
+<p>In both cases you will need to assign the name to the VPC in order for Open Baton to identify it. You can do it via creating tags with a command like this</p>
+<pre><code class="bash">aws ec2 create-tags --resource &lt;VpcId from the table&gt; --tags Key=Name,Value=&lt;your VPC name, will be used as tenant name in PoP description&gt;
+</code></pre>
+
+<p>For more information about the customization of VPCs during creation and by using tags, please, visit the official documentation for <a href="http://docs.aws.amazon.com/cli/latest/reference/ec2/create-vpc.html">create-vpc command</a> and <a href="http://docs.aws.amazon.com/cli/latest/reference/ec2/create-tags.html">create-tags command</a>.</p>
+<p>Create a security group and use the default one. You can list the groups with the command:</p>
+<pre><code class="bash">aws ec2 describe-security-groups --output table
+</code></pre>
+
+<p>You can also filter the groups by using the Vpc ID like this:</p>
+<pre><code class="bash">aws ec2 describe-security-groups --filters Name=vpc-id,Values=&lt;your VPC ID&gt; --output table
+----------------------------------------------------------------------------------------------
+|                                   DescribeSecurityGroups                                   |
++--------------------------------------------------------------------------------------------+
+||                                      SecurityGroups                                      ||
+|+-----------------------------+--------------+------------+---------------+----------------+|
+||         Description         |   GroupId    | GroupName  |    OwnerId    |     VpcId      ||
+|+-----------------------------+--------------+------------+---------------+----------------+|
+||  default VPC security group |  sg-d337e4b9 |  default   |  _-----------|| -------------  ||
+|+-----------------------------+--------------+------------+---------------+----------------+|
+|||                                      IpPermissions                                     |||
+||+----------------------------------------------------------------------------------------+||
+|||                                       IpProtocol                                       |||
+||+----------------------------------------------------------------------------------------+||
+|||  -1                                                                                    |||
+||+----------------------------------------------------------------------------------------+||
+||||                                   UserIdGroupPairs                                   ||||
+|||+-----------------------------------------+--------------------------------------------+|||
+||||                 GroupId                 |                  UserId                    ||||
+|||+-----------------------------------------+--------------------------------------------+|||
+||||  -----------                            |  894307506440                              ||||
+|||+-----------------------------------------+--------------------------------------------+|||
+|||                                   IpPermissionsEgress                                  |||
+||+----------------------------------------------------------------------------------------+||
+|||                                       IpProtocol                                       |||
+||+----------------------------------------------------------------------------------------+||
+|||  -1                                                                                    |||
+||+----------------------------------------------------------------------------------------+||
+||||                                       IpRanges                                       ||||
+|||+--------------------------------------------------------------------------------------+|||
+||||                                        CidrIp                                        ||||
+|||+--------------------------------------------------------------------------------------+|||
+||||  0.0.0.0/0                                                                           ||||
+|||+--------------------------------------------------------------------------------------+|||
+
+</code></pre>
+
+<p>You can create a new group by using the command:</p>
+<pre><code class="bash">aws create-security-group --group-name &lt;name&gt; --description &lt;description&gt; 
+#Which will return group id that can be used to modify the group
+{
+    &quot;GroupId&quot;: &quot;-----&quot;
+}
+
+</code></pre>
+
+<p>You can use the ID of the group to set the correct permissions and open the correct ports for your services. For example:</p>
+<pre><code class="bash">aws ec2 authorize-security-group-ingress --group-name &lt;group-name&gt; --protocol tcp --port 22 --cidr 0.0.0.0/0
+</code></pre>
+
+<p>will enable inbound SSH traffic. You will need it to SSH into the instances. For more information about security group create and customisation you can visit following documentation pages: <a href="http://docs.aws.amazon.com/cli/latest/reference/ec2/create-security-group.html">creating</a>, <a href="http://docs.aws.amazon.com/cli/latest/reference/ec2/authorize-security-group-ingress.html">traffic rules</a> and <a href="http://docs.aws.amazon.com/cli/latest/reference/ec2/describe-security-groups.html">description</a> of the security groups.</p>
+<p>Now you can create key-pair in order to SSH inside the created instances. You can do it by issuing the following command</p>
+<pre><code class="bash">#Create a key and write the data to file
+aws ec2 create-key-pair --key-name aws-key --query 'KeyMaterial' --output text &gt; aws-key.pem
+#Set the proper permissions if on Linux
+chmod 400 aws-key.pem
+</code></pre>
+
+<p>Use:</p>
+<pre><code class="bash">aws ec2 describe-key-pairs
+</code></pre>
+
+<p>to view the create keys and their fingerprint.</p>
+<p><strong>Only in case you are using the generic VNFM and generic EMS you will need a RabbitMQ instance reachable from the VNF instances</strong></p>
+<p>One of the solutions is to create an instance inside AWS because it will have a public ip. For this we recommend to create an instance on Ubuntu 14 or 16. and  t2.micro type. 
+Due to the very high number of images on AWS marketplace it is not advised to attept describe-image command in order to find a suitable image for rabbitmq instance, we recommend using the command</p>
+<pre><code class="bash">aws ec2 describe-images --filters Name=name,Values=ubuntu/images/hvm-ssd/ubuntu-xenial-16.04-amd64-server-20170721 --output table
+
+----------------------------------------------------------------------------------------------------------
+|                                             DescribeImages                                             |
++--------------------------------------------------------------------------------------------------------+
+||                                                Images                                                ||
+|+--------------------+---------------------------------------------------------------------------------+|
+||  Architecture      |  x86_64                                                                         ||
+||  CreationDate      |  2017-07-24T20:27:25.000Z                                                       ||
+||  Description       |  Canonical, Ubuntu, 16.04 LTS, amd64 xenial image build on 2017-07-21           ||
+||  EnaSupport        |  True                                                                           ||
+||  Hypervisor        |  xen                                                                            ||
+||  ImageId           |  ami-996372fd                                                                   ||
+||  ImageLocation     |  099720109477/ubuntu/images/hvm-ssd/ubuntu-xenial-16.04-amd64-server-20170721   ||
+||  ImageType         |  machine                                                                        ||
+||  Name              |  ubuntu/images/hvm-ssd/ubuntu-xenial-16.04-amd64-server-20170721                ||
+||  OwnerId           |  099720109477                                                                   ||
+||  Public            |  True                                                                           ||
+||  RootDeviceName    |  /dev/sda1                                                                      ||
+||  RootDeviceType    |  ebs                                                                            ||
+||  SriovNetSupport   |  simple                                                                         ||
+||  State             |  available                                                                      ||
+||  VirtualizationType|  hvm                                                                            ||
+|+--------------------+---------------------------------------------------------------------------------+|
+|||                                         BlockDeviceMappings                                        |||
+||+-----------------------------------------------------+----------------------------------------------+||
+|||  DeviceName                                         |  /dev/sda1                                   |||
+|||  VirtualName                                        |                                              |||
+||+-----------------------------------------------------+----------------------------------------------+||
+||||                                                Ebs                                               ||||
+|||+---------------------------------------------+----------------------------------------------------+|||
+||||  DeleteOnTermination                        |  True                                              ||||
+||||  Encrypted                                  |  False                                             ||||
+||||  SnapshotId                                 |  snap-04757784173dd4fc9                            ||||
+||||  VolumeSize                                 |  8                                                 ||||
+||||  VolumeType                                 |  gp2                                               ||||
+|||+---------------------------------------------+----------------------------------------------------+|||
+|||                                         BlockDeviceMappings                                        |||
+||+---------------------------------------------------+------------------------------------------------+||
+|||  DeviceName                                       |  /dev/sdb                                      |||
+|||  VirtualName                                      |  ephemeral0                                    |||
+||+---------------------------------------------------+------------------------------------------------+||
+|||                                         BlockDeviceMappings                                        |||
+||+---------------------------------------------------+------------------------------------------------+||
+|||  DeviceName                                       |  /dev/sdc                                      |||
+|||  VirtualName                                      |  ephemeral1                                    |||
+||+---------------------------------------------------+------------------------------------------------+||
+
+</code></pre>
+
+<p>in order to retrieve information about the image which will contain the image-id. This image should be present in most regions. 
+Assigning correct security group is very important. Make sure that SHH port is open for 
+you to get access inside the machine. 
+| Name                        | Protocol | Port  | IP range                                  |
+|-----------------------------|----------|-------|-------------------------------------------|
+| SSH                         | TCP      | 22    | Ip of the machine you are using or any ip |
+| Rabbitmq communication port | TCP      | 5672  | Anywhere                                  |
+| Rabbitmq management port    | TCP      | 15672 | Administration IP                         |
+Create instance:</p>
+<pre><code class="bash">aws ec2 run-instance --image-id &lt;retrieved-id&gt; --security-groups &quot;&lt;group-name&gt;&quot; --instance-type t2.micro --key-name aws-key
+</code></pre>
+
+<p>After you have created the instance you will be presented with information about it. Find instance-id and use it to retrieve fully formed information include public DNS which we can use to ssh into system. </p>
+<pre><code class="bash"> aws ec2 describe-instances --instance-ids &quot;&lt;instance-id&gt;&quot;
+</code></pre>
+
+<p>Give the name to the created instance:</p>
+<pre><code class="bash">aws ec2 create-tags --resource &lt;instance-id&gt; --tags Key=Name,Value=rabbitmq
+</code></pre>
+
+<p>Assigning correct security group is very important. Make sure that SHH port is open for 
+you to get access inside the machine. 
+Open the ports for the rabbitmq:</p>
+<pre><code class="bash">aws ec2 authorize-security-group-ingress --group-name &lt;group-name&gt; --protocol tcp --port 5672 --cidr &lt;your components ips&gt;
+aws ec2 authorize-security-group-ingress --group-name &lt;group-name&gt; --protocol tcp --port 15672 --cidr &lt;your-ip&gt;
+</code></pre>
+
+<p>SSH into the created machine via</p>
+<pre><code class="bash">ssh -i &quot;aws-key.pem&quot; ubuntu@&lt;rabbitmq-ip-or-dns&gt;
+</code></pre>
+
+<p>From here you have multiple ways of installing rabbitmq server
+the most basic one is to install it directly with these bash commands:</p>
+<pre><code class="bash">sudo apt-get update
+sudo apt-get install rabbitmq-server
+</code></pre>
+
+<p>Create a user for openbaton with these commands:</p>
+<pre><code class="bash">sudo rabbitmqctl add_user &lt;user-name&gt; &lt;user-password&gt;
+sudo rabbitmqctl set_user_tags &lt;user-name&gt; administrator
+sudo rabbitmqctl set_permissions -p / &lt;user-name&gt; &quot;.*&quot; &quot;.*&quot; &quot;.*&quot;
+</code></pre>
+
+<p>You can also enable rabbitmq management plugin if you want to use rabbitmq web GUI:</p>
+<pre><code class="bash">sudo rabbitmq-plugins enable rabbitmq_management
+</code></pre>
+
+<p>You can also use rabbitmq docker container. </p>
+<p>Once the rabbitmq instance is up and running you can set the correct broker ip in the properties of NFVO 
+and generic. 
+ <code>properties
+nfvo.rabbit.brokerIp=&lt;url or ip&gt;</code></p>
+<pre><code class="properties">vnfm.rabbitmq.brokerIp=&lt;url or ip&gt;
+</code></pre>
+
+<p>After this find an images you would like to use and copy it inside the properties of the plugin</p>
+<pre><code class="properties">type = amazon
+external-properties-file = /etc/openbaton/plugin/amazon/driver.properties
+image-key-word = ami-10547475,ami-8a7859ef,ami-f990b69c,ami-43391926
+</code></pre>
+
+<p>Please, be aware that identical images most likey will have different AMI IDs in different regions.
+Once all the properties are correctly set, launch the Open Baton components and open the NFVO dashboard and upload the VIM, 
+if you choose to use JSON file then the content should look like this</p>
+<pre><code class="json">{
+  &quot;name&quot;:&quot;amazon&quot;,
+  &quot;authUrl&quot;:&quot;http://google.com&quot;,
+  &quot;tenant&quot;:&quot;VPC1&quot;,
+  &quot;username&quot;:&quot;&lt;key&gt;&quot;,
+  &quot;password&quot;:&quot;&lt;secret-key&gt;&quot;,
+  &quot;keyPair&quot;:&quot;aws-key&quot;,
+  &quot;securityGroups&quot;: [
+    &quot;default&quot;
+  ],
+  &quot;type&quot;:&quot;amazon&quot;,
+  &quot;location&quot;:{
+    &quot;name&quot;:&quot;eu-west-1&quot;,
+    &quot;latitude&quot;:&quot;52.525876&quot;,
+    &quot;longitude&quot;:&quot;13.314400&quot;
+  }
+}
+</code></pre>
+
+<p>Upload it and look through the retrieved resources. </p>
                         
                       </div>
                     </div>
@@ -931,8 +1141,10 @@ ETSI NFV limits itself to this level of indications, considering that other stan
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="nfvo-installation/" class="btn btn-neutral float-right" title="Overview">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../how-to-ec2-dashboard/" class="btn btn-neutral float-right" title="**HIDDEN**">Next <span class="icon icon-circle-arrow-right"></span></a>
       
+      
+        <a href="../docker-driver/" class="btn btn-neutral" title="**HIDDEN**"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -956,11 +1168,11 @@ ETSI NFV limits itself to this level of indications, considering that other stan
 
 </div>
 <!-- jQuery -->
-<script src="./resources/jquery-3.2.1.min.js"></script>
-<script src="./resources/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-<script src="./resources/scripts.js"></script>
-<script src="./resources/swagger-ui-bundle.js"></script>
-<script src="./resources/swagger-ui-standalone-preset.js"></script>
+<script src="../resources/jquery-3.2.1.min.js"></script>
+<script src="../resources/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="../resources/scripts.js"></script>
+<script src="../resources/swagger-ui-bundle.js"></script>
+<script src="../resources/swagger-ui-standalone-preset.js"></script>
 <script>
     $(document).ready(function () {
         $(window).scroll(function () {
@@ -1355,9 +1567,4 @@ ETSI NFV limits itself to this level of indications, considering that other stan
 
 </body>
 </html>
-
-<!--
-MkDocs version : 0.16.2
-Build Date UTC : 2017-12-21 22:43:56
--->
 

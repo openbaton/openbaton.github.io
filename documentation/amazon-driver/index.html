@@ -16,33 +16,33 @@
   
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,300,600,700" rel="stylesheet" type="text/css">
 
-  <link rel="stylesheet" href="./css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="./css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="./css/highlight.css">
-  <script src="./resources/w3.js"></script>
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  <script src="../resources/w3.js"></script>
   <link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
-  <link rel="stylesheet" href="./resources/styles.css">
-  <link rel="stylesheet" href="./resources/swagger-ui.css">
-  <link rel="stylesheet" href="./resources/swagger-ui_custom.css">
+  <link rel="stylesheet" href="../resources/styles.css">
+  <link rel="stylesheet" href="../resources/swagger-ui.css">
+  <link rel="stylesheet" href="../resources/swagger-ui_custom.css">
 
   
   <script>
     // Current page data
-    var mkdocs_page_name = "None";
-    var mkdocs_page_input_path = "index.md";
-    var mkdocs_page_url = "/";
-     var mkdocs_page_url = "/";
+    var mkdocs_page_name = "**HIDDEN**";
+    var mkdocs_page_input_path = "amazon-driver.md";
+    var mkdocs_page_url = "/amazon-driver/";
+     var mkdocs_page_url = "/amazon-driver/";
   </script>
   
   <!-- site_name == OpenBaton Documentation -->
-  <!-- page_title == None -->
-  <!-- base_url == . -->
-  <!-- current_page == Overview - / [*]
+  <!-- page_title == **HIDDEN** -->
+  <!-- base_url == .. -->
+  <!-- current_page == **HIDDEN** - /amazon-driver/ [*]
  -->
-  <script src="./js/jquery-2.1.1.min.js"> </script>
-  <script src="./js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="./js/highlight.pack.js"></script>
-  <script src="./js/theme.js"></script> 
+  <script src="../js/jquery-2.1.1.min.js"> </script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
 
   
   <script>
@@ -124,14 +124,14 @@ display: block;
 $( document).ready(function(){
       //console.log("test");
 
-    //$('.subnav').not( ":has('None')" ).hide();
+    //$('.subnav').not( ":has('**HIDDEN**')" ).hide();
     $('li.subnav_drop').find('ul.subnav').hide();
     //$('li.subnav_drop').find('ul.subnav').each(function(i,e){console.log(i,e)});
-       $( ".subnav" ).find( "li:contains('None')" ).each(function(i,e){
+       $( ".subnav" ).find( "li:contains('**HIDDEN**')" ).each(function(i,e){
           var currentElement = $(e);
           currentElement.parent().css({"display":"block","visibility":"visible"}); //css("background-color","blue");
           currentElement.css({"display":"block","visibility":"visible"});
-       });//$( ".subnav" ).find( "li:contains('None')" ).css("display","block");
+       });//$( ".subnav" ).find( "li:contains('**HIDDEN**')" ).css("display","block");
        //$(".current").css({"background-color":"blue","display":"block","visibility":"visible"});
        //show(1000,function(i,e){console.log(i,e)});
        //$('li.subnav_drop').find('ul.subnav').css("background-color","blue");
@@ -143,11 +143,11 @@ $( document).ready(function(){
 
 });
 
-$( ".wy-nav-content" ).find( "li:contains('None')" ).css('color','red');
+$( ".wy-nav-content" ).find( "li:contains('**HIDDEN**')" ).css('color','red');
 console.log('--------');
-console.log($( ".wy-nav-content" ).find( "div:contains('None')" ).css("color","red"));
+console.log($( ".wy-nav-content" ).find( "div:contains('**HIDDEN**')" ).css("color","red"));
 console.log('--------');
-console.log($( ".subnav" ).find( "li:contains('None')" ));
+console.log($( ".subnav" ).find( "li:contains('**HIDDEN**')" ));
 console.log('--------');
   </script>
 
@@ -162,7 +162,7 @@ console.log('--------');
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="brand" href="../../index.html"><img style="width: 120px;" src="./resources/images/logo1-default.png" class="img-responsive" title="openbaton" alt="openbaton" /></a>
+      <a class="brand" href="../../index.html"><img style="width: 120px;" src="../resources/images/logo1-default.png" class="img-responsive" title="openbaton" alt="openbaton" /></a>
     </div>
     <div class="collapse navbar-collapse" id="top-nav">
       <ul class="nav navbar-nav navbar-right">
@@ -206,10 +206,8 @@ console.log('--------');
         
              
 
-    <li class="toctree-l1 current">
-        <a class="current" href=".">Overview</a>
-        
-         
+    <li class="toctree-l1 ">
+        <a class="" href="..">Overview</a>
         
     </li>
 
@@ -231,7 +229,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="nfvo-installation/">Overview</a>
+        <a class="" href="../nfvo-installation/">Overview</a>
         
     </li>
 
@@ -240,7 +238,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="nfvo-installation-deb/">Install on Linux</a>
+        <a class="" href="../nfvo-installation-deb/">Install on Linux</a>
         
     </li>
 
@@ -249,7 +247,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="nfvo-installation-mac/">Install on MacOS</a>
+        <a class="" href="../nfvo-installation-mac/">Install on MacOS</a>
         
     </li>
 
@@ -258,7 +256,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="nfvo-installation-docker/">Install with Docker</a>
+        <a class="" href="../nfvo-installation-docker/">Install with Docker</a>
         
     </li>
 
@@ -267,7 +265,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="nfvo-installation-vagrant/">Install with Vagrant</a>
+        <a class="" href="../nfvo-installation-vagrant/">Install with Vagrant</a>
         
     </li>
 
@@ -276,7 +274,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="nfvo-configuration/">Configure it</a>
+        <a class="" href="../nfvo-configuration/">Configure it</a>
         
     </li>
 
@@ -298,7 +296,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="use/">Get Started</a>
+        <a class="" href="../use/">Get Started</a>
         
     </li>
 
@@ -307,7 +305,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="pop-registration/">Register a PoP</a>
+        <a class="" href="../pop-registration/">Register a PoP</a>
         
     </li>
 
@@ -316,7 +314,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="vnf-package/">Build your VNF Package</a>
+        <a class="" href="../vnf-package/">Build your VNF Package</a>
         
     </li>
 
@@ -325,7 +323,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="vnf-package-onboard/">On board your VNF Package</a>
+        <a class="" href="../vnf-package-onboard/">On board your VNF Package</a>
         
     </li>
 
@@ -334,7 +332,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="ns-descriptor/">Build your Network Service Descriptor</a>
+        <a class="" href="../ns-descriptor/">Build your Network Service Descriptor</a>
         
     </li>
 
@@ -343,7 +341,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="ns-descriptor-onboard/">On board your Network Service Descriptor</a>
+        <a class="" href="../ns-descriptor-onboard/">On board your Network Service Descriptor</a>
         
     </li>
 
@@ -352,7 +350,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="launch-nsd/">Launch your Network Service</a>
+        <a class="" href="../launch-nsd/">Launch your Network Service</a>
         
     </li>
 
@@ -374,7 +372,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="tutorial/">Tutorials overview</a>
+        <a class="" href="../tutorial/">Tutorials overview</a>
         
     </li>
 
@@ -383,7 +381,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="dummy-NSR/">Dummy NS</a>
+        <a class="" href="../dummy-NSR/">Dummy NS</a>
         
     </li>
 
@@ -392,7 +390,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="iperf-NSR/">Iperf NS</a>
+        <a class="" href="../iperf-NSR/">Iperf NS</a>
         
     </li>
 
@@ -401,7 +399,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="tutorial-sipp/">SIPp NS</a>
+        <a class="" href="../tutorial-sipp/">SIPp NS</a>
         
     </li>
 
@@ -410,7 +408,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="ims-NSR/">OpenIMSCore NS</a>
+        <a class="" href="../ims-NSR/">OpenIMSCore NS</a>
         
     </li>
 
@@ -419,7 +417,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="tutorial-juju/">OpenIMSCore NS with Juju VNFM</a>
+        <a class="" href="../tutorial-juju/">OpenIMSCore NS with Juju VNFM</a>
         
     </li>
 
@@ -428,7 +426,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="fms-sipp-tutorial/">Fault Management System</a>
+        <a class="" href="../fms-sipp-tutorial/">Fault Management System</a>
         
     </li>
 
@@ -437,7 +435,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="tutorial-docker/">Docker Tutorials</a>
+        <a class="" href="../tutorial-docker/">Docker Tutorials</a>
         
     </li>
 
@@ -459,7 +457,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="nfvo-how-to-use-gui/">Dashboard</a>
+        <a class="" href="../nfvo-how-to-use-gui/">Dashboard</a>
         
     </li>
 
@@ -468,7 +466,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="nfvo-how-to-use-cli/">CLI</a>
+        <a class="" href="../nfvo-how-to-use-cli/">CLI</a>
         
     </li>
 
@@ -477,7 +475,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="nfvo-sdk/">Open Baton SDKs</a>
+        <a class="" href="../nfvo-sdk/">Open Baton SDKs</a>
         
     </li>
 
@@ -486,7 +484,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="api/">NFVO REST APIs</a>
+        <a class="" href="../api/">NFVO REST APIs</a>
         
     </li>
 
@@ -508,7 +506,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="vim-driver/">VIM drivers overview</a>
+        <a class="" href="../vim-driver/">VIM drivers overview</a>
         
     </li>
 
@@ -517,7 +515,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="openstack-driver/">OpenStack VIM Driver</a>
+        <a class="" href="../openstack-driver/">OpenStack VIM Driver</a>
         
     </li>
 
@@ -526,7 +524,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="docker-driver/">Docker VIM Driver</a>
+        <a class="" href="../docker-driver/">Docker VIM Driver</a>
         
     </li>
 
@@ -535,7 +533,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="test-driver/">Test VIM Driver</a>
+        <a class="" href="../test-driver/">Test VIM Driver</a>
         
     </li>
 
@@ -544,7 +542,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="vim-driver-create/">Build your own VIM Driver</a>
+        <a class="" href="../vim-driver-create/">Build your own VIM Driver</a>
         
     </li>
 
@@ -566,7 +564,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="vnfm-intro/">VNFM overview</a>
+        <a class="" href="../vnfm-intro/">VNFM overview</a>
         
     </li>
 
@@ -575,7 +573,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="vnfm-generic/">Generic VNFM</a>
+        <a class="" href="../vnfm-generic/">Generic VNFM</a>
         
     </li>
 
@@ -584,7 +582,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="vnfm-juju/">Juju VNFM</a>
+        <a class="" href="../vnfm-juju/">Juju VNFM</a>
         
     </li>
 
@@ -593,7 +591,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="vnfm-docker/">Docker VNFM</a>
+        <a class="" href="../vnfm-docker/">Docker VNFM</a>
         
     </li>
 
@@ -602,7 +600,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="vnfm-how-to-write/">Develop a VNFM</a>
+        <a class="" href="../vnfm-how-to-write/">Develop a VNFM</a>
         
     </li>
 
@@ -611,7 +609,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="vnfm-vendor-specific/">Integrate your own VNFM</a>
+        <a class="" href="../vnfm-vendor-specific/">Integrate your own VNFM</a>
         
     </li>
 
@@ -633,7 +631,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="monitoring/">Monitoring overview</a>
+        <a class="" href="../monitoring/">Monitoring overview</a>
         
     </li>
 
@@ -642,7 +640,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="zabbix-plugin/">Zabbix plugin</a>
+        <a class="" href="../zabbix-plugin/">Zabbix plugin</a>
         
     </li>
 
@@ -664,7 +662,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="services/">Services overview</a>
+        <a class="" href="../services/">Services overview</a>
         
     </li>
 
@@ -673,7 +671,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="autoscaling/">Autoscaling overview</a>
+        <a class="" href="../autoscaling/">Autoscaling overview</a>
         
     </li>
 
@@ -682,7 +680,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="fault-management/">FM overview</a>
+        <a class="" href="../fault-management/">FM overview</a>
         
     </li>
 
@@ -691,7 +689,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="network-slicing/">NS overview</a>
+        <a class="" href="../network-slicing/">NS overview</a>
         
     </li>
 
@@ -713,7 +711,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="marketplace/">Marketplace overview</a>
+        <a class="" href="../marketplace/">Marketplace overview</a>
         
     </li>
 
@@ -735,7 +733,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="nfvo-architecture/">NFVO Architecture</a>
+        <a class="" href="../nfvo-architecture/">NFVO Architecture</a>
         
     </li>
 
@@ -744,7 +742,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="how-to-register-event/">The Event Engine</a>
+        <a class="" href="../how-to-register-event/">The Event Engine</a>
         
     </li>
 
@@ -753,7 +751,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="security/">Identity management</a>
+        <a class="" href="../security/">Identity management</a>
         
     </li>
 
@@ -762,7 +760,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="integration-test-use/">Continuous Integration</a>
+        <a class="" href="../integration-test-use/">Continuous Integration</a>
         
     </li>
 
@@ -784,7 +782,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="FAQ/">FAQ</a>
+        <a class="" href="../FAQ/">FAQ</a>
         
     </li>
 
@@ -871,58 +869,35 @@ console.log('--------');
                     <div role="main">
                       <div class="section">
                         
-                          <h1 id="open-baton">Open Baton</h1>
-<p>Open Baton is an open source platform providing a comprehensive implementation of the ETSI NFV Management and Orchestration (MANO) specification.</p>
-<p><img alt="Open Baton architecture" src="./images/openbaton-release-5.png" /></p>
-<h2 id="main-components">Main components</h2>
-<p>Open Baton provides many different features and components:</p>
+                          <h1 id="amazon-vim-driver">Amazon VIM Driver</h1>
+<p>The Amazon VIM Driver allows instantiating VMs on top of Amazon EC2. 
+It uses the plugin-sdk allowing the NFVO to interoperate with this plugin using AMQP. 
+This plugin uses Amazon Java SDK as implementation of the Amazon Cloud API. The Amazon VIM Driver source code is available at <a href="https://github.com/openbaton/plugin-vimdriver-amazon">this GitHub repository</a></p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>In general, we expect that you are familiar with Amazon AWS EC2. Those are the list of prerequisites to follow when you want to use the Amazon VIM Driver: </p>
 <ul>
-<li>A Network Function Virtualisation Orchestrator (NFVO) completely designed and implemented following the ETSI MANO specification. Read more <a href="./nfvo-installation">here</a></li>
-<li>A generic Virtual Network Function Manager (VNFM) and Generic Element Management System (EMS) able to manage the lifecycle of VNFs based on their descriptors. Read more <a href="./vnfm-generic">here</a></li>
-<li>A Juju VNFM Adapter in order to deploy Juju Charms or Open Baton VNF Packages using the Juju VNFM. Read more <a href="./vnfm-juju">here</a></li>
-<li>A driver mechanism supporting different type of VIMs without having to re-write anything in the orchestration logic. Read more <a href="./vim-driver">here</a></li>
-<li>A Docker VNFM and VIM driver for instantiating containers on top of Docker Engine / Docker Swarm </li>
-<li>A powerful event engine based on a pub/sub mechanism for the dispatching of the lifecycle events execution. Read more <a href="./how-to-register-event">here</a></li>
-<li>An autoscaling engine which can be used for automatic runtime management of the scaling operation operations of your VNFs. Read more <a href="https://github.com/openbaton/autoscaling">here</a></li>
-<li>A fault management system which can be used for automatic runtime management of faults which may occur at any level. Read more <a href="https://github.com/openbaton/fm-system">here</a></li>
-<li>A network slicing engine which can be used to ensure a specific QoS for your NS. Read more <a href="https://github.com/openbaton/network-slicing-engine">here</a></li>
-<li>A monitoring plugin integrating Zabbix as monitoring system. Read more <a href="./zabbix-plugin">here</a></li>
-<li>A <a href="http://marketplace.openbaton.org">Marketplace</a> useful for downloading VNFs compatible with the Open Baton NFVO and VNFMs. Read more at <a href="./marketplace">here</a></li>
-<li>A set of libraries (in Java, Go and Python) which could be used for building your own VNFM. Read more <a href="https://github.com/openbaton/openbaton-libs">here</a></li>
+<li>First and most important, choose a region you want to work in, as most of the changes you make are only available in the region you choose. The region name ()without the letter in the end, for example us-east-2) will be used as part of your PoP JSON file.</li>
+<li>Create a VPC or use a default one. Do not forget to assign a name to the VPC. It is a requirement for aws plugin This is also referred as the tenant name in the PoP json file. </li>
+<li>Create a security group or use default one. In both cases make sure that the instances can communicate through the ports that you need for both messaging with broker (rabbitmq) and your specific services. Security groups should have access to internet.</li>
+<li>Disable quota-check the NFVO properties in case you enabled it, since the Amazon VIM Driver can't collect information about quota.  </li>
+<li>Makes sure that the subnets that you already have on VPC have names, especially if you want to connect your VMs to those ones. </li>
+<li>Make sure that the main route table on the VPC is connected to non-NAT gateway if you want to assign public IPs to your instances. </li>
+<li>Get your access key and access secret key from your aws account. Those will be used as username and password in the PoP JSON file.</li>
+<li>Due to the high number of images in AWS system the plugin filters the image by ids and names, these can be provided inside the plugin properties:</li>
 </ul>
-<h2 id="get-started">Get started</h2>
-<p>In order to get started, first step is to install the framework. You can follow the <a href="./nfvo-installation">installation guide</a> for getting started immediately on several different Operating Systems / virtualization platforms.</p>
-<h2 id="learn-more">Learn more</h2>
-<p>Please refer to the "Tutorials" and "Learn More" sections for having more information on what you can do with Open Baton. You can also learn more via our video tutorials published on the Open Baton <a href="https://www.youtube.com/channel/UCYXY4rGKrKbBNheClFEKaAw">Youtube Channel</a>.</p>
-<h2 id="few-words-about-etsi-nfv">Few words about ETSI NFV</h2>
-<p>ETSI NFV represents a concerted telco operator initiative fostering the development of virtual network infrastructures by porting and further adapting network functions to the specific cloud environment.
-ETSI NFV has defined a large set of virtualisation use cases, spanning from the cloudification of the main core network functions such as IMS, Evolved Packet Core, and Radio Access Networks, as well as providing on demand and complete virtualised infrastructures as IaaS or PaaS to third parties, such as enterprises and professional radio.
-That enables providing elastic deployments of cost efficient network infrastructures.
-One of the main concerns of ETSI NFV is to prove the feasibility of the cloud deployments of the typical network functions through proof of concept trials and prototypes as well as providing indications for further standardization in the areas of underlying infrastructures, software architectures, networking and management, and orchestration to improve performance and grant security of the overall infrastructure.
-ETSI NFV limits itself to this level of indications, considering that other standardization bodies and de-facto open source standards should finalize the specific implementation work.</p>
-<h2 id="get-in-touch-with-the-support-teams">Get in touch with the support teams</h2>
-<ul>
-<li>Via twitter: <a href="https://twitter.com/openbaton">twitter</a></li>
-<li>Subscribing to our mailing list: <a href="mailto:listen@openbaton.org?subject=subscribe%20users">users-at-openbaton-dot-org</a></li>
-<li>Sending us an email to: <a href="mailto:info@openbaton.org">info-at-openbaton-dot-org</a></li>
-</ul>
-<h2 id="supported-by">Supported by</h2>
-<p>Open Baton is a project developed by Fraunhofer FOKUS and TU Berlin. It is supported by different European publicly funded projects: <a href="https://www.nubomedia.eu/">NUBOMEDIA</a>, <a href="http://mobile-cloud-networking.eu/site/">Mobile Cloud Networking</a>, and <a href="https://www.softfire.eu/">SoftFIRE</a>. Open Baton represents also one of the main components of the <a href="http://www.5g-berlin.org/">5G Berlin</a> initiative.  </p>
-<!---
- Script for open external links in a new tab
--->
+<pre><code class="properties">type = amazon
+external-properties-file = /etc/openbaton/plugin/amazon/driver.properties
+image-key-word = ami-10547475,ami-8a7859ef,ami-f990b69c,ami-43391926
+</code></pre>
 
-<script type="text/javascript" charset="utf-8">
-      // Creating custom :external selector
-      $.expr[':'].external = function(obj){
-          return !obj.href.match(/^mailto\:/)
-                  && (obj.hostname != location.hostname);
-      };
-      $(function(){
-        $('a:external').addClass('external');
-        $(".external").attr('target','_blank');
-      })
-</script>
+<p>In particular, image-key-word property provides an ability to filter only the images that you are interested in. </p>
+<p>A step-by-step tutorial on how to make those changes is available <a href="../how-to-ec2-dashboard/">here for the dashboard</a> and <a href="../how-to-ec2-cli/">here for the CLI</a></p>
+<p><strong>Disclaimer:</strong> Please be careful while writing your NSD or creating packages, pay attention to the types of instances that you are using, plugin does not keep
+track of the charges that may apply.</p>
+<p>Moreover, if you plan to use generic-vnfm and EMS that it is coupled with be aware that rabbitmq-host should be reachable from AWS instances. 
+One of the options in this case is to manually create an instance inside AWS amd install rabbitmq there. The rabbitmq may be reached with instances public DNS after it by all the components.</p>
+<h2 id="limitations">Limitations</h2>
+<p>Security groups have to be created in advance, and same rules are applied to all the network services that are deployed on that PoP. </p>
                         
                       </div>
                     </div>
@@ -931,8 +906,10 @@ ETSI NFV limits itself to this level of indications, considering that other stan
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="nfvo-installation/" class="btn btn-neutral float-right" title="Overview">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../docker-driver/" class="btn btn-neutral float-right" title="**HIDDEN**">Next <span class="icon icon-circle-arrow-right"></span></a>
       
+      
+        <a href="../FAQ/" class="btn btn-neutral" title="FAQ"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -956,11 +933,11 @@ ETSI NFV limits itself to this level of indications, considering that other stan
 
 </div>
 <!-- jQuery -->
-<script src="./resources/jquery-3.2.1.min.js"></script>
-<script src="./resources/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-<script src="./resources/scripts.js"></script>
-<script src="./resources/swagger-ui-bundle.js"></script>
-<script src="./resources/swagger-ui-standalone-preset.js"></script>
+<script src="../resources/jquery-3.2.1.min.js"></script>
+<script src="../resources/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="../resources/scripts.js"></script>
+<script src="../resources/swagger-ui-bundle.js"></script>
+<script src="../resources/swagger-ui-standalone-preset.js"></script>
 <script>
     $(document).ready(function () {
         $(window).scroll(function () {
@@ -1355,9 +1332,4 @@ ETSI NFV limits itself to this level of indications, considering that other stan
 
 </body>
 </html>
-
-<!--
-MkDocs version : 0.16.2
-Build Date UTC : 2017-12-21 22:43:56
--->
 
