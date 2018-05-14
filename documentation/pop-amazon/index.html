@@ -45,15 +45,6 @@
   <script src="../js/theme.js"></script> 
 
   
-  <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-68429895-1', 'openbaton.github.io');
-      ga('send', 'pageview');
-  </script>
-  
 
 <style>
 
@@ -892,17 +883,17 @@ console.log('--------');
 <td align="right">yes</td>
 </tr>
 <tr>
-<td>tenant</td>
+<td>vpcName</td>
 <td>Name of your VPC (check the amazon console)</td>
 <td align="right">yes</td>
 </tr>
 <tr>
-<td>username</td>
+<td>accesKey</td>
 <td>Your key that you can find under your user account settings</td>
 <td align="right">yes</td>
 </tr>
 <tr>
-<td>password</td>
+<td>secretKey</td>
 <td>The secret key associated with the key that you can find under your user account settings</td>
 <td align="right">yes</td>
 </tr>
@@ -922,31 +913,28 @@ console.log('--------');
 <td align="right">yes</td>
 </tr>
 <tr>
-<td>location</td>
+<td>region</td>
 <td>Code region (example for EU (Ireland) add eu-west-1, etc.)</td>
 <td align="right">yes</td>
 </tr>
 </tbody>
 </table>
 <h2 id="examples">Examples</h2>
-<p>Example for Region eu-west-1: </p>
 <pre><code class="javascript">{
-   &quot;name&quot;:&quot;amazon-pop&quot;,
-   &quot;authUrl&quot;:&quot;http://127.0.0.1:5000/v3&quot;,
-   &quot;tenant&quot;:&quot;VPC1&quot;,
-   &quot;username&quot;:&quot;&lt;key&gt;&quot;,
-   &quot;password&quot;:&quot;&lt;secret-key&gt;&quot;,
-   &quot;keyPair&quot;:&quot;aws-key&quot;,
-   &quot;securityGroups&quot;:[
-      &quot;default&quot;
-   ],
-   &quot;type&quot;:&quot;amazon&quot;,
-   &quot;location&quot;:{
-      &quot;name&quot;:&quot;eu-west-1&quot;,
-      &quot;latitude&quot;:&quot;52.525876&quot;,
-      &quot;longitude&quot;:&quot;13.314400&quot;
-   }
+  &quot;name&quot;:&quot;amazon-pop&quot;,
+  &quot;authUrl&quot;:&quot;http://amazon.com&quot;,
+  &quot;vpcName&quot;:&quot;&lt;assigned-vpc-name&gt;&quot;,
+  &quot;accessKey&quot;:&quot;&lt;access-key&gt;&quot;,
+  &quot;secretKey&quot;:&quot;&lt;secret-key&gt;&quot;,
+  &quot;keyPair&quot;:&quot;&lt;key-pair-name&gt;&quot;,
+  &quot;securityGroups&quot;: [
+    &quot;&lt;security-group-name&gt;&quot;
+  ],
+  &quot;type&quot;:&quot;amazon&quot;,
+  &quot;region&quot;: &quot;&lt;region-where-vpc-is-created&gt;&quot;
 }
+
+
 </code></pre>
                         
                       </div>
