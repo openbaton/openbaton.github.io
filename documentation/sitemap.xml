@@ -5,7 +5,7 @@
         
     <url>
      <loc>/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -15,37 +15,37 @@
         
     <url>
      <loc>/nfvo-installation/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/nfvo-installation-deb/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/nfvo-installation-mac/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/nfvo-installation-docker/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/nfvo-installation-vagrant/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/nfvo-configuration/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -55,43 +55,43 @@
         
     <url>
      <loc>/use/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/pop-registration/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/vnf-package/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/vnf-package-onboard/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ns-descriptor/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ns-descriptor-onboard/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/launch-nsd/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -101,49 +101,49 @@
         
     <url>
      <loc>/tutorial/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/dummy-NSR/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/iperf-NSR/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/tutorial-sipp/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ims-NSR/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/tutorial-juju/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/fms-sipp-tutorial/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/tutorial-docker/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -153,25 +153,25 @@
         
     <url>
      <loc>/nfvo-how-to-use-gui/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/nfvo-how-to-use-cli/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/nfvo-sdk/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/api/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -181,31 +181,31 @@
         
     <url>
      <loc>/vim-driver/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/openstack-driver/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/docker-driver/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/test-driver/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/vim-driver-create/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -215,37 +215,37 @@
         
     <url>
      <loc>/vnfm-intro/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/vnfm-generic/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/vnfm-juju/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/vnfm-docker/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/vnfm-how-to-write/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/vnfm-vendor-specific/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -255,13 +255,13 @@
         
     <url>
      <loc>/monitoring/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/zabbix-plugin/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -271,25 +271,25 @@
         
     <url>
      <loc>/services/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/autoscaling/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/fault-management/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/network-slicing/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -299,7 +299,7 @@
         
     <url>
      <loc>/marketplace/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -309,25 +309,25 @@
         
     <url>
      <loc>/nfvo-architecture/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/how-to-register-event/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/security/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/integration-test-use/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -337,7 +337,7 @@
         
     <url>
      <loc>/FAQ/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -346,7 +346,7 @@
     
     <url>
      <loc>/amazon-driver/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -354,7 +354,7 @@
     
     <url>
      <loc>/docker-driver/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -362,7 +362,7 @@
     
     <url>
      <loc>/how-to-ec2-cli/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -370,7 +370,7 @@
     
     <url>
      <loc>/how-to-ec2-dashboard/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -378,7 +378,7 @@
     
     <url>
      <loc>/integration-test-write/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -386,7 +386,7 @@
     
     <url>
      <loc>/nfvo-installation-src/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -394,7 +394,7 @@
     
     <url>
      <loc>/nsd-json-example/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -402,7 +402,7 @@
     
     <url>
      <loc>/pop-amazon/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -410,7 +410,7 @@
     
     <url>
      <loc>/pop-docker/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -418,7 +418,7 @@
     
     <url>
      <loc>/pop-openstack/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -426,7 +426,7 @@
     
     <url>
      <loc>/pop-test/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -434,7 +434,7 @@
     
     <url>
      <loc>/tosca-iperf-scenario/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -442,7 +442,7 @@
     
     <url>
      <loc>/tosca-dummy-nsr/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -450,7 +450,7 @@
     
     <url>
      <loc>/tosca-ims/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -458,7 +458,7 @@
     
     <url>
      <loc>/tosca-vnfd/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -466,7 +466,7 @@
     
     <url>
      <loc>/tosca-nsd/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -474,7 +474,7 @@
     
     <url>
      <loc>/tosca-CSAR-onboarding/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -482,7 +482,7 @@
     
     <url>
      <loc>/tosca-fm/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -490,7 +490,7 @@
     
     <url>
      <loc>/tosca-asp/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -498,7 +498,7 @@
     
     <url>
      <loc>/tosca-iperf-scenario/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -506,7 +506,7 @@
     
     <url>
      <loc>/tosca-CSAR-onboarding/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -514,7 +514,7 @@
     
     <url>
      <loc>/vnfr-states/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -522,7 +522,7 @@
     
     <url>
      <loc>/vnf-dependencies/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -530,7 +530,7 @@
     
     <url>
      <loc>/vnf-dependencies-generic/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -538,7 +538,7 @@
     
     <url>
      <loc>/vnf-parameters/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -546,7 +546,7 @@
     
     <url>
      <loc>/vnf-descriptor/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -554,7 +554,7 @@
     
     <url>
      <loc>/vnfm-generic-configuration/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -562,7 +562,7 @@
     
     <url>
      <loc>/zabbix-server-configuration-3.0/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -570,7 +570,7 @@
     
     <url>
      <loc>/zabbix-server-configuration-2.2/</loc>
-     <lastmod>2018-05-14</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
