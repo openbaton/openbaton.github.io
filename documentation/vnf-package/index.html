@@ -869,8 +869,8 @@ Therefore, you can find a practical tutorial at the end with all the steps start
 <li>CSAR archive following the <a href="https://docs.oasis-open.org/tosca/tosca-nfv/v1.0/tosca-nfv-v1.0.html">Tosca simple profile for NFV</a> specification.</li>
 </ul>
 <p>This page provides more information about the first option, while more information about the second option are given in this <a href="../tosca-CSAR-onboarding">tutorial</a>.</p>
-<p><strong>Important note-1:</strong> in case your scripts are available publicly on GitHub, you may not need the creation of a specific VNF package, but you can just refer them in the VNFD as part of the
-<em>vnfPackageLocation</em> parameter</p>
+<p><strong>Important note-1:</strong> in case your scripts are available publicly on GitHub, you may not need the creation of a specific VNF package, but you can just refer them in the Metadata.yaml as part of the
+<em>scripts_link</em> parameter. <em>VnfPackageLocation</em> in the VNFD must be null (not defined at all).</p>
 <p><strong>Important note-2:</strong> in case you are using the Docker VIM Driver and Docker VNFM the script folder is not considered, as the docker approach relies on docker images ready to be launched.</p>
 <h1 id="overview">Overview</h1>
 <p>A VNF Package is a tar-archive containing all the information required for managing the lifecycle of a VNF. First step is to build the archive which then can be onboarded to the NFVO.
@@ -931,12 +931,10 @@ image-config:
 </li>
 <li><strong><em>image</em></strong>:<ul>
 <li><strong><em>upload</em></strong>: Here you can choose between different options (true, false, check).<ul>
-<li>true: choosing this option means to upload the defined image on all the VimInstances. It does not matter if an image with the defined name exists or not.</li>
+<li>true: choosing this option means to upload the defined image on all the VimInstances already defined in the VNFD. It does not matter if an image with the defined name exists or not.</li>
 <li>false: choosing this option means that you assume that the image is already present on the VimInstaces and should be re-uploaded.
 If the image does not exist, the VNF Package onboarding will throw an exception.
 In this case the image (if defined) will be ignored.</li>
-<li>check: this option means that the VNF PackageManagement checks first if the image is available (defined in ids or names).
-If the image does not exist, a new one with the image defined in the VNF Package will be created.</li>
 <li><strong>Note</strong> Please use quotation marks for this option since the values are handled as strings internally.
 Otherwise true and false will be handled as a boolean that would lead to a faulty behavior when onboarding a new VNF Package.</li>
 </ul>
@@ -1011,17 +1009,15 @@ Finally, it looks as shown below.</p>
 <pre><code class="yaml">name: iperf-server
 description: iPerf server
 provider: FOKUS
-scripts-link: https://script-link-to-git.git
-nfvo_version: 4.0.0
-vim_types:
- - openstack
+scripts-link: https://github.com/openbaton/vnf-scripts.git
+nfvo_version: 5.2.0
 image:
-    upload: &quot;check&quot;
+    upload: &quot;false&quot;
     names:
-        - iperf_server_image
+        - trusty-server-cloudimg-amd64-disk1
     link: &quot;http://cloud-images.ubuntu.com/trusty/current/trusty-server-cloudimg-amd64-disk1.img&quot;
 image-config:
-    name: iperf_server_image
+    name: trusty-server-cloudimg-amd64-disk1
     diskFormat: QCOW2
     containerFormat: BARE
     minCPU: 2
@@ -1076,8 +1072,7 @@ Important to notice here is that the vm_image defined in the Metadata.yaml is fi
     }
   ],
   &quot;type&quot;:&quot;server&quot;,
-  &quot;endpoint&quot;:&quot;generic&quot;,
-  &quot;vnfPackageLocation&quot;:&quot;https://github.com/openbaton/vnf-scripts.git&quot;
+  &quot;endpoint&quot;:&quot;generic&quot;
 }
 </code></pre>
 
@@ -1093,17 +1088,15 @@ Finally, it looks as shown below.</p>
 <pre><code class="yaml">name: iperf-client
 description: iPerf client
 provider: FOKUS
-nfvo_version: 4.0.0
-vim_types:
- - openstack
-scripts-link: https://gitlab.fokus.fraunhofer.de/openbaton/scripts-test-public.git
+nfvo_version: 5.2.0
+scripts-link: https://github.com/openbaton/vnf-scripts.git
 image:
-    upload: &quot;check&quot;
+    upload: &quot;false&quot;
     names:
-        - iperf_client_image
+        - trusty-server-cloudimg-amd64-disk1
     link: &quot;http://cloud-images.ubuntu.com/trusty/current/trusty-server-cloudimg-amd64-disk1.img&quot;
 image-config:
-    name: iperf_client_image
+    name: trusty-server-cloudimg-amd64-disk1
     diskFormat: QCOW2
     containerFormat: BARE
     minCPU: 2
@@ -1164,14 +1157,13 @@ Important to notice here is that the vm_image defined in the Metadata.yaml is fi
     }
   ],
   &quot;type&quot;:&quot;client&quot;,
-  &quot;endpoint&quot;:&quot;generic&quot;,
-  &quot;vnfPackageLocation&quot;:&quot;https://github.com/openbaton/vnf-scripts.git&quot;
+  &quot;endpoint&quot;:&quot;generic&quot;
 }
 </code></pre>
 
 <h4 id="image_1">Image</h4>
 <p>The image we have to choose must be a debian 64bit image (e.g. ubuntu amd64) for satisfying the EMS and scripts which are designed for that kind of architecture.
-We have chosen this one <a href="http://cloud-images.ubuntu.com/trusty/current/trusty-server-cloudimg-amd64-disk1.img">trusty-server-cloudimg-amd64-disk1.img</a>.</p>
+We have chosen this one <a href="http://cloud-images.ubuntu.com/trusty/current/trusty-server-cloudimg-amd64-disk1.img">trusty-server-cloudimg-amd64-disk1.img</a>. In this tutorial it is expected to have the image already present in OpenStack.</p>
 <!---
 Script for open external links in a new tab
 -->
