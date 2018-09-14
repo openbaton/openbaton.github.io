@@ -406,24 +406,6 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tutorial-juju/">OpenIMSCore NS with Juju VNFM</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../fms-sipp-tutorial/">Fault Management System</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
         <a class="" href="../tutorial-docker/">Docker Tutorials</a>
         
     </li>
@@ -573,15 +555,6 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vnfm-juju/">Juju VNFM</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
         <a class="" href="../vnfm-docker/">Docker VNFM</a>
         
     </li>
@@ -663,15 +636,6 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../autoscaling/">Autoscaling overview</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../fault-management/">FM overview</a>
         
     </li>
 
@@ -861,7 +825,7 @@ console.log('--------');
                       <div class="section">
                         
                           <h1 id="generic-vnf-manager">Generic VNF Manager</h1>
-<p>The Generic VNF Manager is an implementation following the <a href="http://www.etsi.org/deliver/etsi_gs/NFV-MAN/001_099/001/01.01.01_60/gs_NFV-MAN001v010101p.pdf">ETSI MANO</a> specifications. It works as intermediate component between the NFVO and the VNFs, particularly the Virtual Machines on top of which the VNF software is installed. In order to complete the lifecycle of a VNF, it interoperates with the Open Baton Element Management System (EMS) which acts as an agent inside the VMs and executing scripts contained in a VNF package or defined via the <code>scripts-link</code> inside the VNFD.
+<p>The Generic VNF Manager is an implementation following the <a href="http://www.etsi.org/deliver/etsi_gs/NFV-MAN/001_099/001/01.01.01_60/gs_NFV-MAN001v010101p.pdf">ETSI MANO</a> specifications. It works as intermediate component between the NFVO and the VNFs, particularly the Virtual Machines on top of which the VNF software is installed. In order to complete the lifecycle of a VNF, it interoperates with the Open Baton Element Management System (EMS) which acts as an agent inside the VMs and executing scripts contained in a VNF package or defined via the <code>scripts-link</code> inside the VNFD. The Generic VNFManager is capable of handling errors caused while executing these scripts. Together with the NFVO, it allows update of failed scripts, and resume NSR from the failed lifecycle state. Currently, this is applicable only for scripts contained inside VNF Packages and not for scripts referred using scripts-link.
 This VNFM may be assigned to the management of a single VNF instance, or the management of multiple VNF instances of the same type or of different types.</p>
 <p>The Generic VNFM handles communication between the NFVO and the EMS. The communication NFVO ↔ VNFM ↔ EMS is done using the AMQP protocol over RabbitMQ.  </p>
 <p>The communication between the NFVO and Generic VNFM:</p>
@@ -989,10 +953,13 @@ The available parameters are defined in the VirtualNetworkFunctionDescriptor fie
 </ol>
 </li>
 </ul>
-<p>To learn more about the VNF parameters and how you can use them as environment variables inside you scripts, please refer to <a href="../vnf-parameters">this</a> page.</p>
+<p><strong>Note</strong>: To learn more about the VNF parameters and how you can use them as environment variables inside you scripts, please refer to <a href="../vnf-parameters">this</a> page.</p>
 <h5 id="termination-of-virtual-machines">Termination of Virtual Machines</h5>
 <p>The STOP lifecycle event is meant to just stop the VNF service and afterward be able to start it again. The TERMINATE lifecycle event deletes the virtual resources from the PoP.
 As for VM's deployment, VM's termination is done by the NFVO. Specific scripts can be run before termination by putting them under the TERMINATE lifecycle event.</p>
+<h4 id="resume-virtual-network-functions">Resume Virtual Network Functions</h4>
+<p>As discussed above, the EMS executes scripts in the VNFC for each lifecycle event. However, if a script is erroneous, the lifecycle execution of the VNF fails. Instead of re-deploying the VNF, you can update the erroneous script in the vnfpackage (through the dashboard) and resume the failed VNF. Once updated, the Generic VNFM can resume execution from the failed script and continue to any remaining lifecycle event. The following sequence diagram explains the process:
+<img alt="Sequence Diagram Generic - Resume" src="../images/generic-resume-seq-dg.png" /></p>
 <!---
 References
 -->
@@ -1020,7 +987,7 @@ Script for open external links in a new tab
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../vnfm-juju/" class="btn btn-neutral float-right" title="Juju VNFM">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../vnfm-docker/" class="btn btn-neutral float-right" title="Docker VNFM">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../vnfm-intro/" class="btn btn-neutral" title="VNFM overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>

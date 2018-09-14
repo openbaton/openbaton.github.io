@@ -406,24 +406,6 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tutorial-juju/">OpenIMSCore NS with Juju VNFM</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../fms-sipp-tutorial/">Fault Management System</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
         <a class="" href="../tutorial-docker/">Docker Tutorials</a>
         
     </li>
@@ -570,15 +552,6 @@ console.log('--------');
         
              
 
-    <li class="toctree-l1 ">
-        <a class="" href="../vnfm-juju/">Juju VNFM</a>
-        
-    </li>
-
-
-        
-             
-
     <li class="toctree-l1 current">
         <a class="current" href="./">Docker VNFM</a>
         
@@ -663,15 +636,6 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../autoscaling/">Autoscaling overview</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../fault-management/">FM overview</a>
         
     </li>
 
@@ -997,25 +961,15 @@ nfvo_version: 5.0.0
 vim_types:
 - docker
 image:
-  upload: &quot;check&quot;
+  upload: &quot;false&quot;
   names:
       - &quot;mongo:latest&quot;
-  link: &quot;mongo:latest&quot;
-image-config:
-  name: &quot;mongo:latest&quot;
-  diskFormat: QCOW2
-  containerFormat: BARE
-  minCPU: 0
-  minDisk: 0
-  minRam: 0
-  isPublic: false
 </code></pre>
 
-<p>Here you can see some differences:  </p>
+<p>Please note:  </p>
 <ul>
-<li><strong>vim_types</strong> must have docker (pointing to the Docker VIM Driver)</li>
-<li><strong>image upload</strong> can be put to check in order to execute <code>docker pull</code> with the image link in case the image name is not available. <em><strong>NOTE: the image name must be the same as the link since in docker there is not distinction</strong></em></li>
-<li><strong>image-config</strong> the name must be the same as the link. the Disk Format and container format are ignored so you can use "QCOW2" and "BARE", as well as for the limits, everything can be 0,</li>
+<li><strong>vim_types</strong>: must be <em>docker</em> (pointing to the Docker VIM Driver)</li>
+<li><strong>image upload</strong> has to be <em>false</em>, please make sure that the images listed in <strong>image names</strong> are present in the VIM instances that you want to use</li>
 </ul>
 <h2 id="build-the-vnfpackage">Build the VNFPackage</h2>
 <p>In order to build the VNF Package and to upload it please follow <a href="http://openbaton.github.io/documentation/vnf-package/">our documentation</a></p>
@@ -1030,7 +984,7 @@ image-config:
         <a href="../vnfm-how-to-write/" class="btn btn-neutral float-right" title="Develop a VNFM">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../vnfm-juju/" class="btn btn-neutral" title="Juju VNFM"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../vnfm-generic/" class="btn btn-neutral" title="Generic VNFM"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

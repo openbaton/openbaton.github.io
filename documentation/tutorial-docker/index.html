@@ -405,24 +405,6 @@ console.log('--------');
         
              
 
-    <li class="toctree-l1 ">
-        <a class="" href="../tutorial-juju/">OpenIMSCore NS with Juju VNFM</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../fms-sipp-tutorial/">Fault Management System</a>
-        
-    </li>
-
-
-        
-             
-
     <li class="toctree-l1 current">
         <a class="current" href="./">Docker Tutorials</a>
         
@@ -573,15 +555,6 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vnfm-juju/">Juju VNFM</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
         <a class="" href="../vnfm-docker/">Docker VNFM</a>
         
     </li>
@@ -663,15 +636,6 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../autoscaling/">Autoscaling overview</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../fault-management/">FM overview</a>
         
     </li>
 
@@ -940,29 +904,14 @@ When the VNFM and the VIM Driver are running, the NFVO Dashboard should show in 
 <pre><code class="yaml">name: MongoDB
 description: MongoDB
 provider: TUB
-nfvo_version: 5.0.0
+nfvo_version: 6.0.0
 vim_types:
  - docker
-image:
-    upload: &quot;check&quot;
-    names:
-        - &quot;mongo:latest&quot;
-    link: &quot;mongo:latest&quot;
-image-config:
-    name: &quot;mongo:latest&quot;
-    diskFormat: QCOW2
-    containerFormat: BARE
-    minCPU: 0
-    minDisk: 0
-    minRam: 0
-    isPublic: false
 </code></pre>
 
 <p>Where:</p>
 <ul>
 <li><strong>vim_types</strong> must have docker (pointing to the Docker VIM Driver)</li>
-<li><strong>image upload</strong> can be put to check in order to execute <code>docker pull</code> with the image link in case the image name is not available. <em><strong>NOTE: the image name must be the same as the link since in docker there is not distinction</strong></em></li>
-<li><strong>image-config</strong> the name must be the same as the link. the Disk Format and container format are ignored so you can use "QCOW2" and "BARE", as well as for the limits, everything can be 0,</li>
 </ul>
 <p>You can then create and upload the tar file to the VNF Package page of the Dashboard and you should have a VNFD called in this case MongoDB that represent a MongoDB Container.</p>
 <p>Afterwards, from the NSD page, you can create a NSD using the form and selecting the MongoDB VNF.</p>
@@ -995,84 +944,83 @@ ENTRYPOINT [&quot;iperf3&quot;, &quot;-s&quot;]
 This will trigger the Vim refresh.<br />
 Afterwards, you need to create a NSD. From the NFVO dashboard, go to Catalogue&rarr;NS Descriptors&rarr;On Board NSD&rarr;Upload JSON and paste this JSON content:</p>
 <pre><code class="json">{
-  &quot;name&quot;: &quot;docker Iperf&quot;,
-  &quot;vendor&quot;: &quot;fokus&quot;,
-  &quot;version&quot;: &quot;0.1-ALPHA&quot;,
+  &quot;name&quot;: &quot;iperf&quot;,
+  &quot;vendor&quot;: &quot;FOKUS&quot;,
+  &quot;version&quot;: &quot;docker&quot;,
   &quot;vld&quot;: [{
     &quot;name&quot;: &quot;new-network&quot;
   }],
-  &quot;vnfd&quot;: [{
-    &quot;name&quot;: &quot;server&quot;,
-    &quot;vendor&quot;: &quot;TUB&quot;,
-    &quot;version&quot;: &quot;0.2&quot;,
-    &quot;lifecycle_event&quot;: [
-
-    ],
-    &quot;configurations&quot;: {
-      &quot;configurationParameters&quot;: [],
-      &quot;name&quot;: &quot;server-configuration&quot;
-    },
-    &quot;virtual_link&quot;: [{
-      &quot;name&quot;: &quot;new-network&quot;
-    }],
-    &quot;vdu&quot;: [{
-      &quot;vm_image&quot;: [
-        &quot;iperfserver:latest&quot;
+  &quot;vnfd&quot;: [
+    {
+      &quot;name&quot;:&quot;iperf-server&quot;,
+      &quot;vendor&quot;:&quot;FOKUS&quot;,
+      &quot;version&quot;:&quot;docker&quot;,
+      &quot;deployment_flavour&quot;:[
+        {
+          &quot;flavour_key&quot;:&quot;m1.small&quot;
+        }
       ],
-      &quot;scale_in_out&quot;: 2,
-      &quot;vnfc&quot;: [{
-        &quot;connection_point&quot;: [{
-          &quot;virtual_link_reference&quot;: &quot;new-network&quot;
-        }]
-      }]
-    }],
-    &quot;deployment_flavour&quot;: [{
-      &quot;flavour_key&quot;: &quot;m1.small&quot;
-    }],
-    &quot;type&quot;: &quot;server&quot;,
-    &quot;endpoint&quot;: &quot;docker&quot;
-  }, {
-    &quot;name&quot;: &quot;client&quot;,
-    &quot;vendor&quot;: &quot;TUB&quot;,
-    &quot;version&quot;: &quot;0.2&quot;,
-    &quot;lifecycle_event&quot;: [
-
-    ],
-    &quot;configurations&quot;: {
-      &quot;configurationParameters&quot;: [],
-      &quot;name&quot;: &quot;server-configuration&quot;
-    },
-    &quot;virtual_link&quot;: [{
-      &quot;name&quot;: &quot;new-network&quot;
-    }],
-    &quot;vdu&quot;: [{
-      &quot;vm_image&quot;: [
-        &quot;iperfclient:latest&quot;
+      &quot;vdu&quot;:[
+        {
+          &quot;vm_image&quot;:[&quot;iperfserver:latest&quot;],
+          &quot;scale_in_out&quot;:3,
+          &quot;vnfc&quot;:[
+        {
+          &quot;connection_point&quot;:[
+            {
+              &quot;virtual_link_reference&quot;:&quot;new-network&quot;
+            }
+          ]
+        }
+          ]
+        }
       ],
-      &quot;scale_in_out&quot;: 2,
-      &quot;vnfc&quot;: [{
-        &quot;connection_point&quot;: [{
-          &quot;virtual_link_reference&quot;: &quot;new-network&quot;
-        }]
-      }]
-    }],
-    &quot;deployment_flavour&quot;: [{
-      &quot;flavour_key&quot;: &quot;m1.small&quot;
-    }],
-    &quot;type&quot;: &quot;client&quot;,
-    &quot;endpoint&quot;: &quot;docker&quot;
-  }],
-  &quot;vnf_dependency&quot;: [{
-    &quot;source&quot;: {
-      &quot;name&quot;: &quot;server&quot;
+      &quot;virtual_link&quot;:[
+        {
+           &quot;name&quot;:&quot;new-network&quot;
+        }
+      ],
+      &quot;type&quot;:&quot;server&quot;,
+      &quot;endpoint&quot;:&quot;docker&quot;
     },
-    &quot;target&quot;: {
-      &quot;name&quot;: &quot;client&quot;
-    },
-    &quot;parameters&quot;: [
-      &quot;hostname&quot;
-    ]
-  }]
+    {
+      &quot;name&quot;:&quot;iperf-client&quot;,
+      &quot;vendor&quot;:&quot;FOKUS&quot;,
+      &quot;version&quot;:&quot;docker&quot;,
+      &quot;vdu&quot;:[
+        {
+          &quot;vm_image&quot;:[&quot;iperfclient:latest&quot;],
+          &quot;scale_in_out&quot;:3,
+          &quot;vnfc&quot;:[
+        {
+          &quot;connection_point&quot;:[
+            {
+              &quot;virtual_link_reference&quot;:&quot;new-network&quot;
+            }
+          ]
+        }
+          ]
+        }
+      ],
+      &quot;deployment_flavour&quot;:[
+        {
+          &quot;flavour_key&quot;:&quot;m1.small&quot;
+        }
+      ],
+      &quot;virtual_link&quot;:[
+        {
+           &quot;name&quot;:&quot;new-network&quot;
+        }
+      ],
+      &quot;requires&quot;: {
+        &quot;iperf-server&quot;: {
+        &quot;parameters&quot;:[&quot;hostname&quot;]
+        }
+      },
+      &quot;type&quot;:&quot;client&quot;,
+      &quot;endpoint&quot;:&quot;docker&quot;
+    }
+  ]
 }
 </code></pre>
 
@@ -1088,7 +1036,7 @@ Afterwards, you need to create a NSD. From the NFVO dashboard, go to Catalogue&r
         <a href="../nfvo-how-to-use-gui/" class="btn btn-neutral float-right" title="Dashboard">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../fms-sipp-tutorial/" class="btn btn-neutral" title="Fault Management System"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../ims-NSR/" class="btn btn-neutral" title="OpenIMSCore NS"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

@@ -408,24 +408,6 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tutorial-juju/">OpenIMSCore NS with Juju VNFM</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../fms-sipp-tutorial/">Fault Management System</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
         <a class="" href="../tutorial-docker/">Docker Tutorials</a>
         
     </li>
@@ -573,15 +555,6 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vnfm-juju/">Juju VNFM</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
         <a class="" href="../vnfm-docker/">Docker VNFM</a>
         
     </li>
@@ -663,15 +636,6 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../autoscaling/">Autoscaling overview</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../fault-management/">FM overview</a>
         
     </li>
 
@@ -861,19 +825,13 @@ console.log('--------');
                       <div class="section">
                         
                           <h1 id="install-open-baton">Install Open Baton</h1>
-<p>Open Baton provides several installation mechanisms. Open Baton has two different flavors: </p>
+<p>Open Baton provides several installation mechanisms: </p>
 <ul>
-<li><strong>minimal</strong> containing only the Open Baton NFV Orchestrator, the Open Baton Generic VNF Manager and the RabbitMQ. This version is the most suitable for getting started immediately with some simple scenarios. </li>
-<li><strong>complete</strong> containing most of the components (docker VNFMs and VIM driver, SFCO, and Amazon VIM driver are currently not included) as listed in the get started section. During the installation procedures users can decide specific configuraion options (i.e. passwords) and which components should be installed. This version is the most suitable for a production environment. </li>
+<li><strong>Docker</strong>: Docker provides an easy way to containerize services and compose more complex service in a template-based way. More info <a href="../nfvo-installation-docker/">here</a>.
+<!--- * **development** Direct installation of a minimal or complete Open Baton environment on top of a Linux OS (ubuntu/debian) using either the <a href="nfvo-installation-src.md">source-code</a> or <a href="nfvo-installation-deb.md">binary</a> version. -->  </li>
 </ul>
-<p>Please select the most suitable installation tool for your needs: </p>
-<ul>
-<li><strong>Linux OS</strong>: Direct installation of a minimal or complete Open Baton environment on top of a Linux OS (ubuntu/debian) using either the <a href="../nfvo-installation-src/">source-code</a> or <a href="../nfvo-installation-deb/">binary</a> version. </li>
-<li><strong>Mac OS</strong>: Install the NFVO and Generic VNFM on MacOS using the provided brew formula. More info <a href="../nfvo-installation-mac/">here</a></li>
-<li><strong>Docker</strong>: Launch a pre-configured docker image containing a minimal Open Baton environment. More info <a href="../nfvo-installation-docker/">here</a></li>
-<li><strong>Vagrant</strong>: Launching a vagrant box using the provided 'Vagrantfile' containing a minimal Open Baton environment. More info <a href="../nfvo-installation-vagrant/">here</a></li>
-</ul>
-<p>Once you have done with the installation, you can decide either to fine tune your environment configuring the different parameters as described in the <a href="../nfvo-configuration/">configuration guide</a> or to move forward and start with your first <a href="../dummy-NSR/">hello world tutorial</a>.</p>
+<p>Once you have done with the installation, you can decide either to fine tune your environment configuring the different parameters as described in the <a href="../nfvo-configuration/">configuration guide</a> or to move forward and start with your first <a href="../dummy-NSR/">hello world tutorial</a>. 
+Configuration parameters can also be adjusted when using Docker containers and environement variables. Check <a href="https://docs.docker.com/engine/reference/commandline/run/#set-environment-variables--e---env---env-file">here</a> for further information.</p>
 <!---
 Script for open external links in a new tab
 -->

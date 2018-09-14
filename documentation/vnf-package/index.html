@@ -408,24 +408,6 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tutorial-juju/">OpenIMSCore NS with Juju VNFM</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../fms-sipp-tutorial/">Fault Management System</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
         <a class="" href="../tutorial-docker/">Docker Tutorials</a>
         
     </li>
@@ -573,15 +555,6 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vnfm-juju/">Juju VNFM</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
         <a class="" href="../vnfm-docker/">Docker VNFM</a>
         
     </li>
@@ -663,15 +636,6 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../autoscaling/">Autoscaling overview</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../fault-management/">FM overview</a>
         
     </li>
 
@@ -898,19 +862,6 @@ vim_types: list_of_vim_types
 description: description_of_VNF
 provider: provider_of_package
 nfvo_version: target_NFVO_version
-image:
-    upload: option
-    ids: list_of_ids
-    names: list_of_names
-    link: image_link
-image-config:
-    name: image_name
-    diskFormat: disk_format
-    containerFormat: container_format
-    minCPU: min_cpu
-    minDisk: min_disk
-    minRam: min_ram
-    isPublic: is_public
 </code></pre>
 
 <p>In the following each property is explained in more detail. Please consider also the notes since some properties are optional (or even not implemented) and if they are defined, they may have more priority than others and override them therefore.</p>
@@ -920,16 +871,21 @@ image-config:
 <li><strong><em>provider</em></strong>: The creator and maintainer of the VNF</li>
 <li><strong><em>vim_types</em></strong>: The list of the vim types that the VNF Package supports. VIM types are related to the plugin types installed on the NFVO. More info can be found <a href="../vim-driver">here</a>.</li>
 <li><strong><em>nfvo_version</em></strong>: The version of the NFVO which supports this package in the format (X.Y.Z). First two digits (X.Y) will be used for checking whether the VNF Package is supported by the NFVO on top of which is going to be on-boarded</li>
-<li><strong><em>scripts-link</em></strong>: This link points to a public git repository where scripts are stored and could be used instead of passing all scripts inside the VNF Package<ul>
+<li>
+<p><strong><em>scripts-link</em></strong>: This link points to a public git repository where scripts are stored and could be used instead of passing all scripts inside the VNF Package</p>
+<ul>
 <li><strong>Note</strong> Either you can define the scripts-link or put the scripts into the folder scripts/.
     The scripts-link has a higher priority than the scripts located in the folder scripts/.
     So if you set the scripts-link, the scripts in folder scripts/ are completely ignored.</li>
 <li><strong>Note</strong> In most of the cases using script-link means that any component should be able to fetch files from that link.
     So you need to take care about ensuring that the URL defined is publicly available.</li>
-<li><strong>Note</strong> Scripts are executed during different lifecycle-events, and need to be referenced inside the VNF Descriptor</li>
+<li><strong>Note</strong> Scripts are executed during different lifecycle-events, and need to be referenced inside the VNF Descriptor
+&lt;!--</li>
 </ul>
 </li>
-<li><strong><em>image</em></strong>:<ul>
+<li>
+<p><strong><em>image</em></strong>:</p>
+<ul>
 <li><strong><em>upload</em></strong>: Here you can choose between different options (true, false, check).<ul>
 <li>true: choosing this option means to upload the defined image on all the VimInstances already defined in the VNFD. It does not matter if an image with the defined name exists or not.</li>
 <li>false: choosing this option means that you assume that the image is already present on the VimInstaces and should be re-uploaded.
@@ -977,6 +933,7 @@ Then it will create a new image defined in the VNF Package.</li>
 </ul>
 </li>
 </ul>
+<p>--&gt;</p>
 <h2 id="vnfd62json">&lt;VNFD>.json</h2>
 <p>The &lt;vnfd>.json contains the VirtualNetworkFunctionDescriptor (VNFD) onboarded to the Orchestrator.
 This VNFD can later be referenced in a NSD by its ID to make use of it.
@@ -1010,20 +967,7 @@ Finally, it looks as shown below.</p>
 description: iPerf server
 provider: FOKUS
 scripts-link: https://github.com/openbaton/vnf-scripts.git
-nfvo_version: 5.2.0
-image:
-    upload: &quot;false&quot;
-    names:
-        - trusty-server-cloudimg-amd64-disk1
-    link: &quot;http://cloud-images.ubuntu.com/trusty/current/trusty-server-cloudimg-amd64-disk1.img&quot;
-image-config:
-    name: trusty-server-cloudimg-amd64-disk1
-    diskFormat: QCOW2
-    containerFormat: BARE
-    minCPU: 2
-    minDisk: 5
-    minRam: 2048
-    isPublic: false
+nfvo_version: 6.0.0
 vim_types:
     - openstack
 </code></pre>
@@ -1088,21 +1032,8 @@ Finally, it looks as shown below.</p>
 <pre><code class="yaml">name: iperf-client
 description: iPerf client
 provider: FOKUS
-nfvo_version: 5.2.0
+nfvo_version: 6.0.0
 scripts-link: https://github.com/openbaton/vnf-scripts.git
-image:
-    upload: &quot;false&quot;
-    names:
-        - trusty-server-cloudimg-amd64-disk1
-    link: &quot;http://cloud-images.ubuntu.com/trusty/current/trusty-server-cloudimg-amd64-disk1.img&quot;
-image-config:
-    name: trusty-server-cloudimg-amd64-disk1
-    diskFormat: QCOW2
-    containerFormat: BARE
-    minCPU: 2
-    minDisk: 5
-    minRam: 2048
-    isPublic: false
 vim_types:
     - openstack
 </code></pre>
@@ -1156,6 +1087,11 @@ Important to notice here is that the vm_image defined in the Metadata.yaml is fi
       &quot;flavour_key&quot;:&quot;m1.small&quot;
     }
   ],
+  &quot;requires&quot;: {
+      &quot;iperf-server&quot;: {
+          &quot;parameters&quot;:[&quot;private&quot;,&quot;hostname&quot;]
+        }
+  },
   &quot;type&quot;:&quot;client&quot;,
   &quot;endpoint&quot;:&quot;generic&quot;
 }

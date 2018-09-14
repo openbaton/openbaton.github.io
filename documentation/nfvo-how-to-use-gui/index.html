@@ -406,24 +406,6 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../tutorial-juju/">OpenIMSCore NS with Juju VNFM</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../fms-sipp-tutorial/">Fault Management System</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
         <a class="" href="../tutorial-docker/">Docker Tutorials</a>
         
     </li>
@@ -573,15 +555,6 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../vnfm-juju/">Juju VNFM</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
         <a class="" href="../vnfm-docker/">Docker VNFM</a>
         
     </li>
@@ -663,15 +636,6 @@ console.log('--------');
 
     <li class="toctree-l1 ">
         <a class="" href="../autoscaling/">Autoscaling overview</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../fault-management/">FM overview</a>
         
     </li>
 
@@ -983,11 +947,24 @@ For uploading a <em>.tar</em> you can click on the button <strong>Upload VNFPack
 Like in this screenshot </p>
 <p><img alt="Network Service Records List " src="../images/nfvo-how-to-use-gui-NSR-list.png" /></p>
 <p>On this page you can see the details of a Network Service Record by clicking on the id</p>
-<p><img alt="Network Service Records Info" src="../images/nfvo-how-to-use-gui-NSR-info.png" /></p>
+<p><img alt="Network Service Records Info" src="../images/nfvo-how-to-use-gui-NSR-info.png" />
+You can also click button <strong>Action</strong> and pick function <strong>Add VNF</strong>. This way you can add a new VNF to already deployed 
+NSR via launching one of the available VNFDs. The created VNFR will be added to the corresponding NSR. You can adjust
+the same launch parameters as when launching an NSD for the VNFD after you have picked the one to add. 
+<img alt="Add VNF to NSR" src="../images/add-vnf.png" /></p>
 <p>On this page you can look at the JSON file of the NSR by clicking on the link <strong>Show JSON</strong> and also the <strong>Graphical view</strong>. 
 of Network Service Record by clicking on the link <strong>Show Graph</strong>. 
 In the table of VNF Records you can delete a VNFR by clicking on <strong>Action</strong> and then <strong>Delete</strong>. 
-To look at the details of a VNFR just click on the <strong>id</strong> of it.</p>
+If you have an newer version of the VNFD you can upgrade the VNF to it via picking <strong>Upgrade</strong> option in the menu. You
+will be prompted to choose a version to which you want to upgrade. 
+If you want to restart VNFR, you can press <strong>Restart</strong>, you will be prompted to choose an image with which to deploy
+the VNFR. 
+<strong>Update</strong> button will send a request to initiate an "Update" lifecycle event. For the event to take place it needs to be 
+present in the VNFD from which the VNFR was created.
+<strong>Execute Script</strong> allows to send a bash script to the NFVO in order for it to initiate its execution inside the VNF. 
+You can either type in the script manually or choose a file. 
+<img alt="Execute Script" src="../images/execute-script.png" /></p>
+<p>To look at the details of a VNFR just click on the <strong>id</strong> of it.</p>
 <p><img alt="VNF Record Information" src="../images/nfvo-how-to-use-gui-VNFR-information.png" /></p>
 <h2 id="event">Event</h2>
 <p>The Events are sent by the Orchestrator to the specific <strong>EndPoint</strong> where an external component is listening to be aware when the Orchestrator 
