@@ -227,34 +227,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../nfvo-installation-deb/">Install on Linux</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../nfvo-installation-mac/">Install on MacOS</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
         <a class="" href="../nfvo-installation-docker/">Install with Docker</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../nfvo-installation-vagrant/">Install with Vagrant</a>
         
     </li>
 
@@ -837,12 +810,12 @@ console.log('--------');
 <li>Installed and configured OpenStack (&gt;=Mitaka) (for Mitaka check <a href="http://docs.openstack.org/mitaka/networking-guide/config-qos.html">here</a> or Newton <a href="http://docs.openstack.org/newton/networking-guide/config-qos.html">here</a>) with QoS APIs enabled</li>
 </ul>
 <h1 id="how-to-install-network-slicing-engine">How to install Network Slicing Engine</h1>
-<p>If you have the bootstrap procedure and selected the installation of the NSE component, you could skip this section, and move to the <a href="#how-to">How to use Network Slicing Engine</a> one. </p>
+<p>If you have the bootstrap procedure and selected the installation of the NSE component, you could skip this section, and move to the <a href="#how-to">How to use Network Slicing Engine</a> one.</p>
 <p>Otherwise, please continue with this section. Different options are available for the installation of the Network Slicing Engine. Either you use the fully automated bootstrap where all configurations are done automatically choosing between either the debian based installation or the source code one.
-In case you don't use the bootstrap procedure, you can still install the NSE component individually either via apt-get or gradle. </p>
+In case you don't use the bootstrap procedure, you can still install the NSE component individually either via apt-get or gradle.</p>
 <h2 id="installation-via-bootstrap">Installation via bootstrap</h2>
 <p>Using the bootstrap gives a fully automated standalone installation of the NS including installation and configuration.</p>
-<p>The only thing to do is to execute the following command and follow the configuration process: </p>
+<p>The only thing to do is to execute the following command and follow the configuration process:</p>
 <pre><code class="bash">bash &lt;(curl -fsSkl https://raw.githubusercontent.com/openbaton/network-slicing-engine/master/bootstrap)
 </code></pre>
 
@@ -956,13 +929,13 @@ echo &quot;deb http://get.openbaton.org/repos/apt/debian/ stable main&quot; &gt;
 
 <p><strong>Note</strong> Since the NSE subscribes to specific events towards the NFVO, you should take care about that the NFVO is already running when starting the NSE.</p>
 <h1 id="how-to-use-network-slicing-engine"><a name="how-to"></a>How to use Network Slicing Engine</h1>
-<p>The currently only supported driver is neutron, which will use the native QoS capabilities of Openstack Mitaka. To use it simply set <code>nse.driver=neutron</code> in the configuration file. To set QoS policies in your NSD specify the following QoS parameter in the virtual_link of your vnfd configuration. </p>
+<p>The currently only supported driver is neutron, which will use the native QoS capabilities of Openstack Mitaka. To use it simply set <code>nse.driver=neutron</code> in the configuration file. To set QoS policies in your NSD specify the following QoS parameter in the virtual_link of your vnfd configuration.</p>
 <p>In JSON:</p>
 <pre><code>  &quot;virtual_link&quot;:[
     {
       &quot;name&quot;:&quot;NAME_OF_THE_NETWORK&quot;,
       &quot;qos&quot;:[
-        &quot;minimum_bandwith:BRONZE&quot;
+        &quot;maximum_bandwith:BRONZE&quot;
       ]
     }
   ]

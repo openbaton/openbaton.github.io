@@ -227,34 +227,7 @@ console.log('--------');
              
 
     <li class="toctree-l1 ">
-        <a class="" href="../nfvo-installation-deb/">Install on Linux</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../nfvo-installation-mac/">Install on MacOS</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
         <a class="" href="../nfvo-installation-docker/">Install with Docker</a>
-        
-    </li>
-
-
-        
-             
-
-    <li class="toctree-l1 ">
-        <a class="" href="../nfvo-installation-vagrant/">Install with Vagrant</a>
         
     </li>
 
@@ -823,32 +796,34 @@ console.log('--------');
                       <div class="section">
                         
                           <h1 id="autoscaling-in-tosca">AutoScaling in TOSCA</h1>
-<p>This is an example of how to create AutoScale policies with the yaml descriptor. The whole AutoScale policy goes in the <strong>properties</strong> of the Virtual Network Function node. </p>
-<pre><code class="yaml">example-vnf:
-  type: openbaton.type.VNF
-  properties:
-    # Other properties omitted for brevity
-    auto_scale_policy:
-      scale-out:                  # Policy name 
-        threshod: 100
-        comparisonOperator: &quot;&gt;=&quot;
-        period: 30
-        cooldown: 60
-        mode: REACTIVE
-        type: WEIGHTED
-        alarms:
-          alarm1:                 # Alarm name      
-            metric: &quot;system.cpu.load[percpu,avg1]&quot;
-            statistic: &quot;avg&quot;
-            comparisonOperator: &quot;&gt;&quot;
-            threshold: 0.7
-            weight: 1
-        actions:
-          action1:                # Action name
-            type: SCALE_OUT
-            value: &quot;2&quot;
-            target: &quot;&lt;target&gt;&quot;
-
+<p>This is an example of how to create AutoScale policies with the yaml descriptor. The <code>auto_scaling_policy</code> section has to be placed inside the <code>properties</code> section of the Virtual Network Function node when the yaml file specifies an NSD. Alternatively, if you want to upload a VNFPackage and the yaml file describes only one VNF the <code>auto_scaling_policy</code> has to be part of the <code>inputs</code> section of the yaml file. The following example shows the former case.</p>
+<pre><code class="yaml">...
+topology_template:
+  node_templates:
+    example-vnf:
+      type: openbaton.type.VNF
+      properties:
+        # Other properties omitted for brevity
+        auto_scale_policy:
+          scale-out:                  # Policy name 
+            threshold: 100
+            comparisonOperator: &quot;&gt;=&quot;
+            period: 30
+            cooldown: 60
+            mode: REACTIVE
+            type: WEIGHTED
+            alarms:
+              alarm1:                 # Alarm name      
+                metric: &quot;system.cpu.load[percpu,avg1]&quot;
+                statistic: &quot;avg&quot;
+                comparisonOperator: &quot;&gt;&quot;
+                threshold: 0.7
+                weight: 1
+            actions:
+              action1:                # Action name
+                type: SCALE_OUT
+                value: &quot;2&quot;
+                target: &quot;&lt;target&gt;&quot;
 </code></pre>
 
 <p>More about AutoScaling and how to set it up: <a href="../autoscaling">Autoscaling</a></p>

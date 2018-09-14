@@ -20,25 +20,7 @@
     </url>
         
     <url>
-     <loc>/nfvo-installation-deb/</loc>
-     <lastmod>2018-09-14</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/nfvo-installation-mac/</loc>
-     <lastmod>2018-09-14</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
      <loc>/nfvo-installation-docker/</loc>
-     <lastmod>2018-09-14</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/nfvo-installation-vagrant/</loc>
      <lastmod>2018-09-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
